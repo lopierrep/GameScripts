@@ -41,7 +41,8 @@ while not ManualStop:
     NPCLocation = (random.uniform(980, 985), random.uniform(480, 485))
     # 2️ Click en posición actual
     print("Moving to NPC location: ", NPCLocation)
-    CustomMoveWithNoise(pyautogui.position()[0], pyautogui.position()[1], NPCLocation[0], NPCLocation[1])
+    x1, y1 = pyautogui.position()
+    CustomMoveWithNoise(x1, y1, NPCLocation[0], NPCLocation[1])
     pyautogui.click()    
     SleepTime = random.uniform(0.5, 1)
     time.sleep(SleepTime)
@@ -49,7 +50,8 @@ while not ManualStop:
     # 3️ Mover a coordenadas específicas
     OptionLocation = (random.uniform(1155, 1165), random.uniform(600, 605))
     print("Moving to option location: ", OptionLocation)
-    CustomMoveWithNoise(pyautogui.position()[0], pyautogui.position()[1], OptionLocation[0], OptionLocation[1])
+    x1, y1 = pyautogui.position()
+    CustomMoveWithNoise(x1, y1, OptionLocation[0], OptionLocation[1])
     pyautogui.click()
     SleepTime = random.uniform(2, 3)
     time.sleep(SleepTime)
@@ -57,7 +59,8 @@ while not ManualStop:
     # 5️ Start Race
     print("Pressing F1 to start the race...")
     StartButtonLocation = (random.uniform(1400, 1540), random.uniform(920, 945))
-    CustomMoveWithNoise(pyautogui.position()[0], pyautogui.position()[1], StartButtonLocation[0], StartButtonLocation[1])
+    x1, y1 = pyautogui.position()
+    CustomMoveWithNoise(x1, y1, StartButtonLocation[0], StartButtonLocation[1])
     pyautogui.click()
 
     RaceDuration = random.uniform(32, 35)
@@ -67,7 +70,8 @@ while not ManualStop:
     # 7️ Press ESC to exit result screen
     EscButtonLocation = (random.uniform(970, 1030), random.uniform(795, 810))
     print("Moving to ESC button location: ", EscButtonLocation)
-    MoveDuration = random.uniform(0.25, 0.5)
+    x1, y1 = pyautogui.position()
+    CustomMoveWithNoise(x1, y1, EscButtonLocation[0], EscButtonLocation[1])
     CustomMoveWithNoise(pyautogui.position()[0], pyautogui.position()[1], EscButtonLocation[0], EscButtonLocation[1])
     pyautogui.click()
 
