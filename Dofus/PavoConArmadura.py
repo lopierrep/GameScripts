@@ -19,13 +19,13 @@ def OnPress(event):
         print("Press wil not repeat after this iteration")
 
 def CustomMoveWithNoise(x1, y1, x2, y2):
-    Steps = random.uniform(20, 50)
+    Steps = int(random.uniform(3, 5))
     for i in range(Steps):
         t = i / Steps
         x = x1 + (x2 - x1) * t + random.randint(-2, 2)
         y = y1 + (y2 - y1) * t + random.randint(-2, 2)
         pyautogui.moveTo(x, y)
-        time.sleep(random.uniform(0.01, 0.03))
+        time.sleep(random.uniform(0.000001, 0.000003))
 
 while not ManualStop:
     keyboard.on_press(OnPress)
