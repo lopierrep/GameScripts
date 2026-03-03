@@ -10,7 +10,6 @@ import random
 # Tiempo de seguridad para que puedas mover el mouse a una esquina si algo falla
 pyautogui.FAILSAFE = True
 
-ManualStop = False
 def OnPress(event):
     global ManualStop
     print("event.name: ", event.name)
