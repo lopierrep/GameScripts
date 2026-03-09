@@ -7,7 +7,7 @@ import time
 import random
 
 
-# Tiempo de seguridad para que puedas mover el mouse a una esquina si algo falla
+# Security delay to give you time to move the mouse to a corner if something goes wrong
 pyautogui.FAILSAFE = True
 
 ManualStop = False
@@ -42,19 +42,23 @@ CustomStartButtonLocation = (1515, 930)
 CustomEscButtonLocation = (955, 870)
     
 while not ManualStop:
-    keyboard.on_press(OnPress)
 
+    ## Comment the rest of the code and uncomment this block to get the coordinates of the mouse position in real time, 
+    ## useful for setting up the coordinates for the first time or if they change after an update
     # print(pyautogui.position())
     # time.sleep(1)
+
+    # Bind the keyboard event to stop the process when "y" is pressed
+    keyboard.on_press(OnPress)
+
     RandomStartTime = random.uniform(0.5, 1)
     print(f"Starting in {RandomStartTime} seconds...")
     time.sleep(RandomStartTime)
     print("Starting process...")
 
-    # 1️ Guardar posición original
+    # 1️ Move and click on NPC
     NPCLocation = CustomNPCLocation if UseCustomValues else NPCLocation
     NPCLocation = ((NPCLocation[0]+random.uniform(-2.5, 2.5)), (NPCLocation[1]+random.uniform(-2.5, 2.5)))
-    # 2️ Click en posición actual
     print("Moving to NPC location: ", NPCLocation)
     x1, y1 = pyautogui.position()
     CustomMoveWithNoise(x1, y1, NPCLocation[0], NPCLocation[1])
@@ -62,7 +66,7 @@ while not ManualStop:
     SleepTime = random.uniform(0.5, 1)
     time.sleep(SleepTime)
     
-    # 3️ Mover a coordenadas específicas
+    # 3️ Move and click in the race option
     OptionLocation = CustomOptionLocation if UseCustomValues else OptionLocation
     OptionLocation = ((OptionLocation[0]+random.uniform(-5, 5)), (OptionLocation[1]+random.uniform(-2.5, 2.5)))
     print("Moving to option location: ", OptionLocation)
@@ -72,7 +76,7 @@ while not ManualStop:
     SleepTime = random.uniform(2, 3)
     time.sleep(SleepTime)
 
-    # 5️ Start Race
+    # 5️ Move and click on Start Race
     print("Pressing F1 to start the race...")
     StartButtonLocation = CustomStartButtonLocation if UseCustomValues else StartButtonLocation
     StartButtonLocation = ((StartButtonLocation[0]+random.uniform(-15.0, 15.0)), (StartButtonLocation[1]+random.uniform(-15.0, 15.0)))
@@ -84,7 +88,7 @@ while not ManualStop:
     print(f"Waiting for {RaceDuration} seconds for the race to end ...")
     time.sleep(RaceDuration)
 
-    # 7️ Clic ESC to exit result screen
+    # 7️ Move and click on ESC to exit result screen
     EscButtonLocation = CustomEscButtonLocation if UseCustomValues else EscButtonLocation
     EscButtonLocation = ((EscButtonLocation[0]+random.uniform(-15.0, 15.0)), (EscButtonLocation[1]+random.uniform(-15.0, 15.0)))
     print("Moving to ESC button location: ", EscButtonLocation)
