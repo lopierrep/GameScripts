@@ -28,17 +28,18 @@ def CustomMoveWithNoise(x1, y1, x2, y2):
         time.sleep(random.uniform(0.000001, 0.000003))
     pyautogui.moveTo(x2, y2)
 
-IsPC = False
-PC_NPCLocation = (980, 985), (480, 485)
-PC_OptionLocation = (1155, 1165), (600, 605)
-PC_StartButtonLocation = (1400, 1540), (920, 945)
-PC_EscButtonLocation = (970, 1030), (795, 810)
 
-Laptop_NPCLocation = (980, 985), (480, 485)
-Laptop_OptionLocation = (1155, 1165), (600, 605)
-Laptop_StartButtonLocation = (1515, 930)
-Laptop_EscButtonLocation = (925, 990), (865, 880)
+NPCLocation = (982.5, 482.5)
+OptionLocation = (1160, 602.5)
+StartButtonLocation = (1515, 930)
+EscButtonLocation = (955, 870)
 
+UseCustomValues = True
+
+CustomNPCLocation = (982.5, 482.5)
+CustomOptionLocation = (1160, 602.5)
+CustomStartButtonLocation = (1515, 930)
+CustomEscButtonLocation = (955, 870)
     
 while not ManualStop:
     keyboard.on_press(OnPress)
@@ -50,9 +51,9 @@ while not ManualStop:
     time.sleep(RandomStartTime)
     print("Starting process...")
 
-    # 1️ Guardar posición originaly
-    NPCLocation = PC_NPCLocation if IsPC else Laptop_NPCLocation
-    NPCLocation = (random.uniform(NPCLocation[0][0], NPCLocation[0][1]), random.uniform(NPCLocation[1][0], NPCLocation[1][1]))
+    # 1️ Guardar posición original
+    NPCLocation = CustomNPCLocation if UseCustomValues else NPCLocation
+    NPCLocation = ((NPCLocation[0]+random.uniform(-2.5, 2.5)), (NPCLocation[1]+random.uniform(-2.5, 2.5)))
     # 2️ Click en posición actual
     print("Moving to NPC location: ", NPCLocation)
     x1, y1 = pyautogui.position()
@@ -62,8 +63,8 @@ while not ManualStop:
     time.sleep(SleepTime)
     
     # 3️ Mover a coordenadas específicas
-    OptionLocation = PC_OptionLocation if IsPC else Laptop_OptionLocation
-    OptionLocation = (random.uniform(OptionLocation[0][0], OptionLocation[0][1]), random.uniform(OptionLocation[1][0], OptionLocation[1][1]))
+    OptionLocation = CustomOptionLocation if UseCustomValues else OptionLocation
+    OptionLocation = ((OptionLocation[0]+random.uniform(-5, 5)), (OptionLocation[1]+random.uniform(-2.5, 2.5)))
     print("Moving to option location: ", OptionLocation)
     x1, y1 = pyautogui.position()
     CustomMoveWithNoise(x1, y1, OptionLocation[0], OptionLocation[1])
@@ -73,7 +74,7 @@ while not ManualStop:
 
     # 5️ Start Race
     print("Pressing F1 to start the race...")
-    StartButtonLocation = PC_StartButtonLocation if IsPC else Laptop_StartButtonLocation
+    StartButtonLocation = CustomStartButtonLocation if UseCustomValues else StartButtonLocation
     StartButtonLocation = ((StartButtonLocation[0]+random.uniform(-15.0, 15.0)), (StartButtonLocation[1]+random.uniform(-15.0, 15.0)))
     x1, y1 = pyautogui.position()
     CustomMoveWithNoise(x1, y1, StartButtonLocation[0], StartButtonLocation[1])
@@ -83,9 +84,9 @@ while not ManualStop:
     print(f"Waiting for {RaceDuration} seconds for the race to end ...")
     time.sleep(RaceDuration)
 
-    # 7️ Press ESC to exit result screen
-    EscButtonLocation = PC_EscButtonLocation if IsPC else Laptop_EscButtonLocation
-    EscButtonLocation = (random.uniform(EscButtonLocation[0][0], EscButtonLocation[0][1]), random.uniform(EscButtonLocation[1][0], EscButtonLocation[1][1]))
+    # 7️ Clic ESC to exit result screen
+    EscButtonLocation = CustomEscButtonLocation if UseCustomValues else EscButtonLocation
+    EscButtonLocation = ((EscButtonLocation[0]+random.uniform(-15.0, 15.0)), (EscButtonLocation[1]+random.uniform(-15.0, 15.0)))
     print("Moving to ESC button location: ", EscButtonLocation)
     x1, y1 = pyautogui.position()
     CustomMoveWithNoise(x1, y1, EscButtonLocation[0], EscButtonLocation[1])
