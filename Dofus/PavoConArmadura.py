@@ -28,7 +28,7 @@ def CustomMoveWithNoise(x1, y1, x2, y2):
         time.sleep(random.uniform(0.000001, 0.000003))
     pyautogui.moveTo(x2, y2)
 
-IsPC = True
+IsPC = False
 PC_NPCLocation = (980, 985), (480, 485)
 PC_OptionLocation = (1155, 1165), (600, 605)
 PC_StartButtonLocation = (1400, 1540), (920, 945)
@@ -36,8 +36,9 @@ PC_EscButtonLocation = (970, 1030), (795, 810)
 
 Laptop_NPCLocation = (980, 985), (480, 485)
 Laptop_OptionLocation = (1155, 1165), (600, 605)
-Laptop_StartButtonLocation = (1450, 1580), (915, 940)
+Laptop_StartButtonLocation = (1515, 930)
 Laptop_EscButtonLocation = (925, 990), (865, 880)
+
     
 while not ManualStop:
     keyboard.on_press(OnPress)
@@ -73,7 +74,7 @@ while not ManualStop:
     # 5️ Start Race
     print("Pressing F1 to start the race...")
     StartButtonLocation = PC_StartButtonLocation if IsPC else Laptop_StartButtonLocation
-    StartButtonLocation = (random.uniform(StartButtonLocation[0][0], StartButtonLocation[0][1]), random.uniform(StartButtonLocation[1][0], StartButtonLocation[1][1]))
+    StartButtonLocation = ((StartButtonLocation[0]+random.uniform(-15.0, 15.0)), (StartButtonLocation[1]+random.uniform(-15.0, 15.0)))
     x1, y1 = pyautogui.position()
     CustomMoveWithNoise(x1, y1, StartButtonLocation[0], StartButtonLocation[1])
     pyautogui.click()
