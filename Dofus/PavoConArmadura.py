@@ -88,13 +88,13 @@ while not ManualStop:
     print(f"Waiting for {RaceDuration} seconds for the race to end ...")
     time.sleep(RaceDuration)
 
-    # 7️ Move and click on ESC to exit result screen
-    EscButtonLocation = CustomEscButtonLocation if UseCustomValues else EscButtonLocation
-    EscButtonLocation = ((EscButtonLocation[0]+random.uniform(-15.0, 15.0)), (EscButtonLocation[1]+random.uniform(-15.0, 15.0)))
-    print("Moving to ESC button location: ", EscButtonLocation)
-    x1, y1 = pyautogui.position()
-    CustomMoveWithNoise(x1, y1, EscButtonLocation[0], EscButtonLocation[1])
-    CustomMoveWithNoise(pyautogui.position()[0], pyautogui.position()[1], EscButtonLocation[0], EscButtonLocation[1])
-    pyautogui.click()
+    # # 7️ Move and click on ESC to exit result screen
+    # EscButtonLocation = CustomEscButtonLocation if UseCustomValues else EscButtonLocation
+    # EscButtonLocation = ((EscButtonLocation[0]+random.uniform(-15.0, 15.0)), (EscButtonLocation[1]+random.uniform(-15.0, 15.0)))
+    # print("Moving to ESC button location: ", EscButtonLocation)
+    # x1, y1 = pyautogui.position()
+    # CustomMoveWithNoise(x1, y1, EscButtonLocation[0], EscButtonLocation[1])
+    # CustomMoveWithNoise(pyautogui.position()[0], pyautogui.position()[1], EscButtonLocation[0], EscButtonLocation[1])
+    # pyautogui.click()
 
 print("Process finished.")
