@@ -1,0 +1,57 @@
+Aceite
+Ala
+Aleación
+Brote
+Caparazón
+Carne
+Cáscara
+Cereal
+Cola
+Concentrado
+Corteza
+Cuero
+Esencia de guardián de mazmorra
+Flor
+Fragmento de mapa
+Fruta
+Gelatina
+Guijarro
+Haiku
+Hongo
+Hueso
+Huevo
+Lana
+Legumbre
+Líquido
+Llave
+Lotachistoso
+Madera
+Mapa
+Material de alquimia
+Material de exploración
+Metaria
+Mineral
+Nawidad
+Ojo
+Oreja
+Pata
+Pelo
+Pescado
+Piedra bruta
+Piedra preciosa
+Piel
+Planta
+Pluma
+Polvo
+Preparación
+Raíz
+Recurso de combate
+Recurso de las anomalías temporales
+Recurso de los Sueños
+Recurso variado
+Ropaje
+Savia
+Semilla
+Tabla
+Tejido
+Tinte

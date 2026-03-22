@@ -1,0 +1,1537 @@
+{
+  "Alineamiento": [
+    {
+      "name": "Cadenas rotas",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Receptáculo de corruptita",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    }
+  ],
+  "Bebida": [
+    {
+      "name": "Aguahelante",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Alcohol al 99%",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Frigrodka",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Leleche",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Umeshuritu",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Vinorst",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    }
+  ],
+  "Bota": [
+    {
+      "name": "Botas usadas de Hogmeiser",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    }
+  ],
+  "Certificado de dragopavo": [
+    {
+      "name": "Dragopavo almendrado",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo almendrado e índigo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo almendrado salvaje",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo almendrado y dorado",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo almendrado y esmeralda",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo almendrado y marfil",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo almendrado y orquídeo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo almendrado y pelirrojo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo almendrado y púrpura",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo almendrado y turquesa",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo almendrado y ébano",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo ciruela",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo ciruela e índigo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo ciruela y almendrado",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo ciruela y dorado",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo ciruela y esmeralda",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo ciruela y marfil",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo ciruela y orquídeo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo ciruela y pelirrojo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo ciruela y púrpura",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo ciruela y turquesa",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo ciruela y ébano",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo dorado",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo dorado e índigo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo dorado salvaje",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo dorado y esmeralda",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo dorado y marfil",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo dorado y orquídeo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo dorado y pelirrojo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo dorado y púrpura",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo dorado y turquesa",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo dorado y ébano",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo esmeralda",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo esmeralda e índigo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo esmeralda y marfil",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo esmeralda y orquídeo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo esmeralda y pelirrojo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo esmeralda y púrpura",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo esmeralda y turquesa",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo marfil",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo marfil y orquídeo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo marfil y pelirrojo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo marfil y púrpura",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo marfil y turquesa",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo orquídeo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo orquídeo y pelirrojo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo orquídeo y púrpura",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo pelirrojo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo pelirrojo salvaje",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo púrpura",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo púrpura y pelirrojo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo turquesa",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo turquesa y orquídeo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo turquesa y pelirrojo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo turquesa y púrpura",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo ébano",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo ébano e índigo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo ébano y esmeralda",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo ébano y marfil",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo ébano y orquídeo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo ébano y pelirrojo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo ébano y púrpura",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo ébano y turquesa",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo índigo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo índigo y marfil",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo índigo y orquídeo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo índigo y pelirrojo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo índigo y púrpura",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Dragopavo índigo y turquesa",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    }
+  ],
+  "Cerveza": [
+    {
+      "name": "Cerveza Atolmundo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Cerveza Bwork",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Cerveza Tsingtawo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Cerveza cacterra",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Cerveza de Amakna",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Cerveza de Astrub",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Cerveza de Chatarreo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Cerveza de Djaul",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Cerveza de Gisgul",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Cerveza de La Paliza Feliz",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Cerveza de Sidimote",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Cerveza de la Bagruta",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Cerveza de la Jarradepalo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Cerveza de la miseria",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Cerveza del Feubuk",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Cerveza del Gatokemao",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Cerveza del Pankemante",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Cerveza del Ripata",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Cerveza del bwórkbol",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Cerveza del desierto",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Cerveza fuerte ligera",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Pandaburg",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Pandapiler",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Pandapils",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Pandasahi",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Pandneken",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Última para el camino",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    }
+  ],
+  "Dimensiones divinas": [
+    {
+      "name": "Carne manida",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    }
+  ],
+  "Esquíritu": [
+    {
+      "name": "Esquíritu común",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Esquíritu inferior",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Esquíritu majestuoso",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Esquíritu superior",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Esquíritu supremo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    }
+  ],
+  "Golosina": [
+    {
+      "name": "Azúcar glas",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Cliche",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Piruleta de ciruela",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Piruleta de fresa",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Piruleta de limón",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Piruleta de manzana",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    }
+  ],
+  "Grabado de forjamagia": [
+    {
+      "name": "Grabado de chispa",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    }
+  ],
+  "Isla de Frigost": [
+    {
+      "name": "Carne fresca",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    }
+  ],
+  "Isla de Moon": [
+    {
+      "name": "Caparazón amarillo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Caparazón azul",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Caparazón rojo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Caparazón verde",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    }
+  ],
+  "Mascota": [
+    {
+      "name": "Miaumiau",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    }
+  ],
+  "Metaria:": [
+    {
+      "name": "Metaria roja",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    }
+  ],
+  "Objeto utilizable": [
+    {
+      "name": "Cuadradito de chocolate negro 99%",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    }
+  ],
+  "Pócima": [
+    {
+      "name": "Huevo dorado de larva",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    }
+  ],
+  "Recurso de misión": [
+    {
+      "name": "Aceite de giraleón",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Aliento líquido de Gargandias",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Antenas de kabombz",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Bezoar denso",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Bolsa mayor de hiperpótamo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Bzuevo no fecundado",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Caldo de carne y huesos",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Carne jugosa de raribívoro",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Frente huesuda flexible",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Grasa de larva kabombz",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Grasa de raribívoro",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Lágrima sabrosa del Graogarm",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Metal sin tratar",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Mineral aislante",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Médula rhoarim",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Nuez kabombz",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Pan de mono",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Pelos de raribívoro",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Penacho condimentado de mortiplumas",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Perla de néctar",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Pétalo de giraleón",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Sal de galvanización",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Sangre ardiente del devorador",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Tripas de raribívoro",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Ácido goblídrico",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    }
+  ],
+  "Recurso de recaudador": [
+    {
+      "name": "Asta de recaudador",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Cerradura de recaudador",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Clavos de recaudador",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Correa de recaudador",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Hoja de recaudador",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Mallas de recaudador",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Placa de recaudador",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    }
+  ],
+  "Regalo": [
+    {
+      "name": "Regalo soberbio de Nawidad",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    }
+  ],
+  "Runa astral": [
+    {
+      "name": "Runa astral asombrosa",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa astral legendaria",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa astral maravillosa",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa astral mayor",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa astral media",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa astral menor",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    }
+  ],
+  "Runa de forjamagia": [
+    {
+      "name": "Runa Agi",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Al",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Cri",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Cu",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Da Agua",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Da Aire",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Da Cri",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Da Emp",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Da Fuego",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Da Neutral",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Da Reen",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Da Tierra",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Da Tram",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Fu",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Ga PA",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Ga PM",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Hui",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Ini",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Inte",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Invo",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Pla",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Pod",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Por Tram",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Pot",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Prospe",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Re Agua",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Re Agua Por",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Re Aire",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Re Aire Por",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Re Cri",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Re Emp",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Re Fuego",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Re Fuego Por",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Re Neutral",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Re Neutral Por",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Re PA",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Re PM",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Re Tierra",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Re Tierra Por",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Ret PA",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Ret PM",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Sa",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Sue",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Runa Vi",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    }
+  ],
+  "Sin categoría": [
+    {
+      "name": "Fragmento de piedra pulida",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    },
+    {
+      "name": "Fragmento de prismaradita",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    }
+  ],
+  "Sombrero": [
+    {
+      "name": "Casco de jefe bwork",
+      "price_x1": 0,
+      "price_x10": 0,
+      "price_x100": 0,
+      "price_x1000": 0
+    }
+  ]
+}
