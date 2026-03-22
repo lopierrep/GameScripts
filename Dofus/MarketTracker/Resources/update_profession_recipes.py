@@ -33,7 +33,7 @@ BASE_DIR        = os.path.dirname(os.path.abspath(__file__))
 MARKET_DIR      = os.path.join(BASE_DIR, "..")
 
 OTHER_JSON      = os.path.join(MARKET_DIR, "other_ingredients_prices.json")
-CATEGORIES_FILE = os.path.join(BASE_DIR, "resources_categories.txt")
+CATEGORIES_FILE = os.path.join(BASE_DIR, "categories.txt")
 RECIPES_DIR     = os.path.join(MARKET_DIR, "LifeSkillsRecipes")
 
 DELAY_BETWEEN_ITEMS = 0.3

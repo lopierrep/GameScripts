@@ -25,11 +25,11 @@ from difflib import SequenceMatcher
 from PIL import Image, ImageFilter, ImageEnhance
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
-from Calibration.calibration import load_calibration as _load_calibration
+from Helpers.Calibration.calibration import load_calibration as _load_calibration
 
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
-_CATEGORIES_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "resources_categories.txt")
+_CATEGORIES_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "categories.txt")
 
 def _load_categories() -> set[str]:
     if not os.path.exists(_CATEGORIES_FILE):
