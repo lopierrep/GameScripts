@@ -1,22 +1,55 @@
-
-
-
 import pyautogui
 import keyboard
 import time
 import random
+import json
+import os
 
+CALIBRATION_FILE = os.path.join(os.path.dirname(__file__), "calibration.json")
+
+CALIBRATION_POINTS = [
+    ("NPCLocation",         "el NPC"),
+    ("OptionLocation",      "la opción de raza"),
+    ("StartButtonLocation", "el botón de iniciar carrera"),
+]
 
 # Security delay to give you time to move the mouse to a corner if something goes wrong
 pyautogui.FAILSAFE = True
 
-ManualStop = False
-def OnPress(event):
-    global ManualStop
-    print("event.name: ", event.name)
-    if event.name == "y":
-        ManualStop = True
-        print("Press wil not repeat after this iteration")
+
+def RunCalibration():
+    print("\n=== CALIBRACIÓN ===")
+    print("Para cada punto, mueve el ratón a la posición correcta en pantalla y pulsa ENTER.")
+    print("Pulsa ESC en cualquier momento para cancelar.\n")
+    calibration = {}
+    for key, description in CALIBRATION_POINTS:
+        while True:
+            print(f"  Mueve el ratón a: {description}")
+            print("  Pulsa C para capturar la posición...")
+            pressed = keyboard.read_key()
+            if pressed == "esc":
+                print("Calibración cancelada.")
+                return None
+            if pressed == "c":
+                pos = pyautogui.position()
+                calibration[key] = [pos.x, pos.y]
+                print(f"  ✓ {key} = {calibration[key]}\n")
+                break
+    with open(CALIBRATION_FILE, "w") as f:
+        json.dump(calibration, f, indent=2)
+    print(f"Calibración guardada en {CALIBRATION_FILE}\n")
+    return calibration
+
+
+def LoadCalibration():
+    if not os.path.exists(CALIBRATION_FILE):
+        print(f"No se encontró el archivo de calibración ({CALIBRATION_FILE}).")
+        return RunCalibration()
+    with open(CALIBRATION_FILE, "r") as f:
+        calibration = json.load(f)
+    print(f"Calibración cargada desde {CALIBRATION_FILE}")
+    return calibration
+
 
 def CustomMoveWithNoise(x1, y1, x2, y2):
     Steps = int(random.uniform(3, 5))
@@ -29,26 +62,22 @@ def CustomMoveWithNoise(x1, y1, x2, y2):
     pyautogui.moveTo(x2, y2)
 
 
-NPCLocation = (982.5, 482.5)
-OptionLocation = (1160, 602.5)
-StartButtonLocation = (1515, 930)
-EscButtonLocation = (955, 870)
+calibration = LoadCalibration()
+if calibration is None:
+    print("No se puede continuar sin calibración. Saliendo.")
+    exit(1)
 
-UseCustomValues = True
+ManualStop = False
+def OnPress(event):
+    global ManualStop
+    print("event.name: ", event.name)
+    if event.name == "y":
+        ManualStop = True
+        print("Press wil not repeat after this iteration")
 
-CustomNPCLocation = (982.5, 482.5)
-CustomOptionLocation = (1160, 602.5)
-CustomStartButtonLocation = (1515, 930)
-CustomEscButtonLocation = (955, 870)
-    
+
 while not ManualStop:
 
-    ## Comment the rest of the code and uncomment this block to get the coordinates of the mouse position in real time, 
-    ## useful for setting up the coordinates for the first time or if they change after an update
-    # print(pyautogui.position())
-    # time.sleep(1)
-
-    # Bind the keyboard event to stop the process when "y" is pressed
     keyboard.on_press(OnPress)
 
     RandomStartTime = random.uniform(0.5, 1)
@@ -57,29 +86,27 @@ while not ManualStop:
     print("Starting process...")
 
     # 1️ Move and click on NPC
-    NPCLocation = CustomNPCLocation if UseCustomValues else NPCLocation
-    NPCLocation = ((NPCLocation[0]+random.uniform(-2.5, 2.5)), (NPCLocation[1]+random.uniform(-2.5, 2.5)))
+    npc = calibration["NPCLocation"]
+    NPCLocation = (npc[0] + random.uniform(-2.5, 2.5), npc[1] + random.uniform(-2.5, 2.5))
     print("Moving to NPC location: ", NPCLocation)
     x1, y1 = pyautogui.position()
     CustomMoveWithNoise(x1, y1, NPCLocation[0], NPCLocation[1])
-    pyautogui.click()    
-    SleepTime = random.uniform(0.5, 1)
-    time.sleep(SleepTime)
-    
+    pyautogui.click()
+    time.sleep(random.uniform(0.5, 1))
+
     # 3️ Move and click in the race option
-    OptionLocation = CustomOptionLocation if UseCustomValues else OptionLocation
-    OptionLocation = ((OptionLocation[0]+random.uniform(-5, 5)), (OptionLocation[1]+random.uniform(-2.5, 2.5)))
+    opt = calibration["OptionLocation"]
+    OptionLocation = (opt[0] + random.uniform(-5, 5), opt[1] + random.uniform(-2.5, 2.5))
     print("Moving to option location: ", OptionLocation)
     x1, y1 = pyautogui.position()
     CustomMoveWithNoise(x1, y1, OptionLocation[0], OptionLocation[1])
     pyautogui.click()
-    SleepTime = random.uniform(2, 3)
-    time.sleep(SleepTime)
+    time.sleep(random.uniform(2, 3))
 
     # 5️ Move and click on Start Race
-    print("Pressing F1 to start the race...")
-    StartButtonLocation = CustomStartButtonLocation if UseCustomValues else StartButtonLocation
-    StartButtonLocation = ((StartButtonLocation[0]+random.uniform(-15.0, 15.0)), (StartButtonLocation[1]+random.uniform(-15.0, 15.0)))
+    print("Pressing Start Race button...")
+    btn = calibration["StartButtonLocation"]
+    StartButtonLocation = (btn[0] + random.uniform(-15.0, 15.0), btn[1] + random.uniform(-15.0, 15.0))
     x1, y1 = pyautogui.position()
     CustomMoveWithNoise(x1, y1, StartButtonLocation[0], StartButtonLocation[1])
     pyautogui.click()
@@ -87,14 +114,5 @@ while not ManualStop:
     RaceDuration = random.uniform(32, 35)
     print(f"Waiting for {RaceDuration} seconds for the race to end ...")
     time.sleep(RaceDuration)
-
-    # # 7️ Move and click on ESC to exit result screen
-    # EscButtonLocation = CustomEscButtonLocation if UseCustomValues else EscButtonLocation
-    # EscButtonLocation = ((EscButtonLocation[0]+random.uniform(-15.0, 15.0)), (EscButtonLocation[1]+random.uniform(-15.0, 15.0)))
-    # print("Moving to ESC button location: ", EscButtonLocation)
-    # x1, y1 = pyautogui.position()
-    # CustomMoveWithNoise(x1, y1, EscButtonLocation[0], EscButtonLocation[1])
-    # CustomMoveWithNoise(pyautogui.position()[0], pyautogui.position()[1], EscButtonLocation[0], EscButtonLocation[1])
-    # pyautogui.click()
 
 print("Process finished.")
