@@ -8,9 +8,12 @@ import os
 CALIBRATION_FILE = os.path.join(os.path.dirname(__file__), "calibration.json")
 
 CALIBRATION_POINTS = [
-    ("NPCLocation",         "el NPC"),
-    ("OptionLocation",      "la opción de raza"),
-    ("StartButtonLocation", "el botón de iniciar carrera"),
+    ("NPCLocation",          "el NPC"),
+    ("OptionLocation1",      "la opción de raza 1"),
+    ("OptionLocation2",      "la opción de raza 2"),
+    ("OptionLocation3",      "la opción de raza 3"),
+    ("OptionLocation4",      "la opción de raza 4 (la más frecuente, 85%)"),
+    ("StartButtonLocation",  "el botón de iniciar carrera"),
 ]
 
 # Security delay to give you time to move the mouse to a corner if something goes wrong
@@ -97,7 +100,11 @@ while not ManualStop:
     time.sleep(random.uniform(0.5, 1))
 
     # 3️ Move and click in the race option
-    opt = calibration["OptionLocation"]
+    option_key = random.choices(
+        ["OptionLocation1", "OptionLocation2", "OptionLocation3", "OptionLocation4"],
+        weights=[5, 5, 5, 85]
+    )[0]
+    opt = calibration[option_key]
     OptionLocation = (opt[0] + random.uniform(-5, 5), opt[1] + random.uniform(-2.5, 2.5))
     print("Moving to option location: ", OptionLocation)
     x1, y1 = pyautogui.position()
