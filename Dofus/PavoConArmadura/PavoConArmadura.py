@@ -26,7 +26,10 @@ def RunCalibration():
         while True:
             print(f"  Mueve el ratón a: {description}")
             print("  Pulsa C para capturar la posición...")
-            pressed = keyboard.read_key()
+            event = keyboard.read_event()
+            while event.event_type != keyboard.KEY_DOWN:
+                event = keyboard.read_event()
+            pressed = event.name
             if pressed == "esc":
                 print("Calibración cancelada.")
                 return None
@@ -75,10 +78,9 @@ def OnPress(event):
         ManualStop = True
         print("Press wil not repeat after this iteration")
 
+keyboard.on_press(OnPress)
 
 while not ManualStop:
-
-    keyboard.on_press(OnPress)
 
     RandomStartTime = random.uniform(0.5, 1)
     print(f"Starting in {RandomStartTime} seconds...")
