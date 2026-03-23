@@ -123,7 +123,7 @@ if __name__ == "__main__":
     sip.load_calibration()
 
     # name = "Artefacto pandawushu"
-    name = "Concentrado de boscaje"
+    name = "Malta"
     # name = "Zafiro"
     print(f"Buscando: {name} …")
     for i in range(3, 0, -1):

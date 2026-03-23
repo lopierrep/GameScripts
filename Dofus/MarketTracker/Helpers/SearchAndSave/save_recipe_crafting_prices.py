@@ -11,6 +11,7 @@ Uso:
 import json
 import os
 import sys
+from datetime import datetime, timezone
 
 from . import save_resource_buy_prices as srs
 
@@ -53,7 +54,7 @@ def load_all_pack_prices() -> dict[str, dict]:
                     for size in SIZES
                 }
 
-    # Crafting costs de recetas craftables usadas como ingredientes
+    # Craftables usados como ingredientes: min(crafting_cost, selling_price)
     for fname in os.listdir(RECIPES_DIR):
         if not fname.startswith("recipes_") or not fname.endswith(".json"):
             continue
@@ -63,8 +64,16 @@ def load_all_pack_prices() -> dict[str, dict]:
                 if not name:
                     continue
                 costs = {size: recipe.get(f"unit_crafting_cost_{size}", 0) for size in SIZES}
-                if any(v > 0 for v in costs.values()):
-                    pack_prices[name] = costs
+                sells = {size: recipe.get(f"unit_selling_price_{size}", 0) for size in SIZES}
+                merged = {}
+                for size in SIZES:
+                    c, s = costs.get(size, 0), sells.get(size, 0)
+                    if c > 0 and s > 0:
+                        merged[size] = min(c, s)
+                    else:
+                        merged[size] = c or s
+                if any(v > 0 for v in merged.values()):
+                    pack_prices[name] = merged
 
     return pack_prices
 
@@ -119,6 +128,12 @@ def calculate_crafting_costs(recipes: list, pack_prices: dict) -> tuple[list, se
             recipe[f"unit_crafting_cost_{size}"] = round(cost) if known else 0
 
         crafted_costs[recipe["result"]] = {size: recipe.get(f"unit_crafting_cost_{size}", 0) for size in SIZES}
+
+        # Timestamp solo cuando hay precio de venta Y costo de crafteo
+        has_sell  = any(recipe.get(f"unit_selling_price_{s}", 0) > 0 for s in SIZES)
+        has_craft = any(recipe.get(f"unit_crafting_cost_{s}", 0) > 0 for s in SIZES)
+        if has_sell and has_craft:
+            recipe["selling_last_updated"] = datetime.now(timezone.utc).isoformat()
 
     return recipes, still_missing
 

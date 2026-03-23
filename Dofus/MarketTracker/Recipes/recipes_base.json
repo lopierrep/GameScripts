@@ -90,10 +90,10 @@
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 2748,
-    "unit_crafting_cost_x10": 2070,
-    "unit_crafting_cost_x100": 2070,
-    "unit_crafting_cost_x1000": 2150
+    "unit_crafting_cost_x1": 16078,
+    "unit_crafting_cost_x10": 16078,
+    "unit_crafting_cost_x100": 27479,
+    "unit_crafting_cost_x1000": 214982
   },
   {
     "id": 1527,
@@ -118,10 +118,10 @@
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 14874,
-    "unit_crafting_cost_x10": 10020,
-    "unit_crafting_cost_x100": 10020,
-    "unit_crafting_cost_x1000": 10020
+    "unit_crafting_cost_x1": 16381,
+    "unit_crafting_cost_x10": 16381,
+    "unit_crafting_cost_x100": 184706,
+    "unit_crafting_cost_x1000": 1001976
   },
   {
     "id": 1528,
@@ -146,10 +146,10 @@
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 1384,
-    "unit_crafting_cost_x10": 1336,
-    "unit_crafting_cost_x100": 1260,
-    "unit_crafting_cost_x1000": 1294
+    "unit_crafting_cost_x1": 4010,
+    "unit_crafting_cost_x10": 4010,
+    "unit_crafting_cost_x100": 13845,
+    "unit_crafting_cost_x1000": 165428
   },
   {
     "id": 1529,
@@ -174,10 +174,10 @@
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 4608,
-    "unit_crafting_cost_x10": 4550,
-    "unit_crafting_cost_x100": 5305,
-    "unit_crafting_cost_x1000": 5305
+    "unit_crafting_cost_x1": 5931,
+    "unit_crafting_cost_x10": 5931,
+    "unit_crafting_cost_x100": 55632,
+    "unit_crafting_cost_x1000": 530535
   },
   {
     "id": 1531,
@@ -314,10 +314,10 @@
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 3539,
-    "unit_crafting_cost_x10": 3490,
-    "unit_crafting_cost_x100": 3779,
-    "unit_crafting_cost_x1000": 3779
+    "unit_crafting_cost_x1": 4986,
+    "unit_crafting_cost_x10": 4986,
+    "unit_crafting_cost_x100": 39266,
+    "unit_crafting_cost_x1000": 426312
   },
   {
     "id": 1536,
@@ -342,10 +342,10 @@
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 7992,
-    "unit_crafting_cost_x10": 7895,
-    "unit_crafting_cost_x100": 7895,
-    "unit_crafting_cost_x1000": 8099
+    "unit_crafting_cost_x1": 9687,
+    "unit_crafting_cost_x10": 9687,
+    "unit_crafting_cost_x100": 79921,
+    "unit_crafting_cost_x1000": 809928
   },
   {
     "id": 1537,
@@ -370,10 +370,10 @@
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 3505,
-    "unit_crafting_cost_x10": 2628,
-    "unit_crafting_cost_x100": 2624,
-    "unit_crafting_cost_x1000": 2624
+    "unit_crafting_cost_x1": 4806,
+    "unit_crafting_cost_x10": 4806,
+    "unit_crafting_cost_x100": 35370,
+    "unit_crafting_cost_x1000": 262782
   },
   {
     "id": 1538,
@@ -398,10 +398,10 @@
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 1968,
-    "unit_crafting_cost_x10": 1919,
-    "unit_crafting_cost_x100": 1919,
-    "unit_crafting_cost_x1000": 2250
+    "unit_crafting_cost_x1": 3434,
+    "unit_crafting_cost_x10": 3434,
+    "unit_crafting_cost_x100": 19675,
+    "unit_crafting_cost_x1000": 225758
   },
   {
     "id": 1882,
@@ -11922,10 +11922,10 @@
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 33840,
-    "unit_crafting_cost_x10": 33120,
-    "unit_crafting_cost_x100": 33120,
-    "unit_crafting_cost_x1000": 33120
+    "unit_crafting_cost_x1": 36350,
+    "unit_crafting_cost_x10": 34650,
+    "unit_crafting_cost_x100": 34650,
+    "unit_crafting_cost_x1000": 34650
   },
   {
     "id": 17444,

@@ -127,8 +127,7 @@ def save_selling_price(recipe_file: str, name: str, prices: dict):
             recipe["unit_selling_price_x10"]   = u10
             recipe["unit_selling_price_x100"]  = u100
             recipe["unit_selling_price_x1000"] = u1000
-            if any(v > 0 for v in (u1, u10, u100, u1000)):
-                recipe["selling_last_updated"] = _now_iso()
+            recipe.pop("selling_last_updated", None)  # se fija al terminar el cálculo de crafteo
 
     with open(recipe_file, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)

@@ -92,6 +92,7 @@ PROFESSION_ICONS = {
 }
 LOT_MULT = {"x1": 1, "x10": 10, "x100": 100, "x1000": 1000}
 
+INGREDIENTS_SHEET_NAME = "🧺 Ingredientes"
 INGREDIENTS_HEADERS = [
     "Profesión", "Receta", "Nivel",
     "Ingrediente", "Cantidad", "Precio unit", "Costo total", "Fuente",
@@ -99,11 +100,11 @@ INGREDIENTS_HEADERS = [
 
 # Columnas de cada hoja
 HEADERS = [
-    "Resultado", "Nivel",
-    "Costo unit x1",   "Venta unit x1",   "Ganancia unit x1",
-    "Costo unit x10",  "Venta unit x10",  "Ganancia unit x10",
-    "Costo unit x100", "Venta unit x100", "Ganancia unit x100",
-    "Costo unit x1000","Venta unit x1000","Ganancia unit x1000",
+    "Receta", "Nivel",
+    "Craft U. x1",   "Sell U. x1",   "Profit U. x1",
+    "Craft U. x10",  "Sell U. x10",  "Profit U. x10",
+    "Craft U. x100", "Sell U. x100", "Profit U. x100",
+    "Craft U. x1000","Sell U. x1000","Profit U. x1000",
     "Ingredientes",
 ]
 
@@ -134,7 +135,7 @@ def _load_ingredient_prices() -> dict[str, tuple[int, str | None]]:
                 vals = [item.get(f"unit_price_{s}", 0) for s in SIZES]
                 best = min((v for v in vals if v > 0), default=0)
                 if best:
-                    prices[item["name"]] = (best, None)
+                    prices[item["name"]] = (best, "buy")
 
     # Subrecetas: min(crafting_cost, selling_price) indicando la fuente
     for fname in os.listdir(RECIPES_DIR):
@@ -263,21 +264,20 @@ def get_or_create_worksheet(spreadsheet: gspread.Spreadsheet, title: str) -> gsp
 def write_ingredients_sheet(
     spreadsheet: gspread.Spreadsheet,
     data: dict[str, list[dict]],
-) -> tuple[int, dict[tuple[str, str], int]]:
+) -> tuple[int, dict[tuple[str, str], tuple[int, int]]]:
     """
     Escribe la hoja 'Ingredientes' con una fila por ingrediente.
-    Devuelve (sheet_id, {(profession, recipe_name): primera_fila_1indexed}).
+    Devuelve (sheet_id, {(profession, recipe_name): (primera_fila, ultima_fila)}).
     """
-    ws = get_or_create_worksheet(spreadsheet, "Ingredientes")
+    ws = get_or_create_worksheet(spreadsheet, INGREDIENTS_SHEET_NAME)
     _api_call(ws.clear)
 
     sheet_rows = [INGREDIENTS_HEADERS]
-    recipe_row_map: dict[tuple[str, str], int] = {}
+    recipe_row_map: dict[tuple[str, str], tuple[int, int]] = {}
 
     for profession, rows in sorted(data.items()):
         for recipe in rows:
             first_row = len(sheet_rows) + 1   # fila 1 = encabezado
-            recipe_row_map[(profession, recipe["result"])] = first_row
             for ing_name, ing_qty, ing_price, ing_source in recipe["raw_ingredients"]:
                 costo_total = ing_price * ing_qty if ing_price else ""
                 sheet_rows.append([
@@ -290,6 +290,8 @@ def write_ingredients_sheet(
                     costo_total,
                     ing_source or "???",
                 ])
+            last_row = len(sheet_rows)
+            recipe_row_map[(profession, recipe["result"])] = (first_row, last_row)
 
     _api_call(ws.update, "A1", sheet_rows, value_input_option="RAW")
 
@@ -341,18 +343,48 @@ def write_ingredients_sheet(
             }
             for i in range(len(INGREDIENTS_HEADERS))
         ],
+        # Filtro básico (tabla)
+        {
+            "setBasicFilter": {
+                "filter": {
+                    "range": {
+                        "sheetId": sheet_id,
+                        "startRowIndex": 0,
+                        "endRowIndex": len(sheet_rows),
+                        "startColumnIndex": 0,
+                        "endColumnIndex": len(INGREDIENTS_HEADERS),
+                    }
+                }
+            }
+        },
+        # Línea gruesa en la última fila de cada receta
+        *[
+            {
+                "updateBorders": {
+                    "range": {
+                        "sheetId": sheet_id,
+                        "startRowIndex": last_row - 1,
+                        "endRowIndex": last_row,
+                        "startColumnIndex": 0,
+                        "endColumnIndex": len(INGREDIENTS_HEADERS),
+                    },
+                    "bottom": {"style": "SOLID_THICK", "color": {"red": 0.3, "green": 0.3, "blue": 0.3}},
+                }
+            }
+            for _, (_, last_row) in recipe_row_map.items()
+        ],
     ]
     _api_call(ws.spreadsheet.batch_update, {"requests": requests})
-    print(f"  {'Ingredientes':<20} {n_data} filas escritas")
+    print(f"  {INGREDIENTS_SHEET_NAME:<20} {n_data} filas escritas")
 
     return sheet_id, recipe_row_map
 
 
-_RED      = {"red": 0.90, "green": 0.28, "blue": 0.28}
+_RED      = {"red": 0.96, "green": 0.70, "blue": 0.70}
 _WHITE    = {"red": 1.00, "green": 1.00, "blue": 1.00}
 _YELLOW   = {"red": 1.00, "green": 0.95, "blue": 0.60}
-_GREEN_LO = {"red": 0.72, "green": 0.92, "blue": 0.72}
-_GREEN_HI = {"red": 0.12, "green": 0.50, "blue": 0.18}
+_GREEN_LO = {"red": 0.85, "green": 0.96, "blue": 0.85}
+_GREEN_HI = {"red": 0.50, "green": 0.84, "blue": 0.55}
 
 GANANCIA_COLS = (4, 7, 10, 13)   # índices 0-based de las columnas de ganancia
 
@@ -431,12 +463,12 @@ def write_profession_sheet(
             lot_cols += [c, p, g]
 
         if ing_sheet_id is not None and recipe_row_map is not None:
-            first_row = recipe_row_map.get((profession, r["result"]), 2)
+            first_row, last_row = recipe_row_map.get((profession, r["result"]), (2, 2))
             url = (
                 f"https://docs.google.com/spreadsheets/d/{SPREADSHEET_ID}"
-                f"/edit#gid={ing_sheet_id}&range=A{first_row}"
+                f"/edit#gid={ing_sheet_id}&range=A{first_row}:H{last_row}"
             )
-            ing_cell = f'=HYPERLINK("{url}", "Ver ingredientes")'
+            ing_cell = f'=HYPERLINK("{url}"; "Ver ingredientes")'
         else:
             ing_cell = r["ingredientes"]
 
@@ -492,7 +524,7 @@ def write_profession_sheet(
             {
                 "updateDimensionProperties": {
                     "range": {"sheetId": sheet_id, "dimension": "COLUMNS", "startIndex": i, "endIndex": i + 1},
-                    "properties": {"pixelSize": _col_width(sheet_rows, i)},
+                    "properties": {"pixelSize": _col_width(sheet_rows, i) + (10 if i > 0 else 0)},
                     "fields": "pixelSize",
                 }
             }
@@ -516,6 +548,19 @@ def write_profession_sheet(
             }
             for col in (1, 4, 7, 10, 13)
         ],
+        # Alto de filas
+        {
+            "updateDimensionProperties": {
+                "range": {
+                    "sheetId": sheet_id,
+                    "dimension": "ROWS",
+                    "startIndex": 0,
+                    "endIndex": 1 + len(rows),
+                },
+                "properties": {"pixelSize": 30},
+                "fields": "pixelSize",
+            }
+        },
         # Fijar primera fila y primera columna
         {
             "updateSheetProperties": {
@@ -524,6 +569,20 @@ def write_profession_sheet(
                     "gridProperties": {"frozenRowCount": 1, "frozenColumnCount": 1},
                 },
                 "fields": "gridProperties.frozenRowCount,gridProperties.frozenColumnCount",
+            }
+        },
+        # Filtro básico (tabla)
+        {
+            "setBasicFilter": {
+                "filter": {
+                    "range": {
+                        "sheetId": sheet_id,
+                        "startRowIndex": 0,
+                        "endRowIndex": 1 + len(rows),
+                        "startColumnIndex": 0,
+                        "endColumnIndex": len(HEADERS),
+                    }
+                }
             }
         },
     ]
@@ -568,12 +627,9 @@ def export_profession(profession: str):
 
     print("Conectando a Google Sheets …")
     spreadsheet = _connect()
-    rows = data[norm]
-
     print("Escribiendo hoja de ingredientes …")
     ing_sheet_id, recipe_row_map = write_ingredients_sheet(spreadsheet, data)
-    time.sleep(2)
-
+    rows = data[norm]
     ws = get_or_create_worksheet(spreadsheet, norm)
     write_profession_sheet(ws, rows, profession=norm,
                            ing_sheet_id=ing_sheet_id, recipe_row_map=recipe_row_map)
@@ -612,7 +668,16 @@ def export_all_professions():
 def main():
     import sys
     if len(sys.argv) > 1:
-        export_profession(sys.argv[1])
+        if sys.argv[1].lower() == "ingredientes":
+            if not _validate_config():
+                return
+            print("Cargando recetas …")
+            data = load_recipes_by_profession()
+            print("Conectando a Google Sheets …")
+            write_ingredients_sheet(_connect(), data)
+            print("[DONE] Hoja de ingredientes exportada.")
+        else:
+            export_profession(sys.argv[1])
     else:
         export_all_professions()
 

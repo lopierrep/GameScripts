@@ -188,8 +188,17 @@ def _has_crafting_cost(recipe: dict) -> bool:
     return any(recipe.get(f"unit_crafting_cost_{s}", 0) > 0 for s in ("x1", "x10", "x100", "x1000"))
 
 
+def _recipe_is_fresh(recipe: dict) -> bool:
+    ts = recipe.get("selling_last_updated")
+    if not ts:
+        return False
+    from datetime import datetime, timezone
+    age = (datetime.now(timezone.utc) - datetime.fromisoformat(ts)).total_seconds()
+    return age < 3600
+
+
 def expand_sub_ingredients(ingredients: set[str], craftable: dict[str, dict]) -> set[str]:
-    """Añade recursivamente los ingredientes de subrecetas sin costo de crafteo."""
+    """Añade recursivamente los ingredientes de subrecetas que no están actualizadas."""
     expanded = set(ingredients)
     queue    = list(ingredients)
     visited  = set()
@@ -200,7 +209,7 @@ def expand_sub_ingredients(ingredients: set[str], craftable: dict[str, dict]) ->
             continue
         visited.add(name)
         recipe = craftable.get(name)
-        if recipe and not _has_crafting_cost(recipe):
+        if recipe and not _recipe_is_fresh(recipe):
             for ing in recipe.get("ingredients", []):
                 sub = ing["name"]
                 expanded.add(sub)
@@ -383,6 +392,9 @@ def search_market_batch(
 
     # Items con precio manual — preguntar al usuario al final del mercadillo
     for name in manual_ingredients:
+        if _ingredient_is_fresh(name, markets, item_lookup):
+            print(f"[SKIP] {name} — actualizado hace menos de 1h")
+            continue
         print(f"\n[MANUAL] {name}")
         prices = _ask_manual_prices(name)
         try:
@@ -483,6 +495,17 @@ def update_profession(profession: str, limit: int | None = None):
             if name not in market_groups[m]["ingredients"]:
                 market_groups[m]["ingredients"].append(name)
 
+    # Buscar precio de venta de subrecetas y añadirlas al batch de búsqueda
+    sub_results = all_ingredients & set(craftable.keys())
+    for sub_name in sub_results:
+        sub_recipe = craftable.get(sub_name, {})
+        category   = sub_recipe.get("category", UNKNOWN_KEY)
+        market_name = get_market_for_category(category, markets)
+        if market_name:
+            market_groups.setdefault(market_name, {"results": [], "ingredients": []})
+            if sub_name not in market_groups[market_name]["results"]:
+                market_groups[market_name]["results"].append(sub_name)
+
     if not market_groups:
         print("[INFO] No hay items para consultar en ningún mercadillo.")
     else:
@@ -506,7 +529,6 @@ def update_profession(profession: str, limit: int | None = None):
                 break
 
     # Calcular costos de subrecetas primero
-    sub_results = all_ingredients & set(craftable.keys())
     if sub_results:
         for sub_file in _sub_recipe_files(sub_results, recipe_file):
             print(f"[INFO] Calculando subrecetas en {os.path.basename(sub_file)} …")

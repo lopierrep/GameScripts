@@ -106,6 +106,17 @@ def run(result_name: str):
             if name not in market_groups[m]["ingredients"]:
                 market_groups[m]["ingredients"].append(name)
 
+    # Añadir subrecetas al batch de búsqueda de precios de venta
+    sub_results = all_ingredients & set(craftable.keys())
+    for sub_name in sub_results:
+        sub_recipe  = craftable.get(sub_name, {})
+        category    = sub_recipe.get("category", UNKNOWN_KEY)
+        market_name = get_market_for_category(category, markets)
+        if market_name:
+            market_groups.setdefault(market_name, {"results": [], "ingredients": []})
+            if sub_name not in market_groups[market_name]["results"]:
+                market_groups[market_name]["results"].append(sub_name)
+
     total_items = sum(len(g["results"]) + len(g["ingredients"]) for g in market_groups.values())
     print(f"[INFO] {total_items} items en {len(market_groups)} mercadillo(s). Pulsa Y para detener.\n")
     for i in range(3, 0, -1):
@@ -136,7 +147,8 @@ def run(result_name: str):
             print(f"[{idx}/{total}] [venta] {name} …", end=" ", flush=True)
             skipped = False
             try:
-                prices  = srsp.search_and_save_selling(recipe_file, name)
+                _, target_file = find_recipe(name)
+                prices  = srsp.search_and_save_selling(target_file or recipe_file, name)
                 skipped = prices.get("_skipped", False)
             except Exception as e:
                 print(f"ERROR — {e}")
@@ -170,7 +182,6 @@ def run(result_name: str):
                 print(f"ERROR al guardar — {e}")
 
     # Calcular costos de subrecetas primero
-    sub_results = all_ingredients & set(craftable.keys())
     if sub_results:
         for sub_file in _sub_recipe_files(sub_results, recipe_file):
             print(f"[INFO] Calculando subrecetas en {os.path.basename(sub_file)} …")
