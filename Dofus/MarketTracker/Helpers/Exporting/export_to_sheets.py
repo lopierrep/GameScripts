@@ -195,6 +195,20 @@ def best_sell_lot(recipe: dict) -> tuple[str, int]:
     return max(valid, key=lambda x: x[1]) if valid else ("x1", 0)
 
 
+def _collect_sub_recipes(recipe_name: str, craftable: dict, visited: set | None = None) -> set[str]:
+    """Devuelve recursivamente todos los nombres de sub-recetas de una receta."""
+    if visited is None:
+        visited = set()
+    subs = set()
+    for ing in craftable.get(recipe_name, []):
+        name = ing["name"]
+        if name in craftable and name not in visited:
+            visited.add(name)
+            subs.add(name)
+            subs |= _collect_sub_recipes(name, craftable, visited)
+    return subs
+
+
 def load_recipes_by_profession() -> dict[str, list[dict]]:
     """
     Devuelve {profesion: [filas_ordenadas]} donde cada fila es un dict listo para Sheets.
@@ -206,6 +220,15 @@ def load_recipes_by_profession() -> dict[str, list[dict]]:
 
     exceptions           = _load_omitted_items()
     omitted_categories   = _load_omitted_categories()
+
+    # Lookup de todas las recetas craftables: {result_name: [ingredients]}
+    craftable: dict[str, list] = {}
+    for path in files:
+        with open(path, encoding="utf-8") as f:
+            for recipe in json.load(f):
+                name = recipe.get("result", "")
+                if name:
+                    craftable[name] = recipe.get("ingredients", [])
 
     for path in files:
         profession = profession_from_filename(path)
@@ -233,15 +256,17 @@ def load_recipes_by_profession() -> dict[str, list[dict]]:
                 price, source = entry if entry else (0, None)
                 raw_ings.append((ing["name"], ing["quantity"], price, source))
 
+            result_name = recipe.get("result", "")
             rows.append({
-                "result":          recipe.get("result", ""),
-                "level":           recipe.get("level", ""),
-                "costos":          costos,
-                "precios":         precios,
-                "ganancias":       ganancias,
-                "best_ganancia":   max(ganancias),
-                "ingredientes":    format_ingredients(recipe.get("ingredients", []), price_lookup),
-                "raw_ingredients": raw_ings,
+                "result":            result_name,
+                "level":             recipe.get("level", ""),
+                "costos":            costos,
+                "precios":           precios,
+                "ganancias":         ganancias,
+                "best_ganancia":     max(ganancias),
+                "ingredientes":      format_ingredients(recipe.get("ingredients", []), price_lookup),
+                "raw_ingredients":   raw_ings,
+                "sub_recipe_names":  sorted(_collect_sub_recipes(result_name, craftable)),
             })
 
         # Ordenar de más profit a menos (por ganancia absoluta máxima entre lotes)
@@ -261,19 +286,37 @@ def get_or_create_worksheet(spreadsheet: gspread.Spreadsheet, title: str) -> gsp
         return _api_call(spreadsheet.add_worksheet, title=title, rows=500, cols=len(HEADERS))
 
 
+def _clear_filter_views(spreadsheet: gspread.Spreadsheet, sheet_id: int):
+    """Elimina todas las filter views existentes de una hoja específica."""
+    info = spreadsheet.client.request(
+        "GET",
+        f"https://sheets.googleapis.com/v4/spreadsheets/{spreadsheet.id}",
+        params={"fields": "sheets(properties/sheetId,filterViews/filterViewId)"},
+    ).json()
+    delete_requests = [
+        {"deleteFilterView": {"filterId": fv["filterViewId"]}}
+        for sheet in info.get("sheets", [])
+        if sheet.get("properties", {}).get("sheetId") == sheet_id
+        for fv in sheet.get("filterViews", [])
+    ]
+    if delete_requests:
+        _api_call(spreadsheet.batch_update, {"requests": delete_requests})
+
+
 def write_ingredients_sheet(
     spreadsheet: gspread.Spreadsheet,
     data: dict[str, list[dict]],
-) -> tuple[int, dict[tuple[str, str], tuple[int, int]]]:
+) -> tuple[int, dict[tuple[str, str], tuple[int, int]], dict[tuple[str, str], int]]:
     """
     Escribe la hoja 'Ingredientes' con una fila por ingrediente.
-    Devuelve (sheet_id, {(profession, recipe_name): (primera_fila, ultima_fila)}).
+    Devuelve (sheet_id, recipe_row_map, filter_view_map).
     """
     ws = get_or_create_worksheet(spreadsheet, INGREDIENTS_SHEET_NAME)
     _api_call(ws.clear)
 
     sheet_rows = [INGREDIENTS_HEADERS]
     recipe_row_map: dict[tuple[str, str], tuple[int, int]] = {}
+    recipe_order: list[tuple[str, str]] = []
 
     for profession, rows in sorted(data.items()):
         for recipe in rows:
@@ -291,14 +334,67 @@ def write_ingredients_sheet(
                     ing_source or "???",
                 ])
             last_row = len(sheet_rows)
-            recipe_row_map[(profession, recipe["result"])] = (first_row, last_row)
+            key = (profession, recipe["result"])
+            recipe_row_map[key] = (first_row, last_row)
+            recipe_order.append(key)
 
     _api_call(ws.update, "A1", sheet_rows, value_input_option="RAW")
 
     sheet_id = ws.id
     n_data = len(sheet_rows) - 1
 
+    _clear_filter_views(spreadsheet, sheet_id)
+
+    # Lookup rápido: recipe_name → sub_recipe_names
+    sub_recipe_lookup: dict[str, list[str]] = {}
+    for profession, rows in data.items():
+        for recipe in rows:
+            sub_recipe_lookup[recipe["result"]] = recipe.get("sub_recipe_names", [])
+
+    all_recipe_names_in_sheet = sorted({name for _, name in recipe_order})
+
+    filter_view_requests = []
+    for _, recipe_name in recipe_order:
+        sub_names = sub_recipe_lookup.get(recipe_name, [])
+        visible = {recipe_name} | set(sub_names)
+        hidden  = [n for n in all_recipe_names_in_sheet if n not in visible]
+
+        filter_view_requests.append({
+            "addFilterView": {
+                "filter": {
+                    "title": recipe_name,
+                    "range": {
+                        "sheetId": sheet_id,
+                        "startRowIndex": 0,
+                        "startColumnIndex": 0,
+                        "endColumnIndex": len(INGREDIENTS_HEADERS),
+                    },
+                    "criteria": {
+                        "1": {"hiddenValues": hidden},  # columna "Receta" (índice 1, 0-based)
+                    },
+                }
+            }
+        })
+
     requests = [
+        # Limpiar todos los bordes antes de aplicar los nuevos
+        {
+            "updateBorders": {
+                "range": {
+                    "sheetId": sheet_id,
+                    "startRowIndex": 0,
+                    "endRowIndex": 1000,
+                    "startColumnIndex": 0,
+                    "endColumnIndex": len(INGREDIENTS_HEADERS),
+                },
+                "top":             {"style": "NONE"},
+                "bottom":          {"style": "NONE"},
+                "left":            {"style": "NONE"},
+                "right":           {"style": "NONE"},
+                "innerHorizontal": {"style": "NONE"},
+                "innerVertical":   {"style": "NONE"},
+            }
+        },
         # Encabezado
         {
             "repeatCell": {
@@ -374,10 +470,21 @@ def write_ingredients_sheet(
             for _, (_, last_row) in recipe_row_map.items()
         ],
     ]
-    _api_call(ws.spreadsheet.batch_update, {"requests": requests})
-    print(f"  {INGREDIENTS_SHEET_NAME:<20} {n_data} filas escritas")
+    all_requests = requests + filter_view_requests
+    response = _api_call(ws.spreadsheet.batch_update, {"requests": all_requests})
 
-    return sheet_id, recipe_row_map
+    # Extraer filter view IDs de la respuesta
+    replies = response.get("replies", [])
+    fv_replies = replies[len(requests):]
+    filter_view_map: dict[tuple[str, str], int] = {}
+    for key, reply in zip(recipe_order, fv_replies):
+        fv_id = reply.get("addFilterView", {}).get("filter", {}).get("filterViewId")
+        if fv_id is not None:
+            filter_view_map[key] = fv_id
+
+    print(f"  {INGREDIENTS_SHEET_NAME:<20} {n_data} filas, {len(filter_view_map)} filter views")
+
+    return sheet_id, recipe_row_map, filter_view_map
 
 
 _RED      = {"red": 0.96, "green": 0.70, "blue": 0.70}
@@ -450,6 +557,7 @@ def write_profession_sheet(
     profession: str = "",
     ing_sheet_id: int | None = None,
     recipe_row_map: dict | None = None,
+    filter_view_map: dict | None = None,
 ):
     """Escribe encabezados + datos en la hoja, borrando el contenido anterior."""
     _api_call(ws.clear)
@@ -463,11 +571,19 @@ def write_profession_sheet(
             lot_cols += [c, p, g]
 
         if ing_sheet_id is not None and recipe_row_map is not None:
-            first_row, last_row = recipe_row_map.get((profession, r["result"]), (2, 2))
-            url = (
-                f"https://docs.google.com/spreadsheets/d/{SPREADSHEET_ID}"
-                f"/edit#gid={ing_sheet_id}&range=A{first_row}:H{last_row}"
-            )
+            key = (profession, r["result"])
+            fv_id = filter_view_map.get(key) if filter_view_map else None
+            if fv_id is not None:
+                url = (
+                    f"https://docs.google.com/spreadsheets/d/{SPREADSHEET_ID}"
+                    f"/edit#gid={ing_sheet_id}&fvid={fv_id}"
+                )
+            else:
+                first_row, last_row = recipe_row_map.get(key, (2, 2))
+                url = (
+                    f"https://docs.google.com/spreadsheets/d/{SPREADSHEET_ID}"
+                    f"/edit#gid={ing_sheet_id}&range=A{first_row}:H{last_row}"
+                )
             ing_cell = f'=HYPERLINK("{url}"; "Ver ingredientes")'
         else:
             ing_cell = r["ingredientes"]
@@ -628,11 +744,12 @@ def export_profession(profession: str):
     print("Conectando a Google Sheets …")
     spreadsheet = _connect()
     print("Escribiendo hoja de ingredientes …")
-    ing_sheet_id, recipe_row_map = write_ingredients_sheet(spreadsheet, data)
+    ing_sheet_id, recipe_row_map, filter_view_map = write_ingredients_sheet(spreadsheet, data)
     rows = data[norm]
     ws = get_or_create_worksheet(spreadsheet, norm)
     write_profession_sheet(ws, rows, profession=norm,
-                           ing_sheet_id=ing_sheet_id, recipe_row_map=recipe_row_map)
+                           ing_sheet_id=ing_sheet_id, recipe_row_map=recipe_row_map,
+                           filter_view_map=filter_view_map)
     print(f"[DONE] {norm}: {len(rows)} recetas exportadas.")
 
 
@@ -652,13 +769,14 @@ def export_all_professions():
     spreadsheet = _connect()
 
     print("Escribiendo hoja de ingredientes …")
-    ing_sheet_id, recipe_row_map = write_ingredients_sheet(spreadsheet, data)
+    ing_sheet_id, recipe_row_map, filter_view_map = write_ingredients_sheet(spreadsheet, data)
     time.sleep(2)
 
     for profession, rows in sorted(data.items()):
         ws = get_or_create_worksheet(spreadsheet, profession)
         write_profession_sheet(ws, rows, profession=profession,
-                               ing_sheet_id=ing_sheet_id, recipe_row_map=recipe_row_map)
+                               ing_sheet_id=ing_sheet_id, recipe_row_map=recipe_row_map,
+                               filter_view_map=filter_view_map)
         print(f"  {profession:<20} {len(rows)} recetas exportadas")
         time.sleep(2)
 
