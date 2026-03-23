@@ -21,16 +21,48 @@ Uso:
 import glob
 import json
 import os
+import time
 
 import gspread
 from google.oauth2.service_account import Credentials
 
+
+def _api_call(fn, *args, retries: int = 5, **kwargs):
+    """Llama fn(*args, **kwargs) reintentando con backoff exponencial si hay 429."""
+    delay = 10
+    for attempt in range(retries):
+        try:
+            return fn(*args, **kwargs)
+        except gspread.exceptions.APIError as e:
+            if e.response.status_code == 429 and attempt < retries - 1:
+                print(f"    [RATE LIMIT] Esperando {delay}s …")
+                time.sleep(delay)
+                delay *= 2
+            else:
+                raise
+
 # ── Configuración ─────────────────────────────────────────────────────────────
 
-BASE_DIR        = os.path.dirname(os.path.abspath(__file__))
-MARKET_DIR      = os.path.join(BASE_DIR, "..")
-RECIPES_DIR     = os.path.join(MARKET_DIR, "LifeSkillsRecipes")
+BASE_DIR         = os.path.dirname(os.path.abspath(__file__))
+RECIPES_DIR      = os.path.join(BASE_DIR, "..", "..", "Recipes")
+MARKETS_DIR      = os.path.join(BASE_DIR, "..", "..", "Markets")
 CREDENTIALS_FILE = os.path.join(BASE_DIR, "credentials.json")
+OMITTED_ITEMS_FILE      = os.path.join(BASE_DIR, "..", "SearchAndSave", "omitted_items.txt")
+OMITTED_CATEGORIES_FILE = os.path.join(BASE_DIR, "..", "SearchAndSave", "omitted_categories.txt")
+
+
+def _load_omitted_items() -> set[str]:
+    if not os.path.exists(OMITTED_ITEMS_FILE):
+        return set()
+    with open(OMITTED_ITEMS_FILE, encoding="utf-8") as f:
+        return {line.strip() for line in f if line.strip()}
+
+
+def _load_omitted_categories() -> set[str]:
+    if not os.path.exists(OMITTED_CATEGORIES_FILE):
+        return set()
+    with open(OMITTED_CATEGORIES_FILE, encoding="utf-8") as f:
+        return {line.strip() for line in f if line.strip()}
 
 # ID del spreadsheet (parte de la URL: /spreadsheets/d/<SPREADSHEET_ID>/edit)
 SPREADSHEET_ID  = "1S7B58S_tkt4kx4vopK9fVzP9rMbWybUC3xrWUrqBuT8"
@@ -40,15 +72,38 @@ SCOPES = [
 ]
 
 SIZES = ["x1", "x10", "x100", "x1000"]
+
+PROFESSION_ICONS = {
+    "Alquimista":  "🧪",
+    "Base":        "📦",
+    "Campesino":   "🌾",
+    "Cazador":     "🏹",
+    "Escultor":    "🗿",
+    "Fabricante":  "🛡️",
+    "Ganadero":    "🐾",
+    "Herrero":     "⚒️",
+    "Joyero":      "💎",
+    "Leñador":     "🪓",
+    "Manitas":     "🛠️",
+    "Minero":      "⛏️",
+    "Pescador":    "🎣",
+    "Sastre":      "🧵",
+    "Zapatero":    "🥾",
+}
 LOT_MULT = {"x1": 1, "x10": 10, "x100": 100, "x1000": 1000}
+
+INGREDIENTS_HEADERS = [
+    "Profesión", "Receta", "Nivel",
+    "Ingrediente", "Cantidad", "Precio unit", "Costo total", "Fuente",
+]
 
 # Columnas de cada hoja
 HEADERS = [
     "Resultado", "Nivel",
-    "Costo x1",   "Venta x1",   "Ganancia x1",
-    "Costo x10",  "Venta x10",  "Ganancia x10",
-    "Costo x100", "Venta x100", "Ganancia x100",
-    "Costo x1000","Venta x1000","Ganancia x1000",
+    "Costo unit x1",   "Venta unit x1",   "Ganancia unit x1",
+    "Costo unit x10",  "Venta unit x10",  "Ganancia unit x10",
+    "Costo unit x100", "Venta unit x100", "Ganancia unit x100",
+    "Costo unit x1000","Venta unit x1000","Ganancia unit x1000",
     "Ingredientes",
 ]
 
@@ -56,15 +111,67 @@ HEADERS = [
 # ── Lógica de datos ───────────────────────────────────────────────────────────
 
 def profession_from_filename(path: str) -> str:
-    """Extrae el nombre de profesión del nombre de archivo (recipes_herrero.json → Herrero)."""
-    basename = os.path.basename(path)          # recipes_herrero.json
-    name = basename.replace("recipes_", "").replace(".json", "")
-    return name.capitalize()
+    """Extrae el nombre de profesión del nombre de archivo (recipes_herrero.json → Herrero ⚒️)."""
+    basename = os.path.basename(path)
+    name = basename.replace("recipes_", "").replace(".json", "").capitalize()
+    icon = PROFESSION_ICONS.get(name, "")
+    return f"{name} {icon}" if icon else name
 
 
-def format_ingredients(ingredients: list) -> str:
-    """Convierte lista de ingredientes a string legible."""
-    return ", ".join(f"{ing['name']} x{ing['quantity']}" for ing in ingredients)
+def _load_ingredient_prices() -> dict[str, tuple[int, str | None]]:
+    """Devuelve {nombre: (precio_unitario, fuente)} donde fuente es None, 'craft' o 'venta'."""
+    prices = {}
+
+    # Precios de materiales de todos los mercadillos (sin fuente)
+    for folder in os.listdir(MARKETS_DIR):
+        fp = os.path.join(MARKETS_DIR, folder, "materials_prices.json")
+        if not os.path.exists(fp):
+            continue
+        with open(fp, encoding="utf-8") as f:
+            data = json.load(f)
+        for items in data.values():
+            for item in items:
+                vals = [item.get(f"unit_price_{s}", 0) for s in SIZES]
+                best = min((v for v in vals if v > 0), default=0)
+                if best:
+                    prices[item["name"]] = (best, None)
+
+    # Subrecetas: min(crafting_cost, selling_price) indicando la fuente
+    for fname in os.listdir(RECIPES_DIR):
+        if not fname.startswith("recipes_") or not fname.endswith(".json"):
+            continue
+        with open(os.path.join(RECIPES_DIR, fname), encoding="utf-8") as f:
+            for recipe in json.load(f):
+                name  = recipe.get("result", "")
+                craft = min((recipe.get(f"unit_crafting_cost_{s}", 0) for s in SIZES if recipe.get(f"unit_crafting_cost_{s}", 0) > 0), default=0)
+                sell  = min((recipe.get(f"unit_selling_price_{s}",  0) for s in SIZES if recipe.get(f"unit_selling_price_{s}",  0) > 0), default=0)
+                if craft > 0 and sell > 0:
+                    if craft <= sell:
+                        prices[name] = (craft, "craft")
+                    else:
+                        prices[name] = (sell, "buy")
+                elif craft > 0:
+                    prices[name] = (craft, "craft")
+                elif sell > 0:
+                    prices[name] = (sell, "buy")
+
+    return prices
+
+
+def format_ingredients(ingredients: list, price_lookup: dict) -> str:
+    """Convierte lista de ingredientes a string con precio unitario y fuente."""
+    parts = []
+    for ing in ingredients:
+        name        = ing["name"]
+        qty         = ing["quantity"]
+        entry       = price_lookup.get(name)
+        if entry:
+            price, source = entry
+            label = f"{price:,} {source}" if source else f"{price:,}"
+            parts.append(f"{name}({label})x{qty}")
+        else:
+            parts.append(f"{name} x{qty}")
+    return " | ".join(parts)
 
 
 def calc_margin(ganancia: float, costo: float) -> str:
@@ -92,8 +199,12 @@ def load_recipes_by_profession() -> dict[str, list[dict]]:
     Devuelve {profesion: [filas_ordenadas]} donde cada fila es un dict listo para Sheets.
     Solo incluye recetas con precio_venta y costo_fabricacion conocidos (no None, no 0).
     """
-    files = sorted(glob.glob(os.path.join(RECIPES_DIR, "recipes_*.json")))
-    result = {}
+    files         = sorted(glob.glob(os.path.join(RECIPES_DIR, "recipes_*.json")))
+    result        = {}
+    price_lookup  = _load_ingredient_prices()
+
+    exceptions           = _load_omitted_items()
+    omitted_categories   = _load_omitted_categories()
 
     for path in files:
         profession = profession_from_filename(path)
@@ -102,6 +213,10 @@ def load_recipes_by_profession() -> dict[str, list[dict]]:
 
         rows = []
         for recipe in data:
+            if recipe.get("result") in exceptions:
+                continue
+            if recipe.get("category") in omitted_categories:
+                continue
             costos  = [recipe.get(f"unit_crafting_cost_{s}", 0)  for s in SIZES]
             precios = [recipe.get(f"unit_selling_price_{s}", 0) for s in SIZES]
 
@@ -111,14 +226,21 @@ def load_recipes_by_profession() -> dict[str, list[dict]]:
 
             ganancias = [p - c if c > 0 and p > 0 else 0 for c, p in zip(costos, precios)]
 
+            raw_ings = []
+            for ing in recipe.get("ingredients", []):
+                entry = price_lookup.get(ing["name"])
+                price, source = entry if entry else (0, None)
+                raw_ings.append((ing["name"], ing["quantity"], price, source))
+
             rows.append({
-                "result":       recipe.get("result", ""),
-                "level":        recipe.get("level", ""),
-                "costos":       costos,
-                "precios":      precios,
-                "ganancias":    ganancias,
-                "best_ganancia": max(ganancias),
-                "ingredientes": format_ingredients(recipe.get("ingredients", [])),
+                "result":          recipe.get("result", ""),
+                "level":           recipe.get("level", ""),
+                "costos":          costos,
+                "precios":         precios,
+                "ganancias":       ganancias,
+                "best_ganancia":   max(ganancias),
+                "ingredientes":    format_ingredients(recipe.get("ingredients", []), price_lookup),
+                "raw_ingredients": raw_ings,
             })
 
         # Ordenar de más profit a menos (por ganancia absoluta máxima entre lotes)
@@ -133,13 +255,102 @@ def load_recipes_by_profession() -> dict[str, list[dict]]:
 def get_or_create_worksheet(spreadsheet: gspread.Spreadsheet, title: str) -> gspread.Worksheet:
     """Devuelve la hoja con ese título, creándola si no existe."""
     try:
-        return spreadsheet.worksheet(title)
+        return _api_call(spreadsheet.worksheet, title)
     except gspread.exceptions.WorksheetNotFound:
-        return spreadsheet.add_worksheet(title=title, rows=500, cols=len(HEADERS))
+        return _api_call(spreadsheet.add_worksheet, title=title, rows=500, cols=len(HEADERS))
 
 
-_RED   = {"red": 0.90, "green": 0.28, "blue": 0.28}
-_WHITE = {"red": 1.00, "green": 1.00, "blue": 1.00}
+def write_ingredients_sheet(
+    spreadsheet: gspread.Spreadsheet,
+    data: dict[str, list[dict]],
+) -> tuple[int, dict[tuple[str, str], int]]:
+    """
+    Escribe la hoja 'Ingredientes' con una fila por ingrediente.
+    Devuelve (sheet_id, {(profession, recipe_name): primera_fila_1indexed}).
+    """
+    ws = get_or_create_worksheet(spreadsheet, "Ingredientes")
+    _api_call(ws.clear)
+
+    sheet_rows = [INGREDIENTS_HEADERS]
+    recipe_row_map: dict[tuple[str, str], int] = {}
+
+    for profession, rows in sorted(data.items()):
+        for recipe in rows:
+            first_row = len(sheet_rows) + 1   # fila 1 = encabezado
+            recipe_row_map[(profession, recipe["result"])] = first_row
+            for ing_name, ing_qty, ing_price, ing_source in recipe["raw_ingredients"]:
+                costo_total = ing_price * ing_qty if ing_price else ""
+                sheet_rows.append([
+                    profession,
+                    recipe["result"],
+                    recipe["level"],
+                    ing_name,
+                    ing_qty,
+                    ing_price or "",
+                    costo_total,
+                    ing_source or "???",
+                ])
+
+    _api_call(ws.update, "A1", sheet_rows, value_input_option="RAW")
+
+    sheet_id = ws.id
+    n_data = len(sheet_rows) - 1
+
+    requests = [
+        # Encabezado
+        {
+            "repeatCell": {
+                "range": {"sheetId": sheet_id, "startRowIndex": 0, "endRowIndex": 1},
+                "cell": {"userEnteredFormat": {
+                    "backgroundColor": {"red": 0.2, "green": 0.35, "blue": 0.6},
+                    "textFormat": {"bold": True, "foregroundColor": {"red": 1, "green": 1, "blue": 1}},
+                }},
+                "fields": "userEnteredFormat(backgroundColor,textFormat)",
+            }
+        },
+        # Formato numérico en columnas Cantidad, Precio unit, Costo total (D, E, F → índices 4,5,6)
+        {
+            "repeatCell": {
+                "range": {"sheetId": sheet_id, "startRowIndex": 1,
+                          "startColumnIndex": 4, "endColumnIndex": 7},
+                "cell": {"userEnteredFormat": {
+                    "numberFormat": {"type": "NUMBER", "pattern": "#,##0"},
+                }},
+                "fields": "userEnteredFormat.numberFormat",
+            }
+        },
+        # Fijar primera fila
+        {
+            "updateSheetProperties": {
+                "properties": {
+                    "sheetId": sheet_id,
+                    "gridProperties": {"frozenRowCount": 1},
+                },
+                "fields": "gridProperties.frozenRowCount",
+            }
+        },
+        # Ancho de columnas
+        *[
+            {
+                "updateDimensionProperties": {
+                    "range": {"sheetId": sheet_id, "dimension": "COLUMNS",
+                              "startIndex": i, "endIndex": i + 1},
+                    "properties": {"pixelSize": _col_width(sheet_rows, i)},
+                    "fields": "pixelSize",
+                }
+            }
+            for i in range(len(INGREDIENTS_HEADERS))
+        ],
+    ]
+    _api_call(ws.spreadsheet.batch_update, {"requests": requests})
+    print(f"  {'Ingredientes':<20} {n_data} filas escritas")
+
+    return sheet_id, recipe_row_map
+
+
+_RED      = {"red": 0.90, "green": 0.28, "blue": 0.28}
+_WHITE    = {"red": 1.00, "green": 1.00, "blue": 1.00}
+_YELLOW   = {"red": 1.00, "green": 0.95, "blue": 0.60}
 _GREEN_LO = {"red": 0.72, "green": 0.92, "blue": 0.72}
 _GREEN_HI = {"red": 0.12, "green": 0.50, "blue": 0.18}
 
@@ -158,7 +369,9 @@ def _row_ganancia_colors(ganancias: list) -> list[dict]:
     for value in ganancias:
         if value < 0:
             colors.append(_RED)
-        elif value == 0 or n == 0:
+        elif value == 0:
+            colors.append(_YELLOW)
+        elif n == 0:
             colors.append(_WHITE)
         else:
             rank = positives.index(value)          # 0 = menor, n-1 = mayor
@@ -199,9 +412,15 @@ def _col_width(sheet_rows: list[list], col_idx: int, px_per_char: int = 7, paddi
     return max_len * px_per_char + padding
 
 
-def write_profession_sheet(ws: gspread.Worksheet, rows: list[dict]):
+def write_profession_sheet(
+    ws: gspread.Worksheet,
+    rows: list[dict],
+    profession: str = "",
+    ing_sheet_id: int | None = None,
+    recipe_row_map: dict | None = None,
+):
     """Escribe encabezados + datos en la hoja, borrando el contenido anterior."""
-    ws.clear()
+    _api_call(ws.clear)
 
     sheet_id = ws.id
 
@@ -210,14 +429,25 @@ def write_profession_sheet(ws: gspread.Worksheet, rows: list[dict]):
         lot_cols = []
         for c, p, g in zip(r["costos"], r["precios"], r["ganancias"]):
             lot_cols += [c, p, g]
+
+        if ing_sheet_id is not None and recipe_row_map is not None:
+            first_row = recipe_row_map.get((profession, r["result"]), 2)
+            url = (
+                f"https://docs.google.com/spreadsheets/d/{SPREADSHEET_ID}"
+                f"/edit#gid={ing_sheet_id}&range=A{first_row}"
+            )
+            ing_cell = f'=HYPERLINK("{url}", "Ver ingredientes")'
+        else:
+            ing_cell = r["ingredientes"]
+
         sheet_rows.append([
             r["result"],
             r["level"],
             *lot_cols,
-            r["ingredientes"],
+            ing_cell,
         ])
 
-    ws.update("A1", sheet_rows)
+    _api_call(ws.update, "A1", sheet_rows, value_input_option="USER_ENTERED")
 
     # Construir requests de formato + ancho de columnas en una sola llamada
     requests = [
@@ -286,22 +516,73 @@ def write_profession_sheet(ws: gspread.Worksheet, rows: list[dict]):
             }
             for col in (1, 4, 7, 10, 13)
         ],
+        # Fijar primera fila y primera columna
+        {
+            "updateSheetProperties": {
+                "properties": {
+                    "sheetId": sheet_id,
+                    "gridProperties": {"frozenRowCount": 1, "frozenColumnCount": 1},
+                },
+                "fields": "gridProperties.frozenRowCount,gridProperties.frozenColumnCount",
+            }
+        },
     ]
 
-    ws.spreadsheet.batch_update({"requests": requests})
+    _api_call(ws.spreadsheet.batch_update, {"requests": requests})
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
-def main():
+def _connect() -> gspread.Spreadsheet:
+    creds = Credentials.from_service_account_file(CREDENTIALS_FILE, scopes=SCOPES)
+    client = gspread.authorize(creds)
+    return client.open_by_key(SPREADSHEET_ID)
+
+
+def _validate_config() -> bool:
     if not os.path.exists(CREDENTIALS_FILE):
         print(f"[ERROR] No se encontró: {CREDENTIALS_FILE}")
         print("  → Descarga las credenciales de tu Service Account desde Google Cloud.")
-        return
-
+        return False
     if SPREADSHEET_ID == "TU_SPREADSHEET_ID_AQUI":
         print("[ERROR] Falta configurar SPREADSHEET_ID en este script.")
         print("  → Copia el ID de la URL de tu Google Sheet.")
+        return False
+    return True
+
+
+def export_profession(profession: str):
+    """Exporta una única profesión a su hoja en Google Sheets."""
+    if not _validate_config():
+        return
+
+    data = load_recipes_by_profession()
+    cap  = profession.capitalize()
+    icon = PROFESSION_ICONS.get(cap, "")
+    norm = f"{cap} {icon}" if icon else cap
+    if norm not in data:
+        available = ", ".join(sorted(data.keys()))
+        print(f"[ERROR] Profesión '{profession}' no encontrada.")
+        print(f"  Disponibles: {available}")
+        return
+
+    print("Conectando a Google Sheets …")
+    spreadsheet = _connect()
+    rows = data[norm]
+
+    print("Escribiendo hoja de ingredientes …")
+    ing_sheet_id, recipe_row_map = write_ingredients_sheet(spreadsheet, data)
+    time.sleep(2)
+
+    ws = get_or_create_worksheet(spreadsheet, norm)
+    write_profession_sheet(ws, rows, profession=norm,
+                           ing_sheet_id=ing_sheet_id, recipe_row_map=recipe_row_map)
+    print(f"[DONE] {norm}: {len(rows)} recetas exportadas.")
+
+
+def export_all_professions():
+    """Exporta todas las profesiones a Google Sheets."""
+    if not _validate_config():
         return
 
     print("Cargando recetas …")
@@ -312,16 +593,28 @@ def main():
         return
 
     print("Conectando a Google Sheets …")
-    creds = Credentials.from_service_account_file(CREDENTIALS_FILE, scopes=SCOPES)
-    client = gspread.authorize(creds)
-    spreadsheet = client.open_by_key(SPREADSHEET_ID)
+    spreadsheet = _connect()
+
+    print("Escribiendo hoja de ingredientes …")
+    ing_sheet_id, recipe_row_map = write_ingredients_sheet(spreadsheet, data)
+    time.sleep(2)
 
     for profession, rows in sorted(data.items()):
         ws = get_or_create_worksheet(spreadsheet, profession)
-        write_profession_sheet(ws, rows)
+        write_profession_sheet(ws, rows, profession=profession,
+                               ing_sheet_id=ing_sheet_id, recipe_row_map=recipe_row_map)
         print(f"  {profession:<20} {len(rows)} recetas exportadas")
+        time.sleep(2)
 
     print(f"\n[DONE] {len(data)} profesiones exportadas.")
+
+
+def main():
+    import sys
+    if len(sys.argv) > 1:
+        export_profession(sys.argv[1])
+    else:
+        export_all_professions()
 
 
 if __name__ == "__main__":
