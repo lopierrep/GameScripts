@@ -9,42 +9,26 @@ Uso:
     python save_recipe_selling_prices.py zapatero 5
 """
 
-import glob
 import json
 import os
 import sys
 import time
-import unicodedata
 from datetime import datetime, timezone
 
 from . import search_item_prices as sip
 from .search_item_prices import search_item, read_prices
+from .common import (
+    CACHE_SECONDS,
+    _load_omitted_items,
+    _load_omitted_categories,
+    _normalize,
+    _now_iso,
+    _parse_price,
+    find_recipe_file as _find_recipe_file_by_profession,
+)
 
-BASE_DIR        = os.path.dirname(os.path.abspath(__file__))
-RECIPES_DIR     = os.path.join(BASE_DIR, "..", "..", "Recipes")
-OMITTED_ITEMS_FILE         = os.path.join(BASE_DIR, "omitted_items.txt")
-OMITTED_CATEGORIES_FILE = os.path.join(BASE_DIR, "omitted_categories.txt")
-
-
-def _load_omitted_items() -> set[str]:
-    if not os.path.exists(OMITTED_ITEMS_FILE):
-        return set()
-    with open(OMITTED_ITEMS_FILE, encoding="utf-8") as f:
-        return {line.strip() for line in f if line.strip()}
-
-
-def _load_omitted_categories() -> set[str]:
-    if not os.path.exists(OMITTED_CATEGORIES_FILE):
-        return set()
-    with open(OMITTED_CATEGORIES_FILE, encoding="utf-8") as f:
-        return {line.strip() for line in f if line.strip()}
-
-
-CACHE_SECONDS = 3600  # 1 hora
-
-
-def _now_iso() -> str:
-    return datetime.now(timezone.utc).isoformat()
+BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
+RECIPES_DIR = os.path.join(BASE_DIR, "..", "..", "Recipes")
 
 
 def _is_fresh(recipe: dict) -> bool:
@@ -55,26 +39,8 @@ def _is_fresh(recipe: dict) -> bool:
     return age < CACHE_SECONDS
 
 
-def _normalize(s: str) -> str:
-    return "".join(
-        c for c in unicodedata.normalize("NFD", s.lower())
-        if unicodedata.category(c) != "Mn"
-    )
-
-
-def _parse_price(prices: dict, pack: str) -> int:
-    raw = prices.get(f"unit_price_x{pack}", "N/A")
-    return int(raw) if raw not in ("N/A", "ERROR", "") and raw.isdigit() else 0
-
-
 def find_recipe_file(profession: str) -> str | None:
-    norm = _normalize(profession)
-    for fname in os.listdir(RECIPES_DIR):
-        if fname.startswith("recipes_") and fname.endswith(".json"):
-            prof_part = fname[len("recipes_"):-len(".json")]
-            if _normalize(prof_part) == norm:
-                return os.path.join(RECIPES_DIR, fname)
-    return None
+    return _find_recipe_file_by_profession(profession, RECIPES_DIR)
 
 
 def _sanitize_unit_prices(prices: list[int]) -> list[int]:
@@ -194,11 +160,12 @@ def update_profession_selling_prices(profession: str, limit: int | None = None):
 
     for idx, name in enumerate(results, 1):
         print(f"[{idx}/{len(results)}] {name} …", end=" ", flush=True)
+        prices = {}
         try:
-            search_and_save_selling(recipe_file, name)
+            prices = search_and_save_selling(recipe_file, name)
         except Exception as e:
             print(f"ERROR — {e}")
-        finally:
+        if not prices.get("_skipped"):
             import keyboard as kb
             kb.press_and_release("esc")
             time.sleep(0.15)

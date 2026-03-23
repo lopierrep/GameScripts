@@ -17,7 +17,6 @@ import json
 import os
 import sys
 import time
-import unicodedata
 from datetime import datetime, timezone
 
 import keyboard
@@ -32,6 +31,13 @@ from Helpers.SearchAndSave import search_item_prices as sip
 from Helpers.SearchAndSave import save_recipe_selling_prices as srsp
 from Helpers.SearchAndSave import save_recipe_crafting_prices as srp
 from Helpers.Exporting.export_to_sheets import export_profession
+from Helpers.SearchAndSave.common import (
+    CACHE_SECONDS,
+    _normalize,
+    _now_iso,
+    _parse_price as _parse_price_str,
+    find_recipe_file as _find_recipe_file,
+)
 
 DELAY_BETWEEN_ITEMS = 0.3
 DOFUSDB_URL         = "https://api.dofusdb.fr"
@@ -47,12 +53,6 @@ def on_key_press(event):
 
 
 # ── Utilidades ────────────────────────────────────────────────────────────────
-
-def _normalize(s: str) -> str:
-    return "".join(
-        c for c in unicodedata.normalize("NFD", s.lower())
-        if unicodedata.category(c) != "Mn"
-    )
 
 
 MANUAL_PRICE_FILE = os.path.join(BASE_DIR, "Helpers", "SearchAndSave", "manual_price_items.txt")
@@ -83,12 +83,7 @@ def _ask_manual_prices(name: str) -> dict:
 
 
 def _price_found(prices: dict) -> bool:
-    return any(v not in ("N/A", "", "0", 0) for v in prices.values())
-
-
-def _parse_price_str(prices: dict, pack: str) -> int:
-    raw = prices.get(f"unit_price_x{pack}", "N/A")
-    return int(raw) if raw not in ("N/A", "ERROR", "") and str(raw).isdigit() else 0
+    return any(v not in ("N/A", "", "0", 0) for k, v in prices.items() if k != "_skipped")
 
 
 # ── Mercadillos ───────────────────────────────────────────────────────────────
@@ -184,6 +179,18 @@ def _load_all_craftable_recipes() -> dict[str, dict]:
     return craftable
 
 
+def _build_result_file_map() -> dict[str, str]:
+    """Devuelve {result_name: recipe_file_path} para todas las recetas."""
+    result_map = {}
+    for fname in os.listdir(RECIPES_DIR):
+        if fname.startswith("recipes_") and fname.endswith(".json"):
+            path = os.path.join(RECIPES_DIR, fname)
+            with open(path, encoding="utf-8") as f:
+                for r in json.load(f):
+                    result_map[r["result"]] = path
+    return result_map
+
+
 def _has_crafting_cost(recipe: dict) -> bool:
     return any(recipe.get(f"unit_crafting_cost_{s}", 0) > 0 for s in ("x1", "x10", "x100", "x1000"))
 
@@ -192,9 +199,8 @@ def _recipe_is_fresh(recipe: dict) -> bool:
     ts = recipe.get("selling_last_updated")
     if not ts:
         return False
-    from datetime import datetime, timezone
     age = (datetime.now(timezone.utc) - datetime.fromisoformat(ts)).total_seconds()
-    return age < 3600
+    return age < CACHE_SECONDS
 
 
 def expand_sub_ingredients(ingredients: set[str], craftable: dict[str, dict]) -> set[str]:
@@ -262,13 +268,6 @@ def ensure_catalogued(names: set[str], markets: dict, item_lookup: dict):
 
 # ── Guardado de precios de ingredientes ───────────────────────────────────────
 
-CACHE_SECONDS = 3600  # 1 hora
-
-
-def _now_iso() -> str:
-    return datetime.now(timezone.utc).isoformat()
-
-
 def _ingredient_is_fresh(name: str, markets: dict, item_lookup: dict) -> bool:
     market_name = item_lookup.get(name)
     if not market_name:
@@ -331,8 +330,10 @@ def search_market_batch(
     recipe_file: str,
     markets: dict,
     item_lookup: dict,
+    result_file_map: dict[str, str] | None = None,
 ) -> tuple[list[str], list[str]]:
     """Busca precios de results e ingredients en el mercadillo indicado.
+    result_file_map permite resolver el archivo correcto para cada resultado (necesario para subrecetas).
     Devuelve (missing_results, missing_ingredients)."""
     global stop_requested
 
@@ -356,16 +357,16 @@ def search_market_batch(
             return missing_results, missing_ingredients + manual_ingredients
         idx += 1
         print(f"[{idx}/{total}] [venta] {name} …", end=" ", flush=True)
-        skipped = False
+        prices = {}
+        target_file = (result_file_map or {}).get(name, recipe_file)
         try:
-            prices = srsp.search_and_save_selling(recipe_file, name)
-            skipped = prices.get("_skipped", False)
+            prices = srsp.search_and_save_selling(target_file, name)
             if not _price_found(prices):
                 missing_results.append(name)
         except Exception as e:
             print(f"ERROR — {e}")
             missing_results.append(name)
-        if not skipped:
+        if not prices.get("_skipped"):
             keyboard.press_and_release("esc")
             time.sleep(0.15)
         time.sleep(DELAY_BETWEEN_ITEMS)
@@ -376,16 +377,15 @@ def search_market_batch(
             return missing_results, missing_ingredients + manual_ingredients
         idx += 1
         print(f"[{idx}/{total}] [ingrediente] {name} …", end=" ", flush=True)
-        skipped = False
+        prices = {}
         try:
             prices = search_and_save_ingredient(name, markets, item_lookup)
-            skipped = prices.get("_skipped", False)
             if not _price_found(prices):
                 missing_ingredients.append(name)
         except Exception as e:
             print(f"ERROR — {e}")
             missing_ingredients.append(name)
-        if not skipped:
+        if not prices.get("_skipped"):
             keyboard.press_and_release("esc")
             time.sleep(0.15)
         time.sleep(DELAY_BETWEEN_ITEMS)
@@ -404,18 +404,6 @@ def search_market_batch(
             missing_ingredients.append(name)
 
     return missing_results, missing_ingredients
-
-
-# ── Búsqueda de archivo de recetas ────────────────────────────────────────────
-
-def find_recipe_file(profession: str) -> str | None:
-    norm = _normalize(profession)
-    for fname in os.listdir(RECIPES_DIR):
-        if fname.startswith("recipes_") and fname.endswith(".json"):
-            prof_part = fname[len("recipes_"):-len(".json")]
-            if _normalize(prof_part) == norm:
-                return os.path.join(RECIPES_DIR, fname)
-    return None
 
 
 # ── Cálculo de subrecetas ─────────────────────────────────────────────────────
@@ -438,7 +426,7 @@ def _sub_recipe_files(sub_results: set[str], main_recipe_file: str) -> list[str]
 # ── Actualización de recetas ──────────────────────────────────────────────────
 
 def update_profession(profession: str, limit: int | None = None):
-    recipe_file = find_recipe_file(profession)
+    recipe_file = _find_recipe_file(profession, RECIPES_DIR)
     if not recipe_file:
         available = sorted(
             f[len("recipes_"):-len(".json")]
@@ -506,6 +494,8 @@ def update_profession(profession: str, limit: int | None = None):
             if sub_name not in market_groups[market_name]["results"]:
                 market_groups[market_name]["results"].append(sub_name)
 
+    result_file_map = _build_result_file_map()
+
     if not market_groups:
         print("[INFO] No hay items para consultar en ningún mercadillo.")
     else:
@@ -521,6 +511,7 @@ def update_profession(profession: str, limit: int | None = None):
                 recipe_file,
                 markets,
                 item_lookup,
+                result_file_map,
             )
             if (miss_r or miss_i) and not stop_requested:
                 total = len(miss_r) + len(miss_i)

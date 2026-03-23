@@ -76,10 +76,9 @@ if calibration is None:
 ManualStop = False
 def OnPress(event):
     global ManualStop
-    print("event.name: ", event.name)
     if event.name == "y":
         ManualStop = True
-        print("Press wil not repeat after this iteration")
+        print("Press will not repeat after this iteration")
 
 keyboard.on_press(OnPress)
 

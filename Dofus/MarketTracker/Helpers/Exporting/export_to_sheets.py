@@ -21,10 +21,18 @@ Uso:
 import glob
 import json
 import os
+import sys
 import time
 
 import gspread
 from google.oauth2.service_account import Credentials
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
+from Helpers.SearchAndSave.common import (
+    SIZES,
+    _load_omitted_items,
+    _load_omitted_categories,
+)
 
 
 def _api_call(fn, *args, retries: int = 5, **kwargs):
@@ -47,22 +55,6 @@ BASE_DIR         = os.path.dirname(os.path.abspath(__file__))
 RECIPES_DIR      = os.path.join(BASE_DIR, "..", "..", "Recipes")
 MARKETS_DIR      = os.path.join(BASE_DIR, "..", "..", "Markets")
 CREDENTIALS_FILE = os.path.join(BASE_DIR, "credentials.json")
-OMITTED_ITEMS_FILE      = os.path.join(BASE_DIR, "..", "SearchAndSave", "omitted_items.txt")
-OMITTED_CATEGORIES_FILE = os.path.join(BASE_DIR, "..", "SearchAndSave", "omitted_categories.txt")
-
-
-def _load_omitted_items() -> set[str]:
-    if not os.path.exists(OMITTED_ITEMS_FILE):
-        return set()
-    with open(OMITTED_ITEMS_FILE, encoding="utf-8") as f:
-        return {line.strip() for line in f if line.strip()}
-
-
-def _load_omitted_categories() -> set[str]:
-    if not os.path.exists(OMITTED_CATEGORIES_FILE):
-        return set()
-    with open(OMITTED_CATEGORIES_FILE, encoding="utf-8") as f:
-        return {line.strip() for line in f if line.strip()}
 
 # ID del spreadsheet (parte de la URL: /spreadsheets/d/<SPREADSHEET_ID>/edit)
 SPREADSHEET_ID  = "1S7B58S_tkt4kx4vopK9fVzP9rMbWybUC3xrWUrqBuT8"
@@ -70,8 +62,6 @@ SPREADSHEET_ID  = "1S7B58S_tkt4kx4vopK9fVzP9rMbWybUC3xrWUrqBuT8"
 SCOPES = [
     "https://www.googleapis.com/auth/spreadsheets",
 ]
-
-SIZES = ["x1", "x10", "x100", "x1000"]
 
 PROFESSION_ICONS = {
     "Alquimista":  "🧪",

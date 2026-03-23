@@ -9,44 +9,23 @@ Uso:
 
 import json
 import os
+import sys
 import time
 from datetime import datetime, timezone
 
-import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import search_item_prices as sip
 from search_item_prices import search_item, read_prices
+from common import (
+    CACHE_SECONDS,
+    _load_omitted_items,
+    _load_omitted_categories,
+    _now_iso,
+    _parse_price,
+)
 
-BASE_DIR        = os.path.dirname(os.path.abspath(__file__))
-ITEMS_FILE      = os.path.join(BASE_DIR, "..", "..", "Markets", "Resources", "materials_prices.json")
-OMITTED_ITEMS_FILE         = os.path.join(BASE_DIR, "omitted_items.txt")
-OMITTED_CATEGORIES_FILE = os.path.join(BASE_DIR, "omitted_categories.txt")
-
-
-def _load_omitted_items() -> set[str]:
-    if not os.path.exists(OMITTED_ITEMS_FILE):
-        return set()
-    with open(OMITTED_ITEMS_FILE, encoding="utf-8") as f:
-        return {line.strip() for line in f if line.strip()}
-
-
-def _load_omitted_categories() -> set[str]:
-    if not os.path.exists(OMITTED_CATEGORIES_FILE):
-        return set()
-    with open(OMITTED_CATEGORIES_FILE, encoding="utf-8") as f:
-        return {line.strip() for line in f if line.strip()}
-
-
-def _parse_price(prices: dict, pack: str) -> int:
-    raw = prices.get(f"unit_price_x{pack}", "N/A")
-    return int(raw) if raw not in ("N/A", "ERROR", "") and raw.isdigit() else 0
-
-
-CACHE_SECONDS = 3600  # 1 hora
-
-
-def _now_iso() -> str:
-    return datetime.now(timezone.utc).isoformat()
+BASE_DIR   = os.path.dirname(os.path.abspath(__file__))
+ITEMS_FILE = os.path.join(BASE_DIR, "..", "..", "Markets", "Resources", "materials_prices.json")
 
 
 def _is_fresh(item: dict) -> bool:
@@ -122,9 +101,7 @@ def search_and_save(name: str) -> dict:
 if __name__ == "__main__":
     sip.load_calibration()
 
-    # name = "Artefacto pandawushu"
     name = "Malta"
-    # name = "Zafiro"
     print(f"Buscando: {name} …")
     for i in range(3, 0, -1):
         print(f"  Empezando en {i}…", end="\r")

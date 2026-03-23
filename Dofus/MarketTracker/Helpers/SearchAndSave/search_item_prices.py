@@ -16,7 +16,6 @@ import random
 import sys
 import os
 import time
-import unicodedata
 
 import keyboard
 import pyautogui
@@ -26,6 +25,7 @@ from PIL import Image, ImageFilter, ImageEnhance
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 from Helpers.Calibration.calibration import load_calibration as _load_calibration
+from Helpers.SearchAndSave.common import _normalize
 
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
@@ -39,12 +39,6 @@ def _load_categories() -> set[str]:
 
 _CATEGORIES: set[str] = set()  # se carga la primera vez que se usa
 
-
-def _normalize(s: str) -> str:
-    return "".join(
-        c for c in unicodedata.normalize("NFD", s.lower())
-        if unicodedata.category(c) != "Mn"
-    )
 
 DELAY_AFTER_CLICK  = 0.15
 DELAY_AFTER_SEARCH = 1.0

@@ -411,10 +411,11 @@
     },
     {
       "name": "Carne magra",
-      "unit_price_x1": 500,
+      "unit_price_x1": 499,
       "unit_price_x10": 337,
       "unit_price_x100": 280,
-      "unit_price_x1000": 220
+      "unit_price_x1000": 220,
+      "last_updated": "2026-03-23T21:05:28.733046+00:00"
     },
     {
       "name": "Carne marmoleada",
@@ -630,10 +631,11 @@
   "Cereal": [
     {
       "name": "Arroz",
-      "unit_price_x1": 329,
-      "unit_price_x10": 854,
-      "unit_price_x100": 2498,
-      "unit_price_x1000": 24999
+      "unit_price_x1": 55,
+      "unit_price_x10": 20,
+      "unit_price_x100": 24,
+      "unit_price_x1000": 23,
+      "last_updated": "2026-03-23T21:05:19.635267+00:00"
     },
     {
       "name": "Arroz cola",
@@ -679,11 +681,11 @@
     },
     {
       "name": "Centeno",
-      "unit_price_x1": 388,
+      "unit_price_x1": 387,
       "unit_price_x10": 290,
-      "unit_price_x100": 84,
-      "unit_price_x1000": 45,
-      "last_updated": "2026-03-23T18:21:54.306605+00:00"
+      "unit_price_x100": 83,
+      "unit_price_x1000": 55,
+      "last_updated": "2026-03-23T21:00:18.554412+00:00"
     },
     {
       "name": "Centeno resistente",
@@ -722,10 +724,11 @@
     },
     {
       "name": "Lino",
-      "unit_price_x1": 2798,
-      "unit_price_x10": 942,
-      "unit_price_x100": 2800,
-      "unit_price_x1000": 24816
+      "unit_price_x1": 100,
+      "unit_price_x10": 40,
+      "unit_price_x100": 28,
+      "unit_price_x1000": 22,
+      "last_updated": "2026-03-23T21:06:29.060352+00:00"
     },
     {
       "name": "Lino Tempestad",
@@ -754,7 +757,7 @@
       "unit_price_x10": 100,
       "unit_price_x100": 36,
       "unit_price_x1000": 20,
-      "last_updated": "2026-03-23T18:22:36.828709+00:00"
+      "last_updated": "2026-03-23T21:01:01.295412+00:00"
     },
     {
       "name": "Malta siano",
@@ -765,11 +768,11 @@
     },
     {
       "name": "Maíz",
-      "unit_price_x1": 395,
+      "unit_price_x1": 394,
       "unit_price_x10": 200,
-      "unit_price_x100": 158,
+      "unit_price_x100": 157,
       "unit_price_x1000": 123,
-      "last_updated": "2026-03-23T18:22:41.111630+00:00"
+      "last_updated": "2026-03-23T21:01:05.570923+00:00"
     },
     {
       "name": "Maíz adlasvelas",
@@ -780,11 +783,11 @@
     },
     {
       "name": "Mijo",
-      "unit_price_x1": 803,
-      "unit_price_x10": 813,
-      "unit_price_x100": 344,
+      "unit_price_x1": 802,
+      "unit_price_x10": 346,
+      "unit_price_x100": 343,
       "unit_price_x1000": 280,
-      "last_updated": "2026-03-23T18:22:45.340071+00:00"
+      "last_updated": "2026-03-23T21:01:09.874384+00:00"
     },
     {
       "name": "Mijo añejo",
@@ -1356,31 +1359,35 @@
     },
     {
       "name": "Cáscara de dragohuevo arcilloso",
-      "unit_price_x1": 102,
-      "unit_price_x10": 1100,
-      "unit_price_x100": 9699,
-      "unit_price_x1000": 95998
+      "unit_price_x1": 98,
+      "unit_price_x10": 108,
+      "unit_price_x100": 98,
+      "unit_price_x1000": 96,
+      "last_updated": "2026-03-23T21:05:43.336083+00:00"
     },
     {
       "name": "Cáscara de dragohuevo calizo",
-      "unit_price_x1": 36,
-      "unit_price_x10": 297,
-      "unit_price_x100": 7693,
-      "unit_price_x1000": 75000
+      "unit_price_x1": 34,
+      "unit_price_x10": 39,
+      "unit_price_x100": 77,
+      "unit_price_x1000": 75,
+      "last_updated": "2026-03-23T21:05:48.471193+00:00"
     },
     {
       "name": "Cáscara de dragohuevo carbonoso",
-      "unit_price_x1": 347,
-      "unit_price_x10": 3100,
-      "unit_price_x100": 41998,
-      "unit_price_x1000": 299000
+      "unit_price_x1": 344,
+      "unit_price_x10": 322,
+      "unit_price_x100": 419,
+      "unit_price_x1000": 299,
+      "last_updated": "2026-03-23T21:05:53.768984+00:00"
     },
     {
       "name": "Cáscara de dragohuevo pizarroso",
-      "unit_price_x1": 1799,
-      "unit_price_x10": 17487,
-      "unit_price_x100": 179986,
-      "unit_price_x1000": 0
+      "unit_price_x1": 1796,
+      "unit_price_x10": 1747,
+      "unit_price_x100": 1250,
+      "unit_price_x1000": 500,
+      "last_updated": "2026-03-23T21:05:59.038899+00:00"
     },
     {
       "name": "Cáscara de dragoss arcilloso",
@@ -1690,7 +1697,8 @@
       "unit_price_x1": 3495,
       "unit_price_x10": 1299,
       "unit_price_x100": 1450,
-      "unit_price_x1000": 1400
+      "unit_price_x1000": 1300,
+      "last_updated": "2026-03-23T21:08:36.491805+00:00"
     }
   ],
   "Fragmento de mapa": [
@@ -5094,31 +5102,35 @@
     },
     {
       "name": "Pico de kwak de hielo",
-      "unit_price_x1": 383,
-      "unit_price_x10": 1750,
-      "unit_price_x100": 17000,
-      "unit_price_x1000": 198999
+      "unit_price_x1": 399,
+      "unit_price_x10": 198,
+      "unit_price_x100": 550,
+      "unit_price_x1000": 199,
+      "last_updated": "2026-03-23T21:16:00.151116+00:00"
     },
     {
       "name": "Pico de kwak de llamas",
-      "unit_price_x1": 128,
-      "unit_price_x10": 999,
-      "unit_price_x100": 17998,
-      "unit_price_x1000": 0
+      "unit_price_x1": 146,
+      "unit_price_x10": 98,
+      "unit_price_x100": 180,
+      "unit_price_x1000": 0,
+      "last_updated": "2026-03-23T21:16:05.103235+00:00"
     },
     {
       "name": "Pico de kwak de tierra",
-      "unit_price_x1": 480,
-      "unit_price_x10": 2097,
-      "unit_price_x100": 24444,
-      "unit_price_x1000": 0
+      "unit_price_x1": 198,
+      "unit_price_x10": 209,
+      "unit_price_x100": 244,
+      "unit_price_x1000": 0,
+      "last_updated": "2026-03-23T21:16:09.995088+00:00"
     },
     {
       "name": "Pico de kwak de viento",
-      "unit_price_x1": 333,
-      "unit_price_x10": 3088,
-      "unit_price_x100": 29999,
-      "unit_price_x1000": 0
+      "unit_price_x1": 999,
+      "unit_price_x10": 308,
+      "unit_price_x100": 300,
+      "unit_price_x1000": 0,
+      "last_updated": "2026-03-23T21:16:14.913789+00:00"
     },
     {
       "name": "Pico de kwakao",
@@ -5404,31 +5416,35 @@
     },
     {
       "name": "Huevo de dragohuevo arcilloso",
-      "unit_price_x1": 2800,
-      "unit_price_x10": 27982,
-      "unit_price_x100": 198998,
-      "unit_price_x1000": 0
+      "unit_price_x1": 2898,
+      "unit_price_x10": 2798,
+      "unit_price_x100": 1990,
+      "unit_price_x1000": 0,
+      "last_updated": "2026-03-23T21:06:09.234450+00:00"
     },
     {
       "name": "Huevo de dragohuevo calizo",
-      "unit_price_x1": 1692,
-      "unit_price_x10": 15499,
-      "unit_price_x100": 169998,
-      "unit_price_x1000": 0
+      "unit_price_x1": 1698,
+      "unit_price_x10": 1550,
+      "unit_price_x100": 1700,
+      "unit_price_x1000": 0,
+      "last_updated": "2026-03-23T21:06:14.337761+00:00"
     },
     {
       "name": "Huevo de dragohuevo carbonoso",
-      "unit_price_x1": 2000,
-      "unit_price_x10": 23878,
-      "unit_price_x100": 233332,
-      "unit_price_x1000": 0
+      "unit_price_x1": 2297,
+      "unit_price_x10": 3590,
+      "unit_price_x100": 2800,
+      "unit_price_x1000": 0,
+      "last_updated": "2026-03-23T21:06:19.492813+00:00"
     },
     {
       "name": "Huevo de dragohuevo pizarroso",
-      "unit_price_x1": 893,
-      "unit_price_x10": 6985,
-      "unit_price_x100": 64996,
-      "unit_price_x1000": 0
+      "unit_price_x1": 800,
+      "unit_price_x10": 670,
+      "unit_price_x100": 650,
+      "unit_price_x1000": 0,
+      "last_updated": "2026-03-23T21:06:24.701813+00:00"
     },
     {
       "name": "Huevo de gobús",
@@ -6187,125 +6203,136 @@
       "unit_price_x1": 55,
       "unit_price_x10": 34,
       "unit_price_x100": 30,
-      "unit_price_x1000": 352
+      "unit_price_x1000": 30,
+      "last_updated": "2026-03-23T21:06:33.769583+00:00"
     },
     {
       "name": "Madera de avellano",
-      "unit_price_x1": 500,
+      "unit_price_x1": 499,
       "unit_price_x10": 80,
-      "unit_price_x100": 69,
+      "unit_price_x100": 68,
       "unit_price_x1000": 60,
-      "last_updated": "2026-03-23T18:21:59.092364+00:00"
+      "last_updated": "2026-03-23T21:00:23.343738+00:00"
     },
     {
       "name": "Madera de bambú",
       "unit_price_x1": 85,
-      "unit_price_x10": 483,
-      "unit_price_x100": 62,
-      "unit_price_x1000": 67
+      "unit_price_x10": 474,
+      "unit_price_x100": 61,
+      "unit_price_x1000": 67,
+      "last_updated": "2026-03-23T21:06:38.837488+00:00"
     },
     {
       "name": "Madera de bambú oscuro",
-      "unit_price_x1": 384,
-      "unit_price_x10": 192,
-      "unit_price_x100": 98,
+      "unit_price_x1": 387,
+      "unit_price_x10": 187,
+      "unit_price_x100": 97,
       "unit_price_x1000": 97,
-      "last_updated": "2026-03-23T18:22:04.021484+00:00"
+      "last_updated": "2026-03-23T21:00:28.243573+00:00"
     },
     {
       "name": "Madera de bambú sagrado",
       "unit_price_x1": 0,
-      "unit_price_x10": 266,
-      "unit_price_x100": 98,
-      "unit_price_x1000": 113,
-      "last_updated": "2026-03-23T18:22:09.051107+00:00"
+      "unit_price_x10": 260,
+      "unit_price_x100": 97,
+      "unit_price_x1000": 100,
+      "last_updated": "2026-03-23T21:00:33.174449+00:00"
     },
     {
       "name": "Madera de bombú",
       "unit_price_x1": 199,
       "unit_price_x10": 287,
       "unit_price_x100": 83,
-      "unit_price_x1000": 70
+      "unit_price_x1000": 70,
+      "last_updated": "2026-03-23T21:06:44.129018+00:00"
     },
     {
       "name": "Madera de carpe",
-      "unit_price_x1": 610,
-      "unit_price_x10": 116,
+      "unit_price_x1": 609,
+      "unit_price_x10": 98,
       "unit_price_x100": 97,
       "unit_price_x1000": 198,
-      "last_updated": "2026-03-23T18:22:13.764787+00:00"
+      "last_updated": "2026-03-23T21:00:37.951230+00:00"
     },
     {
       "name": "Madera de castaño",
-      "unit_price_x1": 19,
-      "unit_price_x10": 10,
+      "unit_price_x1": 20,
+      "unit_price_x10": 11,
       "unit_price_x100": 8,
-      "unit_price_x1000": 8
+      "unit_price_x1000": 8,
+      "last_updated": "2026-03-23T21:06:49.153508+00:00"
     },
     {
       "name": "Madera de cerezo silvestre",
       "unit_price_x1": 978,
       "unit_price_x10": 200,
-      "unit_price_x100": 91,
-      "unit_price_x1000": 89
+      "unit_price_x100": 90,
+      "unit_price_x1000": 88,
+      "last_updated": "2026-03-23T21:06:54.206994+00:00"
     },
     {
       "name": "Madera de fresno",
-      "unit_price_x1": 60,
-      "unit_price_x10": 60,
+      "unit_price_x1": 30,
+      "unit_price_x10": 59,
       "unit_price_x100": 40,
-      "unit_price_x1000": 360
+      "unit_price_x1000": 360,
+      "last_updated": "2026-03-23T21:06:58.859030+00:00"
     },
     {
       "name": "Madera de kalipto",
-      "unit_price_x1": 300,
-      "unit_price_x10": 228,
-      "unit_price_x100": 99,
+      "unit_price_x1": 299,
+      "unit_price_x10": 224,
+      "unit_price_x100": 80,
       "unit_price_x1000": 70,
-      "last_updated": "2026-03-23T18:22:18.414803+00:00"
+      "last_updated": "2026-03-23T21:00:42.630477+00:00"
     },
     {
       "name": "Madera de nogal",
       "unit_price_x1": 30,
       "unit_price_x10": 50,
       "unit_price_x100": 24,
-      "unit_price_x1000": 24
+      "unit_price_x1000": 24,
+      "last_updated": "2026-03-23T21:07:03.977942+00:00"
     },
     {
       "name": "Madera de olivioleta",
-      "unit_price_x1": 498,
-      "unit_price_x10": 90,
+      "unit_price_x1": 472,
+      "unit_price_x10": 86,
       "unit_price_x100": 68,
-      "unit_price_x1000": 68
+      "unit_price_x1000": 68,
+      "last_updated": "2026-03-23T21:07:08.910950+00:00"
     },
     {
       "name": "Madera de olmo",
-      "unit_price_x1": 1027,
-      "unit_price_x10": 677,
-      "unit_price_x100": 545,
+      "unit_price_x1": 997,
+      "unit_price_x10": 466,
+      "unit_price_x100": 544,
       "unit_price_x1000": 400,
-      "last_updated": "2026-03-23T18:22:22.999544+00:00"
+      "last_updated": "2026-03-23T21:00:47.239977+00:00"
     },
     {
       "name": "Madera de pino",
       "unit_price_x1": 492,
-      "unit_price_x10": 199,
-      "unit_price_x100": 181,
-      "unit_price_x1000": 192
+      "unit_price_x10": 200,
+      "unit_price_x100": 179,
+      "unit_price_x1000": 192,
+      "last_updated": "2026-03-23T21:07:13.822893+00:00"
     },
     {
       "name": "Madera de roble",
       "unit_price_x1": 55,
       "unit_price_x10": 40,
       "unit_price_x100": 45,
-      "unit_price_x1000": 354
+      "unit_price_x1000": 354,
+      "last_updated": "2026-03-23T21:07:18.500320+00:00"
     },
     {
       "name": "Madera de tejo",
       "unit_price_x1": 78,
       "unit_price_x10": 89,
-      "unit_price_x100": 81,
-      "unit_price_x1000": 83
+      "unit_price_x100": 80,
+      "unit_price_x1000": 80,
+      "last_updated": "2026-03-23T21:07:23.067361+00:00"
     },
     {
       "name": "Madera de tronkónido",
@@ -6323,19 +6350,19 @@
     },
     {
       "name": "Madera de álamo temblón",
-      "unit_price_x1": 1355,
+      "unit_price_x1": 1356,
       "unit_price_x10": 299,
       "unit_price_x100": 159,
       "unit_price_x1000": 169,
-      "last_updated": "2026-03-23T18:22:27.914366+00:00"
+      "last_updated": "2026-03-23T21:00:52.301386+00:00"
     },
     {
       "name": "Madera de ébano",
-      "unit_price_x1": 707,
-      "unit_price_x10": 230,
+      "unit_price_x1": 673,
+      "unit_price_x10": 593,
       "unit_price_x100": 440,
       "unit_price_x1000": 400,
-      "last_updated": "2026-03-23T18:22:32.574376+00:00"
+      "last_updated": "2026-03-23T21:00:56.966005+00:00"
     },
     {
       "name": "Mástil de fantasmastil",
@@ -6420,10 +6447,11 @@
   "Metaria:": [
     {
       "name": "Esfera para metarias",
-      "unit_price_x1": 1598,
-      "unit_price_x10": 2988,
-      "unit_price_x100": 24988,
-      "unit_price_x1000": 300000
+      "unit_price_x1": 1497,
+      "unit_price_x10": 298,
+      "unit_price_x100": 250,
+      "unit_price_x1000": 300,
+      "last_updated": "2026-03-23T21:06:03.931654+00:00"
     }
   ],
   "Mineral": [
@@ -6467,14 +6495,16 @@
       "unit_price_x1": 1498,
       "unit_price_x10": 1192,
       "unit_price_x100": 700,
-      "unit_price_x1000": 477
+      "unit_price_x1000": 477,
+      "last_updated": "2026-03-23T21:05:33.395698+00:00"
     },
     {
       "name": "Cristal plegable",
       "unit_price_x1": 1496,
       "unit_price_x10": 899,
       "unit_price_x100": 876,
-      "unit_price_x1000": 800
+      "unit_price_x1000": 800,
+      "last_updated": "2026-03-23T21:05:38.117593+00:00"
     },
     {
       "name": "Dolomita",
@@ -6534,10 +6564,11 @@
     },
     {
       "name": "Oro",
-      "unit_price_x1": 519,
-      "unit_price_x10": 126,
-      "unit_price_x100": 79,
-      "unit_price_x1000": 80
+      "unit_price_x1": 489,
+      "unit_price_x10": 117,
+      "unit_price_x100": 78,
+      "unit_price_x1000": 80,
+      "last_updated": "2026-03-23T21:10:47.836450+00:00"
     },
     {
       "name": "Plata",
@@ -8275,10 +8306,11 @@
     },
     {
       "name": "Bacaladilla",
-      "unit_price_x1": 1790,
-      "unit_price_x10": 0,
-      "unit_price_x100": 136,
-      "unit_price_x1000": 134
+      "unit_price_x1": 1788,
+      "unit_price_x10": 135,
+      "unit_price_x100": 133,
+      "unit_price_x1000": 134,
+      "last_updated": "2026-03-23T21:05:24.155085+00:00"
     },
     {
       "name": "Bacaladilla apetitosa",
@@ -8485,10 +8517,11 @@
     },
     {
       "name": "Pischis de tinta",
-      "unit_price_x1": 1887,
+      "unit_price_x1": 1885,
       "unit_price_x10": 1997,
-      "unit_price_x100": 1473,
-      "unit_price_x1000": 2000
+      "unit_price_x100": 1470,
+      "unit_price_x1000": 1500,
+      "last_updated": "2026-03-23T21:08:07.293275+00:00"
     },
     {
       "name": "Pischis mágico",
@@ -9164,7 +9197,8 @@
       "unit_price_x1": 779,
       "unit_price_x10": 394,
       "unit_price_x100": 257,
-      "unit_price_x1000": 220
+      "unit_price_x1000": 220,
+      "last_updated": "2026-03-23T21:07:40.734387+00:00"
     },
     {
       "name": "Piedra de Cristalobola",
@@ -9984,10 +10018,11 @@
     },
     {
       "name": "Ortiga",
-      "unit_price_x1": 547,
-      "unit_price_x10": 649,
-      "unit_price_x100": 4222,
-      "unit_price_x1000": 39532
+      "unit_price_x1": 400,
+      "unit_price_x10": 79,
+      "unit_price_x100": 39,
+      "unit_price_x1000": 30,
+      "last_updated": "2026-03-23T21:15:54.964266+00:00"
     },
     {
       "name": "Ortiga arganta",
@@ -10047,10 +10082,11 @@
     },
     {
       "name": "Salvia",
-      "unit_price_x1": 210,
-      "unit_price_x10": 987,
-      "unit_price_x100": 3353,
-      "unit_price_x1000": 29970
+      "unit_price_x1": 100,
+      "unit_price_x10": 99,
+      "unit_price_x100": 29,
+      "unit_price_x1000": 20,
+      "last_updated": "2026-03-23T21:08:31.762830+00:00"
     },
     {
       "name": "Salvia adivinorum",
@@ -10252,31 +10288,35 @@
     },
     {
       "name": "Pluma de kwak de hielo",
-      "unit_price_x1": 3600,
-      "unit_price_x10": 44992,
-      "unit_price_x100": 239997,
-      "unit_price_x1000": 2599999
+      "unit_price_x1": 899,
+      "unit_price_x10": 889,
+      "unit_price_x100": 900,
+      "unit_price_x1000": 0,
+      "last_updated": "2026-03-23T21:08:12.296454+00:00"
     },
     {
       "name": "Pluma de kwak de llamas",
-      "unit_price_x1": 3588,
-      "unit_price_x10": 5873,
-      "unit_price_x100": 42999,
-      "unit_price_x1000": 0
+      "unit_price_x1": 377,
+      "unit_price_x10": 360,
+      "unit_price_x100": 430,
+      "unit_price_x1000": 0,
+      "last_updated": "2026-03-23T21:08:17.351996+00:00"
     },
     {
       "name": "Pluma de kwak de tierra",
-      "unit_price_x1": 483,
-      "unit_price_x10": 2190,
-      "unit_price_x100": 28999,
-      "unit_price_x1000": 200000
+      "unit_price_x1": 147,
+      "unit_price_x10": 210,
+      "unit_price_x100": 290,
+      "unit_price_x1000": 200,
+      "last_updated": "2026-03-23T21:08:22.332336+00:00"
     },
     {
       "name": "Pluma de kwak de viento",
-      "unit_price_x1": 1000,
-      "unit_price_x10": 12389,
-      "unit_price_x100": 118887,
-      "unit_price_x1000": 1259999
+      "unit_price_x1": 898,
+      "unit_price_x10": 1190,
+      "unit_price_x100": 1189,
+      "unit_price_x1000": 1260,
+      "last_updated": "2026-03-23T21:08:27.339970+00:00"
     },
     {
       "name": "Pluma de pekegüino",

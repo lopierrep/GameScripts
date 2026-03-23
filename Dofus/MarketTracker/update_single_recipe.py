@@ -145,14 +145,13 @@ def run(result_name: str):
                 break
             idx += 1
             print(f"[{idx}/{total}] [venta] {name} …", end=" ", flush=True)
-            skipped = False
+            prices = {}
             try:
                 _, target_file = find_recipe(name)
-                prices  = srsp.search_and_save_selling(target_file or recipe_file, name)
-                skipped = prices.get("_skipped", False)
+                prices = srsp.search_and_save_selling(target_file or recipe_file, name)
             except Exception as e:
                 print(f"ERROR — {e}")
-            if not skipped:
+            if not prices.get("_skipped"):
                 keyboard.press_and_release("esc")
                 time.sleep(0.15)
             time.sleep(DELAY_BETWEEN_ITEMS)
@@ -162,13 +161,12 @@ def run(result_name: str):
                 break
             idx += 1
             print(f"[{idx}/{total}] [ingrediente] {name} …", end=" ", flush=True)
-            skipped = False
+            prices = {}
             try:
-                prices  = search_and_save_ingredient(name, markets, item_lookup)
-                skipped = prices.get("_skipped", False)
+                prices = search_and_save_ingredient(name, markets, item_lookup)
             except Exception as e:
                 print(f"ERROR — {e}")
-            if not skipped:
+            if not prices.get("_skipped"):
                 keyboard.press_and_release("esc")
                 time.sleep(0.15)
             time.sleep(DELAY_BETWEEN_ITEMS)

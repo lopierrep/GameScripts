@@ -14,21 +14,12 @@ import sys
 from datetime import datetime, timezone
 
 from . import save_resource_buy_prices as srs
+from .common import SIZES, _load_omitted_items, find_recipe_file as _find_recipe_file_by_profession
 
-BASE_DIR        = os.path.dirname(os.path.abspath(__file__))
-MARKET_DIR      = os.path.join(BASE_DIR, "..", "..")
-OTHER_JSON      = os.path.join(MARKET_DIR, "other_ingredients_prices.json")
-RECIPES_DIR     = os.path.join(MARKET_DIR, "Recipes")
-OMITTED_ITEMS_FILE = os.path.join(BASE_DIR, "omitted_items.txt")
-
-
-def _load_omitted_items() -> set[str]:
-    if not os.path.exists(OMITTED_ITEMS_FILE):
-        return set()
-    with open(OMITTED_ITEMS_FILE, encoding="utf-8") as f:
-        return {line.strip() for line in f if line.strip()}
-
-SIZES = ["x1", "x10", "x100", "x1000"]
+BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
+MARKET_DIR  = os.path.join(BASE_DIR, "..", "..")
+OTHER_JSON  = os.path.join(MARKET_DIR, "other_ingredients_prices.json")
+RECIPES_DIR = os.path.join(MARKET_DIR, "Recipes")
 
 
 # ── Carga de precios ───────────────────────────────────────────────────────────
@@ -164,17 +155,6 @@ def save_crafting_costs(recipe_file: str, recipes: list | None = None) -> set[st
 
 # ── Main ───────────────────────────────────────────────────────────────────────
 
-def _find_recipe_file(profession: str) -> str | None:
-    import unicodedata
-    def norm(s):
-        return "".join(c for c in unicodedata.normalize("NFD", s.lower()) if unicodedata.category(c) != "Mn")
-    for fname in os.listdir(RECIPES_DIR):
-        if fname.startswith("recipes_") and fname.endswith(".json"):
-            if norm(fname[len("recipes_"):-len(".json")]) == norm(profession):
-                return os.path.join(RECIPES_DIR, fname)
-    return None
-
-
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         available = sorted(f[len("recipes_"):-len(".json")] for f in os.listdir(RECIPES_DIR) if f.startswith("recipes_") and f.endswith(".json"))
@@ -182,7 +162,7 @@ if __name__ == "__main__":
         print(f"  Profesiones disponibles: {', '.join(available)}")
         sys.exit(1)
 
-    recipe_file = _find_recipe_file(sys.argv[1])
+    recipe_file = _find_recipe_file_by_profession(sys.argv[1], RECIPES_DIR)
     if not recipe_file:
         print(f"[ERROR] No se encontró receta para '{sys.argv[1]}'.")
         sys.exit(1)
