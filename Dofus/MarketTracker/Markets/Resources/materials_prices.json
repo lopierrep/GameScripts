@@ -6534,10 +6534,10 @@
     },
     {
       "name": "Hierro",
-      "unit_price_x1": 179,
-      "unit_price_x10": 100,
-      "unit_price_x100": 94,
-      "unit_price_x1000": 111,
+      "unit_price_x1": 0,
+      "unit_price_x10": 0,
+      "unit_price_x100": 0,
+      "unit_price_x1000": 0,
       "last_updated": "2026-03-24T01:42:43.768202+00:00"
     },
     {
