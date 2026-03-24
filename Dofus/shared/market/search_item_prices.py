@@ -23,6 +23,7 @@ from difflib import SequenceMatcher
 from PIL import Image, ImageFilter, ImageEnhance
 
 from shared.market.common import _normalize
+from shared.mouse import smooth_move
 
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
@@ -51,18 +52,6 @@ def load_calibration():
 
 
 # ── Mouse ──────────────────────────────────────────────────────────────────────
-
-def smooth_move(x, y, steps=4):
-    x0, y0 = pyautogui.position()
-    for i in range(1, steps + 1):
-        t = i / steps
-        pyautogui.moveTo(
-            x0 + (x - x0) * t + random.randint(-2, 2),
-            y0 + (y - y0) * t + random.randint(-2, 2),
-        )
-        time.sleep(0.002)
-    pyautogui.moveTo(x, y)
-
 
 def click_at(pos, delay=DELAY_AFTER_CLICK):
     smooth_move(*pos)

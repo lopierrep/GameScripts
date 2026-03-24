@@ -1,0 +1,60 @@
+import tkinter as tk
+
+
+class LarvaRaceApp:
+    def __init__(self, root: tk.Tk, on_start, on_finish, on_calibrate):
+        self.root = root
+        self.root.title("Larva Race")
+        self.root.attributes("-topmost", True)
+        self.root.resizable(False, False)
+
+        # Status
+        self.status_var = tk.StringVar(value="Listo")
+        tk.Label(root, textvariable=self.status_var, width=30, wraplength=200, justify=tk.CENTER).pack(
+            pady=(12, 6), padx=14
+        )
+
+        # Race counter
+        self.race_var = tk.StringVar(value="Carreras: 0")
+        tk.Label(root, textvariable=self.race_var, width=30, justify=tk.CENTER,
+                 font=("Segoe UI", 10, "bold")).pack(pady=(0, 6), padx=14)
+
+        # Buttons
+        btn_frame = tk.Frame(root)
+        btn_frame.pack(pady=(4, 4), padx=14)
+
+        self.start_btn = tk.Button(
+            btn_frame, text="Start", width=10,
+            bg="#4CAF50", fg="white", font=("Segoe UI", 10, "bold"),
+            command=on_start
+        )
+        self.start_btn.pack(side=tk.LEFT, padx=6)
+
+        self.finish_btn = tk.Button(
+            btn_frame, text="Finish (S)", width=10,
+            bg="#f44336", fg="white", font=("Segoe UI", 10, "bold"),
+            command=on_finish, state=tk.DISABLED
+        )
+        self.finish_btn.pack(side=tk.LEFT, padx=6)
+
+        self.calibrate_btn = tk.Button(
+            root, text="Calibrar puntos", width=24,
+            command=on_calibrate
+        )
+        self.calibrate_btn.pack(pady=(4, 12), padx=14)
+
+    def set_status(self, msg: str):
+        self.root.after(0, lambda: self.status_var.set(msg))
+
+    def set_race_count(self, count: int):
+        self.root.after(0, lambda: self.race_var.set(f"Carreras: {count}"))
+
+    def set_running(self, running: bool):
+        if running:
+            self.start_btn.config(state=tk.DISABLED)
+            self.finish_btn.config(state=tk.NORMAL)
+            self.calibrate_btn.config(state=tk.DISABLED)
+        else:
+            self.start_btn.config(state=tk.NORMAL)
+            self.finish_btn.config(state=tk.DISABLED)
+            self.calibrate_btn.config(state=tk.NORMAL)
