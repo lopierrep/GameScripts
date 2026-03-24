@@ -184,7 +184,9 @@ class AlmanaxApp:
         invertido = sum(r["cost"]               for r in profitable)
         ganado    = sum(r["profit"] + r["cost"] for r in profitable)
         neto      = sum(r["profit"]             for r in profitable)
-        self.ui.update_totals(len(profitable), invertido, ganado, neto)
+        with_losses = [r for r in rows if r.get("profit") is not None]
+        neto_all  = sum(r["profit"]             for r in with_losses)
+        self.ui.update_totals(len(profitable), invertido, ganado, neto, neto_all)
 
     def _sort(self, rows: list[dict]) -> list[dict]:
         col, rev = self._sort_col, self._sort_reverse
@@ -329,12 +331,9 @@ class AlmanaxApp:
             pass
         self.root.after(0, self._scan_done, len(results), total)
 
-    def _scan_done(self, updated: int, total: int, error: str = ""):
+    def _scan_done(self, updated: int, total: int):
         self.ui.set_scan_busy(False)
-        if error:
-            self.ui.set_status(error, C["red"])
-        else:
-            self.ui.set_status(f"✓ Precios actualizados: {updated}/{total} items", C["green"])
+        self.ui.set_status(f"✓ Precios actualizados: {updated}/{total} items", C["green"])
         self._refresh_table()
 
     # ── Calibración ───────────────────────────────────────────────────────────

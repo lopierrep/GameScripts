@@ -8,7 +8,6 @@ ROOT_DIR    = Path(__file__).resolve().parent.parent   # Almanax/
 PRICES_FILE  = ROOT_DIR / "data" / "item_prices.json"
 ALMANAX_FILE = ROOT_DIR / "data" / "almanax.json"
 API_BASE    = "https://api.dofusdu.de/dofus3/v1/es/almanax"
-MARKET_DIR  = ROOT_DIR.parent / "MarketTracker"
 
 # ── Mercadillo ────────────────────────────────────────────────────────────────
 LOTS = (1, 10, 100, 1000)
@@ -21,7 +20,6 @@ MARKET_NAMES = {
 
 # ── Guijarros (coste en almanichas y nombre) ──────────────────────────────────
 GUIJ_COST = {"T": 3,  "L": 15, "S": 75}
-GUIJ_NAME = {"T": "Temporal", "L": "Lunar", "S": "Solar"}
 
 # ── Paleta de colores (tema oscuro compartido con MarketTracker) ───────────────
 C = {

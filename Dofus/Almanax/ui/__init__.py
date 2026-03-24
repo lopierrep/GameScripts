@@ -140,8 +140,8 @@ class AlmanaxUI:
         frame = tk.Frame(self.root, bg=C["bg"])
         frame.pack(fill="both", expand=True, padx=12)
 
-        cols = ("dia", "fecha", "item", "cant", "comprar", "kamas",
-                "precio_unit", "coste", "kamas_total", "guijarros", "ganancia", "bonus")
+        cols = ("dia", "fecha", "item", "ganancia", "cant", "comprar",
+                "precio_unit", "coste", "kamas", "kamas_total", "guijarros")
         self.tree = ttk.Treeview(frame, columns=cols,
                                   show="headings", selectmode="browse")
 
@@ -149,15 +149,14 @@ class AlmanaxUI:
             ("dia",         "Día",            55,  "center"),
             ("fecha",       "Fecha",          95,  "center"),
             ("item",        "Item requerido", 230, "w"),
+            ("ganancia",    "Ganancia",       100,  "center"),
             ("cant",        "x1 pj",          48,  "center"),
             ("comprar",     "Comprar",         72,  "center"),
-            ("kamas",       "Kamas/pj",        85,  "center"),
             ("precio_unit", "Precio unit.",   105,  "center"),
             ("coste",       "Coste total",     95,  "center"),
+            ("kamas",       "Kamas/pj",        85,  "center"),
             ("kamas_total", "Kamas totales",   95,  "center"),
             ("guijarros",   "Guijarros",       85,  "center"),
-            ("ganancia",    "Ganancia",        90,  "center"),
-            ("bonus",       "Bonus del día",  280,  "w"),
         ]
         for col, label, w, anchor in col_defs:
             self.tree.heading(col, text=label,
@@ -181,16 +180,17 @@ class AlmanaxUI:
         bar.pack(fill="x", padx=12)
 
         for text, attr, fg in [
-            ("Días rentables:", "total_days_lbl",   C["green"]),
-            ("Invertido:",      "total_cost_lbl",   C["red"]),
-            ("Ganado:",         "total_profit_lbl", C["green"]),
-            ("Beneficio neto:", "total_net_lbl",    C["accent"]),
+            ("Días rentables:", "total_days_lbl",      C["green"]),
+            ("Invertido:",      "total_cost_lbl",      C["red"]),
+            ("Ganado:",         "total_profit_lbl",    C["green"]),
+            ("Beneficio neto:", "total_net_lbl",       C["accent"]),
+            ("Con pérdidas:",   "total_net_all_lbl",   C["accent"]),
         ]:
             tk.Label(bar, text=text, bg=C["bg"], fg=C["dim"],
                      font=("Consolas", 9)).pack(side="left", padx=(4 if attr == "total_days_lbl" else 0, 2))
             lbl = tk.Label(bar, text="—", bg=C["bg"], fg=fg,
                            font=("Consolas", 9, "bold"))
-            lbl.pack(side="left", padx=(0, 14 if attr != "total_net_lbl" else 0))
+            lbl.pack(side="left", padx=(0, 14 if attr != "total_net_all_lbl" else 0))
             setattr(self, attr, lbl)
 
         self.copy_lbl = tk.Label(bar, text="", bg=C["bg"], fg=C["accent"],
@@ -387,16 +387,18 @@ class AlmanaxUI:
     def update_best_guijarro(self, text: str):
         self.best_guij_lbl.config(text=text)
 
-    def update_totals(self, n: int, invertido: int, ganado: int, neto: int):
+    def update_totals(self, n: int, invertido: int, ganado: int, neto: int, neto_all: int):
         self.total_days_lbl.config(text=str(n))
         self.total_cost_lbl.config(text=f"{invertido:,} k")
         self.total_profit_lbl.config(text=f"{ganado:,} k")
         self.total_net_lbl.config(text=f"{neto:+,} k",
                                   fg=C["green"] if neto >= 0 else C["red"])
+        self.total_net_all_lbl.config(text=f"{neto_all:+,} k",
+                                      fg=C["green"] if neto_all >= 0 else C["red"])
 
     def clear_totals(self):
         for lbl in (self.total_days_lbl, self.total_cost_lbl,
-                    self.total_profit_lbl, self.total_net_lbl):
+                    self.total_profit_lbl, self.total_net_lbl, self.total_net_all_lbl):
             lbl.config(text="—")
 
     def refresh_table(self, rows: list[dict], today_str: str, pjs: int):
@@ -406,17 +408,15 @@ class AlmanaxUI:
             day_lbl     = "Hoy" if day_delta == 0 else f"+{day_delta}d"
             tag         = self._profit_tag(r["profit"])
             tags        = (tag, "hoy") if r["date"] == today_str else (tag,)
-            bonus_short = r["bonus"][:65] + ("…" if len(r["bonus"]) > 65 else "")
-
             self.tree.insert("", "end", iid=r["date"], tags=tags, values=(
                 day_lbl, r["date"], r["item"],
-                r["qty"], f"{r['qty'] * pjs:,}", f"{r['kamas']:,}",
+                f"{r['profit']:+,}" if r["profit"] is not None else "—",
+                r["qty"], f"{r['qty'] * pjs:,}",
                 f"{r['price']:,}" if r["price"] else "—",
                 f"{r['cost']:,}"  if r["cost"]  else "—",
+                f"{r['kamas']:,}",
                 f"{r['kamas'] * pjs:,}",
                 f"{r['guijarros']:,}",
-                f"{r['profit']:+,}" if r["profit"] is not None else "—",
-                bonus_short,
             ))
 
     @staticmethod

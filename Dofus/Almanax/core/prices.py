@@ -12,7 +12,7 @@ import json
 import math
 from dataclasses import dataclass
 
-from .models import PRICES_FILE, LOTS, GUIJ_COST, GUIJ_NAME
+from .models import PRICES_FILE, LOTS, GUIJ_COST
 
 
 # ── Persistencia ──────────────────────────────────────────────────────────────
@@ -119,9 +119,6 @@ def get_lot_plan(qty_needed: int, price_dict: dict) -> list[tuple[int, int]]:
 @dataclass
 class GuijarroResult:
     code:  str
-    name:  str
-    n:     int
-    kamas: int
     ratio: float   # kamas por almanich
 
 
@@ -147,12 +144,7 @@ def best_guijarro(alm: int, guij_prices: dict[str, int]) -> GuijarroResult | Non
     if best_code is None:
         return None
 
-    cost  = GUIJ_COST[best_code]
-    price = guij_prices[best_code]
     return GuijarroResult(
         code  = best_code,
-        name  = GUIJ_NAME[best_code],
-        n     = alm // cost,
-        kamas = (alm // cost) * price,
         ratio = best_ratio,
     )
