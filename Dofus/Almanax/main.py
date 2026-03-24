@@ -5,6 +5,7 @@ Conecta la UI con los módulos de core/, market/ y calibration/.
 """
 
 import sys
+import json
 import threading
 import tkinter as tk
 from tkinter import messagebox
@@ -15,9 +16,9 @@ import urllib.error
 # ── Rutas ─────────────────────────────────────────────────────────────────────
 ROOT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT_DIR))
-sys.path.insert(0, str(ROOT_DIR.parent / "MarketTracker"))
+sys.path.insert(0, str(ROOT_DIR.parent))
 
-from core.models import C, LOTS
+from core.models import C, LOTS, SETTINGS_FILE
 from core.prices import load_prices, save_prices, optimal_cost, get_lot_plan, best_guijarro
 from core.api    import fetch_almanax, parse_entry, save_almanax, load_almanax
 from calibration.calibration import load_calibration as _load_almanax_cal
@@ -25,14 +26,14 @@ from ui import AlmanaxUI
 
 # ── Módulo de mercadillo (opcional) ───────────────────────────────────────────
 try:
-    import Helpers.SearchAndSave.search_item_prices as _sip  # type: ignore[import]
-    from Helpers.SearchAndSave.search_item_prices import (   # type: ignore[import]
+    import shared.market.search_item_prices as _sip
+    from shared.market.search_item_prices import (
         search_item       as _search_item,
         read_prices       as _read_prices,
         find_exact_result as _find_exact_result,
         click_at          as _click_at,
     )
-    from Helpers.SearchAndSave.common import _parse_price    # type: ignore[import]
+    from shared.market.common import _parse_price
     MARKET_AVAILABLE = True
 except Exception:
     MARKET_AVAILABLE = False
@@ -46,6 +47,20 @@ def _init_calibration() -> dict | None:
         return cal
     except Exception:
         return None
+
+
+def _load_settings() -> dict:
+    try:
+        with open(SETTINGS_FILE, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
+def _save_settings(settings: dict):
+    SETTINGS_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with open(SETTINGS_FILE, "w", encoding="utf-8") as f:
+        json.dump(settings, f, ensure_ascii=False, indent=2)
 
 
 def _press_esc():
@@ -72,6 +87,7 @@ class AlmanaxApp:
         self._sort_col     = "fecha"
         self._sort_reverse = False
 
+        settings = _load_settings()
         self.ui = AlmanaxUI(root, callbacks={
             "scan":         self._start_scan,
             "stop_scan":    self._stop_scan,
@@ -83,7 +99,9 @@ class AlmanaxApp:
             "delete_price": self._delete_price,
             "refresh":      self._refresh_table,
             "toggle_sort":  self._toggle_sort,
-        }, market_available=MARKET_AVAILABLE)
+        }, market_available=MARKET_AVAILABLE, settings=settings)
+
+        root.protocol("WM_DELETE_WINDOW", self._on_close)
 
         cached = load_almanax()
         if cached and date.fromisoformat(cached[0]["date"]).year == date.today().year:
@@ -93,6 +111,10 @@ class AlmanaxApp:
         else:
             root.after(200, self._start_fetch)
         root.after(200, lambda: self.ui.set_calibrated(self.buy_cal is not None))
+
+    def _on_close(self):
+        _save_settings(self.ui.get_settings())
+        self.root.destroy()
 
     # ── Fetch ─────────────────────────────────────────────────────────────────
 

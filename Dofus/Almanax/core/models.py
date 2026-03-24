@@ -5,8 +5,9 @@ from pathlib import Path
 
 # ── Rutas ─────────────────────────────────────────────────────────────────────
 ROOT_DIR    = Path(__file__).resolve().parent.parent   # Almanax/
-PRICES_FILE  = ROOT_DIR / "data" / "item_prices.json"
-ALMANAX_FILE = ROOT_DIR / "data" / "almanax.json"
+PRICES_FILE   = ROOT_DIR / "data" / "item_prices.json"
+ALMANAX_FILE  = ROOT_DIR / "data" / "almanax.json"
+SETTINGS_FILE = ROOT_DIR / "data" / "settings.json"
 API_BASE    = "https://api.dofusdu.de/dofus3/v1/es/almanax"
 
 # ── Mercadillo ────────────────────────────────────────────────────────────────

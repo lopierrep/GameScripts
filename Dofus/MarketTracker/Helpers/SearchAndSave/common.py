@@ -1,12 +1,19 @@
 """
-Utilidades comunes compartidas por los módulos de búsqueda y guardado.
+Utilidades comunes de MarketTracker.
+Las utilidades compartidas con otros proyectos viven en shared/market/common.py.
 """
 
 import os
 import sys as _sys
-import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path as _Path
+
+import sys as _sys_path
+_DOFUS_DIR = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))
+if _DOFUS_DIR not in _sys_path.path:
+    _sys_path.path.insert(0, _DOFUS_DIR)
+
+from shared.market.common import _normalize, _parse_price, SIZES, CACHE_SECONDS  # noqa: F401
 
 # Cuando corre como .exe compilado, ROOT_DIR es la carpeta del ejecutable.
 if getattr(_sys, "frozen", False):
@@ -18,21 +25,6 @@ else:
 
 OMITTED_ITEMS_FILE      = os.path.join(BASE_DIR, "omitted_items.txt")
 OMITTED_CATEGORIES_FILE = os.path.join(BASE_DIR, "omitted_categories.txt")
-
-CACHE_SECONDS = 3600
-SIZES = ["x1", "x10", "x100", "x1000"]
-
-
-def _normalize(s: str) -> str:
-    return "".join(
-        c for c in unicodedata.normalize("NFD", s.lower())
-        if unicodedata.category(c) != "Mn"
-    )
-
-
-def _parse_price(prices: dict, pack: str) -> int:
-    raw = prices.get(f"unit_price_x{pack}", "N/A")
-    return int(raw) if raw not in ("N/A", "ERROR", "") and str(raw).isdigit() else 0
 
 
 def _load_omitted_items() -> set[str]:

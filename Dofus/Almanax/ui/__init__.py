@@ -29,10 +29,11 @@ class AlmanaxUI:
         toggle_sort  (col)          → cambiar columna/dirección de ordenación
     """
 
-    def __init__(self, root: tk.Tk, callbacks: dict, market_available: bool):
+    def __init__(self, root: tk.Tk, callbacks: dict, market_available: bool, settings: dict = None):
         self.root              = root
         self._cb               = callbacks
         self._market_available = market_available
+        self._settings         = settings or {}
         self._copy_timer       = None
         self._setup_window()
         self._build_ui()
@@ -78,7 +79,7 @@ class AlmanaxUI:
         ]:
             tk.Label(bar, text=label, bg=C["bg"], fg=C["dim"],
                      font=("Consolas", 10)).pack(side="left", padx=(8 if "Desde" in label else 4, 4))
-            var = tk.StringVar(value=default)
+            var = tk.StringVar(value=self._settings.get(attr, default))
             setattr(self, attr, var)
             e = tk.Entry(bar, textvariable=var, width=11,
                          bg=C["surface"], fg=C["text"], font=("Consolas", 10),
@@ -89,7 +90,7 @@ class AlmanaxUI:
     def _build_char_controls(self, bar: tk.Frame):
         tk.Label(bar, text="  Pjs:", bg=C["bg"], fg=C["dim"],
                  font=("Consolas", 10)).pack(side="left", padx=(8, 4))
-        self.pjs_var = tk.StringVar(value="15")
+        self.pjs_var = tk.StringVar(value=self._settings.get("pjs", "15"))
         e = tk.Entry(bar, textvariable=self.pjs_var, width=4,
                      bg=C["surface"], fg=C["text"], font=("Consolas", 10),
                      insertbackground=C["text"], relief="flat")
@@ -98,7 +99,7 @@ class AlmanaxUI:
 
         tk.Label(bar, text="  Alm/pj:", bg=C["bg"], fg=C["dim"],
                  font=("Consolas", 10)).pack(side="left", padx=(8, 4))
-        self.alm_var = tk.StringVar(value="4")
+        self.alm_var = tk.StringVar(value=self._settings.get("alm", "4"))
         e = tk.Entry(bar, textvariable=self.alm_var, width=4,
                      bg=C["surface"], fg=C["text"], font=("Consolas", 10),
                      insertbackground=C["text"], relief="flat")
@@ -106,10 +107,11 @@ class AlmanaxUI:
         e.bind("<Return>", lambda _: self._cb["refresh"]())
 
         self.guij_vars: dict[str, tk.StringVar] = {}
-        for code, default in [("T", "3600"), ("L", "18000"), ("S", "90000")]:
+        guij_defaults = {"T": "3600", "L": "18000", "S": "90000"}
+        for code, default in guij_defaults.items():
             tk.Label(bar, text=f"  G{code}:", bg=C["bg"], fg=C["dim"],
                      font=("Consolas", 10)).pack(side="left", padx=(4, 2))
-            v = tk.StringVar(value=default)
+            v = tk.StringVar(value=self._settings.get(f"guij_{code}", default))
             self.guij_vars[code] = v
             e = tk.Entry(bar, textvariable=v, width=7,
                          bg=C["surface"], fg=C["text"], font=("Consolas", 10),
@@ -418,6 +420,17 @@ class AlmanaxUI:
                 f"{r['kamas'] * pjs:,}",
                 f"{r['guijarros']:,}",
             ))
+
+    def get_settings(self) -> dict:
+        s = {
+            "from_var": self.from_var.get(),
+            "to_var":   self.to_var.get(),
+            "pjs":      self.pjs_var.get(),
+            "alm":      self.alm_var.get(),
+        }
+        for code, var in self.guij_vars.items():
+            s[f"guij_{code}"] = var.get()
+        return s
 
     @staticmethod
     def _profit_tag(profit) -> str:
