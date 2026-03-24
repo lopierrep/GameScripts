@@ -21,7 +21,7 @@ sys.path.insert(0, str(ROOT_DIR.parent))
 from core.models import C, LOTS, SETTINGS_FILE
 from core.prices import load_prices, save_prices, optimal_cost, get_lot_plan, best_guijarro
 from core.api    import fetch_almanax, parse_entry, save_almanax, load_almanax, resolve_all_subtypes
-from calibration.calibration import load_calibration as _load_almanax_cal
+from calibration.calibration_config import load_calibration as _load_almanax_cal
 from ui import AlmanaxUI
 
 # ── Módulo de mercadillo (opcional) ───────────────────────────────────────────
@@ -369,28 +369,20 @@ class AlmanaxApp:
     # ── Calibración ───────────────────────────────────────────────────────────
 
     def _calibrate_buy_start(self):
-        if not messagebox.askokcancel(
-            "Calibrar compra",
-            "CALIBRACIÓN DE COMPRA\n\n"
-            "Abre el mercadillo en Dofus, busca cualquier ítem que tenga\n"
-            "filas de lote visibles (x1, x10, x100, x1000) y pulsa OK.\n\n"
-            "Tendrás 3 segundos para cambiar al juego.\n"
-            "Luego mueve el ratón a cada posición y pulsa C para capturar."
-        ):
-            return
-        threading.Thread(target=self._calibrate_buy_thread, daemon=True).start()
+        from shared.calibration import CalibrationWindow
+        from calibration.calibration_config import CALIBRATION_POINTS, CALIBRATION_FILE, transform
+        CalibrationWindow(
+            self.root,
+            CALIBRATION_POINTS,
+            CALIBRATION_FILE,
+            on_done=self._on_calibration_done,
+            transform=transform,
+        )
 
-    def _calibrate_buy_thread(self):
-        self.root.after(0, self.ui.set_status,
-                        "Sigue las instrucciones en la consola…", C["yellow"])
-        try:
-            from calibration.calibration import calibrate
-            calibrate()
-            self.buy_cal = _init_calibration()
-            self.root.after(0, self.ui.set_calibrated, self.buy_cal is not None)
-            self.root.after(0, self.ui.set_status, "✓ Calibración guardada", C["green"])
-        except Exception as e:
-            self.root.after(0, self.ui.set_status, f"Error calibración: {e}", C["red"])
+    def _on_calibration_done(self):
+        self.buy_cal = _init_calibration()
+        self.ui.set_calibrated(self.buy_cal is not None)
+        self.ui.set_status("✓ Calibración guardada", C["green"])
 
     # ── Compra automática ─────────────────────────────────────────────────────
 
