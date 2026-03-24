@@ -201,6 +201,7 @@ class AlmanaxApp:
         self.buy_cal        = _init_calibration()
         self._sort_col     = "ganancia"
         self._sort_reverse = True
+        self._copy_timer   = None
 
         self._setup_window()
         self._build_ui()
@@ -383,6 +384,7 @@ class AlmanaxApp:
         frame.columnconfigure(0, weight=1)
 
         self.tree.bind("<<TreeviewSelect>>", self._on_select)
+        self.tree.bind("<ButtonRelease-1>", self._on_row_click)
 
     def _build_totalsbar(self):
         bar = tk.Frame(self.root, bg=C["bg"], pady=4)
@@ -411,6 +413,10 @@ class AlmanaxApp:
         self.total_net_lbl = tk.Label(bar, text="—", bg=C["bg"], fg=C["accent"],
                                       font=("Consolas", 9, "bold"))
         self.total_net_lbl.pack(side="left")
+
+        self.copy_lbl = tk.Label(bar, text="", bg=C["bg"], fg=C["accent"],
+                                 font=("Consolas", 9))
+        self.copy_lbl.pack(side="right", padx=(0, 8))
 
     def _build_bottombar(self):
         bar = tk.Frame(self.root, bg=C["surface"], pady=7)
@@ -522,7 +528,7 @@ class AlmanaxApp:
         self.status_lbl.config(text=f"Error: {msg}", fg=C["red"])
         self.fetch_btn.config(state="normal")
 
-    # ── Proceso de datos ──────────────────────────────────────────────────────
+    # ── Proceso de datos ──────────────────────────────���─────────────────────���─
 
     def _parse(self, entry: dict) -> dict:
         item_name  = entry["tribute"]["item"]["name"]
@@ -739,6 +745,18 @@ class AlmanaxApp:
             self.lot_vars[size].set(str(v) if v else "")
         self.lot_entries[1].focus_set()
         self.lot_entries[1].select_range(0, "end")
+
+    def _on_row_click(self, _event):
+        sel = self.tree.selection()
+        if not sel:
+            return
+        item_name = self.tree.set(sel[0], "item")
+        self.root.clipboard_clear()
+        self.root.clipboard_append(item_name)
+        self.copy_lbl.config(text=f"📋 {item_name[:40]}")
+        if self._copy_timer is not None:
+            self.root.after_cancel(self._copy_timer)
+        self._copy_timer = self.root.after(2000, lambda: self.copy_lbl.config(text=""))
 
     def _save_price(self):
         item = self.sel_lbl.cget("text")
