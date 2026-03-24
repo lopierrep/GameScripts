@@ -1,0 +1,6998 @@
+[
+  {
+    "id": 286,
+    "result": "Levadura de panadero",
+    "category": "Polvo",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Polvos mágicos",
+        "quantity": 1
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 1182,
+    "result": "Pócima de mini cuidados",
+    "category": "Pócima",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Ortiga",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 316,
+    "unit_crafting_cost_x10": 156,
+    "unit_crafting_cost_x100": 120,
+    "unit_crafting_cost_x1000": 120
+  },
+  {
+    "id": 10827,
+    "result": "Pócima de curación larvesca",
+    "category": "Pócima",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Piel de larva naranja",
+        "quantity": 1
+      },
+      {
+        "name": "Sangre de jalató",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14508,
+    "result": "Cera de balí",
+    "category": "Krosmoz",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Colmillo de jabalí",
+        "quantity": 2
+      },
+      {
+        "name": "Pelos de Kerubim",
+        "quantity": 1
+      },
+      {
+        "name": "Grasa gelatinosa",
+        "quantity": 5
+      },
+      {
+        "name": "Hocico de jabalí de las llanuras",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14573,
+    "result": "Pócima de Panzudo",
+    "category": "Pócima de teletransportación",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Pétalo diáfano",
+        "quantity": 1
+      },
+      {
+        "name": "Polvos mágicos",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16401,
+    "result": "Pócima androide",
+    "category": "Pócima",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Ortiga arganta",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 18836,
+    "result": "Brebaje de Nas Orazal",
+    "category": "Pócima",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Cerveza Atolmundo",
+        "quantity": 1
+      },
+      {
+        "name": "Trébol de 5 hojas",
+        "quantity": 5
+      },
+      {
+        "name": "Mandíbula de chafer draugr",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 19160,
+    "result": "Cera dracónica",
+    "category": "Misiones principales",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Grasa gelatinosa",
+        "quantity": 50
+      },
+      {
+        "name": "Obsidiana",
+        "quantity": 15
+      },
+      {
+        "name": "Pico de nocturlabiúho",
+        "quantity": 1
+      },
+      {
+        "name": "Piel de Cocabulia",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 19654,
+    "result": "Vermicida de Nibe Lula",
+    "category": "Astrub",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Flor del diente de león diabólico",
+        "quantity": 1
+      },
+      {
+        "name": "Pétalo de rosa demoníaca",
+        "quantity": 1
+      },
+      {
+        "name": "Pétalo de girasol salvaje",
+        "quantity": 1
+      },
+      {
+        "name": "Lengua de espanterrador",
+        "quantity": 1
+      },
+      {
+        "name": "Mezcla de vermicida",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 20680,
+    "result": "Cera de balí mejorada",
+    "category": "Nawidad",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Colmillo de jabalí",
+        "quantity": 2
+      },
+      {
+        "name": "Grasa gelatinosa",
+        "quantity": 5
+      },
+      {
+        "name": "Pelos de Kerubim",
+        "quantity": 1
+      },
+      {
+        "name": "Polvo temporal",
+        "quantity": 20
+      },
+      {
+        "name": "Hocico de jabalí de las llanuras",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 21673,
+    "result": "Bebida especiada",
+    "category": "Bebida",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Cerveza del desierto",
+        "quantity": 2
+      },
+      {
+        "name": "Cerveza cacterra",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 21674,
+    "result": "Bebida helada",
+    "category": "Bebida",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Frigrodka",
+        "quantity": 2
+      },
+      {
+        "name": "Vinorst",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 21675,
+    "result": "Bebida angelical",
+    "category": "Bebida",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Cerveza del Pankemante",
+        "quantity": 2
+      },
+      {
+        "name": "Cerveza de La Paliza Feliz",
+        "quantity": 2
+      },
+      {
+        "name": "Cerveza del Feubuk",
+        "quantity": 2
+      },
+      {
+        "name": "Cerveza de Chatarreo",
+        "quantity": 2
+      },
+      {
+        "name": "Cerveza de la Jarradepalo",
+        "quantity": 2
+      },
+      {
+        "name": "Cerveza de la Bagruta",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 21676,
+    "result": "Bebida demoníaca",
+    "category": "Bebida",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Cerveza del bwórkbol",
+        "quantity": 2
+      },
+      {
+        "name": "Cerveza del Ripata",
+        "quantity": 2
+      },
+      {
+        "name": "Cerveza de Djaul",
+        "quantity": 2
+      },
+      {
+        "name": "Cerveza Atolmundo",
+        "quantity": 2
+      },
+      {
+        "name": "Cerveza de la miseria",
+        "quantity": 2
+      },
+      {
+        "name": "Cerveza del Gatokemao",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 21677,
+    "result": "Bebida oscura",
+    "category": "Bebida",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Cerveza de Sidimote",
+        "quantity": 2
+      },
+      {
+        "name": "Cerveza de Gisgul",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 21678,
+    "result": "Bebida oriental",
+    "category": "Bebida",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Pandapils",
+        "quantity": 2
+      },
+      {
+        "name": "Pandaburg",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 23039,
+    "result": "Suero contra la pandrista",
+    "category": "Astrub",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Ortiga",
+        "quantity": 50
+      },
+      {
+        "name": "Lana de jalatín negro",
+        "quantity": 5
+      },
+      {
+        "name": "Muestra de sangre de Essel Dawa",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 23098,
+    "result": "Bálsamo dekojó",
+    "category": "Pandala",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Polvo de roca",
+        "quantity": 2
+      },
+      {
+        "name": "Aceite de arroz",
+        "quantity": 1
+      },
+      {
+        "name": "Alcohol al 99%",
+        "quantity": 1
+      },
+      {
+        "name": "Pelos mágicos de tanuki",
+        "quantity": 3
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 23346,
+    "result": "Remedio para Yinagi",
+    "category": "Pandala",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Hoja de fujibakama",
+        "quantity": 5
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 5
+      },
+      {
+        "name": "Aceite de Kodo",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 548,
+    "result": "Pócima de recuerdo",
+    "category": "Pócima de teletransportación",
+    "level": 10,
+    "ingredients": [
+      {
+        "name": "Ortiga",
+        "quantity": 5
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 1
+      },
+      {
+        "name": "Esquíritu inferior",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 1463,
+    "result": "Frasco para elementos",
+    "category": "Material de alquimia",
+    "level": 10,
+    "ingredients": [
+      {
+        "name": "Silicato",
+        "quantity": 10
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 1692,
+    "result": "Tinte mágico oscuro",
+    "category": "Tinte",
+    "level": 10,
+    "ingredients": [
+      {
+        "name": "Ala de moskito",
+        "quantity": 10
+      },
+      {
+        "name": "Pata de arakna",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14646,
+    "result": "Esencia de Mob Lasponja",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 10,
+    "ingredients": [
+      {
+        "name": "Piel de Mob Lasponja",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16402,
+    "result": "Pócima Dre Nalina",
+    "category": "Pócima",
+    "level": 10,
+    "ingredients": [
+      {
+        "name": "Ortiga",
+        "quantity": 5
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 395,
+    "unit_crafting_cost_x10": 195,
+    "unit_crafting_cost_x100": 150,
+    "unit_crafting_cost_x1000": 150
+  },
+  {
+    "id": 17037,
+    "result": "Esencia de Chadalid",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 10,
+    "ingredients": [
+      {
+        "name": "Cráneo de Chadalid",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 19953,
+    "result": "Licor de naranja amarga",
+    "category": "Isla de Frigost",
+    "level": 10,
+    "ingredients": [
+      {
+        "name": "Naranja amarga",
+        "quantity": 10
+      },
+      {
+        "name": "Azúcar glas",
+        "quantity": 4
+      },
+      {
+        "name": "Aguahelante",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 1687,
+    "result": "Tinte mágico verdoso",
+    "category": "Tinte",
+    "level": 15,
+    "ingredients": [
+      {
+        "name": "Piel de larva verde",
+        "quantity": 20
+      },
+      {
+        "name": "Menta salvaje",
+        "quantity": 20
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 10208,
+    "result": "Elixir pandawa",
+    "category": "Pócima de teletransportación",
+    "level": 15,
+    "ingredients": [
+      {
+        "name": "Cacho de blop coco",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop índigo",
+        "quantity": 5
+      },
+      {
+        "name": "Tatuaje de chico malo",
+        "quantity": 1
+      },
+      {
+        "name": "Cacho de blop guinda",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop reineta",
+        "quantity": 5
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 10209,
+    "result": "Elixir sacrógrito",
+    "category": "Pócima de teletransportación",
+    "level": 15,
+    "ingredients": [
+      {
+        "name": "Cacho de blop coco",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop guinda",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop índigo",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop reineta",
+        "quantity": 5
+      },
+      {
+        "name": "Sangre de jalató",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 10210,
+    "result": "Elixir aniripsa",
+    "category": "Pócima de teletransportación",
+    "level": 15,
+    "ingredients": [
+      {
+        "name": "Cacho de blop coco",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop guinda",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop índigo",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop reineta",
+        "quantity": 5
+      },
+      {
+        "name": "Ojo de arakmutada",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 10211,
+    "result": "Elixir sadida",
+    "category": "Pócima de teletransportación",
+    "level": 15,
+    "ingredients": [
+      {
+        "name": "Cacho de blop coco",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop guinda",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop índigo",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop reineta",
+        "quantity": 5
+      },
+      {
+        "name": "Diente de wabbit",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 10212,
+    "result": "Elixir ocra",
+    "category": "Pócima de teletransportación",
+    "level": 15,
+    "ingredients": [
+      {
+        "name": "Cacho de blop coco",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop guinda",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop índigo",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop reineta",
+        "quantity": 5
+      },
+      {
+        "name": "Hocico de jabalí de las llanuras",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 10213,
+    "result": "Elixir yopuka",
+    "category": "Pócima de teletransportación",
+    "level": 15,
+    "ingredients": [
+      {
+        "name": "Cuero de jalató negro",
+        "quantity": 1
+      },
+      {
+        "name": "Cacho de blop coco",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop guinda",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop índigo",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop reineta",
+        "quantity": 5
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 10214,
+    "result": "Elixir zurcarák",
+    "category": "Pócima de teletransportación",
+    "level": 15,
+    "ingredients": [
+      {
+        "name": "Uña de kanugro",
+        "quantity": 1
+      },
+      {
+        "name": "Cacho de blop coco",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop guinda",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop índigo",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop reineta",
+        "quantity": 5
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 10215,
+    "result": "Elixir xelor",
+    "category": "Pócima de teletransportación",
+    "level": 15,
+    "ingredients": [
+      {
+        "name": "Cacho de blop coco",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop guinda",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop reineta",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop índigo",
+        "quantity": 5
+      },
+      {
+        "name": "Pelos de arakna enferma",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 10216,
+    "result": "Elixir feca",
+    "category": "Pócima de teletransportación",
+    "level": 15,
+    "ingredients": [
+      {
+        "name": "Intestino de araknáusea",
+        "quantity": 1
+      },
+      {
+        "name": "Cacho de blop coco",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop guinda",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop índigo",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop reineta",
+        "quantity": 5
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 10217,
+    "result": "Elixir anutrof",
+    "category": "Pócima de teletransportación",
+    "level": 15,
+    "ingredients": [
+      {
+        "name": "Lodo de boo",
+        "quantity": 1
+      },
+      {
+        "name": "Cacho de blop coco",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop guinda",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop índigo",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop reineta",
+        "quantity": 5
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 10218,
+    "result": "Elixir osamodas",
+    "category": "Pócima de teletransportación",
+    "level": 15,
+    "ingredients": [
+      {
+        "name": "Cacho de blop coco",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop guinda",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop índigo",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop reineta",
+        "quantity": 5
+      },
+      {
+        "name": "Hueso de chafer",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 10219,
+    "result": "Elixir sram",
+    "category": "Pócima de teletransportación",
+    "level": 15,
+    "ingredients": [
+      {
+        "name": "Colmillos de ratas",
+        "quantity": 1
+      },
+      {
+        "name": "Cacho de blop coco",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop guinda",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop índigo",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop reineta",
+        "quantity": 5
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 10973,
+    "result": "Pócima de destino desconocido",
+    "category": "Pócima de teletransportación",
+    "level": 15,
+    "ingredients": [
+      {
+        "name": "Pinza de cangrejo",
+        "quantity": 1
+      },
+      {
+        "name": "Bellota",
+        "quantity": 1
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 12156,
+    "result": "Elixir tymador",
+    "category": "Pócima de teletransportación",
+    "level": 15,
+    "ingredients": [
+      {
+        "name": "Ojo de kwoan",
+        "quantity": 1
+      },
+      {
+        "name": "Cacho de blop coco",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop reineta",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop guinda",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop índigo",
+        "quantity": 5
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 12228,
+    "result": "Elixir zobal",
+    "category": "Pócima de teletransportación",
+    "level": 15,
+    "ingredients": [
+      {
+        "name": "Cacho de blop coco",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop reineta",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop guinda",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop índigo",
+        "quantity": 5
+      },
+      {
+        "name": "Raíz de abráknido",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 13278,
+    "result": "Elixir steamer",
+    "category": "Pócima de teletransportación",
+    "level": 15,
+    "ingredients": [
+      {
+        "name": "Pinza de cangrejo",
+        "quantity": 1
+      },
+      {
+        "name": "Cacho de blop coco",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop reineta",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop guinda",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop índigo",
+        "quantity": 5
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16135,
+    "result": "Elixir selotrop",
+    "category": "Pócima de teletransportación",
+    "level": 15,
+    "ingredients": [
+      {
+        "name": "Cacho de blop coco",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop reineta",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop guinda",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop índigo",
+        "quantity": 5
+      },
+      {
+        "name": "Ojo de raúl mops",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 17529,
+    "result": "Elixir hipermago",
+    "category": "Pócima de teletransportación",
+    "level": 15,
+    "ingredients": [
+      {
+        "name": "Cacho de blop coco",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop reineta",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop guinda",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop índigo",
+        "quantity": 5
+      },
+      {
+        "name": "Pluma de crowrajo",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 18620,
+    "result": "Elixir uginak",
+    "category": "Pócima de teletransportación",
+    "level": 15,
+    "ingredients": [
+      {
+        "name": "Cacho de blop coco",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop reineta",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop guinda",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop índigo",
+        "quantity": 5
+      },
+      {
+        "name": "Pelos de minilubo",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 27704,
+    "result": "Elixir forjalanza",
+    "category": "Pócima de teletransportación",
+    "level": 15,
+    "ingredients": [
+      {
+        "name": "Pincho de prespic",
+        "quantity": 1
+      },
+      {
+        "name": "Cacho de blop coco",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop reineta",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop guinda",
+        "quantity": 5
+      },
+      {
+        "name": "Cacho de blop índigo",
+        "quantity": 5
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 1183,
+    "result": "Pócima de mini cuidados superior",
+    "category": "Pócima",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Salvia",
+        "quantity": 4
+      },
+      {
+        "name": "Trigo",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 1333,
+    "result": "Pócima de chispa",
+    "category": "Pócima de forjamagia",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Metaria roja",
+        "quantity": 5
+      },
+      {
+        "name": "Frasco para elementos",
+        "quantity": 1
+      },
+      {
+        "name": "Pepita",
+        "quantity": 100
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 1335,
+    "result": "Pócima de llovizna",
+    "category": "Pócima de forjamagia",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Metaria azul",
+        "quantity": 5
+      },
+      {
+        "name": "Frasco para elementos",
+        "quantity": 1
+      },
+      {
+        "name": "Pepita",
+        "quantity": 100
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 1337,
+    "result": "Pócima de corriente de aire",
+    "category": "Pócima de forjamagia",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Metaria verde",
+        "quantity": 5
+      },
+      {
+        "name": "Frasco para elementos",
+        "quantity": 1
+      },
+      {
+        "name": "Pepita",
+        "quantity": 100
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 1338,
+    "result": "Pócima de sacudida",
+    "category": "Pócima de forjamagia",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Metaria amarilla",
+        "quantity": 5
+      },
+      {
+        "name": "Frasco para elementos",
+        "quantity": 1
+      },
+      {
+        "name": "Pepita",
+        "quantity": 100
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 1689,
+    "result": "Tinte mágico naranja",
+    "category": "Tinte",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Piel de larva naranja",
+        "quantity": 20
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 2542,
+    "result": "Pócima de hogar",
+    "category": "Pócima de teletransportación",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Salvia",
+        "quantity": 10
+      },
+      {
+        "name": "Cobre",
+        "quantity": 5
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 6964,
+    "result": "Pócima de ciudad: Brakmar",
+    "category": "Pócima de teletransportación",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Salvia",
+        "quantity": 10
+      },
+      {
+        "name": "Trucha",
+        "quantity": 5
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 1
+      },
+      {
+        "name": "Esquíritu inferior",
+        "quantity": 3
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 6965,
+    "result": "Pócima de ciudad: Bonta",
+    "category": "Pócima de teletransportación",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Salvia",
+        "quantity": 10
+      },
+      {
+        "name": "Cebada",
+        "quantity": 5
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 1
+      },
+      {
+        "name": "Esquíritu inferior",
+        "quantity": 3
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 13442,
+    "result": "Pócima de bibliotemplo",
+    "category": "Pócima de teletransportación",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Salvia",
+        "quantity": 10
+      },
+      {
+        "name": "Carne manida",
+        "quantity": 2
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14645,
+    "result": "Esencia del Girasol Hambriento",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Pétalo mágico de Girasol Hambriento",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 15236,
+    "result": "Pócima de buscador del tesoro",
+    "category": "Pócima de teletransportación",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Fluido glacial",
+        "quantity": 1
+      },
+      {
+        "name": "Lengua de gárgrola",
+        "quantity": 1
+      },
+      {
+        "name": "Diente de larva campestre",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16403,
+    "result": "Pócima de adivinación",
+    "category": "Pócima",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Salvia adivinorum",
+        "quantity": 1
+      },
+      {
+        "name": "Trigo",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 22132,
+    "result": "Tinta de anclaje",
+    "category": "Misiones principales",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Aceite de Kodo",
+        "quantity": 2
+      },
+      {
+        "name": "Carbón",
+        "quantity": 8
+      },
+      {
+        "name": "Guijarro de temporada",
+        "quantity": 2
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 4
+      },
+      {
+        "name": "Salvia",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 27635,
+    "result": "Pócima de recaudador",
+    "category": "Pócima de conquista",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Pepita",
+        "quantity": 20
+      },
+      {
+        "name": "Espina de champi champ",
+        "quantity": 3
+      },
+      {
+        "name": "Ceja de moskito",
+        "quantity": 3
+      },
+      {
+        "name": "Esquíritu inferior",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 29464,
+    "result": "Pócima de koliseo",
+    "category": "Pócima de teletransportación",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Salvia",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de castaño",
+        "quantity": 5
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 30096,
+    "result": "Emalvético",
+    "category": "Eventos",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Líquido malva",
+        "quantity": 1
+      },
+      {
+        "name": "Cerveza Bwork",
+        "quantity": 1
+      },
+      {
+        "name": "Umeshuritu",
+        "quantity": 1
+      },
+      {
+        "name": "Salvia",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 32093,
+    "result": "Pócima hiri-kara",
+    "category": "Pócima",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Salvia adivinorum",
+        "quantity": 1
+      },
+      {
+        "name": "Trucha",
+        "quantity": 100
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 15163,
+    "result": "Pócima de diligencia",
+    "category": "Pócima de teletransportación",
+    "level": 25,
+    "ingredients": [
+      {
+        "name": "Menta salvaje",
+        "quantity": 5
+      },
+      {
+        "name": "Ojo de crujíclope",
+        "quantity": 1
+      },
+      {
+        "name": "Catalejo de gobletrotter",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 1462,
+    "result": "Líquido vampiresco",
+    "category": "Preparación",
+    "level": 30,
+    "ingredients": [
+      {
+        "name": "Bocal",
+        "quantity": 1
+      },
+      {
+        "name": "Hueso de chafer",
+        "quantity": 4
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 1
+      },
+      {
+        "name": "Sangre de vampiro",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 7652,
+    "result": "Pócima de firma",
+    "category": "Preparación",
+    "level": 30,
+    "ingredients": [
+      {
+        "name": "Salvia",
+        "quantity": 10
+      },
+      {
+        "name": "Ortiga",
+        "quantity": 20
+      }
+    ],
+    "unit_selling_price_x1": 1082,
+    "unit_selling_price_x10": 1099,
+    "unit_selling_price_x100": 1270,
+    "unit_selling_price_x1000": 1200,
+    "unit_crafting_cost_x1": 2570,
+    "unit_crafting_cost_x10": 1070,
+    "unit_crafting_cost_x100": 800,
+    "unit_crafting_cost_x1000": 800,
+    "selling_last_updated": "2026-03-23T21:37:02.223963+00:00"
+  },
+  {
+    "id": 9887,
+    "result": "Pócima de floraje",
+    "category": "Pócima",
+    "level": 30,
+    "ingredients": [
+      {
+        "name": "Pepita",
+        "quantity": 1
+      },
+      {
+        "name": "Salvia",
+        "quantity": 1
+      },
+      {
+        "name": "Lengua de espanterrador",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14647,
+    "result": "Esencia del Jalató Real",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 30,
+    "ingredients": [
+      {
+        "name": "Cuero de Jalató Real",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16404,
+    "result": "Pócima Dre Enrédit",
+    "category": "Pócima",
+    "level": 30,
+    "ingredients": [
+      {
+        "name": "Salvia",
+        "quantity": 5
+      },
+      {
+        "name": "Trigo",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 8883,
+    "result": "Pócima de hogar de gremio",
+    "category": "Pócima de teletransportación",
+    "level": 35,
+    "ingredients": [
+      {
+        "name": "Pócima de hogar",
+        "quantity": 1
+      },
+      {
+        "name": "Cacho de blop guinda",
+        "quantity": 1
+      },
+      {
+        "name": "Cacho de blop índigo",
+        "quantity": 1
+      },
+      {
+        "name": "Cacho de blop reineta",
+        "quantity": 1
+      },
+      {
+        "name": "Cacho de blop coco",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 283,
+    "result": "Frasco de cuidados",
+    "category": "Pócima",
+    "level": 40,
+    "ingredients": [
+      {
+        "name": "Trébol de 5 hojas",
+        "quantity": 5
+      },
+      {
+        "name": "Cebolla",
+        "quantity": 1
+      },
+      {
+        "name": "Cebada",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14648,
+    "result": "Esencia del Escarajefe Dorado",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 40,
+    "ingredients": [
+      {
+        "name": "Alas de Escarajefe Dorado",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14649,
+    "result": "Esencia de Batofu",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 40,
+    "ingredients": [
+      {
+        "name": "Pluma de Batofu",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14650,
+    "result": "Esencia de Boostacho",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 40,
+    "ingredients": [
+      {
+        "name": "Boostoplasma",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14651,
+    "result": "Esencia del Chafer Rōnin",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 40,
+    "ingredients": [
+      {
+        "name": "Fémur del chafer Rōnin",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16285,
+    "result": "Esencia de Blatarata",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 40,
+    "ingredients": [
+      {
+        "name": "Pata de Blatarata",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16405,
+    "result": "Pócima ladecristum",
+    "category": "Pócima",
+    "level": 40,
+    "ingredients": [
+      {
+        "name": "Trifolium ladecristum",
+        "quantity": 1
+      },
+      {
+        "name": "Cebolla",
+        "quantity": 1
+      },
+      {
+        "name": "Cebada",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 20221,
+    "result": "Pócima de Meriana",
+    "category": "Pócima de teletransportación",
+    "level": 40,
+    "ingredients": [
+      {
+        "name": "Agua potable",
+        "quantity": 5
+      },
+      {
+        "name": "Trébol de 5 hojas",
+        "quantity": 5
+      },
+      {
+        "name": "Diente de cocodrail",
+        "quantity": 1
+      },
+      {
+        "name": "Lodo de boo",
+        "quantity": 1
+      },
+      {
+        "name": "Ala de tofu maléfico",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 21909,
+    "result": "Pócima de Vivak",
+    "category": "Pócima de teletransportación",
+    "level": 40,
+    "ingredients": [
+      {
+        "name": "Flor de kalipto",
+        "quantity": 20
+      },
+      {
+        "name": "Elixir ucrónico menor",
+        "quantity": 1
+      },
+      {
+        "name": "Polvo temporal",
+        "quantity": 10
+      },
+      {
+        "name": "Pócima de hogar",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 26362,
+    "result": "Pócima de Otomai",
+    "category": "Pócima de teletransportación",
+    "level": 40,
+    "ingredients": [
+      {
+        "name": "Coxis de coralador",
+        "quantity": 1
+      },
+      {
+        "name": "Bulbo de kuraçao",
+        "quantity": 1
+      },
+      {
+        "name": "Bulbo de mohito",
+        "quantity": 1
+      },
+      {
+        "name": "Bulbo de passaoh",
+        "quantity": 1
+      },
+      {
+        "name": "Bulbo de malibut",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 26804,
+    "result": "Esencia del director Grunob",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 40,
+    "ingredients": [
+      {
+        "name": "Manual del director Grunob",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 27905,
+    "result": "Pócima de recaudador notable",
+    "category": "Pócima de conquista",
+    "level": 40,
+    "ingredients": [
+      {
+        "name": "Pepita",
+        "quantity": 40
+      },
+      {
+        "name": "Antenas de vilinsekto",
+        "quantity": 3
+      },
+      {
+        "name": "Ala de tofu maléfico",
+        "quantity": 3
+      },
+      {
+        "name": "Hueso invisible de chafer invisible",
+        "quantity": 3
+      },
+      {
+        "name": "Esquíritu inferior",
+        "quantity": 5
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14488,
+    "result": "Cocahowia",
+    "category": "Pócima de teletransportación",
+    "level": 45,
+    "ingredients": [
+      {
+        "name": "Zanahowia",
+        "quantity": 1
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 1
+      },
+      {
+        "name": "Hueso de wabbit esqueleto",
+        "quantity": 3
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 580,
+    "result": "Pócima de Ghetto Reid",
+    "category": "Pócima",
+    "level": 50,
+    "ingredients": [
+      {
+        "name": "Trébol de 5 hojas",
+        "quantity": 5
+      },
+      {
+        "name": "Grasa gelatinosa",
+        "quantity": 1
+      },
+      {
+        "name": "Cebada",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 10969,
+    "result": "Pócima de fwescuwa",
+    "category": "Pócima",
+    "level": 50,
+    "ingredients": [
+      {
+        "name": "Zanahowia",
+        "quantity": 1
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 1
+      },
+      {
+        "name": "Sudor de dragopavo",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14426,
+    "result": "Pócima de centinela",
+    "category": "Pócima de conquista",
+    "level": 50,
+    "ingredients": [
+      {
+        "name": "Pelo de vetorano",
+        "quantity": 2
+      },
+      {
+        "name": "Cadena de robot mangual",
+        "quantity": 2
+      },
+      {
+        "name": "Pinza de cangrejo",
+        "quantity": 2
+      },
+      {
+        "name": "Semillas de sésamo",
+        "quantity": 2
+      },
+      {
+        "name": "Lodo de boo",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14442,
+    "result": "Pócima de enterrador",
+    "category": "Pócima de conquista",
+    "level": 50,
+    "ingredients": [
+      {
+        "name": "Hueso roído de gobloso",
+        "quantity": 2
+      },
+      {
+        "name": "Mano de boo",
+        "quantity": 2
+      },
+      {
+        "name": "Bellota",
+        "quantity": 2
+      },
+      {
+        "name": "Sangre de vampiro",
+        "quantity": 2
+      },
+      {
+        "name": "Diente de wabbit",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14443,
+    "result": "Pócima de resucitador",
+    "category": "Pócima de conquista",
+    "level": 50,
+    "ingredients": [
+      {
+        "name": "Flor de bloponcio",
+        "quantity": 2
+      },
+      {
+        "name": "Lengua de espanterrador",
+        "quantity": 2
+      },
+      {
+        "name": "Ala de tofu maléfico",
+        "quantity": 2
+      },
+      {
+        "name": "Oreja de fuxfaigter",
+        "quantity": 2
+      },
+      {
+        "name": "Pelos de minilubo",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14447,
+    "result": "Pócima del templo de las alianzas",
+    "category": "Pócima de teletransportación",
+    "level": 50,
+    "ingredients": [
+      {
+        "name": "Trébol de 5 hojas",
+        "quantity": 10
+      },
+      {
+        "name": "Pescado empanado",
+        "quantity": 5
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14652,
+    "result": "Esencia de Bworka",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 50,
+    "ingredients": [
+      {
+        "name": "Piel de Bworka",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14653,
+    "result": "Esencia de herreros",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 50,
+    "ingredients": [
+      {
+        "name": "Cerradura del cofre de los herreros",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14654,
+    "result": "Esencia de Shin Larva",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 50,
+    "ingredients": [
+      {
+        "name": "Piel de Shin Larva",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14655,
+    "result": "Esencia del Coralador Magistral",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 50,
+    "ingredients": [
+      {
+        "name": "Coxis Magistral",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14720,
+    "result": "Esencia de Kwoknan",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 50,
+    "ingredients": [
+      {
+        "name": "Pluma de Kwoknan",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 27372,
+    "result": "Esencia de rakooper",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 50,
+    "ingredients": [
+      {
+        "name": "Robo para tontos",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 28214,
+    "result": "Pócima de explorador",
+    "category": "Pócima de conquista",
+    "level": 50,
+    "ingredients": [
+      {
+        "name": "Escama de cocodrail",
+        "quantity": 2
+      },
+      {
+        "name": "Laminilla de champo azul",
+        "quantity": 2
+      },
+      {
+        "name": "Bolsa sospechosa",
+        "quantity": 2
+      },
+      {
+        "name": "Alas de escarahoja azul",
+        "quantity": 2
+      },
+      {
+        "name": "Tronco de kokoko",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 1686,
+    "result": "Tinte mágico rojizo",
+    "category": "Tinte",
+    "level": 55,
+    "ingredients": [
+      {
+        "name": "Frasco de gelatina de fresa",
+        "quantity": 1
+      },
+      {
+        "name": "Fresa",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 1688,
+    "result": "Tinte mágico azulado",
+    "category": "Tinte",
+    "level": 55,
+    "ingredients": [
+      {
+        "name": "Piel de larva azul",
+        "quantity": 20
+      },
+      {
+        "name": "Gelatina de Aciano",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 12743,
+    "result": "Pócima mineral",
+    "category": "Preparación",
+    "level": 55,
+    "ingredients": [
+      {
+        "name": "Piedra de dopeul",
+        "quantity": 1
+      },
+      {
+        "name": "Piedra preciosa zoth",
+        "quantity": 4
+      },
+      {
+        "name": "Sílex",
+        "quantity": 3
+      },
+      {
+        "name": "Fragmento de cerebro pulío",
+        "quantity": 4
+      },
+      {
+        "name": "Fragmento de piedra afilada",
+        "quantity": 3
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 282,
+    "result": "Frasco de cuidados superiores",
+    "category": "Pócima",
+    "level": 60,
+    "ingredients": [
+      {
+        "name": "Menta salvaje",
+        "quantity": 5
+      },
+      {
+        "name": "Dosis de zumo sabroso",
+        "quantity": 1
+      },
+      {
+        "name": "Avena",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 9035,
+    "result": "Pócima de teletransportación: Pueblo de los ganaderos",
+    "category": "Pócima de teletransportación",
+    "level": 60,
+    "ingredients": [
+      {
+        "name": "Menta salvaje",
+        "quantity": 2
+      },
+      {
+        "name": "Avena",
+        "quantity": 2
+      },
+      {
+        "name": "Pez gatito",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 11701,
+    "result": "Jugo de ardilla de las nieves exprimida",
+    "category": "Preparación",
+    "level": 60,
+    "ingredients": [
+      {
+        "name": "Ardilla de las nieves viva",
+        "quantity": 1
+      },
+      {
+        "name": "Bellota de ardilla de las nieves",
+        "quantity": 1
+      },
+      {
+        "name": "Aguas tranquilas",
+        "quantity": 10
+      },
+      {
+        "name": "Frigrodka",
+        "quantity": 5
+      },
+      {
+        "name": "Vinorst",
+        "quantity": 5
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14657,
+    "result": "Esencia del Wey Wabbit",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 60,
+    "ingredients": [
+      {
+        "name": "Pelo del Wey Wabbit",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14658,
+    "result": "Esencia del Blop Real",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 60,
+    "ingredients": [
+      {
+        "name": "Hoja de blop real",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14659,
+    "result": "Esencia de la Gelatina Real",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 60,
+    "ingredients": [
+      {
+        "name": "Frasco de Gelatina Real de Aciano",
+        "quantity": 1
+      },
+      {
+        "name": "Frasco de Gelatina Real de Limón",
+        "quantity": 1
+      },
+      {
+        "name": "Frasco de Gelatina Real de Fresa",
+        "quantity": 1
+      },
+      {
+        "name": "Frasco de Gelatina Real de Menta",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14774,
+    "result": "Esencia del Kaníbola Daldrrak",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 60,
+    "ingredients": [
+      {
+        "name": "Carniflor",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16406,
+    "result": "Pócima religiosa",
+    "category": "Pócima",
+    "level": 60,
+    "ingredients": [
+      {
+        "name": "Menta religiosa",
+        "quantity": 1
+      },
+      {
+        "name": "Dosis de zumo sabroso",
+        "quantity": 1
+      },
+      {
+        "name": "Avena",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 20962,
+    "result": "Elixir ucrónico menor",
+    "category": "Pócima",
+    "level": 60,
+    "ingredients": [
+      {
+        "name": "Fragmento de anomalía",
+        "quantity": 5
+      },
+      {
+        "name": "Esquíritu común",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 27906,
+    "result": "Pócima de recaudador asombrosa",
+    "category": "Pócima de conquista",
+    "level": 60,
+    "ingredients": [
+      {
+        "name": "Pepita",
+        "quantity": 60
+      },
+      {
+        "name": "Tambor de gobsalía",
+        "quantity": 3
+      },
+      {
+        "name": "Orejas de pekewabbit",
+        "quantity": 3
+      },
+      {
+        "name": "Pinza de cangrejo",
+        "quantity": 3
+      },
+      {
+        "name": "Piedra de dopeul",
+        "quantity": 3
+      },
+      {
+        "name": "Esquíritu común",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 10669,
+    "result": "Pócima de sapomorros",
+    "category": "Pócima",
+    "level": 65,
+    "ingredients": [
+      {
+        "name": "Piel de larva azul",
+        "quantity": 1
+      },
+      {
+        "name": "Sangre de jalató",
+        "quantity": 1
+      },
+      {
+        "name": "Huevo de tofu",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 1712,
+    "result": "Pócima Pahoa Reid",
+    "category": "Pócima",
+    "level": 70,
+    "ingredients": [
+      {
+        "name": "Menta salvaje",
+        "quantity": 5
+      },
+      {
+        "name": "Berenjena",
+        "quantity": 1
+      },
+      {
+        "name": "Avena",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14660,
+    "result": "Esencia de Nelwynn",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 70,
+    "ingredients": [
+      {
+        "name": "Pelaje de Nelwynn",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14661,
+    "result": "Esencia de Gurlo el Terrible",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 70,
+    "ingredients": [
+      {
+        "name": "Pedazo del calzón de Gurlo",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14662,
+    "result": "Esencia del Crujidor Legendario",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 70,
+    "ingredients": [
+      {
+        "name": "Piedra del Crujidor Legendario",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 21513,
+    "result": "Esencia de Dragenerys",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 70,
+    "ingredients": [
+      {
+        "name": "Tejido de Dragenerys",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 10673,
+    "result": "Pócima de HmmMmm",
+    "category": "Pócima",
+    "level": 75,
+    "ingredients": [
+      {
+        "name": "Piel de larva naranja",
+        "quantity": 1
+      },
+      {
+        "name": "Sangre de jalató",
+        "quantity": 1
+      },
+      {
+        "name": "Pata de arakna",
+        "quantity": 1
+      },
+      {
+        "name": "Baba de jalató",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 1345,
+    "result": "Pócima de incendio",
+    "category": "Pócima de forjamagia",
+    "level": 80,
+    "ingredients": [
+      {
+        "name": "Metaria maga roja",
+        "quantity": 5
+      },
+      {
+        "name": "Frasco para elementos",
+        "quantity": 1
+      },
+      {
+        "name": "Pepita",
+        "quantity": 300
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 1346,
+    "result": "Pócima de tsunami",
+    "category": "Pócima de forjamagia",
+    "level": 80,
+    "ingredients": [
+      {
+        "name": "Metaria maga azul",
+        "quantity": 5
+      },
+      {
+        "name": "Frasco para elementos",
+        "quantity": 1
+      },
+      {
+        "name": "Pepita",
+        "quantity": 300
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 1347,
+    "result": "Pócima de huracán",
+    "category": "Pócima de forjamagia",
+    "level": 80,
+    "ingredients": [
+      {
+        "name": "Metaria maga verde",
+        "quantity": 5
+      },
+      {
+        "name": "Frasco para elementos",
+        "quantity": 1
+      },
+      {
+        "name": "Pepita",
+        "quantity": 300
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 1348,
+    "result": "Pócima de seísmo",
+    "category": "Pócima de forjamagia",
+    "level": 80,
+    "ingredients": [
+      {
+        "name": "Metaria maga amarilla",
+        "quantity": 5
+      },
+      {
+        "name": "Frasco para elementos",
+        "quantity": 1
+      },
+      {
+        "name": "Pepita",
+        "quantity": 300
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 1405,
+    "result": "Pócima de agua de hada",
+    "category": "Pócima",
+    "level": 80,
+    "ingredients": [
+      {
+        "name": "Orquídea freyesca",
+        "quantity": 5
+      },
+      {
+        "name": "Alubias",
+        "quantity": 1
+      },
+      {
+        "name": "Lúpulo",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14553,
+    "result": "Increíble pócima de recaudador",
+    "category": "Pócima de conquista",
+    "level": 80,
+    "ingredients": [
+      {
+        "name": "Pepita",
+        "quantity": 80
+      },
+      {
+        "name": "Vísceras de scorbuto",
+        "quantity": 3
+      },
+      {
+        "name": "Ala de dragopavo pelirrojo salvaje",
+        "quantity": 3
+      },
+      {
+        "name": "Corazón de Crujidor",
+        "quantity": 3
+      },
+      {
+        "name": "Pinza de cangrabino",
+        "quantity": 3
+      },
+      {
+        "name": "Mano de boo",
+        "quantity": 3
+      },
+      {
+        "name": "Esquíritu común",
+        "quantity": 5
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14664,
+    "result": "Esencia del Wey Wobot",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 80,
+    "ingredients": [
+      {
+        "name": "Barba del Wey Wobot",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 15237,
+    "result": "Pócima de viajero dimensional",
+    "category": "Pócima de teletransportación",
+    "level": 80,
+    "ingredients": [
+      {
+        "name": "Ojo de crowrajo",
+        "quantity": 1
+      },
+      {
+        "name": "Cola de rata hyoactiva",
+        "quantity": 1
+      },
+      {
+        "name": "Laminilla de champo verde",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16407,
+    "result": "Pócima idónea",
+    "category": "Pócima",
+    "level": 80,
+    "ingredients": [
+      {
+        "name": "Orquídea idónea",
+        "quantity": 1
+      },
+      {
+        "name": "Alubias",
+        "quantity": 1
+      },
+      {
+        "name": "Lúpulo",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 19905,
+    "result": "Esencia de Mantícoro",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 80,
+    "ingredients": [
+      {
+        "name": "Coraza de Mantícoro",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 1713,
+    "result": "Pócima Raid Bul",
+    "category": "Pócima",
+    "level": 90,
+    "ingredients": [
+      {
+        "name": "Orquídea freyesca",
+        "quantity": 5
+      },
+      {
+        "name": "Cenizas eternas",
+        "quantity": 1
+      },
+      {
+        "name": "Lúpulo",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14665,
+    "result": "Esencia del Abráknido Ancestral",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 90,
+    "ingredients": [
+      {
+        "name": "Raíz de Abráknido Ancestral",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16286,
+    "result": "Esencia de Lasoberaña",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 90,
+    "ingredients": [
+      {
+        "name": "Seda babosa",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 17414,
+    "result": "Esencia de Le Chuko",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 90,
+    "ingredients": [
+      {
+        "name": "Barba de Le Chuko",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 19921,
+    "result": "Esencia de Judini",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 90,
+    "ingredients": [
+      {
+        "name": "Careta de Judini",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 17060,
+    "result": "Pócima de envejecimiento",
+    "category": "Preparación",
+    "level": 95,
+    "ingredients": [
+      {
+        "name": "Arroz",
+        "quantity": 10
+      },
+      {
+        "name": "Lino",
+        "quantity": 20
+      }
+    ],
+    "unit_selling_price_x1": 985,
+    "unit_selling_price_x10": 978,
+    "unit_selling_price_x100": 989,
+    "unit_selling_price_x1000": 989,
+    "unit_crafting_cost_x1": 1000,
+    "unit_crafting_cost_x10": 760,
+    "unit_crafting_cost_x100": 640,
+    "unit_crafting_cost_x1000": 670,
+    "selling_last_updated": "2026-03-23T21:37:02.224635+00:00"
+  },
+  {
+    "id": 1406,
+    "result": "Sangre de urikornio",
+    "category": "Pócima",
+    "level": 100,
+    "ingredients": [
+      {
+        "name": "Cereza",
+        "quantity": 1
+      },
+      {
+        "name": "Edelweiss",
+        "quantity": 6
+      },
+      {
+        "name": "Lino",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 1461,
+    "result": "Veneno azotador",
+    "category": "Preparación",
+    "level": 100,
+    "ingredients": [
+      {
+        "name": "Bocal",
+        "quantity": 1
+      },
+      {
+        "name": "Edelweiss",
+        "quantity": 8
+      },
+      {
+        "name": "Hoja de mazorral",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14666,
+    "result": "Esencia del Dragocerdo",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 100,
+    "ingredients": [
+      {
+        "name": "Hocico de Dragocerdo",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14667,
+    "result": "Esencia del Trankitronko",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 100,
+    "ingredients": [
+      {
+        "name": "Trenza de Trankitronko",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14668,
+    "result": "Esencia de Maxilubo",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 100,
+    "ingredients": [
+      {
+        "name": "Cabellera de Maxilubo",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14669,
+    "result": "Esencia de Moon",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 100,
+    "ingredients": [
+      {
+        "name": "Piel de Moon",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14670,
+    "result": "Esencia de Dramak",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 100,
+    "ingredients": [
+      {
+        "name": "Calcetín agujereado de Dramak",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 15273,
+    "result": "Esencia de Malefíscof",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 100,
+    "ingredients": [
+      {
+        "name": "Bordado de Malefíscof",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16408,
+    "result": "Pócima weis",
+    "category": "Pócima",
+    "level": 100,
+    "ingredients": [
+      {
+        "name": "Margarita weis",
+        "quantity": 1
+      },
+      {
+        "name": "Cereza",
+        "quantity": 1
+      },
+      {
+        "name": "Lino",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 21514,
+    "result": "Esencia de Karnozor",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 100,
+    "ingredients": [
+      {
+        "name": "Diente de Karnozor",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 27907,
+    "result": "Pócima de recaudador formidable",
+    "category": "Pócima de conquista",
+    "level": 100,
+    "ingredients": [
+      {
+        "name": "Pepita",
+        "quantity": 100
+      },
+      {
+        "name": "Kamatrix",
+        "quantity": 3
+      },
+      {
+        "name": "Capullo de mazorral",
+        "quantity": 3
+      },
+      {
+        "name": "Pata de rata kekomepoko",
+        "quantity": 3
+      },
+      {
+        "name": "Corteza de abrakno oscuro",
+        "quantity": 3
+      },
+      {
+        "name": "Pelos de koalak índigo",
+        "quantity": 3
+      },
+      {
+        "name": "Vendas",
+        "quantity": 3
+      },
+      {
+        "name": "Esquíritu común",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 13577,
+    "result": "Cuerno grande de urikornio",
+    "category": "Pócima",
+    "level": 105,
+    "ingredients": [
+      {
+        "name": "Gran frasco",
+        "quantity": 1
+      },
+      {
+        "name": "Sangre de urikornio",
+        "quantity": 4
+      },
+      {
+        "name": "Pelos de Kerubim",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14656,
+    "result": "Esencia de Kodámade",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 110,
+    "ingredients": [
+      {
+        "name": "Brote explosivo de Kodámade",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14671,
+    "result": "Esencia del Rasgabola Mayor",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 110,
+    "ingredients": [
+      {
+        "name": "Pluma de Rasgabola Mayor",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14672,
+    "result": "Esencia del Maestro Cuerbok",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 110,
+    "ingredients": [
+      {
+        "name": "Plumón del Maestro Cuerbok",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14673,
+    "result": "Esencia de la Rata Blanca",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 110,
+    "ingredients": [
+      {
+        "name": "Crines de Rata Blanca",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14674,
+    "result": "Esencia de la Rata Negra",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 110,
+    "ingredients": [
+      {
+        "name": "Crines de Rata Negra",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 15702,
+    "result": "Esencia del Capitán Eskarlata",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 110,
+    "ingredients": [
+      {
+        "name": "Corazón del Capitán Eskarlata",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16409,
+    "result": "Pócima Juez Dre",
+    "category": "Pócima",
+    "level": 110,
+    "ingredients": [
+      {
+        "name": "Edelweiss",
+        "quantity": 6
+      },
+      {
+        "name": "Sangre de scorbuto",
+        "quantity": 1
+      },
+      {
+        "name": "Lino",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 17737,
+    "result": "Esencia de Piojoporojo",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 110,
+    "ingredients": [
+      {
+        "name": "Glándula de Piojoporojo",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 15413,
+    "result": "Pócima de Apísafe",
+    "category": "Pócima de teletransportación",
+    "level": 115,
+    "ingredients": [
+      {
+        "name": "Pluma de serpipluma",
+        "quantity": 1
+      },
+      {
+        "name": "Caparazón de escarato",
+        "quantity": 1
+      },
+      {
+        "name": "Piel de minoskito",
+        "quantity": 1
+      },
+      {
+        "name": "Piel de mandrina",
+        "quantity": 1
+      },
+      {
+        "name": "Piel de krameleón",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14675,
+    "result": "Esencia del Blop Multicolor Real",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 120,
+    "ingredients": [
+      {
+        "name": "Hoja de Blop Multicolor Real",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14676,
+    "result": "Esencia del Minotauroro",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 120,
+    "ingredients": [
+      {
+        "name": "Pelos del Minotauroro",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14677,
+    "result": "Esencia del Jalamut Real",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 120,
+    "ingredients": [
+      {
+        "name": "Lana de Jalamut Real",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14679,
+    "result": "Esencia del Tofu Real",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 120,
+    "ingredients": [
+      {
+        "name": "Pluma de Tofu Real",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14680,
+    "result": "Esencia de Cocabulia",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 120,
+    "ingredients": [
+      {
+        "name": "Piel de Cocabulia",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14681,
+    "result": "Esencia de Skonk",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 120,
+    "ingredients": [
+      {
+        "name": "Pelo de Skonk",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 15736,
+    "result": "Esencia de Fraktal",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 120,
+    "ingredients": [
+      {
+        "name": "Píxel de Fraktal",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16410,
+    "result": "Sangre de trool",
+    "category": "Pócima",
+    "level": 120,
+    "ingredients": [
+      {
+        "name": "Semilla de pandoja",
+        "quantity": 6
+      },
+      {
+        "name": "Especias",
+        "quantity": 1
+      },
+      {
+        "name": "Centeno",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16411,
+    "result": "Pócima cantora",
+    "category": "Pócima",
+    "level": 120,
+    "ingredients": [
+      {
+        "name": "Pandoja cantora",
+        "quantity": 1
+      },
+      {
+        "name": "Especias",
+        "quantity": 1
+      },
+      {
+        "name": "Centeno",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16948,
+    "result": "Pócima de Ayuto",
+    "category": "Pócima de teletransportación",
+    "level": 120,
+    "ingredients": [
+      {
+        "name": "Pústula de ratarmonía",
+        "quantity": 1
+      },
+      {
+        "name": "Cúbito de momia koalak",
+        "quantity": 1
+      },
+      {
+        "name": "Ojo de pestruzota",
+        "quantity": 1
+      },
+      {
+        "name": "Pelos de smielodón",
+        "quantity": 1
+      },
+      {
+        "name": "Pluma de pekegüino",
+        "quantity": 1
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 5
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 26871,
+    "result": "Elixir ucrónico mejorado",
+    "category": "Pócima",
+    "level": 120,
+    "ingredients": [
+      {
+        "name": "Fragmento de anomalía",
+        "quantity": 10
+      },
+      {
+        "name": "Esquíritu superior",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 27908,
+    "result": "Pócima de recaudador espléndida",
+    "category": "Pócima de conquista",
+    "level": 120,
+    "ingredients": [
+      {
+        "name": "Pepita",
+        "quantity": 120
+      },
+      {
+        "name": "Ventosa vieja de kralamar",
+        "quantity": 3
+      },
+      {
+        "name": "Pelo de rata bontariana",
+        "quantity": 3
+      },
+      {
+        "name": "Gatrool",
+        "quantity": 3
+      },
+      {
+        "name": "Piedra de topacio",
+        "quantity": 3
+      },
+      {
+        "name": "Pluma de pekegüino",
+        "quantity": 3
+      },
+      {
+        "name": "Fragmento de cerebro pulío",
+        "quantity": 3
+      },
+      {
+        "name": "Esquíritu superior",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14663,
+    "result": "Esencia de Nagate",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 130,
+    "ingredients": [
+      {
+        "name": "Kuakuá de baño de Nagate",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14682,
+    "result": "Esencia de Tanukui San",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 130,
+    "ingredients": [
+      {
+        "name": "Testículos del Tanukui San",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 15362,
+    "result": "Esencia de Thor Pestruz",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 130,
+    "ingredients": [
+      {
+        "name": "Par de bolas de Thor Pestruz",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16412,
+    "result": "Pócima Dre Redención",
+    "category": "Pócima",
+    "level": 130,
+    "ingredients": [
+      {
+        "name": "Semilla de pandoja",
+        "quantity": 6
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 1
+      },
+      {
+        "name": "Centeno",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 19915,
+    "result": "Esencia de El Piko",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 130,
+    "ingredients": [
+      {
+        "name": "Pincho de El Piko",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16419,
+    "result": "Pócima de los ancestros",
+    "category": "Preparación",
+    "level": 135,
+    "ingredients": [
+      {
+        "name": "Malta",
+        "quantity": 10
+      },
+      {
+        "name": "Centeno",
+        "quantity": 20
+      }
+    ],
+    "unit_selling_price_x1": 2956,
+    "unit_selling_price_x10": 3072,
+    "unit_selling_price_x100": 3130,
+    "unit_selling_price_x1000": 3130,
+    "unit_crafting_cost_x1": 6800,
+    "unit_crafting_cost_x10": 2020,
+    "unit_crafting_cost_x100": 1300,
+    "unit_crafting_cost_x1000": 1300,
+    "selling_last_updated": "2026-03-23T21:37:02.224978+00:00"
+  },
+  {
+    "id": 8913,
+    "result": "Pócima Búlbica",
+    "category": "Pócima",
+    "level": 140,
+    "ingredients": [
+      {
+        "name": "Polvos mágicos",
+        "quantity": 1
+      },
+      {
+        "name": "Ginseng",
+        "quantity": 6
+      },
+      {
+        "name": "Malta",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14678,
+    "result": "Esencia de Shihan y Hanshi",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 140,
+    "ingredients": [
+      {
+        "name": "Palillos para el pelo de Shihan",
+        "quantity": 4
+      },
+      {
+        "name": "Bufanda de Hanshi",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14683,
+    "result": "Esencia de Funoroshi",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 140,
+    "ingredients": [
+      {
+        "name": "Cola mágica de Funoroshi",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14684,
+    "result": "Esencia del Roble Blando",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 140,
+    "ingredients": [
+      {
+        "name": "Raíz de Roble Blando",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14685,
+    "result": "Esencia del Tynril",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 140,
+    "ingredients": [
+      {
+        "name": "Pistilo de Tynril",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14686,
+    "result": "Esencia del Morsagüino Real",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 140,
+    "ingredients": [
+      {
+        "name": "Pluma de Morsagüino Real",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16413,
+    "result": "Pócima goku",
+    "category": "Pócima",
+    "level": 140,
+    "ingredients": [
+      {
+        "name": "Ginsengoku",
+        "quantity": 1
+      },
+      {
+        "name": "Polvos mágicos",
+        "quantity": 1
+      },
+      {
+        "name": "Malta",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 23598,
+    "result": "Elixir de los barquerontes",
+    "category": "Pócima",
+    "level": 140,
+    "ingredients": [
+      {
+        "name": "Piedra de selenita",
+        "quantity": 4
+      },
+      {
+        "name": "Lluvia de Pandala",
+        "quantity": 5
+      },
+      {
+        "name": "Última para el camino",
+        "quantity": 1
+      },
+      {
+        "name": "Ginseng",
+        "quantity": 12
+      },
+      {
+        "name": "Malta",
+        "quantity": 2
+      },
+      {
+        "name": "Tejido de samurái fantasma",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 27909,
+    "result": "Pócima de recaudador maravillosa",
+    "category": "Pócima de conquista",
+    "level": 140,
+    "ingredients": [
+      {
+        "name": "Pepita",
+        "quantity": 140
+      },
+      {
+        "name": "Esquíritu superior",
+        "quantity": 5
+      },
+      {
+        "name": "Hueso de sramurái",
+        "quantity": 3
+      },
+      {
+        "name": "Pelusa de mamagüina",
+        "quantity": 3
+      },
+      {
+        "name": "Maza de mamanuki",
+        "quantity": 3
+      },
+      {
+        "name": "Pelos de bumbardero",
+        "quantity": 3
+      },
+      {
+        "name": "Akaislip de kuakai",
+        "quantity": 3
+      },
+      {
+        "name": "Mandíbula de abrakno irascible",
+        "quantity": 3
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 12734,
+    "result": "Pócima de alteración",
+    "category": "Preparación",
+    "level": 145,
+    "ingredients": [
+      {
+        "name": "Pincho de malpincho",
+        "quantity": 1
+      },
+      {
+        "name": "Valva de fantimonel",
+        "quantity": 1
+      },
+      {
+        "name": "Cloaca de pohoyo",
+        "quantity": 1
+      },
+      {
+        "name": "Cadena de tigredón",
+        "quantity": 1
+      },
+      {
+        "name": "Cáñamo",
+        "quantity": 2
+      },
+      {
+        "name": "Semilla de pandoja",
+        "quantity": 4
+      },
+      {
+        "name": "Ginseng",
+        "quantity": 2
+      },
+      {
+        "name": "Tiburón martillhoz",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14687,
+    "result": "Esencia de Ben el Ripata",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 150,
+    "ingredients": [
+      {
+        "name": "Pelo de Ben el Ripata",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14688,
+    "result": "Esencia de Sfinter Cell",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 150,
+    "ingredients": [
+      {
+        "name": "Fémur de Sfinter Cell",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 15274,
+    "result": "Esencia de Perfósil",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 150,
+    "ingredients": [
+      {
+        "name": "Colmillo de Perfósil",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16414,
+    "result": "Pócima Desmá Dre",
+    "category": "Pócima",
+    "level": 150,
+    "ingredients": [
+      {
+        "name": "Ginseng",
+        "quantity": 6
+      },
+      {
+        "name": "Polvo temporal",
+        "quantity": 1
+      },
+      {
+        "name": "Malta",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 26803,
+    "result": "Esencia de Hell Mina",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 150,
+    "ingredients": [
+      {
+        "name": "Mecha rebelde de Hell Mina",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 9968,
+    "result": "Botella de Zampaburg",
+    "category": "Bebida",
+    "level": 151,
+    "ingredients": [
+      {
+        "name": "Pandaburg",
+        "quantity": 5
+      },
+      {
+        "name": "Zamparrón",
+        "quantity": 1
+      },
+      {
+        "name": "Hoja de enchalada",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 10031,
+    "result": "Tinte naranja sanguina",
+    "category": "Tinte",
+    "level": 155,
+    "ingredients": [
+      {
+        "name": "Tinte mágico rojizo",
+        "quantity": 1
+      },
+      {
+        "name": "Tinte mágico naranja",
+        "quantity": 1
+      },
+      {
+        "name": "Sangre de wabbit lobo",
+        "quantity": 3
+      },
+      {
+        "name": "Rape",
+        "quantity": 30
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 9979,
+    "result": "Filtro de longevidad",
+    "category": "Preparación",
+    "level": 158,
+    "ingredients": [
+      {
+        "name": "Sangre de urikornio",
+        "quantity": 2
+      },
+      {
+        "name": "Pócima de envejecimiento",
+        "quantity": 2
+      },
+      {
+        "name": "Pócima de firma",
+        "quantity": 2
+      },
+      {
+        "name": "Pócima de los ancestros",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14689,
+    "result": "Esencia del Kimbo",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 160,
+    "ingredients": [
+      {
+        "name": "Esfenoides del Kimbo",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14690,
+    "result": "Esencia del Minotot",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 160,
+    "ingredients": [
+      {
+        "name": "Etmoides de Minotot",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14691,
+    "result": "Esencia del Obsidiantre",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 160,
+    "ingredients": [
+      {
+        "name": "Escoria de Obsidiantre",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 15095,
+    "result": "Esencia de Kanígrula",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 160,
+    "ingredients": [
+      {
+        "name": "Pelos de Kanígrula",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16415,
+    "result": "Lágrima de Aniripsa",
+    "category": "Pócima",
+    "level": 160,
+    "ingredients": [
+      {
+        "name": "Belladona",
+        "quantity": 7
+      },
+      {
+        "name": "Resina",
+        "quantity": 1
+      },
+      {
+        "name": "Cáñamo",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16416,
+    "result": "Pócima de doncella",
+    "category": "Pócima",
+    "level": 160,
+    "ingredients": [
+      {
+        "name": "Belladoncella",
+        "quantity": 1
+      },
+      {
+        "name": "Resina",
+        "quantity": 1
+      },
+      {
+        "name": "Cáñamo",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 17736,
+    "result": "Esencia de Ush",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 160,
+    "ingredients": [
+      {
+        "name": "Bigotes de Ush",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 24133,
+    "result": "Esencia del shogun Tofugawa",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 160,
+    "ingredients": [
+      {
+        "name": "Bigote de Shogun Tofugawa",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 27910,
+    "result": "Pócima de recaudador grandiosa",
+    "category": "Pócima de conquista",
+    "level": 160,
+    "ingredients": [
+      {
+        "name": "Pepita",
+        "quantity": 160
+      },
+      {
+        "name": "Piedra de Aguamarina",
+        "quantity": 3
+      },
+      {
+        "name": "Piel de metaforatroz",
+        "quantity": 3
+      },
+      {
+        "name": "Cloaca de pohoyo",
+        "quantity": 3
+      },
+      {
+        "name": "Esquíritu majestuoso",
+        "quantity": 2
+      },
+      {
+        "name": "Pincho de malpincho",
+        "quantity": 3
+      },
+      {
+        "name": "Garra de highiena",
+        "quantity": 3
+      },
+      {
+        "name": "Cola de miauidizo",
+        "quantity": 3
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14275,
+    "result": "Agua de la fuente de Nofub",
+    "category": "Pócima",
+    "level": 165,
+    "ingredients": [
+      {
+        "name": "Pelos de Kerubim",
+        "quantity": 1
+      },
+      {
+        "name": "Menta salvaje",
+        "quantity": 10
+      },
+      {
+        "name": "Trébol de 5 hojas",
+        "quantity": 10
+      },
+      {
+        "name": "Ortiga",
+        "quantity": 8
+      },
+      {
+        "name": "Salvia",
+        "quantity": 8
+      },
+      {
+        "name": "Orquídea freyesca",
+        "quantity": 10
+      },
+      {
+        "name": "Edelweiss",
+        "quantity": 6
+      },
+      {
+        "name": "Pócima de envejecimiento",
+        "quantity": 3
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14692,
+    "result": "Esencia de Tengu Gélifux",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 170,
+    "ingredients": [
+      {
+        "name": "Lana de Tengu Gélifux",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 15735,
+    "result": "Esencia de XLII",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 170,
+    "ingredients": [
+      {
+        "name": "Cuerno de XLII",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16722,
+    "result": "Pócima Dre Paquita",
+    "category": "Pócima",
+    "level": 170,
+    "ingredients": [
+      {
+        "name": "Belladona",
+        "quantity": 7
+      },
+      {
+        "name": "Medida de sal",
+        "quantity": 1
+      },
+      {
+        "name": "Cáñamo",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 19938,
+    "result": "Esencia de Anelidón",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 170,
+    "ingredients": [
+      {
+        "name": "Ojo de Anelidón",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 24134,
+    "result": "Esencia de Kumijo",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 170,
+    "ingredients": [
+      {
+        "name": "Brasas azuladas",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 10064,
+    "result": "Tinte mágico tenebroso",
+    "category": "Tinte",
+    "level": 174,
+    "ingredients": [
+      {
+        "name": "Corteza de abrakno oscuro",
+        "quantity": 1
+      },
+      {
+        "name": "Raíz de abráknido oscuro",
+        "quantity": 1
+      },
+      {
+        "name": "Raíz de abráknido venerable",
+        "quantity": 1
+      },
+      {
+        "name": "Tinte mágico oscuro",
+        "quantity": 1
+      },
+      {
+        "name": "Hueso de Aludém",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16420,
+    "result": "Pócima de ganduleo",
+    "category": "Preparación",
+    "level": 175,
+    "ingredients": [
+      {
+        "name": "Mijo",
+        "quantity": 10
+      },
+      {
+        "name": "Maíz",
+        "quantity": 20
+      }
+    ],
+    "unit_selling_price_x1": 8946,
+    "unit_selling_price_x10": 8390,
+    "unit_selling_price_x100": 10000,
+    "unit_selling_price_x1000": 10000,
+    "unit_crafting_cost_x1": 7460,
+    "unit_crafting_cost_x10": 6570,
+    "unit_crafting_cost_x100": 5260,
+    "unit_crafting_cost_x1000": 5260,
+    "selling_last_updated": "2026-03-23T21:37:02.225367+00:00"
+  },
+  {
+    "id": 10204,
+    "result": "Pócima de sesamobolizante",
+    "category": "Preparación",
+    "level": 180,
+    "ingredients": [
+      {
+        "name": "Mandrágora",
+        "quantity": 14
+      },
+      {
+        "name": "Mijo",
+        "quantity": 14
+      },
+      {
+        "name": "Madera de olmo",
+        "quantity": 14
+      },
+      {
+        "name": "Semillas de sésamo",
+        "quantity": 7
+      },
+      {
+        "name": "Lucio rebosante",
+        "quantity": 1
+      },
+      {
+        "name": "Ala de pulgondo",
+        "quantity": 1
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14693,
+    "result": "Esencia del Cil",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 180,
+    "ingredients": [
+      {
+        "name": "Pata de Cil",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14694,
+    "result": "Esencia del Kralamar Gigante",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 180,
+    "ingredients": [
+      {
+        "name": "Ventosa del kralamar gigante",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14695,
+    "result": "Esencia de Bworker",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 180,
+    "ingredients": [
+      {
+        "name": "Uña de Bworker",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14696,
+    "result": "Esencia de Ugah",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 180,
+    "ingredients": [
+      {
+        "name": "Espina de Ugah",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 15703,
+    "result": "Esencia de Toxoliat",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 180,
+    "ingredients": [
+      {
+        "name": "Sangre de Toxoliat",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16417,
+    "result": "Pócima revitalizante",
+    "category": "Pócima",
+    "level": 180,
+    "ingredients": [
+      {
+        "name": "Mandrágora",
+        "quantity": 7
+      },
+      {
+        "name": "Medida de pimienta",
+        "quantity": 1
+      },
+      {
+        "name": "Maíz",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16418,
+    "result": "Pócima quesera",
+    "category": "Pócima",
+    "level": 180,
+    "ingredients": [
+      {
+        "name": "Manchégora",
+        "quantity": 1
+      },
+      {
+        "name": "Medida de pimienta",
+        "quantity": 1
+      },
+      {
+        "name": "Maíz",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 26872,
+    "result": "Elixir ucrónico mayor",
+    "category": "Pócima",
+    "level": 180,
+    "ingredients": [
+      {
+        "name": "Fragmento de anomalía",
+        "quantity": 15
+      },
+      {
+        "name": "Esquíritu majestuoso",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 27911,
+    "result": "Pócima de recaudador excepcional",
+    "category": "Pócima de conquista",
+    "level": 180,
+    "ingredients": [
+      {
+        "name": "Pepita",
+        "quantity": 180
+      },
+      {
+        "name": "Oreja de gosbusteador",
+        "quantity": 3
+      },
+      {
+        "name": "Pañuelo agujereado de tierra",
+        "quantity": 3
+      },
+      {
+        "name": "Barba de sieth",
+        "quantity": 3
+      },
+      {
+        "name": "Veneno de perfácnida",
+        "quantity": 3
+      },
+      {
+        "name": "Pincho de piktenia",
+        "quantity": 3
+      },
+      {
+        "name": "Máscara rota",
+        "quantity": 3
+      },
+      {
+        "name": "Esquíritu majestuoso",
+        "quantity": 5
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 28488,
+    "result": "Esencia de silvespíritu",
+    "category": "Pócima",
+    "level": 180,
+    "ingredients": [
+      {
+        "name": "Corteza de korrosif",
+        "quantity": 4
+      },
+      {
+        "name": "Lamela de dramanita",
+        "quantity": 4
+      },
+      {
+        "name": "Volva de galerina",
+        "quantity": 4
+      },
+      {
+        "name": "Volva de hongador",
+        "quantity": 4
+      },
+      {
+        "name": "Lamela de cortinaria",
+        "quantity": 4
+      },
+      {
+        "name": "Aguas tranquilas",
+        "quantity": 20
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 17774,
+    "result": "Elixir de arakna",
+    "category": "Pócima",
+    "level": 184,
+    "ingredients": [
+      {
+        "name": "Gran frasco",
+        "quantity": 1
+      },
+      {
+        "name": "Pata de arakna",
+        "quantity": 1
+      },
+      {
+        "name": "Glándula de arak-hai",
+        "quantity": 1
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 13479,
+    "result": "Frasco de Shishalal",
+    "category": "Pócima",
+    "level": 185,
+    "ingredients": [
+      {
+        "name": "Pata de arakna",
+        "quantity": 1
+      },
+      {
+        "name": "Huevo de tofu",
+        "quantity": 1
+      },
+      {
+        "name": "Salvia",
+        "quantity": 4
+      },
+      {
+        "name": "Edelweiss",
+        "quantity": 6
+      },
+      {
+        "name": "Baba de rosa demoníaca",
+        "quantity": 1
+      },
+      {
+        "name": "Sello real falso",
+        "quantity": 1
+      },
+      {
+        "name": "Flor de kalipto",
+        "quantity": 1
+      },
+      {
+        "name": "Pelos de Kerubim",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 17781,
+    "result": "Disolvente fosforescente",
+    "category": "Preparación",
+    "level": 185,
+    "ingredients": [
+      {
+        "name": "Flor de Cil",
+        "quantity": 1
+      },
+      {
+        "name": "Volva de hongador",
+        "quantity": 3
+      },
+      {
+        "name": "Lamela de cortinaria",
+        "quantity": 2
+      },
+      {
+        "name": "Mandrágora",
+        "quantity": 35
+      },
+      {
+        "name": "Dolomita",
+        "quantity": 10
+      },
+      {
+        "name": "Pepita",
+        "quantity": 2
+      },
+      {
+        "name": "Petaca de azufre",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 11506,
+    "result": "Pócima del sueño tieso",
+    "category": "Pócima",
+    "level": 190,
+    "ingredients": [
+      {
+        "name": "Mandrágora",
+        "quantity": 7
+      },
+      {
+        "name": "Limón",
+        "quantity": 1
+      },
+      {
+        "name": "Maíz",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14697,
+    "result": "Esencia de Tejossus",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 190,
+    "ingredients": [
+      {
+        "name": "Garra de Tejossus",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14698,
+    "result": "Esencia de Fuji Gélifux Nodriza",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 190,
+    "ingredients": [
+      {
+        "name": "Cuero de Fuji Gélifux",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14699,
+    "result": "Esencia de Esmígol",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 190,
+    "ingredients": [
+      {
+        "name": "Polvos glaciales",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14700,
+    "result": "Esencia del Golosotrón Real",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 190,
+    "ingredients": [
+      {
+        "name": "Cola de Golosotrón Real",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14701,
+    "result": "Esencia de Mizz Frizz",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 190,
+    "ingredients": [
+      {
+        "name": "Vello de la axila de Mizz Frizz",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14702,
+    "result": "Esencia de Sylargh",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 190,
+    "ingredients": [
+      {
+        "name": "Lana de Sylargh",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14703,
+    "result": "Esencia de Klim",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 190,
+    "ingredients": [
+      {
+        "name": "Bigote de Klim",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14704,
+    "result": "Esencia de Nileza",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 190,
+    "ingredients": [
+      {
+        "name": "Bordado de Nileza",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14706,
+    "result": "Esencia de Merkator",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 190,
+    "ingredients": [
+      {
+        "name": "Barba de Merkator",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14975,
+    "result": "Esencia de Sombra",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 190,
+    "ingredients": [
+      {
+        "name": "Cuerno de Sombra",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 18742,
+    "result": "Brebaje muscular",
+    "category": "Material de alquimia",
+    "level": 190,
+    "ingredients": [
+      {
+        "name": "Fórmula de brebaje muscular",
+        "quantity": 1
+      },
+      {
+        "name": "Mandrágora",
+        "quantity": 8
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 10
+      },
+      {
+        "name": "Zanahowia",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 19913,
+    "result": "Esencia del conde Razof",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 190,
+    "ingredients": [
+      {
+        "name": "Pelos del conde Razof",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 27451,
+    "result": "Esencia de Demena Decobre",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 190,
+    "ingredients": [
+      {
+        "name": "Campana de Demena Decobre",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 11505,
+    "result": "Pócima matarratas",
+    "category": "Pócima",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Campanilla de invierno",
+        "quantity": 1
+      },
+      {
+        "name": "Mijo",
+        "quantity": 2
+      },
+      {
+        "name": "Aguas tranquilas",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 11507,
+    "result": "Pócima estrellada",
+    "category": "Pócima",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Estrella de las nieves",
+        "quantity": 1
+      },
+      {
+        "name": "Mijo",
+        "quantity": 2
+      },
+      {
+        "name": "Aguas tranquilas",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 14705,
+    "result": "Esencia del conde Kontatrás",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Omoplato del conde Kontatrás",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 15272,
+    "result": "Esencia del Rey Nidas",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Joya de la corona del Rey Nidas",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 15704,
+    "result": "Esencia de la Reina de los Ladrones",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Bordado de la Reina de los Ladrones",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 15705,
+    "result": "Esencia de Protozorror",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Núcleo de Protozorror",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 15734,
+    "result": "Esencia de Vórtex",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Ala de Vórtex",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 17735,
+    "result": "Esencia de Miauvizor",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Dado de Miauvizor",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 19906,
+    "result": "Esencia de Bethel Akarna",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Cola de Bethel Akarna",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 19907,
+    "result": "Esencia de Solar",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Sesos de Solar",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 19908,
+    "result": "Esencia de Meno",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Pelo de Meno",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 19909,
+    "result": "Esencia de Ilyzaelle",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Pluma de Ilyzaelle",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 19910,
+    "result": "Esencia de Dientinea",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Dentadura de Dientinea",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 19911,
+    "result": "Esencia de la Larva de Kutulú",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Ala de Larva de Kutulú",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 19912,
+    "result": "Esencia de Anerice la Fab'huquesa",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Pincho de Anerice",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 19914,
+    "result": "Esencia de Dazahk Martillelo",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Hombrera de Dazahk Martillelo",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 19916,
+    "result": "Esencia de Tal Kasha",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Mechón de pelo de Tal Kasha",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 21217,
+    "result": "Esencia de Torkelonia",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Escama de Torkelonia",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 21515,
+    "result": "Esencia de Corrupción",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Cuerno de Corrupción",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 22128,
+    "result": "Esencia de Guerra",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Gorro de Guerra",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 22129,
+    "result": "Esencia de Miseria",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Pluma de Miseria",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 22130,
+    "result": "Esencia de Servidumbre",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Cerrojo de Servidumbre",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 24135,
+    "result": "Esencia del rey Imagami",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Diacrítico del rey Imagami",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 24136,
+    "result": "Esencia de la reina Amirukam",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Diacrítico de la reina Amirukam",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 25318,
+    "result": "Esencia de Kabaal",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Cetro roto de Kabaal",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 26041,
+    "result": "Esencia del Conflicto Eterno",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Máscara pesadillesca del Conflicto Eterno",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 27405,
+    "result": "Esencia de Belladona",
+    "category": "Esencia de guardián de mazmorra",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Pintalabios de Belladona",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 27912,
+    "result": "Pócima de recaudador extraordinaria",
+    "category": "Pócima de conquista",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Pepita",
+        "quantity": 200
+      },
+      {
+        "name": "Ojo de bombador",
+        "quantity": 3
+      },
+      {
+        "name": "Antena de golosojorro",
+        "quantity": 3
+      },
+      {
+        "name": "Cráneo mágico de magamaño",
+        "quantity": 3
+      },
+      {
+        "name": "Sangre de barrilicoso",
+        "quantity": 3
+      },
+      {
+        "name": "Ojo pulguinfecto",
+        "quantity": 3
+      },
+      {
+        "name": "Esquíritu supremo",
+        "quantity": 10
+      },
+      {
+        "name": "Zarpa de bubotente",
+        "quantity": 3
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  }
+]

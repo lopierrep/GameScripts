@@ -13,10 +13,8 @@ import os
 import sys
 from datetime import datetime, timezone
 
-from . import save_resource_buy_prices as srs
 from .common import ROOT_DIR, SIZES, _load_omitted_items, find_recipe_file as _find_recipe_file_by_profession
 
-MARKET_DIR  = ROOT_DIR
 OTHER_JSON  = os.path.join(ROOT_DIR, "other_ingredients_prices.json")
 RECIPES_DIR = os.path.join(ROOT_DIR, "Recipes")
 
@@ -34,8 +32,15 @@ def load_all_pack_prices() -> dict[str, dict]:
     """Devuelve {nombre: {x1, x10, x100, x1000}} con precio UNITARIO por pack."""
     pack_prices = {}
 
-    # Precios de recursos y otros ingredientes (ya almacenados como precio unitario)
-    for data in (_load_file(srs.ITEMS_FILE), _load_file(OTHER_JSON)):
+    # Precios de todos los mercadillos
+    markets_dir = os.path.join(ROOT_DIR, "Markets")
+    market_files = []
+    if os.path.isdir(markets_dir):
+        for folder in os.listdir(markets_dir):
+            fp = os.path.join(markets_dir, folder, "materials_prices.json")
+            if os.path.exists(fp):
+                market_files.append(fp)
+    for data in [_load_file(fp) for fp in market_files] + [_load_file(OTHER_JSON)]:
         for items in data.values():
             for item in items:
                 name = item["name"].strip()

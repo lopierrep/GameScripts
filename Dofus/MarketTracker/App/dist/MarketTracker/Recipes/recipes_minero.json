@@ -1,0 +1,1230 @@
+[
+  {
+    "id": 16440,
+    "result": "Ferrita",
+    "category": "Aleación",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Hierro",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 1,
+    "unit_selling_price_x10": 1,
+    "unit_selling_price_x100": 1,
+    "unit_selling_price_x1000": 1,
+    "unit_crafting_cost_x1": 1100,
+    "unit_crafting_cost_x10": 950,
+    "unit_crafting_cost_x100": 950,
+    "unit_crafting_cost_x1000": 950,
+    "selling_last_updated": "2026-03-24T00:17:36.930562+00:00"
+  },
+  {
+    "id": 23104,
+    "result": "Aleación de katana",
+    "category": "Recurso variado",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Silicato",
+        "quantity": 40
+      },
+      {
+        "name": "Estaño",
+        "quantity": 30
+      },
+      {
+        "name": "Carbón",
+        "quantity": 20
+      },
+      {
+        "name": "Pepita",
+        "quantity": 200
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 23340,
+    "result": "Virtud de fecundidad",
+    "category": "Pandala",
+    "level": 10,
+    "ingredients": [
+      {
+        "name": "Artefacto pandawushu de roca",
+        "quantity": 2
+      },
+      {
+        "name": "Artefacto pandawushu de viento",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 23341,
+    "result": "Virtud de rectitud",
+    "category": "Pandala",
+    "level": 10,
+    "ingredients": [
+      {
+        "name": "Artefacto pandawushu de roca",
+        "quantity": 2
+      },
+      {
+        "name": "Artefacto pandawushu de agua",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 23342,
+    "result": "Virtud de armonía",
+    "category": "Pandala",
+    "level": 10,
+    "ingredients": [
+      {
+        "name": "Artefacto pandawushu de roca",
+        "quantity": 2
+      },
+      {
+        "name": "Artefacto pandawushu de madera",
+        "quantity": 1
+      },
+      {
+        "name": "Artefacto pandawushu de agua",
+        "quantity": 1
+      },
+      {
+        "name": "Artefacto pandawushu de fuego",
+        "quantity": 1
+      },
+      {
+        "name": "Artefacto pandawushu de viento",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 23343,
+    "result": "Virtud de grandeza",
+    "category": "Pandala",
+    "level": 10,
+    "ingredients": [
+      {
+        "name": "Artefacto pandawushu de roca",
+        "quantity": 2
+      },
+      {
+        "name": "Artefacto pandawushu de madera",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 23344,
+    "result": "Virtud de sinceridad",
+    "category": "Pandala",
+    "level": 10,
+    "ingredients": [
+      {
+        "name": "Artefacto pandawushu de roca",
+        "quantity": 2
+      },
+      {
+        "name": "Artefacto pandawushu de fuego",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 27413,
+    "result": "Agua ferruginosa",
+    "category": "Líquido",
+    "level": 10,
+    "ingredients": [
+      {
+        "name": "Hierro",
+        "quantity": 10
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 747,
+    "result": "Aluminita",
+    "category": "Aleación",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Hierro",
+        "quantity": 10
+      },
+      {
+        "name": "Cobre",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 359,
+    "unit_selling_price_x10": 250,
+    "unit_selling_price_x100": 300,
+    "unit_selling_price_x1000": 300,
+    "unit_crafting_cost_x1": 660,
+    "unit_crafting_cost_x10": 310,
+    "unit_crafting_cost_x100": 310,
+    "unit_crafting_cost_x1000": 310,
+    "selling_last_updated": "2026-03-23T23:55:10.155234+00:00"
+  },
+  {
+    "id": 9686,
+    "result": "Piedra de alma pequeña",
+    "category": "Piedra de alma",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Esquíritu inferior",
+        "quantity": 10
+      },
+      {
+        "name": "Aceite de Kodo",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 7949,
+    "unit_selling_price_x10": 5500,
+    "unit_selling_price_x100": 5500,
+    "unit_selling_price_x1000": 5500,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 20163,
+    "result": "Aleación abisal",
+    "category": "Misiones principales",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Metal abisal",
+        "quantity": 10
+      },
+      {
+        "name": "Sepiolita",
+        "quantity": 10
+      },
+      {
+        "name": "Dolomita",
+        "quantity": 10
+      },
+      {
+        "name": "Obsidiana",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 466,
+    "result": "Zafiro",
+    "category": "Piedra preciosa",
+    "level": 30,
+    "ingredients": [
+      {
+        "name": "Piedra de zafiro",
+        "quantity": 2
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 28277,
+    "result": "Gricita",
+    "category": "Aleación",
+    "level": 30,
+    "ingredients": [
+      {
+        "name": "Bronce",
+        "quantity": 40
+      },
+      {
+        "name": "Kobalto",
+        "quantity": 40
+      },
+      {
+        "name": "Estaño",
+        "quantity": 40
+      },
+      {
+        "name": "Manganeso",
+        "quantity": 40
+      },
+      {
+        "name": "Silicato",
+        "quantity": 40
+      },
+      {
+        "name": "Carbón",
+        "quantity": 4
+      },
+      {
+        "name": "Mineral extraño",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 465,
+    "result": "Cristal",
+    "category": "Piedra preciosa",
+    "level": 40,
+    "ingredients": [
+      {
+        "name": "Piedra de cristal",
+        "quantity": 3
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 746,
+    "result": "Ebonita",
+    "category": "Aleación",
+    "level": 40,
+    "ingredients": [
+      {
+        "name": "Hierro",
+        "quantity": 10
+      },
+      {
+        "name": "Cobre",
+        "quantity": 10
+      },
+      {
+        "name": "Bronce",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 1477,
+    "unit_selling_price_x10": 1159,
+    "unit_selling_price_x100": 1245,
+    "unit_selling_price_x1000": 1260,
+    "unit_crafting_cost_x1": 960,
+    "unit_crafting_cost_x10": 450,
+    "unit_crafting_cost_x100": 450,
+    "unit_crafting_cost_x1000": 450,
+    "selling_last_updated": "2026-03-23T23:57:45.948879+00:00"
+  },
+  {
+    "id": 9941,
+    "result": "Nácar",
+    "category": "Piedra preciosa",
+    "level": 40,
+    "ingredients": [
+      {
+        "name": "Nácar en bruto",
+        "quantity": 3
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 21984,
+    "result": "Piedra de alma heroica",
+    "category": "Selocalipsis",
+    "level": 40,
+    "ingredients": [
+      {
+        "name": "Guijarro brasa",
+        "quantity": 1
+      },
+      {
+        "name": "Guijarro solar",
+        "quantity": 3
+      },
+      {
+        "name": "Esquíritu supremo",
+        "quantity": 100
+      },
+      {
+        "name": "Pepita",
+        "quantity": 100
+      },
+      {
+        "name": "Artefacto pandawushu",
+        "quantity": 20
+      },
+      {
+        "name": "Pócima de alteración",
+        "quantity": 20
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 315,
+    "result": "Diamante",
+    "category": "Piedra preciosa",
+    "level": 50,
+    "ingredients": [
+      {
+        "name": "Piedra de diamante",
+        "quantity": 3
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 316,
+    "result": "Esmeralda",
+    "category": "Piedra preciosa",
+    "level": 50,
+    "ingredients": [
+      {
+        "name": "Piedra de esmeralda",
+        "quantity": 4
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 467,
+    "result": "Rubí",
+    "category": "Piedra preciosa",
+    "level": 50,
+    "ingredients": [
+      {
+        "name": "Piedra de rubí",
+        "quantity": 2
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 9687,
+    "result": "Piedra de alma mediana",
+    "category": "Piedra de alma",
+    "level": 50,
+    "ingredients": [
+      {
+        "name": "Esquíritu común",
+        "quantity": 10
+      },
+      {
+        "name": "Jugo de pescado",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 4767,
+    "unit_selling_price_x10": 4690,
+    "unit_selling_price_x100": 3900,
+    "unit_selling_price_x1000": 3900,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 748,
+    "result": "Magnesita",
+    "category": "Aleación",
+    "level": 60,
+    "ingredients": [
+      {
+        "name": "Cobre",
+        "quantity": 10
+      },
+      {
+        "name": "Hierro",
+        "quantity": 10
+      },
+      {
+        "name": "Bronce",
+        "quantity": 10
+      },
+      {
+        "name": "Kobalto",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 17272,
+    "result": "Orbe regenerativo menor",
+    "category": "Orbe de forjamagia",
+    "level": 60,
+    "ingredients": [
+      {
+        "name": "Pepita",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 749,
+    "result": "Bakelitita",
+    "category": "Aleación",
+    "level": 80,
+    "ingredients": [
+      {
+        "name": "Cobre",
+        "quantity": 10
+      },
+      {
+        "name": "Bronce",
+        "quantity": 10
+      },
+      {
+        "name": "Kobalto",
+        "quantity": 10
+      },
+      {
+        "name": "Manganeso",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 750,
+    "result": "Kuarzo",
+    "category": "Aleación",
+    "level": 100,
+    "ingredients": [
+      {
+        "name": "Manganeso",
+        "quantity": 10
+      },
+      {
+        "name": "Estaño",
+        "quantity": 5
+      },
+      {
+        "name": "Silicato",
+        "quantity": 5
+      },
+      {
+        "name": "Bronce",
+        "quantity": 10
+      },
+      {
+        "name": "Kobalto",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 7508,
+    "result": "Runa de firma",
+    "category": "Runa de forjamagia",
+    "level": 100,
+    "ingredients": [
+      {
+        "name": "Pócima de firma",
+        "quantity": 1
+      },
+      {
+        "name": "Oro",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 9688,
+    "result": "Piedra de alma grande",
+    "category": "Piedra de alma",
+    "level": 100,
+    "ingredients": [
+      {
+        "name": "Esquíritu superior",
+        "quantity": 10
+      },
+      {
+        "name": "Pócima mineral",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 11280,
+    "result": "Plancha de acero",
+    "category": "Aleación",
+    "level": 100,
+    "ingredients": [
+      {
+        "name": "Carbón",
+        "quantity": 5
+      },
+      {
+        "name": "Hierro",
+        "quantity": 25
+      },
+      {
+        "name": "Estaño",
+        "quantity": 10
+      },
+      {
+        "name": "Manganeso",
+        "quantity": 10
+      },
+      {
+        "name": "Kobalto",
+        "quantity": 5
+      },
+      {
+        "name": "Aluminita",
+        "quantity": 1
+      },
+      {
+        "name": "Petaca de azufre",
+        "quantity": 1
+      },
+      {
+        "name": "Nácar",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 7027,
+    "result": "Topacio",
+    "category": "Piedra preciosa",
+    "level": 110,
+    "ingredients": [
+      {
+        "name": "Piedra de topacio",
+        "quantity": 10
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 6457,
+    "result": "Kriptonita",
+    "category": "Aleación",
+    "level": 120,
+    "ingredients": [
+      {
+        "name": "Silicato",
+        "quantity": 5
+      },
+      {
+        "name": "Bronce",
+        "quantity": 10
+      },
+      {
+        "name": "Kobalto",
+        "quantity": 10
+      },
+      {
+        "name": "Manganeso",
+        "quantity": 10
+      },
+      {
+        "name": "Estaño",
+        "quantity": 5
+      },
+      {
+        "name": "Plata",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 17273,
+    "result": "Orbe regenerativo",
+    "category": "Orbe de forjamagia",
+    "level": 120,
+    "ingredients": [
+      {
+        "name": "Pepita",
+        "quantity": 30
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 6458,
+    "result": "Kobalita",
+    "category": "Aleación",
+    "level": 140,
+    "ingredients": [
+      {
+        "name": "Silicato",
+        "quantity": 5
+      },
+      {
+        "name": "Kobalto",
+        "quantity": 10
+      },
+      {
+        "name": "Manganeso",
+        "quantity": 10
+      },
+      {
+        "name": "Estaño",
+        "quantity": 5
+      },
+      {
+        "name": "Plata",
+        "quantity": 10
+      },
+      {
+        "name": "Bauxita",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 11013,
+    "unit_selling_price_x10": 9940,
+    "unit_selling_price_x100": 9999,
+    "unit_selling_price_x1000": 9999,
+    "unit_crafting_cost_x1": 9410,
+    "unit_crafting_cost_x10": 7735,
+    "unit_crafting_cost_x100": 7315,
+    "unit_crafting_cost_x1000": 7315,
+    "selling_last_updated": "2026-03-24T00:18:42.081901+00:00"
+  },
+  {
+    "id": 7026,
+    "result": "Aguamarina",
+    "category": "Piedra preciosa",
+    "level": 150,
+    "ingredients": [
+      {
+        "name": "Piedra de Aguamarina",
+        "quantity": 10
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 7028,
+    "result": "Ágata",
+    "category": "Piedra preciosa",
+    "level": 150,
+    "ingredients": [
+      {
+        "name": "Piedra de Ágata",
+        "quantity": 3
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 9689,
+    "result": "Piedra de alma enorme",
+    "category": "Piedra de alma",
+    "level": 150,
+    "ingredients": [
+      {
+        "name": "Esquíritu majestuoso",
+        "quantity": 10
+      },
+      {
+        "name": "Pócima de alteración",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 31517,
+    "result": "Artefacto pandawushu",
+    "category": "Piedra preciosa",
+    "level": 150,
+    "ingredients": [
+      {
+        "name": "Artefacto pandawushu de madera",
+        "quantity": 1
+      },
+      {
+        "name": "Artefacto pandawushu de agua",
+        "quantity": 1
+      },
+      {
+        "name": "Artefacto pandawushu de roca",
+        "quantity": 1
+      },
+      {
+        "name": "Artefacto pandawushu de viento",
+        "quantity": 1
+      },
+      {
+        "name": "Artefacto pandawushu de fuego",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 7036,
+    "result": "Rutilo",
+    "category": "Aleación",
+    "level": 160,
+    "ingredients": [
+      {
+        "name": "Manganeso",
+        "quantity": 10
+      },
+      {
+        "name": "Silicato",
+        "quantity": 5
+      },
+      {
+        "name": "Estaño",
+        "quantity": 5
+      },
+      {
+        "name": "Bauxita",
+        "quantity": 10
+      },
+      {
+        "name": "Plata",
+        "quantity": 10
+      },
+      {
+        "name": "Kobalto",
+        "quantity": 10
+      },
+      {
+        "name": "Oro",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 6188,
+    "unit_selling_price_x10": 5689,
+    "unit_selling_price_x100": 5550,
+    "unit_selling_price_x1000": 5550,
+    "unit_crafting_cost_x1": 11030,
+    "unit_crafting_cost_x10": 8055,
+    "unit_crafting_cost_x100": 7760,
+    "unit_crafting_cost_x1000": 8470
+  },
+  {
+    "id": 7035,
+    "result": "Piruta",
+    "category": "Aleación",
+    "level": 180,
+    "ingredients": [
+      {
+        "name": "Oro",
+        "quantity": 10
+      },
+      {
+        "name": "Bauxita",
+        "quantity": 10
+      },
+      {
+        "name": "Kobalto",
+        "quantity": 10
+      },
+      {
+        "name": "Dolomita",
+        "quantity": 5
+      },
+      {
+        "name": "Cenipiedra",
+        "quantity": 5
+      },
+      {
+        "name": "Estaño",
+        "quantity": 5
+      },
+      {
+        "name": "Silicato",
+        "quantity": 5
+      },
+      {
+        "name": "Plata",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 17274,
+    "result": "Orbe regenerativo mayor",
+    "category": "Orbe de forjamagia",
+    "level": 180,
+    "ingredients": [
+      {
+        "name": "Pepita",
+        "quantity": 100
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 9690,
+    "result": "Piedra de alma gigantesca",
+    "category": "Piedra de alma",
+    "level": 190,
+    "ingredients": [
+      {
+        "name": "Artefacto pandawushu",
+        "quantity": 2
+      },
+      {
+        "name": "Esquíritu supremo",
+        "quantity": 10
+      },
+      {
+        "name": "Tabla para pintar",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 449,
+    "unit_selling_price_x10": 456,
+    "unit_selling_price_x100": 460,
+    "unit_selling_price_x1000": 460,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 12728,
+    "result": "Ardonita",
+    "category": "Aleación",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Obsidiana",
+        "quantity": 10
+      },
+      {
+        "name": "Silicato",
+        "quantity": 5
+      },
+      {
+        "name": "Cenipiedra",
+        "quantity": 5
+      },
+      {
+        "name": "Bauxita",
+        "quantity": 10
+      },
+      {
+        "name": "Dolomita",
+        "quantity": 5
+      },
+      {
+        "name": "Plata",
+        "quantity": 10
+      },
+      {
+        "name": "Oro",
+        "quantity": 10
+      },
+      {
+        "name": "Estaño",
+        "quantity": 5
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 17275,
+    "result": "Orbe regenerativo magistral",
+    "category": "Orbe de forjamagia",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Pepita",
+        "quantity": 300
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  }
+]

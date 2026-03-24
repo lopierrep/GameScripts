@@ -85,6 +85,23 @@ def _ask_manual_prices(name: str) -> dict:
     }
 
 
+def _ask_manual_selling_prices(name: str) -> dict:
+    """Pide al usuario los precios de venta de lote de un item manualmente."""
+    print(f"\n[MANUAL VENTA] Ingresa los precios de lote de '{name}':")
+    def _read(label: str) -> int:
+        while True:
+            val = input(f"  {label}: ").strip()
+            if val.isdigit():
+                return int(val)
+            print("  Ingresa un número entero.")
+    return {
+        "unit_price_x1":    _read("Precio lote x1"),
+        "unit_price_x10":   _read("Precio lote x10"),
+        "unit_price_x100":  _read("Precio lote x100"),
+        "unit_price_x1000": _read("Precio lote x1000"),
+    }
+
+
 def _price_found(prices: dict) -> bool:
     return any(v not in ("N/A", "", "0", 0) for k, v in prices.items() if k != "_skipped")
 
@@ -341,10 +358,12 @@ def search_market_batch(
     global stop_requested
 
     manual_items = _load_manual_price_items()
+    auto_results       = [n for n in results     if n not in manual_items]
+    manual_results     = [n for n in results     if n in manual_items]
     auto_ingredients   = [n for n in ingredients if n not in manual_items]
     manual_ingredients = [n for n in ingredients if n in manual_items]
 
-    total = len(results) + len(auto_ingredients)
+    total = len(auto_results) + len(auto_ingredients)
     missing_results     = []
     missing_ingredients = []
 
@@ -354,9 +373,9 @@ def search_market_batch(
         print()
 
     idx = 0
-    for name in results:
+    for name in auto_results:
         if stop_requested:
-            missing_results.extend(results[idx:])
+            missing_results.extend(auto_results[idx:])
             return missing_results, missing_ingredients + manual_ingredients
         idx += 1
         print(f"[{idx}/{total}] [venta] {name} …", end=" ", flush=True)
@@ -405,6 +424,16 @@ def search_market_batch(
         except Exception as e:
             print(f"ERROR al guardar — {e}")
             missing_ingredients.append(name)
+
+    # Resultados con precio de venta manual
+    for name in manual_results:
+        target_file = (result_file_map or {}).get(name, recipe_file)
+        prices = _ask_manual_selling_prices(name)
+        try:
+            srsp.save_selling_price(target_file, name, prices)
+        except Exception as e:
+            print(f"ERROR al guardar — {e}")
+            missing_results.append(name)
 
     return missing_results, missing_ingredients
 
@@ -499,6 +528,8 @@ def update_profession(profession: str, limit: int | None = None):
 
     result_file_map = _build_result_file_map()
 
+    all_missing_results: list[str] = []
+
     if not market_groups:
         print("[INFO] No hay items para consultar en ningún mercadillo.")
     else:
@@ -516,6 +547,7 @@ def update_profession(profession: str, limit: int | None = None):
                 item_lookup,
                 result_file_map,
             )
+            all_missing_results.extend(r for r in miss_r if r in all_results)
             if (miss_r or miss_i) and not stop_requested:
                 total = len(miss_r) + len(miss_i)
                 print(f"\n[AVISO] {total} items sin precio en {market_name} (no se reintentará).")
@@ -541,6 +573,22 @@ def update_profession(profession: str, limit: int | None = None):
         print(f"\n[AVISO] {len(still_missing)} ingredientes sin precio:")
         for name in sorted(still_missing):
             print(f"  - {name}")
+
+    missing_file = os.path.join(RECIPES_DIR, "missing_recipes.json")
+    if os.path.exists(missing_file):
+        with open(missing_file, encoding="utf-8") as f:
+            content = f.read().strip()
+        all_missing = json.loads(content) if content else {}
+    else:
+        all_missing = {}
+    missing_data = sorted(set(all_missing_results))
+    all_missing[profession] = missing_data
+    with open(missing_file, "w", encoding="utf-8") as f:
+        json.dump(all_missing, f, ensure_ascii=False, indent=2)
+    if missing_data:
+        print(f"\n[INFO] {len(missing_data)} recetas sin precio guardadas en missing_recipes.json")
+    else:
+        print("\n[INFO] Todas las recetas tienen precio. missing_recipes.json actualizado.")
 
     print("\nExportando a Google Sheets …")
     export_profession(profession)

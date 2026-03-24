@@ -29,6 +29,7 @@ from Helpers.SearchAndSave.common import ROOT_DIR as _ROOT_DIR, _normalize
 
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
+
 _CATEGORIES_FILE = os.path.join(_ROOT_DIR, "Resources", "categories.txt")
 
 def _load_categories() -> set[str]:
@@ -107,7 +108,9 @@ def preprocess_for_ocr(image: Image.Image) -> Image.Image:
 
 
 def ocr_all_prices() -> dict:
-    img = pyautogui.screenshot(region=CAL["price_region_all"])
+    r = CAL["price_region_all"]
+    region = (r[0], r[1] - 10, r[2], r[3] + 10)
+    img = pyautogui.screenshot(region=region)
     processed = preprocess_for_ocr(img)
     raw = pytesseract.image_to_string(processed, config="--psm 6 -c tessedit_char_whitelist=0123456789.,")
 
@@ -188,6 +191,7 @@ def find_exact_result(name: str) -> tuple | None:
         avg_top = sum(d["tops"]) / len(d["tops"])
         avg_h   = sum(d["heights"]) / len(d["heights"])
         line_list.append((text, avg_top + avg_h / 2))
+
 
     if not line_list:
         return None

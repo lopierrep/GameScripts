@@ -696,10 +696,11 @@
     },
     {
       "name": "Cáñamo",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 333,
+      "unit_price_x10": 361,
+      "unit_price_x100": 72,
+      "unit_price_x1000": 50,
+      "last_updated": "2026-03-24T00:36:35.962162+00:00"
     },
     {
       "name": "Cáñamo eufórico",
@@ -1426,10 +1427,11 @@
     },
     {
       "name": "Valva de fantimonel",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 6255,
+      "unit_price_x10": 6000,
+      "unit_price_x100": 7000,
+      "unit_price_x1000": 0,
+      "last_updated": "2026-03-24T00:40:23.244584+00:00"
     },
     {
       "name": "Valva de harpirata",
@@ -3579,10 +3581,11 @@
   "Guijarro": [
     {
       "name": "Guijarro brasa",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
+      "unit_price_x1": 238936,
+      "unit_price_x10": 259628,
       "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1000": 0,
+      "last_updated": "2026-03-24T00:37:07.721636+00:00"
     },
     {
       "name": "Guijarro carmesí",
@@ -3621,10 +3624,11 @@
     },
     {
       "name": "Guijarro solar",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 63356,
+      "unit_price_x10": 64867,
+      "unit_price_x100": 65000,
+      "unit_price_x1000": 0,
+      "last_updated": "2026-03-24T00:37:12.373286+00:00"
     }
   ],
   "Hongo": [
@@ -5771,10 +5775,11 @@
     },
     {
       "name": "Agua potable",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 147,
+      "unit_price_x10": 99,
+      "unit_price_x100": 93,
+      "unit_price_x1000": 89,
+      "last_updated": "2026-03-24T00:35:37.403869+00:00"
     },
     {
       "name": "Agua transmutada",
@@ -6212,23 +6217,23 @@
       "unit_price_x10": 80,
       "unit_price_x100": 68,
       "unit_price_x1000": 60,
-      "last_updated": "2026-03-23T21:00:23.343738+00:00"
+      "last_updated": "2026-03-24T00:37:30.610905+00:00"
     },
     {
       "name": "Madera de bambú",
       "unit_price_x1": 85,
-      "unit_price_x10": 474,
-      "unit_price_x100": 61,
+      "unit_price_x10": 481,
+      "unit_price_x100": 60,
       "unit_price_x1000": 67,
-      "last_updated": "2026-03-23T21:06:38.837488+00:00"
+      "last_updated": "2026-03-24T00:37:35.348668+00:00"
     },
     {
       "name": "Madera de bambú oscuro",
       "unit_price_x1": 387,
-      "unit_price_x10": 187,
+      "unit_price_x10": 185,
       "unit_price_x100": 97,
       "unit_price_x1000": 97,
-      "last_updated": "2026-03-23T21:00:28.243573+00:00"
+      "last_updated": "2026-03-24T00:37:40.271756+00:00"
     },
     {
       "name": "Madera de bambú sagrado",
@@ -6249,10 +6254,10 @@
     {
       "name": "Madera de carpe",
       "unit_price_x1": 609,
-      "unit_price_x10": 98,
+      "unit_price_x10": 97,
       "unit_price_x100": 97,
       "unit_price_x1000": 198,
-      "last_updated": "2026-03-23T21:00:37.951230+00:00"
+      "last_updated": "2026-03-24T00:37:44.870690+00:00"
     },
     {
       "name": "Madera de castaño",
@@ -6260,7 +6265,7 @@
       "unit_price_x10": 11,
       "unit_price_x100": 8,
       "unit_price_x1000": 8,
-      "last_updated": "2026-03-23T21:06:49.153508+00:00"
+      "last_updated": "2026-03-24T00:55:38.442459+00:00"
     },
     {
       "name": "Madera de cerezo silvestre",
@@ -6268,23 +6273,23 @@
       "unit_price_x10": 200,
       "unit_price_x100": 90,
       "unit_price_x1000": 88,
-      "last_updated": "2026-03-23T21:06:54.206994+00:00"
+      "last_updated": "2026-03-24T00:37:49.917863+00:00"
     },
     {
       "name": "Madera de fresno",
-      "unit_price_x1": 30,
-      "unit_price_x10": 59,
-      "unit_price_x100": 40,
-      "unit_price_x1000": 360,
-      "last_updated": "2026-03-23T21:06:58.859030+00:00"
+      "unit_price_x1": 29,
+      "unit_price_x10": 58,
+      "unit_price_x100": 41,
+      "unit_price_x1000": 50,
+      "last_updated": "2026-03-24T00:51:32.596745+00:00"
     },
     {
       "name": "Madera de kalipto",
       "unit_price_x1": 299,
-      "unit_price_x10": 224,
+      "unit_price_x10": 228,
       "unit_price_x100": 80,
       "unit_price_x1000": 70,
-      "last_updated": "2026-03-23T21:00:42.630477+00:00"
+      "last_updated": "2026-03-24T00:37:54.725801+00:00"
     },
     {
       "name": "Madera de nogal",
@@ -6304,11 +6309,11 @@
     },
     {
       "name": "Madera de olmo",
-      "unit_price_x1": 997,
-      "unit_price_x10": 466,
-      "unit_price_x100": 544,
+      "unit_price_x1": 991,
+      "unit_price_x10": 465,
+      "unit_price_x100": 499,
       "unit_price_x1000": 400,
-      "last_updated": "2026-03-23T21:00:47.239977+00:00"
+      "last_updated": "2026-03-24T00:37:59.292266+00:00"
     },
     {
       "name": "Madera de pino",
@@ -6358,11 +6363,11 @@
     },
     {
       "name": "Madera de ébano",
-      "unit_price_x1": 673,
+      "unit_price_x1": 696,
       "unit_price_x10": 593,
       "unit_price_x100": 440,
       "unit_price_x1000": 400,
-      "last_updated": "2026-03-23T21:00:56.966005+00:00"
+      "last_updated": "2026-03-24T00:38:03.998634+00:00"
     },
     {
       "name": "Mástil de fantasmastil",
@@ -6457,32 +6462,35 @@
   "Mineral": [
     {
       "name": "Bauxita",
-      "unit_price_x1": 0,
-      "unit_price_x10": 106,
+      "unit_price_x1": 119,
+      "unit_price_x10": 115,
       "unit_price_x100": 65,
-      "unit_price_x1000": 75
+      "unit_price_x1000": 75,
+      "last_updated": "2026-03-24T00:36:07.847315+00:00"
     },
     {
       "name": "Bronce",
-      "unit_price_x1": 50,
+      "unit_price_x1": 49,
       "unit_price_x10": 30,
       "unit_price_x100": 14,
       "unit_price_x1000": 34,
-      "last_updated": "2026-03-23T23:57:44.792100+00:00"
+      "last_updated": "2026-03-24T00:59:18.595051+00:00"
     },
     {
       "name": "Carbón",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 665,
+      "unit_price_x10": 700,
+      "unit_price_x100": 700,
+      "unit_price_x1000": 699,
+      "last_updated": "2026-03-24T00:36:17.439931+00:00"
     },
     {
       "name": "Cenipiedra",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 706,
+      "unit_price_x10": 510,
+      "unit_price_x100": 396,
+      "unit_price_x1000": 599,
+      "last_updated": "2026-03-24T00:36:26.523481+00:00"
     },
     {
       "name": "Cobre",
@@ -6490,7 +6498,7 @@
       "unit_price_x10": 56,
       "unit_price_x100": 22,
       "unit_price_x1000": 40,
-      "last_updated": "2026-03-23T23:55:09.306134+00:00"
+      "last_updated": "2026-03-24T00:59:23.530563+00:00"
     },
     {
       "name": "Cristal líquido",
@@ -6510,39 +6518,43 @@
     },
     {
       "name": "Dolomita",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 805,
+      "unit_price_x10": 600,
+      "unit_price_x100": 555,
+      "unit_price_x1000": 555,
+      "last_updated": "2026-03-24T00:36:44.204479+00:00"
     },
     {
       "name": "Estaño",
       "unit_price_x1": 344,
-      "unit_price_x10": 440,
-      "unit_price_x100": 279,
-      "unit_price_x1000": 211
+      "unit_price_x10": 294,
+      "unit_price_x100": 277,
+      "unit_price_x1000": 200,
+      "last_updated": "2026-03-24T00:36:48.590827+00:00"
     },
     {
       "name": "Hierro",
-      "unit_price_x1": 17,
-      "unit_price_x10": 10,
-      "unit_price_x100": 9,
-      "unit_price_x1000": 12,
-      "last_updated": "2026-03-23T23:16:45.742662+00:00"
+      "unit_price_x1": 179,
+      "unit_price_x10": 110,
+      "unit_price_x100": 95,
+      "unit_price_x1000": 125,
+      "last_updated": "2026-03-24T00:20:29.844011+00:00"
     },
     {
       "name": "Kobalto",
-      "unit_price_x1": 83,
-      "unit_price_x10": 59,
-      "unit_price_x100": 31,
-      "unit_price_x1000": 33
+      "unit_price_x1": 82,
+      "unit_price_x10": 65,
+      "unit_price_x100": 30,
+      "unit_price_x1000": 33,
+      "last_updated": "2026-03-24T00:37:17.052469+00:00"
     },
     {
       "name": "Manganeso",
-      "unit_price_x1": 120,
-      "unit_price_x10": 111,
-      "unit_price_x100": 182,
-      "unit_price_x1000": 184
+      "unit_price_x1": 300,
+      "unit_price_x10": 170,
+      "unit_price_x100": 181,
+      "unit_price_x1000": 169,
+      "last_updated": "2026-03-24T00:38:08.474196+00:00"
     },
     {
       "name": "Mineral encantado",
@@ -6553,46 +6565,51 @@
     },
     {
       "name": "Mineral extraño",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
+      "unit_price_x1": 4479,
+      "unit_price_x10": 5000,
       "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1000": 0,
+      "last_updated": "2026-03-24T00:38:17.700485+00:00"
     },
     {
       "name": "Obsidiana",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 1115,
+      "unit_price_x10": 632,
+      "unit_price_x100": 594,
+      "unit_price_x1000": 400,
+      "last_updated": "2026-03-24T00:38:31.513954+00:00"
     },
     {
       "name": "Oro",
       "unit_price_x1": 489,
-      "unit_price_x10": 117,
-      "unit_price_x100": 78,
+      "unit_price_x10": 116,
+      "unit_price_x100": 77,
       "unit_price_x1000": 80,
-      "last_updated": "2026-03-23T21:10:47.836450+00:00"
+      "last_updated": "2026-03-24T00:40:56.022106+00:00"
     },
     {
       "name": "Plata",
       "unit_price_x1": 414,
-      "unit_price_x10": 589,
-      "unit_price_x100": 350,
-      "unit_price_x1000": 400
+      "unit_price_x10": 590,
+      "unit_price_x100": 340,
+      "unit_price_x1000": 333,
+      "last_updated": "2026-03-24T00:39:41.909402+00:00"
     },
     {
       "name": "Sepiolita",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 1497,
+      "unit_price_x10": 597,
+      "unit_price_x100": 400,
+      "unit_price_x1000": 488,
+      "last_updated": "2026-03-24T00:40:05.113288+00:00"
     },
     {
       "name": "Silicato",
       "unit_price_x1": 60,
-      "unit_price_x10": 199,
-      "unit_price_x100": 77,
-      "unit_price_x1000": 69
+      "unit_price_x10": 195,
+      "unit_price_x100": 75,
+      "unit_price_x1000": 69,
+      "last_updated": "2026-03-24T00:40:09.512919+00:00"
     },
     {
       "name": "Soporte metálico",
@@ -8422,10 +8439,11 @@
     },
     {
       "name": "Kralamar",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 49,
+      "unit_price_x10": 48,
+      "unit_price_x100": 55,
+      "unit_price_x1000": 48,
+      "last_updated": "2026-03-24T00:37:21.521657+00:00"
     },
     {
       "name": "Kralamar único",
@@ -8457,10 +8475,11 @@
     },
     {
       "name": "Lucio",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 999,
+      "unit_price_x10": 246,
+      "unit_price_x100": 51,
+      "unit_price_x1000": 49,
+      "last_updated": "2026-03-24T00:37:25.841015+00:00"
     },
     {
       "name": "Lucio Tupe-Halett",
@@ -8556,10 +8575,11 @@
     },
     {
       "name": "Sardina brillante",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 297,
+      "unit_price_x10": 69,
+      "unit_price_x100": 68,
+      "unit_price_x1000": 65,
+      "last_updated": "2026-03-24T00:39:50.867100+00:00"
     },
     {
       "name": "Sardina oscura",
@@ -8584,10 +8604,11 @@
     },
     {
       "name": "Tiburón martillhoz",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 471,
+      "unit_price_x10": 246,
+      "unit_price_x100": 77,
+      "unit_price_x1000": 70,
+      "last_updated": "2026-03-24T00:40:18.402652+00:00"
     },
     {
       "name": "Tiburón mercado libre",
@@ -8754,10 +8775,11 @@
     },
     {
       "name": "Fragmento de piedra afilada",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 877,
+      "unit_price_x10": 889,
+      "unit_price_x100": 1200,
+      "unit_price_x1000": 1100,
+      "last_updated": "2026-03-24T00:36:58.700015+00:00"
     },
     {
       "name": "Fragmento de piedra pulida",
@@ -8789,10 +8811,11 @@
     },
     {
       "name": "Nácar en bruto",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 983,
+      "unit_price_x10": 989,
+      "unit_price_x100": 930,
+      "unit_price_x1000": 800,
+      "last_updated": "2026-03-24T00:38:27.091143+00:00"
     },
     {
       "name": "Piedra angular",
@@ -8810,10 +8833,11 @@
     },
     {
       "name": "Piedra de Aguamarina",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 178,
+      "unit_price_x10": 124,
+      "unit_price_x100": 121,
+      "unit_price_x1000": 150,
+      "last_updated": "2026-03-24T00:38:49.833541+00:00"
     },
     {
       "name": "Piedra de Trankitronko",
@@ -8831,10 +8855,11 @@
     },
     {
       "name": "Piedra de cristal",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 197,
+      "unit_price_x10": 279,
+      "unit_price_x100": 280,
+      "unit_price_x1000": 0,
+      "last_updated": "2026-03-24T00:38:54.543927+00:00"
     },
     {
       "name": "Piedra de crujidor",
@@ -8845,17 +8870,19 @@
     },
     {
       "name": "Piedra de diamante",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 295,
+      "unit_price_x10": 290,
+      "unit_price_x100": 285,
+      "unit_price_x1000": 350,
+      "last_updated": "2026-03-24T00:38:59.331135+00:00"
     },
     {
       "name": "Piedra de esmeralda",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 30,
+      "unit_price_x10": 31,
+      "unit_price_x100": 60,
+      "unit_price_x1000": 50,
+      "last_updated": "2026-03-24T00:39:09.041860+00:00"
     },
     {
       "name": "Piedra de fumarola",
@@ -8880,10 +8907,11 @@
     },
     {
       "name": "Piedra de rubí",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 137,
+      "unit_price_x10": 160,
+      "unit_price_x100": 200,
+      "unit_price_x1000": 220,
+      "last_updated": "2026-03-24T00:39:13.656063+00:00"
     },
     {
       "name": "Piedra de selenita",
@@ -8901,24 +8929,27 @@
     },
     {
       "name": "Piedra de topacio",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 209,
+      "unit_price_x10": 84,
+      "unit_price_x100": 85,
+      "unit_price_x1000": 89,
+      "last_updated": "2026-03-24T00:39:18.335873+00:00"
     },
     {
       "name": "Piedra de zafiro",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
+      "unit_price_x1": 500,
+      "unit_price_x10": 1000,
       "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1000": 0,
+      "last_updated": "2026-03-24T00:39:23.101103+00:00"
     },
     {
       "name": "Piedra de Ágata",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 87,
+      "unit_price_x10": 88,
+      "unit_price_x100": 144,
+      "unit_price_x1000": 140,
+      "last_updated": "2026-03-24T00:39:27.758714+00:00"
     },
     {
       "name": "Piedra del Crujidor Legendario",
@@ -9006,10 +9037,11 @@
     },
     {
       "name": "Sílex",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 1198,
+      "unit_price_x10": 1322,
+      "unit_price_x100": 1400,
+      "unit_price_x1000": 1750,
+      "last_updated": "2026-03-24T00:40:13.702259+00:00"
     },
     {
       "name": "Tefra de atomístico",
@@ -9071,38 +9103,43 @@
     },
     {
       "name": "Artefacto pandawushu de agua",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 2344,
+      "unit_price_x10": 1990,
+      "unit_price_x100": 1299,
+      "unit_price_x1000": 1250,
+      "last_updated": "2026-03-24T00:35:42.511525+00:00"
     },
     {
       "name": "Artefacto pandawushu de fuego",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
+      "unit_price_x1": 2998,
+      "unit_price_x10": 570,
       "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1000": 0,
+      "last_updated": "2026-03-24T00:35:47.732225+00:00"
     },
     {
       "name": "Artefacto pandawushu de madera",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 786,
+      "unit_price_x10": 630,
+      "unit_price_x100": 674,
+      "unit_price_x1000": 600,
+      "last_updated": "2026-03-24T00:35:53.098168+00:00"
     },
     {
       "name": "Artefacto pandawushu de roca",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 2279,
+      "unit_price_x10": 2170,
+      "unit_price_x100": 2200,
+      "unit_price_x1000": 1795,
+      "last_updated": "2026-03-24T00:35:58.207879+00:00"
     },
     {
       "name": "Artefacto pandawushu de viento",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 1900,
+      "unit_price_x10": 1949,
+      "unit_price_x100": 1980,
+      "unit_price_x1000": 1889,
+      "last_updated": "2026-03-24T00:36:03.450993+00:00"
     },
     {
       "name": "Bezoar ardiente de Grozilla",
@@ -9141,10 +9178,11 @@
     },
     {
       "name": "Fragmento de cerebro pulío",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 3481,
+      "unit_price_x10": 3494,
+      "unit_price_x100": 3500,
+      "unit_price_x1000": 0,
+      "last_updated": "2026-03-24T00:36:53.601780+00:00"
     },
     {
       "name": "Fragmento de rubí fértil",
@@ -9197,11 +9235,11 @@
     },
     {
       "name": "Pepita",
-      "unit_price_x1": 779,
-      "unit_price_x10": 394,
+      "unit_price_x1": 777,
+      "unit_price_x10": 393,
       "unit_price_x100": 257,
       "unit_price_x1000": 220,
-      "last_updated": "2026-03-23T21:07:40.734387+00:00"
+      "last_updated": "2026-03-24T00:38:40.351866+00:00"
     },
     {
       "name": "Piedra de Cristalobola",
@@ -9212,17 +9250,19 @@
     },
     {
       "name": "Piedra de dopeul",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 4861,
+      "unit_price_x10": 4633,
+      "unit_price_x100": 4800,
+      "unit_price_x1000": 5200,
+      "last_updated": "2026-03-24T00:39:04.197598+00:00"
     },
     {
       "name": "Piedra preciosa zoth",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 3110,
+      "unit_price_x10": 3190,
+      "unit_price_x100": 3198,
+      "unit_price_x1000": 3200,
+      "last_updated": "2026-03-24T00:39:32.654181+00:00"
     },
     {
       "name": "Turmalina",
@@ -9881,10 +9921,11 @@
     },
     {
       "name": "Ginseng",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 910,
+      "unit_price_x10": 275,
+      "unit_price_x100": 60,
+      "unit_price_x1000": 50,
+      "last_updated": "2026-03-24T00:37:03.055501+00:00"
     },
     {
       "name": "Ginsengoku",
@@ -10021,11 +10062,11 @@
     },
     {
       "name": "Ortiga",
-      "unit_price_x1": 400,
+      "unit_price_x1": 390,
       "unit_price_x10": 79,
-      "unit_price_x100": 39,
+      "unit_price_x100": 59,
       "unit_price_x1000": 30,
-      "last_updated": "2026-03-23T21:15:54.964266+00:00"
+      "last_updated": "2026-03-24T00:38:35.912839+00:00"
     },
     {
       "name": "Ortiga arganta",
@@ -10085,11 +10126,11 @@
     },
     {
       "name": "Salvia",
-      "unit_price_x1": 100,
+      "unit_price_x1": 158,
       "unit_price_x10": 99,
       "unit_price_x100": 29,
       "unit_price_x1000": 20,
-      "last_updated": "2026-03-23T21:08:31.762830+00:00"
+      "last_updated": "2026-03-24T00:39:46.240706+00:00"
     },
     {
       "name": "Salvia adivinorum",
@@ -10542,10 +10583,11 @@
     },
     {
       "name": "Petaca de azufre",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 2498,
+      "unit_price_x10": 2103,
+      "unit_price_x100": 2188,
+      "unit_price_x1000": 0,
+      "last_updated": "2026-03-24T00:38:45.026027+00:00"
     },
     {
       "name": "Polvo temporal",
@@ -11562,10 +11604,11 @@
     },
     {
       "name": "Cadena de tigredón",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 2129,
+      "unit_price_x10": 2222,
+      "unit_price_x100": 2390,
+      "unit_price_x1000": 2400,
+      "last_updated": "2026-03-24T00:36:12.936351+00:00"
     },
     {
       "name": "Calavera",
@@ -11716,10 +11759,11 @@
     },
     {
       "name": "Cloaca de pohoyo",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 1800,
+      "unit_price_x10": 1989,
+      "unit_price_x100": 2199,
+      "unit_price_x1000": 3500,
+      "last_updated": "2026-03-24T00:36:31.334390+00:00"
     },
     {
       "name": "Collar de chacrata",
@@ -12766,10 +12810,11 @@
     },
     {
       "name": "Metal abisal",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
+      "unit_price_x1": 29999,
+      "unit_price_x10": 24399,
       "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1000": 0,
+      "last_updated": "2026-03-24T00:38:13.053038+00:00"
     },
     {
       "name": "Metrónomo del despertar de los tiempos",
@@ -13144,10 +13189,11 @@
     },
     {
       "name": "Pincho de malpincho",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 5990,
+      "unit_price_x10": 5999,
+      "unit_price_x100": 6950,
+      "unit_price_x1000": 6900,
+      "last_updated": "2026-03-24T00:39:37.555934+00:00"
     },
     {
       "name": "Pintalabios de Belladona",
@@ -14802,10 +14848,11 @@
     },
     {
       "name": "Castaña de cajú",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 540,
+      "unit_price_x10": 550,
+      "unit_price_x100": 555,
+      "unit_price_x1000": 700,
+      "last_updated": "2026-03-24T00:36:22.043530+00:00"
     },
     {
       "name": "Grano de abrajidor oscuro",
@@ -14816,10 +14863,11 @@
     },
     {
       "name": "Nuez de pacana",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 73,
+      "unit_price_x10": 70,
+      "unit_price_x100": 92,
+      "unit_price_x1000": 0,
+      "last_updated": "2026-03-24T00:38:22.432845+00:00"
     },
     {
       "name": "Pandoja cantora",
@@ -14844,17 +14892,19 @@
     },
     {
       "name": "Semilla de la discordia",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 400,
+      "unit_price_x10": 540,
+      "unit_price_x100": 750,
+      "unit_price_x1000": 0,
+      "last_updated": "2026-03-24T00:39:55.820903+00:00"
     },
     {
       "name": "Semilla de pandoja",
-      "unit_price_x1": 0,
-      "unit_price_x10": 0,
-      "unit_price_x100": 0,
-      "unit_price_x1000": 0
+      "unit_price_x1": 377,
+      "unit_price_x10": 140,
+      "unit_price_x100": 49,
+      "unit_price_x1000": 50,
+      "last_updated": "2026-03-24T00:40:00.676829+00:00"
     },
     {
       "name": "Semilla de scorbuto",

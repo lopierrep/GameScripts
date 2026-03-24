@@ -33,6 +33,7 @@ from update_profession_recipes import (
     _sub_recipe_files,
     _load_manual_price_items,
     _ask_manual_prices,
+    _ask_manual_selling_prices,
     _price_found,
     DELAY_BETWEEN_ITEMS,
     UNKNOWN_KEY,
@@ -127,10 +128,11 @@ def run(result_name: str):
     for market_name, group in market_groups.items():
         if stop_requested:
             break
-        results          = sorted(group["results"])
+        auto_results     = sorted(n for n in group["results"]     if n not in manual_items)
+        manual_results   = sorted(n for n in group["results"]     if n in manual_items)
         auto_ingredients = sorted(n for n in group["ingredients"] if n not in manual_items)
         manual_ingreds   = sorted(n for n in group["ingredients"] if n in manual_items)
-        total            = len(results) + len(auto_ingredients)
+        total            = len(auto_results) + len(auto_ingredients)
 
         if total:
             print(f"\n── {market_name} ({total} items) ──")
@@ -138,7 +140,7 @@ def run(result_name: str):
             print()
 
         idx = 0
-        for name in results:
+        for name in auto_results:
             if stop_requested:
                 break
             idx += 1
@@ -174,6 +176,14 @@ def run(result_name: str):
             prices = _ask_manual_prices(name)
             try:
                 save_ingredient_price(name, prices, markets, item_lookup)
+            except Exception as e:
+                print(f"ERROR al guardar — {e}")
+
+        for name in manual_results:
+            _, target_file = find_recipe(name)
+            prices = _ask_manual_selling_prices(name)
+            try:
+                srsp.save_selling_price(target_file or recipe_file, name, prices)
             except Exception as e:
                 print(f"ERROR al guardar — {e}")
 

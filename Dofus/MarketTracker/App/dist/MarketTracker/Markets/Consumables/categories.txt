@@ -1,0 +1,33 @@
+Bebida
+Bolsa
+Bosillito de merkasako
+Caja de fragmentos
+Carne comestible
+Cerveza
+Cofre
+Contenedor
+Documento
+Esquíritu
+Globo
+Golosina
+Hada artificial
+Mimobionte
+Objeto utilizable
+Objeto utilizable de Temporis
+Palabras de haiku
+Pan
+Pergamino con un hechizo
+Pergamino de actitud
+Pergamino de característica
+Pergamino de emoticonos
+Pergamino de experiencia
+Pergamino de título
+Pescado comestible
+Pócima
+Pócima de actitud
+Pócima de conquista
+Pócima de teletransportación
+Prisma
+Regalo
+Saco de recursos
+Tatuaje de la Feria del Trool
