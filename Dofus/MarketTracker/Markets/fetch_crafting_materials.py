@@ -24,10 +24,13 @@ import time
 
 import requests
 
-BASE_DIR      = os.path.dirname(os.path.abspath(__file__))
-RECIPES_DIR   = os.path.join(BASE_DIR, "..", "Recipes")
-MARKETS_DIR   = BASE_DIR
-FALLBACK_FILE = os.path.join(MARKETS_DIR, "uncategorized_materials.json")
+BASE_DIR          = os.path.dirname(os.path.abspath(__file__))
+RECIPES_DIR       = os.path.join(BASE_DIR, "..", "Recipes")
+MARKETS_DIR       = BASE_DIR
+DATA_DIR          = os.path.join(BASE_DIR, "..", "data")
+FALLBACK_FILE     = os.path.join(DATA_DIR, "uncategorized_materials.json")
+CATEGORIES_FILE   = os.path.join(DATA_DIR, "categories_by_market.json")
+PRICES_FILE       = os.path.join(DATA_DIR, "materials_prices.json")
 BASE_URL      = "https://api.dofusdb.fr"
 UNKNOWN_KEY   = "Sin categoría"
 DELAY         = 0.15
@@ -35,14 +38,7 @@ DELAY         = 0.15
 
 # ── Carga de archivos ─────────────────────────────────────────────────────────
 
-def _load_file(path: str) -> dict[str, list[dict]]:
-    if not os.path.exists(path):
-        return {}
-    with open(path, encoding="utf-8") as f:
-        content = f.read().strip()
-    if not content:
-        return {}
-    data = json.loads(content)
+def _migrate_data(data: dict) -> dict[str, list[dict]]:
     migrated = {}
     for cat, items in data.items():
         migrated[cat] = []
@@ -60,25 +56,33 @@ def _load_file(path: str) -> dict[str, list[dict]]:
     return migrated
 
 
+def _load_file(path: str) -> dict[str, list[dict]]:
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        content = f.read().strip()
+    if not content:
+        return {}
+    return _migrate_data(json.loads(content))
+
+
 # ── Carga de mercadillos ──────────────────────────────────────────────────────
 
 def load_markets() -> dict[str, dict]:
     """Carga categorías y datos existentes de cada mercadillo en Markets/."""
+    with open(CATEGORIES_FILE, encoding="utf-8") as f:
+        all_categories = json.load(f)
+    all_prices = {}
+    if os.path.exists(PRICES_FILE):
+        with open(PRICES_FILE, encoding="utf-8") as f:
+            content = f.read().strip()
+        if content:
+            all_prices = json.loads(content)
     markets = {}
-    for folder in sorted(os.listdir(MARKETS_DIR)):
-        folder_path = os.path.join(MARKETS_DIR, folder)
-        if not os.path.isdir(folder_path):
-            continue
-        cat_file = os.path.join(folder_path, "categories.txt")
-        if not os.path.exists(cat_file):
-            continue
-        with open(cat_file, encoding="utf-8") as f:
-            categories = {line.strip() for line in f if line.strip()}
-        data_file = os.path.join(folder_path, "materials_prices.json")
+    for folder, categories in all_categories.items():
         markets[folder] = {
-            "categories": categories,
-            "file": data_file,
-            "data": _load_file(data_file),
+            "categories": set(categories),
+            "data": _migrate_data(all_prices.get(folder, {})),
         }
     return markets
 
@@ -154,9 +158,9 @@ def fetch_category(item_name: str) -> str:
 # ── Guardado ──────────────────────────────────────────────────────────────────
 
 def save_all(markets: dict, fallback: dict):
-    for market in markets.values():
-        with open(market["file"], "w", encoding="utf-8") as f:
-            json.dump(dict(sorted(market["data"].items())), f, ensure_ascii=False, indent=2)
+    all_prices = {name: dict(sorted(market["data"].items())) for name, market in markets.items()}
+    with open(PRICES_FILE, "w", encoding="utf-8") as f:
+        json.dump(all_prices, f, ensure_ascii=False, indent=2)
     with open(FALLBACK_FILE, "w", encoding="utf-8") as f:
         json.dump(dict(sorted(fallback.items())), f, ensure_ascii=False, indent=2)
 

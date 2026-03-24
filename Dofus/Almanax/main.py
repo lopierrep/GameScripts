@@ -20,7 +20,7 @@ sys.path.insert(0, str(ROOT_DIR.parent))
 
 from core.models import C, LOTS, SETTINGS_FILE
 from core.prices import load_prices, save_prices, optimal_cost, get_lot_plan, best_guijarro
-from core.api    import fetch_almanax, parse_entry, save_almanax, load_almanax
+from core.api    import fetch_almanax, parse_entry, save_almanax, load_almanax, resolve_all_subtypes
 from calibration.calibration import load_calibration as _load_almanax_cal
 from ui import AlmanaxUI
 
@@ -127,16 +127,24 @@ class AlmanaxApp:
 
     def _fetch_thread(self):
         try:
-            year = date.today().year
-            raw  = fetch_almanax(date(year, 1, 1), date(year, 12, 31))
-            self.root.after(0, self._on_data, raw)
+            today = date.today()
+            from datetime import timedelta
+            raw  = fetch_almanax(today, today + timedelta(days=4))
+            def _progress(msg):
+                self.root.after(0, self.ui.set_status, msg, C["yellow"])
+            subtype_map = resolve_all_subtypes(raw, on_progress=_progress)
+            self.root.after(0, self._on_data, raw, subtype_map)
         except urllib.error.URLError as e:
             self.root.after(0, self._on_error, f"Sin conexión: {e.reason}")
         except Exception as e:
             self.root.after(0, self._on_error, str(e))
 
-    def _on_data(self, raw: list):
-        self.data = [parse_entry(e) for e in raw]
+    def _on_data(self, raw: list, subtype_map: dict | None = None):
+        subtype_map = subtype_map or {}
+        self.data = [
+            parse_entry(e, subtype_map.get(e["tribute"]["item"]["ankama_id"]))
+            for e in raw
+        ]
         save_almanax(self.data)
         self.ui.set_status(f"✓ {len(self.data)} días cargados", C["green"])
         self._refresh_table()

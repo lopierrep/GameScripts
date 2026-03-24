@@ -114,13 +114,13 @@ def _load_ingredient_prices() -> dict[str, tuple[int, str | None]]:
     prices = {}
 
     # Precios de materiales de todos los mercadillos (sin fuente)
-    for folder in os.listdir(MARKETS_DIR):
-        fp = os.path.join(MARKETS_DIR, folder, "materials_prices.json")
-        if not os.path.exists(fp):
-            continue
+    fp = os.path.join(ROOT_DIR, "data", "materials_prices.json")
+    all_markets_data = {}
+    if os.path.exists(fp):
         with open(fp, encoding="utf-8") as f:
-            data = json.load(f)
-        for items in data.values():
+            all_markets_data = json.load(f)
+    for market_data in all_markets_data.values():
+        for items in market_data.values():
             for item in items:
                 vals = [item.get(f"unit_price_{s}", 0) for s in SIZES]
                 best = min((v for v in vals if v > 0), default=0)

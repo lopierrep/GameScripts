@@ -25,7 +25,8 @@ from common import (
     _parse_price,
 )
 
-ITEMS_FILE = os.path.join(ROOT_DIR, "Markets", "Resources", "materials_prices.json")
+ITEMS_FILE    = os.path.join(ROOT_DIR, "data", "materials_prices.json")
+ITEMS_MARKET  = "Resources"
 
 
 def _is_fresh(item: dict) -> bool:
@@ -37,10 +38,11 @@ def _is_fresh(item: dict) -> bool:
 
 
 def save_resource_price(name: str, prices: dict):
-    """Guarda los precios de pack de un recurso en resources_prices.json."""
+    """Guarda los precios de pack de un recurso en materials_prices.json."""
     with open(ITEMS_FILE, encoding="utf-8") as f:
-        data = json.load(f)
+        all_data = json.load(f)
 
+    data = all_data.get(ITEMS_MARKET, {})
     for items in data.values():
         for item in items:
             if item["name"] == name:
@@ -57,13 +59,14 @@ def save_resource_price(name: str, prices: dict):
                 break
 
     with open(ITEMS_FILE, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+        json.dump(all_data, f, ensure_ascii=False, indent=2)
     print(f"[OK] {name} → x1={prices['unit_price_x1']}  x10={prices['unit_price_x10']}  x100={prices['unit_price_x100']}  x1000={prices['unit_price_x1000']}")
 
 
 def _find_item(name: str) -> tuple[dict, str] | tuple[None, None]:
     with open(ITEMS_FILE, encoding="utf-8") as f:
-        data = json.load(f)
+        all_data = json.load(f)
+    data = all_data.get(ITEMS_MARKET, {})
     for category, items in data.items():
         for item in items:
             if item["name"] == name:

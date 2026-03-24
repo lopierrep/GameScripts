@@ -34,13 +34,9 @@ def load_all_pack_prices() -> dict[str, dict]:
 
     # Precios de todos los mercadillos
     markets_dir = os.path.join(ROOT_DIR, "Markets")
-    market_files = []
-    if os.path.isdir(markets_dir):
-        for folder in os.listdir(markets_dir):
-            fp = os.path.join(markets_dir, folder, "materials_prices.json")
-            if os.path.exists(fp):
-                market_files.append(fp)
-    for data in [_load_file(fp) for fp in market_files] + [_load_file(OTHER_JSON)]:
+    prices_file = os.path.join(ROOT_DIR, "data", "materials_prices.json")
+    all_markets_data = _load_file(prices_file) if os.path.exists(prices_file) else {}
+    for data in list(all_markets_data.values()) + [_load_file(OTHER_JSON)]:
         for items in data.values():
             for item in items:
                 name = item["name"].strip()

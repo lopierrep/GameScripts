@@ -38,9 +38,12 @@ from Helpers.SearchAndSave.common import (
 )
 
 # ROOT_DIR viene de common.py y maneja correctamente el modo .exe (frozen)
-BASE_DIR    = _ROOT_DIR
-MARKETS_DIR = os.path.join(_ROOT_DIR, "Markets")
-RECIPES_DIR = os.path.join(_ROOT_DIR, "Recipes")
+BASE_DIR        = _ROOT_DIR
+MARKETS_DIR     = os.path.join(_ROOT_DIR, "Markets")
+RECIPES_DIR     = os.path.join(_ROOT_DIR, "Recipes")
+DATA_DIR        = os.path.join(_ROOT_DIR, "data")
+CATEGORIES_FILE = os.path.join(DATA_DIR, "categories_by_market.json")
+PRICES_FILE     = os.path.join(DATA_DIR, "materials_prices.json")
 
 DELAY_BETWEEN_ITEMS = 0.3
 DOFUSDB_URL         = "https://api.dofusdb.fr"
@@ -109,27 +112,19 @@ def _price_found(prices: dict) -> bool:
 # ── Mercadillos ───────────────────────────────────────────────────────────────
 
 def load_markets() -> dict[str, dict]:
+    with open(CATEGORIES_FILE, encoding="utf-8") as f:
+        all_categories = json.load(f)
+    all_prices = {}
+    if os.path.exists(PRICES_FILE):
+        with open(PRICES_FILE, encoding="utf-8") as f:
+            content = f.read().strip()
+        if content:
+            all_prices = json.loads(content)
     markets = {}
-    for folder in sorted(os.listdir(MARKETS_DIR)):
-        folder_path = os.path.join(MARKETS_DIR, folder)
-        if not os.path.isdir(folder_path):
-            continue
-        cat_file = os.path.join(folder_path, "categories.txt")
-        if not os.path.exists(cat_file):
-            continue
-        with open(cat_file, encoding="utf-8") as f:
-            categories = {line.strip() for line in f if line.strip()}
-        data_file = os.path.join(folder_path, "materials_prices.json")
-        data = {}
-        if os.path.exists(data_file):
-            with open(data_file, encoding="utf-8") as f:
-                content = f.read().strip()
-            if content:
-                data = json.loads(content)
+    for folder, categories in all_categories.items():
         markets[folder] = {
-            "categories": categories,
-            "file": data_file,
-            "data": data,
+            "categories": set(categories),
+            "data": all_prices.get(folder, {}),
         }
     return markets
 
@@ -151,9 +146,10 @@ def get_market_for_category(category: str, markets: dict) -> str | None:
     return None
 
 
-def save_market_file(market: dict):
-    with open(market["file"], "w", encoding="utf-8") as f:
-        json.dump(dict(sorted(market["data"].items())), f, ensure_ascii=False, indent=2)
+def save_markets(markets: dict):
+    all_prices = {name: dict(sorted(market["data"].items())) for name, market in markets.items()}
+    with open(PRICES_FILE, "w", encoding="utf-8") as f:
+        json.dump(all_prices, f, ensure_ascii=False, indent=2)
 
 
 # ── dofusdb API ───────────────────────────────────────────────────────────────
@@ -281,7 +277,7 @@ def ensure_catalogued(names: set[str], markets: dict, item_lookup: dict):
             })
             market["data"][category].sort(key=lambda x: x["name"])
             item_lookup[name] = market_name
-        save_market_file(market)
+        save_markets(markets)
         print(f"  + {name} → {category} [{market_name}]")
         time.sleep(0.15)
 
@@ -322,7 +318,7 @@ def save_ingredient_price(name: str, prices: dict, markets: dict, item_lookup: d
                 if any(v > 0 for v in (p1, p10, p100, p1000)):
                     item["last_updated"] = _now_iso()
                 break
-    save_market_file(market)
+    save_markets(markets)
     p = prices
     print(f"[OK] x1={p.get('unit_price_x1','N/A')}  x10={p.get('unit_price_x10','N/A')}  x100={p.get('unit_price_x100','N/A')}  x1000={p.get('unit_price_x1000','N/A')}")
 
