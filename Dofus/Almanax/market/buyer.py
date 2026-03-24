@@ -54,7 +54,7 @@ class AutoBuyer:
         import keyboard as _kb
 
         failed: list[str] = []
-        _kb.add_hotkey("y", stop_event.set)
+        _kb.add_hotkey("s", stop_event.set)
         self._init_cal()
 
         try:
@@ -71,7 +71,7 @@ class AutoBuyer:
                 for i in range(5, 0, -1):
                     if stop_event.is_set():
                         break
-                    on_progress(f"[{market_name}] Cambia al juego… {i}s  (Y para parar)")
+                    on_progress(f"[{market_name}] Cambia al juego… {i}s  (S para parar)")
                     time.sleep(1)
 
                 for name, plan in group:
@@ -85,7 +85,7 @@ class AutoBuyer:
                         self._press_esc()
                         time.sleep(0.3)
         finally:
-            _kb.remove_hotkey("y")
+            _kb.remove_hotkey("s")
 
         return failed
 
@@ -124,7 +124,7 @@ class AutoBuyer:
                     first_click = False
                 time.sleep(1)
                 done += 1
-                on_progress(f"[{market_name}] {name[:25]}: {done}/{total_ops}…  (Y para parar)")
+                on_progress(f"[{market_name}] {name[:25]}: {done}/{total_ops}…  (S para parar)")
 
         self._press_esc()
         time.sleep(0.3)

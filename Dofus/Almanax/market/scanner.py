@@ -77,7 +77,7 @@ class MarketScanner:
                     break
 
                 scanned += 1
-                on_progress(f"[{market_name}] [{scanned}/{total}] {item[:30]}…")
+                on_progress(f"[{market_name}] [{scanned}/{total}] {item[:30]}…  (S para parar)")
 
                 try:
                     self._search_item(item)

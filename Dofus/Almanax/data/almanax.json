@@ -1,0 +1,3287 @@
+[
+  {
+    "date": "2026-01-01",
+    "item": "Metrónomo del despertar de los tiempos",
+    "qty": 1,
+    "kamas": 8400,
+    "bonus": "Metrónoma espera cerca del templo de Xelor a los aventureros que quieran celebrar el nuevo año. Su bendición concede un sortilegio temporal, el Salto del Despertar de los Tiempos, que podrás lanzar durante 12 horas.",
+    "bonus_type": "Día de Año Nuevo",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-01-02",
+    "item": "Panecillo",
+    "qty": 4,
+    "kamas": 395,
+    "bonus": "Los campesinos ahorran un 15% de ingredientes cuando fabrican objetos.",
+    "bonus_type": "Economía de ingredientes",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-01-03",
+    "item": "Capucha de falcerética",
+    "qty": 1,
+    "kamas": 21990,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 150% en la mazmorra Tormenta del Selocalipsis.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-01-04",
+    "item": "Corazón de ventozador",
+    "qty": 3,
+    "kamas": 13721,
+    "bonus": "Las posibilidades de conseguir un botín aumentan en un 75% en la zona de las Lágrimas de Uronigrido.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-01-05",
+    "item": "Frostizz",
+    "qty": 10,
+    "kamas": 10995,
+    "bonus": "La cantidad de frostizz que consiguen los campesinos aumenta un 200%.",
+    "bonus_type": "Abundancia de recolección",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-01-06",
+    "item": "Pelos de barba de awelito wabbit",
+    "qty": 6,
+    "kamas": 2111,
+    "bonus": "Hoy se podrá hacer una misión repetible especial cerca del taller de campesinos del pueblo de Amakna. Se podrá hacer a partir del nivel 20, y es independiente de la misión de ofrenda.",
+    "bonus_type": "Misión repetible",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-01-07",
+    "item": "Lodo de boo",
+    "qty": 6,
+    "kamas": 615,
+    "bonus": "La ganancia de experiencia aumenta un 50% con las criaturas de tipo barronstruos.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-01-08",
+    "item": "Toalla de playa",
+    "qty": 6,
+    "kamas": 395,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan en un 150% en la mazmorra Castillo de Arena.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-01-09",
+    "item": "Espada sagrada",
+    "qty": 1,
+    "kamas": 769,
+    "bonus": "La calidad de los objetos fabricados en la ciudad de Bonta será mayor.",
+    "bonus_type": "Objetos de calidad",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-01-10",
+    "item": "Cinturón de celeridad",
+    "qty": 1,
+    "kamas": 1253,
+    "bonus": "Todas las variedades de dragopavos, vuelocerontes y mulaguas rojos traerán al mundo un bebé extra.",
+    "bonus_type": "Cría de monturas",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-01-11",
+    "item": "Espejo dopeul",
+    "qty": 6,
+    "kamas": 1231,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 50% con las criaturas de tipo dopeuls.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-01-12",
+    "item": "Plata",
+    "qty": 30,
+    "kamas": 4200,
+    "bonus": "La cantidad de plata que consiguen los mineros aumenta un 125%.",
+    "bonus_type": "Abundancia de minerales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-01-13",
+    "item": "Baba de nessil",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 150% en las 4 zonas de las murallas del castillo de Kontatrás y en la torre de la clepsidra.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-01-14",
+    "item": "Madera de álamo temblón",
+    "qty": 10,
+    "kamas": 10995,
+    "bonus": "La cantidad de madera de álamo temblón que consiguen los leñadores aumenta un 125%.",
+    "bonus_type": "Abundancia de madera",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-01-15",
+    "item": "Bota agujereada de megabwork",
+    "qty": 6,
+    "kamas": 4551,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 50% con las criaturas de tipo bworks de Cania.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-01-16",
+    "item": "Reliquia de familia",
+    "qty": 6,
+    "kamas": 1517,
+    "bonus": "Se propondrá un reto extra contra los monstruos presentes en la zona de las afueras de Brakmar.",
+    "bonus_type": "Reto extra",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-01-17",
+    "item": "Glándula de arak-hai",
+    "qty": 2,
+    "kamas": 4551,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 125% con las criaturas de tipo arak-hais.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-01-18",
+    "item": "Pez gatito",
+    "qty": 40,
+    "kamas": 593,
+    "bonus": "La cantidad de peces que consiguen los pescadores de todos los niveles aumenta un 100%.",
+    "bonus_type": "Abundancia de pesca",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-01-19",
+    "item": "Taparrabos de cazadrail",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "Se aumentan un 100% las ganancias de experiencia de las monturas en todas las zonas influenciadas por una anomalía temporal. Además, se aumentan en un 25% las ganancias de experiencia y las probabilidades de conseguir un botín en la zona de Cocuzko.",
+    "bonus_type": "Anomalías Temporales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-01-20",
+    "item": "Pelo de rata brakmariana",
+    "qty": 2,
+    "kamas": 6662,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 50% con las criaturas de tipo ratas brakmarianas.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-01-21",
+    "item": "Botella de Zampaburg",
+    "qty": 1,
+    "kamas": 11984,
+    "bonus": "Por cada objeto que fabriquen, los alquimistas tendrán un 25% de posibilidades de crear un segundo objeto.",
+    "bonus_type": "Fabricación intensiva",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-01-22",
+    "item": "Ortiga",
+    "qty": 40,
+    "kamas": 197,
+    "bonus": "La cantidad de ortigas que consiguen los alquimistas aumenta un 125%.",
+    "bonus_type": "Abundancia de recolección (cosecha)",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-01-23",
+    "item": "Runa Cu",
+    "qty": 2,
+    "kamas": 769,
+    "bonus": "Los escultomagos tienen un 15% de probabilidad de no consumir ninguna runa cuando tratan de mejorar un arma.",
+    "bonus_type": "Forjamagia mejorada",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-01-24",
+    "item": "Brote de abráknido oscuro irascible",
+    "qty": 2,
+    "kamas": 9741,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 150% en la mazmorra Claro del Roble Blando.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-01-25",
+    "item": "Tibia de koalak sepulturero",
+    "qty": 5,
+    "kamas": 6662,
+    "bonus": "La ganancia de experiencia aumenta en un 75% en la zona del cementerio primitivo.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-01-26",
+    "item": "Madera de roble",
+    "qty": 40,
+    "kamas": 1187,
+    "bonus": "La cantidad de madera de roble que consiguen los leñadores aumenta un 125%.",
+    "bonus_type": "Abundancia de madera",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-01-27",
+    "item": "Carasau",
+    "qty": 4,
+    "kamas": 395,
+    "bonus": "Por cada objeto que fabriquen, los campesinos tendrán un 25% de posibilidades de crear un segundo objeto.",
+    "bonus_type": "Fabricación intensiva",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-01-28",
+    "item": "Cola de rata grev",
+    "qty": 2,
+    "kamas": 11654,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan en un 150% en la mazmorra Guarida de Sfinter Cell.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-01-29",
+    "item": "Lana de jalató",
+    "qty": 6,
+    "kamas": 593,
+    "bonus": "Se propondrá un reto extra contra los monstruos presentes en la zona del Rincón de los Jalatós.",
+    "bonus_type": "Reto extra",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-01-30",
+    "item": "Bolsa sospechosa",
+    "qty": 6,
+    "kamas": 1517,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 50% con las criaturas de tipo bandidos de Amakna, entre ellos, los artesanos oscuros.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-01-31",
+    "item": "Menta salvaje",
+    "qty": 40,
+    "kamas": 1187,
+    "bonus": "La cantidad de menta salvaje que consiguen los alquimistas aumenta un 125%.",
+    "bonus_type": "Abundancia de recolección (cosecha)",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-02-01",
+    "item": "Herida del Sacrógrito",
+    "qty": 1,
+    "kamas": 769,
+    "bonus": "La ganancia de experiencia en los combates contra monstruos y las posibilidades de conseguir un botín aumentan en un 50% para todos los aventureros que estén bajo la influencia de un ídolo de Tolgnas.",
+    "bonus_type": "Puntos de experiencia y botín en lágrimas",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-02-02",
+    "item": "Empanada de carne de jalató",
+    "qty": 2,
+    "kamas": 4771,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan en un 125% con todas las criaturas consideradas jalatós, incluidos los jalamuts y los jalatrankis. Además, la ganancia de experiencia aumenta un 50% para los cazadores, los campesinos y los pescadores.",
+    "bonus_type": "Condumio del bueno",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-02-03",
+    "item": "Bomba de orondo",
+    "qty": 6,
+    "kamas": 4551,
+    "bonus": "La ganancia de experiencia aumenta un 50% con las criaturas de tipo Magik Riktus.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-02-04",
+    "item": "Molar de tejaiss",
+    "qty": 2,
+    "kamas": 19153,
+    "bonus": "Las posibilidades de conseguir un botín aumentan en un 75% en la zona de las Colmillos de Cristal.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-02-05",
+    "item": "Hilo de nacilandera",
+    "qty": 6,
+    "kamas": 4551,
+    "bonus": "El botín que generan los recaudadores aumenta un 200% en las mazmorras de nivel 80 a 110.",
+    "bonus_type": "Recaudadores codiciosos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-02-06",
+    "item": "Martillo de maderucha",
+    "qty": 2,
+    "kamas": 769,
+    "bonus": "Los herreros ahorran un 15% de ingredientes cuando fabrican objetos.",
+    "bonus_type": "Economía de ingredientes",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-02-07",
+    "item": "Laminilla de champo verde",
+    "qty": 6,
+    "kamas": 1143,
+    "bonus": "Se aumentan un 50% las ganancias de experiencia en todas las zonas influenciadas por una anomalía temporal. Además, las ganancias de experiencia y las posibilidades de conseguir botín aumentan un 25% en la zona de la linde del Bosque Maléfico.",
+    "bonus_type": "Anomalías Temporales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-02-08",
+    "item": "Madera de fresno",
+    "qty": 40,
+    "kamas": 197,
+    "bonus": "Los leñadores conseguirán un 125% más de madera de fresno.",
+    "bonus_type": "Abundancia de madera",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-02-09",
+    "item": "Pelambrera de kanikilador",
+    "qty": 2,
+    "kamas": 13721,
+    "bonus": "Las posibilidades de conseguir un botín aumentan en un 100% en la mazmorra Gruta de Kanígrula.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-02-10",
+    "item": "Pico de dragopavo dorado",
+    "qty": 6,
+    "kamas": 3628,
+    "bonus": "Todas las variedades de dragopavos, vuelocerontes y mulaguas dorados traerán al mundo un bebé extra.",
+    "bonus_type": "Cría de monturas",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-02-11",
+    "item": "Lubina Mericana",
+    "qty": 40,
+    "kamas": 7190,
+    "bonus": "La cantidad de lubina mericana y de tenca que consiguen los pescadores aumenta un 125%.",
+    "bonus_type": "Abundancia de pesca",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-02-12",
+    "item": "Pelos de milubonoke",
+    "qty": 5,
+    "kamas": 5563,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 125% con las criaturas de tipo milubos.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-02-13",
+    "item": "Cobre",
+    "qty": 30,
+    "kamas": 197,
+    "bonus": "La cantidad de cobre que consiguen los mineros aumenta un 125%.",
+    "bonus_type": "Abundancia de minerales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-02-14",
+    "item": "Shigekax de fruta de la pasión",
+    "qty": 9,
+    "kamas": 593,
+    "bonus": "Todos los personajes que padezcan el sonroseo agudo verán sus ganancias de experiencia aumentar en un 100% en los combates contra monstruos.",
+    "bonus_type": "Experiencia amorosa",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-02-15",
+    "item": "Pócima de envejecimiento",
+    "qty": 1,
+    "kamas": 11984,
+    "bonus": "Hoy hay disponible una misión de búsqueda del tesoro de Guss a través de Cano Dhain en el Cofre de los Tesoros.",
+    "bonus_type": "Cofre del tesoro",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-02-16",
+    "item": "Buñuelos astrubienses",
+    "qty": 6,
+    "kamas": 593,
+    "bonus": "Los cazadores ahorran un 15% de ingredientes cuando fabrican objetos.",
+    "bonus_type": "Economía de ingredientes",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-02-17",
+    "item": "Botas de karnaval",
+    "qty": 1,
+    "kamas": 769,
+    "bonus": "Se han añadido paquetes sorpresa a los botines de los monstruos. Cuando abras uno, conseguirás buñuelos de karnaval o un disfraz del monstruo lokitofu.",
+    "bonus_type": "Regalos sorpresa",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-02-18",
+    "item": "Corteza de abrakno oscuro",
+    "qty": 6,
+    "kamas": 4551,
+    "bonus": "La ganancia de experiencia aumenta un 50% con las criaturas de tipo abraknídeos oscuros.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-02-19",
+    "item": "Carpa de Iem",
+    "qty": 40,
+    "kamas": 1187,
+    "bonus": "La cantidad de pez gatito y de carpa de Iem que pesquen los pescadores aumentará en un 125%.",
+    "bonus_type": "Abundancia de pesca",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-02-20",
+    "item": "Trasero de tufo aéreo",
+    "qty": 3,
+    "kamas": 13062,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan en un 150% en las zonas de las ramas y del tronco del árbol Hakam.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-02-21",
+    "item": "Cerveza Bwork",
+    "qty": 9,
+    "kamas": 1737,
+    "bonus": "Las posibilidades de conseguir un botín aumentan en un 75% en la zona del pueblo de los bworks y del campamento de los bworks.",
+    "bonus_type": "Botín",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-02-22",
+    "item": "Piel de dragosa",
+    "qty": 5,
+    "kamas": 7872,
+    "bonus": "La ganancia de experiencia aumenta en un 75% en la zona del santuario de los dragohuevos.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-02-23",
+    "item": "Cuerno de malastado",
+    "qty": 2,
+    "kamas": 12116,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan en un 150% en la mazmorra Túmulo del Largo Sueño.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-02-24",
+    "item": "Cuero de dedstraik",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "Se propondrá un reto extra contra los monstruos presentes en las salas de la base abisal.",
+    "bonus_type": "Reto extra",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-02-25",
+    "item": "Ghulóbulo rojo",
+    "qty": 1,
+    "kamas": 21990,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 100% en la mazmorra Mansión de Kuatropatas.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-02-26",
+    "item": "Armadura de blinduro",
+    "qty": 2,
+    "kamas": 19153,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 125% con las criaturas de tipo Martilloseco.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-02-27",
+    "item": "Marinada agridulce",
+    "qty": 4,
+    "kamas": 14601,
+    "bonus": "La cantidad de carne cruda y de carne marmoleada que consigan los cazadores aumentará en un 125%.",
+    "bonus_type": "Abundancia de presas",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-02-28",
+    "item": "Pluma de dodoncella",
+    "qty": 3,
+    "kamas": 5563,
+    "bonus": "La ganancia de experiencia aumenta en un 100% en la mazmorra Árbol de Moon.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-01",
+    "item": "La cadena Nhoro Kebriya",
+    "qty": 1,
+    "kamas": 769,
+    "bonus": "Los joyeros ahorran un 15% de ingredientes cuando fabrican objetos.",
+    "bonus_type": "Economía de ingredientes",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-03-02",
+    "item": "Cráneo de aventurero",
+    "qty": 5,
+    "kamas": 7630,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan en un 150% en la zona del valle de la Muertekemata.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-03",
+    "item": "Madera de carpe",
+    "qty": 20,
+    "kamas": 7190,
+    "bonus": "La cantidad de madera de carpe y de madera de bambú oscuro que consiguen los leñadores aumenta un 125%.",
+    "bonus_type": "Abundancia de madera",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-04",
+    "item": "Volva de galerina",
+    "qty": 3,
+    "kamas": 17240,
+    "bonus": "La ganancia de experiencia aumenta un 50% con las criaturas de tipo silvespíritus.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-05",
+    "item": "Pelo de baglitch",
+    "qty": 3,
+    "kamas": 12116,
+    "bonus": "Se aumentan un 50% las posibilidades de conseguir un botín en todas las zonas influenciadas por una anomalía temporal. Además, se aumentan en un 25% las ganancias de experiencia y las probabilidades de conseguir un botín en la zona de las landas de Cania.",
+    "bonus_type": "Anomalías Temporales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-06",
+    "item": "Varita de hielo",
+    "qty": 1,
+    "kamas": 769,
+    "bonus": "La calidad de los objetos fabricados en la ciudad del Burgo será mayor.",
+    "bonus_type": "Objetos de calidad",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-03-07",
+    "item": "Punta de lanza de fangshu",
+    "qty": 4,
+    "kamas": 10599,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 125% con las criaturas de tipo kozarus.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-08",
+    "item": "Pata de wabbit",
+    "qty": 6,
+    "kamas": 1627,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 50% con las criaturas de tipo wabbits, wabbits mutantes y guawdia del wey.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-09",
+    "item": "Lúpulo",
+    "qty": 50,
+    "kamas": 1187,
+    "bonus": "La cantidad de lúpulo que recolecten los campesinos aumentará en un 125%.",
+    "bonus_type": "Abundancia de recolección",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-10",
+    "item": "Extracto pequeño de fulminadora",
+    "qty": 5,
+    "kamas": 505,
+    "bonus": "El efecto de las fulminadoras se duplica en los cercados.",
+    "bonus_type": "Eficacia de cercados",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-11",
+    "item": "Diente de cocodrail",
+    "qty": 8,
+    "kamas": 1517,
+    "bonus": "Se propondrá un reto extra contra las criaturas presentes en las zonas de los pantanos de Amakna, de los pantanos nauseabundos y de los pantanos sin fondo.",
+    "bonus_type": "Reto extra",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-12",
+    "item": "Pescado empanado frito",
+    "qty": 3,
+    "kamas": 1737,
+    "bonus": "Los pescadores ahorran un 15% de ingredientes cuando fabrican objetos.",
+    "bonus_type": "Economía de ingredientes",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-03-13",
+    "item": "Ojo de cuereñor",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "La ganancia de experiencia aumenta en un 75% con todos los guardianes de mazmorra.",
+    "bonus_type": "Experiencia rolesca",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-14",
+    "item": "Trébol de 5 hojas",
+    "qty": 40,
+    "kamas": 593,
+    "bonus": "La cantidad de tréboles de 5 hojas que recolecten los alquimistas aumentará en un 125%.",
+    "bonus_type": "Abundancia de recolección (cosecha)",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-15",
+    "item": "Gratrool",
+    "qty": 5,
+    "kamas": 7872,
+    "bonus": "Se propondrá un reto extra contra las criaturas de tipo trools de Litneg.",
+    "bonus_type": "Reto extra",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-16",
+    "item": "Juguete de chavala zoth",
+    "qty": 4,
+    "kamas": 8774,
+    "bonus": "La ganancia de experiencia aumenta un 50% con las criaturas de tipo zoths.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-17",
+    "item": "Capa de pío amarillo",
+    "qty": 1,
+    "kamas": 769,
+    "bonus": "Los aventureros en busca de cervecichas pueden conseguir el doble de monedas con las criaturas de tipo leprechauns.",
+    "bonus_type": "Fortuna de los leprechauns",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-03-18",
+    "item": "Runa Hui",
+    "qty": 2,
+    "kamas": 769,
+    "bonus": "Los fabricamagos tienen un 15% de probabilidad de no consumir ninguna runa cuando tratan de mejorar un objeto.",
+    "bonus_type": "Forjamagia mejorada",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-19",
+    "item": "Manganeso",
+    "qty": 30,
+    "kamas": 2001,
+    "bonus": "La cantidad de manganeso que recolecten los mineros aumentará en un 125%.",
+    "bonus_type": "Abundancia de minerales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-20",
+    "item": "Cola de mantatáser",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "La ganancia de experiencia aumenta en un 100% en la Nave del Capitán Meno.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-21",
+    "item": "Ojo de flamtasma",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "El botín que consiguen los recaudadores aumentará en un 100% en todas las zonas influenciadas por una anomalía temporal. Además, se aumentan en un 25% las ganancias de experiencia y las probabilidades de conseguir un botín en la zona del Cuartel del Día sin Fin.",
+    "bonus_type": "Anomalías Temporales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-22",
+    "item": "Yunque de hielathos",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "Las posibilidades de conseguir un botín aumentan en un 100% en la Forjafría de Mizz Frizz.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-23",
+    "item": "Grabado de llovizna",
+    "qty": 1,
+    "kamas": 3276,
+    "bonus": "La velocidad de aparición de madera de todo tipo aumenta en un 100%.",
+    "bonus_type": "Aparición de recursos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-24",
+    "item": "Alas de escarahoja blanco",
+    "qty": 6,
+    "kamas": 1099,
+    "bonus": "La ganancia de experiencia aumenta un 50% con las criaturas de tipo escarahojas.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-25",
+    "item": "Antena de bacterrible",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 50% con las criaturas de tipo krobios.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-26",
+    "item": "Incisivo de golourmet",
+    "qty": 1,
+    "kamas": 19153,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 125% con las criaturas de tipo golosotes.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-27",
+    "item": "Papillote al limón",
+    "qty": 4,
+    "kamas": 1781,
+    "bonus": "La cantidad de carne industrial y de carne adulterada que consigan los cazadores aumentará en un 125%.",
+    "bonus_type": "Abundancia de presas",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-03-28",
+    "item": "Canino de kanitómata",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "La ganancia de experiencia aumenta en un 100% en el Transportador de Sylargh.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-29",
+    "item": "Tornillo de cybwork",
+    "qty": 2,
+    "kamas": 17240,
+    "bonus": "Las posibilidades de conseguir un botín aumentan en un 100% en la Cueva de Bworker.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-30",
+    "item": "Cola de fénex",
+    "qty": 6,
+    "kamas": 3980,
+    "bonus": "La ganancia de experiencia aumenta un 50% con las criaturas de tipo animales del desierto.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-03-31",
+    "item": "Diente de larva esmeralda",
+    "qty": 6,
+    "kamas": 1561,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan en un 150% en la Mazmorra de las Larvas.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-01",
+    "item": "Fluido glacial",
+    "qty": 3,
+    "kamas": 395,
+    "bonus": "La ganancia de experiencia y las posibilidades de conseguir botín aumentan un 50% con todos los monstruos considerados criaturas marinas (pischis, monstruos de las playas, coraladores, crustorales, tortugas de Moon, mulaguas salvajes, cangrabino, heladíkanos, Kralamar Gigante, monstruos de los abismos de Sufokia, mercenarinos, sumergidos y cocodrails de Cocuzko).",
+    "bonus_type": "Puntos de experiencia y de botín en las criaturas marinas",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-02",
+    "item": "Extracto pequeño de abrevadero",
+    "qty": 5,
+    "kamas": 505,
+    "bonus": "Se propondrá un reto extra contra los monstruos presentes en la zona del territorio cacterro.",
+    "bonus_type": "Reto extra",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-03",
+    "item": "Farol usado",
+    "qty": 3,
+    "kamas": 15436,
+    "bonus": "La ganancia de experiencia aumenta en un 75% en la zona del monte de las Tumbas.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-04",
+    "item": "Cinturón de seguridad",
+    "qty": 1,
+    "kamas": 769,
+    "bonus": "La calidad de los objetos fabricados en la ciudad de Sufokia será mayor.",
+    "bonus_type": "Objetos de calidad",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-04-05",
+    "item": "Huevo de dragohuevo calizo",
+    "qty": 1,
+    "kamas": 2836,
+    "bonus": "Hoy se podrá hacer una misión repetible especial cerca del santuario de los zobals. La podrán hacer los jugadores con nivel 20 o superior, y es independiente de la misión de la ofrenda. Además, se aumentan en un 30% las ganancias de experiencia y las probabilidades de conseguir un botín en las zonas de la isla de Pazcuak.",
+    "bonus_type": "Misión repetible y chocomanía",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-06",
+    "item": "Canino de abuelubo",
+    "qty": 5,
+    "kamas": 5563,
+    "bonus": "Las posibilidades de conseguir un botín aumentan en un 75% en la zona de los Altos de los Aullidos.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-07",
+    "item": "Cebada",
+    "qty": 50,
+    "kamas": 197,
+    "bonus": "La cantidad de cebada que recolecten los campesinos aumentará en un 125%.",
+    "bonus_type": "Abundancia de recolección",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-08",
+    "item": "Caparazón verde",
+    "qty": 6,
+    "kamas": 1517,
+    "bonus": "La ganancia de experiencia aumenta en un 75% en la zona de la playa Tortuga.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-09",
+    "item": "Pluma de gobvio",
+    "qty": 5,
+    "kamas": 5343,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan en un 150% en la mazmorra Teatro de Dramak.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-10",
+    "item": "Anillo fortalecedor",
+    "qty": 2,
+    "kamas": 769,
+    "bonus": "El efecto de las aporreadoras se duplica en los cercados.",
+    "bonus_type": "Eficacia de cercados",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-04-11",
+    "item": "Cacho de blop coco",
+    "qty": 6,
+    "kamas": 593,
+    "bonus": "Se aumentan un 50% las ganancias de experiencia en todas las zonas influenciadas por una anomalía temporal. Además, se aumentan en un 25% las ganancias de experiencia y la probabilidad de conseguir un botín en la zona del lago de Cania.",
+    "bonus_type": "Anomalías Temporales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-12",
+    "item": "Hueso de jiangshi-Nobi",
+    "qty": 3,
+    "kamas": 13721,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 50% con las criaturas de tipo ejército de bruma.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-13",
+    "item": "Madera de kalipto",
+    "qty": 40,
+    "kamas": 6377,
+    "bonus": "La cantidad de madera de ébano y de madera de kalipto que consiguen los leñadores aumenta un 125%.",
+    "bonus_type": "Abundancia de madera",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-14",
+    "item": "Pluma de kwak de viento",
+    "qty": 4,
+    "kamas": 1407,
+    "bonus": "Las posibilidades de conseguir un botín aumentan en un 100% en el Nido de Kwoknan.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-15",
+    "item": "Llave del Castillo de Arena",
+    "qty": 1,
+    "kamas": 769,
+    "bonus": "Por cada objeto que fabriquen, los manitas tendrán un 25% más de posibilidades de crear un segundo objeto.",
+    "bonus_type": "Fabricación intensiva",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-16",
+    "item": "Bamga",
+    "qty": 40,
+    "kamas": 197,
+    "bonus": "La cantidad de bamga y de cangrejo surimi que pesquen los pescadores aumentará en un 125%.",
+    "bonus_type": "Abundancia de pesca",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-17",
+    "item": "Multigely",
+    "qty": 1,
+    "kamas": 4507,
+    "bonus": "Las posibilidades de conseguir un botín aumentan en un 75% en la zona de la península de las gelatinas.",
+    "bonus_type": "Botín",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-04-18",
+    "item": "Cuero de cuerola",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "La ganancia de experiencia aumenta en un 100% en la mazmorra Sala Privada de Klim.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-19",
+    "item": "Oro",
+    "qty": 30,
+    "kamas": 7190,
+    "bonus": "La cantidad de oro que consiguen los mineros aumenta un 125%.",
+    "bonus_type": "Abundancia de minerales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-20",
+    "item": "Néctar del oriente",
+    "qty": 2,
+    "kamas": 6662,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 125% con las criaturas de tipo plantalas.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-21",
+    "item": "Bola pulida",
+    "qty": 1,
+    "kamas": 5871,
+    "bonus": "Hoy hay disponible una misión de búsqueda del tesoro de Scheik a través de Cano Dhain en el Cofre de los Tesoros.",
+    "bonus_type": "Cofre del tesoro",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-22",
+    "item": "Diente de lamprequeña",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 50% con las criaturas de tipo monstruos de las ruinas submarinas.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-23",
+    "item": "Baba de stropajo",
+    "qty": 5,
+    "kamas": 5761,
+    "bonus": "La ganancia de experiencia aumenta un 50% con las criaturas de tipo monstruos de la turbera.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-24",
+    "item": "Llave del Nido de Kwoknan",
+    "qty": 1,
+    "kamas": 3474,
+    "bonus": "Se propondrá un reto extra contra los monstruos presentes en la zona de la montaña de los crujidores.",
+    "bonus_type": "Reto extra",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-25",
+    "item": "Carne podrida",
+    "qty": 6,
+    "kamas": 4947,
+    "bonus": "La cantidad de carne podrida y de carne exudante que consigan los cazadores aumentará en un 125%.",
+    "bonus_type": "Abundancia de presas",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-26",
+    "item": "Kamatrix",
+    "qty": 1,
+    "kamas": 5981,
+    "bonus": "La ganancia de kamas aumentará en un 100% en todas las misiones.",
+    "bonus_type": "Misiones y kamas",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-27",
+    "item": "Oreja de fuxfaigter",
+    "qty": 6,
+    "kamas": 2990,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 125% con las criaturas de tipo rufianes de Cania.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-28",
+    "item": "Cristal",
+    "qty": 1,
+    "kamas": 2374,
+    "bonus": "La cantidad de mineral que consigan los mineros de todos los niveles aumentará en un 100%.",
+    "bonus_type": "Abundancia de minerales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-29",
+    "item": "Pluma de tofu",
+    "qty": 6,
+    "kamas": 989,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 50% con las criaturas de tipo tofus y tofus regordetes.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-04-30",
+    "item": "Semilla de pandoja",
+    "qty": 40,
+    "kamas": 4200,
+    "bonus": "La cantidad de plantas que recolecten los alquimistas de todos los niveles aumentará en un 100%.",
+    "bonus_type": "Abundancia de recolección (cosecha)",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-05-01",
+    "item": "Cápsula explosiva",
+    "qty": 2,
+    "kamas": 1517,
+    "bonus": "La ganancia de experiencia aumenta en un 50% con todos los oficios. Además, por cada hada artificial que fabriques, los personajes tendrán un 25% de posibilidades de crear un hada adicional y un 15% de posibilidades de ahorrar ingredientes. También pueden conseguir el doble de cápsulas explosivas luchando contra los bworks magos.",
+    "bonus_type": "Fabricación hadada",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-05-02",
+    "item": "Lengua de champidonte",
+    "qty": 1,
+    "kamas": 17240,
+    "bonus": "La ganancia de experiencia aumenta en un 100% en la mazmorra Templo del Gran Ugah.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-05-03",
+    "item": "Trasero de pestruzkito",
+    "qty": 4,
+    "kamas": 8510,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan en un 75% en todas las zonas influenciadas por una anomalía temporal. Además, se aumentan en un 25% las ganancias de experiencia y la probabilidad de conseguir un botín en la zona del circo de Cania.",
+    "bonus_type": "Anomalías Temporales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-05-04",
+    "item": "Catalejo de gobletrotter",
+    "qty": 6,
+    "kamas": 989,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 50% con las criaturas de tipo goblins de Amakna.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-05-05",
+    "item": "Fragmento de piedra afilada",
+    "qty": 6,
+    "kamas": 2748,
+    "bonus": "Se propondrá un reto extra contra las criaturas presentes en la zona de las Llanuras Rocosas.",
+    "bonus_type": "Reto extra",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-05-06",
+    "item": "Madera de arce",
+    "qty": 40,
+    "kamas": 2001,
+    "bonus": "La cantidad de bombú y de arce que consiguen los leñadores aumenta un 125%.",
+    "bonus_type": "Abundancia de madera",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-05-07",
+    "item": "Diente de cleymor",
+    "qty": 1,
+    "kamas": 21990,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 150% en las mazmorras Torre de Solar y Torre de Bethel.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-05-08",
+    "item": "Patata",
+    "qty": 20,
+    "kamas": 197,
+    "bonus": "Hoy se podrá hacer una misión repetible especial cerca del Castillo de Amakna. La podrán hacer los jugadores con nivel 20 o superior, y es independiente de la misión de la ofrenda.",
+    "bonus_type": "Misión repetible",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-05-09",
+    "item": "Piedra medicinal",
+    "qty": 6,
+    "kamas": 3474,
+    "bonus": "Las posibilidades de conseguir un botín aumentan en un 75% en la zona del cañón salvaje.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-05-10",
+    "item": "Extracto pequeño de aporreadora",
+    "qty": 5,
+    "kamas": 505,
+    "bonus": "Los ganaderos ahorran un 15% de ingredientes cuando fabrican objetos.",
+    "bonus_type": "Economía de ingredientes",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-05-11",
+    "item": "Frasco para elementos",
+    "qty": 1,
+    "kamas": 5981,
+    "bonus": "La ganancia de experiencia aumenta en un 50% con los oficios de forjamagia de armas (forjamago y escultomago).",
+    "bonus_type": "Experiencia de oficios",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-05-12",
+    "item": "Malta",
+    "qty": 50,
+    "kamas": 4200,
+    "bonus": "La cantidad de malta que recolecten los campesinos aumentará en un 125%.",
+    "bonus_type": "Abundancia de recolección",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-05-13",
+    "item": "Dedicatoria de Skonk para Esmeralda",
+    "qty": 1,
+    "kamas": 8400,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan en un 150% en la mazmorra Guarida de Skonk.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-05-14",
+    "item": "Escudo de Bowis",
+    "qty": 1,
+    "kamas": 4529,
+    "bonus": "Se aumenta la calidad de los objetos fabricados en el pueblo y el bosque de Amakna.",
+    "bonus_type": "Objetos de calidad",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-05-15",
+    "item": "Collar de Khan Karkasa",
+    "qty": 2,
+    "kamas": 769,
+    "bonus": "Los botines de los monstruos también cuentan con jalabolas sorpresa. Cuando las utilices, conseguirás jalagomas de distintos sabores.",
+    "bonus_type": "Regalos sorpresa",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-05-16",
+    "item": "Belladona",
+    "qty": 40,
+    "kamas": 7190,
+    "bonus": "La velocidad de aparición de las flores y de las plantas que recogen los alquimistas aumenta un 100%.",
+    "bonus_type": "Aparición de recursos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-05-17",
+    "item": "Tejido de rey stropajo",
+    "qty": 1,
+    "kamas": 21154,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 50% con las criaturas de tipo monstruos de la turbera.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-05-18",
+    "item": "Polen de bulbiflor",
+    "qty": 3,
+    "kamas": 6662,
+    "bonus": "El botín que consiguen los recaudadores aumentará en un 100% en todas las zonas influenciadas por una anomalía temporal. Además, se aumentan en un 25% las ganancias de experiencia y las probabilidades de conseguir un botín en la zona de Plantala.",
+    "bonus_type": "Anomalías Temporales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-05-19",
+    "item": "Estaño",
+    "qty": 30,
+    "kamas": 2990,
+    "bonus": "La cantidad de estaño y de silicato que consiguen los mineros aumenta un 125%.",
+    "bonus_type": "Abundancia de minerales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-05-20",
+    "item": "Escudo tombariano",
+    "qty": 1,
+    "kamas": 769,
+    "bonus": "Los fabricantes ahorran un 15% de ingredientes cuando fabrican objetos.",
+    "bonus_type": "Economía de ingredientes",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-05-21",
+    "item": "Capucha de los campos",
+    "qty": 1,
+    "kamas": 769,
+    "bonus": "La ganancia de experiencia aumenta en un 50% en los oficios de fabricación de prendas y de complementos (joyero, zapatero y sastre).",
+    "bonus_type": "Experiencia de oficios",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-05-22",
+    "item": "Mochila de pequeño aventurero",
+    "qty": 1,
+    "kamas": 2352,
+    "bonus": "La ganancia de experiencia aumenta un 100% para todas la misiones.",
+    "bonus_type": "Experiencia de misiones",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-05-23",
+    "item": "Lucio",
+    "qty": 40,
+    "kamas": 2001,
+    "bonus": "La cantidad de lucio, de perca y de rape que pesquen los pescadores aumentará en un 125%.",
+    "bonus_type": "Abundancia de pesca",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-05-24",
+    "item": "Centeno",
+    "qty": 40,
+    "kamas": 2990,
+    "bonus": "La velocidad de aparición de recursos aumenta en un 150% en la zona de los campos de Cania.",
+    "bonus_type": "Aparición de recursos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-05-25",
+    "item": "Zanahowia",
+    "qty": 2,
+    "kamas": 1407,
+    "bonus": "Hoy se podrá hacer una misión repetible especial al este del taller de leñadores del bosque de Amakna. La podrán hacer los jugadores con nivel 20 o superior, y es independiente de la misión de la ofrenda.",
+    "bonus_type": "Misión repetible",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-05-26",
+    "item": "Cuerno de minovillo",
+    "qty": 4,
+    "kamas": 8927,
+    "bonus": "Se propondrá un reto extra contra los monstruos presentes en la zona del laberinto del Minotauroro.",
+    "bonus_type": "Reto extra",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-05-27",
+    "item": "Tenca guisada",
+    "qty": 2,
+    "kamas": 17987,
+    "bonus": "Por cada objeto que fabriquen, los pescadores tendrán un 25% de posibilidades de crear un segundo objeto.",
+    "bonus_type": "Fabricación intensiva",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-05-28",
+    "item": "Carne sanguinolenta",
+    "qty": 6,
+    "kamas": 3980,
+    "bonus": "La cantidad de carne sanguinolenta que consigan los cazadores aumentará en un 125%.",
+    "bonus_type": "Abundancia de presas",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-05-29",
+    "item": "Misericordia de chafer de élite",
+    "qty": 6,
+    "kamas": 1517,
+    "bonus": "La ganancia de experiencia aumenta en un 75% en las zonas del cementerio de los Torturados y del cementerio de los Héroes.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-05-30",
+    "item": "Runa Pot",
+    "qty": 3,
+    "kamas": 769,
+    "bonus": "Los forjamagos tienen un 15% de probabilidad de no consumir ninguna runa cuando tratan de mejorar un arma.",
+    "bonus_type": "Forjamagia mejorada",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-05-31",
+    "item": "Lamela de dramanita",
+    "qty": 3,
+    "kamas": 17240,
+    "bonus": "Las posibilidades de conseguir un botín aumentan en un 100% en la mazmorra Antro del Cil.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-01",
+    "item": "Pinza de cangrejo",
+    "qty": 6,
+    "kamas": 1517,
+    "bonus": "Se propondrá un reto extra contra las criaturas de tipo monstruos de las playas.",
+    "bonus_type": "Reto extra",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-02",
+    "item": "Biscote",
+    "qty": 2,
+    "kamas": 3980,
+    "bonus": "Se han añadido Cuencos de Elgero al botín de los monstruos de las mazmorra. Cuando se usan, hacen desaparecer los kamas... y te permiten beneficiarte de un efecto aleatorio de caridad.",
+    "bonus_type": "Voto de pobreza",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-06-03",
+    "item": "Semilla de la discordia",
+    "qty": 6,
+    "kamas": 1231,
+    "bonus": "El botín que consiguen los recaudadores aumentará en un 200% en las mazmorras de nivel 40 a 70.",
+    "bonus_type": "Recaudadores codiciosos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-04",
+    "item": "Escudo de jalató",
+    "qty": 1,
+    "kamas": 1165,
+    "bonus": "Los protectores de recursos tienen 5 veces más de posibilidades de aparecer durante la actividad de recolección. Además, la velocidad de aparición de los archimonstruos aumenta un 200%.",
+    "bonus_type": "Protectores de la naturaleza",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-06-05",
+    "item": "Caparazón de virusca",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "La ganancia de experiencia aumenta un 50% con las criaturas de tipo krobios.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-06",
+    "item": "Ojo de kukoloide",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 100% en la Mazmorra del Conde Kontatrás.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-07",
+    "item": "Garra de tejestia",
+    "qty": 2,
+    "kamas": 19153,
+    "bonus": "La ganancia de experiencia aumenta un 50% con las criaturas de tipo tejarveles.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-08",
+    "item": "Rueda de pequeciclo",
+    "qty": 6,
+    "kamas": 4551,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan en un 75% en todas las zonas influenciadas por una anomalía temporal. Además, se aumentan en un 25% las ganancias de experiencia y las probabilidades de conseguir un botín en la zona del camino de las caravanas.",
+    "bonus_type": "Anomalías Temporales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-09",
+    "item": "Orquídea freyesca",
+    "qty": 40,
+    "kamas": 2001,
+    "bonus": "La cantidad de Orquídea freyesca que consiguen los alquimistas aumenta un 125%.",
+    "bonus_type": "Abundancia de recolección (cosecha)",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-10",
+    "item": "Leleche de almendra",
+    "qty": 1,
+    "kamas": 395,
+    "bonus": "El efecto de los pesebres se duplica en los cercados.",
+    "bonus_type": "Eficacia de cercados",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-06-11",
+    "item": "Botella de Botsgüena",
+    "qty": 1,
+    "kamas": 19153,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 100% en el campamento del conde Razof.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-12",
+    "item": "Sangre de arpo",
+    "qty": 1,
+    "kamas": 21990,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 150% en la mazmorra Acuadomo de Merkator.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-13",
+    "item": "Madera de bambú",
+    "qty": 40,
+    "kamas": 3562,
+    "bonus": "La cantidad de bambú que consiguen los leñadores aumenta un 125%.",
+    "bonus_type": "Abundancia de madera",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-14",
+    "item": "Llave de la Mazmorra de los Campos",
+    "qty": 1,
+    "kamas": 769,
+    "bonus": "Los manitas tienen un 15% de posibilidades de ahorrar ingredientes cuando fabrican objetos.",
+    "bonus_type": "Economía de ingredientes",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-15",
+    "item": "Coxis de coralador",
+    "qty": 6,
+    "kamas": 1407,
+    "bonus": "La ganancia de experiencia aumenta en un 100% en la Gruta Grut'Hesqua.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-16",
+    "item": "Cáscara de dragohuevo pizarroso",
+    "qty": 6,
+    "kamas": 2836,
+    "bonus": "Se propondrá un reto extra contra los monstruos presentes en las zonas de la península de los dragohuevos.",
+    "bonus_type": "Reto extra",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-17",
+    "item": "Raíz de abráknido",
+    "qty": 6,
+    "kamas": 1407,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 125% con las criaturas de tipo abraknídeos.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-18",
+    "item": "Cenipiedra",
+    "qty": 30,
+    "kamas": 8993,
+    "bonus": "La cantidad de cenipiedra que consiguen los mineros aumenta un 125%.",
+    "bonus_type": "Abundancia de minerales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-19",
+    "item": "Piel de escupefux",
+    "qty": 4,
+    "kamas": 10599,
+    "bonus": "Las posibilidades de conseguir un botín aumentan en un 75% en la zona de Fuegodala.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-20",
+    "item": "Trigo",
+    "qty": 50,
+    "kamas": 197,
+    "bonus": "La cantidad de trigo que recolecten los campesinos aumentará en un 125%.",
+    "bonus_type": "Abundancia de recolección",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-21",
+    "item": "Tambor de gobsalía",
+    "qty": 6,
+    "kamas": 395,
+    "bonus": "Los amantes de la música pueden conseguir el doble de polenéctar con las criaturas del Mundo de los Doce (salvo dimensiones, zonas submarinas e interiores).",
+    "bonus_type": "Miel sobre orejuelas",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-22",
+    "item": "Pinza de crustoral",
+    "qty": 2,
+    "kamas": 1297,
+    "bonus": "Se propondrá un reto extra contra los monstruos presentes en las zonas de la playa de coral.",
+    "bonus_type": "Reto extra",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-23",
+    "item": "Apéndice demoníaco",
+    "qty": 1,
+    "kamas": 21990,
+    "bonus": "La ganancia de experiencia aumenta un 50% con las criaturas de tipo poseídos.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-24",
+    "item": "Piel de larva campestre",
+    "qty": 1,
+    "kamas": 2396,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 50% con las criaturas de tipo animales de los campos.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-25",
+    "item": "Agua ferruginosa",
+    "qty": 1,
+    "kamas": 395,
+    "bonus": "La velocidad de aparición de recursos aumenta en un 150% en la zona de la mina Gitadora.",
+    "bonus_type": "Aparición de recursos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-26",
+    "item": "Escudo cometa",
+    "qty": 1,
+    "kamas": 769,
+    "bonus": "La calidad de los objetos fabricados en la isla de Pandala aumenta.",
+    "bonus_type": "Objetos de calidad",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-06-27",
+    "item": "Tentáculo de pulprofundo",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "Las posibilidades de conseguir un botín aumentan en un 100% en el templo de Kutulú.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-28",
+    "item": "Granate de momístico",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan en un 75% en todas las zonas influenciadas por una anomalía temporal. Además, se aumentan en un 25% las ganancias de experiencia y las probabilidades de conseguir un botín en la zona de la pirámide maldita.",
+    "bonus_type": "Anomalías Temporales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-29",
+    "item": "Carne negra",
+    "qty": 2,
+    "kamas": 19944,
+    "bonus": "La cantidad de carne podrida y de carne negra que consigan los cazadores aumentará en un 125%.",
+    "bonus_type": "Abundancia de presas",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-06-30",
+    "item": "Gorro de gobalista",
+    "qty": 6,
+    "kamas": 989,
+    "bonus": "La ganancia de experiencia aumenta en un 100% en la Akademia de los Goblins.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-07-01",
+    "item": "Escama de dragoss carbonoso",
+    "qty": 5,
+    "kamas": 5563,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 50% con las criaturas de tipo dragoss.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-07-02",
+    "item": "Huevo de tofudriza",
+    "qty": 1,
+    "kamas": 7762,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan en un 150% en la mazmorra Tofullinero Real.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-07-03",
+    "item": "Pócima Dre Enrédit",
+    "qty": 3,
+    "kamas": 747,
+    "bonus": "Los alquimistas tienen un 15% de posibilidades de ahorrar ingredientes cuando fabrican objetos.",
+    "bonus_type": "Economía de ingredientes",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-07-04",
+    "item": "Fritada amakneana",
+    "qty": 4,
+    "kamas": 3584,
+    "bonus": "La ganancia de experiencia y las posibilidades de conseguir botín aumentan un 50% con todos los monstruos que haya en las zonas del reino de Amakna. Además, se añade un bonus del 75% a las posibilidades de conseguir botín en los Sueños.",
+    "bonus_type": "Sueño amakneano",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-07-05",
+    "item": "Pelos mágicos de tanuki",
+    "qty": 2,
+    "kamas": 9191,
+    "bonus": "Las posibilidades de conseguir un botín aumentan en un 100% en la mazmorra Taller de Tanukui San.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-07-06",
+    "item": "Trucha",
+    "qty": 40,
+    "kamas": 197,
+    "bonus": "La cantidad de gobio y de trucha que pesquen los pescadores aumentará en un 125%.",
+    "bonus_type": "Abundancia de pesca",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-07-07",
+    "item": "Maíz",
+    "qty": 50,
+    "kamas": 7190,
+    "bonus": "La cantidad de maíz y de mijo que consiguen los campesinos aumenta un 125%.",
+    "bonus_type": "Abundancia de recolección",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-07-08",
+    "item": "Nudo marinero",
+    "qty": 2,
+    "kamas": 4551,
+    "bonus": "La ganancia de experiencia aumenta un 50% con las criaturas de tipo piratas de Moon.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-07-09",
+    "item": "Runa Pod",
+    "qty": 2,
+    "kamas": 769,
+    "bonus": "Los zapateromagos tienen un 15% de probabilidad de no consumir ninguna runa cuando tratan de mejorar un objeto.",
+    "bonus_type": "Forjamagia mejorada",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-07-10",
+    "item": "Arco silbante",
+    "qty": 1,
+    "kamas": 769,
+    "bonus": "Las monturas que nazcan este día tendrán la capacidad Enamoradiza.",
+    "bonus_type": "Monturas enamoradizas",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-07-11",
+    "item": "Bauxita",
+    "qty": 30,
+    "kamas": 5585,
+    "bonus": "La cantidad de bauxita que recolecten los mineros aumentará en un 125%.",
+    "bonus_type": "Abundancia de minerales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-07-12",
+    "item": "Pelos de barba de barbariete",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "Se propondrá un reto extra contra las criaturas de tipo clan Martillelo.",
+    "bonus_type": "Reto extra",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-07-13",
+    "item": "Agua de kuapa",
+    "qty": 2,
+    "kamas": 9191,
+    "bonus": "Las posibilidades de conseguir un botín aumentan en un 100% en la mazmorra Valle de la Dama del Agua.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-07-14",
+    "item": "Cadenas rotas",
+    "qty": 6,
+    "kamas": 1517,
+    "bonus": "La ganancia de experiencia aumenta en un 75% con los combates del koliseo.",
+    "bonus_type": "Experiencia de koliseo",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-07-15",
+    "item": "Carne sabrosa",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "La cantidad de carne sabrosa que consiguen los cazadores aumenta un 125%.",
+    "bonus_type": "Abundancia de presas",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-07-16",
+    "item": "Lodo venerable",
+    "qty": 2,
+    "kamas": 16866,
+    "bonus": "Se aumentan un 50% las posibilidades de conseguir un botín en todas las zonas influenciadas por una anomalía temporal. Además, las ganancias de experiencia y la probabilidad de conseguir botín aumentan un 25% en las zonas de los bosques de Vulkania.",
+    "bonus_type": "Anomalías Temporales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-07-17",
+    "item": "Piel de larva verde",
+    "qty": 6,
+    "kamas": 395,
+    "bonus": "La ganancia de experiencia aumenta en un 75% en la zona de las praderas de Astrub.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-07-18",
+    "item": "Mal Pico",
+    "qty": 1,
+    "kamas": 395,
+    "bonus": "Por cada runa obtenida rompiendo objetos, los trituradores tienen un 10% de posibilidades de crear una segunda runa.",
+    "bonus_type": "Trituramiento",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-07-19",
+    "item": "Piel de trithón",
+    "qty": 1,
+    "kamas": 21990,
+    "bonus": "La ganancia de experiencia aumenta un 100% en la mazmorra Palacio de Dientinea.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-07-20",
+    "item": "Aceite de girasol salvaje",
+    "qty": 1,
+    "kamas": 769,
+    "bonus": "La velocidad de aparición de cereales recolectados por los campesinos aumentará en un 100%.",
+    "bonus_type": "Aparición de recursos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-07-21",
+    "item": "Fragmento de pepita de Kéfriho",
+    "qty": 1,
+    "kamas": 19153,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 50% con las criaturas de tipo goblins de Kéfriho.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-07-22",
+    "item": "Sardina estofada",
+    "qty": 3,
+    "kamas": 3144,
+    "bonus": "La ganancia de experiencia aumenta en un 75% en las zonas del puerto de escarcha y del burgo.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-07-23",
+    "item": "Miaumiau",
+    "qty": 1,
+    "kamas": 747,
+    "bonus": "La ganancia de experiencia de las mascotas aumenta un 50%.",
+    "bonus_type": "Experiencia de mascotas",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-07-24",
+    "item": "Madera de olmo",
+    "qty": 10,
+    "kamas": 8993,
+    "bonus": "La cantidad de bambú sagrado y de olmo que consiguen los leñadores aumenta un 125%.",
+    "bonus_type": "Abundancia de madera",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-07-25",
+    "item": "Forúnculo de mamá bwork",
+    "qty": 3,
+    "kamas": 17240,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan en un 150% en la zona de Gisgul.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-07-26",
+    "item": "Pincho de malpincho",
+    "qty": 3,
+    "kamas": 12116,
+    "bonus": "Se propondrá un reto extra contra los monstruos presentes en las zonas de la linde encantada y del dédalo de Dark Vlad.",
+    "bonus_type": "Reto extra",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-07-27",
+    "item": "Albóndiga de carne",
+    "qty": 6,
+    "kamas": 593,
+    "bonus": "La cantidad de carne picada y de carne manida que consiguen los cazadores aumenta un 125%.",
+    "bonus_type": "Abundancia de presas",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-07-28",
+    "item": "Hoja rota de gorolichang",
+    "qty": 4,
+    "kamas": 10599,
+    "bonus": "La ganancia de experiencia aumenta en un 100% en la mazmorra Dojo del Viento.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-07-29",
+    "item": "Zumo de cacterro",
+    "qty": 2,
+    "kamas": 9191,
+    "bonus": "Las posibilidades de conseguir un botín aumentan en un 100% en la mazmorra Caverna de El Piko.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-07-30",
+    "item": "Cuero de boostacho prepuberto",
+    "qty": 3,
+    "kamas": 989,
+    "bonus": "La ganancia de experiencia y las posibilidades de conseguir un botín aumentan en un 100% en la mazmorra de la Mansión Encantada. Además, Parissil Trool espera a los aventureros en la Feria del Trool. Su bendición te permite troolear a tope (bonus de iniciativa y golpes críticos durante 15 combates).",
+    "bonus_type": "Carrusel de trool",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-07-31",
+    "item": "Flecha de ocrambo",
+    "qty": 2,
+    "kamas": 19153,
+    "bonus": "La ganancia de experiencia aumenta un 50% con las criaturas de tipo grescazadores.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-01",
+    "item": "Salvia",
+    "qty": 40,
+    "kamas": 197,
+    "bonus": "La cantidad de salvia que consiguen los alquimistas aumenta un 125%.",
+    "bonus_type": "Abundancia de recolección (cosecha)",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-02",
+    "item": "Pluma de pestruzatón",
+    "qty": 4,
+    "kamas": 8400,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 125% con las criaturas de tipo pestruces.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-03",
+    "item": "Pócima de ciudad: Bonta",
+    "qty": 3,
+    "kamas": 5981,
+    "bonus": "Hoy se podrá hacer una misión repetible especial al sur de las puertas de Bonta. La podrán hacer los jugadores con nivel 20 o superior, y es independiente de la misión de la ofrenda.",
+    "bonus_type": "Misión repetible",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-08-04",
+    "item": "Cenizas maduras",
+    "qty": 4,
+    "kamas": 8400,
+    "bonus": "Las posibilidades de conseguir un botín aumentan en un 100% en el Cráter Mino.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-05",
+    "item": "Inverluza",
+    "qty": 10,
+    "kamas": 10995,
+    "bonus": "La cantidad de inverluza que pesquen los pescadores aumentará en un 200%.",
+    "bonus_type": "Abundancia de pesca",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-06",
+    "item": "Bronceador",
+    "qty": 6,
+    "kamas": 329,
+    "bonus": "Se propondrá un reto extra contra las criaturas presentes en la zona de las calas de Astrub.",
+    "bonus_type": "Reto extra",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-07",
+    "item": "Raíz de tronkoblop",
+    "qty": 3,
+    "kamas": 2111,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan en un 150% en la mazmorra del Antro del Blop Multicolor Real.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-08",
+    "item": "Aluminita",
+    "qty": 1,
+    "kamas": 395,
+    "bonus": "Los mineros tienen un 15% de posibilidades de ahorrar ingredientes cuando fabrican objetos.",
+    "bonus_type": "Economía de ingredientes",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-09",
+    "item": "Pétalo de girasol salvaje",
+    "qty": 6,
+    "kamas": 395,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 50% con las criaturas de tipo plantas de los campos.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-10",
+    "item": "Extracto pequeño de pesebre",
+    "qty": 5,
+    "kamas": 505,
+    "bonus": "Por cada objeto que fabriquen, los ganaderos tendrán un 25% de posibilidades de crear un segundo objeto.",
+    "bonus_type": "Fabricación intensiva",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-11",
+    "item": "Sombreropikaza",
+    "qty": 3,
+    "kamas": 15436,
+    "bonus": "Las posibilidades de conseguir un botín aumentan en un 75% en la zona del monte de las Tumbas.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-12",
+    "item": "Carne de animales silvestres",
+    "qty": 4,
+    "kamas": 12732,
+    "bonus": "La cantidad de carne macerada y de carne de animal silvestre que consiguen los cazadores aumenta un 125%.",
+    "bonus_type": "Abundancia de presas",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-13",
+    "item": "Charco venerable",
+    "qty": 2,
+    "kamas": 16866,
+    "bonus": "Se propondrá un reto extra contra las criaturas de tipo monstruos de Vulkania.",
+    "bonus_type": "Reto extra",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-14",
+    "item": "Ojo de cocodrail albino",
+    "qty": 1,
+    "kamas": 21990,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 125% con las criaturas de tipo cocodrails de Cocuzko.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-15",
+    "item": "Párpado de estrella",
+    "qty": 6,
+    "kamas": 1517,
+    "bonus": "La ganancia de experiencia, la probabilidad de conseguir botín y el botín que generan los recaudadores aumentan un 100% en todas las zonas influenciadas por una anomalía temporal.",
+    "bonus_type": "Anomalías enloquecidas",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-16",
+    "item": "Ginseng",
+    "qty": 40,
+    "kamas": 5585,
+    "bonus": "La cantidad de ginseng y de semillas de pandoja que consiguen los alquimistas aumenta un 125%.",
+    "bonus_type": "Abundancia de recolección (cosecha)",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-17",
+    "item": "Bronce",
+    "qty": 30,
+    "kamas": 593,
+    "bonus": "La cantidad de bronce que recolecten los mineros aumentará en un 125%.",
+    "bonus_type": "Abundancia de minerales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-18",
+    "item": "Cuerno de tifomet",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 50% con las criaturas de tipo devastadores.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-19",
+    "item": "Botas de satisfacción",
+    "qty": 1,
+    "kamas": 769,
+    "bonus": "La calidad de los objetos fabricados en la ciudad de Astrub será mayor.",
+    "bonus_type": "Objetos de calidad",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-08-20",
+    "item": "Carne rancia",
+    "qty": 6,
+    "kamas": 3144,
+    "bonus": "La cantidad de Carne corrompida y de carne rancia que consigan los cazadores aumentará en un 125%.",
+    "bonus_type": "Abundancia de presas",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-21",
+    "item": "Tierra estéril",
+    "qty": 1,
+    "kamas": 21990,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 150% en las 4 mazmorras del Selocalipsis (Sentencia de la Balanza, Árbol de Muerte, Cadenas de la Tiranía y Trono de Sangre).",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-22",
+    "item": "Bacaladilla",
+    "qty": 40,
+    "kamas": 8070,
+    "bonus": "La cantidad de bacaladilla y de pez espada que pesquen los pescadores aumentará en un 125%.",
+    "bonus_type": "Abundancia de pesca",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-23",
+    "item": "Pelos de golosote",
+    "qty": 2,
+    "kamas": 19153,
+    "bonus": "Las posibilidades de conseguir un botín aumentan en un 75% en las zonas del monte Tórrido y de la colmena de los golosotes.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-24",
+    "item": "Pústula de ratarmonía",
+    "qty": 3,
+    "kamas": 6662,
+    "bonus": "La ganancia de experiencia aumenta un 100% en la mazmorra Raratonera de la Rata Negra.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-25",
+    "item": "Mijo",
+    "qty": 50,
+    "kamas": 8993,
+    "bonus": "La cantidad de cereales que recolecten los campesinos de todos los niveles aumentará en un 100%.",
+    "bonus_type": "Abundancia de recolección",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-26",
+    "item": "Collar de esclavo",
+    "qty": 1,
+    "kamas": 21990,
+    "bonus": "El botín que generan los recaudadores aumenta un 200% en las mazmorras de nivel 200.",
+    "bonus_type": "Recaudadores codiciosos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-27",
+    "item": "Tiburón martillhoz",
+    "qty": 40,
+    "kamas": 6377,
+    "bonus": "La cantidad de raya azul y de tiburón martillhoz que pesquen los pescadores aumentará en un 125%.",
+    "bonus_type": "Abundancia de pesca",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-28",
+    "item": "Madera de nogal",
+    "qty": 40,
+    "kamas": 593,
+    "bonus": "La cantidad de nogal que consiguen los leñadores aumenta un 125%.",
+    "bonus_type": "Abundancia de madera",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-29",
+    "item": "Flor de blopiseta",
+    "qty": 6,
+    "kamas": 2111,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 100% en la mazmorra Enclave de los Blops.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-30",
+    "item": "Piel de don dórgano",
+    "qty": 1,
+    "kamas": 5981,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 125% con las criaturas de tipo porcos.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-08-31",
+    "item": "Runa Re Agua",
+    "qty": 4,
+    "kamas": 769,
+    "bonus": "Los sastremagos tienen un 15% de probabilidad de no consumir ninguna runa cuando tratan de mejorar un objeto.",
+    "bonus_type": "Forjamagia mejorada",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-09-01",
+    "item": "Espina de armuguete",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "La ganancia de experiencia aumenta un 100% en la mazmorra de la Cámara de los Maleficios.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-09-02",
+    "item": "Pócima de mini cuidados superior",
+    "qty": 4,
+    "kamas": 395,
+    "bonus": "La regeneración de puntos de vida aumenta un 300% (fuera de combate), y las curas con consumibles (vida y energía) aumenta un 100%.",
+    "bonus_type": "Vitalidad desbordante",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-09-03",
+    "item": "Pétalo de tinta",
+    "qty": 1,
+    "kamas": 21990,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 50% con las criaturas de tipo yokianzhis de tinta y yokianzhis de papel.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-09-04",
+    "item": "Tabla de contrachapado",
+    "qty": 1,
+    "kamas": 395,
+    "bonus": "Por cada objeto que fabriquen, los leñadores tendrán un 10% de posibilidades de crear un segundo objeto.",
+    "bonus_type": "Fabricación intensiva",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-09-05",
+    "item": "Pluma de serpipluma",
+    "qty": 4,
+    "kamas": 8927,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan en un 150% en la zona y la mazmorra Laberinto del Minotauroro (y su centro).",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-09-06",
+    "item": "Pelo de zorrowapo",
+    "qty": 5,
+    "kamas": 6662,
+    "bonus": "La ganancia de experiencia aumenta un 50% con las criaturas de tipo cuerboks.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-09-07",
+    "item": "Sépalo de nierba",
+    "qty": 4,
+    "kamas": 10027,
+    "bonus": "Se propondrá un reto extra contra las criaturas de tipo florifauna oscura.",
+    "bonus_type": "Reto extra",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-09-08",
+    "item": "Sepiolita",
+    "qty": 10,
+    "kamas": 10995,
+    "bonus": "La velocidad de aparición de recursos aumenta en un 150% en las zonas de las profundidades de Sufokia.",
+    "bonus_type": "Aparición de recursos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-09-09",
+    "item": "Tridente roto",
+    "qty": 6,
+    "kamas": 1517,
+    "bonus": "La ganancia de experiencia aumenta en un 75% en la zona de la llanura de los puerkazos.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-09-10",
+    "item": "Extracto pequeño de acariciador",
+    "qty": 5,
+    "kamas": 505,
+    "bonus": "El efecto de los acariciadores se duplica en los cercados.",
+    "bonus_type": "Eficacia de cercados",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-09-11",
+    "item": "Sudor de dragopavo",
+    "qty": 1,
+    "kamas": 2836,
+    "bonus": "La ganancia de experiencia aumenta en un 75% en la zona del territorio de los dragopavos salvajes.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-09-12",
+    "item": "Llama espectral",
+    "qty": 6,
+    "kamas": 1517,
+    "bonus": "La recompensa en puntos de experiencia de las misiones de alineamiento aumentan un 100%. Además, hoy se podrá hacer una misión repetible especial en las milicias de Bonta y de Brakmar. La podrán hacer los personajes alineados con nivel 20 o superior, y es independiente de la misión de la ofrenda.",
+    "bonus_type": "Bonta y Brakmar",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-09-13",
+    "item": "Lino",
+    "qty": 50,
+    "kamas": 2001,
+    "bonus": "La cantidad de lino que recolecten los campesinos aumentará en un 125%.",
+    "bonus_type": "Abundancia de recolección",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-09-14",
+    "item": "Sudor frío de fantasma",
+    "qty": 6,
+    "kamas": 1517,
+    "bonus": "Se aumentan un 50% las ganancias de experiencia en todas las zonas influenciadas por una anomalía temporal. Además, se aumentan en un 25% las ganancias de experiencia y las probabilidades de conseguir un botín en la zona de las afueras de Brakmar.",
+    "bonus_type": "Anomalías Temporales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-09-15",
+    "item": "Bráctea de droseral",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 150% en la mazmorra Laboratorio de Nileza.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-09-16",
+    "item": "Caparazón de gusano de arena",
+    "qty": 1,
+    "kamas": 15436,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 75% en las zonas de la garganta de los Vientos Turbulentos y de la ciudad olvidada.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-09-17",
+    "item": "Concentrado de matorral",
+    "qty": 1,
+    "kamas": 1165,
+    "bonus": "La velocidad de aparición de recursos aumenta en un 150% en la zona del bosque de Amakna.",
+    "bonus_type": "Aparición de recursos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-09-18",
+    "item": "Hueso de chafer",
+    "qty": 9,
+    "kamas": 989,
+    "bonus": "La ganancia de experiencia aumenta un 100% en la Mazmorra de los Esqueletos.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-09-19",
+    "item": "Ron de Calidad",
+    "qty": 6,
+    "kamas": 4551,
+    "bonus": "La ganancia de experiencia y las posibilidades de conseguir un botín aumentan en un 50% con todos los monstruos considerados piratas.",
+    "bonus_type": "Puntos de experiencia y de botín en los piratas",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-09-20",
+    "item": "Cocido recreativo",
+    "qty": 4,
+    "kamas": 21594,
+    "bonus": "La cantidad de carne fresca y de carne magra que consiguen los cazadores aumenta un 125%.",
+    "bonus_type": "Abundancia de presas",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-09-21",
+    "item": "Espada Dha",
+    "qty": 1,
+    "kamas": 769,
+    "bonus": "La calidad de los objetos fabricados en la ciudad de Brakmar será mayor.",
+    "bonus_type": "Objetos de calidad",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-09-22",
+    "item": "Arena fina",
+    "qty": 2,
+    "kamas": 3980,
+    "bonus": "Se propondrá un reto extra contra los monstruos presentes en la zona de las dunas de los Huesos.",
+    "bonus_type": "Reto extra",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-09-23",
+    "item": "Crines floridas",
+    "qty": 1,
+    "kamas": 5981,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 50% con las criaturas de tipo hierborícolas.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-09-24",
+    "item": "Pepita",
+    "qty": 3,
+    "kamas": 1495,
+    "bonus": "El botín que generan los recaudadores aumenta un 200% en todas las mazmorras.",
+    "bonus_type": "Recaudadores codiciosos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-09-25",
+    "item": "Cangrejo sorpresa",
+    "qty": 3,
+    "kamas": 945,
+    "bonus": "Se han añadido presentes sorprendentes a los botines de los monstruos de las mazmorras. Cuando se utilizan, dan una buena o una mala sorpresa.",
+    "bonus_type": "Regalos sorpresa",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-09-26",
+    "item": "Obsidiana",
+    "qty": 30,
+    "kamas": 10995,
+    "bonus": "La cantidad de dolomita y de obsidiana que consiguen los mineros aumenta un 125%.",
+    "bonus_type": "Abundancia de minerales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-09-27",
+    "item": "Trenza de pohoyo",
+    "qty": 1,
+    "kamas": 10599,
+    "bonus": "La ganancia de experiencia aumenta en un 100% en la mazmorra de la Canopea del Kimbo.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-09-28",
+    "item": "Arco desconcertante",
+    "qty": 1,
+    "kamas": 769,
+    "bonus": "Hoy hay disponible una misión de búsqueda del tesoro de Sad a través de Cano Dhain en el Cofre de los Tesoros.",
+    "bonus_type": "Cofre del tesoro",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-09-29",
+    "item": "Mástil de fantasmastil",
+    "qty": 3,
+    "kamas": 12116,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 125% con los fantasmas de la tripulación del Roca Negra.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-09-30",
+    "item": "Diente de oro de crujidor",
+    "qty": 1,
+    "kamas": 2836,
+    "bonus": "Las posibilidades de conseguir un botín aumentan en un 100% en la mazmorra Picos Rocosos de los Crujidores.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-01",
+    "item": "Acuarakna de mortisparo",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "La ganancia de experiencia aumenta un 50% con los mediomuertos de la Hermandad de los Olvidados: los calcinados y los sumergidos.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-02",
+    "item": "Madera de pino",
+    "qty": 40,
+    "kamas": 2462,
+    "bonus": "La cantidad de madera de pino y de madera de olivioleta que consiguen los leñadores aumenta un 125%.",
+    "bonus_type": "Abundancia de madera",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-03",
+    "item": "Arco Hólico",
+    "qty": 1,
+    "kamas": 769,
+    "bonus": "Hoy se podrá hacer una misión repetible especial cerca de la fuente del pueblo de Amakna. La podrán hacer los jugadores con nivel 20 o superior, y es independiente de la misión de la ofrenda.",
+    "bonus_type": "Misión repetible",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-10-04",
+    "item": "Ñiamzama de pino",
+    "qty": 2,
+    "kamas": 1517,
+    "bonus": "Se propondrá un reto extra contra los monstruos presentes en la zona de la arboleda nevada.",
+    "bonus_type": "Reto extra",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-05",
+    "item": "Kralamar",
+    "qty": 40,
+    "kamas": 2462,
+    "bonus": "La cantidad de pescado empanado, de sardina brillante y de kralamar que consiguen los pescadores aumenta un 125%.",
+    "bonus_type": "Abundancia de pesca",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-06",
+    "item": "Estambre de floribundo",
+    "qty": 4,
+    "kamas": 10445,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 100% en la mazmorra Laboratorio del Tynril.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-07",
+    "item": "Pico de devastador",
+    "qty": 1,
+    "kamas": 21990,
+    "bonus": "La ganancia de experiencia aumenta un 75% en la zona de la Pesadilla de los Devastadores.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-08",
+    "item": "Carne cruda",
+    "qty": 5,
+    "kamas": 8400,
+    "bonus": "La cantidad de carne que consigan los cazadores de todos los niveles aumentará en un 100%.",
+    "bonus_type": "Abundancia de presas",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-09",
+    "item": "Pelos de petafux",
+    "qty": 4,
+    "kamas": 10599,
+    "bonus": "Se propondrá un reto extra contra las criaturas de tipo firefux.",
+    "bonus_type": "Reto extra",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-10",
+    "item": "Diente de dragopavo",
+    "qty": 6,
+    "kamas": 2836,
+    "bonus": "Las monturas que nazcan este día tendrán la capacidad Sabia.",
+    "bonus_type": "Monturas sabias",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-11",
+    "item": "Kólerat muerto",
+    "qty": 1,
+    "kamas": 2836,
+    "bonus": "Se aumenta un 75% la probabilidad de conseguir botín en la zona de las tierras desoladas de Sidimote.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-12",
+    "item": "Tallo de bambuto",
+    "qty": 5,
+    "kamas": 6662,
+    "bonus": "Se aumentan un 50% la ganancia de experiencia y la probabilidad de conseguir botín en todas las zonas de las dimensiones divinas.",
+    "bonus_type": "Viajes dimensionales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-13",
+    "item": "Pepino",
+    "qty": 4,
+    "kamas": 9191,
+    "bonus": "La ganancia de experiencia aumenta un 50% con las criaturas de tipo kuapas.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-14",
+    "item": "Máscara de la venganza",
+    "qty": 2,
+    "kamas": 20142,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 150% en la mazmorra Pirámide de Sombra.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-15",
+    "item": "Cáñamo",
+    "qty": 50,
+    "kamas": 5585,
+    "bonus": "La cantidad de cáñamo que consiguen los campesinos aumenta un 125%.",
+    "bonus_type": "Abundancia de recolección",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-16",
+    "item": "Cuerno de jalatranki",
+    "qty": 5,
+    "kamas": 5563,
+    "bonus": "La ganancia de experiencia aumenta un 100% en la mazmorra Cueva del Trankitronko.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-17",
+    "item": "Madera de avellano",
+    "qty": 40,
+    "kamas": 4859,
+    "bonus": "La cantidad de madera de avellano y de madera de cerezo silvestre que consiguen los leñadores aumenta un 125%.",
+    "bonus_type": "Abundancia de madera",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-18",
+    "item": "Coraza de tamburái",
+    "qty": 3,
+    "kamas": 13721,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 125% con las criaturas del ejército de bruma.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-19",
+    "item": "Perca",
+    "qty": 40,
+    "kamas": 4200,
+    "bonus": "La velocidad de aparición de peces de todo tipo aumentará en un 100%.",
+    "bonus_type": "Aparición de recursos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-20",
+    "item": "Pétalo de papel",
+    "qty": 1,
+    "kamas": 21990,
+    "bonus": "La ganancia de experiencia aumenta un 100% en las mazmorras Memoria de Orukam y Recuerdo de Imagiro.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-21",
+    "item": "Revuelto campero",
+    "qty": 4,
+    "kamas": 8993,
+    "bonus": "La cantidad de objetos que fabriquen los cazadores aumentará en un 25%.",
+    "bonus_type": "Fabricación intensiva",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-10-22",
+    "item": "Silicato",
+    "qty": 30,
+    "kamas": 2990,
+    "bonus": "La ganancia de experiencia aumenta un 50% para los leñadores, los mineros, los alquimistas y los ganaderos.",
+    "bonus_type": "Experiencia de oficios",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-23",
+    "item": "Símbolo de los obscuranti",
+    "qty": 1,
+    "kamas": 20142,
+    "bonus": "Se aumentan un 50% las posibilidades de conseguir un botín en todas las zonas influenciadas por una anomalía temporal. Además, se aumentan en un 25% las ganancias de experiencia y las probabilidades de conseguir un botín en la zona de la dimensión obscura.",
+    "bonus_type": "Anomalías Temporales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-24",
+    "item": "Hierro",
+    "qty": 30,
+    "kamas": 197,
+    "bonus": "La cantidad de hierro que consiguen los mineros aumenta un 125%.",
+    "bonus_type": "Abundancia de minerales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-25",
+    "item": "Pelos de smielodón",
+    "qty": 4,
+    "kamas": 10599,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 50% con las criaturas de tipo fauna de los Pinos Perdidos.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-26",
+    "item": "Diente de wabbit",
+    "qty": 9,
+    "kamas": 1451,
+    "bonus": "La ganancia de experiencia aumenta un 50% con las criaturas de tipo wabbit, wabbit mutante y guawdia del wey.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-27",
+    "item": "Bastón Hojudo",
+    "qty": 1,
+    "kamas": 769,
+    "bonus": "Los escultores ahorran un 15% de ingredientes cuando fabrican objetos.",
+    "bonus_type": "Economía de ingredientes",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-10-28",
+    "item": "Mandrágora",
+    "qty": 40,
+    "kamas": 5585,
+    "bonus": "La cantidad de mandrágora y de belladona que consiguen los alquimistas aumenta un 125%.",
+    "bonus_type": "Abundancia de recolección (cosecha)",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-29",
+    "item": "Tibia de yomi gélifux",
+    "qty": 3,
+    "kamas": 15436,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 75% en la zona de la grieta Bú.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-30",
+    "item": "Akaislip de kuakai",
+    "qty": 4,
+    "kamas": 9191,
+    "bonus": "El botín que generan los recaudadores aumenta un 200% en las mazmorras de nivel 120 a 150.",
+    "bonus_type": "Recaudadores codiciosos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-10-31",
+    "item": "Pelos de la barba de bwork mago",
+    "qty": 6,
+    "kamas": 1517,
+    "bonus": "Los botines de los monstruos contienen sorpresas de Trikortrit. Cuando el personaje las utiliza, consigue caramelos de Haluín o se transforma en murcieguito terrorífico.",
+    "bonus_type": "Regalos sorpresa",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-01",
+    "item": "Calzoncillo de trooloko",
+    "qty": 1,
+    "kamas": 7762,
+    "bonus": "La ganancia de experiencia en los combates contra monstruos y las posibilidades de conseguir un botín aumentan en un 50% para todos los aventureros que lleven equipado unos calzoncillos.",
+    "bonus_type": "Puntos de experiencia y de botín en bragas",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-02",
+    "item": "Hocico de puerkcebú",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 75% en las zonas del puerto de los devastadores y de Pandamonium.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-03",
+    "item": "Capa Bilidad",
+    "qty": 1,
+    "kamas": 769,
+    "bonus": "Los sastres tienen un 15% de posibilidades de ahorrar ingredientes cuando fabrican objetos.",
+    "bonus_type": "Economía de ingredientes",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-11-04",
+    "item": "Fibra criminal",
+    "qty": 1,
+    "kamas": 2836,
+    "bonus": "La velocidad de aparición de los monstruos de Se busca aumenta un 200%.",
+    "bonus_type": "En busca y captura",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-05",
+    "item": "Diente de cervelicoso",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 150% en la mazmorra Cervecería del Rey Dazahk.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-06",
+    "item": "Madera de castaño",
+    "qty": 40,
+    "kamas": 197,
+    "bonus": "Los leñadores conseguirán un 150% más de madera de castaño.",
+    "bonus_type": "Abundancia de madera",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-07",
+    "item": "Pincho de prespic",
+    "qty": 6,
+    "kamas": 593,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 50% con las criaturas de tipo animales del bosque.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-08",
+    "item": "Pata de mie-do",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "La ganancia de experiencia aumenta un 50% con las criaturas de tipo servidores de lo indecible.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-09",
+    "item": "Fular de sparo",
+    "qty": 6,
+    "kamas": 2594,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 125% con los piratas náufragos y los piratas del arca de Otomai.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-10",
+    "item": "Gobio",
+    "qty": 40,
+    "kamas": 197,
+    "bonus": "Las monturas que nazcan este día tendrán la capacidad Precoz.",
+    "bonus_type": "Monturas precoces",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-11",
+    "item": "Escama de cocodrail",
+    "qty": 2,
+    "kamas": 1517,
+    "bonus": "Miss Triste espera a los aventureros que deseen hacerse un tratamiento de fealdad cerca de la fuente del pueblo de Amakna. Su bendición te transformará en cocodrail (el efecto desaparece cuando participas en un combate) y en cabeza de turco (bonus de potencia de 50 (daños generales) y 10 de daños fijos durante 15 combates).",
+    "bonus_type": "Bendición de Miss Triste",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-12",
+    "item": "Linterna de tritáceo",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 50% con las criaturas de tipo trithones.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-13",
+    "item": "Semilla de scorbuto",
+    "qty": 6,
+    "kamas": 2836,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 150% en la mazmorra Laboratorio de Brumen Tinctorias.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-14",
+    "item": "Runa Vi",
+    "qty": 4,
+    "kamas": 769,
+    "bonus": "Los joyeromagos tienen un 15% de probabilidad de no consumir ninguna runa cuando tratan de mejorar un objeto.",
+    "bonus_type": "Forjamagia mejorada",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-15",
+    "item": "Limpiadoras",
+    "qty": 1,
+    "kamas": 769,
+    "bonus": "Hoy se podrá hacer una misión repetible especial cerca de la vieja capilla de Astrub. La podrán hacer los jugadores con nivel 20 o superior, y es independiente de la misión de la ofrenda.",
+    "bonus_type": "Misión repetible",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-11-16",
+    "item": "Piel de ramán de alcantarilla",
+    "qty": 6,
+    "kamas": 2111,
+    "bonus": "La ganancia de experiencia aumenta un 50% con las criaturas de tipo ratas strubienses y ratas makneanas.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-17",
+    "item": "Carne seca",
+    "qty": 5,
+    "kamas": 7146,
+    "bonus": "La cantidad de carne seca que consiguen los cazadores aumenta un 125%.",
+    "bonus_type": "Abundancia de presas",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-18",
+    "item": "Pata de guardiana de alcantarilla",
+    "qty": 1,
+    "kamas": 13545,
+    "bonus": "Se propondrá un reto extra contra las criaturas presentes en las zonas de los canales mefíticos y de las entrañas de Brakmar.",
+    "bonus_type": "Reto extra",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-19",
+    "item": "Concentrado de boscaje",
+    "qty": 1,
+    "kamas": 3562,
+    "bonus": "Los leñadores ahorran un 15% de ingredientes cuando fabrican objetos.",
+    "bonus_type": "Economía de ingredientes",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-20",
+    "item": "Sangre coagulada",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "El botín que consiguen los recaudadores aumentará en un 100% en todas las zonas influenciadas por una anomalía temporal. Además, se aumentan un 25% las ganancias de experiencia y la probabilidad de conseguir botín en las zonas (salvo mazmorras) de los jinetes del Selocalipsis.",
+    "bonus_type": "Anomalías Temporales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-21",
+    "item": "Ala de moskito",
+    "qty": 6,
+    "kamas": 395,
+    "bonus": "La ganancia de experiencia aumenta un 50% con las criaturas de tipo alimañas de los campos.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-22",
+    "item": "Garra de highiena",
+    "qty": 3,
+    "kamas": 13391,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 50% con las criaturas de tipo kanigs de los Dientes de Piedra.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-23",
+    "item": "Fragmento de ectórrido",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 125% con las criaturas de tipo quemaalmas.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-24",
+    "item": "Avena",
+    "qty": 50,
+    "kamas": 593,
+    "bonus": "La cantidad de avena que recolecten los campesinos aumentará en un 125%.",
+    "bonus_type": "Abundancia de recolección",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-25",
+    "item": "Lana de jalamut legendario",
+    "qty": 5,
+    "kamas": 7872,
+    "bonus": "Se propondrá un reto extra contra los monstruos presentes en la zona de los campos de hielo.",
+    "bonus_type": "Reto extra",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-26",
+    "item": "Pelos de barba de dragopavo",
+    "qty": 1,
+    "kamas": 2836,
+    "bonus": "Los aventureros tienen un 20% de probabilidad de generar un segundo botín con todos los monstruos de las mazmorras.",
+    "bonus_type": "Doble botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-27",
+    "item": "Madera de tejo",
+    "qty": 40,
+    "kamas": 6289,
+    "bonus": "La cantidad de madera de tejo que consiguen los leñadores aumenta un 125%.",
+    "bonus_type": "Abundancia de madera",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-28",
+    "item": "Residuo de solfatara",
+    "qty": 3,
+    "kamas": 13721,
+    "bonus": "La ganancia de experiencia aumenta un 50% con las criaturas de tipo sulfuriosos.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-29",
+    "item": "Kobalto",
+    "qty": 30,
+    "kamas": 1187,
+    "bonus": "La cantidad de kobalto que consiguen los mineros aumenta un 125%.",
+    "bonus_type": "Abundancia de minerales",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-11-30",
+    "item": "Lana de yokai gélifux",
+    "qty": 3,
+    "kamas": 15436,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 125% con las criaturas de tipo gélifux.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-12-01",
+    "item": "Ojo de ghúligan",
+    "qty": 2,
+    "kamas": 21990,
+    "bonus": "La ganancia de experiencia aumenta un 50% con las criaturas de tipo ghuls.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-12-02",
+    "item": "Escudo del girasol salvaje",
+    "qty": 1,
+    "kamas": 769,
+    "bonus": "Las ganancias de experiencia aumentan un 50% para los manitas, los herreros, los escultores y los fabricantes.",
+    "bonus_type": "Experiencia de oficios",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-12-03",
+    "item": "Piel de barrigüino",
+    "qty": 4,
+    "kamas": 10599,
+    "bonus": "Se propondrá un reto extra contra los monstruos presentes en la zona del lago helado.",
+    "bonus_type": "Reto extra",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-12-04",
+    "item": "Madera de olivioleta",
+    "qty": 40,
+    "kamas": 2462,
+    "bonus": "Los leñadores de todos los niveles conseguirán un 100% más de madera.",
+    "bonus_type": "Abundancia de madera",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-12-05",
+    "item": "Casco de martóguiz",
+    "qty": 6,
+    "kamas": 593,
+    "bonus": "La ganancia de experiencia aumenta en un 75% en la zona de la cantera de Astrub.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-12-06",
+    "item": "Carbón",
+    "qty": 6,
+    "kamas": 2594,
+    "bonus": "La cantidad de fichas que se gana en el koliseo aumentará en un 100%.",
+    "bonus_type": "Kolichas",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-12-07",
+    "item": "Tela de Dok Alako",
+    "qty": 6,
+    "kamas": 3474,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 50% con las criaturas de tipo koalaks y koalaks salvajes.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-12-08",
+    "item": "Campanilla de invierno",
+    "qty": 10,
+    "kamas": 10995,
+    "bonus": "La cantidad de campanilla de invierno que consiguen los alquimistas aumenta un 200%.",
+    "bonus_type": "Abundancia de recolección (cosecha)",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-12-09",
+    "item": "Pelo de rata bontariana",
+    "qty": 2,
+    "kamas": 6662,
+    "bonus": "La ganancia de experiencia aumenta en un 100% en la mazmorra Despensa de la Rata Blanca.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-12-10",
+    "item": "Cola de dragopavo salvaje",
+    "qty": 6,
+    "kamas": 2836,
+    "bonus": "El efecto de las dragonalgas se duplica en los cercados.",
+    "bonus_type": "Eficacia de cercados",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-12-11",
+    "item": "Pacbotas",
+    "qty": 2,
+    "kamas": 769,
+    "bonus": "Los zapateros ahorran un 15% de ingredientes cuando fabrican objetos.",
+    "bonus_type": "Economía de ingredientes",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-12-12",
+    "item": "Pócima de ciudad: Brakmar",
+    "qty": 3,
+    "kamas": 5981,
+    "bonus": "Hoy se podrá hacer una misión repetible especial cerca de las puertas de Brakmar. La podrán hacer los jugadores con nivel 20 o superior, y es independiente de la misión de la ofrenda.",
+    "bonus_type": "Misión repetible",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-12-13",
+    "item": "Dolomita",
+    "qty": 30,
+    "kamas": 8993,
+    "bonus": "La velocidad de aparición de minerales de todo tipo aumentará en un 100%.",
+    "bonus_type": "Aparición de recursos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-12-14",
+    "item": "Párpado dorado de rykaón",
+    "qty": 1,
+    "kamas": 21990,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan un 150% en la mazmorra Cámara de Tal Kasha.",
+    "bonus_type": "Mayores retos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-12-15",
+    "item": "Cuero de puerkazo",
+    "qty": 6,
+    "kamas": 1517,
+    "bonus": "Las posibilidades de conseguir un botín aumentan en un 75% en la zona de la llanura de los puerkazos.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-12-16",
+    "item": "Papel de regalo de Nawidad escarlata",
+    "qty": 2,
+    "kamas": 1737,
+    "bonus": "Se propondrá un reto extra contra los monstruos de Nawidad.",
+    "bonus_type": "Reto extra",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-12-17",
+    "item": "Anguila",
+    "qty": 40,
+    "kamas": 2990,
+    "bonus": "La cantidad de anguila y de dorada exploradora que consiguen los pescadores aumenta un 125%.",
+    "bonus_type": "Abundancia de pesca",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-12-18",
+    "item": "Suerte de Zurcarák",
+    "qty": 1,
+    "kamas": 769,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan en un 150% en todas las mazmorras.",
+    "bonus_type": "Retos de las mazmorras",
+    "subtype": "equipment"
+  },
+  {
+    "date": "2026-12-19",
+    "item": "Copo de nieve",
+    "qty": 2,
+    "kamas": 1737,
+    "bonus": "La ganancia de experiencia aumenta un 50% con las criaturas de tipo monstruos de Nawidad.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-12-20",
+    "item": "Ebonita",
+    "qty": 1,
+    "kamas": 1187,
+    "bonus": "Por cada objeto que fabriquen, los mineros tendrán un 10% de posibilidades de crear un segundo objeto.",
+    "bonus_type": "Fabricación intensiva",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-12-21",
+    "item": "Colmillo vampiresco",
+    "qty": 6,
+    "kamas": 989,
+    "bonus": "Se propondrá un reto extra contra las criaturas presentes en las zonas del cementerio de Amakna y de las criptas del cementerio.",
+    "bonus_type": "Reto extra",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-12-22",
+    "item": "Pescado empanado",
+    "qty": 40,
+    "kamas": 879,
+    "bonus": "La velocidad de aparición de recursos aumenta en un 150% en la zona del puerto de Madrestam.",
+    "bonus_type": "Aparición de recursos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-12-23",
+    "item": "Carne tierna",
+    "qty": 6,
+    "kamas": 1737,
+    "bonus": "La cantidad de carne sabrosa que consiguen los cazadores aumenta un 125%.",
+    "bonus_type": "Abundancia de presas",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-12-24",
+    "item": "Medalla de chocolate",
+    "qty": 1,
+    "kamas": 1737,
+    "bonus": "Hoy hay disponible una misión de búsqueda del tesoro de Milivar a través de Cano Dhain en el Cofre de los Tesoros.",
+    "bonus_type": "Cofre del tesoro",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-12-25",
+    "item": "Regalo bonito de Nawidad",
+    "qty": 4,
+    "kamas": 5981,
+    "bonus": "Se han añadido pequeños placeres nawideños a los botines de los monstruos. Cuando el personaje los utiliza, consigue recursos u otros objetos aleatorios.",
+    "bonus_type": "Regalos sorpresa",
+    "subtype": "consumables"
+  },
+  {
+    "date": "2026-12-26",
+    "item": "Pelo de barba de chamángüino",
+    "qty": 4,
+    "kamas": 10599,
+    "bonus": "Las posibilidades de conseguir un botín aumentan en un 100% en la mazmorra de la Excavación del Morsagüino Real.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-12-27",
+    "item": "Honda de jalahondero",
+    "qty": 2,
+    "kamas": 19153,
+    "bonus": "La ganancia de experiencia aumenta un 50% con las criaturas de tipo Martilloseco.",
+    "bonus_type": "Puntos de experiencia",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-12-28",
+    "item": "Kaokurimono",
+    "qty": 3,
+    "kamas": 15436,
+    "bonus": "El botín que generan los recaudadores aumenta un 200% en las mazmorras de nivel 160 a 190.",
+    "bonus_type": "Recaudadores codiciosos",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-12-29",
+    "item": "Arroz",
+    "qty": 40,
+    "kamas": 2990,
+    "bonus": "La cantidad de centeno y de arrozque recolecten los campesinos aumentará en un 125%.",
+    "bonus_type": "Abundancia de recolección",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-12-30",
+    "item": "Cacharro inútil",
+    "qty": 1,
+    "kamas": 1561,
+    "bonus": "Las posibilidades de conseguir botín aumentan un 50% con las criaturas de tipo autómatas de los salteadorillos.",
+    "bonus_type": "Botín",
+    "subtype": "resources"
+  },
+  {
+    "date": "2026-12-31",
+    "item": "Carne corrompida",
+    "qty": 6,
+    "kamas": 2396,
+    "bonus": "Los bonus que se consiguen al superar un reto aumentan en un 75% en todas las zonas influenciadas por una anomalía temporal. Además, se aumentan un 25% las ganancias de experiencia y la probabilidad de conseguir botín en la zona del bosque de las máscaras.",
+    "bonus_type": "Anomalías Temporales",
+    "subtype": "resources"
+  }
+]
