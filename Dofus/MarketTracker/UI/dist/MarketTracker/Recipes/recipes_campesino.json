@@ -1,0 +1,2278 @@
+[
+  {
+    "id": 399,
+    "result": "Aceite de sésamo",
+    "category": "Aceite",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Semillas de sésamo",
+        "quantity": 3
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 468,
+    "result": "Pan de Incarnam",
+    "category": "Pan",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Trigo",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 2020,
+    "result": "Pan dorado",
+    "category": "Pan",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Trigo de oro",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 10833,
+    "result": "Miaulleta",
+    "category": "Pan",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Bizcochito",
+        "quantity": 1
+      },
+      {
+        "name": "Medida de pimienta",
+        "quantity": 1
+      },
+      {
+        "name": "Medida de sal",
+        "quantity": 1
+      },
+      {
+        "name": "Miaumiau",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 10839,
+    "result": "Don Bollo",
+    "category": "Pan",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Trigo",
+        "quantity": 2
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 1
+      },
+      {
+        "name": "Cuero de jalató negro",
+        "quantity": 1
+      },
+      {
+        "name": "Lengua de gárgrola",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16520,
+    "result": "Torta de Incarnam",
+    "category": "Incarnam",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Trigo",
+        "quantity": 10
+      },
+      {
+        "name": "Polvos mágicos",
+        "quantity": 4
+      },
+      {
+        "name": "Huevo quimérico",
+        "quantity": 2
+      },
+      {
+        "name": "Leleche",
+        "quantity": 1
+      },
+      {
+        "name": "Baba de jalató",
+        "quantity": 4
+      },
+      {
+        "name": "Cenizas eternas",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 23118,
+    "result": "Ofrenda al Espíritu del Viento",
+    "category": "Pandala",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Bananaranja",
+        "quantity": 8
+      },
+      {
+        "name": "Vísceras de escarahoja",
+        "quantity": 3
+      },
+      {
+        "name": "Fresa",
+        "quantity": 3
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 23480,
+    "result": "Aceite de arroz",
+    "category": "Aceite",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Arroz",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 521,
+    "result": "Panecillo",
+    "category": "Pan",
+    "level": 10,
+    "ingredients": [
+      {
+        "name": "Trigo",
+        "quantity": 5
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16927,
+    "result": "Tronquito de fresno",
+    "category": "Golosina",
+    "level": 10,
+    "ingredients": [
+      {
+        "name": "Savia de fresno",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 20234,
+    "result": "Polvos supermágicos",
+    "category": "Misiones principales",
+    "level": 10,
+    "ingredients": [
+      {
+        "name": "Polvos mágicos",
+        "quantity": 12
+      },
+      {
+        "name": "Medida de sal",
+        "quantity": 6
+      },
+      {
+        "name": "Centeno",
+        "quantity": 6
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 389,
+    "result": "Aceite de girasol salvaje",
+    "category": "Aceite",
+    "level": 12,
+    "ingredients": [
+      {
+        "name": "Semilla de girasol",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 528,
+    "result": "Carasau",
+    "category": "Pan",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Cebada",
+        "quantity": 4
+      },
+      {
+        "name": "Ortiga",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 2034,
+    "result": "Bastón de caramelo",
+    "category": "Golosina",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Cebada azucarada",
+        "quantity": 1
+      },
+      {
+        "name": "Ortiga",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 10663,
+    "result": "Empanada de carne de jalató",
+    "category": "Pan",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Medida de sal",
+        "quantity": 1
+      },
+      {
+        "name": "Bizcochito",
+        "quantity": 1
+      },
+      {
+        "name": "Medida de pimienta",
+        "quantity": 1
+      },
+      {
+        "name": "Carne manida",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16928,
+    "result": "Tronquito de castaño",
+    "category": "Golosina",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Savia de castaño",
+        "quantity": 1
+      },
+      {
+        "name": "Cebada",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 23794,
+    "result": "Ofrenda al wukang",
+    "category": "Pandala",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Chwile",
+        "quantity": 10
+      },
+      {
+        "name": "Arroz",
+        "quantity": 100
+      },
+      {
+        "name": "Cerveza Tsingtawo",
+        "quantity": 5
+      },
+      {
+        "name": "Pétalo de papel",
+        "quantity": 1
+      },
+      {
+        "name": "Pétalo de tinta",
+        "quantity": 1
+      },
+      {
+        "name": "Madera de bambú sagrado",
+        "quantity": 20
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 524,
+    "result": "Fougasse",
+    "category": "Pan",
+    "level": 30,
+    "ingredients": [
+      {
+        "name": "Cebada",
+        "quantity": 5
+      },
+      {
+        "name": "Ortiga",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 2151,
+    "result": "Blopicero envenenado",
+    "category": "Pan",
+    "level": 30,
+    "ingredients": [
+      {
+        "name": "Semilla de scorbuto",
+        "quantity": 10
+      },
+      {
+        "name": "Bol",
+        "quantity": 1
+      },
+      {
+        "name": "Cacho de blop reineta",
+        "quantity": 5
+      },
+      {
+        "name": "Cereza",
+        "quantity": 3
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 28268,
+    "result": "Harina de contrabando",
+    "category": "Polvo",
+    "level": 30,
+    "ingredients": [
+      {
+        "name": "Cebada",
+        "quantity": 50
+      },
+      {
+        "name": "Avena",
+        "quantity": 50
+      },
+      {
+        "name": "Lúpulo",
+        "quantity": 50
+      },
+      {
+        "name": "Lino",
+        "quantity": 50
+      },
+      {
+        "name": "Centeno",
+        "quantity": 50
+      },
+      {
+        "name": "Polvo temporal",
+        "quantity": 5
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 390,
+    "result": "Aceite de nuez",
+    "category": "Aceite",
+    "level": 32,
+    "ingredients": [
+      {
+        "name": "Castaña de cajú",
+        "quantity": 5
+      },
+      {
+        "name": "Nuez de pacana",
+        "quantity": 5
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 396,
+    "result": "Aceite de palma",
+    "category": "Aceite",
+    "level": 32,
+    "ingredients": [
+      {
+        "name": "Vísceras de escarahoja",
+        "quantity": 8
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 397,
+    "result": "Aceite de Kodo",
+    "category": "Aceite",
+    "level": 32,
+    "ingredients": [
+      {
+        "name": "Aceite de nuez",
+        "quantity": 1
+      },
+      {
+        "name": "Semilla de la discordia",
+        "quantity": 3
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 536,
+    "result": "Pan de copos de avena",
+    "category": "Pan",
+    "level": 40,
+    "ingredients": [
+      {
+        "name": "Avena",
+        "quantity": 5
+      },
+      {
+        "name": "Berenjena",
+        "quantity": 1
+      },
+      {
+        "name": "Salvia",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 2038,
+    "result": "Pan de copos de avena aurífera",
+    "category": "Pan",
+    "level": 40,
+    "ingredients": [
+      {
+        "name": "Avena aurífera",
+        "quantity": 1
+      },
+      {
+        "name": "Berenjena",
+        "quantity": 1
+      },
+      {
+        "name": "Salvia",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16929,
+    "result": "Tronquito de nogal",
+    "category": "Golosina",
+    "level": 40,
+    "ingredients": [
+      {
+        "name": "Savia de nogal",
+        "quantity": 1
+      },
+      {
+        "name": "Levadura de panadero",
+        "quantity": 1
+      },
+      {
+        "name": "Cebada",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16431,
+    "result": "Pan de molde",
+    "category": "Pan",
+    "level": 50,
+    "ingredients": [
+      {
+        "name": "Avena",
+        "quantity": 5
+      },
+      {
+        "name": "Alubias",
+        "quantity": 1
+      },
+      {
+        "name": "Salvia",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 995,
+    "result": "Blugely",
+    "category": "Golosina",
+    "level": 54,
+    "ingredients": [
+      {
+        "name": "Gelatina de Aciano",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 993,
+    "result": "Vergely",
+    "category": "Golosina",
+    "level": 56,
+    "ingredients": [
+      {
+        "name": "Frasco de gelatina de menta",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 994,
+    "result": "Rogely",
+    "category": "Golosina",
+    "level": 58,
+    "ingredients": [
+      {
+        "name": "Frasco de gelatina de fresa",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 996,
+    "result": "Multigely",
+    "category": "Golosina",
+    "level": 60,
+    "ingredients": [
+      {
+        "name": "Blugely",
+        "quantity": 4
+      },
+      {
+        "name": "Rogely",
+        "quantity": 2
+      },
+      {
+        "name": "Vergely",
+        "quantity": 3
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 2024,
+    "result": "Bizcochito",
+    "category": "Pan",
+    "level": 60,
+    "ingredients": [
+      {
+        "name": "Lúpulo",
+        "quantity": 5
+      },
+      {
+        "name": "Cenizas eternas",
+        "quantity": 1
+      },
+      {
+        "name": "Trébol de 5 hojas",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 2025,
+    "result": "Bizcochito mágico",
+    "category": "Pan",
+    "level": 60,
+    "ingredients": [
+      {
+        "name": "Lúpulo brillante",
+        "quantity": 1
+      },
+      {
+        "name": "Cenizas eternas",
+        "quantity": 1
+      },
+      {
+        "name": "Trébol de 5 hojas",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16930,
+    "result": "Tronquito de roble",
+    "category": "Golosina",
+    "level": 60,
+    "ingredients": [
+      {
+        "name": "Savia de roble",
+        "quantity": 1
+      },
+      {
+        "name": "Levadura de panadero",
+        "quantity": 1
+      },
+      {
+        "name": "Avena",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 692,
+    "result": "Pan consistente",
+    "category": "Pan",
+    "level": 70,
+    "ingredients": [
+      {
+        "name": "Lúpulo",
+        "quantity": 5
+      },
+      {
+        "name": "Cereza",
+        "quantity": 1
+      },
+      {
+        "name": "Trébol de 5 hojas",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16931,
+    "result": "Tronquito de bombú",
+    "category": "Golosina",
+    "level": 70,
+    "ingredients": [
+      {
+        "name": "Savia de bombú",
+        "quantity": 1
+      },
+      {
+        "name": "Levadura de panadero",
+        "quantity": 1
+      },
+      {
+        "name": "Avena",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 522,
+    "result": "Biscote",
+    "category": "Pan",
+    "level": 80,
+    "ingredients": [
+      {
+        "name": "Lino",
+        "quantity": 5
+      },
+      {
+        "name": "Sangre de scorbuto",
+        "quantity": 1
+      },
+      {
+        "name": "Menta salvaje",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 2028,
+    "result": "Bollo",
+    "category": "Pan",
+    "level": 80,
+    "ingredients": [
+      {
+        "name": "Lino Tempestad",
+        "quantity": 1
+      },
+      {
+        "name": "Sangre de scorbuto",
+        "quantity": 1
+      },
+      {
+        "name": "Menta salvaje",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16932,
+    "result": "Tronquito de arce",
+    "category": "Golosina",
+    "level": 80,
+    "ingredients": [
+      {
+        "name": "Savia de arce",
+        "quantity": 1
+      },
+      {
+        "name": "Levadura de panadero",
+        "quantity": 1
+      },
+      {
+        "name": "Lúpulo",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16432,
+    "result": "Bizcocho",
+    "category": "Pan",
+    "level": 90,
+    "ingredients": [
+      {
+        "name": "Lino",
+        "quantity": 5
+      },
+      {
+        "name": "Especias",
+        "quantity": 1
+      },
+      {
+        "name": "Menta salvaje",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16933,
+    "result": "Tronquito de olivioleta",
+    "category": "Golosina",
+    "level": 90,
+    "ingredients": [
+      {
+        "name": "Savia de olivioleta",
+        "quantity": 1
+      },
+      {
+        "name": "Levadura de panadero",
+        "quantity": 1
+      },
+      {
+        "name": "Lúpulo",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 539,
+    "result": "Pan de centeno",
+    "category": "Pan",
+    "level": 100,
+    "ingredients": [
+      {
+        "name": "Centeno",
+        "quantity": 6
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 1
+      },
+      {
+        "name": "Orquídea freyesca",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 2031,
+    "result": "Pan de centeno resistente",
+    "category": "Pan",
+    "level": 100,
+    "ingredients": [
+      {
+        "name": "Centeno resistente",
+        "quantity": 1
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 1
+      },
+      {
+        "name": "Orquídea freyesca",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16433,
+    "result": "Gofre",
+    "category": "Pan",
+    "level": 100,
+    "ingredients": [
+      {
+        "name": "Arroz",
+        "quantity": 6
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 1
+      },
+      {
+        "name": "Orquídea freyesca",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16434,
+    "result": "Gofre de oro",
+    "category": "Pan",
+    "level": 100,
+    "ingredients": [
+      {
+        "name": "Arroz cola",
+        "quantity": 1
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 1
+      },
+      {
+        "name": "Orquídea freyesca",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16934,
+    "result": "Tronquito de tejo",
+    "category": "Golosina",
+    "level": 100,
+    "ingredients": [
+      {
+        "name": "Savia de tejo",
+        "quantity": 1
+      },
+      {
+        "name": "Levadura de panadero",
+        "quantity": 1
+      },
+      {
+        "name": "Lino",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 17534,
+    "result": "Caramelo Snik",
+    "category": "Golosina",
+    "level": 100,
+    "ingredients": [
+      {
+        "name": "Agua potable",
+        "quantity": 1
+      },
+      {
+        "name": "Centeno",
+        "quantity": 5
+      },
+      {
+        "name": "Perca",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 22383,
+    "result": "Pastel real",
+    "category": "Misiones principales",
+    "level": 100,
+    "ingredients": [
+      {
+        "name": "Agua potable",
+        "quantity": 10
+      },
+      {
+        "name": "Nuez de kokoko",
+        "quantity": 15
+      },
+      {
+        "name": "Centeno",
+        "quantity": 20
+      },
+      {
+        "name": "Bastón de caramelo",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 1738,
+    "result": "Pan de las urbes",
+    "category": "Pan",
+    "level": 110,
+    "ingredients": [
+      {
+        "name": "Centeno",
+        "quantity": 6
+      },
+      {
+        "name": "Polvos mágicos",
+        "quantity": 1
+      },
+      {
+        "name": "Orquídea freyesca",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16935,
+    "result": "Tronquito de bambú",
+    "category": "Golosina",
+    "level": 110,
+    "ingredients": [
+      {
+        "name": "Savia de bambú",
+        "quantity": 1
+      },
+      {
+        "name": "Levadura de panadero",
+        "quantity": 1
+      },
+      {
+        "name": "Lino",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 526,
+    "result": "Pan de cereales",
+    "category": "Pan",
+    "level": 120,
+    "ingredients": [
+      {
+        "name": "Malta",
+        "quantity": 6
+      },
+      {
+        "name": "Polvo temporal",
+        "quantity": 1
+      },
+      {
+        "name": "Edelweiss",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16435,
+    "result": "Pan bazo",
+    "category": "Pan",
+    "level": 120,
+    "ingredients": [
+      {
+        "name": "Malta siano",
+        "quantity": 1
+      },
+      {
+        "name": "Polvo temporal",
+        "quantity": 1
+      },
+      {
+        "name": "Edelweiss",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16936,
+    "result": "Tronquito de cerezo silvestre",
+    "category": "Golosina",
+    "level": 120,
+    "ingredients": [
+      {
+        "name": "Savia de cerezo silvestre",
+        "quantity": 1
+      },
+      {
+        "name": "Levadura de panadero",
+        "quantity": 1
+      },
+      {
+        "name": "Centeno",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 520,
+    "result": "Borodinsky",
+    "category": "Pan",
+    "level": 130,
+    "ingredients": [
+      {
+        "name": "Malta",
+        "quantity": 6
+      },
+      {
+        "name": "Resina",
+        "quantity": 1
+      },
+      {
+        "name": "Edelweiss",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16937,
+    "result": "Tronquito de avellano",
+    "category": "Golosina",
+    "level": 130,
+    "ingredients": [
+      {
+        "name": "Savia de avellano",
+        "quantity": 1
+      },
+      {
+        "name": "Levadura de panadero",
+        "quantity": 1
+      },
+      {
+        "name": "Centeno",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 2635,
+    "result": "Pan Bumbo",
+    "category": "Pan",
+    "level": 140,
+    "ingredients": [
+      {
+        "name": "Cáñamo",
+        "quantity": 6
+      },
+      {
+        "name": "Medida de sal",
+        "quantity": 1
+      },
+      {
+        "name": "Semilla de pandoja",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 10079,
+    "result": "Pan trémulo",
+    "category": "Pan",
+    "level": 140,
+    "ingredients": [
+      {
+        "name": "Malta",
+        "quantity": 6
+      },
+      {
+        "name": "Aceite de sésamo",
+        "quantity": 1
+      },
+      {
+        "name": "Pandapiler",
+        "quantity": 1
+      },
+      {
+        "name": "Levadura de panadero",
+        "quantity": 1
+      },
+      {
+        "name": "Carne sanguinolenta",
+        "quantity": 1
+      },
+      {
+        "name": "Edelweiss",
+        "quantity": 2
+      },
+      {
+        "name": "Cáñamo",
+        "quantity": 12
+      },
+      {
+        "name": "Patata",
+        "quantity": 8
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16436,
+    "result": "Pan pinela",
+    "category": "Pan",
+    "level": 140,
+    "ingredients": [
+      {
+        "name": "Cáñamo eufórico",
+        "quantity": 1
+      },
+      {
+        "name": "Medida de sal",
+        "quantity": 1
+      },
+      {
+        "name": "Semilla de pandoja",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16938,
+    "result": "Tronquito de ébano",
+    "category": "Golosina",
+    "level": 140,
+    "ingredients": [
+      {
+        "name": "Savia de ébano",
+        "quantity": 1
+      },
+      {
+        "name": "Levadura de panadero",
+        "quantity": 1
+      },
+      {
+        "name": "Malta",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 23693,
+    "result": "Aceite de pischis",
+    "category": "Aceite",
+    "level": 140,
+    "ingredients": [
+      {
+        "name": "Dorada exploradora",
+        "quantity": 3
+      },
+      {
+        "name": "Rape",
+        "quantity": 3
+      },
+      {
+        "name": "Raya azul",
+        "quantity": 3
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 527,
+    "result": "Mantou",
+    "category": "Pan",
+    "level": 150,
+    "ingredients": [
+      {
+        "name": "Cáñamo",
+        "quantity": 6
+      },
+      {
+        "name": "Medida de pimienta",
+        "quantity": 1
+      },
+      {
+        "name": "Semilla de pandoja",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16939,
+    "result": "Tronquito de kalipto",
+    "category": "Golosina",
+    "level": 150,
+    "ingredients": [
+      {
+        "name": "Savia de kalipto",
+        "quantity": 1
+      },
+      {
+        "name": "Levadura de panadero",
+        "quantity": 1
+      },
+      {
+        "name": "Malta",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 9981,
+    "result": "Harina terrada",
+    "category": "Polvo",
+    "level": 158,
+    "ingredients": [
+      {
+        "name": "Cáñamo",
+        "quantity": 20
+      },
+      {
+        "name": "Polvos mágicos",
+        "quantity": 1
+      },
+      {
+        "name": "Cebolla",
+        "quantity": 4
+      },
+      {
+        "name": "Cenizas eternas",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 9983,
+    "result": "Hogazas querosas",
+    "category": "Pan",
+    "level": 158,
+    "ingredients": [
+      {
+        "name": "Harina terrada",
+        "quantity": 2
+      },
+      {
+        "name": "Agua potable",
+        "quantity": 5
+      },
+      {
+        "name": "Levadura de panadero",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16437,
+    "result": "Tortilla",
+    "category": "Pan",
+    "level": 160,
+    "ingredients": [
+      {
+        "name": "Maíz",
+        "quantity": 7
+      },
+      {
+        "name": "Limón",
+        "quantity": 1
+      },
+      {
+        "name": "Ginseng",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16438,
+    "result": "Burrito",
+    "category": "Pan",
+    "level": 160,
+    "ingredients": [
+      {
+        "name": "Maíz adlasvelas",
+        "quantity": 1
+      },
+      {
+        "name": "Limón",
+        "quantity": 1
+      },
+      {
+        "name": "Ginseng",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16940,
+    "result": "Tronquito de carpe",
+    "category": "Golosina",
+    "level": 160,
+    "ingredients": [
+      {
+        "name": "Savia de carpe",
+        "quantity": 1
+      },
+      {
+        "name": "Levadura de panadero",
+        "quantity": 1
+      },
+      {
+        "name": "Cáñamo",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 1737,
+    "result": "Pan de los campos",
+    "category": "Pan",
+    "level": 170,
+    "ingredients": [
+      {
+        "name": "Maíz",
+        "quantity": 7
+      },
+      {
+        "name": "Hoja de enchalada",
+        "quantity": 1
+      },
+      {
+        "name": "Ginseng",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16941,
+    "result": "Tronquito de bambú oscuro",
+    "category": "Golosina",
+    "level": 170,
+    "ingredients": [
+      {
+        "name": "Savia de bambú oscuro",
+        "quantity": 1
+      },
+      {
+        "name": "Levadura de panadero",
+        "quantity": 1
+      },
+      {
+        "name": "Cáñamo",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 2636,
+    "result": "Pan Hasonik",
+    "category": "Pan",
+    "level": 180,
+    "ingredients": [
+      {
+        "name": "Mijo",
+        "quantity": 7
+      },
+      {
+        "name": "Aceite para freír",
+        "quantity": 1
+      },
+      {
+        "name": "Belladona",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 9571,
+    "result": "Tarta con mermelada de guinda",
+    "category": "Recurso variado",
+    "level": 180,
+    "ingredients": [
+      {
+        "name": "Cacho de blop guinda",
+        "quantity": 5
+      },
+      {
+        "name": "Cereza",
+        "quantity": 3
+      },
+      {
+        "name": "Frasco de gelatina de fresa",
+        "quantity": 4
+      },
+      {
+        "name": "Mandrágora",
+        "quantity": 14
+      },
+      {
+        "name": "Aceite de nuez",
+        "quantity": 1
+      },
+      {
+        "name": "Sangre de kido",
+        "quantity": 2
+      },
+      {
+        "name": "Mijo",
+        "quantity": 14
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16439,
+    "result": "Mollete",
+    "category": "Pan",
+    "level": 180,
+    "ingredients": [
+      {
+        "name": "Mijo añejo",
+        "quantity": 1
+      },
+      {
+        "name": "Aceite para freír",
+        "quantity": 1
+      },
+      {
+        "name": "Belladona",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16942,
+    "result": "Tronquito de olmo",
+    "category": "Golosina",
+    "level": 180,
+    "ingredients": [
+      {
+        "name": "Savia de olmo",
+        "quantity": 1
+      },
+      {
+        "name": "Levadura de panadero",
+        "quantity": 1
+      },
+      {
+        "name": "Maíz",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 743,
+    "result": "Bizcocho dorado",
+    "category": "Pan",
+    "level": 190,
+    "ingredients": [
+      {
+        "name": "Mijo",
+        "quantity": 7
+      },
+      {
+        "name": "Cebolla",
+        "quantity": 1
+      },
+      {
+        "name": "Belladona",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16943,
+    "result": "Tronquito de bambú sagrado",
+    "category": "Golosina",
+    "level": 190,
+    "ingredients": [
+      {
+        "name": "Savia de bambú sagrado",
+        "quantity": 1
+      },
+      {
+        "name": "Levadura de panadero",
+        "quantity": 1
+      },
+      {
+        "name": "Maíz",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 11497,
+    "result": "Aceite de frostizz",
+    "category": "Aceite",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Frostizz",
+        "quantity": 3
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 11503,
+    "result": "Pan de frostizz",
+    "category": "Pan",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Frostizz",
+        "quantity": 1
+      },
+      {
+        "name": "Aguas tranquilas",
+        "quantity": 1
+      },
+      {
+        "name": "Mandrágora",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 11504,
+    "result": "Pan de frostizz inflado",
+    "category": "Pan",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Frostizz inflado",
+        "quantity": 1
+      },
+      {
+        "name": "Aguas tranquilas",
+        "quantity": 1
+      },
+      {
+        "name": "Mandrágora",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16944,
+    "result": "Tronquito de álamo temblón",
+    "category": "Golosina",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Savia de álamo temblón",
+        "quantity": 1
+      },
+      {
+        "name": "Levadura de panadero",
+        "quantity": 1
+      },
+      {
+        "name": "Mijo",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 24000,
+    "result": "Bola de panpel maché",
+    "category": "Pan",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Cristal plegable",
+        "quantity": 2
+      },
+      {
+        "name": "Polvo temporal",
+        "quantity": 2
+      },
+      {
+        "name": "Tulipán de papel",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 24001,
+    "result": "Pan Tura",
+    "category": "Pan",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Cristal líquido",
+        "quantity": 2
+      },
+      {
+        "name": "Pischis de tinta",
+        "quantity": 2
+      },
+      {
+        "name": "Cenizas eternas",
+        "quantity": 2
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 24002,
+    "result": "Caramelo celestial",
+    "category": "Golosina",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Cristal plegable",
+        "quantity": 5
+      },
+      {
+        "name": "Cristal líquido",
+        "quantity": 5
+      },
+      {
+        "name": "Tulipán de papel",
+        "quantity": 5
+      },
+      {
+        "name": "Pischis de tinta",
+        "quantity": 5
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  }
+]

@@ -18,14 +18,14 @@ import search_item_prices as sip
 from search_item_prices import search_item, read_prices
 from common import (
     CACHE_SECONDS,
+    ROOT_DIR,
     _load_omitted_items,
     _load_omitted_categories,
     _now_iso,
     _parse_price,
 )
 
-BASE_DIR   = os.path.dirname(os.path.abspath(__file__))
-ITEMS_FILE = os.path.join(BASE_DIR, "..", "..", "Markets", "Resources", "materials_prices.json")
+ITEMS_FILE = os.path.join(ROOT_DIR, "Markets", "Resources", "materials_prices.json")
 
 
 def _is_fresh(item: dict) -> bool:

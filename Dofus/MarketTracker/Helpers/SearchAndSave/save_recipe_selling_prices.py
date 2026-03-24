@@ -19,6 +19,7 @@ from . import search_item_prices as sip
 from .search_item_prices import search_item, read_prices
 from .common import (
     CACHE_SECONDS,
+    ROOT_DIR,
     _load_omitted_items,
     _load_omitted_categories,
     _normalize,
@@ -27,8 +28,7 @@ from .common import (
     find_recipe_file as _find_recipe_file_by_profession,
 )
 
-BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
-RECIPES_DIR = os.path.join(BASE_DIR, "..", "..", "Recipes")
+RECIPES_DIR = os.path.join(ROOT_DIR, "Recipes")
 
 
 def _is_fresh(recipe: dict) -> bool:

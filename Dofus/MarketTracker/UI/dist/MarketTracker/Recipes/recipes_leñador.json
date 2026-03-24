@@ -1,0 +1,1020 @@
+[
+  {
+    "id": 10041,
+    "result": "Receptáculo de corruptita",
+    "category": "Alineamiento",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Madera de bambú oscuro",
+        "quantity": 6
+      },
+      {
+        "name": "Oro",
+        "quantity": 7
+      },
+      {
+        "name": "Bacaladilla",
+        "quantity": 7
+      },
+      {
+        "name": "Carne magra",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 3223,
+    "unit_crafting_cost_x10": 2339,
+    "unit_crafting_cost_x100": 2279,
+    "unit_crafting_cost_x1000": 2279
+  },
+  {
+    "id": 16489,
+    "result": "Tabla de aglomerado",
+    "category": "Tabla",
+    "level": 1,
+    "ingredients": [
+      {
+        "name": "Madera de fresno",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 298,
+    "unit_selling_price_x10": 369,
+    "unit_selling_price_x100": 370,
+    "unit_selling_price_x1000": 370,
+    "unit_crafting_cost_x1": 300,
+    "unit_crafting_cost_x10": 300,
+    "unit_crafting_cost_x100": 400,
+    "unit_crafting_cost_x1000": 400,
+    "selling_last_updated": "2026-03-23T21:37:02.456268+00:00"
+  },
+  {
+    "id": 2539,
+    "result": "Concentrado de matorral",
+    "category": "Concentrado",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Pócima de firma",
+        "quantity": 1
+      },
+      {
+        "name": "Tabla de contrachapado",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 1679,
+    "unit_selling_price_x10": 1717,
+    "unit_selling_price_x100": 1455,
+    "unit_selling_price_x1000": 1455,
+    "unit_crafting_cost_x1": 1209,
+    "unit_crafting_cost_x10": 934,
+    "unit_crafting_cost_x100": 934,
+    "unit_crafting_cost_x1000": 934,
+    "selling_last_updated": "2026-03-23T21:37:02.456289+00:00"
+  },
+  {
+    "id": 16490,
+    "result": "Tabla de contrachapado",
+    "category": "Tabla",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Madera de castaño",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de fresno",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 139,
+    "unit_selling_price_x100": 134,
+    "unit_selling_price_x1000": 178,
+    "unit_crafting_cost_x1": 410,
+    "unit_crafting_cost_x10": 380,
+    "unit_crafting_cost_x100": 480,
+    "unit_crafting_cost_x1000": 480,
+    "selling_last_updated": "2026-03-23T21:37:02.456301+00:00"
+  },
+  {
+    "id": 26353,
+    "result": "Grabado de chispa",
+    "category": "Grabado de forjamagia",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Metaria roja",
+        "quantity": 5
+      },
+      {
+        "name": "Tabla de contrachapado",
+        "quantity": 1
+      },
+      {
+        "name": "Pepita",
+        "quantity": 100
+      }
+    ],
+    "unit_selling_price_x1": 6895,
+    "unit_selling_price_x10": 6895,
+    "unit_selling_price_x100": 6895,
+    "unit_selling_price_x1000": 6895,
+    "unit_crafting_cost_x1": 48479,
+    "unit_crafting_cost_x10": 34774,
+    "unit_crafting_cost_x100": 31074,
+    "unit_crafting_cost_x1000": 31074,
+    "selling_last_updated": "2026-03-23T21:37:02.456316+00:00"
+  },
+  {
+    "id": 26354,
+    "result": "Grabado de corriente de aire",
+    "category": "Grabado de forjamagia",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Metaria verde",
+        "quantity": 5
+      },
+      {
+        "name": "Tabla de contrachapado",
+        "quantity": 1
+      },
+      {
+        "name": "Pepita",
+        "quantity": 100
+      }
+    ],
+    "unit_selling_price_x1": 44984,
+    "unit_selling_price_x10": 44984,
+    "unit_selling_price_x100": 44984,
+    "unit_selling_price_x1000": 44984,
+    "unit_crafting_cost_x1": 60249,
+    "unit_crafting_cost_x10": 46544,
+    "unit_crafting_cost_x100": 42844,
+    "unit_crafting_cost_x1000": 48664,
+    "selling_last_updated": "2026-03-23T21:37:02.456329+00:00"
+  },
+  {
+    "id": 26355,
+    "result": "Grabado de llovizna",
+    "category": "Grabado de forjamagia",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Metaria azul",
+        "quantity": 5
+      },
+      {
+        "name": "Tabla de contrachapado",
+        "quantity": 1
+      },
+      {
+        "name": "Pepita",
+        "quantity": 100
+      }
+    ],
+    "unit_selling_price_x1": 95000,
+    "unit_selling_price_x10": 95000,
+    "unit_selling_price_x100": 95000,
+    "unit_selling_price_x1000": 95000,
+    "unit_crafting_cost_x1": 59559,
+    "unit_crafting_cost_x10": 45854,
+    "unit_crafting_cost_x100": 42154,
+    "unit_crafting_cost_x1000": 42154,
+    "selling_last_updated": "2026-03-23T21:37:02.456342+00:00"
+  },
+  {
+    "id": 26358,
+    "result": "Grabado de sacudida",
+    "category": "Grabado de forjamagia",
+    "level": 20,
+    "ingredients": [
+      {
+        "name": "Metaria amarilla",
+        "quantity": 5
+      },
+      {
+        "name": "Tabla de contrachapado",
+        "quantity": 1
+      },
+      {
+        "name": "Pepita",
+        "quantity": 100
+      }
+    ],
+    "unit_selling_price_x1": 11995,
+    "unit_selling_price_x10": 11995,
+    "unit_selling_price_x100": 11995,
+    "unit_selling_price_x1000": 11995,
+    "unit_crafting_cost_x1": 44719,
+    "unit_crafting_cost_x10": 31014,
+    "unit_crafting_cost_x100": 27314,
+    "unit_crafting_cost_x1000": 28429,
+    "selling_last_updated": "2026-03-23T21:37:02.456355+00:00"
+  },
+  {
+    "id": 12745,
+    "result": "Concentrado de boscaje",
+    "category": "Concentrado",
+    "level": 40,
+    "ingredients": [
+      {
+        "name": "Pócima de firma",
+        "quantity": 1
+      },
+      {
+        "name": "Tabla de tostar",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 2393,
+    "unit_selling_price_x10": 2265,
+    "unit_selling_price_x100": 2300,
+    "unit_selling_price_x1000": 2300,
+    "unit_crafting_cost_x1": 1690,
+    "unit_crafting_cost_x10": 1420,
+    "unit_crafting_cost_x100": 1420,
+    "unit_crafting_cost_x1000": 1520,
+    "selling_last_updated": "2026-03-23T21:37:02.456366+00:00"
+  },
+  {
+    "id": 16491,
+    "result": "Tabla de tostar",
+    "category": "Tabla",
+    "level": 40,
+    "ingredients": [
+      {
+        "name": "Madera de nogal",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de castaño",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de fresno",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 1095,
+    "unit_selling_price_x10": 949,
+    "unit_selling_price_x100": 950,
+    "unit_selling_price_x1000": 950,
+    "unit_crafting_cost_x1": 710,
+    "unit_crafting_cost_x10": 620,
+    "unit_crafting_cost_x100": 720,
+    "unit_crafting_cost_x1000": 720,
+    "selling_last_updated": "2026-03-23T21:37:02.456379+00:00"
+  },
+  {
+    "id": 2540,
+    "result": "Concentrado de oquedal",
+    "category": "Concentrado",
+    "level": 60,
+    "ingredients": [
+      {
+        "name": "Pócima de firma",
+        "quantity": 1
+      },
+      {
+        "name": "Tabla de surf",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 3297,
+    "unit_selling_price_x10": 2899,
+    "unit_selling_price_x100": 3300,
+    "unit_selling_price_x1000": 3300,
+    "unit_crafting_cost_x1": 2090,
+    "unit_crafting_cost_x10": 1820,
+    "unit_crafting_cost_x100": 1820,
+    "unit_crafting_cost_x1000": 1920,
+    "selling_last_updated": "2026-03-23T21:37:02.456390+00:00"
+  },
+  {
+    "id": 16492,
+    "result": "Tabla de surf",
+    "category": "Tabla",
+    "level": 60,
+    "ingredients": [
+      {
+        "name": "Madera de roble",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de nogal",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de castaño",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de fresno",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 1988,
+    "unit_selling_price_x10": 1830,
+    "unit_selling_price_x100": 2289,
+    "unit_selling_price_x1000": 2289,
+    "unit_crafting_cost_x1": 1110,
+    "unit_crafting_cost_x10": 1020,
+    "unit_crafting_cost_x100": 1120,
+    "unit_crafting_cost_x1000": 1170,
+    "selling_last_updated": "2026-03-23T21:37:02.456405+00:00"
+  },
+  {
+    "id": 2543,
+    "result": "Concentrado de fajina",
+    "category": "Concentrado",
+    "level": 80,
+    "ingredients": [
+      {
+        "name": "Pócima de firma",
+        "quantity": 1
+      },
+      {
+        "name": "Tabla de planchar",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 4713,
+    "unit_selling_price_x10": 4090,
+    "unit_selling_price_x100": 4200,
+    "unit_selling_price_x1000": 4200,
+    "unit_crafting_cost_x1": 2840,
+    "unit_crafting_cost_x10": 2440,
+    "unit_crafting_cost_x100": 2440,
+    "unit_crafting_cost_x1000": 2440,
+    "selling_last_updated": "2026-03-23T21:37:02.456415+00:00"
+  },
+  {
+    "id": 16493,
+    "result": "Tabla de planchar",
+    "category": "Tabla",
+    "level": 80,
+    "ingredients": [
+      {
+        "name": "Madera de roble",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de bombú",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de arce",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de nogal",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 1850,
+    "unit_selling_price_x10": 1850,
+    "unit_selling_price_x100": 1850,
+    "unit_selling_price_x1000": 1850,
+    "unit_crafting_cost_x1": 3030,
+    "unit_crafting_cost_x10": 1770,
+    "unit_crafting_cost_x100": 1640,
+    "unit_crafting_cost_x1000": 1690,
+    "selling_last_updated": "2026-03-23T21:37:02.456484+00:00"
+  },
+  {
+    "id": 26345,
+    "result": "Grabado de tsunami",
+    "category": "Grabado de forjamagia",
+    "level": 80,
+    "ingredients": [
+      {
+        "name": "Metaria maga azul",
+        "quantity": 5
+      },
+      {
+        "name": "Tabla de planchar",
+        "quantity": 1
+      },
+      {
+        "name": "Pepita",
+        "quantity": 300
+      }
+    ],
+    "unit_selling_price_x1": 98990,
+    "unit_selling_price_x10": 98990,
+    "unit_selling_price_x100": 98990,
+    "unit_selling_price_x1000": 98990,
+    "unit_crafting_cost_x1": 144820,
+    "unit_crafting_cost_x10": 93240,
+    "unit_crafting_cost_x100": 82140,
+    "unit_crafting_cost_x1000": 82140,
+    "selling_last_updated": "2026-03-23T21:37:02.456546+00:00"
+  },
+  {
+    "id": 26347,
+    "result": "Grabado de seísmo",
+    "category": "Grabado de forjamagia",
+    "level": 80,
+    "ingredients": [
+      {
+        "name": "Metaria maga amarilla",
+        "quantity": 5
+      },
+      {
+        "name": "Tabla de planchar",
+        "quantity": 1
+      },
+      {
+        "name": "Pepita",
+        "quantity": 300
+      }
+    ],
+    "unit_selling_price_x1": 21000,
+    "unit_selling_price_x10": 21900,
+    "unit_selling_price_x100": 21900,
+    "unit_selling_price_x1000": 21900,
+    "unit_crafting_cost_x1": 129650,
+    "unit_crafting_cost_x10": 88420,
+    "unit_crafting_cost_x100": 77320,
+    "unit_crafting_cost_x1000": 77420,
+    "selling_last_updated": "2026-03-23T21:37:02.456564+00:00"
+  },
+  {
+    "id": 26348,
+    "result": "Grabado de incendio",
+    "category": "Grabado de forjamagia",
+    "level": 80,
+    "ingredients": [
+      {
+        "name": "Metaria maga roja",
+        "quantity": 5
+      },
+      {
+        "name": "Tabla de planchar",
+        "quantity": 1
+      },
+      {
+        "name": "Pepita",
+        "quantity": 300
+      }
+    ],
+    "unit_selling_price_x1": 27998,
+    "unit_selling_price_x10": 27000,
+    "unit_selling_price_x100": 27000,
+    "unit_selling_price_x1000": 27000,
+    "unit_crafting_cost_x1": 139145,
+    "unit_crafting_cost_x10": 97915,
+    "unit_crafting_cost_x100": 86815,
+    "unit_crafting_cost_x1000": 88870,
+    "selling_last_updated": "2026-03-23T21:37:02.456576+00:00"
+  },
+  {
+    "id": 26349,
+    "result": "Grabado de huracán",
+    "category": "Grabado de forjamagia",
+    "level": 80,
+    "ingredients": [
+      {
+        "name": "Metaria maga verde",
+        "quantity": 5
+      },
+      {
+        "name": "Tabla de planchar",
+        "quantity": 1
+      },
+      {
+        "name": "Pepita",
+        "quantity": 300
+      }
+    ],
+    "unit_selling_price_x1": 189898,
+    "unit_selling_price_x10": 189898,
+    "unit_selling_price_x100": 189898,
+    "unit_selling_price_x1000": 189898,
+    "unit_crafting_cost_x1": 133130,
+    "unit_crafting_cost_x10": 91860,
+    "unit_crafting_cost_x100": 80760,
+    "unit_crafting_cost_x1000": 80760,
+    "selling_last_updated": "2026-03-23T21:37:02.456589+00:00"
+  },
+  {
+    "id": 12744,
+    "result": "Concentrado de bosquecillo",
+    "category": "Concentrado",
+    "level": 100,
+    "ingredients": [
+      {
+        "name": "Pócima de envejecimiento",
+        "quantity": 1
+      },
+      {
+        "name": "Pócima de firma",
+        "quantity": 1
+      },
+      {
+        "name": "Tabla de retrete",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 8714,
+    "unit_selling_price_x10": 7295,
+    "unit_selling_price_x100": 7855,
+    "unit_selling_price_x1000": 7855,
+    "unit_crafting_cost_x1": 5329,
+    "unit_crafting_cost_x10": 4875,
+    "unit_crafting_cost_x100": 4875,
+    "unit_crafting_cost_x1000": 4875,
+    "selling_last_updated": "2026-03-23T21:37:02.456603+00:00"
+  },
+  {
+    "id": 16494,
+    "result": "Tabla de retrete",
+    "category": "Tabla",
+    "level": 100,
+    "ingredients": [
+      {
+        "name": "Madera de olivioleta",
+        "quantity": 5
+      },
+      {
+        "name": "Madera de tejo",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de arce",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de bombú",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de roble",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de pino",
+        "quantity": 5
+      }
+    ],
+    "unit_selling_price_x1": 3953,
+    "unit_selling_price_x10": 3499,
+    "unit_selling_price_x100": 4180,
+    "unit_selling_price_x1000": 4180,
+    "unit_crafting_cost_x1": 4940,
+    "unit_crafting_cost_x10": 3545,
+    "unit_crafting_cost_x100": 3435,
+    "unit_crafting_cost_x1000": 3485,
+    "selling_last_updated": "2026-03-23T21:37:02.456627+00:00"
+  },
+  {
+    "id": 22105,
+    "result": "Tabla valepató",
+    "category": "Madera",
+    "level": 100,
+    "ingredients": [
+      {
+        "name": "Tabla de surf",
+        "quantity": 4
+      },
+      {
+        "name": "Tabla de retrete",
+        "quantity": 4
+      },
+      {
+        "name": "Tabla de grabado",
+        "quantity": 4
+      },
+      {
+        "name": "Tabla de salvación",
+        "quantity": 4
+      }
+    ],
+    "unit_selling_price_x1": 0,
+    "unit_selling_price_x10": 0,
+    "unit_selling_price_x100": 0,
+    "unit_selling_price_x1000": 0,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0
+  },
+  {
+    "id": 16212,
+    "result": "Concentrado de espesura",
+    "category": "Concentrado",
+    "level": 120,
+    "ingredients": [
+      {
+        "name": "Pócima de firma",
+        "quantity": 1
+      },
+      {
+        "name": "Pócima de envejecimiento",
+        "quantity": 1
+      },
+      {
+        "name": "Tabla de pastelería",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 9498,
+    "unit_selling_price_x10": 9693,
+    "unit_selling_price_x100": 11100,
+    "unit_selling_price_x1000": 11100,
+    "unit_crafting_cost_x1": 6485,
+    "unit_crafting_cost_x10": 5965,
+    "unit_crafting_cost_x100": 5965,
+    "unit_crafting_cost_x1000": 5965,
+    "selling_last_updated": "2026-03-23T21:37:02.456641+00:00"
+  },
+  {
+    "id": 16495,
+    "result": "Tabla de pastelería",
+    "category": "Tabla",
+    "level": 120,
+    "ingredients": [
+      {
+        "name": "Madera de tejo",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de bambú",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de cerezo silvestre",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de olivioleta",
+        "quantity": 5
+      },
+      {
+        "name": "Madera de arce",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de bombú",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de pino",
+        "quantity": 5
+      }
+    ],
+    "unit_selling_price_x1": 10991,
+    "unit_selling_price_x10": 7999,
+    "unit_selling_price_x100": 9495,
+    "unit_selling_price_x1000": 9495,
+    "unit_crafting_cost_x1": 7390,
+    "unit_crafting_cost_x10": 4655,
+    "unit_crafting_cost_x100": 4525,
+    "unit_crafting_cost_x1000": 4525,
+    "selling_last_updated": "2026-03-23T21:37:02.456665+00:00"
+  },
+  {
+    "id": 12733,
+    "result": "Concentrado de bosque",
+    "category": "Concentrado",
+    "level": 140,
+    "ingredients": [
+      {
+        "name": "Pócima de envejecimiento",
+        "quantity": 1
+      },
+      {
+        "name": "Pócima de los ancestros",
+        "quantity": 1
+      },
+      {
+        "name": "Tabla de grabado",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 8990,
+    "unit_selling_price_x10": 8000,
+    "unit_selling_price_x100": 9999,
+    "unit_selling_price_x1000": 9999,
+    "unit_crafting_cost_x1": 11385,
+    "unit_crafting_cost_x10": 10065,
+    "unit_crafting_cost_x100": 10065,
+    "unit_crafting_cost_x1000": 10065,
+    "selling_last_updated": "2026-03-23T21:37:02.456678+00:00"
+  },
+  {
+    "id": 16496,
+    "result": "Tabla de grabado",
+    "category": "Tabla",
+    "level": 140,
+    "ingredients": [
+      {
+        "name": "Madera de avellano",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de ébano",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de bambú",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de cerezo silvestre",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de tejo",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de olivioleta",
+        "quantity": 5
+      },
+      {
+        "name": "Madera de pino",
+        "quantity": 5
+      }
+    ],
+    "unit_selling_price_x1": 11490,
+    "unit_selling_price_x10": 9999,
+    "unit_selling_price_x100": 10000,
+    "unit_selling_price_x1000": 10000,
+    "unit_crafting_cost_x1": 11790,
+    "unit_crafting_cost_x10": 8605,
+    "unit_crafting_cost_x100": 8125,
+    "unit_crafting_cost_x1000": 8125,
+    "selling_last_updated": "2026-03-23T21:37:02.456701+00:00"
+  },
+  {
+    "id": 16458,
+    "result": "Concentrado de bosque primario",
+    "category": "Concentrado",
+    "level": 160,
+    "ingredients": [
+      {
+        "name": "Pócima de envejecimiento",
+        "quantity": 1
+      },
+      {
+        "name": "Pócima de los ancestros",
+        "quantity": 1
+      },
+      {
+        "name": "Tabla para panes",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 14335,
+    "unit_selling_price_x10": 13300,
+    "unit_selling_price_x100": 13000,
+    "unit_selling_price_x1000": 13000,
+    "unit_crafting_cost_x1": 10780,
+    "unit_crafting_cost_x10": 9940,
+    "unit_crafting_cost_x100": 9940,
+    "unit_crafting_cost_x1000": 10500,
+    "selling_last_updated": "2026-03-23T21:37:02.456713+00:00"
+  },
+  {
+    "id": 16497,
+    "result": "Tabla para panes",
+    "category": "Tabla",
+    "level": 160,
+    "ingredients": [
+      {
+        "name": "Madera de kalipto",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de carpe",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de ébano",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de avellano",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de cerezo silvestre",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de bambú",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de tejo",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 9896,
+    "unit_selling_price_x10": 8000,
+    "unit_selling_price_x100": 8948,
+    "unit_selling_price_x1000": 8948,
+    "unit_crafting_cost_x1": 13580,
+    "unit_crafting_cost_x10": 9140,
+    "unit_crafting_cost_x100": 8560,
+    "unit_crafting_cost_x1000": 8560,
+    "selling_last_updated": "2026-03-23T21:37:02.456736+00:00"
+  },
+  {
+    "id": 16459,
+    "result": "Concentrado de bosque tropical",
+    "category": "Concentrado",
+    "level": 180,
+    "ingredients": [
+      {
+        "name": "Pócima de los ancestros",
+        "quantity": 1
+      },
+      {
+        "name": "Pócima de ganduleo",
+        "quantity": 1
+      },
+      {
+        "name": "Tabla para pintar",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 29996,
+    "unit_selling_price_x10": 25000,
+    "unit_selling_price_x100": 28000,
+    "unit_selling_price_x1000": 28000,
+    "unit_crafting_cost_x1": 22580,
+    "unit_crafting_cost_x10": 19290,
+    "unit_crafting_cost_x100": 19290,
+    "unit_crafting_cost_x1000": 19290,
+    "selling_last_updated": "2026-03-23T21:37:02.456749+00:00"
+  },
+  {
+    "id": 16498,
+    "result": "Tabla para pintar",
+    "category": "Tabla",
+    "level": 180,
+    "ingredients": [
+      {
+        "name": "Madera de bambú oscuro",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de ébano",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de olmo",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de carpe",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de kalipto",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de avellano",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de cerezo silvestre",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de bambú",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 17945,
+    "unit_selling_price_x10": 17399,
+    "unit_selling_price_x100": 19500,
+    "unit_selling_price_x1000": 19500,
+    "unit_crafting_cost_x1": 19330,
+    "unit_crafting_cost_x10": 13990,
+    "unit_crafting_cost_x100": 12730,
+    "unit_crafting_cost_x1000": 12730,
+    "selling_last_updated": "2026-03-23T21:37:02.456774+00:00"
+  },
+  {
+    "id": 16460,
+    "result": "Concentrado de selva",
+    "category": "Concentrado",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Pócima de los ancestros",
+        "quantity": 1
+      },
+      {
+        "name": "Pócima de ganduleo",
+        "quantity": 1
+      },
+      {
+        "name": "Tabla de salvación",
+        "quantity": 1
+      }
+    ],
+    "unit_selling_price_x1": 39449,
+    "unit_selling_price_x10": 43950,
+    "unit_selling_price_x100": 46200,
+    "unit_selling_price_x1000": 46200,
+    "unit_crafting_cost_x1": 23630,
+    "unit_crafting_cost_x10": 20360,
+    "unit_crafting_cost_x100": 20360,
+    "unit_crafting_cost_x1000": 20360,
+    "selling_last_updated": "2026-03-23T21:37:02.456786+00:00"
+  },
+  {
+    "id": 16499,
+    "result": "Tabla de salvación",
+    "category": "Tabla",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Madera de bambú oscuro",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de bambú sagrado",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de carpe",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de kalipto",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de olmo",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de álamo temblón",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de ébano",
+        "quantity": 10
+      },
+      {
+        "name": "Madera de avellano",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 34993,
+    "unit_selling_price_x10": 25557,
+    "unit_selling_price_x100": 25557,
+    "unit_selling_price_x1000": 25557,
+    "unit_crafting_cost_x1": 22070,
+    "unit_crafting_cost_x10": 15040,
+    "unit_crafting_cost_x100": 13800,
+    "unit_crafting_cost_x1000": 13800,
+    "selling_last_updated": "2026-03-23T21:37:02.456812+00:00"
+  },
+  {
+    "id": 24144,
+    "result": "Concentrado astral",
+    "category": "Concentrado",
+    "level": 200,
+    "ingredients": [
+      {
+        "name": "Cristal líquido",
+        "quantity": 10
+      },
+      {
+        "name": "Cristal plegable",
+        "quantity": 10
+      },
+      {
+        "name": "Tulipán de papel",
+        "quantity": 10
+      },
+      {
+        "name": "Pischis de tinta",
+        "quantity": 10
+      }
+    ],
+    "unit_selling_price_x1": 29989,
+    "unit_selling_price_x10": 29989,
+    "unit_selling_price_x100": 29989,
+    "unit_selling_price_x1000": 29989,
+    "unit_crafting_cost_x1": 52750,
+    "unit_crafting_cost_x10": 43450,
+    "unit_crafting_cost_x100": 40460,
+    "unit_crafting_cost_x1000": 40470,
+    "selling_last_updated": "2026-03-23T21:37:02.456828+00:00"
+  }
+]

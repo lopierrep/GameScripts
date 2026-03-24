@@ -29,6 +29,7 @@ from google.oauth2.service_account import Credentials
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 from Helpers.SearchAndSave.common import (
+    ROOT_DIR,
     SIZES,
     _load_omitted_items,
     _load_omitted_categories,
@@ -51,10 +52,9 @@ def _api_call(fn, *args, retries: int = 5, **kwargs):
 
 # ── Configuración ─────────────────────────────────────────────────────────────
 
-BASE_DIR         = os.path.dirname(os.path.abspath(__file__))
-RECIPES_DIR      = os.path.join(BASE_DIR, "..", "..", "Recipes")
-MARKETS_DIR      = os.path.join(BASE_DIR, "..", "..", "Markets")
-CREDENTIALS_FILE = os.path.join(BASE_DIR, "credentials.json")
+RECIPES_DIR      = os.path.join(ROOT_DIR, "Recipes")
+MARKETS_DIR      = os.path.join(ROOT_DIR, "Markets")
+CREDENTIALS_FILE = os.path.join(ROOT_DIR, "Helpers", "Exporting", "credentials.json")
 
 # ID del spreadsheet (parte de la URL: /spreadsheets/d/<SPREADSHEET_ID>/edit)
 SPREADSHEET_ID  = "1S7B58S_tkt4kx4vopK9fVzP9rMbWybUC3xrWUrqBuT8"

@@ -25,11 +25,11 @@ from PIL import Image, ImageFilter, ImageEnhance
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 from Helpers.Calibration.calibration import load_calibration as _load_calibration
-from Helpers.SearchAndSave.common import _normalize
+from Helpers.SearchAndSave.common import ROOT_DIR as _ROOT_DIR, _normalize
 
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
-_CATEGORIES_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "Resources", "categories.txt")
+_CATEGORIES_FILE = os.path.join(_ROOT_DIR, "Resources", "categories.txt")
 
 def _load_categories() -> set[str]:
     if not os.path.exists(_CATEGORIES_FILE):
@@ -102,8 +102,7 @@ def preprocess_for_ocr(image: Image.Image) -> Image.Image:
     image = image.resize((w2 * 4, h2 * 4), Image.LANCZOS)
     image = ImageEnhance.Contrast(image).enhance(3.0)
     image = image.filter(ImageFilter.SHARPEN)
-    t = _otsu_threshold(image)
-    image = image.point(lambda p: 255 if p < t else 0)
+    image = image.point(lambda p: 255 if p < 128 else 0)
     return image
 
 

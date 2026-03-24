@@ -1,0 +1,15 @@
+alquimista
+base
+campesino
+cazador
+escultor
+fabricante
+ganadero
+herrero
+joyero
+leñador
+manitas
+minero
+pescador
+sastre
+zapatero

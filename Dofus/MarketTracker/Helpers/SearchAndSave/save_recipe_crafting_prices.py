@@ -14,12 +14,11 @@ import sys
 from datetime import datetime, timezone
 
 from . import save_resource_buy_prices as srs
-from .common import SIZES, _load_omitted_items, find_recipe_file as _find_recipe_file_by_profession
+from .common import ROOT_DIR, SIZES, _load_omitted_items, find_recipe_file as _find_recipe_file_by_profession
 
-BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
-MARKET_DIR  = os.path.join(BASE_DIR, "..", "..")
-OTHER_JSON  = os.path.join(MARKET_DIR, "other_ingredients_prices.json")
-RECIPES_DIR = os.path.join(MARKET_DIR, "Recipes")
+MARKET_DIR  = ROOT_DIR
+OTHER_JSON  = os.path.join(ROOT_DIR, "other_ingredients_prices.json")
+RECIPES_DIR = os.path.join(ROOT_DIR, "Recipes")
 
 
 # ── Carga de precios ───────────────────────────────────────────────────────────

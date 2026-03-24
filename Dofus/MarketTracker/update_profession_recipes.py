@@ -22,10 +22,7 @@ from datetime import datetime, timezone
 import keyboard
 import requests  # usado en ensure_catalogued → fetch_category
 
-BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
-MARKETS_DIR = os.path.join(BASE_DIR, "Markets")
-RECIPES_DIR = os.path.join(BASE_DIR, "Recipes")
-sys.path.insert(0, BASE_DIR)
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from Helpers.SearchAndSave import search_item_prices as sip
 from Helpers.SearchAndSave import save_recipe_selling_prices as srsp
@@ -33,11 +30,17 @@ from Helpers.SearchAndSave import save_recipe_crafting_prices as srp
 from Helpers.Exporting.export_to_sheets import export_profession
 from Helpers.SearchAndSave.common import (
     CACHE_SECONDS,
+    ROOT_DIR as _ROOT_DIR,
     _normalize,
     _now_iso,
     _parse_price as _parse_price_str,
     find_recipe_file as _find_recipe_file,
 )
+
+# ROOT_DIR viene de common.py y maneja correctamente el modo .exe (frozen)
+BASE_DIR    = _ROOT_DIR
+MARKETS_DIR = os.path.join(_ROOT_DIR, "Markets")
+RECIPES_DIR = os.path.join(_ROOT_DIR, "Recipes")
 
 DELAY_BETWEEN_ITEMS = 0.3
 DOFUSDB_URL         = "https://api.dofusdb.fr"

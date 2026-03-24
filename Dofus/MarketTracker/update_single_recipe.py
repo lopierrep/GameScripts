@@ -15,10 +15,7 @@ import time
 
 import keyboard
 
-BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
-MARKETS_DIR = os.path.join(BASE_DIR, "Markets")
-RECIPES_DIR = os.path.join(BASE_DIR, "Recipes")
-sys.path.insert(0, BASE_DIR)
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from Helpers.SearchAndSave import search_item_prices as sip
 from Helpers.SearchAndSave import save_recipe_selling_prices as srsp
@@ -39,6 +36,7 @@ from update_profession_recipes import (
     _price_found,
     DELAY_BETWEEN_ITEMS,
     UNKNOWN_KEY,
+    RECIPES_DIR,
 )
 
 stop_requested = False

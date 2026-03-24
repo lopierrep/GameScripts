@@ -3,10 +3,19 @@ Utilidades comunes compartidas por los módulos de búsqueda y guardado.
 """
 
 import os
+import sys as _sys
 import unicodedata
 from datetime import datetime, timezone
+from pathlib import Path as _Path
 
-BASE_DIR                = os.path.dirname(os.path.abspath(__file__))
+# Cuando corre como .exe compilado, ROOT_DIR es la carpeta del ejecutable.
+if getattr(_sys, "frozen", False):
+    ROOT_DIR = str(_Path(_sys.executable).parent)
+    BASE_DIR = str(_Path(_sys.executable).parent / "Helpers" / "SearchAndSave")
+else:
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    ROOT_DIR = str(_Path(BASE_DIR).parent.parent)
+
 OMITTED_ITEMS_FILE      = os.path.join(BASE_DIR, "omitted_items.txt")
 OMITTED_CATEGORIES_FILE = os.path.join(BASE_DIR, "omitted_categories.txt")
 

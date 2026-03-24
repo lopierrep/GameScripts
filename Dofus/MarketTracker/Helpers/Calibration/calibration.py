@@ -16,7 +16,15 @@ import time
 import keyboard
 import pyautogui
 
-BASE_DIR         = os.path.dirname(os.path.abspath(__file__))
+import sys as _sys
+from pathlib import Path as _Path
+
+if getattr(_sys, "frozen", False):
+    # Corriendo como .exe — los datos están junto al ejecutable
+    BASE_DIR = str(_Path(_sys.executable).parent / "Helpers" / "Calibration")
+else:
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 CALIBRATION_FILE = os.path.join(BASE_DIR, "calibration.json")
 
 
