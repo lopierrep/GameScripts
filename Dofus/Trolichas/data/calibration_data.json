@@ -1,0 +1,26 @@
+{
+  "NPCLocation": [
+    966,
+    515
+  ],
+  "OptionLocation1": [
+    1212,
+    542
+  ],
+  "OptionLocation2": [
+    1211,
+    595
+  ],
+  "OptionLocation3": [
+    1220,
+    633
+  ],
+  "OptionLocation4": [
+    1206,
+    686
+  ],
+  "StartButtonLocation": [
+    1350,
+    848
+  ]
+}
