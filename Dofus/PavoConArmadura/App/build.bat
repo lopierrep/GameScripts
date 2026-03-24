@@ -2,11 +2,11 @@
 cd /d "%~dp0"
 
 echo Instalando PyInstaller si no esta instalado...
-pip install pyinstaller --quiet
+python -m pip install pyinstaller keyboard --quiet
 
 echo.
 echo Generando .exe...
-pyinstaller --onefile --windowed --name "PavoConArmadura" PavoConArmaduraApp.py
+python -m PyInstaller --onefile --windowed --hidden-import=keyboard --name "PavoConArmadura" PavoConArmaduraApp.py
 
 echo.
 echo Listo! El .exe esta en: dist\PavoConArmadura.exe

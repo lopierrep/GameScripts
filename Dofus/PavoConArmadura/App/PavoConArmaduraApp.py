@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 import threading
 import pyautogui
+import keyboard
 import time
 import random
 import json
@@ -94,12 +95,18 @@ class PavoConArmaduraApp:
         self.root.resizable(False, False)
 
         self.running = False
+        self.race_count = 0
 
         # Status
         self.status_var = tk.StringVar(value="Listo")
         tk.Label(root, textvariable=self.status_var, width=30, wraplength=200, justify=tk.CENTER).pack(
             pady=(12, 6), padx=14
         )
+
+        # Race counter
+        self.race_var = tk.StringVar(value="Carreras: 0")
+        tk.Label(root, textvariable=self.race_var, width=30, justify=tk.CENTER,
+                 font=("Segoe UI", 10, "bold")).pack(pady=(0, 6), padx=14)
 
         # Buttons
         btn_frame = tk.Frame(root)
@@ -113,7 +120,7 @@ class PavoConArmaduraApp:
         self.start_btn.pack(side=tk.LEFT, padx=6)
 
         self.finish_btn = tk.Button(
-            btn_frame, text="Finish", width=10,
+            btn_frame, text="Finish (S)", width=10,
             bg="#f44336", fg="white", font=("Segoe UI", 10, "bold"),
             command=self.on_finish, state=tk.DISABLED
         )
@@ -129,6 +136,9 @@ class PavoConArmaduraApp:
 
     def set_status(self, msg: str):
         self.root.after(0, lambda: self.status_var.set(msg))
+
+    def set_race_count(self, count: int):
+        self.root.after(0, lambda: self.race_var.set(f"Carreras: {count}"))
 
     def load_calibration(self):
         if not os.path.exists(CALIBRATION_FILE):
@@ -155,15 +165,19 @@ class PavoConArmaduraApp:
             return
 
         self.running = True
+        self.race_count = 0
+        self.set_race_count(0)
         self.start_btn.config(state=tk.DISABLED)
         self.finish_btn.config(state=tk.NORMAL)
         self.calibrate_btn.config(state=tk.DISABLED)
 
+        keyboard.add_hotkey("s", self.on_finish)
         threading.Thread(target=self.run_loop, args=(calibration,), daemon=True).start()
 
     def on_finish(self):
         self.running = False
         self.set_status("Deteniendo...")
+        keyboard.remove_hotkey("s")
 
     def on_calibrate(self):
         CalibrationWindow(self.root)
@@ -177,6 +191,9 @@ class PavoConArmaduraApp:
             time.sleep(delay)
             if not self.running:
                 break
+
+            self.race_count += 1
+            self.set_race_count(self.race_count)
 
             # 1. Click NPC
             npc = calibration["NPCLocation"]

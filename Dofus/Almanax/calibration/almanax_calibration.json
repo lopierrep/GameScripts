@@ -1,0 +1,39 @@
+{
+    "search_box": [
+        591,
+        188
+    ],
+    "results_names_region": [
+        797,
+        229,
+        209,
+        530
+    ],
+    "first_result_y": 253,
+    "result_row_height": 65,
+    "results_click_x": 949,
+    "price_region_all": [
+        360,
+        616,
+        213,
+        140
+    ],
+    "lot_buttons": {
+        "1": [
+            637,
+            629
+        ],
+        "10": [
+            643,
+            669
+        ],
+        "100": [
+            639,
+            706
+        ]
+    },
+    "buy_btn": [
+        1026,
+        610
+    ]
+}

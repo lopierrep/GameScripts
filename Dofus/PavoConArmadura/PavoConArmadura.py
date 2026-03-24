@@ -74,9 +74,11 @@ if calibration is None:
     exit(1)
 
 ManualStop = False
+RaceCount = 0
+
 def OnPress(event):
     global ManualStop
-    if event.name == "y":
+    if event.name == "s":
         ManualStop = True
         print("Press will not repeat after this iteration")
 
@@ -87,7 +89,8 @@ while not ManualStop:
     RandomStartTime = random.uniform(0.5, 1)
     print(f"Starting in {RandomStartTime} seconds...")
     time.sleep(RandomStartTime)
-    print("Starting process...")
+    RaceCount += 1
+    print(f"Starting process... (Carrera #{RaceCount})")
 
     # 1️ Move and click on NPC
     npc = calibration["NPCLocation"]
@@ -122,5 +125,6 @@ while not ManualStop:
     RaceDuration = random.uniform(32, 35)
     print(f"Waiting for {RaceDuration} seconds for the race to end ...")
     time.sleep(RaceDuration)
+    print(f"Carrera #{RaceCount} completada.")
 
-print("Process finished.")
+print(f"Process finished. Total de carreras realizadas: {RaceCount}")
