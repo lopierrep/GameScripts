@@ -2,7 +2,7 @@
 Persistencia de precios y cálculo de lotes óptimos.
 
 Formato de data/item_prices.json:
-  { "Nombre item": {"x1": int, "x10": int, "x100": int, "x1000": int} }
+  { "Mercadillo": { "Categoría": { "Nombre item": {"x1": int, "x10": int, "x100": int, "x1000": int} } } }
 
 Los valores son el precio TOTAL del lote:
   x1=395   → comprar 1 ítem cuesta 395 k
@@ -12,24 +12,27 @@ import json
 import math
 from dataclasses import dataclass
 
-from .models import PRICES_FILE, LOTS, GUIJ_COST
+from config.config import PRICES_FILE, LOTS, GUIJ_COST
 
 
 # ── Persistencia ──────────────────────────────────────────────────────────────
 
-def _normalize_entry(v) -> dict:
-    """Compatibilidad hacia atrás: convierte entradas antiguas (int) al formato dict."""
-    if isinstance(v, int):
-        return {"x1": v, "x10": 0, "x100": 0, "x1000": 0}
-    return v
+def _is_old_format(raw: dict) -> bool:
+    """Detecta el formato plano antiguo {item: {x1: int, ...}}."""
+    if not raw:
+        return False
+    first = next(iter(raw.values()))
+    return isinstance(first, dict) and "x1" in first
 
 
 def load_prices() -> dict:
-    if PRICES_FILE.exists():
-        with open(PRICES_FILE, "r", encoding="utf-8") as f:
-            raw = json.load(f)
-        return {k: _normalize_entry(v) for k, v in raw.items()}
-    return {}
+    if not PRICES_FILE.exists():
+        return {}
+    with open(PRICES_FILE, "r", encoding="utf-8") as f:
+        raw = json.load(f)
+    if _is_old_format(raw):
+        return {}
+    return raw
 
 
 def save_prices(prices: dict):
@@ -38,52 +41,51 @@ def save_prices(prices: dict):
         json.dump(prices, f, ensure_ascii=False, indent=2)
 
 
+def find_item_prices(prices: dict, item_name: str) -> dict | None:
+    """Busca los precios de un item en la estructura anidada."""
+    for market in prices.values():
+        if not isinstance(market, dict):
+            continue
+        for category in market.values():
+            if not isinstance(category, dict):
+                continue
+            if item_name in category:
+                return category[item_name]
+    return None
+
+
+def add_item_prices(prices: dict, market: str, category: str, item: str, entry: dict):
+    """Inserta o actualiza los precios de un item en la estructura anidada."""
+    prices.setdefault(market, {}).setdefault(category, {})[item] = entry
+
+
+def remove_item_prices(prices: dict, item_name: str) -> bool:
+    """Elimina un item de la estructura anidada. Devuelve True si se eliminó."""
+    for market in prices.values():
+        if not isinstance(market, dict):
+            continue
+        for category in market.values():
+            if not isinstance(category, dict):
+                continue
+            if item_name in category:
+                del category[item_name]
+                return True
+    return False
+
+
 # ── Cálculo de coste óptimo ───────────────────────────────────────────────────
 
-def optimal_cost(qty_needed: int, price_dict: dict) -> int:
+def _available(price_dict: dict) -> dict:
+    """Filtra los tamaños de lote con precio > 0."""
+    return {s: p for s in LOTS if (p := price_dict.get(f"x{s}", 0)) > 0}
+
+
+def _lot_strategy(qty_needed: int, available: dict) -> tuple[float, list[tuple[int, int]]]:
     """
-    Calcula el coste mínimo para comprar al menos qty_needed ítems.
-
-    Estrategia: para cada tamaño de lote como "unidad mínima", rellena
-    con lotes más grandes (greedy) y redondea hacia arriba con ese lote.
-    Toma el mínimo de todas las estrategias.
+    Estrategia greedy de lotes: para cada tamaño como "unidad mínima", rellena
+    con lotes más grandes y redondea hacia arriba con ese lote.
+    Devuelve (coste_mínimo, plan_de_lotes).
     """
-    available = {s: price_dict.get(f"x{s}", 0) for s in LOTS}
-    available = {s: p for s, p in available.items() if p > 0}
-    if not available or qty_needed <= 0:
-        return 0
-
-    best = float("inf")
-    for min_size in sorted(available):
-        remaining = qty_needed
-        cost = 0
-        for size in sorted(available, reverse=True):
-            if size < min_size:
-                continue
-            lot_price = available[size]
-            if size == min_size:
-                n = math.ceil(remaining / size) if remaining > 0 else 0
-                cost += n * lot_price
-                remaining = 0
-            else:
-                n = remaining // size
-                cost += n * lot_price
-                remaining -= n * size
-        best = min(best, cost)
-
-    return int(best) if best != float("inf") else 0
-
-
-def get_lot_plan(qty_needed: int, price_dict: dict) -> list[tuple[int, int]]:
-    """
-    Devuelve la combinación óptima de lotes como [(tamaño, n_lotes), ...].
-    Misma estrategia que optimal_cost pero retorna el plan en vez del coste.
-    """
-    available = {s: price_dict.get(f"x{s}", 0) for s in LOTS}
-    available = {s: p for s, p in available.items() if p > 0}
-    if not available or qty_needed <= 0:
-        return []
-
     best_cost = float("inf")
     best_plan: list[tuple[int, int]] = []
 
@@ -111,7 +113,25 @@ def get_lot_plan(qty_needed: int, price_dict: dict) -> list[tuple[int, int]]:
             best_cost = cost
             best_plan = plan
 
-    return best_plan
+    return best_cost, best_plan
+
+
+def optimal_cost(qty_needed: int, price_dict: dict) -> int:
+    """Calcula el coste mínimo para comprar al menos qty_needed ítems."""
+    av = _available(price_dict)
+    if not av or qty_needed <= 0:
+        return 0
+    cost, _ = _lot_strategy(qty_needed, av)
+    return int(cost) if cost != float("inf") else 0
+
+
+def get_lot_plan(qty_needed: int, price_dict: dict) -> list[tuple[int, int]]:
+    """Devuelve la combinación óptima de lotes como [(tamaño, n_lotes), ...]."""
+    av = _available(price_dict)
+    if not av or qty_needed <= 0:
+        return []
+    _, plan = _lot_strategy(qty_needed, av)
+    return plan
 
 
 # ── Guijarros ─────────────────────────────────────────────────────────────────

@@ -9,7 +9,7 @@ import tkinter as tk
 from tkinter import ttk
 from datetime import date, timedelta
 
-from core.models import C, LOTS
+from config.config import C, LOTS
 
 
 class AlmanaxUI:
@@ -79,7 +79,9 @@ class AlmanaxUI:
         ]:
             tk.Label(bar, text=label, bg=C["bg"], fg=C["dim"],
                      font=("Consolas", 10)).pack(side="left", padx=(8 if "Desde" in label else 4, 4))
-            var = tk.StringVar(value=self._settings.get(attr, default))
+            # "Desde" siempre arranca con hoy; "Hasta" se restaura de settings
+            initial = today.isoformat() if attr == "from_var" else self._settings.get(attr, default)
+            var = tk.StringVar(value=initial)
             setattr(self, attr, var)
             e = tk.Entry(bar, textvariable=var, width=11,
                          bg=C["surface"], fg=C["text"], font=("Consolas", 10),
@@ -423,7 +425,6 @@ class AlmanaxUI:
 
     def get_settings(self) -> dict:
         s = {
-            "from_var": self.from_var.get(),
             "to_var":   self.to_var.get(),
             "pjs":      self.pjs_var.get(),
             "alm":      self.alm_var.get(),

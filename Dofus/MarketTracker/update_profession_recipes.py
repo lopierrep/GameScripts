@@ -42,7 +42,7 @@ BASE_DIR        = _ROOT_DIR
 MARKETS_DIR     = os.path.join(_ROOT_DIR, "Markets")
 RECIPES_DIR     = os.path.join(_ROOT_DIR, "Recipes")
 DATA_DIR        = os.path.join(_ROOT_DIR, "data")
-CATEGORIES_FILE = os.path.join(DATA_DIR, "categories_by_market.json")
+CATEGORIES_FILE = os.path.join(_ROOT_DIR, "..", "shared", "market", "categories_by_market.json")
 PRICES_FILE     = os.path.join(DATA_DIR, "materials_prices.json")
 
 DELAY_BETWEEN_ITEMS = 0.3

@@ -24,10 +24,10 @@ CALIBRATION_POINTS = [
     ("_first_result",        "Centro del PRIMER resultado de la lista",              "point"),
     ("_second_result",       "Centro del SEGUNDO resultado de la lista",             "point"),
     ("price_region_all",     "Región de precios (filas x1/x10/x100/x1000)",         "region"),
-    (None, "Selecciona un ítem para que aparezcan los botones de lote",             "info"),
     ("lot_x1",               "Botón de lote x1",                                    "point"),
     ("lot_x10",              "Botón de lote x10",                                   "point"),
     ("lot_x100",             "Botón de lote x100",                                  "point"),
+    ("lot_x1000",            "Botón de lote x1000",                                 "point"),
     (None, "Haz clic en un lote para que aparezca el botón de compra",              "info"),
     ("buy_btn",              "Botón de COMPRAR (confirmar)",                         "point"),
 ]
@@ -40,8 +40,9 @@ def transform(data: dict) -> dict:
     data["result_row_height"] = second[1] - first[1]
     data["results_click_x"] = first[0]
     data["lot_buttons"] = {
-        "1":   data.pop("lot_x1"),
-        "10":  data.pop("lot_x10"),
-        "100": data.pop("lot_x100"),
+        "1":    data.pop("lot_x1"),
+        "10":   data.pop("lot_x10"),
+        "100":  data.pop("lot_x100"),
+        "1000": data.pop("lot_x1000"),
     }
     return data

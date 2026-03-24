@@ -5,7 +5,7 @@ import threading
 import time
 from typing import Callable
 
-from core.models import MARKET_NAMES
+from config.config import MARKET_NAMES
 
 
 class AutoBuyer:

@@ -18,11 +18,12 @@ ROOT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT_DIR))
 sys.path.insert(0, str(ROOT_DIR.parent))
 
-from core.models import C, LOTS, SETTINGS_FILE
-from core.prices import load_prices, save_prices, optimal_cost, get_lot_plan, best_guijarro
-from core.api    import fetch_almanax, parse_entry, save_almanax, load_almanax, resolve_all_subtypes
+from config.config import C, LOTS, SETTINGS_FILE, CATEGORIES_FILE, MISSING_FILE
+from core.prices import load_prices, save_prices, optimal_cost, get_lot_plan, best_guijarro, find_item_prices, add_item_prices, remove_item_prices
+from core.api    import fetch_almanax, parse_entry, save_almanax, load_almanax, resolve_subtype
+from shared.market.common import fetch_category, get_market_for_category, load_categories
 from calibration.calibration_config import load_calibration as _load_almanax_cal
-from ui import AlmanaxUI
+from ui.ui import AlmanaxUI
 
 # ── Módulo de mercadillo (opcional) ───────────────────────────────────────────
 try:
@@ -103,11 +104,18 @@ class AlmanaxApp:
 
         root.protocol("WM_DELETE_WINDOW", self._on_close)
 
-        cached = load_almanax()
-        if cached and date.fromisoformat(cached[0]["date"]).year == date.today().year:
+        cached  = load_almanax()
+        today   = date.today()
+        year_end = date(today.year, 12, 31)
+        if cached and date.fromisoformat(cached[0]["date"]).year == today.year:
             self.data = cached
             root.after(100, self._refresh_table)
-            root.after(100, lambda: self.ui.set_status(f"✓ {len(self.data)} días (caché)", C["green"]))
+            last_cached = date.fromisoformat(max(e["date"] for e in cached))
+            if last_cached < year_end:
+                root.after(200, self._start_fetch)
+                root.after(100, lambda: self.ui.set_status(f"✓ {len(self.data)} días (caché) — completando…", C["yellow"]))
+            else:
+                root.after(100, lambda: self.ui.set_status(f"✓ {len(self.data)} días (caché)", C["green"]))
         else:
             root.after(200, self._start_fetch)
         root.after(200, lambda: self.ui.set_calibrated(self.buy_cal is not None))
@@ -127,30 +135,76 @@ class AlmanaxApp:
 
     def _fetch_thread(self):
         try:
-            today = date.today()
-            from datetime import timedelta
-            raw  = fetch_almanax(today, today + timedelta(days=4))
+            today      = date.today()
+            year_end   = date(today.year, 12, 31)
+            if self.data:
+                from datetime import timedelta
+                last = date.fromisoformat(max(e["date"] for e in self.data))
+                year_start = last + timedelta(days=1)
+            else:
+                year_start = date(today.year, 1, 1)
+            if year_start > year_end:
+                return
+            raw        = fetch_almanax(year_start, year_end)
+
             def _progress(msg):
                 self.root.after(0, self.ui.set_status, msg, C["yellow"])
-            subtype_map = resolve_all_subtypes(raw, on_progress=_progress)
-            self.root.after(0, self._on_data, raw, subtype_map)
+
+            categories     = load_categories(str(CATEGORIES_FILE))
+            subtype_cache  = {}
+            category_cache = {}
+            processed      = list(self.data)
+            total          = len(raw)
+
+            for i, e in enumerate(raw, 1):
+                item_name = e["tribute"]["item"]["name"]
+                ankama_id = e["tribute"]["item"]["ankama_id"]
+                _progress(f"Procesando {i}/{total}: {item_name}…")
+
+                if ankama_id not in subtype_cache:
+                    subtype_cache[ankama_id] = resolve_subtype(ankama_id)
+                if item_name not in category_cache:
+                    cat    = fetch_category(item_name)
+                    market = get_market_for_category(cat, categories) or "Unknown"
+                    category_cache[item_name] = {"market": market, "category": cat}
+
+                entry = parse_entry(e, subtype_cache[ankama_id])
+                entry.update(category_cache[item_name])
+                processed.append(entry)
+                save_almanax(processed)
+
+            # Reintentar items sin categoría
+            failed = [e for e in processed if e.get("category") == "Sin categoría"]
+            if failed:
+                unique_failed = list(dict.fromkeys(e["item"] for e in failed))
+                total_failed  = len(unique_failed)
+                for i, item_name in enumerate(unique_failed, 1):
+                    _progress(f"Reintentando {i}/{total_failed}: {item_name}…")
+                    cat    = fetch_category(item_name)
+                    market = get_market_for_category(cat, categories) or "Unknown"
+                    if cat != "Sin categoría":
+                        for e in processed:
+                            if e["item"] == item_name:
+                                e["market"]   = market
+                                e["category"] = cat
+                        save_almanax(processed)
+
+            self.root.after(0, self._on_data, processed)
         except urllib.error.URLError as e:
             self.root.after(0, self._on_error, f"Sin conexión: {e.reason}")
         except Exception as e:
             self.root.after(0, self._on_error, str(e))
 
-    def _on_data(self, raw: list, subtype_map: dict | None = None):
-        subtype_map = subtype_map or {}
-        self.data = [
-            parse_entry(e, subtype_map.get(e["tribute"]["item"]["ankama_id"]))
-            for e in raw
-        ]
-        save_almanax(self.data)
+    def _on_data(self, processed: list):
+        self.data = processed
         self.ui.set_status(f"✓ {len(self.data)} días cargados", C["green"])
         self._refresh_table()
 
     def _on_error(self, msg: str):
         self.ui.set_status(f"Error: {msg}", C["red"])
+
+    def _ui_progress(self, msg: str):
+        self.root.after(0, self.ui.set_status, msg, C["yellow"])
 
     # ── Cálculo ───────────────────────────────────────────────────────────────
 
@@ -172,7 +226,7 @@ class AlmanaxApp:
         guij_k = self._guijarro_kamas_total(pjs)
 
         for r in self.data:
-            pd        = self.prices.get(r["item"])
+            pd        = find_item_prices(self.prices, r["item"])
             qty_total = r["qty"] * pjs
 
             if pd:
@@ -275,7 +329,14 @@ class AlmanaxApp:
             messagebox.showwarning("Sin precios", "Introduce al menos un precio.")
             return
 
-        self.prices[full_name] = entry
+        item_info = next((r for r in self.data if r["item"] == full_name), {})
+        add_item_prices(
+            self.prices,
+            item_info.get("market",   "Unknown"),
+            item_info.get("category", "Sin categoría"),
+            full_name,
+            entry,
+        )
         save_prices(self.prices)
         filled = ", ".join(f"x{s}={entry[f'x{s}']:,}" for s in LOTS if entry[f"x{s}"])
         self.ui.set_status(f"✓ {full_name[:25]}: {filled}", C["green"])
@@ -286,8 +347,7 @@ class AlmanaxApp:
         if display in ("—", ""):
             return
         full_name = self._full_item_name(display)
-        if full_name in self.prices:
-            del self.prices[full_name]
+        if remove_item_prices(self.prices, full_name):
             save_prices(self.prices)
             self.ui.clear_lot_values()
             self.ui.set_status(f"Precio borrado: {full_name[:30]}", C["yellow"])
@@ -321,7 +381,7 @@ class AlmanaxApp:
 
     def _scan_thread(self):
         import keyboard as _kb
-        from market.scanner import MarketScanner
+        from automation.scanner import MarketScanner
 
         _kb.add_hotkey("s", self._scan_stop.set)
         scanner = MarketScanner(
@@ -332,10 +392,13 @@ class AlmanaxApp:
             press_esc   = _press_esc,
         )
 
+        from_date, to_date = self.ui.date_range()
         groups: dict[str, list[str]] = {}
         seen: set[str] = set()
         for r in self.data:
-            if r["item"] not in seen:
+            if not (from_date <= date.fromisoformat(r["date"]) <= to_date):
+                continue
+            if r["item"] not in seen and not find_item_prices(self.prices, r["item"]):
                 seen.add(r["item"])
                 groups.setdefault(r["subtype"], []).append(r["item"])
         for items in groups.values():
@@ -345,15 +408,28 @@ class AlmanaxApp:
         results = scanner.scan(
             items_by_subtype = groups,
             stop_event       = self._scan_stop,
-            on_progress      = lambda msg: self.root.after(
-                0, self.ui.set_status, msg, C["yellow"]),
+            on_progress      = self._ui_progress,
             on_market_switch = self._ask_market_switch,
         )
 
+        item_lookup = {r["item"]: r for r in self.data}
         for item, entry in results.items():
-            self.prices[item] = entry
+            info = item_lookup.get(item, {})
+            add_item_prices(
+                self.prices,
+                info.get("market",   "Unknown"),
+                info.get("category", "Sin categoría"),
+                item,
+                entry,
+            )
         if results:
             save_prices(self.prices)
+
+        all_items = {item for items in groups.values() for item in items}
+        missing   = sorted(all_items - set(results.keys()))
+        MISSING_FILE.parent.mkdir(parents=True, exist_ok=True)
+        with open(MISSING_FILE, "w", encoding="utf-8") as f:
+            json.dump(missing, f, ensure_ascii=False, indent=2)
 
         try:
             _kb.remove_hotkey("s")
@@ -430,7 +506,7 @@ class AlmanaxApp:
         threading.Thread(target=self._buy_all_thread, args=(groups,), daemon=True).start()
 
     def _buy_all_thread(self, groups: dict):
-        from market.buyer import AutoBuyer
+        from automation.buyer import AutoBuyer
 
         buyer = AutoBuyer(
             search_item       = _search_item,
@@ -443,8 +519,7 @@ class AlmanaxApp:
             items_by_subtype = groups,
             buy_cal          = self.buy_cal,
             stop_event       = self._buy_stop,
-            on_progress      = lambda msg: self.root.after(
-                0, self.ui.set_status, msg, C["yellow"]),
+            on_progress      = self._ui_progress,
             on_market_switch = self._ask_market_switch,
         )
         self.root.after(0, self._buy_all_done, failed)

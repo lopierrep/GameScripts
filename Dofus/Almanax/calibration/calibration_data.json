@@ -1,39 +1,43 @@
 {
-    "search_box": [
-        591,
-        188
+  "search_box": [
+    582,
+    200
+  ],
+  "results_names_region": [
+    795,
+    230,
+    214,
+    539
+  ],
+  "price_region_all": [
+    357,
+    624,
+    217,
+    140
+  ],
+  "buy_btn": [
+    1035,
+    605
+  ],
+  "first_result_y": 238,
+  "result_row_height": 101,
+  "results_click_x": 923,
+  "lot_buttons": {
+    "1": [
+      647,
+      637
     ],
-    "results_names_region": [
-        797,
-        229,
-        209,
-        530
+    "10": [
+      635,
+      676
     ],
-    "first_result_y": 253,
-    "result_row_height": 65,
-    "results_click_x": 949,
-    "price_region_all": [
-        360,
-        616,
-        213,
-        140
+    "100": [
+      639,
+      713
     ],
-    "lot_buttons": {
-        "1": [
-            637,
-            629
-        ],
-        "10": [
-            643,
-            669
-        ],
-        "100": [
-            639,
-            706
-        ]
-    },
-    "buy_btn": [
-        1026,
-        610
+    "1000": [
+      629,
+      757
     ]
+  }
 }

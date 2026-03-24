@@ -5,7 +5,7 @@ import threading
 import time
 from typing import Callable
 
-from core.models import LOTS, MARKET_NAMES
+from config.config import LOTS, MARKET_NAMES
 
 
 class MarketScanner:

@@ -5,9 +5,11 @@ from pathlib import Path
 
 # ── Rutas ─────────────────────────────────────────────────────────────────────
 ROOT_DIR    = Path(__file__).resolve().parent.parent   # Almanax/
-PRICES_FILE   = ROOT_DIR / "data" / "item_prices.json"
+PRICES_FILE      = ROOT_DIR / "data" / "item_prices.json"
+MISSING_FILE     = ROOT_DIR / "data" / "missing_items.json"
+CATEGORIES_FILE  = ROOT_DIR.parent / "shared" / "market" / "categories_by_market.json"
 ALMANAX_FILE  = ROOT_DIR / "data" / "almanax.json"
-SETTINGS_FILE = ROOT_DIR / "settings" / "user_settings.json"
+SETTINGS_FILE = ROOT_DIR / "config" / "user_settings.json"
 API_BASE       = "https://api.dofusdu.de/dofus3/v1/es/almanax"
 ITEMS_API_BASE = "https://api.dofusdu.de/dofus3/v1/es/items"
 
