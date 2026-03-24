@@ -11,7 +11,7 @@ import threading
 import keyboard
 
 from shared.calibration import CalibrationWindow, load_calibration
-from config.calibration_config import CALIBRATION_POINTS, CALIBRATION_FILE
+from calibration.calibration_config import CALIBRATION_POINTS, CALIBRATION_FILE
 from race_loop import run_race_loop
 from ui import LarvaRaceApp
 

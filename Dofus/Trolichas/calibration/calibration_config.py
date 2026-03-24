@@ -4,9 +4,9 @@ import sys
 if getattr(sys, "frozen", False):
     BASE_PATH = os.path.dirname(sys.executable)
 else:
-    BASE_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    BASE_PATH = os.path.dirname(os.path.abspath(__file__))
 
-CALIBRATION_FILE = os.path.join(BASE_PATH, "data", "calibration_data.json")
+CALIBRATION_FILE = os.path.join(BASE_PATH, "calibration_data.json")
 
 CALIBRATION_POINTS = [
     ("NPCLocation",         "el NPC"),
