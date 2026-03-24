@@ -113,7 +113,8 @@ def calculate_crafting_costs(recipes: list, pack_prices: dict) -> tuple[list, se
                         ing_p = best_unit_price(ing_costs, pack_size)
                 if ing_p == 0:
                     known = False
-                    still_missing.add(ing_name)
+                    if not any(pack_prices.get(ing_name, {}).get(s, 0) > 0 for s in SIZES):
+                        still_missing.add(ing_name)
                     continue
                 cost += ing_p * ing_qty
             return cost, known

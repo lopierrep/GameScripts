@@ -428,6 +428,10 @@ def search_market_batch(
     # Resultados con precio de venta manual
     for name in manual_results:
         target_file = (result_file_map or {}).get(name, recipe_file)
+        recipe_data = srsp._find_recipe(target_file, name)
+        if recipe_data and srsp._is_fresh(recipe_data):
+            print(f"[SKIP] {name} — actualizado hace menos de 1h")
+            continue
         prices = _ask_manual_selling_prices(name)
         try:
             srsp.save_selling_price(target_file, name, prices)
