@@ -228,6 +228,37 @@ def load_all_pack_prices() -> dict[str, dict]:
     return pack_prices
 
 
+def load_raw_market_prices() -> tuple[dict, dict]:
+    """
+    Lee PRICES_FILE y devuelve (raw_market_prices, ing_last_updated).
+    raw_market_prices : {name: {"1": price, ...}} — solo precios > 0
+    ing_last_updated  : {name: iso_str}
+    """
+    raw_market_prices: dict = {}
+    ing_last_updated: dict  = {}
+    try:
+        if os.path.exists(PRICES_FILE):
+            with open(PRICES_FILE, encoding="utf-8") as f:
+                prices_raw = json.load(f)
+            for market_data in prices_raw.values():
+                for items in market_data.values():
+                    for item in items:
+                        if not isinstance(item, dict) or "name" not in item:
+                            continue
+                        lot_prices = {
+                            size: int(p)
+                            for size in ("1", "10", "100", "1000")
+                            if (p := item.get(f"unit_price_x{size}", 0)) and int(p) > 0
+                        }
+                        if lot_prices:
+                            raw_market_prices[item["name"]] = lot_prices
+                        if item.get("last_updated"):
+                            ing_last_updated[item["name"]] = item["last_updated"]
+    except Exception:
+        pass
+    return raw_market_prices, ing_last_updated
+
+
 def best_unit_price(prices: dict, pack_size: str) -> float:
     """Precio unitario mínimo entre el lote dado y sus adyacentes."""
     idx = SIZES.index(pack_size)

@@ -17,7 +17,7 @@ for _p in (_ROOT, _DOFUS):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-from config.config import C, DATA_DIR, PRICES_FILE, UNKNOWN_KEY, find_recipe_file
+from config.config import C, DATA_DIR, UNKNOWN_KEY, find_recipe_file
 from core.prices import (
     build_item_lookup,
     build_table_rows,
@@ -25,6 +25,7 @@ from core.prices import (
     get_market_for_category,
     load_all_pack_prices,
     load_markets,
+    load_raw_market_prices,
     save_crafting_costs,
 )
 from core.recipes import (
@@ -54,6 +55,70 @@ class _StdoutRedirect:
 
     def flush(self):
         pass
+
+
+# ── Helpers internos ───────────────────────────────────────────────────────────
+
+def _build_market_groups(
+    result_items: list,       # [(name, category), ...]
+    all_ingredients: set,
+    craftable: dict,
+    markets: dict,
+    item_lookup: dict,
+) -> tuple[dict, set]:
+    """
+    Agrupa resultados e ingredientes por mercadillo.
+    Devuelve (market_groups, sub_results).
+    """
+    market_groups: dict = {}
+
+    for name, category in result_items:
+        market_name = get_market_for_category(category, markets)
+        if market_name:
+            market_groups.setdefault(market_name, {"results": [], "ingredients": []})
+            market_groups[market_name]["results"].append(name)
+        else:
+            print(f"  ? {name} → {category} [sin mercadillo, ignorado]")
+
+    for name in all_ingredients:
+        if name in item_lookup:
+            m = item_lookup[name]
+            market_groups.setdefault(m, {"results": [], "ingredients": []})
+            if name not in market_groups[m]["ingredients"]:
+                market_groups[m]["ingredients"].append(name)
+
+    sub_results = all_ingredients & set(craftable.keys())
+    for sub_name in sub_results:
+        sub_recipe  = craftable.get(sub_name, {})
+        category    = sub_recipe.get("category", UNKNOWN_KEY)
+        market_name = get_market_for_category(category, markets)
+        if market_name:
+            market_groups.setdefault(market_name, {"results": [], "ingredients": []})
+            if sub_name not in market_groups[market_name]["results"]:
+                market_groups[market_name]["results"].append(sub_name)
+
+    return market_groups, sub_results
+
+
+def _finalize_costs(
+    sub_results: set,
+    recipe_file: str,
+    recipe_filter=None,   # callable(all_recipes) -> subset | None para todas
+) -> set:
+    """
+    Calcula costos de subrecetas y guarda costos en recipe_file.
+    Devuelve el conjunto de ingredientes sin precio.
+    """
+    if sub_results:
+        for sub_file in sub_recipe_files(sub_results, recipe_file):
+            print(f"[INFO] Calculando subrecetas en {os.path.basename(sub_file)} …")
+            save_crafting_costs(sub_file)
+
+    with open(recipe_file, encoding="utf-8") as f:
+        all_recipes = json.load(f)
+
+    subset = recipe_filter(all_recipes) if recipe_filter else all_recipes
+    return save_crafting_costs(recipe_file, subset)
 
 
 # ── Orchestration functions ────────────────────────────────────────────────────
@@ -100,38 +165,10 @@ def update_profession(
     craftable_results = all_recipe_results()
     ensure_catalogued(all_ingredients, markets, item_lookup, craftable_results)
 
-    result_market: dict = {}
-    for r in recipes:
-        name        = r["result"]
-        category    = r.get("category", UNKNOWN_KEY)
-        market_name = get_market_for_category(category, markets)
-        if market_name:
-            result_market[name] = market_name
-        else:
-            print(f"  ? {name} → {category} [sin mercadillo, ignorado]")
-
-    market_groups: dict = {}
-    for name in all_results:
-        if name in result_market:
-            m = result_market[name]
-            market_groups.setdefault(m, {"results": [], "ingredients": []})
-            market_groups[m]["results"].append(name)
-    for name in all_ingredients:
-        if name in item_lookup:
-            m = item_lookup[name]
-            market_groups.setdefault(m, {"results": [], "ingredients": []})
-            if name not in market_groups[m]["ingredients"]:
-                market_groups[m]["ingredients"].append(name)
-
-    sub_results = all_ingredients & set(craftable.keys())
-    for sub_name in sub_results:
-        sub_recipe  = craftable.get(sub_name, {})
-        category    = sub_recipe.get("category", UNKNOWN_KEY)
-        market_name = get_market_for_category(category, markets)
-        if market_name:
-            market_groups.setdefault(market_name, {"results": [], "ingredients": []})
-            if sub_name not in market_groups[market_name]["results"]:
-                market_groups[market_name]["results"].append(sub_name)
+    result_items = [(r["result"], r.get("category", UNKNOWN_KEY)) for r in recipes]
+    market_groups, sub_results = _build_market_groups(
+        result_items, all_ingredients, craftable, markets, item_lookup
+    )
 
     result_file_map   = build_result_file_map()
     all_missing_results: list = []
@@ -159,17 +196,10 @@ def update_profession(
             if stop_flag[0]:
                 break
 
-    if sub_results:
-        for sub_file in sub_recipe_files(sub_results, recipe_file):
-            print(f"[INFO] Calculando subrecetas en {os.path.basename(sub_file)} …")
-            save_crafting_costs(sub_file)
-
-    with open(recipe_file, encoding="utf-8") as f:
-        recipes = json.load(f)
-    if limit is not None:
-        recipes = recipes[:limit]
-
-    still_missing = save_crafting_costs(recipe_file, recipes)
+    still_missing = _finalize_costs(
+        sub_results, recipe_file,
+        recipe_filter=lambda rs: rs[:limit] if limit is not None else rs,
+    )
 
     print(f"\n[DONE] {os.path.basename(recipe_file)}: {len(recipes)} recetas actualizadas.")
     if still_missing:
@@ -226,31 +256,10 @@ def update_single_recipe(
     craftable_results = all_recipe_results()
     ensure_catalogued(all_ingredients, markets, item_lookup, craftable_results)
 
-    result_market = get_market_for_category(recipe.get("category", UNKNOWN_KEY), markets)
-    market_groups: dict = {}
-
-    if result_market:
-        market_groups.setdefault(result_market, {"results": [], "ingredients": []})
-        market_groups[result_market]["results"].append(result_name)
-    else:
-        print(f"  ? {result_name} → {recipe.get('category')} [sin mercadillo, ignorado]")
-
-    for name in all_ingredients:
-        if name in item_lookup:
-            m = item_lookup[name]
-            market_groups.setdefault(m, {"results": [], "ingredients": []})
-            if name not in market_groups[m]["ingredients"]:
-                market_groups[m]["ingredients"].append(name)
-
-    sub_results = all_ingredients & set(craftable.keys())
-    for sub_name in sub_results:
-        sub_recipe  = craftable.get(sub_name, {})
-        category    = sub_recipe.get("category", UNKNOWN_KEY)
-        market_name = get_market_for_category(category, markets)
-        if market_name:
-            market_groups.setdefault(market_name, {"results": [], "ingredients": []})
-            if sub_name not in market_groups[market_name]["results"]:
-                market_groups[market_name]["results"].append(sub_name)
+    result_items = [(result_name, recipe.get("category", UNKNOWN_KEY))]
+    market_groups, sub_results = _build_market_groups(
+        result_items, all_ingredients, craftable, markets, item_lookup
+    )
 
     result_file_map = build_result_file_map()
 
@@ -267,15 +276,10 @@ def update_single_recipe(
             manual_price_fn=manual_price_fn,
         )
 
-    if sub_results:
-        for sub_file in sub_recipe_files(sub_results, recipe_file):
-            print(f"[INFO] Calculando subrecetas en {os.path.basename(sub_file)} …")
-            save_crafting_costs(sub_file)
-
-    with open(recipe_file, encoding="utf-8") as f:
-        all_recipes = json.load(f)
-    target = [r for r in all_recipes if r.get("result") == result_name]
-    still_missing = save_crafting_costs(recipe_file, target)
+    still_missing = _finalize_costs(
+        sub_results, recipe_file,
+        recipe_filter=lambda rs: [r for r in rs if r.get("result") == result_name],
+    )
 
     print(f"\n[DONE] '{result_name}' actualizado.")
     if still_missing:
@@ -481,28 +485,7 @@ class CraftingApp:
 
         tol = (tolerance if tolerance is not None else self.ui.tolerance()) / 100
 
-        raw_market_prices: dict = {}
-        ing_last_updated: dict  = {}
-        try:
-            if os.path.exists(PRICES_FILE):
-                with open(PRICES_FILE, encoding="utf-8") as f:
-                    prices_raw = json.load(f)
-                for market_data in prices_raw.values():
-                    for items in market_data.values():
-                        for item in items:
-                            if not isinstance(item, dict) or "name" not in item:
-                                continue
-                            lot_prices = {
-                                size: int(p)
-                                for size in ("1", "10", "100", "1000")
-                                if (p := item.get(f"unit_price_x{size}", 0)) and int(p) > 0
-                            }
-                            if lot_prices:
-                                raw_market_prices[item["name"]] = lot_prices
-                            if item.get("last_updated"):
-                                ing_last_updated[item["name"]] = item["last_updated"]
-        except Exception:
-            pass
+        raw_market_prices, ing_last_updated = load_raw_market_prices()
 
         pack_prices   = load_all_pack_prices()
         craftable_map = load_all_craftable_recipes()
