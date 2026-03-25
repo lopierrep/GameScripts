@@ -5,6 +5,7 @@ Capa de presentación pura: tabla de recetas, filtros, detalle de ingredientes,
 barra de resumen, prompt y log. Sin lógica de negocio.
 """
 
+import math
 import tkinter as tk
 from tkinter import ttk
 from datetime import datetime, timezone, timedelta
@@ -109,6 +110,7 @@ class CraftingUI:
         self._cbs = callbacks
         self._all_rows: list = []
         self._row_data: dict = {}
+        self._selected_recipe_iid: str | None = None
 
         self._setup_window()
         self._apply_styles()
@@ -304,7 +306,7 @@ class CraftingUI:
         self._table_frame = tk.Frame(self.root, bg=C["bg"])
         self._table_frame.pack(fill="both", expand=True, padx=12, pady=(0, 2))
 
-        cols = ("result", "profit", "level", "lot", "craft", "sell", "updated")
+        cols = ("result", "profit", "lot", "qty", "craft", "sell", "level", "updated")
         self._tree = ttk.Treeview(
             self._table_frame, columns=cols, show="tree headings",
             style="Craft.Treeview", selectmode="browse",
@@ -313,10 +315,11 @@ class CraftingUI:
         headings = {
             "result":  ("Receta / Ingrediente", 200, "w"),
             "profit":  ("Ganancia / Total",     110, "center"),
-            "level":   ("Niv.",                  55, "center"),
             "lot":     ("Mejor Lote",            90, "center"),
+            "qty":     ("Cantidad",              80, "center"),
             "craft":   ("Costo/u",              110, "center"),
             "sell":    ("Venta/u",              110, "center"),
+            "level":   ("Niv.",                  50, "center"),
             "updated": ("Actualizado",          130, "center"),
         }
         for col, (head, width, anchor) in headings.items():
@@ -334,9 +337,12 @@ class CraftingUI:
         self._tree.tag_configure("loss",      foreground=C["red"])
         self._tree.tag_configure("neutral",   foreground=C["dim"])
         self._tree.tag_configure("missing",   foreground=C["yellow"])
-        self._tree.tag_configure("ing",       foreground=C["dim"])
-        self._tree.tag_configure("ing_buy",   foreground=C["dim"])
-        self._tree.tag_configure("ing_craft", foreground=C["accent"])
+        self._tree.tag_configure("ing",             foreground=C["dim"])
+        self._tree.tag_configure("ing_buy",         foreground=C["dim"])
+        self._tree.tag_configure("ing_craft",       foreground=C["accent"])
+        self._tree.tag_configure("sub_ing",         foreground=C["accent"])
+        self._tree.tag_configure("selected_recipe", background=C["today"],
+                                 foreground=C["text"])
 
         self._tree.bind("<<TreeviewSelect>>", self._on_row_select)
         self._sort_state: dict = {}
@@ -516,9 +522,19 @@ class CraftingUI:
         if self._tree.get_children(iid):
             self._tree.item(iid, open=not self._tree.item(iid, "open"))
 
-        # Copiar nombre al portapapeles
         parent = self._tree.parent(iid)
-        if not parent:
+        is_recipe = not parent
+
+        # Highlight exclusivo para recetas
+        if is_recipe:
+            if self._selected_recipe_iid and self._selected_recipe_iid != iid:
+                orig = self._row_tags.get(self._selected_recipe_iid, "neutral")
+                self._tree.item(self._selected_recipe_iid, tags=(orig,))
+            self._selected_recipe_iid = iid
+            self._tree.item(iid, tags=("selected_recipe",))
+
+        # Copiar nombre al portapapeles
+        if is_recipe:
             row  = self._row_data.get(iid)
             name = row.get("result", "") if row else ""
         else:
@@ -571,6 +587,8 @@ class CraftingUI:
 
         self._tree.delete(*self._tree.get_children())
         self._row_data = {}
+        self._selected_recipe_iid = None
+        self._row_tags: dict = {}
 
         for row in rows:
             profit  = row.get("profit")
@@ -602,10 +620,11 @@ class CraftingUI:
                 tag = "neutral"
 
             iid = self._tree.insert("", "end", values=(
-                name, profit_str, level, lot, craft_str, sell_str,
-                _to_bogota(updated),
+                name, profit_str, lot, "", craft_str, sell_str,
+                level, _to_bogota(updated),
             ), tags=(tag,))
             self._row_data[iid] = row
+            self._row_tags[iid]  = tag
 
             for ing in row.get("ingredients", []):
                 self._insert_ing(iid, ing)
@@ -614,25 +633,39 @@ class CraftingUI:
         indent   = "      " * depth
         ing_name = indent + ing.get("name", "")
         qty          = ing.get("quantity", 1)
+        sell_size    = ing.get("sell_size")
         buy_lot      = ing.get("buy_lot") or "—"
         price        = ing.get("unit_price")
         total        = ing.get("total")
         ing_updated  = ing.get("last_updated", "")
         buy_or_craft = ing.get("buy_or_craft")
 
+        has_subs = bool(ing.get("sub_ingredients"))
+        if depth == 0 and has_subs:
+            ing_tag = "sub_ing"
+        elif buy_or_craft == "Craft":
+            ing_tag = "ing_craft"
+        else:
+            ing_tag = "ing_buy"
+
         if buy_or_craft == "Craft":
             price_str = f"{_fmt(price)} (⚒ Craft)" if price else "⚒ Craft"
-            ing_tag   = "ing_craft"
         else:
             price_str = f"{_fmt(price)} (🛒 Buy)" if price else "—"
-            ing_tag   = "ing_buy"
 
+        if sell_size:
+            qty_display = _fmt(qty * sell_size)
+        else:
+            qty_display = str(qty)
+
+        total_str  = f" · {_fmt(total)}" if total else ""
         child_iid = self._tree.insert(parent_iid, "end", values=(
             ing_name,
-            _fmt(total) if total else "—",
-            qty,
+            "",
             buy_lot,
-            price_str,
+            qty_display,
+            f"{price_str}{total_str}",
+            "",
             "",
             _to_bogota(ing_updated),
         ), tags=(ing_tag,))

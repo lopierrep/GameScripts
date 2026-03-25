@@ -17,11 +17,13 @@ for _p in (_ROOT, _DOFUS):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-from config.config import C, DATA_DIR, UNKNOWN_KEY, find_recipe_file, net_sell_price
+from config.config import C, DATA_DIR, PRICES_FILE, UNKNOWN_KEY, find_recipe_file
 from core.prices import (
     build_item_lookup,
+    build_table_rows,
     ensure_catalogued,
     get_market_for_category,
+    load_all_pack_prices,
     load_markets,
     save_crafting_costs,
 )
@@ -477,15 +479,11 @@ class CraftingApp:
         except Exception:
             return
 
-        # Build ingredient price+lot lookup from materials_prices.json
-        # ing_prices:        {name: (best_unit_price, best_lot_str)}
-        # _ing_all_prices:   {name: {"1": price, "10": price, ...}}
-        # _ing_last_updated: {name: iso_str}
-        ing_prices: dict        = {}
-        _ing_all_prices: dict   = {}
-        _ing_last_updated: dict = {}
+        tol = (tolerance if tolerance is not None else self.ui.tolerance()) / 100
+
+        raw_market_prices: dict = {}
+        ing_last_updated: dict  = {}
         try:
-            from config.config import PRICES_FILE
             if os.path.exists(PRICES_FILE):
                 with open(PRICES_FILE, encoding="utf-8") as f:
                     prices_raw = json.load(f)
@@ -494,145 +492,25 @@ class CraftingApp:
                         for item in items:
                             if not isinstance(item, dict) or "name" not in item:
                                 continue
-                            best_price = best_lot = None
-                            lot_prices: dict = {}
-                            for size in ("1", "10", "100", "1000"):
-                                p = item.get(f"unit_price_x{size}", 0)
-                                if p and int(p) > 0:
-                                    lot_prices[size] = int(p)
-                                    if best_price is None or int(p) < best_price:
-                                        best_price = int(p)
-                                        best_lot   = f"x{size}"
-                            if best_price:
-                                ing_prices[item["name"]] = (best_price, best_lot)
+                            lot_prices = {
+                                size: int(p)
+                                for size in ("1", "10", "100", "1000")
+                                if (p := item.get(f"unit_price_x{size}", 0)) and int(p) > 0
+                            }
                             if lot_prices:
-                                _ing_all_prices[item["name"]] = lot_prices
+                                raw_market_prices[item["name"]] = lot_prices
                             if item.get("last_updated"):
-                                _ing_last_updated[item["name"]] = item["last_updated"]
+                                ing_last_updated[item["name"]] = item["last_updated"]
         except Exception:
             pass
 
-        tol = (tolerance if tolerance is not None else self.ui.tolerance()) / 100
-        SIZES     = ("1", "10", "100", "1000")
-        SIZES_DESC = ("1000", "100", "10", "1")
-        SIZE_RANK  = {"1": 0, "10": 1, "100": 2, "1000": 3}
-
+        pack_prices   = load_all_pack_prices()
         craftable_map = load_all_craftable_recipes()
 
-        rows = []
-        for r in recipes:
-            allowed_sizes = list(SIZES)
-
-            # ── Best sell lot ─────────────────────────────────────────────────
-            profits = {}
-            for size in allowed_sizes:
-                craft_u = r.get(f"unit_crafting_cost_x{size}") or 0
-                sell_u  = r.get(f"unit_selling_price_x{size}") or 0
-                if craft_u > 0 and sell_u > 0:
-                    profits[size] = net_sell_price(sell_u) - craft_u
-
-            best_lot = best_craft = best_sell = best_profit = None
-            best_size = None  # tamaño raw del mejor lote de venta, ej. "1000"
-            if profits:
-                max_profit = max(profits.values())
-                threshold  = max_profit * (1 - tol)
-                for size in reversed(allowed_sizes):  # preferir lote más grande
-                    if profits.get(size, float("-inf")) >= threshold:
-                        best_profit = profits[size]
-                        best_size   = size
-                        best_lot    = f"x{size}"
-                        best_craft  = r.get(f"unit_crafting_cost_x{size}")
-                        best_sell   = r.get(f"unit_selling_price_x{size}")
-                        break
-
-            # Rango mínimo de lote de compra: debe ser >= lote de venta elegido
-            sell_rank = SIZE_RANK[best_size] if best_size else 0
-
-            # ── Helper: resuelve precio + buy_or_craft + sub-ingredientes ────
-            def _resolve_ing(ing_name, ing_qty, depth=0):
-                entry  = ing_prices.get(ing_name)
-                all_lp = _ing_all_prices.get(ing_name, {})
-                if entry and all_lp:
-                    # Considerar lotes >= sell_rank - 1 (adyacente inferior incluido)
-                    # Ej: sell x1000 → compra en x100 o x1000; sell x100 → x10, x100, x1000
-                    min_rank = max(0, sell_rank - 1)
-                    valid_lp = {s: p for s, p in all_lp.items()
-                                if p > 0 and SIZE_RANK[s] >= min_rank}
-                    if valid_lp:
-                        min_p = min(valid_lp.values())
-                        thr   = min_p * (1 + tol)
-                        buy_lot = buy_price = None
-                        for size in SIZES_DESC:
-                            p = valid_lp.get(size, 0)
-                            if 0 < p <= thr:
-                                buy_lot   = f"x{size}"
-                                buy_price = p
-                                break
-                        if buy_lot is None:
-                            # Ningún lote grande dentro de tolerancia → el más barato de los válidos
-                            best_s = min(valid_lp, key=valid_lp.get)
-                            buy_lot, buy_price = f"x{best_s}", valid_lp[best_s]
-                    else:
-                        # No hay precio en lotes >= sell_rank → fallback al mejor disponible
-                        buy_price, buy_lot = entry
-                elif entry:
-                    buy_price, buy_lot = entry
-                else:
-                    buy_price = buy_lot = None
-
-                unit_price = buy_price
-                total      = unit_price * ing_qty if unit_price else None
-
-                buy_or_craft = None
-                ing_recipe   = craftable_map.get(ing_name)
-                if ing_recipe and unit_price is not None:
-                    craft_u = ing_recipe.get("unit_crafting_cost_x1") or 0
-                    if craft_u <= 0:
-                        craft_u = 0
-                        for sub in ing_recipe.get("ingredients", []):
-                            sub_p = ing_prices.get(sub["name"], (None,))[0]
-                            if sub_p is None:
-                                craft_u = 0
-                                break
-                            craft_u += sub_p * sub.get("quantity", 1)
-                    if craft_u > 0:
-                        buy_or_craft = "Craft" if craft_u < unit_price else "Buy"
-
-                sub_ingredients = []
-                if depth < 2 and ing_recipe:
-                    for sub in ing_recipe.get("ingredients", []):
-                        sub_ingredients.append(
-                            _resolve_ing(sub["name"], sub.get("quantity", 1), depth + 1)
-                        )
-
-                return {
-                    "name":            ing_name,
-                    "quantity":        ing_qty,
-                    "unit_price":      unit_price,
-                    "buy_lot":         buy_lot,
-                    "total":           total,
-                    "lot_prices":      all_lp,
-                    "last_updated":    _ing_last_updated.get(ing_name, ""),
-                    "buy_or_craft":    buy_or_craft,
-                    "sub_ingredients": sub_ingredients,
-                }
-
-            ingredients = [
-                _resolve_ing(ing.get("name", ""), ing.get("quantity", 1))
-                for ing in r.get("ingredients", [])
-            ]
-
-            rows.append({
-                "result":      r.get("result", ""),
-                "level":       r.get("level", ""),
-                "best_lot":    best_lot or "—",
-                "craft_cost":  best_craft,
-                "sell_price":  best_sell,
-                "profit":      best_profit,
-                "updated":     r.get("selling_last_updated", ""),
-                "ingredients": ingredients,
-            })
-
+        rows = build_table_rows(
+            recipes, pack_prices, craftable_map,
+            raw_market_prices, ing_last_updated, tol,
+        )
         self.ui.refresh_table(rows)
 
     def restore_io(self):
