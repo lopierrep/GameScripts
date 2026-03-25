@@ -440,36 +440,35 @@ class CraftingApp:
 
     # ── Prompts bloqueantes (llamados desde hilo worker) ──────────────────────
 
-    def _ask_confirm(self, market_name: str):
-        """Bloquea el hilo worker hasta que el usuario confirme estar en el mercadillo."""
+    def _ask_blocking(self, show_fn, *args):
+        """
+        Bloquea el hilo worker hasta que el usuario confirme un prompt.
+        Llama show_fn(*args, on_confirm) en el hilo principal y espera.
+        Devuelve el valor que on_confirm reciba (None si no recibe argumentos).
+        """
         if self._stop_flag[0]:
-            return
-        ev = threading.Event()
+            return None
+        ev     = threading.Event()
+        result = [None]
 
-        def on_confirm():
+        def on_confirm(*cb_args):
+            result[0] = cb_args[0] if cb_args else None
             ev.set()
 
-        self.root.after(
-            0, self.ui.show_confirm,
-            f"Ve al mercadillo de {market_name} y pulsa CONTINUAR cuando estés listo…",
-            on_confirm,
-        )
+        self.root.after(0, show_fn, *args, on_confirm)
         ev.wait()
+        return result[0]
+
+    def _ask_confirm(self, market_name: str):
+        """Bloquea el hilo worker hasta que el usuario confirme estar en el mercadillo."""
+        self._ask_blocking(
+            self.ui.show_confirm,
+            f"Ve al mercadillo de {market_name} y pulsa CONTINUAR cuando estés listo…",
+        )
 
     def _ask_manual_price(self, name: str, is_selling: bool):
         """Bloquea el hilo worker hasta que el usuario introduzca precios manuales."""
-        if self._stop_flag[0]:
-            return None
-        ev = threading.Event()
-        result = [None]
-
-        def on_confirm(prices):
-            result[0] = prices
-            ev.set()
-
-        self.root.after(0, self.ui.show_price_prompt, name, is_selling, on_confirm)
-        ev.wait()
-        return result[0]
+        return self._ask_blocking(self.ui.show_price_prompt, name, is_selling)
 
     # ── Tabla ─────────────────────────────────────────────────────────────────
 

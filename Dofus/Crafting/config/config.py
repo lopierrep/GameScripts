@@ -74,6 +74,17 @@ def _load_manual_price_items() -> set[str]:
         return {line.strip() for line in f if line.strip()}
 
 
+def list_professions() -> list[str]:
+    """Devuelve los nombres de profesión disponibles en DATA_DIR, ordenados."""
+    if not os.path.isdir(DATA_DIR):
+        return []
+    return sorted(
+        f[len("recipes_"):-len(".json")]
+        for f in os.listdir(DATA_DIR)
+        if f.startswith("recipes_") and f.endswith(".json")
+    )
+
+
 def find_recipe_file(profession: str) -> str | None:
     norm = _normalize(profession)
     for fname in os.listdir(DATA_DIR):

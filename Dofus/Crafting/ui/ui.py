@@ -480,7 +480,7 @@ class CraftingUI:
             return
         mode = self._mode.get()
         if mode == "profesion":
-            target = self._prof_var.get()
+            target = self.profession()
             lv = self._limit_var.get().strip()
             limit = int(lv) if lv.isdigit() else None
         else:
@@ -494,7 +494,7 @@ class CraftingUI:
 
     def _on_export(self):
         if "export" in self._cbs:
-            self._cbs["export"](self._prof_var.get())
+            self._cbs["export"](self.profession())
 
     def _on_calibrate(self):
         if "calibrate" in self._cbs:
@@ -522,16 +522,17 @@ class CraftingUI:
         if self._tree.get_children(iid):
             self._tree.item(iid, open=not self._tree.item(iid, "open"))
 
-        parent = self._tree.parent(iid)
-        is_recipe = not parent
+        is_recipe = not self._tree.parent(iid)
 
-        # Highlight exclusivo para recetas
-        if is_recipe:
-            if self._selected_recipe_iid and self._selected_recipe_iid != iid:
-                orig = self._row_tags.get(self._selected_recipe_iid, "neutral")
-                self._tree.item(self._selected_recipe_iid, tags=(orig,))
-            self._selected_recipe_iid = iid
-            self._tree.item(iid, tags=("selected_recipe",))
+        # Subir hasta la receta raíz y aplicar highlight
+        recipe_iid = iid
+        while self._tree.parent(recipe_iid):
+            recipe_iid = self._tree.parent(recipe_iid)
+        if self._selected_recipe_iid and self._selected_recipe_iid != recipe_iid:
+            orig = self._row_tags.get(self._selected_recipe_iid, "neutral")
+            self._tree.item(self._selected_recipe_iid, tags=(orig,))
+        self._selected_recipe_iid = recipe_iid
+        self._tree.item(recipe_iid, tags=("selected_recipe",))
 
         # Copiar nombre al portapapeles
         if is_recipe:
@@ -547,7 +548,7 @@ class CraftingUI:
 
     # ── Filters ───────────────────────────────────────────────────────────────
 
-    def _apply_filter(self):
+    def _apply_filter(self, profitable: list = None):
         rows = self._all_rows
 
         pv = self._filter_profit.get().strip().replace(".", "").replace(",", "")
@@ -566,7 +567,7 @@ class CraftingUI:
                     if str(r.get("level", "999")).isdigit()
                     and int(r.get("level", 999)) <= int(lmax)]
 
-        self._populate_tree(rows)
+        self._populate_tree(rows, profitable=profitable)
 
     def _clear_filter(self):
         self._filter_profit.set("")
@@ -574,15 +575,15 @@ class CraftingUI:
         self._filter_lvl_max.set("")
         self._populate_tree(self._all_rows)
 
-    def _populate_tree(self, rows: list):
+    def _populate_tree(self, rows: list, profitable: list = None):
         # Ordenar de mayor a menor ganancia por defecto
         rows = sorted(rows, key=lambda r: (r.get("profit") or float("-inf")), reverse=True)
 
-        # Top 3 by profit for special highlight
-        profitable = sorted(
-            [r for r in rows if (r.get("profit") or 0) > 0],
-            key=lambda r: r["profit"], reverse=True,
-        )
+        if profitable is None:
+            profitable = sorted(
+                [r for r in rows if (r.get("profit") or 0) > 0],
+                key=lambda r: r["profit"], reverse=True,
+            )
         top_names = {r["result"] for r in profitable[:3]}
 
         self._tree.delete(*self._tree.get_children())
@@ -711,6 +712,12 @@ class CraftingUI:
         """Thread-safe."""
         self.root.after(0, self._append_log, text, tag)
 
+    def _write_log(self, text: str, tag: str):
+        self._log.configure(state="normal")
+        self._log.insert("end", text + "\n", tag)
+        self._log.see("end")
+        self._log.configure(state="disabled")
+
     def _append_log(self, raw: str, tag: str = None):
         if "\r" in raw and not raw.startswith("\n"):
             parts = raw.split("\r")
@@ -720,17 +727,13 @@ class CraftingUI:
             self._log.configure(state="normal")
             idx = self._log.index("end-2l linestart")
             self._log.delete(idx, "end-1c")
-            self._log.insert("end", text + "\n", tag or _auto_tag(text))
-            self._log.see("end")
             self._log.configure(state="disabled")
+            self._write_log(text, tag or _auto_tag(text))
             return
         text = raw.strip()
         if not text:
             return
-        self._log.configure(state="normal")
-        self._log.insert("end", text + "\n", tag or _auto_tag(text))
-        self._log.see("end")
-        self._log.configure(state="disabled")
+        self._write_log(text, tag or _auto_tag(text))
 
     def clear_log(self):
         self._log.configure(state="normal")
@@ -744,12 +747,17 @@ class CraftingUI:
           updated, ingredients: [{name, quantity, unit_price, total}]
         """
         self._all_rows = rows
-        self._apply_filter()
-        self._update_summary(rows)
+        profitable = sorted(
+            [r for r in rows if (r.get("profit") or 0) > 0],
+            key=lambda r: r["profit"], reverse=True,
+        )
+        self._apply_filter(profitable=profitable)
+        self._update_summary(rows, profitable=profitable)
 
-    def _update_summary(self, rows: list):
+    def _update_summary(self, rows: list, profitable: list = None):
         total      = len(rows)
-        profitable = [r for r in rows if (r.get("profit") or 0) > 0]
+        if profitable is None:
+            profitable = [r for r in rows if (r.get("profit") or 0) > 0]
         n_prof     = len(profitable)
         avg = sum(r["profit"] for r in profitable) / n_prof if profitable else 0
         top = max(profitable, key=lambda r: r["profit"]) if profitable else None
