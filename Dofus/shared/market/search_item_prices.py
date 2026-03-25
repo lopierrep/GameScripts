@@ -45,10 +45,29 @@ DELAY_AFTER_SEARCH = 1.0
 CAL = None
 
 
-def load_calibration():
+def set_calibration(cal: dict):
+    """Permite al caller inyectar una calibración ya cargada."""
     global CAL
-    from Helpers.Calibration.calibration import load_calibration as _lc
-    CAL = _lc()
+    CAL = cal
+
+
+def load_calibration():
+    """Carga calibración desde el módulo de calibración del proyecto activo.
+    Intenta primero calibration.calibration_config (nuevo estilo Crafting/Almanax),
+    luego el path legado Helpers.Calibration.calibration."""
+    global CAL
+    try:
+        from calibration.calibration_config import load_calibration as _lc
+        CAL = _lc()
+    except ImportError:
+        try:
+            from Helpers.Calibration.calibration import load_calibration as _lc
+            CAL = _lc()
+        except ImportError:
+            raise ImportError(
+                "No se encontró módulo de calibración. "
+                "Llama a set_calibration(cal) antes de usar search_item_prices."
+            )
 
 
 # ── Mouse ──────────────────────────────────────────────────────────────────────
