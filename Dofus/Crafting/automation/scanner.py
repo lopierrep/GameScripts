@@ -82,6 +82,7 @@ def search_market_batch(
     stop_flag: list[bool] | None = None,
     on_confirm=None,
     manual_price_fn=None,
+    on_item_done=None,
 ) -> tuple[list[str], list[str]]:
     """Busca precios de results e ingredients en el mercadillo indicado.
     stop_flag  : lista de un bool mutable [False] para detención.
@@ -109,8 +110,12 @@ def search_market_batch(
         def _process(name: str) -> dict:
             if name in results_set:
                 target_file = (result_file_map or {}).get(name, recipe_file)
-                return search_and_save_selling(target_file, name)
-            return search_and_save_ingredient(name, markets, item_lookup)
+                result = search_and_save_selling(target_file, name)
+            else:
+                result = search_and_save_ingredient(name, markets, item_lookup)
+            if on_item_done:
+                on_item_done()
+            return result
 
         def _press_esc():
             keyboard.press_and_release("esc")

@@ -25,16 +25,5 @@ MARKET_NAMES = {
 # ── Guijarros (coste en almanichas y nombre) ──────────────────────────────────
 GUIJ_COST = {"T": 3,  "L": 15, "S": 75}
 
-# ── Paleta de colores (tema oscuro compartido con MarketTracker) ───────────────
-C = {
-    "bg":      "#1e1e2e",
-    "surface": "#2a2a3e",
-    "accent":  "#89b4fa",
-    "green":   "#a6e3a1",
-    "red":     "#f38ba8",
-    "yellow":  "#f9e2af",
-    "text":    "#cdd6f4",
-    "dim":     "#6c7086",
-    "orange":  "#fab387",
-    "today":   "#2d3250",
-}
+# ── Paleta de colores ─────────────────────────────────────────────────────────
+from shared.colors import C  # noqa: E402

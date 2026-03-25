@@ -2,10 +2,10 @@
 Lógica de escaneo de precios en el mercadillo (sin dependencias de UI).
 """
 import threading
-import time
 from typing import Callable
 
 from config.config import LOTS, MARKET_NAMES
+from shared.market.scanner import MarketScanner as _BaseScanner
 
 
 class MarketScanner:
@@ -27,8 +27,12 @@ class MarketScanner:
         self._search_item = search_item
         self._read_prices = read_prices
         self._parse_price = parse_price
-        self._init_cal    = init_cal
-        self._press_esc   = press_esc
+        self._scanner = _BaseScanner(
+            press_esc=press_esc,
+            init_cal=init_cal,
+            delay=0.3,
+            countdown=3,
+        )
 
     def scan(
         self,
@@ -38,8 +42,6 @@ class MarketScanner:
         on_market_switch: Callable[[str, int], bool],
     ) -> dict[str, dict]:
         """
-        Escanea precios por mercadillo.
-
         Parámetros:
           items_by_subtype  dict {subtype: [nombre_item, ...]}
           stop_event        evento para cancelar el escaneo
@@ -49,46 +51,27 @@ class MarketScanner:
         Devuelve:
           dict {nombre_item: {"x1": int, "x10": int, "x100": int, "x1000": int}}
         """
-        self._init_cal()
+        items_by_market = {
+            MARKET_NAMES.get(k, k.capitalize()): v
+            for k, v in items_by_subtype.items()
+        }
 
-        results: dict[str, dict] = {}
-        total   = sum(len(v) for v in items_by_subtype.values())
-        scanned = 0
+        search_item = self._search_item
+        read_prices = self._read_prices
+        parse_price = self._parse_price
 
-        for subtype, items in items_by_subtype.items():
-            if stop_event.is_set():
-                break
+        def _process(item: str) -> dict:
+            search_item(item)
+            raw   = read_prices(item)
+            entry = {f"x{s}": parse_price(raw, str(s)) for s in LOTS}
+            if not any(v > 0 for v in entry.values()):
+                raise ValueError("sin precios")
+            return entry
 
-            market_name = MARKET_NAMES.get(subtype, subtype.capitalize())
-            if not on_market_switch(market_name, len(items)):
-                break
-
-            for i in range(3, 0, -1):
-                if stop_event.is_set():
-                    break
-                on_progress(f"[{market_name}] Cambia al juego… {i}s")
-                time.sleep(1)
-
-            if stop_event.is_set():
-                break
-
-            for item in items:
-                if stop_event.is_set():
-                    break
-
-                scanned += 1
-                on_progress(f"[{market_name}] [{scanned}/{total}] {item[:30]}…  (S para parar)")
-
-                try:
-                    self._search_item(item)
-                    raw = self._read_prices(item)
-                    self._press_esc()
-                    time.sleep(0.3)
-                except Exception:
-                    continue
-
-                entry = {f"x{s}": self._parse_price(raw, str(s)) for s in LOTS}
-                if any(v > 0 for v in entry.values()):
-                    results[item] = entry
-
-        return results
+        return self._scanner.scan(
+            items_by_market  = items_by_market,
+            is_stopped       = stop_event.is_set,
+            on_progress      = on_progress,
+            on_market_switch = on_market_switch,
+            process_item     = _process,
+        )
