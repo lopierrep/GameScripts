@@ -34,7 +34,7 @@ class AlmanaxUI:
         self._cb               = callbacks
         self._market_available = market_available
         self._settings         = settings or {}
-        self._copy_timer       = None
+
         self._setup_window()
         self._build_ui()
 
@@ -197,9 +197,6 @@ class AlmanaxUI:
             lbl.pack(side="left", padx=(0, 14 if attr != "total_net_all_lbl" else 0))
             setattr(self, attr, lbl)
 
-        self.copy_lbl = tk.Label(bar, text="", bg=C["bg"], fg=C["accent"],
-                                 font=("Consolas", 9))
-        self.copy_lbl.pack(side="right", padx=(0, 8))
 
     def _build_bottombar(self):
         bar = tk.Frame(self.root, bg=C["surface"], pady=7)
@@ -294,6 +291,16 @@ class AlmanaxUI:
         item_name = self.tree.set(sel[0], "item")
         self._cb["select"](item_name)
 
+    def _show_copy_toast(self, name: str):
+        toast = tk.Label(
+            self.root, text=f"✓ Copiado: {name}",
+            bg=C["accent"], fg=C["bg"],
+            font=("Segoe UI", 9, "bold"), padx=12, pady=6,
+            relief="flat",
+        )
+        toast.place(relx=1.0, rely=1.0, anchor="se", x=-16, y=-16)
+        self.root.after(1800, toast.destroy)
+
     def _on_row_click(self, _event):
         """Copia el nombre del ítem al portapapeles y muestra notificación."""
         sel = self.tree.selection()
@@ -302,10 +309,7 @@ class AlmanaxUI:
         item_name = self.tree.set(sel[0], "item")
         self.root.clipboard_clear()
         self.root.clipboard_append(item_name)
-        self.copy_lbl.config(text=f"📋 {item_name[:40]}")
-        if self._copy_timer is not None:
-            self.root.after_cancel(self._copy_timer)
-        self._copy_timer = self.root.after(2000, lambda: self.copy_lbl.config(text=""))
+        self._show_copy_toast(item_name)
 
     # ── Getters de inputs ─────────────────────────────────────────────────────
 

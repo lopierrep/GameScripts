@@ -13,6 +13,57 @@ from shared.colors import C
 
 _BOGOTA = timezone(timedelta(hours=-5))
 
+_PROF_ICONS: dict[str, str] = {
+    "alquimista": "⚗",
+    "base":       "📋",
+    "campesino":  "🌾",
+    "cazador":    "🏹",
+    "escultor":   "🗿",
+    "fabricante": "⚙",
+    "ganadero":   "🐄",
+    "herrero":    "🔨",
+    "joyero":     "💎",
+    "leñador":    "🪓",
+    "manitas":    "🔧",
+    "minero":     "⛏",
+    "pescador":   "🎣",
+    "sastre":     "🧵",
+    "zapatero":   "👟",
+}
+
+class _Tooltip:
+    """Tooltip simple que aparece al hacer hover sobre un widget."""
+    def __init__(self, widget, text: str):
+        self._widget = widget
+        self._text   = text
+        self._tip    = None
+        widget.bind("<Enter>", self._show)
+        widget.bind("<Leave>", self._hide)
+
+    def _show(self, _event=None):
+        x = self._widget.winfo_rootx() + 0
+        y = self._widget.winfo_rooty() + self._widget.winfo_height() + 4
+        self._tip = tw = tk.Toplevel(self._widget)
+        tw.wm_overrideredirect(True)
+        tw.wm_geometry(f"+{x}+{y}")
+        tk.Label(tw, text=self._text, bg=C["surface"], fg=C["dim"],
+                 font=("Segoe UI", 8), relief="flat", padx=8, pady=4,
+                 wraplength=260, justify="left").pack()
+
+    def _hide(self, _event=None):
+        if self._tip:
+            self._tip.destroy()
+            self._tip = None
+
+
+def _prof_display(name: str) -> str:
+    icon = _PROF_ICONS.get(name, "•")
+    return f"{icon}  {name.capitalize()}"
+
+def _prof_from_display(display: str) -> str:
+    """Extrae el nombre de profesión desde el texto del combobox."""
+    return display.split("  ", 1)[-1].lower() if "  " in display else display.lower()
+
 
 def _to_bogota(utc_str: str) -> str:
     """Convierte un timestamp ISO UTC a hora de Bogotá (UTC-5)."""
@@ -65,7 +116,6 @@ class CraftingUI:
         self._build_toolbar(professions)
         self._build_filterbar()
         self._build_table()
-        self._build_detail_panel()
         self._build_summary_bar()
         self._build_prompt()
         self._build_log()
@@ -96,7 +146,8 @@ class CraftingUI:
                     borderwidth=0, relief="flat")
         s.configure("Craft.Treeview",
                     background=C["surface"], foreground=C["text"],
-                    fieldbackground=C["surface"], rowheight=22, borderwidth=0)
+                    fieldbackground=C["surface"], rowheight=22, borderwidth=0,
+                    indent=14)
         s.configure("Craft.Treeview.Heading",
                     background=C["bg"], foreground=C["dim"],
                     borderwidth=0, font=("Segoe UI", 9, "bold"), relief="flat")
@@ -147,22 +198,28 @@ class CraftingUI:
         tk.Label(self._prof_frame, text="Profesión:", bg=C["bg"],
                  fg=C["dim"], font=("Segoe UI", 8)).pack(side="left", padx=(0, 4))
         self._prof_var = tk.StringVar()
+        prof_display_values = [_prof_display(p) for p in professions]
         self._prof_cb = ttk.Combobox(
             self._prof_frame, textvariable=self._prof_var,
-            values=professions, state="readonly",
-            font=("Segoe UI", 9), width=16,
+            values=prof_display_values, state="readonly",
+            font=("Segoe UI", 9), width=18,
         )
-        if professions:
-            self._prof_var.set(professions[0])
+        if prof_display_values:
+            self._prof_var.set(prof_display_values[0])
         self._prof_cb.pack(side="left")
-        tk.Label(self._prof_frame, text="  Límite:", bg=C["bg"],
-                 fg=C["dim"], font=("Segoe UI", 8)).pack(side="left")
+        _limit_lbl = tk.Label(self._prof_frame, text="  Límite:", bg=C["bg"],
+                              fg=C["dim"], font=("Segoe UI", 8))
+        _limit_lbl.pack(side="left")
         self._limit_var = tk.StringVar()
-        tk.Entry(
+        _limit_entry = tk.Entry(
             self._prof_frame, textvariable=self._limit_var, width=5,
             bg=C["surface"], fg=C["text"], insertbackground=C["text"],
             relief="flat", font=("Segoe UI", 9),
-        ).pack(side="left", padx=(4, 0))
+        )
+        _limit_entry.pack(side="left", padx=(4, 0))
+        _tip_text = "Limita cuántas recetas escanea.\nDejar vacío para procesar todas."
+        _Tooltip(_limit_lbl, _tip_text)
+        _Tooltip(_limit_entry, _tip_text)
 
         self._recipe_frame = tk.Frame(self._input_area, bg=C["bg"])
         tk.Label(self._recipe_frame, text="Receta:", bg=C["bg"],
@@ -219,7 +276,27 @@ class CraftingUI:
                   padx=8, pady=3, command=self._apply_filter).pack(side="left", padx=(0, 4))
         tk.Button(ff, text="Limpiar", bg=C["surface"], fg=C["dim"],
                   font=("Segoe UI", 8), relief="flat", bd=0,
-                  padx=8, pady=3, command=self._clear_filter).pack(side="left")
+                  padx=8, pady=3, command=self._clear_filter).pack(side="left", padx=(0, 20))
+
+        tk.Frame(ff, bg=C["surface"], width=1).pack(side="left", fill="y", padx=(0, 12))
+        _tol_lbl = tk.Label(ff, text="Tolerancia lote:", bg=C["bg"], fg=C["dim"],
+                            font=("Segoe UI", 8))
+        _tol_lbl.pack(side="left")
+        self._tolerance_var = tk.StringVar(value="5")
+        _tol_entry = tk.Entry(ff, textvariable=self._tolerance_var, width=4,
+                              bg=C["surface"], fg=C["text"], insertbackground=C["text"],
+                              relief="flat", font=("Segoe UI", 9))
+        _tol_entry.pack(side="left", padx=(4, 2))
+        tk.Label(ff, text="%", bg=C["bg"], fg=C["dim"],
+                 font=("Segoe UI", 8)).pack(side="left")
+        _tol_tip = (
+            "Margen de precio aceptado al elegir lotes grandes.\n\n"
+            "Compra: prefiere lotes grandes aunque sean hasta X% más caros por unidad.\n"
+            "Venta: prefiere lotes grandes aunque la ganancia sea hasta X% menor.\n\n"
+            "Ej. con 5%: si x1000 cuesta 5% más que x1, igual compra x1000."
+        )
+        _Tooltip(_tol_lbl,   _tol_tip)
+        _Tooltip(_tol_entry, _tol_tip)
 
     # ── Table ─────────────────────────────────────────────────────────────────
 
@@ -229,17 +306,18 @@ class CraftingUI:
 
         cols = ("result", "profit", "level", "lot", "craft", "sell", "updated")
         self._tree = ttk.Treeview(
-            self._table_frame, columns=cols, show="headings",
+            self._table_frame, columns=cols, show="tree headings",
             style="Craft.Treeview", selectmode="browse",
         )
+        self._tree.column("#0", width=46, minwidth=46, stretch=False)
         headings = {
-            "result":  ("Receta",       180, "w"),
-            "profit":  ("Ganancia",     100, "center"),
-            "level":   ("Niv.",          45, "center"),
-            "lot":     ("Mejor Lote Venta", 120, "center"),
-            "craft":   ("Costo/u",      110, "center"),
-            "sell":    ("Venta/u",      110, "center"),
-            "updated": ("Actualizado",  130, "center"),
+            "result":  ("Receta / Ingrediente", 200, "w"),
+            "profit":  ("Ganancia / Total",     110, "center"),
+            "level":   ("Niv. / Cant.",          55, "center"),
+            "lot":     ("Mejor Lote",            90, "center"),
+            "craft":   ("Costo/u",              110, "center"),
+            "sell":    ("Venta/u",              110, "center"),
+            "updated": ("Actualizado",          130, "center"),
         }
         for col, (head, width, anchor) in headings.items():
             self._tree.heading(col, text=head,
@@ -251,11 +329,14 @@ class CraftingUI:
         vsb.pack(side="right", fill="y")
         self._tree.pack(side="left", fill="both", expand=True)
 
-        self._tree.tag_configure("top",     foreground=C["orange"])
-        self._tree.tag_configure("profit",  foreground=C["green"])
-        self._tree.tag_configure("loss",    foreground=C["red"])
-        self._tree.tag_configure("neutral", foreground=C["dim"])
-        self._tree.tag_configure("missing", foreground=C["yellow"])
+        self._tree.tag_configure("top",       foreground=C["orange"])
+        self._tree.tag_configure("profit",    foreground=C["green"])
+        self._tree.tag_configure("loss",      foreground=C["red"])
+        self._tree.tag_configure("neutral",   foreground=C["dim"])
+        self._tree.tag_configure("missing",   foreground=C["yellow"])
+        self._tree.tag_configure("ing",       foreground=C["dim"])
+        self._tree.tag_configure("ing_buy",   foreground=C["dim"])
+        self._tree.tag_configure("ing_craft", foreground=C["accent"])
 
         self._tree.bind("<<TreeviewSelect>>", self._on_row_select)
         self._sort_state: dict = {}
@@ -275,37 +356,6 @@ class CraftingUI:
         items.sort(key=lambda x: _sort_key(x[0]), reverse=not asc)
         for idx, (_, iid) in enumerate(items):
             self._tree.move(iid, "", idx)
-
-    # ── Detail panel ──────────────────────────────────────────────────────────
-
-    def _build_detail_panel(self):
-        self._detail_frame = tk.Frame(self.root, bg=C["surface"])
-        # hidden by default
-
-        header = tk.Frame(self._detail_frame, bg=C["surface"])
-        header.pack(fill="x", padx=10, pady=(6, 2))
-        self._detail_title = tk.Label(header, text="", bg=C["surface"],
-                                       fg=C["accent"], font=("Segoe UI", 9, "bold"),
-                                       anchor="w")
-        self._detail_title.pack(side="left")
-
-        cols = ("name", "qty", "lot", "price", "total")
-        self._detail_tree = ttk.Treeview(
-            self._detail_frame, columns=cols, show="headings",
-            style="Craft.Treeview", selectmode="none", height=4,
-        )
-        for col, head, width, anchor in (
-            ("name",  "Ingrediente",  200, "w"),
-            ("qty",   "Cant.",         50, "center"),
-            ("lot",   "Lote compra",   90, "center"),
-            ("price", "Precio/u",     100, "e"),
-            ("total", "Total",        100, "e"),
-        ):
-            self._detail_tree.heading(col, text=head)
-            self._detail_tree.column(col, width=width, anchor=anchor,
-                                      minwidth=40, stretch=True)
-
-        self._detail_tree.pack(fill="x", padx=10, pady=(0, 6))
 
     # ── Summary bar ───────────────────────────────────────────────────────────
 
@@ -444,39 +494,40 @@ class CraftingUI:
         if "calibrate" in self._cbs:
             self._cbs["calibrate"]()
 
-    # ── Row selection → detail panel ─────────────────────────────────────────
+    # ── Row selection ─────────────────────────────────────────────────────────
+
+    def _show_copy_toast(self, name: str):
+        toast = tk.Label(
+            self.root, text=f"✓ Copiado: {name}",
+            bg=C["accent"], fg=C["bg"],
+            font=("Segoe UI", 9, "bold"), padx=12, pady=6,
+            relief="flat",
+        )
+        toast.place(relx=1.0, rely=1.0, anchor="se", x=-16, y=-16)
+        self.root.after(1800, toast.destroy)
 
     def _on_row_select(self, _event=None):
         sel = self._tree.selection()
         if not sel:
-            self._detail_frame.pack_forget()
             return
-        row = self._row_data.get(sel[0])
-        if not row:
-            self._detail_frame.pack_forget()
-            return
+        iid = sel[0]
 
-        ingredients = row.get("ingredients", [])
-        if not ingredients:
-            self._detail_frame.pack_forget()
-            return
+        # Toggle expand/collapse si tiene hijos
+        if self._tree.get_children(iid):
+            self._tree.item(iid, open=not self._tree.item(iid, "open"))
 
-        self._detail_title.config(text=f"Ingredientes — {row.get('result', '')}")
-        self._detail_tree.delete(*self._detail_tree.get_children())
+        # Copiar nombre al portapapeles
+        parent = self._tree.parent(iid)
+        if not parent:
+            row  = self._row_data.get(iid)
+            name = row.get("result", "") if row else ""
+        else:
+            name = self._tree.set(iid, "result").strip()
 
-        for ing in ingredients:
-            price   = ing.get("unit_price")
-            total   = ing.get("total")
-            buy_lot = ing.get("buy_lot") or "—"
-            self._detail_tree.insert("", "end", values=(
-                ing.get("name", ""),
-                ing.get("quantity", 1),
-                buy_lot,
-                _fmt(price) if price else "—",
-                _fmt(total) if total else "—",
-            ))
-        self._detail_frame.pack(fill="x", padx=12, pady=(2, 0),
-                                 before=self._summary_bar)
+        if name:
+            self.root.clipboard_clear()
+            self.root.clipboard_append(name)
+            self._show_copy_toast(name)
 
     # ── Filters ───────────────────────────────────────────────────────────────
 
@@ -520,7 +571,6 @@ class CraftingUI:
 
         self._tree.delete(*self._tree.get_children())
         self._row_data = {}
-        self._detail_frame.pack_forget()
 
         for row in rows:
             profit  = row.get("profit")
@@ -557,13 +607,46 @@ class CraftingUI:
             ), tags=(tag,))
             self._row_data[iid] = row
 
+            for ing in row.get("ingredients", []):
+                self._insert_ing(iid, ing)
+
+    def _insert_ing(self, parent_iid: str, ing: dict, depth: int = 0):
+        indent   = "      " * depth
+        ing_name = indent + ing.get("name", "")
+        qty          = ing.get("quantity", 1)
+        buy_lot      = ing.get("buy_lot") or "—"
+        price        = ing.get("unit_price")
+        total        = ing.get("total")
+        ing_updated  = ing.get("last_updated", "")
+        buy_or_craft = ing.get("buy_or_craft")
+
+        if buy_or_craft == "Craft":
+            price_str = f"{_fmt(price)} (⚒ Craft)" if price else "⚒ Craft"
+            ing_tag   = "ing_craft"
+        else:
+            price_str = f"{_fmt(price)} (🛒 Buy)" if price else "—"
+            ing_tag   = "ing_buy"
+
+        child_iid = self._tree.insert(parent_iid, "end", values=(
+            ing_name,
+            _fmt(total) if total else "—",
+            qty,
+            buy_lot,
+            price_str,
+            "",
+            _to_bogota(ing_updated),
+        ), tags=(ing_tag,))
+
+        for sub in ing.get("sub_ingredients", []):
+            self._insert_ing(child_iid, sub, depth + 1)
+
     # ── Public API ────────────────────────────────────────────────────────────
 
     def mode(self) -> str:
         return self._mode.get()
 
     def profession(self) -> str:
-        return self._prof_var.get()
+        return _prof_from_display(self._prof_var.get())
 
     def limit(self):
         lv = self._limit_var.get().strip()
@@ -571,6 +654,12 @@ class CraftingUI:
 
     def recipe_name(self) -> str:
         return self._recipe_var.get().strip()
+
+    def tolerance(self) -> float:
+        try:
+            return max(0.0, float(self._tolerance_var.get().strip()))
+        except ValueError:
+            return 5.0
 
     def set_status(self, text: str, color: str = None):
         self._status_var.set(text)
