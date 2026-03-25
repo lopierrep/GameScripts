@@ -313,7 +313,7 @@ class CraftingUI:
         headings = {
             "result":  ("Receta / Ingrediente", 200, "w"),
             "profit":  ("Ganancia / Total",     110, "center"),
-            "level":   ("Niv. / Cant.",          55, "center"),
+            "level":   ("Niv.",                  55, "center"),
             "lot":     ("Mejor Lote",            90, "center"),
             "craft":   ("Costo/u",              110, "center"),
             "sell":    ("Venta/u",              110, "center"),
