@@ -345,7 +345,11 @@ class CraftingUI:
                                  foreground=C["text"])
 
         self._tree.bind("<<TreeviewSelect>>", self._on_row_select)
+        self._tree.bind("<Button-1>",        self._on_tree_press)
+        self._tree.bind("<ButtonRelease-1>", self._on_tree_release)
         self._sort_state: dict = {}
+        self._pre_click_iid  = None
+        self._pre_click_open = None
 
     def _sort_col(self, col: str):
         asc = not self._sort_state.get(col, True)
@@ -512,15 +516,26 @@ class CraftingUI:
         toast.place(relx=1.0, rely=1.0, anchor="se", x=-16, y=-16)
         self.root.after(1800, toast.destroy)
 
+    def _on_tree_press(self, event):
+        """Guarda el estado open antes de que el nativo procese el clic."""
+        iid = self._tree.identify_row(event.y)
+        self._pre_click_iid  = iid or None
+        self._pre_click_open = self._tree.item(iid, "open") if iid else None
+
+    def _on_tree_release(self, event):
+        """Si el nativo no cambió el estado (clic en fila, no en triángulo), lo toglea."""
+        iid = self._tree.identify_row(event.y)
+        if (iid and iid == self._pre_click_iid
+                and self._tree.get_children(iid)
+                and self._tree.item(iid, "open") == self._pre_click_open):
+            self._tree.item(iid, open=not self._pre_click_open)
+        self._pre_click_iid = self._pre_click_open = None
+
     def _on_row_select(self, _event=None):
         sel = self._tree.selection()
         if not sel:
             return
         iid = sel[0]
-
-        # Toggle expand/collapse si tiene hijos
-        if self._tree.get_children(iid):
-            self._tree.item(iid, open=not self._tree.item(iid, "open"))
 
         is_recipe = not self._tree.parent(iid)
 
