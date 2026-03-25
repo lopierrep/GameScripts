@@ -1,405 +1,668 @@
 """
-Crafting - Ventana flotante minimal
-====================================
-Ventana pequeña siempre visible que reemplaza la consola:
-  - Selector de profesión / receta única
-  - Log de progreso con colores
-  - Botones INICIAR / DETENER
-  - Área de prompt que reemplaza los input() del backend
+Crafting - UI principal
+========================
+Capa de presentación pura: tabla de recetas, filtros, detalle de ingredientes,
+barra de resumen, prompt y log. Sin lógica de negocio.
 """
 
-import builtins
-import os
-import sys
-import threading
 import tkinter as tk
 from tkinter import ttk
-from pathlib import Path
+from datetime import datetime, timezone, timedelta
 
-if getattr(sys, "frozen", False):
-    ROOT_DIR = Path(sys.executable).parent
-else:
-    ROOT_DIR = Path(__file__).resolve().parent.parent
+from shared.colors import C
 
-DATA_DIR = ROOT_DIR / "data"
-sys.path.insert(0, str(ROOT_DIR))
+_BOGOTA = timezone(timedelta(hours=-5))
 
 
-# ── Redirección de stdout ─────────────────────────────────────────────────────
+def _to_bogota(utc_str: str) -> str:
+    """Convierte un timestamp ISO UTC a hora de Bogotá (UTC-5)."""
+    if not utc_str:
+        return ""
+    try:
+        dt = datetime.fromisoformat(utc_str.replace("Z", "+00:00"))
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt.astimezone(_BOGOTA).strftime("%Y-%m-%d %H:%M")
+    except ValueError:
+        return utc_str[:16]
 
-class _StdoutRedirect:
-    def __init__(self, callback):
-        self._cb = callback
 
-    def write(self, text):
-        if text:
-            self._cb(text)
+def _auto_tag(text: str) -> str:
+    u = text.upper()
+    if "[OK]"    in u: return "ok"
+    if "[SKIP]"  in u: return "skip"
+    if "[ERROR]" in u or "ERROR —" in u: return "error"
+    if "[DONE]"  in u: return "done"
+    if "[AVISO]" in u: return "warn"
+    if "[MANUAL]" in u: return "manual"
+    return "info"
 
-    def flush(self):
-        pass
 
+def _fmt(n) -> str:
+    """Formatea un número con puntos de miles."""
+    return f"{int(n):,}".replace(",", ".") if n is not None else "—"
 
-# ── Aplicación ────────────────────────────────────────────────────────────────
 
 class CraftingUI:
-    C = {
-        "bg":      "#1e1e2e",
-        "surface": "#2a2a3e",
-        "accent":  "#89b4fa",
-        "green":   "#a6e3a1",
-        "red":     "#f38ba8",
-        "yellow":  "#f9e2af",
-        "text":    "#cdd6f4",
-        "dim":     "#6c7086",
+    """
+    callbacks = {
+        "start":     fn(target: str, limit: int|None, mode: str) -> None,
+        "stop":      fn() -> None,
+        "export":    fn(profession: str) -> None,
+        "calibrate": fn() -> None,
     }
+    """
 
-    def __init__(self, root: tk.Tk):
+    def __init__(self, root: tk.Tk, callbacks: dict, professions: list):
         self.root = root
-        self._stop_flag   = False
-        self._input_event = threading.Event()
-        self._input_value = ""
-        self._worker: threading.Thread | None = None
-        self._orig_input  = builtins.input
-        self._drag_x = self._drag_y = 0
+        self._cbs = callbacks
+        self._all_rows: list = []
+        self._row_data: dict = {}
 
         self._setup_window()
-        self._build_ui()
-        self._load_professions()
-        self._intercept_io()
-
-    # ── Ventana ───────────────────────────────────────────────────────────────
-
-    def _setup_window(self):
-        self.root.title("Crafting")
-        self.root.geometry("330x580+20+20")
-        self.root.resizable(False, False)
-        self.root.attributes("-topmost", True)
-        self.root.configure(bg=self.C["bg"])
-        self.root.overrideredirect(True)
-
-    def _drag_start(self, e):
-        self._drag_x, self._drag_y = e.x, e.y
-
-    def _drag_move(self, e):
-        x = self.root.winfo_x() + e.x - self._drag_x
-        y = self.root.winfo_y() + e.y - self._drag_y
-        self.root.geometry(f"+{x}+{y}")
-
-    def _minimize(self):
-        self.root.overrideredirect(False)
-        self.root.iconify()
-        self.root.bind("<Map>", self._on_restore)
-
-    def _on_restore(self, _e):
-        self.root.overrideredirect(True)
-        self.root.unbind("<Map>")
-
-    # ── UI ────────────────────────────────────────────────────────────────────
-
-    def _build_ui(self):
-        C = self.C
-
-        # Barra de título
-        tb = tk.Frame(self.root, bg=C["surface"])
-        tb.pack(fill="x")
-        tb.bind("<ButtonPress-1>", self._drag_start)
-        tb.bind("<B1-Motion>",     self._drag_move)
-
-        lbl = tk.Label(tb, text="  Crafting", bg=C["surface"],
-                       fg=C["accent"], font=("Segoe UI", 10, "bold"))
-        lbl.pack(side="left", pady=5)
-        lbl.bind("<ButtonPress-1>", self._drag_start)
-        lbl.bind("<B1-Motion>",     self._drag_move)
-
-        tk.Button(tb, text="×", bg=C["surface"], fg=C["red"], relief="flat",
-                  font=("Segoe UI", 13, "bold"), bd=0,
-                  command=self.root.destroy).pack(side="right", padx=6)
-        tk.Button(tb, text="─", bg=C["surface"], fg=C["dim"], relief="flat",
-                  font=("Segoe UI", 10), bd=0,
-                  command=self._minimize).pack(side="right")
-
-        # Selector de modo
-        mf = tk.Frame(self.root, bg=C["bg"])
-        mf.pack(fill="x", padx=10, pady=(8, 2))
-        self._mode = tk.StringVar(value="profesion")
-        for val, lbl_text in (("profesion", "Profesión"), ("receta", "Receta única")):
-            tk.Radiobutton(mf, text=lbl_text, variable=self._mode, value=val,
-                           bg=C["bg"], fg=C["text"], selectcolor=C["surface"],
-                           activebackground=C["bg"], font=("Segoe UI", 9),
-                           command=self._on_mode_change).pack(side="left", padx=(0, 8))
-
-        # Frame profesión
-        self._prof_frame = tk.Frame(self.root, bg=C["bg"])
-        tk.Label(self._prof_frame, text="Profesión", bg=C["bg"],
-                 fg=C["dim"], font=("Segoe UI", 8)).pack(anchor="w")
-        self._prof_var = tk.StringVar()
-        self._prof_cb  = ttk.Combobox(self._prof_frame, textvariable=self._prof_var,
-                                       state="readonly", font=("Segoe UI", 9))
-        self._prof_cb.pack(fill="x")
-        lf = tk.Frame(self._prof_frame, bg=C["bg"])
-        lf.pack(fill="x", pady=(4, 0))
-        tk.Label(lf, text="Límite (opcional):", bg=C["bg"],
-                 fg=C["dim"], font=("Segoe UI", 8)).pack(side="left")
-        self._limit_var = tk.StringVar()
-        tk.Entry(lf, textvariable=self._limit_var, width=6,
-                 bg=C["surface"], fg=C["text"], insertbackground=C["text"],
-                 relief="flat", font=("Segoe UI", 9)).pack(side="left", padx=4)
-
-        # Frame receta única
-        self._recipe_frame = tk.Frame(self.root, bg=C["bg"])
-        tk.Label(self._recipe_frame, text="Nombre de receta", bg=C["bg"],
-                 fg=C["dim"], font=("Segoe UI", 8)).pack(anchor="w")
-        self._recipe_var = tk.StringVar()
-        tk.Entry(self._recipe_frame, textvariable=self._recipe_var,
-                 bg=C["surface"], fg=C["text"], insertbackground=C["text"],
-                 relief="flat", font=("Segoe UI", 9)).pack(fill="x")
-
-        # Estado
-        self._status_var = tk.StringVar(value="Listo")
-        tk.Label(self.root, textvariable=self._status_var, bg=C["bg"],
-                 fg=C["accent"], font=("Segoe UI", 9, "bold"),
-                 anchor="w").pack(fill="x", padx=10, pady=(6, 0))
-
-        # Barra de progreso
-        style = ttk.Style()
-        style.theme_use("clam")
-        style.configure("MT.Horizontal.TProgressbar",
-                         troughcolor=C["surface"], background=C["accent"],
-                         borderwidth=0, relief="flat")
-        self._prog_var = tk.DoubleVar(value=0)
-        ttk.Progressbar(self.root, variable=self._prog_var,
-                        style="MT.Horizontal.TProgressbar",
-                        maximum=100).pack(fill="x", padx=10, pady=2)
-        self._prog_lbl = tk.Label(self.root, text="", bg=C["bg"],
-                                   fg=C["dim"], font=("Segoe UI", 8))
-        self._prog_lbl.pack(anchor="w", padx=10)
-
-        # Log
-        log_outer = tk.Frame(self.root, bg=C["surface"])
-        log_outer.pack(fill="both", expand=True, padx=10, pady=4)
-        self._log = tk.Text(log_outer, bg=C["surface"], fg=C["text"],
-                             font=("Consolas", 8), relief="flat",
-                             state="disabled", wrap="word", height=11,
-                             selectbackground=C["accent"])
-        sb = tk.Scrollbar(log_outer, command=self._log.yview,
-                          bg=C["surface"], troughcolor=C["surface"])
-        self._log.configure(yscrollcommand=sb.set)
-        sb.pack(side="right", fill="y")
-        self._log.pack(side="left", fill="both", expand=True, padx=2, pady=2)
-        self._log.tag_config("ok",     foreground=C["green"])
-        self._log.tag_config("skip",   foreground=C["dim"])
-        self._log.tag_config("error",  foreground=C["red"])
-        self._log.tag_config("info",   foreground=C["accent"])
-        self._log.tag_config("warn",   foreground=C["yellow"])
-        self._log.tag_config("manual", foreground=C["yellow"])
-        self._log.tag_config("done",   foreground=C["green"])
-
-        # Botones principales
-        self._btn_frame = tk.Frame(self.root, bg=C["bg"])
-        self._btn_frame.pack(fill="x", padx=10, pady=(2, 10))
-        self._start_btn = tk.Button(
-            self._btn_frame, text="INICIAR", bg=C["green"], fg=C["bg"],
-            font=("Segoe UI", 10, "bold"), relief="flat", bd=0, pady=6,
-            command=self._start)
-        self._start_btn.pack(side="left", fill="x", expand=True, padx=(0, 4))
-        self._stop_btn = tk.Button(
-            self._btn_frame, text="DETENER", bg=C["surface"], fg=C["dim"],
-            font=("Segoe UI", 10, "bold"), relief="flat", bd=0, pady=6,
-            command=self._stop, state="disabled")
-        self._stop_btn.pack(side="right", fill="x", expand=True, padx=(4, 0))
-
-        # Área de prompt (oculta hasta que se necesite)
-        self._prompt_frame = tk.Frame(self.root, bg=C["surface"])
-        self._prompt_lbl = tk.Label(
-            self._prompt_frame, text="", bg=C["surface"],
-            fg=C["yellow"], font=("Segoe UI", 9),
-            wraplength=290, justify="left")
-        self._prompt_lbl.pack(padx=8, pady=(6, 2), anchor="w")
-        self._prompt_entry = tk.Entry(
-            self._prompt_frame, bg=C["bg"], fg=C["text"],
-            insertbackground=C["text"], relief="flat", font=("Segoe UI", 9))
-        tk.Button(
-            self._prompt_frame, text="CONTINUAR →", bg=C["accent"], fg=C["bg"],
-            font=("Segoe UI", 9, "bold"), relief="flat", bd=0, pady=4,
-            command=self._on_continue).pack(fill="x", padx=8, pady=(2, 6))
+        self._apply_styles()
+        self._build_titlebar()
+        self._build_toolbar(professions)
+        self._build_filterbar()
+        self._build_table()
+        self._build_detail_panel()
+        self._build_summary_bar()
+        self._build_prompt()
+        self._build_log()
 
         self._on_mode_change()
 
-    # ── Modo ──────────────────────────────────────────────────────────────────
+    # ── Window ────────────────────────────────────────────────────────────────
+
+    def _setup_window(self):
+        self.root.title("Crafting")
+        self.root.geometry("1020x720")
+        self.root.minsize(760, 540)
+        self.root.configure(bg=C["bg"])
+
+    def _apply_styles(self):
+        s = ttk.Style()
+        s.theme_use("clam")
+        s.configure(".", background=C["bg"], foreground=C["text"],
+                    fieldbackground=C["surface"], borderwidth=0)
+        s.configure("TCombobox", fieldbackground=C["surface"],
+                    foreground=C["text"], background=C["surface"],
+                    arrowcolor=C["dim"], selectbackground=C["surface"])
+        s.map("TCombobox",
+              fieldbackground=[("readonly", C["surface"])],
+              foreground=[("readonly", C["text"])])
+        s.configure("Craft.Horizontal.TProgressbar",
+                    troughcolor=C["surface"], background=C["accent"],
+                    borderwidth=0, relief="flat")
+        s.configure("Craft.Treeview",
+                    background=C["surface"], foreground=C["text"],
+                    fieldbackground=C["surface"], rowheight=22, borderwidth=0)
+        s.configure("Craft.Treeview.Heading",
+                    background=C["bg"], foreground=C["dim"],
+                    borderwidth=0, font=("Segoe UI", 9, "bold"), relief="flat")
+        s.map("Craft.Treeview",
+              background=[("selected", C["accent"])],
+              foreground=[("selected", C["bg"])])
+        s.configure("TScrollbar",
+                    background=C["surface"], troughcolor=C["bg"],
+                    arrowcolor=C["dim"], borderwidth=0, relief="flat")
+
+    # ── Title bar ─────────────────────────────────────────────────────────────
+
+    def _build_titlebar(self):
+        bar = tk.Frame(self.root, bg=C["surface"])
+        bar.pack(fill="x")
+        tk.Label(bar, text="  ⚒ Crafting", bg=C["surface"],
+                 fg=C["accent"], font=("Segoe UI", 12, "bold"),
+                 pady=8, padx=4).pack(side="left")
+        self._status_var = tk.StringVar(value="Listo")
+        self._status_lbl = tk.Label(bar, textvariable=self._status_var,
+                                    bg=C["surface"], fg=C["dim"],
+                                    font=("Segoe UI", 9), padx=8)
+        self._status_lbl.pack(side="left")
+
+    # ── Toolbar ───────────────────────────────────────────────────────────────
+
+    def _build_toolbar(self, professions: list):
+        ctrl = tk.Frame(self.root, bg=C["bg"])
+        ctrl.pack(fill="x", padx=12, pady=8)
+
+        mf = tk.Frame(ctrl, bg=C["bg"])
+        mf.pack(side="left")
+        self._mode = tk.StringVar(value="profesion")
+        for val, label in (("profesion", "Profesión"), ("receta", "Receta única")):
+            tk.Radiobutton(
+                mf, text=label, variable=self._mode, value=val,
+                bg=C["bg"], fg=C["text"], selectcolor=C["surface"],
+                activebackground=C["bg"], font=("Segoe UI", 9),
+                command=self._on_mode_change,
+            ).pack(side="left", padx=(0, 8))
+
+        tk.Frame(ctrl, bg=C["surface"], width=1).pack(side="left", fill="y", padx=10)
+
+        self._input_area = tk.Frame(ctrl, bg=C["bg"])
+        self._input_area.pack(side="left")
+
+        self._prof_frame = tk.Frame(self._input_area, bg=C["bg"])
+        tk.Label(self._prof_frame, text="Profesión:", bg=C["bg"],
+                 fg=C["dim"], font=("Segoe UI", 8)).pack(side="left", padx=(0, 4))
+        self._prof_var = tk.StringVar()
+        self._prof_cb = ttk.Combobox(
+            self._prof_frame, textvariable=self._prof_var,
+            values=professions, state="readonly",
+            font=("Segoe UI", 9), width=16,
+        )
+        if professions:
+            self._prof_var.set(professions[0])
+        self._prof_cb.pack(side="left")
+        tk.Label(self._prof_frame, text="  Límite:", bg=C["bg"],
+                 fg=C["dim"], font=("Segoe UI", 8)).pack(side="left")
+        self._limit_var = tk.StringVar()
+        tk.Entry(
+            self._prof_frame, textvariable=self._limit_var, width=5,
+            bg=C["surface"], fg=C["text"], insertbackground=C["text"],
+            relief="flat", font=("Segoe UI", 9),
+        ).pack(side="left", padx=(4, 0))
+
+        self._recipe_frame = tk.Frame(self._input_area, bg=C["bg"])
+        tk.Label(self._recipe_frame, text="Receta:", bg=C["bg"],
+                 fg=C["dim"], font=("Segoe UI", 8)).pack(side="left", padx=(0, 4))
+        self._recipe_var = tk.StringVar()
+        tk.Entry(
+            self._recipe_frame, textvariable=self._recipe_var, width=28,
+            bg=C["surface"], fg=C["text"], insertbackground=C["text"],
+            relief="flat", font=("Segoe UI", 9),
+        ).pack(side="left")
+
+        tk.Frame(ctrl, bg=C["surface"], width=1).pack(side="left", fill="y", padx=10)
+
+        def _btn(text, color, fg, cmd, state="normal"):
+            return tk.Button(ctrl, text=text, bg=color, fg=fg,
+                             font=("Segoe UI", 9, "bold"), relief="flat", bd=0,
+                             padx=10, pady=5, command=cmd, state=state)
+
+        self._start_btn = _btn("▶ Actualizar", C["green"],   C["bg"],  self._on_start)
+        self._start_btn.pack(side="left", padx=(0, 4))
+        self._stop_btn  = _btn("■ Detener",    C["surface"], C["dim"], self._on_stop, state="disabled")
+        self._stop_btn.pack(side="left", padx=(0, 4))
+        _btn("↑ Sheets",   C["surface"], C["accent"], self._on_export).pack(side="left", padx=(0, 4))
+        _btn("⚙ Calibrar", C["surface"], C["dim"],    self._on_calibrate).pack(side="left")
+
+    # ── Filter bar ────────────────────────────────────────────────────────────
+
+    def _build_filterbar(self):
+        ff = tk.Frame(self.root, bg=C["bg"])
+        ff.pack(fill="x", padx=12, pady=(0, 6))
+
+        tk.Label(ff, text="Ganancia mín:", bg=C["bg"], fg=C["dim"],
+                 font=("Segoe UI", 8)).pack(side="left")
+        self._filter_profit = tk.StringVar()
+        tk.Entry(ff, textvariable=self._filter_profit, width=10,
+                 bg=C["surface"], fg=C["text"], insertbackground=C["text"],
+                 relief="flat", font=("Segoe UI", 9)).pack(side="left", padx=(4, 14))
+
+        tk.Label(ff, text="Nivel:", bg=C["bg"], fg=C["dim"],
+                 font=("Segoe UI", 8)).pack(side="left")
+        self._filter_lvl_min = tk.StringVar()
+        self._filter_lvl_max = tk.StringVar()
+        tk.Entry(ff, textvariable=self._filter_lvl_min, width=5,
+                 bg=C["surface"], fg=C["text"], insertbackground=C["text"],
+                 relief="flat", font=("Segoe UI", 9)).pack(side="left", padx=(4, 2))
+        tk.Label(ff, text="–", bg=C["bg"], fg=C["dim"],
+                 font=("Segoe UI", 9)).pack(side="left")
+        tk.Entry(ff, textvariable=self._filter_lvl_max, width=5,
+                 bg=C["surface"], fg=C["text"], insertbackground=C["text"],
+                 relief="flat", font=("Segoe UI", 9)).pack(side="left", padx=(2, 14))
+
+        tk.Button(ff, text="Filtrar", bg=C["accent"], fg=C["bg"],
+                  font=("Segoe UI", 8, "bold"), relief="flat", bd=0,
+                  padx=8, pady=3, command=self._apply_filter).pack(side="left", padx=(0, 4))
+        tk.Button(ff, text="Limpiar", bg=C["surface"], fg=C["dim"],
+                  font=("Segoe UI", 8), relief="flat", bd=0,
+                  padx=8, pady=3, command=self._clear_filter).pack(side="left")
+
+    # ── Table ─────────────────────────────────────────────────────────────────
+
+    def _build_table(self):
+        self._table_frame = tk.Frame(self.root, bg=C["bg"])
+        self._table_frame.pack(fill="both", expand=True, padx=12, pady=(0, 2))
+
+        cols = ("result", "profit", "level", "lot", "craft", "sell", "updated")
+        self._tree = ttk.Treeview(
+            self._table_frame, columns=cols, show="headings",
+            style="Craft.Treeview", selectmode="browse",
+        )
+        headings = {
+            "result":  ("Receta",       180, "w"),
+            "profit":  ("Ganancia",     100, "center"),
+            "level":   ("Niv.",          45, "center"),
+            "lot":     ("Mejor Lote Venta", 120, "center"),
+            "craft":   ("Costo/u",      110, "center"),
+            "sell":    ("Venta/u",      110, "center"),
+            "updated": ("Actualizado",  130, "center"),
+        }
+        for col, (head, width, anchor) in headings.items():
+            self._tree.heading(col, text=head,
+                               command=lambda c=col: self._sort_col(c))
+            self._tree.column(col, width=width, minwidth=40, anchor=anchor, stretch=True)
+
+        vsb = ttk.Scrollbar(self._table_frame, orient="vertical", command=self._tree.yview)
+        self._tree.configure(yscrollcommand=vsb.set)
+        vsb.pack(side="right", fill="y")
+        self._tree.pack(side="left", fill="both", expand=True)
+
+        self._tree.tag_configure("top",     foreground=C["orange"])
+        self._tree.tag_configure("profit",  foreground=C["green"])
+        self._tree.tag_configure("loss",    foreground=C["red"])
+        self._tree.tag_configure("neutral", foreground=C["dim"])
+        self._tree.tag_configure("missing", foreground=C["yellow"])
+
+        self._tree.bind("<<TreeviewSelect>>", self._on_row_select)
+        self._sort_state: dict = {}
+
+    def _sort_col(self, col: str):
+        asc = not self._sort_state.get(col, True)
+        self._sort_state[col] = asc
+        items = [(self._tree.set(iid, col), iid) for iid in self._tree.get_children()]
+
+        def _sort_key(val):
+            v = val.replace(".", "").replace("+", "").replace("—", "-999999").strip()
+            try:
+                return (0, float(v))
+            except ValueError:
+                return (1, v.lower())
+
+        items.sort(key=lambda x: _sort_key(x[0]), reverse=not asc)
+        for idx, (_, iid) in enumerate(items):
+            self._tree.move(iid, "", idx)
+
+    # ── Detail panel ──────────────────────────────────────────────────────────
+
+    def _build_detail_panel(self):
+        self._detail_frame = tk.Frame(self.root, bg=C["surface"])
+        # hidden by default
+
+        header = tk.Frame(self._detail_frame, bg=C["surface"])
+        header.pack(fill="x", padx=10, pady=(6, 2))
+        self._detail_title = tk.Label(header, text="", bg=C["surface"],
+                                       fg=C["accent"], font=("Segoe UI", 9, "bold"),
+                                       anchor="w")
+        self._detail_title.pack(side="left")
+
+        cols = ("name", "qty", "lot", "price", "total")
+        self._detail_tree = ttk.Treeview(
+            self._detail_frame, columns=cols, show="headings",
+            style="Craft.Treeview", selectmode="none", height=4,
+        )
+        for col, head, width, anchor in (
+            ("name",  "Ingrediente",  200, "w"),
+            ("qty",   "Cant.",         50, "center"),
+            ("lot",   "Lote compra",   90, "center"),
+            ("price", "Precio/u",     100, "e"),
+            ("total", "Total",        100, "e"),
+        ):
+            self._detail_tree.heading(col, text=head)
+            self._detail_tree.column(col, width=width, anchor=anchor,
+                                      minwidth=40, stretch=True)
+
+        self._detail_tree.pack(fill="x", padx=10, pady=(0, 6))
+
+    # ── Summary bar ───────────────────────────────────────────────────────────
+
+    def _build_summary_bar(self):
+        self._summary_bar = tk.Frame(self.root, bg=C["surface"])
+        self._summary_bar.pack(fill="x")
+
+        self._sum_total      = tk.Label(self._summary_bar, text="", bg=C["surface"],
+                                         fg=C["dim"],    font=("Segoe UI", 8), padx=10, pady=4)
+        self._sum_profitable = tk.Label(self._summary_bar, text="", bg=C["surface"],
+                                         fg=C["green"],  font=("Segoe UI", 8))
+        self._sum_avg        = tk.Label(self._summary_bar, text="", bg=C["surface"],
+                                         fg=C["dim"],    font=("Segoe UI", 8), padx=10)
+        self._sum_top        = tk.Label(self._summary_bar, text="", bg=C["surface"],
+                                         fg=C["orange"], font=("Segoe UI", 8))
+
+        for w in (self._sum_total, self._sum_profitable, self._sum_avg, self._sum_top):
+            w.pack(side="left")
+
+    # ── Prompt frame ──────────────────────────────────────────────────────────
+
+    def _build_prompt(self):
+        self._prompt_frame = tk.Frame(self.root, bg=C["surface"])
+
+        self._prompt_lbl = tk.Label(
+            self._prompt_frame, text="", bg=C["surface"],
+            fg=C["yellow"], font=("Segoe UI", 10, "bold"),
+            wraplength=800, justify="left",
+        )
+        self._prompt_lbl.pack(padx=12, pady=(8, 4), anchor="w")
+
+        self._price_fields_frame = tk.Frame(self._prompt_frame, bg=C["surface"])
+        self._price_entries: dict = {}
+        for label, key in (("x1", "unit_price_x1"), ("x10", "unit_price_x10"),
+                            ("x100", "unit_price_x100"), ("x1000", "unit_price_x1000")):
+            col = tk.Frame(self._price_fields_frame, bg=C["surface"])
+            col.pack(side="left", padx=10)
+            tk.Label(col, text=label, bg=C["surface"], fg=C["dim"],
+                     font=("Segoe UI", 8)).pack()
+            e = tk.Entry(col, width=12, bg=C["bg"], fg=C["text"],
+                         insertbackground=C["text"], relief="flat",
+                         font=("Segoe UI", 9))
+            e.pack()
+            self._price_entries[key] = e
+
+        btn_row = tk.Frame(self._prompt_frame, bg=C["surface"])
+        btn_row.pack(fill="x", padx=12, pady=(4, 8))
+        self._prompt_confirm_btn = tk.Button(
+            btn_row, text="CONTINUAR →",
+            bg=C["accent"], fg=C["bg"],
+            font=("Segoe UI", 10, "bold"), relief="flat", bd=0,
+            padx=16, pady=6, command=self._on_prompt_confirm,
+        )
+        self._prompt_confirm_btn.pack(side="left")
+
+        self._prompt_confirm_cb = None
+        self._prompt_mode = "confirm"
+
+    def _on_prompt_confirm(self):
+        cb = self._prompt_confirm_cb
+        if self._prompt_mode == "price":
+            prices = {}
+            for key, entry in self._price_entries.items():
+                val = entry.get().strip()
+                prices[key] = int(val) if val.isdigit() else 0
+            self.hide_prompt()
+            if cb:
+                cb(prices)
+        else:
+            self.hide_prompt()
+            if cb:
+                cb()
+
+    # ── Log ───────────────────────────────────────────────────────────────────
+
+    def _build_log(self):
+        self._log_outer = tk.Frame(self.root, bg=C["surface"])
+        self._log_outer.pack(fill="x", padx=12, pady=(0, 8))
+
+        self._log = tk.Text(
+            self._log_outer, bg=C["surface"], fg=C["text"],
+            font=("Consolas", 8), relief="flat",
+            state="disabled", wrap="word", height=6,
+            selectbackground=C["accent"],
+        )
+        sb = ttk.Scrollbar(self._log_outer, orient="vertical", command=self._log.yview)
+        self._log.configure(yscrollcommand=sb.set)
+        sb.pack(side="right", fill="y")
+        self._log.pack(side="left", fill="both", expand=True, padx=2, pady=2)
+
+        for tag, color in (
+            ("ok",     C["green"]),
+            ("skip",   C["dim"]),
+            ("error",  C["red"]),
+            ("info",   C["accent"]),
+            ("warn",   C["yellow"]),
+            ("manual", C["yellow"]),
+            ("done",   C["green"]),
+        ):
+            self._log.tag_config(tag, foreground=color)
+
+    # ── Mode toggle ───────────────────────────────────────────────────────────
 
     def _on_mode_change(self):
         if self._mode.get() == "profesion":
             self._recipe_frame.pack_forget()
-            self._prof_frame.pack(fill="x", padx=10, pady=2)
+            self._prof_frame.pack(side="left")
         else:
             self._prof_frame.pack_forget()
-            self._recipe_frame.pack(fill="x", padx=10, pady=2)
+            self._recipe_frame.pack(side="left")
 
-    # ── Profesiones ───────────────────────────────────────────────────────────
+    # ── Button handlers ───────────────────────────────────────────────────────
 
-    def _load_professions(self):
-        profs = sorted(
-            f[len("recipes_"):-len(".json")]
-            for f in os.listdir(DATA_DIR)
-            if f.startswith("recipes_") and f.endswith(".json")
-        )
-        self._prof_cb["values"] = profs
-        if profs:
-            self._prof_var.set(profs[0])
-
-    # ── Interceptar I/O ───────────────────────────────────────────────────────
-
-    def _intercept_io(self):
-        sys.stdout    = _StdoutRedirect(self._log_from_thread)
-        sys.stderr    = _StdoutRedirect(self._log_from_thread)
-        builtins.input = self._ui_input
-
-    def restore_io(self):
-        sys.stdout    = sys.__stdout__
-        sys.stderr    = sys.__stderr__
-        builtins.input = self._orig_input
-
-    def _ui_input(self, prompt=""):
-        """Reemplaza input(): muestra el prompt en la UI y bloquea hasta que el usuario pulse CONTINUAR."""
-        needs_entry = any(kw in prompt for kw in ("Precio", "precio", "Ingresa"))
-        self.root.after(0, self._show_prompt, prompt.strip(), needs_entry)
-        self._input_event.clear()
-        self._input_event.wait()
-        return self._input_value
-
-    def _show_prompt(self, text: str, needs_entry: bool):
-        self._prompt_lbl.config(text=text)
-        if needs_entry:
-            self._prompt_entry.delete(0, "end")
-            self._prompt_entry.pack(fill="x", padx=8, pady=(0, 2))
-            self._prompt_entry.focus()
+    def _on_start(self):
+        if "start" not in self._cbs:
+            return
+        mode = self._mode.get()
+        if mode == "profesion":
+            target = self._prof_var.get()
+            lv = self._limit_var.get().strip()
+            limit = int(lv) if lv.isdigit() else None
         else:
-            self._prompt_entry.pack_forget()
-        self._prompt_frame.pack(fill="x", padx=10, pady=2,
-                                 before=self._btn_frame)
+            target = self._recipe_var.get().strip()
+            limit = None
+        self._cbs["start"](target, limit, mode)
 
-    def _on_continue(self):
-        self._input_value = self._prompt_entry.get().strip()
-        self._prompt_frame.pack_forget()
-        self._input_event.set()
+    def _on_stop(self):
+        if "stop" in self._cbs:
+            self._cbs["stop"]()
 
-    # ── Log ───────────────────────────────────────────────────────────────────
+    def _on_export(self):
+        if "export" in self._cbs:
+            self._cbs["export"](self._prof_var.get())
 
-    def _log_from_thread(self, text: str):
-        self.root.after(0, self._append_log, text)
+    def _on_calibrate(self):
+        if "calibrate" in self._cbs:
+            self._cbs["calibrate"]()
 
-    def _append_log(self, raw: str):
+    # ── Row selection → detail panel ─────────────────────────────────────────
+
+    def _on_row_select(self, _event=None):
+        sel = self._tree.selection()
+        if not sel:
+            self._detail_frame.pack_forget()
+            return
+        row = self._row_data.get(sel[0])
+        if not row:
+            self._detail_frame.pack_forget()
+            return
+
+        ingredients = row.get("ingredients", [])
+        if not ingredients:
+            self._detail_frame.pack_forget()
+            return
+
+        self._detail_title.config(text=f"Ingredientes — {row.get('result', '')}")
+        self._detail_tree.delete(*self._detail_tree.get_children())
+
+        for ing in ingredients:
+            price   = ing.get("unit_price")
+            total   = ing.get("total")
+            buy_lot = ing.get("buy_lot") or "—"
+            self._detail_tree.insert("", "end", values=(
+                ing.get("name", ""),
+                ing.get("quantity", 1),
+                buy_lot,
+                _fmt(price) if price else "—",
+                _fmt(total) if total else "—",
+            ))
+        self._detail_frame.pack(fill="x", padx=12, pady=(2, 0),
+                                 before=self._summary_bar)
+
+    # ── Filters ───────────────────────────────────────────────────────────────
+
+    def _apply_filter(self):
+        rows = self._all_rows
+
+        pv = self._filter_profit.get().strip().replace(".", "").replace(",", "")
+        if pv.lstrip("-").isdigit():
+            min_p = int(pv)
+            rows = [r for r in rows if (r.get("profit") or 0) >= min_p]
+
+        lmin = self._filter_lvl_min.get().strip()
+        lmax = self._filter_lvl_max.get().strip()
+        if lmin.isdigit():
+            rows = [r for r in rows
+                    if str(r.get("level", "0")).isdigit()
+                    and int(r.get("level", 0)) >= int(lmin)]
+        if lmax.isdigit():
+            rows = [r for r in rows
+                    if str(r.get("level", "999")).isdigit()
+                    and int(r.get("level", 999)) <= int(lmax)]
+
+        self._populate_tree(rows)
+
+    def _clear_filter(self):
+        self._filter_profit.set("")
+        self._filter_lvl_min.set("")
+        self._filter_lvl_max.set("")
+        self._populate_tree(self._all_rows)
+
+    def _populate_tree(self, rows: list):
+        # Ordenar de mayor a menor ganancia por defecto
+        rows = sorted(rows, key=lambda r: (r.get("profit") or float("-inf")), reverse=True)
+
+        # Top 3 by profit for special highlight
+        profitable = sorted(
+            [r for r in rows if (r.get("profit") or 0) > 0],
+            key=lambda r: r["profit"], reverse=True,
+        )
+        top_names = {r["result"] for r in profitable[:3]}
+
+        self._tree.delete(*self._tree.get_children())
+        self._row_data = {}
+        self._detail_frame.pack_forget()
+
+        for row in rows:
+            profit  = row.get("profit")
+            craft   = row.get("craft_cost")
+            sell    = row.get("sell_price")
+            level   = row.get("level", "")
+            lot     = row.get("best_lot", "—")
+            updated = row.get("updated", "")
+            name    = row.get("result", "")
+
+            craft_str  = _fmt(craft)
+            sell_str   = _fmt(sell)
+            if profit is None:
+                profit_str = "—"
+            elif profit >= 0:
+                profit_str = f"+{_fmt(profit)}"
+            else:
+                profit_str = f"-{_fmt(abs(profit))}"
+
+            if profit is None:
+                tag = "missing"
+            elif name in top_names:
+                tag = "top"
+            elif profit > 0:
+                tag = "profit"
+            elif profit < 0:
+                tag = "loss"
+            else:
+                tag = "neutral"
+
+            iid = self._tree.insert("", "end", values=(
+                name, profit_str, level, lot, craft_str, sell_str,
+                _to_bogota(updated),
+            ), tags=(tag,))
+            self._row_data[iid] = row
+
+    # ── Public API ────────────────────────────────────────────────────────────
+
+    def mode(self) -> str:
+        return self._mode.get()
+
+    def profession(self) -> str:
+        return self._prof_var.get()
+
+    def limit(self):
+        lv = self._limit_var.get().strip()
+        return int(lv) if lv.isdigit() else None
+
+    def recipe_name(self) -> str:
+        return self._recipe_var.get().strip()
+
+    def set_status(self, text: str, color: str = None):
+        self._status_var.set(text)
+        if color:
+            self._status_lbl.config(fg=color)
+
+    def set_busy(self, busy: bool):
+        if busy:
+            self._start_btn.config(state="disabled", bg=C["dim"])
+            self._stop_btn.config(state="normal", bg=C["red"], fg=C["bg"])
+        else:
+            self._start_btn.config(state="normal", bg=C["green"])
+            self._stop_btn.config(state="disabled", bg=C["surface"], fg=C["dim"])
+
+    def log(self, text: str, tag: str = None):
+        """Thread-safe."""
+        self.root.after(0, self._append_log, text, tag)
+
+    def _append_log(self, raw: str, tag: str = None):
         if "\r" in raw and not raw.startswith("\n"):
             parts = raw.split("\r")
-            text  = parts[-1].strip()
+            text = parts[-1].strip()
             if not text:
                 return
             self._log.configure(state="normal")
             idx = self._log.index("end-2l linestart")
             self._log.delete(idx, "end-1c")
-            self._log.insert("end", text + "\n", self._tag(text))
+            self._log.insert("end", text + "\n", tag or _auto_tag(text))
             self._log.see("end")
             self._log.configure(state="disabled")
             return
-
         text = raw.strip()
         if not text:
             return
         self._log.configure(state="normal")
-        self._log.insert("end", text + "\n", self._tag(text))
+        self._log.insert("end", text + "\n", tag or _auto_tag(text))
         self._log.see("end")
         self._log.configure(state="disabled")
 
-    @staticmethod
-    def _tag(text: str) -> str:
-        u = text.upper()
-        if "[OK]"    in u: return "ok"
-        if "[SKIP]"  in u: return "skip"
-        if "[ERROR]" in u or "ERROR —" in u: return "error"
-        if "[DONE]"  in u: return "done"
-        if "[AVISO]" in u: return "warn"
-        if "[MANUAL]" in u: return "manual"
-        return "info"
-
-    def _set_status(self, text: str):
-        self._status_var.set(text)
-
-    # ── Iniciar / Detener ─────────────────────────────────────────────────────
-
-    def _start(self):
-        self._stop_flag = False
+    def clear_log(self):
         self._log.configure(state="normal")
         self._log.delete("1.0", "end")
         self._log.configure(state="disabled")
-        self._prog_var.set(0)
-        self._prog_lbl.config(text="")
-        self._start_btn.config(state="disabled", bg=self.C["dim"])
-        self._stop_btn.config(state="normal", bg=self.C["red"], fg=self.C["bg"])
 
-        if self._mode.get() == "profesion":
-            prof  = self._prof_var.get()
-            ls    = self._limit_var.get().strip()
-            limit = int(ls) if ls.isdigit() else None
-            target = lambda: self._run_profession(prof, limit)
+    def refresh_table(self, rows: list):
+        """
+        rows: list de dicts con keys:
+          result, level, best_lot, craft_cost, sell_price, profit,
+          updated, ingredients: [{name, quantity, unit_price, total}]
+        """
+        self._all_rows = rows
+        self._apply_filter()
+        self._update_summary(rows)
+
+    def _update_summary(self, rows: list):
+        total      = len(rows)
+        profitable = [r for r in rows if (r.get("profit") or 0) > 0]
+        n_prof     = len(profitable)
+        avg = sum(r["profit"] for r in profitable) / n_prof if profitable else 0
+        top = max(profitable, key=lambda r: r["profit"]) if profitable else None
+
+        self._sum_total.config(text=f"Total: {total}")
+        self._sum_profitable.config(text=f"  Rentables: {n_prof}")
+        self._sum_avg.config(text=f"  Media: +{_fmt(avg)}" if avg else "  Media: —")
+        if top:
+            self._sum_top.config(
+                text=f"  ★ {top['result']}  (+{_fmt(top['profit'])})"
+            )
         else:
-            recipe = self._recipe_var.get().strip()
-            target = lambda: self._run_single_recipe(recipe)
+            self._sum_top.config(text="")
 
-        self._worker = threading.Thread(target=target, daemon=True)
-        self._worker.start()
+    def show_confirm(self, text: str, on_confirm):
+        self._prompt_mode = "confirm"
+        self._prompt_confirm_cb = on_confirm
+        self._prompt_lbl.config(text=text)
+        self._price_fields_frame.pack_forget()
+        self._prompt_confirm_btn.config(text="CONTINUAR →")
+        self._prompt_frame.pack(fill="x", padx=12, pady=(0, 4),
+                                 before=self._log_outer)
 
-    def _stop(self):
-        self._stop_flag = True
-        try:
-            import main as m
-            m.stop_requested = True
-        except Exception:
-            pass
-        self._input_value = ""
-        self._input_event.set()
+    def show_price_prompt(self, name: str, is_selling: bool, on_confirm):
+        kind = "venta" if is_selling else "ingrediente"
+        self._prompt_mode = "price"
+        self._prompt_confirm_cb = on_confirm
+        self._prompt_lbl.config(text=f"Precios manuales de '{name}' ({kind}):")
+        for e in self._price_entries.values():
+            e.delete(0, "end")
+        self._price_fields_frame.pack(padx=12, pady=(0, 4))
+        self._prompt_confirm_btn.config(text="CONFIRMAR ✓")
+        list(self._price_entries.values())[0].focus()
+        self._prompt_frame.pack(fill="x", padx=12, pady=(0, 4),
+                                 before=self._log_outer)
+
+    def hide_prompt(self):
         self._prompt_frame.pack_forget()
-        self.root.after(0, self._set_status, "Deteniendo…")
-
-    def _on_done(self):
-        self._start_btn.config(state="normal", bg=self.C["green"])
-        self._stop_btn.config(state="disabled", bg=self.C["surface"],
-                               fg=self.C["dim"])
-        self._prompt_frame.pack_forget()
-        self._set_status("Listo")
-
-    def _run_profession(self, profession: str, limit):
-        try:
-            self.root.after(0, self._set_status, f"Actualizando {profession}…")
-            import main as m
-            m.stop_requested = False
-            m.update_profession(profession, limit)
-        except Exception as e:
-            self._log_from_thread(f"[ERROR] {e}")
-        finally:
-            self.root.after(0, self._on_done)
-
-    def _run_single_recipe(self, recipe_name: str):
-        try:
-            self.root.after(0, self._set_status, f"Actualizando '{recipe_name}'…")
-            import main as m
-            m.stop_requested = False
-            m.update_single_recipe(recipe_name)
-        except Exception as e:
-            self._log_from_thread(f"[ERROR] {e}")
-        finally:
-            self.root.after(0, self._on_done)
-
-
-# ── Entrada ───────────────────────────────────────────────────────────────────
-
-def main():
-    root = tk.Tk()
-    app  = CraftingUI(root)
-    try:
-        root.mainloop()
-    finally:
-        app.restore_io()
-
-
-if __name__ == "__main__":
-    main()

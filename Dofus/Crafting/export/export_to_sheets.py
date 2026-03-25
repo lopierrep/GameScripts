@@ -38,6 +38,7 @@ from config.config import (
     SIZES,
     _load_omitted_items,
     _load_omitted_categories,
+    net_sell_price,
 )
 
 
@@ -242,7 +243,7 @@ def load_recipes_by_profession() -> dict[str, list[dict]]:
             if all(v == 0 for v in costos) and all(v == 0 for v in precios):
                 continue
 
-            ganancias = [p - c if c > 0 and p > 0 else 0 for c, p in zip(costos, precios)]
+            ganancias = [net_sell_price(p) - c if c > 0 and p > 0 else 0 for c, p in zip(costos, precios)]
 
             raw_ings = []
             for ing in recipe.get("ingredients", []):
@@ -486,37 +487,50 @@ _WHITE    = {"red": 1.00, "green": 1.00, "blue": 1.00}
 _YELLOW   = {"red": 1.00, "green": 0.95, "blue": 0.60}
 _GREEN_LO = {"red": 0.85, "green": 0.96, "blue": 0.85}
 _GREEN_HI = {"red": 0.50, "green": 0.84, "blue": 0.55}
+_GRAY     = {"red": 0.88, "green": 0.88, "blue": 0.88}   # sin precio
+_GOLD     = {"red": 1.00, "green": 0.84, "blue": 0.20}   # mejor profit de la fila
 
 GANANCIA_COLS = (4, 7, 10, 13)   # índices 0-based de las columnas de ganancia
+CRAFT_COLS    = (2, 5, 8, 11)    # índices 0-based de las columnas de coste
+SELL_COLS     = (3, 6, 9, 12)    # índices 0-based de las columnas de venta
 
 
 def _lerp_color(a: dict, b: dict, t: float) -> dict:
     return {k: a[k] + (b[k] - a[k]) * t for k in ("red", "green", "blue")}
 
 
-def _row_ganancia_colors(ganancias: list) -> list[dict]:
-    """Devuelve una lista de colores por ranking dentro de la fila."""
+def _row_ganancia_colors(ganancias: list, costos: list, precios: list) -> list[dict]:
+    """Devuelve colores para las celdas de ganancia de una fila.
+    - Gris  → sin precio (craft o sell es 0)
+    - Dorado → profit más alto de la fila
+    - Gradiente verde → resto de profits positivos
+    - Rojo → pérdida
+    """
     positives = sorted(set(g for g in ganancias if g > 0))
+    max_g = max(positives) if positives else None
     n = len(positives)
     colors = []
-    for value in ganancias:
-        if value < 0:
+    for i, value in enumerate(ganancias):
+        if costos[i] == 0 or precios[i] == 0:
+            colors.append(_GRAY)
+        elif value < 0:
             colors.append(_RED)
         elif value == 0:
             colors.append(_YELLOW)
-        elif n == 0:
-            colors.append(_WHITE)
+        elif value == max_g:
+            colors.append(_GOLD)
+        elif n <= 1:
+            colors.append(_GREEN_HI)
         else:
-            rank = positives.index(value)          # 0 = menor, n-1 = mayor
-            t    = rank / (n - 1) if n > 1 else 1.0
+            rank = positives.index(value)
+            t    = rank / (n - 1)
             colors.append(_lerp_color(_GREEN_LO, _GREEN_HI, t))
     return colors
 
 
 def _ganancia_color_requests(sheet_id: int, rows: list[dict]) -> list[dict]:
     """Un updateCells por columna de ganancia con color calculado por ranking fila a fila."""
-    # Calcula los colores una sola vez por fila, solo con los valores de ganancia
-    row_colors = [_row_ganancia_colors(r["ganancias"]) for r in rows]
+    row_colors = [_row_ganancia_colors(r["ganancias"], r["costos"], r["precios"]) for r in rows]
 
     return [
         {
@@ -537,6 +551,33 @@ def _ganancia_color_requests(sheet_id: int, rows: list[dict]) -> list[dict]:
         }
         for col_offset, col_idx in enumerate(GANANCIA_COLS)
     ]
+
+
+def _no_price_color_requests(sheet_id: int, rows: list[dict]) -> list[dict]:
+    """Aplica fondo gris a celdas de Craft y Sell sin precio (valor 0)."""
+    requests = []
+    for col_set, val_key in ((CRAFT_COLS, "costos"), (SELL_COLS, "precios")):
+        for lot_idx, col_idx in enumerate(col_set):
+            cells = [
+                {"userEnteredFormat": {
+                    "backgroundColor": _GRAY if row[val_key][lot_idx] == 0 else _WHITE
+                }}
+                for row in rows
+            ]
+            requests.append({
+                "updateCells": {
+                    "range": {
+                        "sheetId": sheet_id,
+                        "startRowIndex": 1,
+                        "endRowIndex": 1 + len(rows),
+                        "startColumnIndex": col_idx,
+                        "endColumnIndex": col_idx + 1,
+                    },
+                    "rows": [{"values": [c]} for c in cells],
+                    "fields": "userEnteredFormat.backgroundColor",
+                }
+            })
+    return requests
 
 
 def _col_width(sheet_rows: list[list], col_idx: int, px_per_char: int = 7, padding: int = 10) -> int:

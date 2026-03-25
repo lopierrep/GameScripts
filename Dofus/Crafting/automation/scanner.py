@@ -10,6 +10,7 @@ from config.config import DELAY_BETWEEN_ITEMS, _load_manual_price_items
 from core.prices import _ingredient_is_fresh, save_ingredient_price
 from core.recipes import search_and_save_selling
 from shared.market.search_item_prices import search_item, read_prices
+from shared.market.scanner import MarketScanner
 
 
 # ── Helpers de precio manual ──────────────────────────────────────────────────
@@ -79,13 +80,16 @@ def search_market_batch(
     item_lookup: dict,
     result_file_map: dict[str, str] | None = None,
     stop_flag: list[bool] | None = None,
+    on_confirm=None,
+    manual_price_fn=None,
 ) -> tuple[list[str], list[str]]:
     """Busca precios de results e ingredients en el mercadillo indicado.
-    stop_flag es una lista de un bool mutable [False] para permitir detención.
+    stop_flag  : lista de un bool mutable [False] para detención.
+    on_confirm : fn(market_name) — bloquea hasta que el usuario confirme estar en el mercadillo.
+                 Si es None usa input() como fallback.
+    manual_price_fn : fn(name, is_selling) -> dict|None — precios manuales.
+                      Si es None usa input() como fallback.
     Devuelve (missing_results, missing_ingredients)."""
-
-    def is_stopped() -> bool:
-        return stop_flag is not None and stop_flag[0]
 
     manual_items       = _load_manual_price_items()
     auto_results       = [n for n in results     if n not in manual_items]
@@ -93,54 +97,49 @@ def search_market_batch(
     auto_ingredients   = [n for n in ingredients if n not in manual_items]
     manual_ingredients = [n for n in ingredients if n in manual_items]
 
-    total = len(auto_results) + len(auto_ingredients)
     missing_results     = []
     missing_ingredients = []
 
-    if total:
-        print(f"\n── {market_name} ({total} items) ──")
-        input(f"  Ve al mercadillo de {market_name} y pulsa ENTER para continuar…")
-        print()
+    auto_items = auto_results + auto_ingredients
 
-    idx = 0
-    for name in auto_results:
-        if is_stopped():
-            missing_results.extend(auto_results[idx:])
-            return missing_results, missing_ingredients + manual_ingredients
-        idx += 1
-        print(f"[{idx}/{total}] [venta] {name} …", end=" ", flush=True)
-        prices = {}
-        target_file = (result_file_map or {}).get(name, recipe_file)
-        try:
-            prices = search_and_save_selling(target_file, name)
-            if not _price_found(prices):
+    if auto_items:
+        is_stopped   = lambda: bool(stop_flag and stop_flag[0])
+        results_set  = set(auto_results)
+
+        def _process(name: str) -> dict:
+            if name in results_set:
+                target_file = (result_file_map or {}).get(name, recipe_file)
+                return search_and_save_selling(target_file, name)
+            return search_and_save_ingredient(name, markets, item_lookup)
+
+        def _press_esc():
+            keyboard.press_and_release("esc")
+            time.sleep(0.15)
+
+        def _market_switch(name: str, n: int) -> bool:
+            print(f"\n── {name} ({n} items) ──")
+            if on_confirm:
+                on_confirm(name)
+            else:
+                input(f"  Ve al mercadillo de {name} y pulsa ENTER para continuar…")
+            print()
+            return True
+
+        scanner = MarketScanner(press_esc=_press_esc, delay=DELAY_BETWEEN_ITEMS, countdown=0)
+        scan_results = scanner.scan(
+            items_by_market  = {market_name: auto_items},
+            is_stopped       = is_stopped,
+            on_progress      = print,
+            on_market_switch = _market_switch,
+            process_item     = _process,
+        )
+
+        for name in auto_results:
+            if name not in scan_results or not _price_found(scan_results[name]):
                 missing_results.append(name)
-        except Exception as e:
-            print(f"ERROR — {e}")
-            missing_results.append(name)
-        if not prices.get("_skipped"):
-            keyboard.press_and_release("esc")
-            time.sleep(0.15)
-        time.sleep(DELAY_BETWEEN_ITEMS)
-
-    for name in auto_ingredients:
-        if is_stopped():
-            missing_ingredients.extend(auto_ingredients[idx - len(results):])
-            return missing_results, missing_ingredients + manual_ingredients
-        idx += 1
-        print(f"[{idx}/{total}] [ingrediente] {name} …", end=" ", flush=True)
-        prices = {}
-        try:
-            prices = search_and_save_ingredient(name, markets, item_lookup)
-            if not _price_found(prices):
+        for name in auto_ingredients:
+            if name not in scan_results or not _price_found(scan_results[name]):
                 missing_ingredients.append(name)
-        except Exception as e:
-            print(f"ERROR — {e}")
-            missing_ingredients.append(name)
-        if not prices.get("_skipped"):
-            keyboard.press_and_release("esc")
-            time.sleep(0.15)
-        time.sleep(DELAY_BETWEEN_ITEMS)
 
     # Items con precio manual
     for name in manual_ingredients:
@@ -148,7 +147,13 @@ def search_market_batch(
             print(f"[SKIP] {name} — actualizado hace menos de 1h")
             continue
         print(f"\n[MANUAL] {name}")
-        prices = ask_manual_prices(name)
+        if manual_price_fn:
+            prices = manual_price_fn(name, False)
+            if prices is None:
+                missing_ingredients.append(name)
+                continue
+        else:
+            prices = ask_manual_prices(name)
         try:
             save_ingredient_price(name, prices, markets, item_lookup)
         except Exception as e:
@@ -163,7 +168,13 @@ def search_market_batch(
         if recipe_data and _selling_is_fresh(recipe_data):
             print(f"[SKIP] {name} — actualizado hace menos de 1h")
             continue
-        prices = ask_manual_selling_prices(name)
+        if manual_price_fn:
+            prices = manual_price_fn(name, True)
+            if prices is None:
+                missing_results.append(name)
+                continue
+        else:
+            prices = ask_manual_selling_prices(name)
         try:
             from core.recipes import save_selling_price
             save_selling_price(target_file, name, prices)

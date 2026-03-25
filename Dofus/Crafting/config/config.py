@@ -32,6 +32,26 @@ DELAY_BETWEEN_ITEMS = 0.3
 DOFUSDB_URL         = "https://api.dofusdb.fr"
 UNKNOWN_KEY         = "Sin categoría"
 
+# ── Impuestos de mercadillo ───────────────────────────────────────────────────
+# Impuesto de listing: 2% del precio de venta.
+# Coste de modificar precio: 1% del nuevo precio.
+# Asumimos 5 bajadas de 10k antes de vender.
+#
+# Net = (P - 50) - 0.02·P - 0.01·[(P-10)+(P-20)+(P-30)+(P-40)+(P-50)]
+#     = (P - 50) - 0.02·P - (0.05·P - 1.5)
+#     = 0.93·P - 48.5
+
+def net_sell_price(price: int) -> int:
+    """Precio neto real tras impuestos de listing (2%) y 5 bajadas de 10k
+    con coste de modificación del 1% cada una.
+    Los impuestos se redondean hacia arriba (ceil) ya que las kamas son enteras."""
+    import math
+    listing_tax = math.ceil(price * 0.02)
+    mod_fees    = sum(math.ceil((price - 10 * i) * 0.01) for i in range(1, 6))
+    return (price - 50) - listing_tax - mod_fees
+
+from shared.colors import C  # noqa: E402
+
 
 def _load_omitted_items() -> set[str]:
     if not os.path.exists(OMITTED_ITEMS_FILE):

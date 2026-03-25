@@ -1,20 +1,15 @@
 """
 Crafting - Orquestador principal
 =================================
-Actualiza precios de venta e ingredientes para una profesión completa
-o para una receta única, agrupa las búsquedas por mercadillo y exporta
-los resultados a Google Sheets.
-
-Uso directo (sin UI):
-  python main.py alquimista
-  python main.py "Tabla de fresno"   # receta única por nombre
+Conecta la UI con la lógica de negocio.
+Entrada: python main.py  →  lanza la interfaz gráfica.
 """
 
 import json
 import os
 import sys
-
-import keyboard
+import threading
+import tkinter as tk
 
 _ROOT = os.path.dirname(os.path.abspath(__file__))
 _DOFUS = os.path.normpath(os.path.join(_ROOT, ".."))
@@ -22,11 +17,7 @@ for _p in (_ROOT, _DOFUS):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-from config.config import (
-    DATA_DIR,
-    UNKNOWN_KEY,
-    find_recipe_file,
-)
+from config.config import C, DATA_DIR, UNKNOWN_KEY, find_recipe_file, net_sell_price
 from core.prices import (
     build_item_lookup,
     ensure_catalogued,
@@ -46,21 +37,34 @@ from core.recipes import (
 from automation.scanner import search_market_batch
 from export.export_to_sheets import export_profession
 import shared.market.search_item_prices as _sip
-
-stop_requested = False
-
-
-def _on_key_press(event):
-    global stop_requested
-    if event.name == "y":
-        stop_requested = True
+from ui.ui import CraftingUI
 
 
-# ── Actualizar profesión completa ─────────────────────────────────────────────
+# ── stdout redirect ────────────────────────────────────────────────────────────
 
-def update_profession(profession: str, limit: int | None = None):
-    global stop_requested
-    stop_requested = False
+class _StdoutRedirect:
+    def __init__(self, callback):
+        self._cb = callback
+
+    def write(self, text):
+        if text:
+            self._cb(text)
+
+    def flush(self):
+        pass
+
+
+# ── Orchestration functions ────────────────────────────────────────────────────
+
+def update_profession(
+    profession: str,
+    limit: int = None,
+    stop_flag: list = None,
+    on_confirm=None,
+    manual_price_fn=None,
+):
+    if stop_flag is None:
+        stop_flag = [False]
 
     recipe_file = find_recipe_file(profession)
     if not recipe_file:
@@ -86,7 +90,6 @@ def update_profession(profession: str, limit: int | None = None):
     all_ingredients = expand_sub_ingredients(all_ingredients, craftable)
 
     _sip.load_calibration()
-    keyboard.on_press(_on_key_press)
 
     markets     = load_markets()
     item_lookup = build_item_lookup(markets)
@@ -94,8 +97,7 @@ def update_profession(profession: str, limit: int | None = None):
     craftable_results = all_recipe_results()
     ensure_catalogued(all_ingredients, markets, item_lookup, craftable_results)
 
-    # Determinar mercadillo de cada resultado
-    result_market: dict[str, str] = {}
+    result_market: dict = {}
     for r in recipes:
         name        = r["result"]
         category    = r.get("category", UNKNOWN_KEY)
@@ -105,8 +107,7 @@ def update_profession(profession: str, limit: int | None = None):
         else:
             print(f"  ? {name} → {category} [sin mercadillo, ignorado]")
 
-    # Agrupar por mercadillo
-    market_groups: dict[str, dict] = {}
+    market_groups: dict = {}
     for name in all_results:
         if name in result_market:
             m = result_market[name]
@@ -119,7 +120,6 @@ def update_profession(profession: str, limit: int | None = None):
             if name not in market_groups[m]["ingredients"]:
                 market_groups[m]["ingredients"].append(name)
 
-    # Añadir subrecetas al batch de venta
     sub_results = all_ingredients & set(craftable.keys())
     for sub_name in sub_results:
         sub_recipe  = craftable.get(sub_name, {})
@@ -131,8 +131,7 @@ def update_profession(profession: str, limit: int | None = None):
                 market_groups[market_name]["results"].append(sub_name)
 
     result_file_map   = build_result_file_map()
-    stop_flag         = [False]
-    all_missing_results: list[str] = []
+    all_missing_results: list = []
 
     if not market_groups:
         print("[INFO] No hay items para consultar en ningún mercadillo.")
@@ -146,6 +145,8 @@ def update_profession(profession: str, limit: int | None = None):
                 market_name, results, ingredients,
                 recipe_file, markets, item_lookup,
                 result_file_map, stop_flag,
+                on_confirm=on_confirm,
+                manual_price_fn=manual_price_fn,
             )
             all_missing_results.extend(r for r in miss_r if r in all_results)
             if (miss_r or miss_i) and not stop_flag[0]:
@@ -154,13 +155,11 @@ def update_profession(profession: str, limit: int | None = None):
             if stop_flag[0]:
                 break
 
-    # Calcular costos de subrecetas primero
     if sub_results:
         for sub_file in sub_recipe_files(sub_results, recipe_file):
             print(f"[INFO] Calculando subrecetas en {os.path.basename(sub_file)} …")
             save_crafting_costs(sub_file)
 
-    # Calcular costos de crafteo
     with open(recipe_file, encoding="utf-8") as f:
         recipes = json.load(f)
     if limit is not None:
@@ -194,11 +193,14 @@ def update_profession(profession: str, limit: int | None = None):
     export_profession(profession)
 
 
-# ── Actualizar receta única ───────────────────────────────────────────────────
-
-def update_single_recipe(result_name: str):
-    global stop_requested
-    stop_requested = False
+def update_single_recipe(
+    result_name: str,
+    stop_flag: list = None,
+    on_confirm=None,
+    manual_price_fn=None,
+):
+    if stop_flag is None:
+        stop_flag = [False]
 
     recipe, recipe_file = find_recipe(result_name)
     if not recipe:
@@ -213,7 +215,6 @@ def update_single_recipe(result_name: str):
     all_ingredients = expand_sub_ingredients(ingredients, craftable)
 
     _sip.load_calibration()
-    keyboard.on_press(_on_key_press)
 
     markets     = load_markets()
     item_lookup = build_item_lookup(markets)
@@ -221,9 +222,8 @@ def update_single_recipe(result_name: str):
     craftable_results = all_recipe_results()
     ensure_catalogued(all_ingredients, markets, item_lookup, craftable_results)
 
-    # Agrupar resultado e ingredientes por mercadillo
     result_market = get_market_for_category(recipe.get("category", UNKNOWN_KEY), markets)
-    market_groups: dict[str, dict] = {}
+    market_groups: dict = {}
 
     if result_market:
         market_groups.setdefault(result_market, {"results": [], "ingredients": []})
@@ -249,20 +249,20 @@ def update_single_recipe(result_name: str):
                 market_groups[market_name]["results"].append(sub_name)
 
     result_file_map = build_result_file_map()
-    stop_flag       = [False]
 
     for market_name, group in market_groups.items():
         if stop_flag[0]:
             break
-        miss_r, miss_i = search_market_batch(
+        search_market_batch(
             market_name,
             sorted(group["results"]),
             sorted(group["ingredients"]),
             recipe_file, markets, item_lookup,
             result_file_map, stop_flag,
+            on_confirm=on_confirm,
+            manual_price_fn=manual_price_fn,
         )
 
-    # Calcular costos de subrecetas primero
     if sub_results:
         for sub_file in sub_recipe_files(sub_results, recipe_file):
             print(f"[INFO] Calculando subrecetas en {os.path.basename(sub_file)} …")
@@ -283,28 +283,272 @@ def update_single_recipe(result_name: str):
     export_profession(profession)
 
 
-# ── Main ──────────────────────────────────────────────────────────────────────
+# ── CraftingApp ────────────────────────────────────────────────────────────────
 
-def main():
-    if len(sys.argv) < 2:
-        available = sorted(
+class CraftingApp:
+
+    def __init__(self, root: tk.Tk):
+        self.root = root
+        self._stop_flag  = [False]
+        self._orig_stdout = sys.stdout
+        self._orig_stderr = sys.stderr
+
+        professions = self._list_professions()
+
+        callbacks = {
+            "start":     self._start,
+            "stop":      self._stop,
+            "export":    self._export,
+            "calibrate": self._calibrate,
+        }
+
+        self.ui = CraftingUI(root, callbacks, professions)
+
+        sys.stdout = _StdoutRedirect(self._on_log)
+        sys.stderr = _StdoutRedirect(self._on_log)
+
+        # Cargar datos existentes al arrancar
+        if professions:
+            self.root.after(100, self._load_table, professions[0])
+
+        # Recargar tabla al cambiar de profesión
+        self.ui._prof_cb.bind("<<ComboboxSelected>>", self._on_profession_changed)
+
+    def _list_professions(self) -> list:
+        if not os.path.isdir(DATA_DIR):
+            return []
+        return sorted(
             f[len("recipes_"):-len(".json")]
             for f in os.listdir(DATA_DIR)
             if f.startswith("recipes_") and f.endswith(".json")
         )
-        print("Uso: python main.py <profesion> [limite]")
-        print(f"  Profesiones: {', '.join(available)}")
-        return
 
-    arg   = sys.argv[1]
-    limit = int(sys.argv[2]) if len(sys.argv) > 2 else None
+    def _on_log(self, text: str):
+        self.root.after(0, self.ui.log, text)
 
-    # Si coincide con un archivo de recetas → actualizar profesión
-    if find_recipe_file(arg):
-        update_profession(arg, limit)
-    else:
-        # Intentar como nombre de receta única
-        update_single_recipe(arg)
+    def _on_profession_changed(self, _event=None):
+        profession = self.ui.profession()
+        if profession:
+            self._load_table(profession)
+
+    # ── Callbacks de UI ───────────────────────────────────────────────────────
+
+    def _start(self, target: str, limit, mode: str):
+        self._stop_flag[0] = False
+        self.root.after(0, self.ui.set_busy, True)
+        self.root.after(0, self.ui.clear_log)
+
+        if mode == "profesion":
+            t = threading.Thread(
+                target=self._run_profession, args=(target, limit), daemon=True
+            )
+        else:
+            t = threading.Thread(
+                target=self._run_single, args=(target,), daemon=True
+            )
+        t.start()
+
+    def _stop(self):
+        self._stop_flag[0] = True
+        self.root.after(0, self.ui.set_status, "Deteniendo…", C["yellow"])
+        # Desbloquear cualquier prompt activo
+        self.root.after(0, self.ui.hide_prompt)
+
+    def _export(self, profession: str):
+        t = threading.Thread(target=self._run_export, args=(profession,), daemon=True)
+        t.start()
+
+    def _calibrate(self):
+        from shared.calibration import CalibrationWindow
+        from calibration.calibration_config import CALIBRATION_POINTS, CALIBRATION_FILE, transform
+        CalibrationWindow(
+            self.root,
+            CALIBRATION_POINTS,
+            CALIBRATION_FILE,
+            on_done=self._on_calibration_done,
+            transform=transform,
+        )
+
+    def _on_calibration_done(self):
+        self.ui.log("[OK] Calibración guardada.", "ok")
+
+    # ── Workers ───────────────────────────────────────────────────────────────
+
+    def _run_profession(self, profession: str, limit):
+        try:
+            self.root.after(0, self.ui.set_status, f"Actualizando {profession}…", C["accent"])
+            update_profession(
+                profession, limit, self._stop_flag,
+                on_confirm=self._ask_confirm,
+                manual_price_fn=self._ask_manual_price,
+            )
+            self.root.after(0, self._load_table, profession)
+        except Exception as e:
+            self.root.after(0, self.ui.log, f"[ERROR] {e}", "error")
+        finally:
+            self.root.after(0, self._on_done)
+
+    def _run_single(self, recipe_name: str):
+        try:
+            self.root.after(0, self.ui.set_status, f"Actualizando '{recipe_name}'…", C["accent"])
+            _, rf = find_recipe(recipe_name)
+            profession = profession_from_file(rf) if rf else ""
+            update_single_recipe(
+                recipe_name, self._stop_flag,
+                on_confirm=self._ask_confirm,
+                manual_price_fn=self._ask_manual_price,
+            )
+            if profession:
+                self.root.after(0, self._load_table, profession)
+        except Exception as e:
+            self.root.after(0, self.ui.log, f"[ERROR] {e}", "error")
+        finally:
+            self.root.after(0, self._on_done)
+
+    def _run_export(self, profession: str):
+        try:
+            self.root.after(0, self.ui.set_status, "Exportando…", C["accent"])
+            export_profession(profession)
+            self.root.after(0, self.ui.log, "[DONE] Exportado a Google Sheets.", "done")
+        except Exception as e:
+            self.root.after(0, self.ui.log, f"[ERROR] {e}", "error")
+        finally:
+            self.root.after(0, self.ui.set_status, "Listo", C["dim"])
+
+    def _on_done(self):
+        self.ui.set_busy(False)
+        self.ui.set_status("Listo", C["dim"])
+        self.ui.hide_prompt()
+
+    # ── Prompts bloqueantes (llamados desde hilo worker) ──────────────────────
+
+    def _ask_confirm(self, market_name: str):
+        """Bloquea el hilo worker hasta que el usuario confirme estar en el mercadillo."""
+        if self._stop_flag[0]:
+            return
+        ev = threading.Event()
+
+        def on_confirm():
+            ev.set()
+
+        self.root.after(
+            0, self.ui.show_confirm,
+            f"Ve al mercadillo de {market_name} y pulsa CONTINUAR cuando estés listo…",
+            on_confirm,
+        )
+        ev.wait()
+
+    def _ask_manual_price(self, name: str, is_selling: bool):
+        """Bloquea el hilo worker hasta que el usuario introduzca precios manuales."""
+        if self._stop_flag[0]:
+            return None
+        ev = threading.Event()
+        result = [None]
+
+        def on_confirm(prices):
+            result[0] = prices
+            ev.set()
+
+        self.root.after(0, self.ui.show_price_prompt, name, is_selling, on_confirm)
+        ev.wait()
+        return result[0]
+
+    # ── Tabla ─────────────────────────────────────────────────────────────────
+
+    def _load_table(self, profession: str):
+        recipe_file = find_recipe_file(profession)
+        if not recipe_file:
+            return
+        try:
+            with open(recipe_file, encoding="utf-8") as f:
+                recipes = json.load(f)
+        except Exception:
+            return
+
+        # Build ingredient price+lot lookup from materials_prices.json
+        # ing_prices: {name: (best_unit_price, best_lot_str)}
+        ing_prices: dict = {}
+        try:
+            from config.config import PRICES_FILE
+            if os.path.exists(PRICES_FILE):
+                with open(PRICES_FILE, encoding="utf-8") as f:
+                    prices_raw = json.load(f)
+                for market_data in prices_raw.values():
+                    for items in market_data.values():
+                        for item in items:
+                            if not isinstance(item, dict) or "name" not in item:
+                                continue
+                            best_price = best_lot = None
+                            for size in ("1", "10", "100", "1000"):
+                                p = item.get(f"unit_price_x{size}", 0)
+                                if p and int(p) > 0:
+                                    if best_price is None or int(p) < best_price:
+                                        best_price = int(p)
+                                        best_lot   = f"x{size}"
+                            if best_price:
+                                ing_prices[item["name"]] = (best_price, best_lot)
+        except Exception:
+            pass
+
+        SIZES = ("1", "10", "100", "1000")
+        rows = []
+        for r in recipes:
+            # Best lot: lot size with highest profit per unit
+            best_lot = best_craft = best_sell = best_profit = None
+            for size in SIZES:
+                craft_u = r.get(f"unit_crafting_cost_x{size}") or 0
+                sell_u  = r.get(f"unit_selling_price_x{size}") or 0
+                if craft_u > 0 and sell_u > 0:
+                    profit_u = net_sell_price(sell_u) - craft_u
+                    if best_profit is None or profit_u > best_profit:
+                        best_profit = profit_u
+                        best_lot    = f"x{size}"
+                        best_craft  = craft_u
+                        best_sell   = sell_u
+
+            # Ingredients with price + best buy lot
+            ingredients = []
+            for ing in r.get("ingredients", []):
+                name  = ing.get("name", "")
+                qty   = ing.get("quantity", 1)
+                entry = ing_prices.get(name)
+                unit_price, buy_lot = entry if entry else (None, None)
+                total = unit_price * qty if unit_price else None
+                ingredients.append({
+                    "name":       name,
+                    "quantity":   qty,
+                    "unit_price": unit_price,
+                    "buy_lot":    buy_lot,
+                    "total":      total,
+                })
+
+            rows.append({
+                "result":      r.get("result", ""),
+                "level":       r.get("level", ""),
+                "best_lot":    best_lot or "—",
+                "craft_cost":  best_craft,
+                "sell_price":  best_sell,
+                "profit":      best_profit,
+                "updated":     r.get("selling_last_updated", ""),
+                "ingredients": ingredients,
+            })
+
+        self.ui.refresh_table(rows)
+
+    def restore_io(self):
+        sys.stdout = self._orig_stdout
+        sys.stderr = self._orig_stderr
+
+
+# ── Entry point ───────────────────────────────────────────────────────────────
+
+def main():
+    root = tk.Tk()
+    app  = CraftingApp(root)
+    try:
+        root.mainloop()
+    finally:
+        app.restore_io()
 
 
 if __name__ == "__main__":

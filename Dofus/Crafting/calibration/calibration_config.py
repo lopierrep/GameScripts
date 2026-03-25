@@ -87,6 +87,26 @@ def load_calibration() -> dict:
     return {k: (tuple(v) if isinstance(v, list) else v) for k, v in raw.items()}
 
 
+# ── Integración con shared.calibration.CalibrationWindow ──────────────────────
+
+CALIBRATION_POINTS = [
+    ("search_box",           "Barra de búsqueda del mercadillo",                   "point"),
+    ("results_names_region", "Región de nombres de resultados (todas las filas)",  "region"),
+    ("_first_result",        "Centro del PRIMER resultado de la lista",            "point"),
+    ("_second_result",       "Centro del SEGUNDO resultado de la lista",           "point"),
+    ("price_region_all",     "Región de precios (filas x1/x10/x100/x1000)",       "region"),
+]
+
+
+def transform(data: dict) -> dict:
+    first  = data.pop("_first_result")
+    second = data.pop("_second_result")
+    data["first_result_y"]    = first[1]
+    data["result_row_height"] = second[1] - first[1]
+    data["results_click_x"]   = first[0]
+    return data
+
+
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":

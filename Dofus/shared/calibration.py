@@ -6,6 +6,8 @@ from tkinter import messagebox
 import keyboard
 import pyautogui
 
+from shared.colors import C
+
 
 def load_calibration(calibration_file: str):
     if not os.path.exists(calibration_file):
@@ -30,11 +32,15 @@ class CalibrationWindow:
         self.win.attributes("-topmost", True)
         self.win.resizable(False, False)
         self.win.grab_set()
+        self.win.configure(bg=C["bg"])
 
-        self.info_label = tk.Label(self.win, text="", width=46, wraplength=320, justify=tk.LEFT)
+        self.info_label = tk.Label(self.win, text="", width=46, wraplength=320, justify=tk.LEFT,
+                                   bg=C["bg"], fg=C["text"], font=("Segoe UI", 9))
         self.info_label.pack(pady=12, padx=14)
 
-        self.cancel_btn = tk.Button(self.win, text="Cancelar", width=20, command=self._on_cancel)
+        self.cancel_btn = tk.Button(self.win, text="Cancelar", width=20,
+                                    bg=C["surface"], fg=C["dim"], relief="flat",
+                                    command=self._on_cancel)
         self.cancel_btn.pack(pady=(2, 12), padx=14)
 
         self.win.protocol("WM_DELETE_WINDOW", self._on_cancel)
