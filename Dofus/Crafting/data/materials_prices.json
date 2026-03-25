@@ -1016,11 +1016,11 @@
       },
       {
         "name": "Centeno",
-        "unit_price_x1": 387,
+        "unit_price_x1": 400,
         "unit_price_x10": 290,
-        "unit_price_x100": 83,
-        "unit_price_x1000": 55,
-        "last_updated": "2026-03-23T21:00:18.554412+00:00"
+        "unit_price_x100": 93,
+        "unit_price_x1000": 45,
+        "last_updated": "2026-03-25T03:59:20.763435+00:00"
       },
       {
         "name": "Centeno resistente",
@@ -1089,11 +1089,11 @@
       },
       {
         "name": "Malta",
-        "unit_price_x1": 200,
+        "unit_price_x1": 99,
         "unit_price_x10": 100,
-        "unit_price_x100": 36,
-        "unit_price_x1000": 20,
-        "last_updated": "2026-03-23T21:01:01.295412+00:00"
+        "unit_price_x100": 58,
+        "unit_price_x1000": 359,
+        "last_updated": "2026-03-25T04:00:03.804164+00:00"
       },
       {
         "name": "Malta siano",
@@ -1104,11 +1104,11 @@
       },
       {
         "name": "Maíz",
-        "unit_price_x1": 394,
-        "unit_price_x10": 200,
-        "unit_price_x100": 157,
-        "unit_price_x1000": 123,
-        "last_updated": "2026-03-23T21:01:05.570923+00:00"
+        "unit_price_x1": 396,
+        "unit_price_x10": 230,
+        "unit_price_x100": 156,
+        "unit_price_x1000": 146,
+        "last_updated": "2026-03-25T04:00:08.044906+00:00"
       },
       {
         "name": "Maíz adlasvelas",
@@ -1119,11 +1119,11 @@
       },
       {
         "name": "Mijo",
-        "unit_price_x1": 802,
-        "unit_price_x10": 346,
-        "unit_price_x100": 343,
-        "unit_price_x1000": 280,
-        "last_updated": "2026-03-23T21:01:09.874384+00:00"
+        "unit_price_x1": 825,
+        "unit_price_x10": 316,
+        "unit_price_x100": 316,
+        "unit_price_x1000": 598,
+        "last_updated": "2026-03-25T04:00:12.299711+00:00"
       },
       {
         "name": "Mijo añejo",
@@ -6552,15 +6552,15 @@
         "unit_price_x10": 70,
         "unit_price_x100": 68,
         "unit_price_x1000": 59,
-        "last_updated": "2026-03-25T01:53:55.939263+00:00"
+        "last_updated": "2026-03-25T05:02:04.139052+00:00"
       },
       {
         "name": "Madera de bambú",
         "unit_price_x1": 999,
         "unit_price_x10": 170,
         "unit_price_x100": 60,
-        "unit_price_x1000": 67,
-        "last_updated": "2026-03-25T01:54:00.713485+00:00"
+        "unit_price_x1000": 60,
+        "last_updated": "2026-03-25T03:59:30.989593+00:00"
       },
       {
         "name": "Madera de bambú oscuro",
@@ -6568,15 +6568,15 @@
         "unit_price_x10": 187,
         "unit_price_x100": 97,
         "unit_price_x1000": 97,
-        "last_updated": "2026-03-25T01:54:05.792637+00:00"
+        "last_updated": "2026-03-25T05:02:09.037899+00:00"
       },
       {
         "name": "Madera de bambú sagrado",
         "unit_price_x1": 787,
-        "unit_price_x10": 90,
+        "unit_price_x10": 98,
         "unit_price_x100": 96,
         "unit_price_x1000": 100,
-        "last_updated": "2026-03-25T01:54:10.845447+00:00"
+        "last_updated": "2026-03-25T04:32:49.131330+00:00"
       },
       {
         "name": "Madera de bombú",
@@ -6592,15 +6592,15 @@
         "unit_price_x10": 90,
         "unit_price_x100": 97,
         "unit_price_x1000": 95,
-        "last_updated": "2026-03-25T01:54:20.451692+00:00"
+        "last_updated": "2026-03-25T05:02:13.713978+00:00"
       },
       {
         "name": "Madera de castaño",
         "unit_price_x1": 19,
         "unit_price_x10": 11,
-        "unit_price_x100": 8,
-        "unit_price_x1000": 8,
-        "last_updated": "2026-03-25T01:54:25.410906+00:00"
+        "unit_price_x100": 7,
+        "unit_price_x1000": 7,
+        "last_updated": "2026-03-25T04:04:03.966067+00:00"
       },
       {
         "name": "Madera de cerezo silvestre",
@@ -6608,15 +6608,15 @@
         "unit_price_x10": 195,
         "unit_price_x100": 89,
         "unit_price_x1000": 85,
-        "last_updated": "2026-03-25T01:54:30.652467+00:00"
+        "last_updated": "2026-03-25T03:59:45.576618+00:00"
       },
       {
         "name": "Madera de fresno",
-        "unit_price_x1": 60,
+        "unit_price_x1": 59,
         "unit_price_x10": 39,
-        "unit_price_x100": 27,
+        "unit_price_x100": 26,
         "unit_price_x1000": 45,
-        "last_updated": "2026-03-25T01:54:35.378275+00:00"
+        "last_updated": "2026-03-25T04:04:08.731793+00:00"
       },
       {
         "name": "Madera de kalipto",
@@ -6624,7 +6624,7 @@
         "unit_price_x10": 227,
         "unit_price_x100": 60,
         "unit_price_x1000": 65,
-        "last_updated": "2026-03-25T01:54:40.218118+00:00"
+        "last_updated": "2026-03-25T05:02:18.473821+00:00"
       },
       {
         "name": "Madera de nogal",
@@ -6647,8 +6647,8 @@
         "unit_price_x1": 655,
         "unit_price_x10": 655,
         "unit_price_x100": 485,
-        "unit_price_x1000": 399,
-        "last_updated": "2026-03-25T01:54:55.390006+00:00"
+        "unit_price_x1000": 599,
+        "last_updated": "2026-03-25T05:02:23.093799+00:00"
       },
       {
         "name": "Madera de pino",
@@ -6694,15 +6694,15 @@
         "unit_price_x10": 200,
         "unit_price_x100": 159,
         "unit_price_x1000": 169,
-        "last_updated": "2026-03-25T01:55:14.704983+00:00"
+        "last_updated": "2026-03-25T04:32:54.010437+00:00"
       },
       {
         "name": "Madera de ébano",
         "unit_price_x1": 703,
         "unit_price_x10": 592,
         "unit_price_x100": 439,
-        "unit_price_x1000": 599,
-        "last_updated": "2026-03-25T01:55:19.584859+00:00"
+        "unit_price_x1000": 399,
+        "last_updated": "2026-03-25T05:02:27.802064+00:00"
       },
       {
         "name": "Mástil de fantasmastil",

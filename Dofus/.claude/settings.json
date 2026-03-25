@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python3 -c \":*)"
+      "Bash(python3 -c \":*)",
+      "Bash(python -c \":*)",
+      "Bash(python -c \"from core.prices import build_table_rows, load_all_pack_prices; print\\(''OK''\\)\")",
+      "Bash(python -c \"import main; print\\(''''OK''''\\)\")"
     ]
   }
 }
