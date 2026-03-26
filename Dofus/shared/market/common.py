@@ -11,7 +11,7 @@ _DOFUSDB_URL = "https://api.dofusdb.fr"
 _UNKNOWN_CAT = "Sin categoría"
 
 SIZES        = ["x1", "x10", "x100", "x1000"]
-CACHE_SECONDS = 3600
+CACHE_SECONDS = 7200
 
 
 def _normalize(s: str) -> str:
