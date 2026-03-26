@@ -17,7 +17,7 @@ for _p in (_ROOT, _DOFUS):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-from config.config import C, DATA_DIR, UNKNOWN_KEY, find_recipe_file, _load_omitted_items, _load_omitted_categories
+from config.config import C, DATA_DIR, UNKNOWN_KEY, find_recipe_file, _load_omitted_recipes, _load_omitted_categories
 from core.prices import (
     build_item_lookup,
     build_table_rows,
@@ -482,11 +482,11 @@ class CraftingApp:
         except Exception:
             return
 
-        omitted_items      = _load_omitted_items()
+        omitted_recipes    = _load_omitted_recipes()
         omitted_categories = _load_omitted_categories()
         recipes = [
             r for r in recipes
-            if r.get("result") not in omitted_items
+            if r.get("result") not in omitted_recipes
             and r.get("category", "") not in omitted_categories
         ]
 

@@ -36,7 +36,7 @@ for _p in (_ROOT, _DOFUS):
 from config.config import (
     ROOT_DIR,
     SIZES,
-    _load_omitted_items,
+    _load_omitted_recipes,
     _load_omitted_categories,
     net_sell_price,
 )
@@ -213,7 +213,7 @@ def load_recipes_by_profession() -> dict[str, list[dict]]:
     result        = {}
     price_lookup  = _load_ingredient_prices()
 
-    exceptions           = _load_omitted_items()
+    exceptions           = _load_omitted_recipes()
     omitted_categories   = _load_omitted_categories()
 
     # Lookup de todas las recetas craftables: {result_name: [ingredients]}

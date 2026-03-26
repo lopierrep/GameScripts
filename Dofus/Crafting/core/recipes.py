@@ -10,7 +10,7 @@ from config.config import (
     DATA_DIR,
     SIZES,
     _load_omitted_categories,
-    _load_omitted_items,
+    _load_omitted_recipes,
     _now_iso,
     _parse_price,
     find_recipe_file,
@@ -183,7 +183,7 @@ def save_selling_price(recipe_file: str, name: str, prices: dict):
 
 def search_and_save_selling(recipe_file: str, name: str) -> dict:
     """Busca el precio de venta de un item y lo guarda. Omite si está en exclusiones o es fresco."""
-    if name in _load_omitted_items():
+    if name in _load_omitted_recipes():
         print(f"[SKIP] {name} — en lista de excepciones")
         return {"unit_price_x1": 0, "unit_price_x10": 0, "unit_price_x100": 0, "unit_price_x1000": 0, "_skipped": True}
 

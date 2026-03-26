@@ -18,7 +18,7 @@ from config.config import (
     PRICES_FILE,
     SIZES,
     UNKNOWN_KEY,
-    _load_omitted_items,
+    _load_omitted_recipes,
     _normalize,
     _now_iso,
     _parse_price,
@@ -269,7 +269,7 @@ def calculate_crafting_costs(recipes: list, pack_prices: dict) -> tuple[list, se
     }
 
     still_missing: set[str] = set()
-    exceptions = _load_omitted_items()
+    exceptions = _load_omitted_recipes()
 
     for recipe in recipes:
         if recipe.get("result") in exceptions:

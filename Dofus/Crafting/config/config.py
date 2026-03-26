@@ -24,7 +24,7 @@ CATEGORIES_FILE  = os.path.join(ROOT_DIR, "..", "shared", "market", "categories_
 PRICES_FILE      = os.path.join(DATA_DIR, "materials_prices.json")
 CREDENTIALS_FILE = os.path.join(ROOT_DIR, "export", "credentials.json")
 
-OMITTED_ITEMS_FILE      = os.path.join(ROOT_DIR, "config", "omitted_items.txt")
+OMITTED_RECIPES_FILE    = os.path.join(ROOT_DIR, "config", "omitted_recipes.txt")
 OMITTED_CATEGORIES_FILE = os.path.join(ROOT_DIR, "config", "omitted_categories.txt")
 MANUAL_PRICE_FILE       = os.path.join(ROOT_DIR, "config", "manual_price_items.txt")
 
@@ -53,10 +53,10 @@ def net_sell_price(price: int) -> int:
 from shared.colors import C  # noqa: E402
 
 
-def _load_omitted_items() -> set[str]:
-    if not os.path.exists(OMITTED_ITEMS_FILE):
+def _load_omitted_recipes() -> set[str]:
+    if not os.path.exists(OMITTED_RECIPES_FILE):
         return set()
-    with open(OMITTED_ITEMS_FILE, encoding="utf-8") as f:
+    with open(OMITTED_RECIPES_FILE, encoding="utf-8") as f:
         return {line.strip() for line in f if line.strip()}
 
 
