@@ -18,10 +18,10 @@
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1": 368,
+    "unit_crafting_cost_x10": 350,
+    "unit_crafting_cost_x100": 350,
+    "unit_crafting_cost_x1000": 380
   },
   {
     "id": 787,
@@ -202,10 +202,10 @@
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1": 280,
+    "unit_crafting_cost_x10": 172,
+    "unit_crafting_cost_x100": 171,
+    "unit_crafting_cost_x1000": 171
   },
   {
     "id": 849,
@@ -346,10 +346,10 @@
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1": 1607,
+    "unit_crafting_cost_x10": 1607,
+    "unit_crafting_cost_x100": 1607,
+    "unit_crafting_cost_x1000": 4757
   },
   {
     "id": 279,
@@ -394,10 +394,10 @@
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1": 530,
+    "unit_crafting_cost_x10": 530,
+    "unit_crafting_cost_x100": 530,
+    "unit_crafting_cost_x1000": 560
   },
   {
     "id": 767,
@@ -418,10 +418,10 @@
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1": 218,
+    "unit_crafting_cost_x10": 200,
+    "unit_crafting_cost_x100": 200,
+    "unit_crafting_cost_x1000": 335
   },
   {
     "id": 325,
@@ -682,10 +682,10 @@
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1": 870,
+    "unit_crafting_cost_x10": 690,
+    "unit_crafting_cost_x100": 690,
+    "unit_crafting_cost_x1000": 690
   },
   {
     "id": 103,
@@ -1258,10 +1258,10 @@
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1": 390,
+    "unit_crafting_cost_x10": 210,
+    "unit_crafting_cost_x100": 210,
+    "unit_crafting_cost_x1000": 345
   },
   {
     "id": 15796,
@@ -1306,10 +1306,10 @@
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1": 1264,
+    "unit_crafting_cost_x10": 1264,
+    "unit_crafting_cost_x100": 1264,
+    "unit_crafting_cost_x1000": 1376
   },
   {
     "id": 17508,
@@ -1858,10 +1858,10 @@
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1": 1078,
+    "unit_crafting_cost_x10": 1078,
+    "unit_crafting_cost_x100": 1124,
+    "unit_crafting_cost_x1000": 1174
   },
   {
     "id": 157,
@@ -3814,10 +3814,10 @@
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1": 7068,
+    "unit_crafting_cost_x10": 7014,
+    "unit_crafting_cost_x100": 6440,
+    "unit_crafting_cost_x1000": 6440
   },
   {
     "id": 159,
@@ -6902,9 +6902,9 @@
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1": 11515,
+    "unit_crafting_cost_x10": 11445,
+    "unit_crafting_cost_x100": 12570,
     "unit_crafting_cost_x1000": 0
   },
   {
@@ -7440,38 +7440,6 @@
       {
         "name": "Piel de Shin Larva",
         "quantity": 4
-      }
-    ],
-    "unit_selling_price_x1": 0,
-    "unit_selling_price_x10": 0,
-    "unit_selling_price_x100": 0,
-    "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
-  },
-  {
-    "id": 2398,
-    "result": "Ojo de kanugro",
-    "category": "Amuleto",
-    "level": 52,
-    "ingredients": [
-      {
-        "name": "Misericordia de chafer de élite",
-        "quantity": 7
-      },
-      {
-        "name": "Ojo de kanugro",
-        "quantity": 1
-      },
-      {
-        "name": "Concentrado de oquedal",
-        "quantity": 1
-      },
-      {
-        "name": "Piel de Bworka",
-        "quantity": 2
       }
     ],
     "unit_selling_price_x1": 0,
@@ -8198,10 +8166,10 @@
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1": 23009,
+    "unit_crafting_cost_x10": 18459,
+    "unit_crafting_cost_x100": 17063,
+    "unit_crafting_cost_x1000": 18927
   },
   {
     "id": 13459,
@@ -13171,8 +13139,8 @@
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
     "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x10": 56434,
+    "unit_crafting_cost_x100": 56510,
     "unit_crafting_cost_x1000": 0
   },
   {
