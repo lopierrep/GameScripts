@@ -130,7 +130,7 @@ class AlmanaxUI:
         mk = "normal" if self._market_available else "disabled"
 
         self.scan_btn = tk.Button(
-            bar, text="$  Mercadillo", bg=C["orange"], fg=C["bg"],
+            bar, text="⟳  Actualizar", bg=C["orange"], fg=C["bg"],
             font=("Consolas", 10, "bold"), relief="flat", padx=12, pady=4,
             cursor="hand2", state=mk, command=self._cb["scan"])
         self.scan_btn.pack(side="left", padx=(4, 0))
@@ -365,7 +365,7 @@ class AlmanaxUI:
         if busy:
             self.scan_btn.config(text="■  Detener", bg=C["red"], command=self._cb["stop_scan"])
         else:
-            self.scan_btn.config(text="$  Mercadillo", bg=C["orange"], command=self._cb["scan"])
+            self.scan_btn.config(text="⟳  Actualizar", bg=C["orange"], command=self._cb["scan"])
 
     def set_buy_busy(self, busy: bool):
         if busy:
