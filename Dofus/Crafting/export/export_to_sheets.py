@@ -125,12 +125,12 @@ def _load_ingredient_prices() -> dict[str, tuple[int, str | None]]:
         with open(fp, encoding="utf-8") as f:
             all_markets_data = json.load(f)
     for market_data in all_markets_data.values():
-        for items in market_data.values():
-            for item in items:
-                vals = [item.get(f"unit_price_{s}", 0) for s in SIZES]
+        for category in market_data.values():
+            for name, pd in category.items():
+                vals = [pd.get(s, 0) for s in SIZES]
                 best = min((v for v in vals if v > 0), default=0)
                 if best:
-                    prices[item["name"]] = (best, "buy")
+                    prices[name] = (best, "buy")
 
     # Subrecetas: min(crafting_cost, selling_price) indicando la fuente
     for fname in os.listdir(RECIPES_DIR):
