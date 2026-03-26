@@ -11,6 +11,7 @@ from tkinter import ttk
 from datetime import datetime, timezone, timedelta
 
 from shared.colors import C
+from core.table_filter import compute_summary, filter_rows, profitable_rows
 
 _BOGOTA = timezone(timedelta(hours=-5))
 
@@ -564,24 +565,16 @@ class CraftingUI:
     # ── Filters ───────────────────────────────────────────────────────────────
 
     def _apply_filter(self, profitable: list = None):
-        rows = self._all_rows
-
-        pv = self._filter_profit.get().strip().replace(".", "").replace(",", "")
-        if pv.lstrip("-").isdigit():
-            min_p = int(pv)
-            rows = [r for r in rows if (r.get("profit") or 0) >= min_p]
-
+        pv   = self._filter_profit.get().strip().replace(".", "").replace(",", "")
         lmin = self._filter_lvl_min.get().strip()
         lmax = self._filter_lvl_max.get().strip()
-        if lmin.isdigit():
-            rows = [r for r in rows
-                    if str(r.get("level", "0")).isdigit()
-                    and int(r.get("level", 0)) >= int(lmin)]
-        if lmax.isdigit():
-            rows = [r for r in rows
-                    if str(r.get("level", "999")).isdigit()
-                    and int(r.get("level", 999)) <= int(lmax)]
 
+        rows = filter_rows(
+            self._all_rows,
+            min_profit = int(pv)   if pv.lstrip("-").isdigit() else None,
+            lvl_min    = int(lmin) if lmin.isdigit()           else None,
+            lvl_max    = int(lmax) if lmax.isdigit()           else None,
+        )
         self._populate_tree(rows, profitable=profitable)
 
     def _clear_filter(self):
@@ -595,10 +588,7 @@ class CraftingUI:
         rows = sorted(rows, key=lambda r: (r.get("profit") or float("-inf")), reverse=True)
 
         if profitable is None:
-            profitable = sorted(
-                [r for r in rows if (r.get("profit") or 0) > 0],
-                key=lambda r: r["profit"], reverse=True,
-            )
+            profitable = profitable_rows(rows)
         top_names = {r["result"] for r in profitable[:3]}
 
         self._tree.delete(*self._tree.get_children())
@@ -762,30 +752,20 @@ class CraftingUI:
           updated, ingredients: [{name, quantity, unit_price, total}]
         """
         self._all_rows = rows
-        profitable = sorted(
-            [r for r in rows if (r.get("profit") or 0) > 0],
-            key=lambda r: r["profit"], reverse=True,
+        summary = compute_summary(rows)
+        self._apply_filter(profitable=summary["profitable"])
+        self._update_summary(summary)
+
+    def _update_summary(self, summary: dict):
+        top = summary["top"]
+        self._sum_total.config(text=f"Total: {summary['total']}")
+        self._sum_profitable.config(text=f"  Rentables: {summary['n_profitable']}")
+        self._sum_avg.config(
+            text=f"  Media: +{_fmt(summary['avg_profit'])}" if summary["avg_profit"] else "  Media: —"
         )
-        self._apply_filter(profitable=profitable)
-        self._update_summary(rows, profitable=profitable)
-
-    def _update_summary(self, rows: list, profitable: list = None):
-        total      = len(rows)
-        if profitable is None:
-            profitable = [r for r in rows if (r.get("profit") or 0) > 0]
-        n_prof     = len(profitable)
-        avg = sum(r["profit"] for r in profitable) / n_prof if profitable else 0
-        top = max(profitable, key=lambda r: r["profit"]) if profitable else None
-
-        self._sum_total.config(text=f"Total: {total}")
-        self._sum_profitable.config(text=f"  Rentables: {n_prof}")
-        self._sum_avg.config(text=f"  Media: +{_fmt(avg)}" if avg else "  Media: —")
-        if top:
-            self._sum_top.config(
-                text=f"  ★ {top['result']}  (+{_fmt(top['profit'])})"
-            )
-        else:
-            self._sum_top.config(text="")
+        self._sum_top.config(
+            text=f"  ★ {top['result']}  (+{_fmt(top['profit'])})" if top else ""
+        )
 
     def show_confirm(self, text: str, on_confirm):
         self._prompt_mode = "confirm"

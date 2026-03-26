@@ -17,7 +17,7 @@ for _p in (_ROOT, _DOFUS):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-from config.config import C, DATA_DIR, UNKNOWN_KEY, find_recipe_file
+from config.config import C, DATA_DIR, UNKNOWN_KEY, find_recipe_file, _load_omitted_items, _load_omitted_categories
 from core.prices import (
     build_item_lookup,
     build_table_rows,
@@ -481,6 +481,14 @@ class CraftingApp:
                 recipes = json.load(f)
         except Exception:
             return
+
+        omitted_items      = _load_omitted_items()
+        omitted_categories = _load_omitted_categories()
+        recipes = [
+            r for r in recipes
+            if r.get("result") not in omitted_items
+            and r.get("category", "") not in omitted_categories
+        ]
 
         tol = (tolerance if tolerance is not None else self.ui.tolerance()) / 100
 
