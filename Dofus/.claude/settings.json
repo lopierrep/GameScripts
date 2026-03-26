@@ -4,7 +4,22 @@
       "Bash(python3 -c \":*)",
       "Bash(python -c \":*)",
       "Bash(python -c \"from core.prices import build_table_rows, load_all_pack_prices; print\\(''OK''\\)\")",
-      "Bash(python -c \"import main; print\\(''''OK''''\\)\")"
+      "Bash(python -c \"import main; print\\(''''OK''''\\)\")",
+      "WebFetch(domain:www.dofus.com)",
+      "WebFetch(domain:www.dofastuces.fr)",
+      "WebFetch(domain:papycha.fr)",
+      "WebFetch(domain:dofuswiki.fandom.com)",
+      "WebFetch(domain:wiki-dofus.eu)",
+      "WebFetch(domain:dofus.jeuxonline.info)",
+      "Bash(curl -s https://api.dofusdu.de/dofus3/v1/es/items/resources?query=Seve+de+Tremble)",
+      "Bash(python3 -c \"import sys,json; data=json.load\\(sys.stdin\\); [print\\(i.get\\(''''name'''',''''''''\\)\\) for i in data.get\\(''''items'''',[]\\)]\")",
+      "Bash(curl -s https://api.dofusdu.de/dofus3/v1/es/items/resources?query=Frostiz)",
+      "Bash(curl -s https://api.dofusdu.de/dofus3/v1/es/items/resources?query=Ble+d+Or)",
+      "Bash(curl -s https://api.dofusdu.de/dofus3/v1/es/items/resources?query=Orge)",
+      "WebFetch(domain:dofus.fandom.com)",
+      "WebFetch(domain:www.ankabot.dev)",
+      "Bash(python data/migrate_prices.py)",
+      "Bash(grep -rn \"Ojo de kanugro\" recipes_*.json)"
     ]
   }
 }

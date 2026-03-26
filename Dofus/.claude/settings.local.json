@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:doflex.fr)",
+      "WebFetch(domain:www.dofuspourlesnoobs.com)",
+      "WebFetch(domain:www.dofustool.com)",
+      "WebFetch(domain:www.gamosaurus.com)"
+    ]
+  }
+}
