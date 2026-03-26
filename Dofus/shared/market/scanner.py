@@ -70,7 +70,12 @@ class MarketScanner:
                 if is_stopped():
                     break
                 on_progress(f"[{market_name}] Cambia al juego… {i}s")
-                time.sleep(1)
+                # Sleep interruptible: chequea el flag cada 100ms
+                remaining = 1.0
+                while remaining > 0 and not is_stopped():
+                    sleep_time = min(0.1, remaining)
+                    time.sleep(sleep_time)
+                    remaining -= sleep_time
 
             if is_stopped():
                 break
@@ -89,8 +94,16 @@ class MarketScanner:
 
                 if not (isinstance(result, dict) and result.get("_skipped")):
                     self._press_esc()
-                    time.sleep(self._delay)
+                    # Sleep interruptible: chequea el flag cada 100ms
+                    remaining = self._delay
+                    while remaining > 0 and not is_stopped():
+                        sleep_time = min(0.1, remaining)
+                        time.sleep(sleep_time)
+                        remaining -= sleep_time
 
                 results[item] = result
+
+                if is_stopped():
+                    break
 
         return results
