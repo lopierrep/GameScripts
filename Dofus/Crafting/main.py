@@ -17,7 +17,7 @@ for _p in (_ROOT, _DOFUS):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-from config.config import C, DATA_DIR, UNKNOWN_KEY, find_recipe_file, _load_omitted_recipes, _load_omitted_categories
+from config.config import C, DATA_DIR, UNKNOWN_KEY, find_recipe_file, _load_omitted_recipes, _load_omitted_categories, load_user_settings, save_user_settings
 from core.prices import (
     build_item_lookup,
     build_table_rows,
@@ -151,6 +151,14 @@ def update_profession(
         recipes = recipes[:limit]
         print(f"[INFO] Limitado a las primeras {limit} recetas.\n")
 
+    omitted_recipes    = _load_omitted_recipes()
+    omitted_categories = _load_omitted_categories()
+    recipes = [
+        r for r in recipes
+        if r.get("result") not in omitted_recipes
+        and r.get("category", "") not in omitted_categories
+    ]
+
     all_results     = {r["result"] for r in recipes}
     all_ingredients = {ing["name"] for r in recipes for ing in r.get("ingredients", [])}
 
@@ -223,8 +231,11 @@ def update_profession(
     else:
         print("\n[INFO] Todas las recetas tienen precio. missing_recipes.json actualizado.")
 
-    print("\nExportando a Google Sheets …")
-    export_profession(profession)
+    if not stop_flag[0]:
+        print("\nExportando a Google Sheets …")
+        export_profession(profession)
+    else:
+        print("\n[INFO] Exportación cancelada por detención del usuario.")
 
 
 def update_single_recipe(
@@ -287,8 +298,11 @@ def update_single_recipe(
         for name in sorted(still_missing):
             print(f"  - {name}")
 
-    print("\nExportando a Google Sheets …")
-    export_profession(profession)
+    if not stop_flag[0]:
+        print("\nExportando a Google Sheets …")
+        export_profession(profession)
+    else:
+        print("\n[INFO] Exportación cancelada por detención del usuario.")
 
 
 # ── CraftingApp ────────────────────────────────────────────────────────────────
@@ -311,7 +325,7 @@ class CraftingApp:
             "calibrate": self._calibrate,
         }
 
-        self.ui = CraftingUI(root, callbacks, professions)
+        self.ui = CraftingUI(root, callbacks, professions, load_user_settings, save_user_settings)
 
         sys.stdout = _StdoutRedirect(self._on_log)
         sys.stderr = _StdoutRedirect(self._on_log)
