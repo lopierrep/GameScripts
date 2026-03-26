@@ -10,6 +10,7 @@ from tkinter import ttk
 from datetime import date, timedelta
 
 from config.config import C, LOTS
+from core.table import day_label, profit_tag
 
 
 class AlmanaxUI:
@@ -412,12 +413,11 @@ class AlmanaxUI:
     def refresh_table(self, rows: list[dict], today_str: str, pjs: int):
         self.tree.delete(*self.tree.get_children())
         for r in rows:
-            day_delta   = (date.fromisoformat(r["date"]) - date.today()).days
-            day_lbl     = "Hoy" if day_delta == 0 else f"+{day_delta}d"
-            tag         = self._profit_tag(r["profit"])
-            tags        = (tag, "hoy") if r["date"] == today_str else (tag,)
+            tag  = profit_tag(r["profit"])
+            tags = (tag, "hoy") if r["date"] == today_str else (tag,)
             self.tree.insert("", "end", iid=r["date"], tags=tags, values=(
-                day_lbl, r["date"], r["item"],
+                day_label(date.fromisoformat(r["date"])),
+                r["date"], r["item"],
                 f"{r['profit']:+,}" if r["profit"] is not None else "—",
                 r["qty"], f"{r['qty'] * pjs:,}",
                 f"{r['price']:,}" if r["price"] else "—",
@@ -437,9 +437,3 @@ class AlmanaxUI:
             s[f"guij_{code}"] = var.get()
         return s
 
-    @staticmethod
-    def _profit_tag(profit) -> str:
-        if profit is None: return "sin_precio"
-        if profit >= 500:  return "alta"
-        if profit >= 0:    return "media"
-        return "perdida"
