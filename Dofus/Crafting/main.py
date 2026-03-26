@@ -214,7 +214,7 @@ def update_profession(
         all_missing = json.loads(content) if content else {}
     else:
         all_missing = {}
-    missing_data = sorted(set(all_missing_results))
+    missing_data = sorted(set(all_missing_results) - _load_omitted_recipes())
     all_missing[profession] = missing_data
     with open(missing_file, "w", encoding="utf-8") as f:
         json.dump(all_missing, f, ensure_ascii=False, indent=2)
