@@ -2912,11 +2912,11 @@
     "unit_selling_price_x10": 44500,
     "unit_selling_price_x100": 44444,
     "unit_selling_price_x1000": 44444,
-    "unit_crafting_cost_x1": 32175,
-    "unit_crafting_cost_x10": 31932,
+    "unit_crafting_cost_x1": 32172,
+    "unit_crafting_cost_x10": 31929,
     "unit_crafting_cost_x100": 33964,
     "unit_crafting_cost_x1000": 37880,
-    "selling_last_updated": "2026-03-26T06:22:56.372556+00:00"
+    "selling_last_updated": "2026-03-26T07:25:47.497256+00:00"
   },
   {
     "id": 282,

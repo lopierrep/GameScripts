@@ -391,46 +391,67 @@ def build_table_rows(
             # Lote recomendado de compra (solo display) desde precios de mercado brutos
             all_lp  = raw_market_prices.get(ing_name, {})
             buy_lot = None
+            buy_hint = ""
             if all_lp:
-                min_rank = max(0, sell_rank - 1)
-                valid_lp = {s: p for s, p in all_lp.items()
-                            if p > 0 and _SIZE_RANK.get(s, 0) >= min_rank}
-                if valid_lp:
-                    min_p = min(valid_lp.values())
-                    thr   = min_p * (1 + tolerance)
-                    for size in _RAW_SIZES_DESC:
-                        p = valid_lp.get(size, 0)
-                        if 0 < p <= thr:
-                            buy_lot = f"x{size}"
-                            break
-                    if buy_lot is None:
-                        best_s  = min(valid_lp, key=valid_lp.get)
-                        buy_lot = f"x{best_s}"
+                # Si necesito un número x9, se recomienda x10 para cubrir y mantener margen
+                if ing_qty % 10 == 9 and all_lp.get("10", 0) > 0:
+                    buy_lot = "x10"
+                    buy_hint = " (x9→x10)"
                 else:
-                    cheapest = min(
-                        (s for s in all_lp if all_lp[s] > 0),
-                        key=lambda s: all_lp[s],
-                        default=None,
-                    )
-                    if cheapest:
-                        buy_lot = f"x{cheapest}"
+                    min_rank = max(0, sell_rank - 1)
+                    valid_lp = {s: p for s, p in all_lp.items()
+                                if p > 0 and _SIZE_RANK.get(s, 0) >= min_rank}
+                    if valid_lp:
+                        min_p = min(valid_lp.values())
+                        thr   = min_p * (1 + tolerance)
+                        for size in _RAW_SIZES_DESC:
+                            p = valid_lp.get(size, 0)
+                            if 0 < p <= thr:
+                                buy_lot = f"x{size}"
+                                break
+                        if buy_lot is None:
+                            best_s  = min(valid_lp, key=valid_lp.get)
+                            buy_lot = f"x{best_s}"
+                    else:
+                        cheapest = min(
+                            (s for s in all_lp if all_lp[s] > 0),
+                            key=lambda s: all_lp[s],
+                            default=None,
+                        )
+                        if cheapest:
+                            buy_lot = f"x{cheapest}"
+
+            # Sin sugerencias extra, usamos solo la selección de lote de coste mínimo
+            if buy_lot:
+                pass
 
             # Buy vs Craft
             ing_recipe   = craftable_map.get(ing_name)
             buy_or_craft = None
+            craft_cost   = None
             if ing_recipe:
-                c      = best_unit_price(
+                craft_cost = best_unit_price(
                     {s: ing_recipe.get(f"unit_crafting_cost_{s}", 0) for s in SIZES}, pack_size)
                 s_sell = best_unit_price(
                     {s: ing_recipe.get(f"unit_selling_price_{s}", 0) for s in SIZES}, pack_size)
-                if c > 0 or s_sell > 0:
+                if craft_cost > 0 or s_sell > 0:
                     buy_or_craft = (
-                        "Craft" if c > 0 and (s_sell == 0 or c <= s_sell) else "Buy"
+                        "Craft" if craft_cost > 0 and (s_sell == 0 or craft_cost <= s_sell) else "Buy"
                     )
                 if buy_lot is None:
                     buy_lot = pack_size
 
-            total = unit_price * ing_qty if unit_price else None
+            # Ajustar unit_price según buy_or_craft
+            if buy_or_craft == "Craft" and craft_cost is not None and craft_cost > 0:
+                unit_price = craft_cost
+            elif unit_price is None and craft_cost is not None and craft_cost > 0:
+                unit_price = craft_cost
+                buy_or_craft = "Craft"
+
+            total = None
+            if unit_price is not None:
+                sell_size = int(pack_size[1:]) if best_size else 1
+                total = unit_price * ing_qty * sell_size
 
             sub_ingredients = []
             if depth < 2 and ing_recipe:
@@ -457,12 +478,17 @@ def build_table_rows(
             for ing in r.get("ingredients", [])
         ]
 
+        # En cost+venta mostramos total por lote, no unitario
+        lot_quantity = int(pack_size[1:]) if best_size else 1
+        craft_total = best_craft * lot_quantity if best_craft is not None else None
+        sell_total  = best_sell * lot_quantity if best_sell is not None else None
+
         rows.append({
             "result":        r.get("result", ""),
             "level":         r.get("level", ""),
             "best_lot":      best_lot or "—",
-            "craft_cost":    best_craft,
-            "sell_price":    best_sell,
+            "craft_cost":    craft_total,
+            "sell_price":    sell_total,
             "profit":        best_profit,
             "profit_total":  best_profit_total,
             "updated":       r.get("selling_last_updated", ""),

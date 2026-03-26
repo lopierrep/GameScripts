@@ -321,8 +321,8 @@ class CraftingUI:
             "profit":  ("Ganancia Total",  160, "center"),
             "lot":     ("Mejor Lote",            90, "center"),
             "qty":     ("Cantidad",              80, "center"),
-            "craft":   ("Costo/u",              110, "center"),
-            "sell":    ("Venta/u",              110, "center"),
+            "craft":   ("Costo Total",          110, "center"),
+            "sell":    ("Venta Total",          110, "center"),
             "level":   ("Niv.",                  50, "center"),
             "updated": ("Actualizado",          130, "center"),
         }
@@ -657,23 +657,35 @@ class CraftingUI:
         else:
             ing_tag = "ing_buy"
 
-        if buy_or_craft == "Craft":
-            price_str = f"{_fmt(price)} (⚒ Craft)" if price else "⚒ Craft"
+        if price and total is not None:
+            total_lote = total
+        elif price:
+            total_lote = price * qty
         else:
-            price_str = f"{_fmt(price)} (🛒 Buy)" if price else "—"
+            total_lote = None
+
+        if buy_or_craft == "Craft":
+            if price:
+                price_str = f"{_fmt(price)} (⚒ Craft) · {_fmt(total_lote)}"
+            else:
+                price_str = "⚒ Craft"
+        else:
+            if price:
+                price_str = f"{_fmt(price)} (🛒 Buy) · {_fmt(total_lote)}"
+            else:
+                price_str = "—"
 
         if sell_size:
             qty_display = _fmt(qty * sell_size)
         else:
             qty_display = str(qty)
 
-        total_str  = f" · {_fmt(total)}" if total else ""
         child_iid = self._tree.insert(parent_iid, "end", values=(
             ing_name,
             "",
             buy_lot,
             qty_display,
-            f"{price_str}{total_str}",
+            price_str,
             "",
             "",
             _to_bogota(ing_updated),

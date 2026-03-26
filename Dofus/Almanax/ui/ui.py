@@ -145,7 +145,7 @@ class AlmanaxUI:
         frame = tk.Frame(self.root, bg=C["bg"])
         frame.pack(fill="both", expand=True, padx=12)
 
-        cols = ("dia", "fecha", "item", "ganancia", "cant", "comprar",
+        cols = ("dia", "fecha", "item", "ganancia", "cant", "por_cuenta", "comprar",
                 "precio_unit", "coste", "kamas", "kamas_total", "guijarros")
         self.tree = ttk.Treeview(frame, columns=cols,
                                   show="headings", selectmode="browse")
@@ -156,6 +156,7 @@ class AlmanaxUI:
             ("item",        "Item requerido", 230, "w"),
             ("ganancia",    "Ganancia",       100,  "center"),
             ("cant",        "x1 pj",          48,  "center"),
+            ("por_cuenta",  "x5 pj/cuenta",   70,  "center"),
             ("comprar",     "Comprar",         72,  "center"),
             ("precio_unit", "Precio unit.",   105,  "center"),
             ("coste",       "Coste total",     95,  "center"),
@@ -419,7 +420,8 @@ class AlmanaxUI:
                 day_label(date.fromisoformat(r["date"])),
                 r["date"], r["item"],
                 f"{r['profit']:+,}" if r["profit"] is not None else "—",
-                r["qty"], f"{r['qty'] * pjs:,}",
+                r["qty"], f"{r['qty'] * 5:,}",
+                f"{r['qty'] * pjs:,}",
                 f"{r['price']:,}" if r["price"] else "—",
                 f"{r['cost']:,}"  if r["cost"]  else "—",
                 f"{r['kamas']:,}",

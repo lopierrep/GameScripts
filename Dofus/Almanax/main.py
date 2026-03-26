@@ -281,6 +281,7 @@ class AlmanaxApp:
             "ganancia":    lambda r: r["profit"] if r["profit"] is not None else sentinel,
             "kamas":       lambda r: r["kamas"],
             "cant":        lambda r: r["qty"],
+            "por_cuenta":  lambda r: r["qty"] * 5,
             "comprar":     lambda r: r["qty"] * pjs,
             "coste":       lambda r: r["cost"],
             "kamas_total": lambda r: r["kamas"] * pjs,
