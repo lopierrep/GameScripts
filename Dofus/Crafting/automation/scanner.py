@@ -59,10 +59,10 @@ def search_and_save_ingredient(name: str, markets: dict, item_lookup: dict) -> d
     if _ingredient_is_fresh(name, markets, item_lookup):
         print(f"[SKIP] {name} — actualizado hace menos de 1h")
         market_name = item_lookup.get(name)
-        for items in markets[market_name]["data"].values():
-            for item in items:
-                if item["name"] == name:
-                    return {**{f"unit_price_x{s}": item.get(f"unit_price_x{s}", 0) for s in ("1", "10", "100", "1000")}, "_skipped": True}
+        for category in markets[market_name]["data"].values():
+            if name in category:
+                pd = category[name]
+                return {**{f"unit_price_x{s}": pd.get(f"x{s}", 0) for s in ("1", "10", "100", "1000")}, "_skipped": True}
     search_item(name)
     prices = read_prices(name)
     save_ingredient_price(name, prices, markets, item_lookup)

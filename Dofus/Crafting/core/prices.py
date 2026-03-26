@@ -56,9 +56,9 @@ def build_item_lookup(markets: dict) -> dict[str, str]:
     """Devuelve {item_name: market_name} para todos los items en materials_prices.json."""
     lookup = {}
     for market_name, market in markets.items():
-        for items in market["data"].values():
-            for item in items:
-                lookup[item["name"]] = market_name
+        for category in market["data"].values():
+            for name in category:
+                lookup[name] = market_name
     return lookup
 
 
@@ -77,9 +77,9 @@ def save_markets(markets: dict):
 
 def find_item_in_markets(name: str, markets: dict) -> bool:
     return any(
-        any(i["name"] == name for i in items)
+        name in category
         for market in markets.values()
-        for items in market["data"].values()
+        for category in market["data"].values()
     )
 
 
@@ -89,14 +89,13 @@ def _ingredient_is_fresh(name: str, markets: dict, item_lookup: dict) -> bool:
     market_name = item_lookup.get(name)
     if not market_name:
         return False
-    for items in markets[market_name]["data"].values():
-        for item in items:
-            if item["name"] == name:
-                ts = item.get("last_updated")
-                if not ts:
-                    return False
-                age = (datetime.now(timezone.utc) - datetime.fromisoformat(ts)).total_seconds()
-                return age < CACHE_SECONDS
+    for category in markets[market_name]["data"].values():
+        if name in category:
+            ts = category[name].get("last_updated")
+            if not ts:
+                return False
+            age = (datetime.now(timezone.utc) - datetime.fromisoformat(ts)).total_seconds()
+            return age < CACHE_SECONDS
     return False
 
 
@@ -127,20 +126,20 @@ def save_ingredient_price(name: str, prices: dict, markets: dict, item_lookup: d
     if not market_name:
         return
     market = markets[market_name]
-    for items in market["data"].values():
-        for item in items:
-            if item["name"] == name:
-                p1    = _parse_price(prices, "1")
-                p10   = round(_parse_price(prices, "10")   / 10)   if _parse_price(prices, "10")   > 0 else 0
-                p100  = round(_parse_price(prices, "100")  / 100)  if _parse_price(prices, "100")  > 0 else 0
-                p1000 = round(_parse_price(prices, "1000") / 1000) if _parse_price(prices, "1000") > 0 else 0
-                item["unit_price_x1"]    = p1
-                item["unit_price_x10"]   = p10
-                item["unit_price_x100"]  = p100
-                item["unit_price_x1000"] = p1000
-                if any(v > 0 for v in (p1, p10, p100, p1000)):
-                    item["last_updated"] = _now_iso()
-                break
+    for category in market["data"].values():
+        if name in category:
+            p1    = _parse_price(prices, "1")
+            p10   = round(_parse_price(prices, "10")   / 10)   if _parse_price(prices, "10")   > 0 else 0
+            p100  = round(_parse_price(prices, "100")  / 100)  if _parse_price(prices, "100")  > 0 else 0
+            p1000 = round(_parse_price(prices, "1000") / 1000) if _parse_price(prices, "1000") > 0 else 0
+            entry = category[name]
+            entry["x1"]    = p1
+            entry["x10"]   = p10
+            entry["x100"]  = p100
+            entry["x1000"] = p1000
+            if any(v > 0 for v in (p1, p10, p100, p1000)):
+                entry["last_updated"] = _now_iso()
+            break
     save_markets(markets)
     p = prices
     print(f"[OK] x1={p.get('unit_price_x1','N/A')}  x10={p.get('unit_price_x10','N/A')}  x100={p.get('unit_price_x100','N/A')}  x1000={p.get('unit_price_x1000','N/A')}")
@@ -166,14 +165,9 @@ def ensure_catalogued(names: set[str], markets: dict, item_lookup: dict, craftab
             time.sleep(0.15)
             continue
         market = markets[market_name]
-        market["data"].setdefault(category, [])
-        if name not in [i["name"] for i in market["data"][category]]:
-            market["data"][category].append({
-                "name": name,
-                "unit_price_x1": 0, "unit_price_x10": 0,
-                "unit_price_x100": 0, "unit_price_x1000": 0,
-            })
-            market["data"][category].sort(key=lambda x: x["name"])
+        market["data"].setdefault(category, {})
+        if name not in market["data"][category]:
+            market["data"][category][name] = {"x1": 0, "x10": 0, "x100": 0, "x1000": 0}
             item_lookup[name] = market_name
         save_markets(markets)
         print(f"  + {name} → {category} [{market_name}]")
@@ -196,13 +190,9 @@ def load_all_pack_prices() -> dict[str, dict]:
     # Precios de todos los mercadillos
     all_markets_data = _load_file(PRICES_FILE) if os.path.exists(PRICES_FILE) else {}
     for data in all_markets_data.values():
-        for items in data.values():
-            for item in items:
-                name = item["name"].strip()
-                pack_prices[name] = {
-                    size: item.get(f"unit_price_{size}", 0)
-                    for size in SIZES
-                }
+        for category in data.values():
+            for name, pd in category.items():
+                pack_prices[name] = {size: pd.get(size, 0) for size in SIZES}
 
     # Craftables usados como ingredientes: min(crafting_cost, selling_price)
     for fname in os.listdir(DATA_DIR):
@@ -241,19 +231,19 @@ def load_raw_market_prices() -> tuple[dict, dict]:
             with open(PRICES_FILE, encoding="utf-8") as f:
                 prices_raw = json.load(f)
             for market_data in prices_raw.values():
-                for items in market_data.values():
-                    for item in items:
-                        if not isinstance(item, dict) or "name" not in item:
+                for category in market_data.values():
+                    for name, pd in category.items():
+                        if not isinstance(pd, dict):
                             continue
                         lot_prices = {
                             size: int(p)
                             for size in ("1", "10", "100", "1000")
-                            if (p := item.get(f"unit_price_x{size}", 0)) and int(p) > 0
+                            if (p := pd.get(f"x{size}", 0)) and int(p) > 0
                         }
                         if lot_prices:
-                            raw_market_prices[item["name"]] = lot_prices
-                        if item.get("last_updated"):
-                            ing_last_updated[item["name"]] = item["last_updated"]
+                            raw_market_prices[name] = lot_prices
+                        if pd.get("last_updated"):
+                            ing_last_updated[name] = pd["last_updated"]
     except Exception:
         pass
     return raw_market_prices, ing_last_updated
