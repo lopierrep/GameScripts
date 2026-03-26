@@ -181,7 +181,7 @@ def save_selling_price(recipe_file: str, name: str, prices: dict):
     print(f"[OK] {name} → x1={x1}  x10={x10}  x100={x100}  x1000={x1000}")
 
 
-def search_and_save_selling(recipe_file: str, name: str) -> dict:
+def search_and_save_selling(recipe_file: str, name: str, stop_flag: list = None) -> dict:
     """Busca el precio de venta de un item y lo guarda. Omite si está en exclusiones o es fresco."""
     if name in _load_omitted_recipes():
         print(f"[SKIP] {name} — en lista de excepciones")
@@ -201,6 +201,6 @@ def search_and_save_selling(recipe_file: str, name: str) -> dict:
             "_skipped":         True,
         }
     search_item(name)
-    prices = read_prices(name)
+    prices = read_prices(name, stop_flag=stop_flag)
     save_selling_price(recipe_file, name, prices)
     return prices

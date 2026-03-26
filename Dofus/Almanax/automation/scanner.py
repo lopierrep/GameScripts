@@ -62,7 +62,7 @@ class MarketScanner:
 
         def _process(item: str) -> dict:
             search_item(item)
-            raw   = read_prices(item)
+            raw   = read_prices(item, stop_flag=stop_event.is_set)
             entry = {f"x{s}": parse_price(raw, str(s)) for s in LOTS}
             if not any(v > 0 for v in entry.values()):
                 raise ValueError("sin precios")

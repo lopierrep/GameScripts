@@ -55,7 +55,7 @@ def ask_manual_selling_prices(name: str) -> dict:
 
 # ── Búsqueda de ingredientes ──────────────────────────────────────────────────
 
-def search_and_save_ingredient(name: str, markets: dict, item_lookup: dict) -> dict:
+def search_and_save_ingredient(name: str, markets: dict, item_lookup: dict, stop_flag: list = None) -> dict:
     if _ingredient_is_fresh(name, markets, item_lookup):
         print(f"[SKIP] {name} — actualizado hace menos de 1h")
         market_name = item_lookup.get(name)
@@ -64,7 +64,7 @@ def search_and_save_ingredient(name: str, markets: dict, item_lookup: dict) -> d
                 pd = category[name]
                 return {**{f"unit_price_x{s}": pd.get(f"x{s}", 0) for s in ("1", "10", "100", "1000")}, "_skipped": True}
     search_item(name)
-    prices = read_prices(name)
+    prices = read_prices(name, stop_flag=stop_flag)
     save_ingredient_price(name, prices, markets, item_lookup)
     return prices
 
@@ -110,9 +110,9 @@ def search_market_batch(
         def _process(name: str) -> dict:
             if name in results_set:
                 target_file = (result_file_map or {}).get(name, recipe_file)
-                result = search_and_save_selling(target_file, name)
+                result = search_and_save_selling(target_file, name, stop_flag=stop_flag)
             else:
-                result = search_and_save_ingredient(name, markets, item_lookup)
+                result = search_and_save_ingredient(name, markets, item_lookup, stop_flag=stop_flag)
             if on_item_done:
                 on_item_done()
             return result
