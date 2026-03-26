@@ -366,17 +366,18 @@ def build_table_rows(
             if craft_u > 0 and sell_u > 0 and sell_u * size_num <= _MAX_LOT_PRICE:
                 profits[size] = net_sell_price(sell_u) - craft_u
 
-        best_lot = best_craft = best_sell = best_profit = best_size = None
+        best_lot = best_craft = best_sell = best_profit = best_profit_total = best_size = None
         if profits:
             max_profit = max(profits.values())
-            threshold  = max_profit * (1 - tolerance)
+            threshold  = max_profit - abs(max_profit) * tolerance
             for size in reversed(SIZES):
                 if profits.get(size, float("-inf")) >= threshold:
-                    best_profit = profits[size]
-                    best_size   = size
-                    best_lot    = size
-                    best_craft  = r.get(f"unit_crafting_cost_{size}")
-                    best_sell   = r.get(f"unit_selling_price_{size}")
+                    best_profit       = profits[size]
+                    best_profit_total = round(best_profit * int(size[1:]))
+                    best_size         = size
+                    best_lot          = size
+                    best_craft        = r.get(f"unit_crafting_cost_{size}")
+                    best_sell         = r.get(f"unit_selling_price_{size}")
                     break
 
         pack_size = best_size or "x1"
@@ -457,14 +458,15 @@ def build_table_rows(
         ]
 
         rows.append({
-            "result":      r.get("result", ""),
-            "level":       r.get("level", ""),
-            "best_lot":    best_lot or "—",
-            "craft_cost":  best_craft,
-            "sell_price":  best_sell,
-            "profit":      best_profit,
-            "updated":     r.get("selling_last_updated", ""),
-            "ingredients": ingredients,
+            "result":        r.get("result", ""),
+            "level":         r.get("level", ""),
+            "best_lot":      best_lot or "—",
+            "craft_cost":    best_craft,
+            "sell_price":    best_sell,
+            "profit":        best_profit,
+            "profit_total":  best_profit_total,
+            "updated":       r.get("selling_last_updated", ""),
+            "ingredients":   ingredients,
         })
 
     return rows

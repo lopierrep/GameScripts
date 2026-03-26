@@ -2,6 +2,7 @@
 Constantes globales para Crafting.
 """
 
+import json
 import os
 import sys
 from datetime import datetime, timezone
@@ -23,6 +24,7 @@ DATA_DIR         = os.path.join(ROOT_DIR, "data")
 CATEGORIES_FILE  = os.path.join(ROOT_DIR, "..", "shared", "market", "categories_by_market.json")
 PRICES_FILE      = os.path.join(DATA_DIR, "materials_prices.json")
 CREDENTIALS_FILE = os.path.join(ROOT_DIR, "export", "credentials.json")
+SETTINGS_FILE    = os.path.join(ROOT_DIR, "config", "user_settings.json")
 
 OMITTED_RECIPES_FILE    = os.path.join(ROOT_DIR, "config", "omitted_recipes.txt")
 OMITTED_CATEGORIES_FILE = os.path.join(ROOT_DIR, "config", "omitted_categories.txt")
@@ -97,3 +99,19 @@ def find_recipe_file(profession: str) -> str | None:
 
 def _now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
+
+
+def load_user_settings() -> dict:
+    """Carga la configuración de usuario desde user_settings.json."""
+    try:
+        with open(SETTINGS_FILE, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
+def save_user_settings(settings: dict):
+    """Guarda la configuración de usuario en user_settings.json."""
+    os.makedirs(os.path.dirname(SETTINGS_FILE), exist_ok=True)
+    with open(SETTINGS_FILE, "w", encoding="utf-8") as f:
+        json.dump(settings, f, ensure_ascii=False, indent=2)

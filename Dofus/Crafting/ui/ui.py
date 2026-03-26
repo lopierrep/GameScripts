@@ -106,9 +106,11 @@ class CraftingUI:
     }
     """
 
-    def __init__(self, root: tk.Tk, callbacks: dict, professions: list):
+    def __init__(self, root: tk.Tk, callbacks: dict, professions: list, load_settings, save_settings):
         self.root = root
         self._cbs = callbacks
+        self._load_settings = load_settings
+        self._save_settings = save_settings
         self._all_rows: list = []
         self._row_data: dict = {}
         self._selected_recipe_iid: str | None = None
@@ -285,7 +287,8 @@ class CraftingUI:
         _tol_lbl = tk.Label(ff, text="Tolerancia lote:", bg=C["bg"], fg=C["dim"],
                             font=("Segoe UI", 8))
         _tol_lbl.pack(side="left")
-        self._tolerance_var = tk.StringVar(value="5")
+        self._tolerance_var = tk.StringVar(value=self._load_settings().get("tolerance", "5"))
+        self._tolerance_var.trace_add("write", self._on_tolerance_change)
         _tol_entry = tk.Entry(ff, textvariable=self._tolerance_var, width=4,
                               bg=C["surface"], fg=C["text"], insertbackground=C["text"],
                               relief="flat", font=("Segoe UI", 9))
@@ -315,7 +318,7 @@ class CraftingUI:
         self._tree.column("#0", width=46, minwidth=46, stretch=False)
         headings = {
             "result":  ("Receta / Ingrediente", 200, "w"),
-            "profit":  ("Ganancia / Total",     110, "center"),
+            "profit":  ("Ganancia Total",  160, "center"),
             "lot":     ("Mejor Lote",            90, "center"),
             "qty":     ("Cantidad",              80, "center"),
             "craft":   ("Costo/u",              110, "center"),
@@ -584,8 +587,8 @@ class CraftingUI:
         self._populate_tree(self._all_rows)
 
     def _populate_tree(self, rows: list, profitable: list = None):
-        # Ordenar de mayor a menor ganancia por defecto
-        rows = sorted(rows, key=lambda r: (r.get("profit") or float("-inf")), reverse=True)
+        # Ordenar de mayor a menor ganancia total por defecto
+        rows = sorted(rows, key=lambda r: (r.get("profit_total") or float("-inf")), reverse=True)
 
         if profitable is None:
             profitable = profitable_rows(rows)
@@ -597,7 +600,8 @@ class CraftingUI:
         self._row_tags: dict = {}
 
         for row in rows:
-            profit  = row.get("profit")
+            profit       = row.get("profit")
+            profit_total = row.get("profit_total")
             craft   = row.get("craft_cost")
             sell    = row.get("sell_price")
             level   = row.get("level", "")
@@ -607,20 +611,19 @@ class CraftingUI:
 
             craft_str  = _fmt(craft)
             sell_str   = _fmt(sell)
-            if profit is None:
+            if profit_total is None:
                 profit_str = "—"
-            elif profit >= 0:
-                profit_str = f"+{_fmt(profit)}"
             else:
-                profit_str = f"-{_fmt(abs(profit))}"
+                tsign = "+" if profit_total >= 0 else "-"
+                profit_str = f"{tsign}{_fmt(abs(profit_total))}"
 
-            if profit is None:
+            if profit_total is None:
                 tag = "missing"
             elif name in top_names:
                 tag = "top"
-            elif profit > 0:
+            elif profit_total > 0:
                 tag = "profit"
-            elif profit < 0:
+            elif profit_total < 0:
                 tag = "loss"
             else:
                 tag = "neutral"
@@ -637,8 +640,8 @@ class CraftingUI:
 
     def _insert_ing(self, parent_iid: str, ing: dict, depth: int = 0):
         indent   = "      " * depth
-        ing_name = indent + ing.get("name", "")
         qty          = ing.get("quantity", 1)
+        ing_name = indent + ing.get("name", "") + f" ({qty})"
         sell_size    = ing.get("sell_size")
         buy_lot      = ing.get("buy_lot") or "—"
         price        = ing.get("unit_price")
@@ -739,6 +742,12 @@ class CraftingUI:
         if not text:
             return
         self._write_log(text, tag or _auto_tag(text))
+
+    def _on_tolerance_change(self, *args):
+        """Guarda la tolerancia cuando cambia."""
+        settings = self._load_settings()
+        settings["tolerance"] = self._tolerance_var.get()
+        self._save_settings(settings)
 
     def clear_log(self):
         self._log.configure(state="normal")

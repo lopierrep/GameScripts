@@ -1,21 +1,21 @@
 {
   "search_box": [
-    747,
-    180
+    737,
+    186
   ],
   "results_names_region": [
     970,
-    217,
-    207,
-    543
+    215,
+    206,
+    544
   ],
   "price_region_all": [
-    533,
+    543,
     610,
-    213,
-    139
+    218,
+    142
   ],
-  "first_result_y": 240,
-  "result_row_height": 78,
-  "results_click_x": 1112
+  "first_result_y": 239,
+  "result_row_height": 65,
+  "results_click_x": 1108
 }

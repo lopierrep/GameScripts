@@ -11,13 +11,14 @@
       }
     ],
     "unit_selling_price_x1": 0,
-    "unit_selling_price_x10": 0,
-    "unit_selling_price_x100": 0,
-    "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_selling_price_x10": 2,
+    "unit_selling_price_x100": 2,
+    "unit_selling_price_x1000": 2,
+    "unit_crafting_cost_x1": 78,
+    "unit_crafting_cost_x10": 78,
+    "unit_crafting_cost_x100": 78,
+    "unit_crafting_cost_x1000": 80,
+    "selling_last_updated": "2026-03-26T05:28:58.746637+00:00"
   },
   {
     "id": 17422,
@@ -52,12 +53,13 @@
     ],
     "unit_selling_price_x1": 0,
     "unit_selling_price_x10": 0,
-    "unit_selling_price_x100": 0,
-    "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_selling_price_x100": 1,
+    "unit_selling_price_x1000": 1,
+    "unit_crafting_cost_x1": 91,
+    "unit_crafting_cost_x10": 79,
+    "unit_crafting_cost_x100": 69,
+    "unit_crafting_cost_x1000": 69,
+    "selling_last_updated": "2026-03-26T05:28:58.746658+00:00"
   },
   {
     "id": 17169,
@@ -123,13 +125,14 @@
       }
     ],
     "unit_selling_price_x1": 0,
-    "unit_selling_price_x10": 0,
-    "unit_selling_price_x100": 0,
-    "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_selling_price_x10": 2,
+    "unit_selling_price_x100": 3,
+    "unit_selling_price_x1000": 2,
+    "unit_crafting_cost_x1": 64,
+    "unit_crafting_cost_x10": 45,
+    "unit_crafting_cost_x100": 43,
+    "unit_crafting_cost_x1000": 43,
+    "selling_last_updated": "2026-03-26T05:28:58.746671+00:00"
   },
   {
     "id": 17172,
@@ -195,13 +198,14 @@
       }
     ],
     "unit_selling_price_x1": 0,
-    "unit_selling_price_x10": 0,
-    "unit_selling_price_x100": 0,
-    "unit_selling_price_x1000": 0,
+    "unit_selling_price_x10": 30000,
+    "unit_selling_price_x100": 30000,
+    "unit_selling_price_x1000": 30000,
     "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x10": 3774,
+    "unit_crafting_cost_x100": 3606,
+    "unit_crafting_cost_x1000": 3628,
+    "selling_last_updated": "2026-03-26T05:28:58.746707+00:00"
   },
   {
     "id": 17173,
@@ -222,14 +226,15 @@
         "quantity": 1
       }
     ],
-    "unit_selling_price_x1": 0,
-    "unit_selling_price_x10": 0,
-    "unit_selling_price_x100": 0,
-    "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_selling_price_x1": 95,
+    "unit_selling_price_x10": 95,
+    "unit_selling_price_x100": 90,
+    "unit_selling_price_x1000": 100,
+    "unit_crafting_cost_x1": 277,
+    "unit_crafting_cost_x10": 277,
+    "unit_crafting_cost_x100": 279,
+    "unit_crafting_cost_x1000": 350,
+    "selling_last_updated": "2026-03-26T05:28:58.746721+00:00"
   },
   {
     "id": 17174,
@@ -279,13 +284,14 @@
       }
     ],
     "unit_selling_price_x1": 0,
-    "unit_selling_price_x10": 0,
-    "unit_selling_price_x100": 0,
-    "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_selling_price_x10": 8,
+    "unit_selling_price_x100": 10,
+    "unit_selling_price_x1000": 11,
+    "unit_crafting_cost_x1": 123,
+    "unit_crafting_cost_x10": 63,
+    "unit_crafting_cost_x100": 62,
+    "unit_crafting_cost_x1000": 80,
+    "selling_last_updated": "2026-03-26T05:28:58.746736+00:00"
   },
   {
     "id": 17176,
@@ -346,10 +352,10 @@
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1": 16532,
+    "unit_crafting_cost_x10": 11027,
+    "unit_crafting_cost_x100": 12419,
+    "unit_crafting_cost_x1000": 15929
   },
   {
     "id": 17177,
@@ -371,13 +377,14 @@
       }
     ],
     "unit_selling_price_x1": 0,
-    "unit_selling_price_x10": 0,
-    "unit_selling_price_x100": 0,
-    "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_selling_price_x10": 138,
+    "unit_selling_price_x100": 130,
+    "unit_selling_price_x1000": 130,
+    "unit_crafting_cost_x1": 268,
+    "unit_crafting_cost_x10": 203,
+    "unit_crafting_cost_x100": 193,
+    "unit_crafting_cost_x1000": 328,
+    "selling_last_updated": "2026-03-26T05:28:58.746770+00:00"
   },
   {
     "id": 17178,
@@ -427,13 +434,14 @@
       }
     ],
     "unit_selling_price_x1": 0,
-    "unit_selling_price_x10": 0,
-    "unit_selling_price_x100": 0,
-    "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_selling_price_x10": 11,
+    "unit_selling_price_x100": 11,
+    "unit_selling_price_x1000": 11,
+    "unit_crafting_cost_x1": 1634,
+    "unit_crafting_cost_x10": 532,
+    "unit_crafting_cost_x100": 513,
+    "unit_crafting_cost_x1000": 524,
+    "selling_last_updated": "2026-03-26T05:28:58.746784+00:00"
   },
   {
     "id": 17180,
@@ -482,14 +490,15 @@
         "quantity": 1
       }
     ],
-    "unit_selling_price_x1": 0,
-    "unit_selling_price_x10": 0,
-    "unit_selling_price_x100": 0,
-    "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_selling_price_x1": 349,
+    "unit_selling_price_x10": 349,
+    "unit_selling_price_x100": 349,
+    "unit_selling_price_x1000": 349,
+    "unit_crafting_cost_x1": 718,
+    "unit_crafting_cost_x10": 656,
+    "unit_crafting_cost_x100": 573,
+    "unit_crafting_cost_x1000": 573,
+    "selling_last_updated": "2026-03-26T05:28:58.746798+00:00"
   },
   {
     "id": 17182,
@@ -538,14 +547,15 @@
         "quantity": 1
       }
     ],
-    "unit_selling_price_x1": 0,
-    "unit_selling_price_x10": 0,
-    "unit_selling_price_x100": 0,
-    "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_selling_price_x1": 23,
+    "unit_selling_price_x10": 24,
+    "unit_selling_price_x100": 23,
+    "unit_selling_price_x1000": 23,
+    "unit_crafting_cost_x1": 220,
+    "unit_crafting_cost_x10": 167,
+    "unit_crafting_cost_x100": 213,
+    "unit_crafting_cost_x1000": 213,
+    "selling_last_updated": "2026-03-26T05:28:58.746810+00:00"
   },
   {
     "id": 17184,
@@ -594,10 +604,10 @@
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1": 828,
+    "unit_crafting_cost_x10": 828,
+    "unit_crafting_cost_x100": 828,
+    "unit_crafting_cost_x1000": 1119
   },
   {
     "id": 17185,
@@ -619,13 +629,14 @@
       }
     ],
     "unit_selling_price_x1": 0,
-    "unit_selling_price_x10": 0,
-    "unit_selling_price_x100": 0,
-    "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_selling_price_x10": 250,
+    "unit_selling_price_x100": 250,
+    "unit_selling_price_x1000": 249,
+    "unit_crafting_cost_x1": 445,
+    "unit_crafting_cost_x10": 355,
+    "unit_crafting_cost_x100": 335,
+    "unit_crafting_cost_x1000": 335,
+    "selling_last_updated": "2026-03-26T05:28:58.746833+00:00"
   },
   {
     "id": 17186,
@@ -675,13 +686,14 @@
       }
     ],
     "unit_selling_price_x1": 0,
-    "unit_selling_price_x10": 0,
-    "unit_selling_price_x100": 0,
-    "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_selling_price_x10": 45,
+    "unit_selling_price_x100": 45,
+    "unit_selling_price_x1000": 45,
+    "unit_crafting_cost_x1": 268,
+    "unit_crafting_cost_x10": 161,
+    "unit_crafting_cost_x100": 139,
+    "unit_crafting_cost_x1000": 139,
+    "selling_last_updated": "2026-03-26T05:28:58.746845+00:00"
   },
   {
     "id": 17188,
@@ -731,13 +743,14 @@
       }
     ],
     "unit_selling_price_x1": 0,
-    "unit_selling_price_x10": 0,
-    "unit_selling_price_x100": 0,
-    "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_selling_price_x10": 377,
+    "unit_selling_price_x100": 377,
+    "unit_selling_price_x1000": 377,
+    "unit_crafting_cost_x1": 559,
+    "unit_crafting_cost_x10": 332,
+    "unit_crafting_cost_x100": 313,
+    "unit_crafting_cost_x1000": 333,
+    "selling_last_updated": "2026-03-26T05:28:58.746859+00:00"
   },
   {
     "id": 17190,
@@ -788,12 +801,13 @@
     ],
     "unit_selling_price_x1": 0,
     "unit_selling_price_x10": 0,
-    "unit_selling_price_x100": 0,
-    "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_selling_price_x100": 666,
+    "unit_selling_price_x1000": 80,
+    "unit_crafting_cost_x1": 365,
+    "unit_crafting_cost_x10": 265,
+    "unit_crafting_cost_x100": 263,
+    "unit_crafting_cost_x1000": 263,
+    "selling_last_updated": "2026-03-26T05:28:58.746871+00:00"
   },
   {
     "id": 17191,
@@ -815,13 +829,14 @@
       }
     ],
     "unit_selling_price_x1": 0,
-    "unit_selling_price_x10": 0,
-    "unit_selling_price_x100": 0,
-    "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_selling_price_x10": 59,
+    "unit_selling_price_x100": 55,
+    "unit_selling_price_x1000": 57,
+    "unit_crafting_cost_x1": 428,
+    "unit_crafting_cost_x10": 188,
+    "unit_crafting_cost_x100": 168,
+    "unit_crafting_cost_x1000": 168,
+    "selling_last_updated": "2026-03-26T05:28:58.746883+00:00"
   },
   {
     "id": 17192,
@@ -871,13 +886,14 @@
       }
     ],
     "unit_selling_price_x1": 0,
-    "unit_selling_price_x10": 0,
-    "unit_selling_price_x100": 0,
-    "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_selling_price_x10": 3000,
+    "unit_selling_price_x100": 3000,
+    "unit_selling_price_x1000": 3000,
+    "unit_crafting_cost_x1": 518,
+    "unit_crafting_cost_x10": 353,
+    "unit_crafting_cost_x100": 353,
+    "unit_crafting_cost_x1000": 354,
+    "selling_last_updated": "2026-03-26T05:28:58.746896+00:00"
   },
   {
     "id": 17194,
@@ -927,13 +943,14 @@
       }
     ],
     "unit_selling_price_x1": 0,
-    "unit_selling_price_x10": 0,
-    "unit_selling_price_x100": 0,
-    "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_selling_price_x10": 94,
+    "unit_selling_price_x100": 85,
+    "unit_selling_price_x1000": 85,
+    "unit_crafting_cost_x1": 573,
+    "unit_crafting_cost_x10": 404,
+    "unit_crafting_cost_x100": 394,
+    "unit_crafting_cost_x1000": 394,
+    "selling_last_updated": "2026-03-26T05:28:58.746908+00:00"
   },
   {
     "id": 17196,
@@ -986,10 +1003,10 @@
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1": 5580,
+    "unit_crafting_cost_x10": 4463,
+    "unit_crafting_cost_x100": 4463,
+    "unit_crafting_cost_x1000": 4463
   },
   {
     "id": 17197,
@@ -1067,13 +1084,14 @@
       }
     ],
     "unit_selling_price_x1": 0,
-    "unit_selling_price_x10": 0,
-    "unit_selling_price_x100": 0,
-    "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_selling_price_x10": 139,
+    "unit_selling_price_x100": 134,
+    "unit_selling_price_x1000": 130,
+    "unit_crafting_cost_x1": 1260,
+    "unit_crafting_cost_x10": 494,
+    "unit_crafting_cost_x100": 449,
+    "unit_crafting_cost_x1000": 469,
+    "selling_last_updated": "2026-03-26T05:28:58.746922+00:00"
   },
   {
     "id": 17200,
@@ -1123,13 +1141,14 @@
       }
     ],
     "unit_selling_price_x1": 0,
-    "unit_selling_price_x10": 0,
-    "unit_selling_price_x100": 0,
-    "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_selling_price_x10": 785,
+    "unit_selling_price_x100": 750,
+    "unit_selling_price_x1000": 750,
+    "unit_crafting_cost_x1": 1146,
+    "unit_crafting_cost_x10": 619,
+    "unit_crafting_cost_x100": 591,
+    "unit_crafting_cost_x1000": 591,
+    "selling_last_updated": "2026-03-26T05:28:58.746938+00:00"
   },
   {
     "id": 17202,
@@ -1194,14 +1213,14 @@
         "quantity": 1
       }
     ],
-    "unit_selling_price_x1": 0,
-    "unit_selling_price_x10": 0,
-    "unit_selling_price_x100": 0,
-    "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_selling_price_x1": 49990,
+    "unit_selling_price_x10": 49990,
+    "unit_selling_price_x100": 49990,
+    "unit_selling_price_x1000": 49990,
+    "unit_crafting_cost_x1": 9543,
+    "unit_crafting_cost_x10": 5287,
+    "unit_crafting_cost_x100": 5064,
+    "unit_crafting_cost_x1000": 5144
   },
   {
     "id": 17792,
@@ -1242,9 +1261,9 @@
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1": 18805,
+    "unit_crafting_cost_x10": 4163,
+    "unit_crafting_cost_x100": 3858,
     "unit_crafting_cost_x1000": 0
   },
   {
@@ -1267,13 +1286,14 @@
       }
     ],
     "unit_selling_price_x1": 0,
-    "unit_selling_price_x10": 0,
-    "unit_selling_price_x100": 0,
-    "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_selling_price_x10": 350,
+    "unit_selling_price_x100": 350,
+    "unit_selling_price_x1000": 350,
+    "unit_crafting_cost_x1": 1309,
+    "unit_crafting_cost_x10": 897,
+    "unit_crafting_cost_x100": 897,
+    "unit_crafting_cost_x1000": 938,
+    "selling_last_updated": "2026-03-26T05:28:58.746952+00:00"
   },
   {
     "id": 17204,
@@ -1323,13 +1343,14 @@
       }
     ],
     "unit_selling_price_x1": 0,
-    "unit_selling_price_x10": 0,
-    "unit_selling_price_x100": 0,
-    "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_selling_price_x10": 1799,
+    "unit_selling_price_x100": 1799,
+    "unit_selling_price_x1000": 1799,
+    "unit_crafting_cost_x1": 2062,
+    "unit_crafting_cost_x10": 1138,
+    "unit_crafting_cost_x100": 1138,
+    "unit_crafting_cost_x1000": 1151,
+    "selling_last_updated": "2026-03-26T05:28:58.746966+00:00"
   },
   {
     "id": 17206,
