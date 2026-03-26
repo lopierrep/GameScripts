@@ -115,7 +115,7 @@ def preprocess_for_ocr(image: Image.Image) -> Image.Image:
 
 def ocr_all_prices() -> dict:
     r = CAL["price_region_all"]
-    region = (r[0], r[1] - 10, r[2], r[3] + 10)
+    region = (r[0], r[1] - 20, r[2], r[3] + 10)
     img = pyautogui.screenshot(region=region)
     processed = preprocess_for_ocr(img)
     raw = pytesseract.image_to_string(processed, config="--psm 6 -c tessedit_char_whitelist=0123456789.,")
@@ -251,19 +251,40 @@ def find_exact_result(name: str) -> tuple | None:
     return (CAL["results_click_x"], screen_y(best_cy))
 
 
-def read_prices(name: str, retries: int = 5) -> dict:
-    """Busca el item en el mercadillo y devuelve sus precios leídos por OCR."""
+def read_prices(name: str, retries: int = 5, stop_flag = None) -> dict:
+    """Busca el item en el mercadillo y devuelve sus precios leídos por OCR.
+    stop_flag: lista de un bool mutable [False] o callable que retorna bool."""
+    def _is_stopped() -> bool:
+        if stop_flag is None:
+            return False
+        elif isinstance(stop_flag, list):
+            return bool(stop_flag[0])
+        else:  # callable (e.g., event.is_set)
+            return bool(stop_flag())
+    
     prices = {"unit_price_x1": "N/A", "unit_price_x10": "N/A", "unit_price_x100": "N/A", "unit_price_x1000": "N/A"}
     for attempt in range(1, retries + 1):
+        if _is_stopped():
+            break
         pos = find_exact_result(name)
         if pos is None:
             print(f"  [reintento {attempt}/{retries}] item no encontrado en resultados…", end=" ", flush=True)
-            time.sleep(0.5)
+            # Sleep interruptible
+            remaining = 0.5
+            while remaining > 0 and not _is_stopped():
+                sleep_time = min(0.1, remaining)
+                time.sleep(sleep_time)
+                remaining -= sleep_time
             continue
         click_at(pos, delay=DELAY_AFTER_CLICK + 0.2)
         prices = ocr_all_prices()
         if any(v != "N/A" for v in prices.values()):
             return prices
         print(f"  [reintento {attempt}/{retries}] precios no detectados…", end=" ", flush=True)
-        time.sleep(0.5)
+        # Sleep interruptible
+        remaining = 0.5
+        while remaining > 0 and not _is_stopped():
+            sleep_time = min(0.1, remaining)
+            time.sleep(sleep_time)
+            remaining -= sleep_time
     return prices
