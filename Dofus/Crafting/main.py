@@ -17,7 +17,8 @@ for _p in (_ROOT, _DOFUS):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-from config.config import C, DATA_DIR, UNKNOWN_KEY, find_recipe_file, _load_omitted_recipes, _load_omitted_categories, load_user_settings, save_user_settings
+from config.config import C, DATA_DIR, UNKNOWN_KEY
+from utils.loaders import _load_omitted_categories, _load_omitted_recipes, find_recipe_file, list_professions, load_user_settings, save_user_settings
 from core.prices import (
     build_item_lookup,
     build_table_rows,
@@ -328,7 +329,7 @@ class CraftingApp:
         self._orig_stderr = sys.stderr
         self._last_refresh = 0.0
 
-        professions = self._list_professions()
+        professions = list_professions()
 
         callbacks = {
             "start":     self._start,
@@ -348,15 +349,6 @@ class CraftingApp:
 
         # Recargar tabla al cambiar de profesión
         self.ui._prof_cb.bind("<<ComboboxSelected>>", self._on_profession_changed)
-
-    def _list_professions(self) -> list:
-        if not os.path.isdir(DATA_DIR):
-            return []
-        return sorted(
-            f[len("recipes_"):-len(".json")]
-            for f in os.listdir(DATA_DIR)
-            if f.startswith("recipes_") and f.endswith(".json")
-        )
 
     def _on_log(self, text: str):
         self.root.after(0, self.ui.log, text)
@@ -498,7 +490,7 @@ class CraftingApp:
 
     # ── Tabla ─────────────────────────────────────────────────────────────────
 
-    def _load_table(self, profession: str, tolerance: float = None):
+    def _load_table(self, profession: str):
         recipe_file = find_recipe_file(profession)
         if not recipe_file:
             return
@@ -516,15 +508,10 @@ class CraftingApp:
             and r.get("category", "") not in omitted_categories
         ]
 
-        tol = (tolerance if tolerance is not None else self.ui.tolerance()) / 100
-
         raw_market_prices, ing_last_updated = load_raw_market_prices()
         craftable_map = load_all_craftable_recipes()
 
-        rows = build_table_rows(
-            recipes, craftable_map,
-            raw_market_prices, ing_last_updated, tol,
-        )
+        rows = build_table_rows(recipes, craftable_map, raw_market_prices, ing_last_updated)
         self.ui.refresh_table(rows)
 
     def restore_io(self):

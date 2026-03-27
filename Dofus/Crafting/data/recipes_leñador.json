@@ -61,10 +61,10 @@
       {
         "name": "Madera de fresno",
         "quantity": 10,
-        "unit_price": 25,
+        "unit_price": 20,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 250000
+        "total": 200000
       }
     ],
     "unit_selling_price_x1": 298,
@@ -91,18 +91,18 @@
       {
         "name": "Pócima de firma",
         "quantity": 1,
-        "unit_price": 880,
+        "unit_price": 704,
         "buy_lot": "x10",
         "buy_or_craft": "Craft",
-        "total": 8800
+        "total": 7040
       },
       {
         "name": "Tabla de contrachapado",
         "quantity": 1,
-        "unit_price": 145,
+        "unit_price": 116,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 1450
+        "total": 1160
       }
     ],
     "unit_selling_price_x1": 1665,
@@ -129,18 +129,18 @@
       {
         "name": "Madera de castaño",
         "quantity": 10,
-        "unit_price": 7,
+        "unit_price": 6,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 70000
+        "total": 56000
       },
       {
         "name": "Madera de fresno",
         "quantity": 10,
-        "unit_price": 25,
+        "unit_price": 20,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 250000
+        "total": 200000
       }
     ],
     "unit_selling_price_x1": 158,
@@ -167,26 +167,26 @@
       {
         "name": "Metaria roja",
         "quantity": 5,
-        "unit_price": 1788,
+        "unit_price": 1430,
         "buy_lot": "x10",
         "buy_or_craft": "Craft",
-        "total": 894000
+        "total": 715200
       },
       {
         "name": "Tabla de contrachapado",
         "quantity": 1,
-        "unit_price": 134,
+        "unit_price": 107,
         "buy_lot": "x100",
         "buy_or_craft": "Buy",
-        "total": 13400
+        "total": 10720
       },
       {
         "name": "Pepita",
         "quantity": 100,
-        "unit_price": 393,
+        "unit_price": 314,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 3930000
+        "total": 3144000
       }
     ],
     "unit_selling_price_x1": 6895,
@@ -213,26 +213,26 @@
       {
         "name": "Metaria verde",
         "quantity": 5,
-        "unit_price": 4142,
+        "unit_price": 3314,
         "buy_lot": "x10",
         "buy_or_craft": "Craft",
-        "total": 207100
+        "total": 165680
       },
       {
         "name": "Tabla de contrachapado",
         "quantity": 1,
-        "unit_price": 145,
+        "unit_price": 116,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 1450
+        "total": 1160
       },
       {
         "name": "Pepita",
         "quantity": 100,
-        "unit_price": 393,
+        "unit_price": 314,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 393000
+        "total": 314400
       }
     ],
     "unit_selling_price_x1": 44984,
@@ -259,26 +259,26 @@
       {
         "name": "Metaria azul",
         "quantity": 5,
-        "unit_price": 4004,
+        "unit_price": 3203,
         "buy_lot": "x10",
         "buy_or_craft": "Craft",
-        "total": 200200
+        "total": 160160
       },
       {
         "name": "Tabla de contrachapado",
         "quantity": 1,
-        "unit_price": 145,
+        "unit_price": 116,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 1450
+        "total": 1160
       },
       {
         "name": "Pepita",
         "quantity": 100,
-        "unit_price": 393,
+        "unit_price": 314,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 393000
+        "total": 314400
       }
     ],
     "unit_selling_price_x1": 95000,
@@ -305,26 +305,26 @@
       {
         "name": "Metaria amarilla",
         "quantity": 5,
-        "unit_price": 1036,
+        "unit_price": 829,
         "buy_lot": "x10",
         "buy_or_craft": "Craft",
-        "total": 518000
+        "total": 414400
       },
       {
         "name": "Tabla de contrachapado",
         "quantity": 1,
-        "unit_price": 134,
+        "unit_price": 107,
         "buy_lot": "x100",
         "buy_or_craft": "Buy",
-        "total": 13400
+        "total": 10720
       },
       {
         "name": "Pepita",
         "quantity": 100,
-        "unit_price": 393,
+        "unit_price": 314,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 3930000
+        "total": 3144000
       }
     ],
     "unit_selling_price_x1": 11995,
@@ -351,18 +351,18 @@
       {
         "name": "Pócima de firma",
         "quantity": 1,
-        "unit_price": 880,
+        "unit_price": 704,
         "buy_lot": "x10",
         "buy_or_craft": "Craft",
-        "total": 88000
+        "total": 70400
       },
       {
         "name": "Tabla de tostar",
         "quantity": 1,
-        "unit_price": 520,
+        "unit_price": 416,
         "buy_lot": "x100",
         "buy_or_craft": "Craft",
-        "total": 52000
+        "total": 41600
       }
     ],
     "unit_selling_price_x1": 2393,
@@ -389,26 +389,26 @@
       {
         "name": "Madera de nogal",
         "quantity": 10,
-        "unit_price": 20,
+        "unit_price": 16,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 200000
+        "total": 160000
       },
       {
         "name": "Madera de castaño",
         "quantity": 10,
-        "unit_price": 7,
+        "unit_price": 6,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 70000
+        "total": 56000
       },
       {
         "name": "Madera de fresno",
         "quantity": 10,
-        "unit_price": 25,
+        "unit_price": 20,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 250000
+        "total": 200000
       }
     ],
     "unit_selling_price_x1": 1095,
@@ -435,18 +435,18 @@
       {
         "name": "Pócima de firma",
         "quantity": 1,
-        "unit_price": 880,
+        "unit_price": 704,
         "buy_lot": "x10",
         "buy_or_craft": "Craft",
-        "total": 88000
+        "total": 70400
       },
       {
         "name": "Tabla de surf",
         "quantity": 1,
-        "unit_price": 880,
+        "unit_price": 704,
         "buy_lot": "x100",
         "buy_or_craft": "Craft",
-        "total": 88000
+        "total": 70400
       }
     ],
     "unit_selling_price_x1": 1740,
@@ -473,34 +473,34 @@
       {
         "name": "Madera de roble",
         "quantity": 10,
-        "unit_price": 36,
+        "unit_price": 29,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 36000
+        "total": 28800
       },
       {
         "name": "Madera de nogal",
+        "quantity": 10,
+        "unit_price": 16,
+        "buy_lot": "x1000",
+        "buy_or_craft": null,
+        "total": 16000
+      },
+      {
+        "name": "Madera de castaño",
+        "quantity": 10,
+        "unit_price": 6,
+        "buy_lot": "x1000",
+        "buy_or_craft": null,
+        "total": 5600
+      },
+      {
+        "name": "Madera de fresno",
         "quantity": 10,
         "unit_price": 20,
         "buy_lot": "x1000",
         "buy_or_craft": null,
         "total": 20000
-      },
-      {
-        "name": "Madera de castaño",
-        "quantity": 10,
-        "unit_price": 7,
-        "buy_lot": "x1000",
-        "buy_or_craft": null,
-        "total": 7000
-      },
-      {
-        "name": "Madera de fresno",
-        "quantity": 10,
-        "unit_price": 25,
-        "buy_lot": "x1000",
-        "buy_or_craft": null,
-        "total": 25000
       }
     ],
     "unit_selling_price_x1": 1988,
@@ -527,18 +527,18 @@
       {
         "name": "Pócima de firma",
         "quantity": 1,
-        "unit_price": 880,
+        "unit_price": 704,
         "buy_lot": "x10",
         "buy_or_craft": "Craft",
-        "total": 88000
+        "total": 70400
       },
       {
         "name": "Tabla de planchar",
         "quantity": 1,
-        "unit_price": 1440,
+        "unit_price": 1152,
         "buy_lot": "x100",
         "buy_or_craft": "Craft",
-        "total": 144000
+        "total": 115200
       }
     ],
     "unit_selling_price_x1": 4713,
@@ -565,34 +565,34 @@
       {
         "name": "Madera de roble",
         "quantity": 10,
-        "unit_price": 36,
+        "unit_price": 29,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 36000
+        "total": 28800
       },
       {
         "name": "Madera de bombú",
         "quantity": 10,
-        "unit_price": 60,
+        "unit_price": 48,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 60000
+        "total": 48000
       },
       {
         "name": "Madera de arce",
         "quantity": 10,
-        "unit_price": 28,
+        "unit_price": 22,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 28000
+        "total": 22400
       },
       {
         "name": "Madera de nogal",
         "quantity": 10,
-        "unit_price": 20,
+        "unit_price": 16,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 20000
+        "total": 16000
       }
     ],
     "unit_selling_price_x1": 1850,
@@ -619,26 +619,26 @@
       {
         "name": "Metaria maga azul",
         "quantity": 5,
-        "unit_price": 4970,
+        "unit_price": 3976,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 248500
+        "total": 198800
       },
       {
         "name": "Tabla de planchar",
         "quantity": 1,
-        "unit_price": 1720,
+        "unit_price": 1376,
         "buy_lot": "x10",
         "buy_or_craft": "Craft",
-        "total": 17200
+        "total": 13760
       },
       {
         "name": "Pepita",
         "quantity": 300,
-        "unit_price": 393,
+        "unit_price": 314,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 1179000
+        "total": 943200
       }
     ],
     "unit_selling_price_x1": 98990,
@@ -665,26 +665,26 @@
       {
         "name": "Metaria maga amarilla",
         "quantity": 5,
-        "unit_price": 1936,
+        "unit_price": 1549,
         "buy_lot": "x10",
         "buy_or_craft": "Craft",
-        "total": 96800
+        "total": 77440
       },
       {
         "name": "Tabla de planchar",
         "quantity": 1,
-        "unit_price": 1720,
+        "unit_price": 1376,
         "buy_lot": "x10",
         "buy_or_craft": "Craft",
-        "total": 17200
+        "total": 13760
       },
       {
         "name": "Pepita",
         "quantity": 300,
-        "unit_price": 393,
+        "unit_price": 314,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 1179000
+        "total": 943200
       }
     ],
     "unit_selling_price_x1": 21000,
@@ -711,26 +711,26 @@
       {
         "name": "Metaria maga roja",
         "quantity": 5,
-        "unit_price": 3835,
+        "unit_price": 3068,
         "buy_lot": "x10",
         "buy_or_craft": "Craft",
-        "total": 191750
+        "total": 153400
       },
       {
         "name": "Tabla de planchar",
         "quantity": 1,
-        "unit_price": 1720,
+        "unit_price": 1376,
         "buy_lot": "x10",
         "buy_or_craft": "Craft",
-        "total": 17200
+        "total": 13760
       },
       {
         "name": "Pepita",
         "quantity": 300,
-        "unit_price": 393,
+        "unit_price": 314,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 1179000
+        "total": 943200
       }
     ],
     "unit_selling_price_x1": 27998,
@@ -773,10 +773,10 @@
       {
         "name": "Pepita",
         "quantity": 300,
-        "unit_price": 540,
+        "unit_price": 432,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 162000
+        "total": 129600
       }
     ],
     "unit_selling_price_x1": 189898,
@@ -803,26 +803,26 @@
       {
         "name": "Pócima de envejecimiento",
         "quantity": 1,
-        "unit_price": 890,
+        "unit_price": 712,
         "buy_lot": "x100",
         "buy_or_craft": "Craft",
-        "total": 89000
+        "total": 71200
       },
       {
         "name": "Pócima de firma",
         "quantity": 1,
-        "unit_price": 880,
+        "unit_price": 704,
         "buy_lot": "x10",
         "buy_or_craft": "Craft",
-        "total": 88000
+        "total": 70400
       },
       {
         "name": "Tabla de retrete",
         "quantity": 1,
-        "unit_price": 2905,
+        "unit_price": 2324,
         "buy_lot": "x100",
         "buy_or_craft": "Craft",
-        "total": 290500
+        "total": 232400
       }
     ],
     "unit_selling_price_x1": 8714,
@@ -849,37 +849,13 @@
       {
         "name": "Madera de olivioleta",
         "quantity": 5,
-        "unit_price": 67,
+        "unit_price": 54,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 33500
+        "total": 26800
       },
       {
         "name": "Madera de tejo",
-        "quantity": 10,
-        "unit_price": 45,
-        "buy_lot": "x100",
-        "buy_or_craft": null,
-        "total": 45000
-      },
-      {
-        "name": "Madera de arce",
-        "quantity": 10,
-        "unit_price": 28,
-        "buy_lot": "x1000",
-        "buy_or_craft": null,
-        "total": 28000
-      },
-      {
-        "name": "Madera de bombú",
-        "quantity": 10,
-        "unit_price": 60,
-        "buy_lot": "x1000",
-        "buy_or_craft": null,
-        "total": 60000
-      },
-      {
-        "name": "Madera de roble",
         "quantity": 10,
         "unit_price": 36,
         "buy_lot": "x100",
@@ -887,12 +863,36 @@
         "total": 36000
       },
       {
-        "name": "Madera de pino",
-        "quantity": 5,
-        "unit_price": 176,
+        "name": "Madera de arce",
+        "quantity": 10,
+        "unit_price": 22,
+        "buy_lot": "x1000",
+        "buy_or_craft": null,
+        "total": 22400
+      },
+      {
+        "name": "Madera de bombú",
+        "quantity": 10,
+        "unit_price": 48,
+        "buy_lot": "x1000",
+        "buy_or_craft": null,
+        "total": 48000
+      },
+      {
+        "name": "Madera de roble",
+        "quantity": 10,
+        "unit_price": 29,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 88000
+        "total": 28800
+      },
+      {
+        "name": "Madera de pino",
+        "quantity": 5,
+        "unit_price": 141,
+        "buy_lot": "x100",
+        "buy_or_craft": null,
+        "total": 70400
       }
     ],
     "unit_selling_price_x1": 3953,
@@ -972,26 +972,26 @@
       {
         "name": "Pócima de firma",
         "quantity": 1,
-        "unit_price": 880,
+        "unit_price": 704,
         "buy_lot": "x10",
         "buy_or_craft": "Craft",
-        "total": 88000
+        "total": 70400
       },
       {
         "name": "Pócima de envejecimiento",
         "quantity": 1,
-        "unit_price": 890,
+        "unit_price": 712,
         "buy_lot": "x100",
         "buy_or_craft": "Craft",
-        "total": 89000
+        "total": 71200
       },
       {
         "name": "Tabla de pastelería",
         "quantity": 1,
-        "unit_price": 3695,
+        "unit_price": 2956,
         "buy_lot": "x100",
         "buy_or_craft": "Craft",
-        "total": 369500
+        "total": 295600
       }
     ],
     "unit_selling_price_x1": 8594,
@@ -1018,58 +1018,58 @@
       {
         "name": "Madera de tejo",
         "quantity": 10,
-        "unit_price": 45,
+        "unit_price": 36,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 45000
+        "total": 36000
       },
       {
         "name": "Madera de bambú",
         "quantity": 10,
-        "unit_price": 60,
+        "unit_price": 48,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 60000
+        "total": 48000
       },
       {
         "name": "Madera de cerezo silvestre",
         "quantity": 10,
-        "unit_price": 55,
+        "unit_price": 44,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 55000
+        "total": 44000
       },
       {
         "name": "Madera de olivioleta",
         "quantity": 5,
-        "unit_price": 67,
+        "unit_price": 54,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 33500
+        "total": 26800
       },
       {
         "name": "Madera de arce",
         "quantity": 10,
-        "unit_price": 28,
+        "unit_price": 22,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 28000
+        "total": 22400
       },
       {
         "name": "Madera de bombú",
         "quantity": 10,
-        "unit_price": 60,
+        "unit_price": 48,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 60000
+        "total": 48000
       },
       {
         "name": "Madera de pino",
         "quantity": 5,
-        "unit_price": 176,
+        "unit_price": 141,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 88000
+        "total": 70400
       }
     ],
     "unit_selling_price_x1": 10991,
@@ -1096,26 +1096,26 @@
       {
         "name": "Pócima de envejecimiento",
         "quantity": 1,
-        "unit_price": 890,
+        "unit_price": 712,
         "buy_lot": "x100",
         "buy_or_craft": "Craft",
-        "total": 89000
+        "total": 71200
       },
       {
         "name": "Pócima de los ancestros",
         "quantity": 1,
-        "unit_price": 1680,
+        "unit_price": 1344,
         "buy_lot": "x100",
         "buy_or_craft": "Craft",
-        "total": 168000
+        "total": 134400
       },
       {
         "name": "Tabla de grabado",
         "quantity": 1,
-        "unit_price": 7305,
+        "unit_price": 5844,
         "buy_lot": "x100",
         "buy_or_craft": "Craft",
-        "total": 730500
+        "total": 584400
       }
     ],
     "unit_selling_price_x1": 8990,
@@ -1142,58 +1142,58 @@
       {
         "name": "Madera de avellano",
         "quantity": 10,
-        "unit_price": 59,
+        "unit_price": 47,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 59000
+        "total": 47200
       },
       {
         "name": "Madera de ébano",
         "quantity": 10,
-        "unit_price": 390,
+        "unit_price": 312,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 390000
+        "total": 312000
       },
       {
         "name": "Madera de bambú",
         "quantity": 10,
-        "unit_price": 60,
+        "unit_price": 48,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 60000
+        "total": 48000
       },
       {
         "name": "Madera de cerezo silvestre",
         "quantity": 10,
-        "unit_price": 55,
+        "unit_price": 44,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 55000
+        "total": 44000
       },
       {
         "name": "Madera de tejo",
         "quantity": 10,
-        "unit_price": 45,
+        "unit_price": 36,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 45000
+        "total": 36000
       },
       {
         "name": "Madera de olivioleta",
         "quantity": 5,
-        "unit_price": 67,
+        "unit_price": 54,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 33500
+        "total": 26800
       },
       {
         "name": "Madera de pino",
         "quantity": 5,
-        "unit_price": 176,
+        "unit_price": 141,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 88000
+        "total": 70400
       }
     ],
     "unit_selling_price_x1": 11490,
@@ -1220,26 +1220,26 @@
       {
         "name": "Pócima de envejecimiento",
         "quantity": 1,
-        "unit_price": 890,
+        "unit_price": 712,
         "buy_lot": "x100",
         "buy_or_craft": "Craft",
-        "total": 89000
+        "total": 71200
       },
       {
         "name": "Pócima de los ancestros",
         "quantity": 1,
-        "unit_price": 1680,
+        "unit_price": 1344,
         "buy_lot": "x100",
         "buy_or_craft": "Craft",
-        "total": 168000
+        "total": 134400
       },
       {
         "name": "Tabla para panes",
         "quantity": 1,
-        "unit_price": 7480,
+        "unit_price": 5984,
         "buy_lot": "x100",
         "buy_or_craft": "Craft",
-        "total": 748000
+        "total": 598400
       }
     ],
     "unit_selling_price_x1": 13289,
@@ -1266,58 +1266,58 @@
       {
         "name": "Madera de kalipto",
         "quantity": 10,
-        "unit_price": 50,
+        "unit_price": 40,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 50000
+        "total": 40000
       },
       {
         "name": "Madera de carpe",
         "quantity": 10,
-        "unit_price": 89,
+        "unit_price": 71,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 89000
+        "total": 71200
       },
       {
         "name": "Madera de ébano",
         "quantity": 10,
-        "unit_price": 390,
+        "unit_price": 312,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 390000
+        "total": 312000
       },
       {
         "name": "Madera de avellano",
         "quantity": 10,
-        "unit_price": 59,
+        "unit_price": 47,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 59000
+        "total": 47200
       },
       {
         "name": "Madera de cerezo silvestre",
         "quantity": 10,
-        "unit_price": 55,
+        "unit_price": 44,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 55000
+        "total": 44000
       },
       {
         "name": "Madera de bambú",
         "quantity": 10,
-        "unit_price": 60,
+        "unit_price": 48,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 60000
+        "total": 48000
       },
       {
         "name": "Madera de tejo",
         "quantity": 10,
-        "unit_price": 45,
+        "unit_price": 36,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 45000
+        "total": 36000
       }
     ],
     "unit_selling_price_x1": 9896,
@@ -1344,26 +1344,26 @@
       {
         "name": "Pócima de los ancestros",
         "quantity": 1,
-        "unit_price": 1820,
+        "unit_price": 1456,
         "buy_lot": "x10",
         "buy_or_craft": "Craft",
-        "total": 18200
+        "total": 14560
       },
       {
         "name": "Pócima de ganduleo",
         "quantity": 1,
-        "unit_price": 3098,
+        "unit_price": 2478,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 30980
+        "total": 24784
       },
       {
         "name": "Tabla para pintar",
         "quantity": 1,
-        "unit_price": 13170,
+        "unit_price": 10536,
         "buy_lot": "x10",
         "buy_or_craft": "Craft",
-        "total": 131700
+        "total": 105360
       }
     ],
     "unit_selling_price_x1": 27983,
@@ -1390,66 +1390,66 @@
       {
         "name": "Madera de bambú oscuro",
         "quantity": 10,
-        "unit_price": 97,
+        "unit_price": 78,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 9700
+        "total": 7760
       },
       {
         "name": "Madera de ébano",
         "quantity": 10,
-        "unit_price": 438,
+        "unit_price": 350,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 43800
+        "total": 35040
       },
       {
         "name": "Madera de olmo",
         "quantity": 10,
-        "unit_price": 455,
+        "unit_price": 364,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 45500
+        "total": 36400
       },
       {
         "name": "Madera de carpe",
         "quantity": 10,
-        "unit_price": 89,
+        "unit_price": 71,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 8900
+        "total": 7120
       },
       {
         "name": "Madera de kalipto",
         "quantity": 10,
-        "unit_price": 55,
+        "unit_price": 44,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 5500
+        "total": 4400
       },
       {
         "name": "Madera de avellano",
         "quantity": 10,
-        "unit_price": 68,
+        "unit_price": 54,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 6800
+        "total": 5440
       },
       {
         "name": "Madera de cerezo silvestre",
         "quantity": 10,
-        "unit_price": 55,
+        "unit_price": 44,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 5500
+        "total": 4400
       },
       {
         "name": "Madera de bambú",
         "quantity": 10,
-        "unit_price": 60,
+        "unit_price": 48,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 6000
+        "total": 4800
       }
     ],
     "unit_selling_price_x1": 14992,
@@ -1476,26 +1476,26 @@
       {
         "name": "Pócima de los ancestros",
         "quantity": 1,
-        "unit_price": 1680,
+        "unit_price": 1344,
         "buy_lot": "x100",
         "buy_or_craft": "Craft",
-        "total": 168000
+        "total": 134400
       },
       {
         "name": "Pócima de ganduleo",
         "quantity": 1,
-        "unit_price": 3098,
+        "unit_price": 2478,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 309800
+        "total": 247840
       },
       {
         "name": "Tabla de salvación",
         "quantity": 1,
-        "unit_price": 13100,
-        "buy_lot": "x100",
+        "unit_price": 11432,
+        "buy_lot": "x10",
         "buy_or_craft": "Craft",
-        "total": 1310000
+        "total": 1143200
       }
     ],
     "unit_selling_price_x1": 1740,
@@ -1522,66 +1522,66 @@
       {
         "name": "Madera de bambú oscuro",
         "quantity": 10,
-        "unit_price": 97,
+        "unit_price": 78,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 9700
+        "total": 7760
       },
       {
         "name": "Madera de bambú sagrado",
         "quantity": 10,
-        "unit_price": 97,
+        "unit_price": 78,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 9700
+        "total": 7760
       },
       {
         "name": "Madera de carpe",
         "quantity": 10,
-        "unit_price": 89,
+        "unit_price": 71,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 8900
+        "total": 7120
       },
       {
         "name": "Madera de kalipto",
         "quantity": 10,
-        "unit_price": 55,
+        "unit_price": 44,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 5500
+        "total": 4400
       },
       {
         "name": "Madera de olmo",
         "quantity": 10,
-        "unit_price": 455,
+        "unit_price": 364,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 45500
+        "total": 36400
       },
       {
         "name": "Madera de álamo temblón",
         "quantity": 10,
-        "unit_price": 130,
+        "unit_price": 104,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 13000
+        "total": 10400
       },
       {
         "name": "Madera de ébano",
         "quantity": 10,
-        "unit_price": 438,
+        "unit_price": 350,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 43800
+        "total": 35040
       },
       {
         "name": "Madera de avellano",
         "quantity": 10,
-        "unit_price": 68,
+        "unit_price": 54,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 6800
+        "total": 5440
       }
     ],
     "unit_selling_price_x1": 34990,
@@ -1608,34 +1608,34 @@
       {
         "name": "Cristal líquido",
         "quantity": 10,
-        "unit_price": 700,
+        "unit_price": 560,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 70000
+        "total": 56000
       },
       {
         "name": "Cristal plegable",
         "quantity": 10,
-        "unit_price": 770,
+        "unit_price": 616,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 77000
+        "total": 61600
       },
       {
         "name": "Tulipán de papel",
         "quantity": 10,
-        "unit_price": 1298,
+        "unit_price": 1038,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 129800
+        "total": 103840
       },
       {
         "name": "Pischis de tinta",
         "quantity": 10,
-        "unit_price": 1470,
+        "unit_price": 1176,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 147000
+        "total": 117600
       }
     ],
     "unit_selling_price_x1": 29989,

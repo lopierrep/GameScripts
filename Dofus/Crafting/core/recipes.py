@@ -9,12 +9,10 @@ from config.config import (
     CACHE_SECONDS,
     DATA_DIR,
     SIZES,
-    _load_omitted_categories,
-    _load_omitted_recipes,
-    _now_iso,
     _parse_price,
-    find_recipe_file,
 )
+from utils.loaders import _load_omitted_categories, _load_omitted_recipes, find_recipe_file, get_recipe_files
+from utils.market import _now_iso, filter_lot_prices
 from shared.market.search_item_prices import search_item, read_prices
 from datetime import datetime, timezone
 
@@ -24,42 +22,35 @@ from datetime import datetime, timezone
 def load_all_craftable_recipes() -> dict[str, dict]:
     """Devuelve {result_name: recipe_dict} para todas las recetas de todas las profesiones."""
     craftable = {}
-    for fname in os.listdir(DATA_DIR):
-        if fname.startswith("recipes_") and fname.endswith(".json"):
-            with open(os.path.join(DATA_DIR, fname), encoding="utf-8") as f:
-                for r in json.load(f):
-                    craftable[r["result"]] = r
+    for path in get_recipe_files():
+        with open(path, encoding="utf-8") as f:
+            for r in json.load(f):
+                craftable[r["result"]] = r
     return craftable
 
 
 def all_recipe_results() -> set[str]:
     results = set()
-    for fname in os.listdir(DATA_DIR):
-        if fname.startswith("recipes_") and fname.endswith(".json"):
-            with open(os.path.join(DATA_DIR, fname), encoding="utf-8") as f:
-                for r in json.load(f):
-                    results.add(r["result"])
+    for path in get_recipe_files():
+        with open(path, encoding="utf-8") as f:
+            for r in json.load(f):
+                results.add(r["result"])
     return results
 
 
 def build_result_file_map() -> dict[str, str]:
     """Devuelve {result_name: recipe_file_path} para todas las recetas."""
     result_map = {}
-    for fname in os.listdir(DATA_DIR):
-        if fname.startswith("recipes_") and fname.endswith(".json"):
-            path = os.path.join(DATA_DIR, fname)
-            with open(path, encoding="utf-8") as f:
-                for r in json.load(f):
-                    result_map[r["result"]] = path
+    for path in get_recipe_files():
+        with open(path, encoding="utf-8") as f:
+            for r in json.load(f):
+                result_map[r["result"]] = path
     return result_map
 
 
 def find_recipe(result_name: str) -> tuple[dict | None, str | None]:
     """Devuelve (recipe_dict, recipe_file_path) para el resultado dado."""
-    for fname in os.listdir(DATA_DIR):
-        if not fname.startswith("recipes_") or not fname.endswith(".json"):
-            continue
-        path = os.path.join(DATA_DIR, fname)
+    for path in get_recipe_files():
         with open(path, encoding="utf-8") as f:
             for r in json.load(f):
                 if r.get("result") == result_name:
@@ -74,12 +65,10 @@ def profession_from_file(path: str) -> str:
 
 def sub_recipe_files(sub_results: set[str], main_recipe_file: str) -> list[str]:
     """Archivos de receta que contienen subrecetas usadas como ingredientes, excluyendo el principal."""
+    main_abs = os.path.abspath(main_recipe_file)
     files = []
-    for fname in sorted(os.listdir(DATA_DIR)):
-        if not fname.startswith("recipes_") or not fname.endswith(".json"):
-            continue
-        path = os.path.join(DATA_DIR, fname)
-        if os.path.abspath(path) == os.path.abspath(main_recipe_file):
+    for path in get_recipe_files():
+        if os.path.abspath(path) == main_abs:
             continue
         with open(path, encoding="utf-8") as f:
             if any(r.get("result") in sub_results for r in json.load(f)):
@@ -89,7 +78,7 @@ def sub_recipe_files(sub_results: set[str], main_recipe_file: str) -> list[str]:
 
 # ── Expansión de subrecetas ───────────────────────────────────────────────────
 
-def _recipe_is_fresh(recipe: dict) -> bool:
+def _is_selling_fresh(recipe: dict) -> bool:
     ts = recipe.get("selling_last_updated")
     if not ts:
         return False
@@ -109,7 +98,7 @@ def expand_sub_ingredients(ingredients: set[str], craftable: dict[str, dict]) ->
             continue
         visited.add(name)
         recipe = craftable.get(name)
-        if recipe and not _recipe_is_fresh(recipe):
+        if recipe and not _is_selling_fresh(recipe):
             for ing in recipe.get("ingredients", []):
                 sub = ing["name"]
                 expanded.add(sub)
@@ -120,14 +109,6 @@ def expand_sub_ingredients(ingredients: set[str], craftable: dict[str, dict]) ->
 
 
 # ── Precios de venta ──────────────────────────────────────────────────────────
-
-def _selling_is_fresh(recipe: dict) -> bool:
-    ts = recipe.get("selling_last_updated")
-    if not ts:
-        return False
-    age = (datetime.now(timezone.utc) - datetime.fromisoformat(ts)).total_seconds()
-    return age < CACHE_SECONDS
-
 
 def _sanitize_unit_prices(prices: list[int]) -> list[int]:
     """Si hay 3+ precios no-cero y alguno supera 1.5x el mínimo, reemplaza outliers por el promedio."""
@@ -168,20 +149,14 @@ def save_selling_price(recipe_file: str, name: str, prices: dict):
 
     u1, u10, u100, u1000 = _sanitize_unit_prices([u1, u10, u100, u1000])
 
-    _MAX = 1_500_000
-    # Mayor al limite establecido: precio de venta, costo de crafteo y profit se ignoran para ese lote
-    exceeded = set()
-    if u1    * 1    > _MAX: u1    = 0; exceeded.add("x1")
-    if u10   * 10   > _MAX: u10   = 0; exceeded.add("x10")
-    if u100  * 100  > _MAX: u100  = 0; exceeded.add("x100")
-    if u1000 * 1000 > _MAX: u1000 = 0; exceeded.add("x1000")
+    filtered, exceeded = filter_lot_prices({"x1": u1, "x10": u10, "x100": u100, "x1000": u1000})
 
     for recipe in data:
         if recipe.get("result") == name:
-            recipe["unit_selling_price_x1"]    = u1
-            recipe["unit_selling_price_x10"]   = u10
-            recipe["unit_selling_price_x100"]  = u100
-            recipe["unit_selling_price_x1000"] = u1000
+            recipe["unit_selling_price_x1"]    = filtered["x1"]
+            recipe["unit_selling_price_x10"]   = filtered["x10"]
+            recipe["unit_selling_price_x100"]  = filtered["x100"]
+            recipe["unit_selling_price_x1000"] = filtered["x1000"]
             for size in exceeded:
                 recipe[f"unit_crafting_cost_{size}"] = 0
             recipe.pop("selling_last_updated", None)
@@ -201,7 +176,7 @@ def search_and_save_selling(recipe_file: str, name: str, stop_flag: list = None)
     if recipe and recipe.get("category") in _load_omitted_categories():
         print(f"[SKIP] {name} — categoría omitida ({recipe.get('category')})")
         return {"unit_price_x1": 0, "unit_price_x10": 0, "unit_price_x100": 0, "unit_price_x1000": 0, "_skipped": True}
-    if recipe and _selling_is_fresh(recipe):
+    if recipe and _is_selling_fresh(recipe):
         print(f"[SKIP] {name} — actualizado hace menos de 1h")
         return {
             "unit_price_x1":    recipe.get("unit_selling_price_x1", 0),

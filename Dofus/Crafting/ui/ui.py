@@ -6,6 +6,7 @@ barra de resumen, prompt y log. Sin lógica de negocio.
 """
 
 import math
+import re
 import tkinter as tk
 from tkinter import ttk
 from datetime import datetime, timezone, timedelta
@@ -283,26 +284,6 @@ class CraftingUI:
                   font=("Segoe UI", 8), relief="flat", bd=0,
                   padx=8, pady=3, command=self._clear_filter).pack(side="left", padx=(0, 20))
 
-        tk.Frame(ff, bg=C["surface"], width=1).pack(side="left", fill="y", padx=(0, 12))
-        _tol_lbl = tk.Label(ff, text="Tolerancia lote:", bg=C["bg"], fg=C["dim"],
-                            font=("Segoe UI", 8))
-        _tol_lbl.pack(side="left")
-        self._tolerance_var = tk.StringVar(value=self._load_settings().get("tolerance", "5"))
-        self._tolerance_var.trace_add("write", self._on_tolerance_change)
-        _tol_entry = tk.Entry(ff, textvariable=self._tolerance_var, width=4,
-                              bg=C["surface"], fg=C["text"], insertbackground=C["text"],
-                              relief="flat", font=("Segoe UI", 9))
-        _tol_entry.pack(side="left", padx=(4, 2))
-        tk.Label(ff, text="%", bg=C["bg"], fg=C["dim"],
-                 font=("Segoe UI", 8)).pack(side="left")
-        _tol_tip = (
-            "Margen de precio aceptado al elegir lotes grandes.\n\n"
-            "Compra: prefiere lotes grandes aunque sean hasta X% más caros por unidad.\n"
-            "Venta: prefiere lotes grandes aunque la ganancia sea hasta X% menor.\n\n"
-            "Ej. con 5%: si x1000 cuesta 5% más que x1, igual compra x1000."
-        )
-        _Tooltip(_tol_lbl,   _tol_tip)
-        _Tooltip(_tol_entry, _tol_tip)
 
     # ── Table ─────────────────────────────────────────────────────────────────
 
@@ -558,7 +539,7 @@ class CraftingUI:
             row  = self._row_data.get(iid)
             name = row.get("result", "") if row else ""
         else:
-            name = self._tree.set(iid, "result").strip()
+            name = re.sub(r"\s*\(\d+\)$", "", self._tree.set(iid, "result").strip())
 
         if name:
             self.root.clipboard_clear()
@@ -709,12 +690,6 @@ class CraftingUI:
     def recipe_name(self) -> str:
         return self._recipe_var.get().strip()
 
-    def tolerance(self) -> float:
-        try:
-            return max(0.0, float(self._tolerance_var.get().strip()))
-        except ValueError:
-            return 5.0
-
     def set_status(self, text: str, color: str = None):
         self._status_var.set(text)
         if color:
@@ -754,12 +729,6 @@ class CraftingUI:
         if not text:
             return
         self._write_log(text, tag or _auto_tag(text))
-
-    def _on_tolerance_change(self, *args):
-        """Guarda la tolerancia cuando cambia."""
-        settings = self._load_settings()
-        settings["tolerance"] = self._tolerance_var.get()
-        self._save_settings(settings)
 
     def clear_log(self):
         self._log.configure(state="normal")

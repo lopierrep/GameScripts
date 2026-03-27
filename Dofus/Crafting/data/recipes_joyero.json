@@ -246,10 +246,10 @@
       {
         "name": "Hilo de lino",
         "quantity": 10,
-        "unit_price": 100,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 1000
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -13153,10 +13153,10 @@
       {
         "name": "Pepita",
         "quantity": 10,
-        "unit_price": 995,
-        "buy_lot": "x1",
+        "unit_price": 800,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 9950
+        "total": 8000
       },
       {
         "name": "Kólerat muerto",
@@ -14677,18 +14677,18 @@
       {
         "name": "Frasco de gelatina de fresa",
         "quantity": 50,
-        "unit_price": 774,
-        "buy_lot": "x1",
+        "unit_price": 680,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 38700
+        "total": 34000
       },
       {
         "name": "Frasco de gelatina de menta",
         "quantity": 50,
-        "unit_price": 667,
-        "buy_lot": "x1",
+        "unit_price": 543,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 33350
+        "total": 27160
       },
       {
         "name": "Frasco de gelatina de limón",
@@ -18818,10 +18818,10 @@
       {
         "name": "Pepita",
         "quantity": 100,
-        "unit_price": 540,
+        "unit_price": 432,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 54000
+        "total": 43200
       }
     ],
     "unit_selling_price_x1": 0,
@@ -18847,10 +18847,10 @@
       {
         "name": "Hilo de nacilandera",
         "quantity": 10,
-        "unit_price": 239,
-        "buy_lot": "x1",
+        "unit_price": 212,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2390
+        "total": 2120
       },
       {
         "name": "Quelíceros de arápex",
@@ -19070,10 +19070,10 @@
       {
         "name": "Pepita",
         "quantity": 100,
-        "unit_price": 540,
+        "unit_price": 432,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 54000
+        "total": 43200
       },
       {
         "name": "Mega piedra del Crujidor Legendario",
@@ -21486,10 +21486,10 @@
       {
         "name": "Pepita",
         "quantity": 200,
-        "unit_price": 540,
+        "unit_price": 432,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 108000
+        "total": 86400
       },
       {
         "name": "Píxel de Fraktal",
@@ -23239,10 +23239,10 @@
       {
         "name": "Pepita",
         "quantity": 300,
-        "unit_price": 540,
+        "unit_price": 432,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 162000
+        "total": 129600
       },
       {
         "name": "Artefacto pandawushu de viento",
@@ -23324,10 +23324,10 @@
       {
         "name": "Pepita",
         "quantity": 300,
-        "unit_price": 540,
+        "unit_price": 432,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 162000
+        "total": 129600
       },
       {
         "name": "Kobalita",
@@ -23579,10 +23579,10 @@
       {
         "name": "Pepita",
         "quantity": 300,
-        "unit_price": 540,
+        "unit_price": 432,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 162000
+        "total": 129600
       },
       {
         "name": "Kobalita",
@@ -23927,10 +23927,10 @@
       {
         "name": "Pepita",
         "quantity": 300,
-        "unit_price": 540,
+        "unit_price": 432,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 162000
+        "total": 129600
       }
     ],
     "unit_selling_price_x1": 0,
@@ -24267,10 +24267,10 @@
       {
         "name": "Pepita",
         "quantity": 300,
-        "unit_price": 540,
+        "unit_price": 432,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 162000
+        "total": 129600
       }
     ],
     "unit_selling_price_x1": 0,
@@ -24490,10 +24490,10 @@
       {
         "name": "Pelusa de mamagüina",
         "quantity": 30,
-        "unit_price": 2490,
+        "unit_price": 1992,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 74700
+        "total": 59760
       },
       {
         "name": "Espina gigante de chamángüino",
@@ -25425,10 +25425,10 @@
       {
         "name": "Cuerno de papatroz",
         "quantity": 20,
-        "unit_price": 589,
+        "unit_price": 471,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 11780
+        "total": 9424
       },
       {
         "name": "Calcetín del Kimbo",
@@ -25518,10 +25518,10 @@
       {
         "name": "Pelo de miauscuro",
         "quantity": 20,
-        "unit_price": 3500,
+        "unit_price": 2800,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 70000
+        "total": 56000
       },
       {
         "name": "Cáscara del kasrakol",
@@ -25595,10 +25595,10 @@
       {
         "name": "Pelos de petafux",
         "quantity": 20,
-        "unit_price": 194,
-        "buy_lot": "x1",
+        "unit_price": 159,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 3880
+        "total": 3184
       },
       {
         "name": "Calcetín del Kimbo",
@@ -25680,10 +25680,10 @@
       {
         "name": "Piel de metaforatroz",
         "quantity": 20,
-        "unit_price": 550,
+        "unit_price": 440,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 11000
+        "total": 8800
       },
       {
         "name": "Calcetín del Kimbo",
@@ -25765,10 +25765,10 @@
       {
         "name": "Valva de fantimonel",
         "quantity": 20,
-        "unit_price": 4390,
+        "unit_price": 3512,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 87800
+        "total": 70240
       },
       {
         "name": "Calcetín del Kimbo",
@@ -25850,10 +25850,10 @@
       {
         "name": "Ojo de perfidotroz",
         "quantity": 20,
-        "unit_price": 800,
+        "unit_price": 640,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 16000
+        "total": 12800
       },
       {
         "name": "Calcetín del Kimbo",
@@ -26020,10 +26020,10 @@
       {
         "name": "Tejido de kurookin",
         "quantity": 20,
-        "unit_price": 178,
+        "unit_price": 142,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 3560
+        "total": 2848
       },
       {
         "name": "Calcetín del Kimbo",
@@ -26137,10 +26137,10 @@
       {
         "name": "Fular de milimaestro",
         "quantity": 20,
-        "unit_price": 580,
+        "unit_price": 464,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 11600
+        "total": 9280
       }
     ],
     "unit_selling_price_x1": 0,
@@ -26222,10 +26222,10 @@
       {
         "name": "Hombrera de trooligarka",
         "quantity": 20,
-        "unit_price": 4797,
-        "buy_lot": "x1",
+        "unit_price": 3896,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 95940
+        "total": 77920
       }
     ],
     "unit_selling_price_x1": 0,
@@ -26307,10 +26307,10 @@
       {
         "name": "Boleadora de maltrío",
         "quantity": 20,
-        "unit_price": 499,
+        "unit_price": 399,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 9980
+        "total": 7984
       }
     ],
     "unit_selling_price_x1": 0,
@@ -27271,10 +27271,10 @@
       {
         "name": "Flor de cactiflora",
         "quantity": 20,
-        "unit_price": 2948,
+        "unit_price": 2358,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 58960
+        "total": 47168
       },
       {
         "name": "Corteza de floribundo",
@@ -27380,10 +27380,10 @@
       {
         "name": "Tejido de emobalí",
         "quantity": 20,
-        "unit_price": 668,
+        "unit_price": 534,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 13360
+        "total": 10688
       },
       {
         "name": "Nudo de abrajidor claro",
@@ -27651,10 +27651,10 @@
       {
         "name": "Cuerno de papatroz",
         "quantity": 30,
-        "unit_price": 589,
+        "unit_price": 471,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 17670
+        "total": 14136
       },
       {
         "name": "Garra de perfugaz",
@@ -28084,10 +28084,10 @@
       {
         "name": "Pepita",
         "quantity": 500,
-        "unit_price": 540,
+        "unit_price": 432,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 270000
+        "total": 216000
       },
       {
         "name": "Rutilo",
@@ -28121,10 +28121,10 @@
       {
         "name": "Pepita",
         "quantity": 500,
-        "unit_price": 540,
+        "unit_price": 432,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 270000
+        "total": 216000
       },
       {
         "name": "Concentrado de bosque primario",
@@ -30278,10 +30278,10 @@
       {
         "name": "Pepita",
         "quantity": 1000,
-        "unit_price": 393,
+        "unit_price": 314,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 393000
+        "total": 314400
       },
       {
         "name": "Lágrima de gélifux",
@@ -31112,10 +31112,10 @@
       {
         "name": "Forúnculo de mamá bwork",
         "quantity": 50,
-        "unit_price": 1100,
-        "buy_lot": "x1",
+        "unit_price": 999,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 55000
+        "total": 49960
       },
       {
         "name": "Uña de Bworker",
@@ -31662,10 +31662,10 @@
       {
         "name": "Forúnculo de mamá bwork",
         "quantity": 60,
-        "unit_price": 1100,
-        "buy_lot": "x1",
+        "unit_price": 999,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 66000
+        "total": 59952
       }
     ],
     "unit_selling_price_x1": 0,
@@ -32480,10 +32480,10 @@
       {
         "name": "Pepita",
         "quantity": 1500,
-        "unit_price": 524,
-        "buy_lot": "x1000",
+        "unit_price": 432,
+        "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 786000
+        "total": 648000
       },
       {
         "name": "Ardonita",
@@ -32682,10 +32682,10 @@
       {
         "name": "Pepita",
         "quantity": 1500,
-        "unit_price": 524,
-        "buy_lot": "x1000",
+        "unit_price": 432,
+        "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 786000
+        "total": 648000
       }
     ],
     "unit_selling_price_x1": 0,
@@ -33107,10 +33107,10 @@
       {
         "name": "Pepita",
         "quantity": 1500,
-        "unit_price": 524,
-        "buy_lot": "x1000",
+        "unit_price": 432,
+        "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 786000
+        "total": 648000
       }
     ],
     "unit_selling_price_x1": 0,
@@ -34297,10 +34297,10 @@
       {
         "name": "Pepita",
         "quantity": 1500,
-        "unit_price": 524,
-        "buy_lot": "x1000",
+        "unit_price": 432,
+        "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 786000
+        "total": 648000
       }
     ],
     "unit_selling_price_x1": 0,
@@ -34876,10 +34876,10 @@
       {
         "name": "Pepita",
         "quantity": 1500,
-        "unit_price": 524,
-        "buy_lot": "x1000",
+        "unit_price": 432,
+        "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 786000
+        "total": 648000
       },
       {
         "name": "Concentrado de selva",
@@ -36507,10 +36507,10 @@
       {
         "name": "Pepita",
         "quantity": 2000,
-        "unit_price": 393,
+        "unit_price": 314,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 786000
+        "total": 628800
       }
     ],
     "unit_selling_price_x1": 0,
@@ -36637,10 +36637,10 @@
       {
         "name": "Pepita",
         "quantity": 2000,
-        "unit_price": 393,
+        "unit_price": 314,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 786000
+        "total": 628800
       },
       {
         "name": "Omoplato del conde Kontatrás",
@@ -36876,18 +36876,18 @@
       {
         "name": "Pluma de kukoloide",
         "quantity": 10,
-        "unit_price": 13300,
+        "unit_price": 10640,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 133000
+        "total": 106400
       },
       {
         "name": "Pico de nocturlabiúho",
         "quantity": 10,
-        "unit_price": 8588,
+        "unit_price": 6870,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 85880
+        "total": 68704
       },
       {
         "name": "Concentrado de selva",
@@ -37102,10 +37102,10 @@
       {
         "name": "Pepita",
         "quantity": 2000,
-        "unit_price": 393,
+        "unit_price": 314,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 786000
+        "total": 628800
       }
     ],
     "unit_selling_price_x1": 0,
@@ -37139,10 +37139,10 @@
       {
         "name": "Pico de nocturlabiúho",
         "quantity": 10,
-        "unit_price": 8588,
+        "unit_price": 6870,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 85880
+        "total": 68704
       },
       {
         "name": "Ardonita",
@@ -37216,10 +37216,10 @@
       {
         "name": "Pico de bubobubo",
         "quantity": 10,
-        "unit_price": 10497,
-        "buy_lot": "x1",
+        "unit_price": 8400,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 104970
+        "total": 84000
       },
       {
         "name": "Incisivo de estalarkmis",
@@ -39110,26 +39110,26 @@
       {
         "name": "Sepiolita",
         "quantity": 10,
-        "unit_price": 597,
+        "unit_price": 478,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 5970
+        "total": 4776
       },
       {
         "name": "Lapa",
         "quantity": 20,
-        "unit_price": 779,
+        "unit_price": 623,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 15580
+        "total": 12464
       },
       {
         "name": "Quisnoa",
         "quantity": 20,
-        "unit_price": 556,
+        "unit_price": 445,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 11120
+        "total": 8896
       },
       {
         "name": "Marca de los grandes fondos",
@@ -39389,10 +39389,10 @@
       {
         "name": "Lapa",
         "quantity": 50,
-        "unit_price": 779,
+        "unit_price": 623,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 38950
+        "total": 31160
       },
       {
         "name": "Ámbar de mulagua",
@@ -39474,10 +39474,10 @@
       {
         "name": "Sepiolita",
         "quantity": 50,
-        "unit_price": 597,
+        "unit_price": 478,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 29850
+        "total": 23880
       },
       {
         "name": "Ámbar de mulagua",
@@ -39559,10 +39559,10 @@
       {
         "name": "Sepiolita",
         "quantity": 50,
-        "unit_price": 597,
+        "unit_price": 478,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 29850
+        "total": 23880
       },
       {
         "name": "Ámbar de mulagua",
@@ -39644,10 +39644,10 @@
       {
         "name": "Lapa",
         "quantity": 50,
-        "unit_price": 779,
+        "unit_price": 623,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 38950
+        "total": 31160
       },
       {
         "name": "Guijarro brasa",
@@ -39729,10 +39729,10 @@
       {
         "name": "Lapa",
         "quantity": 50,
-        "unit_price": 779,
+        "unit_price": 623,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 38950
+        "total": 31160
       },
       {
         "name": "Guijarro brasa",
@@ -39814,10 +39814,10 @@
       {
         "name": "Lapa",
         "quantity": 50,
-        "unit_price": 779,
+        "unit_price": 623,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 38950
+        "total": 31160
       },
       {
         "name": "Guijarro brasa",
@@ -39899,10 +39899,10 @@
       {
         "name": "Madera de acuacia",
         "quantity": 50,
-        "unit_price": 1509,
+        "unit_price": 1207,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 75450
+        "total": 60360
       },
       {
         "name": "Ámbar de mulagua",
@@ -40324,10 +40324,10 @@
       {
         "name": "Pan de frostizz inflado",
         "quantity": 1,
-        "unit_price": 5918488,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5918488
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Adoquín",
@@ -40409,10 +40409,10 @@
       {
         "name": "Pan de frostizz inflado",
         "quantity": 1,
-        "unit_price": 5918488,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5918488
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Basalto",
@@ -40494,10 +40494,10 @@
       {
         "name": "Pan de frostizz inflado",
         "quantity": 1,
-        "unit_price": 5918488,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5918488
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Adoquín",
@@ -40579,10 +40579,10 @@
       {
         "name": "Pan de frostizz inflado",
         "quantity": 1,
-        "unit_price": 5918488,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5918488
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Basalto",
@@ -41004,10 +41004,10 @@
       {
         "name": "Pepita",
         "quantity": 2000,
-        "unit_price": 393,
+        "unit_price": 314,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 786000
+        "total": 628800
       },
       {
         "name": "Concentrado de selva",
@@ -41182,10 +41182,10 @@
       {
         "name": "Pepita",
         "quantity": 2000,
-        "unit_price": 393,
+        "unit_price": 314,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 786000
+        "total": 628800
       }
     ],
     "unit_selling_price_x1": 0,
@@ -41267,10 +41267,10 @@
       {
         "name": "Pepita",
         "quantity": 2000,
-        "unit_price": 393,
+        "unit_price": 314,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 786000
+        "total": 628800
       }
     ],
     "unit_selling_price_x1": 0,
@@ -41352,10 +41352,10 @@
       {
         "name": "Pepita",
         "quantity": 2000,
-        "unit_price": 393,
+        "unit_price": 314,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 786000
+        "total": 628800
       }
     ],
     "unit_selling_price_x1": 0,
@@ -46422,26 +46422,26 @@
       {
         "name": "Cerebro de hielathos",
         "quantity": 10,
-        "unit_price": 8450,
+        "unit_price": 6760,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 84500
+        "total": 67600
       },
       {
         "name": "Etmoides de estalarkmis",
         "quantity": 10,
-        "unit_price": 2400,
+        "unit_price": 1920,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 24000
+        "total": 19200
       },
       {
         "name": "Martillo de dantartánico",
         "quantity": 10,
-        "unit_price": 2340,
+        "unit_price": 1872,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 23400
+        "total": 18720
       },
       {
         "name": "Concentrado de selva",
@@ -46507,18 +46507,18 @@
       {
         "name": "Cola de buhotofu",
         "quantity": 10,
-        "unit_price": 8200,
+        "unit_price": 6560,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 82000
+        "total": 65600
       },
       {
         "name": "Pico de bubobubo",
         "quantity": 10,
-        "unit_price": 10497,
-        "buy_lot": "x1",
+        "unit_price": 8400,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 104970
+        "total": 84000
       },
       {
         "name": "Pico de estrígido",
@@ -46592,10 +46592,10 @@
       {
         "name": "Esternón de güinórdido",
         "quantity": 10,
-        "unit_price": 2998,
-        "buy_lot": "x1",
+        "unit_price": 2480,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 29980
+        "total": 24800
       },
       {
         "name": "Cola de brikolosote",
@@ -46677,10 +46677,10 @@
       {
         "name": "Oreja de mecanélifux",
         "quantity": 10,
-        "unit_price": 3330,
-        "buy_lot": "x1",
+        "unit_price": 3118,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 33300
+        "total": 31184
       },
       {
         "name": "Garra de kanitómata",
@@ -46762,10 +46762,10 @@
       {
         "name": "Calzoncillo de cuereñor",
         "quantity": 10,
-        "unit_price": 4887,
-        "buy_lot": "x1",
+        "unit_price": 4640,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 48870
+        "total": 46400
       },
       {
         "name": "Cerebro de cuerchinbol",
@@ -46778,10 +46778,10 @@
       {
         "name": "Diente de cuerola",
         "quantity": 10,
-        "unit_price": 2900,
-        "buy_lot": "x1",
+        "unit_price": 2489,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 29000
+        "total": 24888
       },
       {
         "name": "Ámbar de mulagua",

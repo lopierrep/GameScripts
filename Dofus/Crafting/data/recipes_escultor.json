@@ -370,10 +370,10 @@
       {
         "name": "Madera de nogal",
         "quantity": 20,
-        "unit_price": 48,
-        "buy_lot": "x1",
+        "unit_price": 40,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 960
+        "total": 800
       },
       {
         "name": "Hilo de seda",
@@ -426,10 +426,10 @@
       {
         "name": "Pepita",
         "quantity": 100,
-        "unit_price": 540,
+        "unit_price": 432,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 54000
+        "total": 43200
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1619,18 +1619,18 @@
       {
         "name": "Madera de bambú sagrado",
         "quantity": 30,
-        "unit_price": 260,
+        "unit_price": 208,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 7800
+        "total": 6240
       },
       {
         "name": "Oro",
         "quantity": 10,
-        "unit_price": 119,
+        "unit_price": 95,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1190
+        "total": 952
       },
       {
         "name": "Dolomita",
@@ -1643,10 +1643,10 @@
       {
         "name": "Yokaiedra",
         "quantity": 10,
-        "unit_price": 1499,
+        "unit_price": 1199,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 14990
+        "total": 11992
       }
     ],
     "unit_selling_price_x1": 0,
@@ -2437,10 +2437,10 @@
       {
         "name": "Madera de nogal",
         "quantity": 20,
-        "unit_price": 48,
-        "buy_lot": "x1",
+        "unit_price": 40,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 960
+        "total": 800
       },
       {
         "name": "Cobre",
@@ -4857,10 +4857,10 @@
       {
         "name": "Pico de dragopavo dorado",
         "quantity": 10,
-        "unit_price": 400,
+        "unit_price": 320,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 4000
+        "total": 3200
       },
       {
         "name": "Pólvora explosiva",
@@ -5162,10 +5162,10 @@
       {
         "name": "Carbón",
         "quantity": 10,
-        "unit_price": 665,
-        "buy_lot": "x1",
+        "unit_price": 560,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 6650
+        "total": 5600
       },
       {
         "name": "Cráneo de jefe cocodrail",
@@ -5284,10 +5284,10 @@
       {
         "name": "Cola de dragopavo salvaje",
         "quantity": 10,
-        "unit_price": 110,
+        "unit_price": 88,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1100
+        "total": 880
       },
       {
         "name": "Ala de dragopavo",
@@ -8302,10 +8302,10 @@
       {
         "name": "Pepita",
         "quantity": 200,
-        "unit_price": 540,
+        "unit_price": 432,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 108000
+        "total": 86400
       }
     ],
     "unit_selling_price_x1": 0,
@@ -9282,10 +9282,10 @@
       {
         "name": "Piel de maestro koalak",
         "quantity": 10,
-        "unit_price": 790,
+        "unit_price": 632,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 7900
+        "total": 6320
       },
       {
         "name": "Pelos de Kerubim",
@@ -9327,10 +9327,10 @@
       {
         "name": "Brazalete de ino-naru",
         "quantity": 20,
-        "unit_price": 4150,
+        "unit_price": 3320,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 83000
+        "total": 66400
       },
       {
         "name": "Pelaje aerodinámico",
@@ -9452,10 +9452,10 @@
       {
         "name": "Piel de maestro koalak",
         "quantity": 10,
-        "unit_price": 790,
+        "unit_price": 632,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 7900
+        "total": 6320
       },
       {
         "name": "Crines de Rata Blanca",
@@ -10055,10 +10055,10 @@
       {
         "name": "Pepita",
         "quantity": 300,
-        "unit_price": 540,
+        "unit_price": 432,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 162000
+        "total": 129600
       }
     ],
     "unit_selling_price_x1": 0,
@@ -11290,10 +11290,10 @@
       {
         "name": "Artefacto pandawushu",
         "quantity": 10,
-        "unit_price": 6894,
+        "unit_price": 5515,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 68940
+        "total": 55152
       },
       {
         "name": "Cola mágica de Funoroshi",
@@ -12565,10 +12565,10 @@
       {
         "name": "Pepita",
         "quantity": 1000,
-        "unit_price": 393,
+        "unit_price": 314,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 393000
+        "total": 314400
       }
     ],
     "unit_selling_price_x1": 0,
@@ -12679,18 +12679,18 @@
       {
         "name": "Dolomita",
         "quantity": 20,
-        "unit_price": 975,
+        "unit_price": 780,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 19500
+        "total": 15600
       },
       {
         "name": "Madera de bambú sagrado",
         "quantity": 40,
-        "unit_price": 242,
-        "buy_lot": "x100",
+        "unit_price": 208,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 9700
+        "total": 8320
       },
       {
         "name": "Diacrítico de la reina Amirukam",
@@ -12719,10 +12719,10 @@
       {
         "name": "Pepita",
         "quantity": 200,
-        "unit_price": 540,
+        "unit_price": 432,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 108000
+        "total": 86400
       },
       {
         "name": "Yokaiedra",
@@ -14209,10 +14209,10 @@
       {
         "name": "Pico de nocturlabiúho",
         "quantity": 10,
-        "unit_price": 8588,
+        "unit_price": 6870,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 85880
+        "total": 68704
       },
       {
         "name": "Canino de kanitómata",
@@ -14751,26 +14751,26 @@
       {
         "name": "Madera de acuacia",
         "quantity": 10,
-        "unit_price": 1509,
+        "unit_price": 1207,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 15090
+        "total": 12072
       },
       {
         "name": "Lapa",
         "quantity": 20,
-        "unit_price": 779,
+        "unit_price": 623,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 15580
+        "total": 12464
       },
       {
         "name": "Sepiolita",
         "quantity": 20,
-        "unit_price": 597,
+        "unit_price": 478,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 11940
+        "total": 9552
       },
       {
         "name": "Ámbar de mulagua",
@@ -15447,10 +15447,10 @@
       {
         "name": "Pepita",
         "quantity": 3000,
-        "unit_price": 393,
+        "unit_price": 314,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 1179000
+        "total": 943200
       },
       {
         "name": "Ardonita",
@@ -15532,10 +15532,10 @@
       {
         "name": "Pepita",
         "quantity": 3000,
-        "unit_price": 393,
+        "unit_price": 314,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 1179000
+        "total": 943200
       },
       {
         "name": "Concentrado astral",
@@ -15702,10 +15702,10 @@
       {
         "name": "Pepita",
         "quantity": 3000,
-        "unit_price": 393,
+        "unit_price": 314,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 1179000
+        "total": 943200
       },
       {
         "name": "Concentrado astral",
@@ -18323,18 +18323,18 @@
       {
         "name": "Pico de bubobubo",
         "quantity": 10,
-        "unit_price": 10497,
-        "buy_lot": "x1",
+        "unit_price": 8400,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 104970
+        "total": 84000
       },
       {
         "name": "Pico de nocturlabiúho",
         "quantity": 10,
-        "unit_price": 8588,
+        "unit_price": 6870,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 85880
+        "total": 68704
       },
       {
         "name": "Ámbar de mulagua",

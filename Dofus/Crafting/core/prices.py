@@ -16,15 +16,17 @@ from config.config import (
     CATEGORIES_FILE,
     DATA_DIR,
     DOFUSDB_URL,
+    LOT_PROFIT_MARGIN,
+    LOT_STABILITY_MARGIN,
+    MAX_LOT_PRICE,
     PRICES_FILE,
     SIZES,
     UNKNOWN_KEY,
-    _load_omitted_recipes,
     _normalize,
-    _now_iso,
     _parse_price,
-    net_sell_price,
 )
+from utils.loaders import _load_omitted_recipes, get_recipe_files
+from utils.market import _now_iso, filter_lot_prices, net_sell_price
 
 
 
@@ -192,10 +194,8 @@ def load_all_pack_prices() -> dict[str, dict]:
                 pack_prices[name] = {size: pd.get(size, 0) for size in SIZES}
 
     # Craftables usados como ingredientes: min(crafting_cost, selling_price)
-    for fname in os.listdir(DATA_DIR):
-        if not fname.startswith("recipes_") or not fname.endswith(".json"):
-            continue
-        with open(os.path.join(DATA_DIR, fname), encoding="utf-8") as f:
+    for path in get_recipe_files():
+        with open(path, encoding="utf-8") as f:
             for recipe in json.load(f):
                 name = recipe.get("result", "").strip()
                 if not name:
@@ -254,12 +254,16 @@ def best_unit_price(prices: dict, pack_size: str) -> float:
     return min(values) if values else 0
 
 
-_LOT_NUMS = {"x1": 1, "x10": 10, "x100": 100, "x1000": 1000}
+from config.config import _LOT_NUMS
 
 
 def cheapest_lot(prices: dict, qty: int) -> str | None:
     """Devuelve el tamaño de lote ('x1','x10','x100','x1000') que minimiza el costo total
-    para adquirir `qty` unidades. None si no hay precios disponibles."""
+    para adquirir `qty` unidades. None si no hay precios disponibles.
+
+    Cuando qty >= lot_num (sin desperdicio), aplica LOT_STABILITY_MARGIN: un lote mayor
+    gana si su precio no supera al lote x1 en más de ese margen, priorizando estabilidad
+    de mercado sobre la diferencia mínima de precio."""
     if qty <= 0:
         return None
     best_lot = None
@@ -268,7 +272,11 @@ def cheapest_lot(prices: dict, qty: int) -> str | None:
         p = prices.get(size, 0)
         if not p or p <= 0:
             continue
-        eff_unit = math.ceil(qty / lot_num) * lot_num * p / qty
+        packs    = math.ceil(qty / lot_num)
+        eff_unit = packs * lot_num * p / qty
+        # Descuento de estabilidad: solo cuando no hay desperdicio (qty múltiplo del lote)
+        if lot_num > 1 and qty >= lot_num and (qty % lot_num == 0):
+            eff_unit /= (1 + LOT_STABILITY_MARGIN)
         if best_eff == 0.0 or eff_unit < best_eff:
             best_eff = eff_unit
             best_lot = size
@@ -283,6 +291,8 @@ def cheapest_unit_price(prices: dict, qty: int) -> float:
     el costo total real (incluyendo unidades sobrantes del último pack).
     Por ejemplo: necesitar 200u con x100 a 45u → compras 2 packs = 9000u → 45u/u.
                  necesitar 150u con x100 a 45u → compras 2 packs = 9000u → 60u/u efectivo.
+
+    Aplica LOT_STABILITY_MARGIN igual que cheapest_lot para consistencia.
     """
     if qty <= 0:
         return 0.0
@@ -294,6 +304,8 @@ def cheapest_unit_price(prices: dict, qty: int) -> float:
         packs      = math.ceil(qty / lot_num)
         total_cost = packs * lot_num * p
         eff_unit   = total_cost / qty
+        if lot_num > 1 and qty >= lot_num and (qty % lot_num == 0):
+            eff_unit /= (1 + LOT_STABILITY_MARGIN)
         if best_eff == 0.0 or eff_unit < best_eff:
             best_eff = eff_unit
     return best_eff
@@ -381,13 +393,13 @@ def save_crafting_costs(recipe_file: str, recipes: list | None = None) -> set[st
 
 def _enrich_recipe(recipe: dict, pack_prices: dict, craftable_map: dict):
     """Calcula y agrega profit_x* y display al dict de receta (in-place)."""
-    _MAX = 1_500_000
-
+    raw_sells = {size: recipe.get(f"unit_selling_price_{size}", 0) or 0 for size in SIZES}
+    filtered_sells, exceeded = filter_lot_prices(raw_sells)
     for size in SIZES:
-        s = recipe.get(f"unit_selling_price_{size}", 0) or 0
-        if s * _LOT_NUMS[size] > _MAX:
+        s = filtered_sells[size]
+        recipe[f"unit_selling_price_{size}"] = s
+        if size in exceeded:
             # Mayor al limite establecido: precio de venta, costo de crafteo y profit ignorados para este lote
-            recipe[f"unit_selling_price_{size}"] = 0
             recipe[f"unit_crafting_cost_{size}"] = 0
             recipe[f"profit_{size}"] = 0
         elif s == 0:
@@ -398,12 +410,12 @@ def _enrich_recipe(recipe: dict, pack_prices: dict, craftable_map: dict):
             c = recipe.get(f"unit_crafting_cost_{size}", 0) or 0
             recipe[f"profit_{size}"] = round(net_sell_price(s) - c) if c > 0 else 0
 
-    # Determinar mejor lote con tolerancia por defecto (5%)
+    # Determinar mejor lote (prefiere lotes más grandes con hasta 5% menos de ganancia)
     valid_profits = {s: recipe[f"profit_{s}"] for s in SIZES if recipe.get(f"profit_{s}", 0) != 0}
     best_size = None
     if valid_profits:
         max_profit = max(valid_profits.values())
-        threshold  = max_profit - abs(max_profit) * 0.05
+        threshold  = max_profit - abs(max_profit) * LOT_PROFIT_MARGIN
         for size in reversed(SIZES):
             if valid_profits.get(size, float("-inf")) >= threshold:
                 best_size = size
@@ -439,10 +451,6 @@ def _enrich_recipe(recipe: dict, pack_prices: dict, craftable_map: dict):
         ing["buy_lot"]      = buy_lot or "—"
         ing["buy_or_craft"] = buy_or_craft
         ing["total"]        = round(unit_price * ing_qty * lot_num) if unit_price else None
-        ing.pop("display", None)  # eliminar estructura vieja si existía
-
-    recipe.pop("display", None)  # eliminar campo antiguo si existía
-
     # Mover selling_last_updated al final del dict
     ts = recipe.pop("selling_last_updated", None)
     if ts is not None:
@@ -483,34 +491,24 @@ def build_table_rows(
     craftable_map: dict,
     raw_market_prices: dict,
     ing_last_updated: dict,
-    tolerance: float = 0.05,
 ) -> list:
     """
     Construye las filas de la tabla UI leyendo datos pre-calculados del JSON.
-    No realiza cálculos de precios: solo selecciona el mejor lote con tolerancia
-    y enriquece con lot_prices / last_updated desde los precios de mercado.
+    No realiza cálculos de precios.
     """
     rows = []
 
     for r in recipes:
-        # Selección del mejor lote usando profits pre-calculados + tolerancia
-        valid_profits = {s: r.get(f"profit_{s}", 0) for s in SIZES if r.get(f"profit_{s}", 0) != 0}
+        best_size = r.get("best_lot") or None
+        best_lot = best_craft = best_sell = best_profit = best_profit_total = None
+        if best_size:
+            best_lot          = best_size
+            best_craft        = r.get(f"unit_crafting_cost_{best_size}")
+            best_sell         = r.get(f"unit_selling_price_{best_size}")
+            best_profit       = r.get(f"profit_{best_size}")
+            best_profit_total = round(best_profit * _LOT_NUMS[best_size]) if best_profit else None
 
-        best_size = best_lot = best_craft = best_sell = best_profit = best_profit_total = None
-        if valid_profits:
-            max_profit = max(valid_profits.values())
-            threshold  = max_profit - abs(max_profit) * tolerance
-            for size in reversed(SIZES):
-                if valid_profits.get(size, float("-inf")) >= threshold:
-                    best_size         = size
-                    best_lot          = size
-                    best_craft        = r.get(f"unit_crafting_cost_{size}")
-                    best_sell         = r.get(f"unit_selling_price_{size}")
-                    best_profit       = valid_profits[size]
-                    best_profit_total = round(best_profit * int(size[1:]))
-                    break
-
-        lot_num     = int(best_size[1:]) if best_size else 1
+        lot_num     = _LOT_NUMS.get(best_size, 1)
         craft_total = best_craft * lot_num if best_craft else None
         sell_total  = best_sell  * lot_num if best_sell  else None
         ingredients = []

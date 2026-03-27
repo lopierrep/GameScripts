@@ -6,7 +6,8 @@ import time
 
 import keyboard
 
-from config.config import DELAY_BETWEEN_ITEMS, _load_manual_price_items
+from config.config import DELAY_BETWEEN_ITEMS
+from utils.loaders import _load_manual_price_items
 from core.prices import _ingredient_is_fresh, save_ingredient_price
 from core.recipes import search_and_save_selling
 from shared.market.search_item_prices import search_item, read_prices
@@ -166,11 +167,11 @@ def search_market_batch(
             missing_ingredients.append(name)
 
     from core.recipes import find_recipe as _find_recipe
-    from core.recipes import _selling_is_fresh
+    from core.recipes import _is_selling_fresh
     for name in manual_results:
         target_file = (result_file_map or {}).get(name, recipe_file)
         recipe_data, _ = _find_recipe(name)
-        if recipe_data and _selling_is_fresh(recipe_data):
+        if recipe_data and _is_selling_fresh(recipe_data):
             print(f"[SKIP] {name} — actualizado hace menos de 1h")
             continue
         if manual_price_fn:

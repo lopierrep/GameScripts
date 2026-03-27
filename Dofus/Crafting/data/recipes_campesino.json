@@ -38,10 +38,10 @@
       {
         "name": "Trigo",
         "quantity": 4,
-        "unit_price": 30,
+        "unit_price": 24,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 120000
+        "total": 96000
       }
     ],
     "unit_selling_price_x1": 4,
@@ -150,34 +150,34 @@
       {
         "name": "Trigo",
         "quantity": 2,
-        "unit_price": 30,
+        "unit_price": 24,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 60000
+        "total": 48000
       },
       {
         "name": "Agua potable",
         "quantity": 1,
-        "unit_price": 145,
+        "unit_price": 116,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 145000
+        "total": 116000
       },
       {
         "name": "Cuero de jalató negro",
         "quantity": 1,
-        "unit_price": 68,
+        "unit_price": 54,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 68000
+        "total": 54400
       },
       {
         "name": "Lengua de gárgrola",
         "quantity": 1,
-        "unit_price": 298,
-        "buy_lot": "x1",
+        "unit_price": 266,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 298000
+        "total": 266400
       }
     ],
     "unit_selling_price_x1": 1,
@@ -204,10 +204,10 @@
       {
         "name": "Trigo",
         "quantity": 10,
-        "unit_price": 45,
+        "unit_price": 36,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 450
+        "total": 360
       },
       {
         "name": "Polvos mágicos",
@@ -318,10 +318,10 @@
       {
         "name": "Arroz",
         "quantity": 10,
-        "unit_price": 23,
+        "unit_price": 18,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 230000
+        "total": 184000
       }
     ],
     "unit_selling_price_x1": 425,
@@ -348,10 +348,10 @@
       {
         "name": "Trigo",
         "quantity": 5,
-        "unit_price": 30,
+        "unit_price": 24,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 150000
+        "total": 120000
       }
     ],
     "unit_selling_price_x1": 3,
@@ -482,18 +482,18 @@
       {
         "name": "Cebada",
         "quantity": 4,
-        "unit_price": 35,
+        "unit_price": 28,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 14000
+        "total": 11200
       },
       {
         "name": "Ortiga",
         "quantity": 1,
-        "unit_price": 30,
+        "unit_price": 24,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 3000
+        "total": 2400
       }
     ],
     "unit_selling_price_x1": 51,
@@ -528,10 +528,10 @@
       {
         "name": "Ortiga",
         "quantity": 1,
-        "unit_price": 90,
+        "unit_price": 72,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 900
+        "total": 720
       }
     ],
     "unit_selling_price_x1": 73333,
@@ -618,10 +618,10 @@
       {
         "name": "Cebada",
         "quantity": 1,
-        "unit_price": 35,
+        "unit_price": 28,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 350
+        "total": 280
       }
     ],
     "unit_selling_price_x1": 9686,
@@ -647,18 +647,18 @@
       {
         "name": "Chwile",
         "quantity": 10,
-        "unit_price": 2600,
+        "unit_price": 2080,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 26000
+        "total": 20800
       },
       {
         "name": "Arroz",
         "quantity": 100,
-        "unit_price": 25,
+        "unit_price": 20,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 2500
+        "total": 2000
       },
       {
         "name": "Cerveza Tsingtawo",
@@ -687,10 +687,10 @@
       {
         "name": "Madera de bambú sagrado",
         "quantity": 20,
-        "unit_price": 260,
+        "unit_price": 208,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 5200
+        "total": 4160
       }
     ],
     "unit_selling_price_x1": 0,
@@ -716,18 +716,18 @@
       {
         "name": "Cebada",
         "quantity": 5,
-        "unit_price": 35,
+        "unit_price": 28,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 175000
+        "total": 140000
       },
       {
         "name": "Ortiga",
         "quantity": 1,
-        "unit_price": 30,
+        "unit_price": 24,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 30000
+        "total": 24000
       }
     ],
     "unit_selling_price_x1": 15,
@@ -754,10 +754,10 @@
       {
         "name": "Semilla de scorbuto",
         "quantity": 10,
-        "unit_price": 300,
+        "unit_price": 240,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 3000
+        "total": 2400
       },
       {
         "name": "Bol",
@@ -807,50 +807,50 @@
       {
         "name": "Cebada",
         "quantity": 50,
-        "unit_price": 35,
+        "unit_price": 28,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 175000
+        "total": 140000
       },
       {
         "name": "Avena",
         "quantity": 50,
-        "unit_price": 29,
+        "unit_price": 23,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 145000
+        "total": 116000
       },
       {
         "name": "Lúpulo",
         "quantity": 50,
-        "unit_price": 47,
+        "unit_price": 38,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 235000
+        "total": 188000
       },
       {
         "name": "Lino",
         "quantity": 50,
-        "unit_price": 33,
+        "unit_price": 26,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 165000
+        "total": 132000
       },
       {
         "name": "Centeno",
         "quantity": 50,
-        "unit_price": 69,
+        "unit_price": 55,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 345000
+        "total": 276000
       },
       {
         "name": "Polvo temporal",
         "quantity": 5,
-        "unit_price": 44,
+        "unit_price": 35,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 22000
+        "total": 17600
       }
     ],
     "unit_selling_price_x1": 14999,
@@ -877,18 +877,18 @@
       {
         "name": "Castaña de cajú",
         "quantity": 5,
-        "unit_price": 440,
-        "buy_lot": "x1",
+        "unit_price": 416,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 220000
+        "total": 208000
       },
       {
         "name": "Nuez de pacana",
         "quantity": 5,
-        "unit_price": 48,
-        "buy_lot": "x1",
+        "unit_price": 38,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 24000
+        "total": 19200
       }
     ],
     "unit_selling_price_x1": 4387,
@@ -915,10 +915,10 @@
       {
         "name": "Vísceras de escarahoja",
         "quantity": 8,
-        "unit_price": 100,
+        "unit_price": 80,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 800000
+        "total": 640000
       }
     ],
     "unit_selling_price_x1": 697,
@@ -982,26 +982,26 @@
       {
         "name": "Avena",
         "quantity": 5,
-        "unit_price": 29,
+        "unit_price": 23,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 145000
+        "total": 116000
       },
       {
         "name": "Berenjena",
         "quantity": 1,
-        "unit_price": 260,
+        "unit_price": 208,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 260000
+        "total": 208000
       },
       {
         "name": "Salvia",
         "quantity": 1,
-        "unit_price": 28,
+        "unit_price": 22,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 28000
+        "total": 22400
       }
     ],
     "unit_selling_price_x1": 12,
@@ -1028,26 +1028,26 @@
       {
         "name": "Avena aurífera",
         "quantity": 1,
-        "unit_price": 12996,
-        "buy_lot": "x1",
+        "unit_price": 12000,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 129960
+        "total": 120000
       },
       {
         "name": "Berenjena",
         "quantity": 1,
-        "unit_price": 285,
+        "unit_price": 228,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2850
+        "total": 2280
       },
       {
         "name": "Salvia",
         "quantity": 1,
-        "unit_price": 200,
+        "unit_price": 160,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2000
+        "total": 1600
       }
     ],
     "unit_selling_price_x1": 11995,
@@ -1089,10 +1089,10 @@
       {
         "name": "Cebada",
         "quantity": 1,
-        "unit_price": 35,
+        "unit_price": 28,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 350
+        "total": 280
       }
     ],
     "unit_selling_price_x1": 14999,
@@ -1118,26 +1118,26 @@
       {
         "name": "Avena",
         "quantity": 5,
-        "unit_price": 29,
+        "unit_price": 23,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 145000
+        "total": 116000
       },
       {
         "name": "Alubias",
         "quantity": 1,
-        "unit_price": 59,
+        "unit_price": 47,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 59000
+        "total": 47200
       },
       {
         "name": "Salvia",
         "quantity": 1,
-        "unit_price": 28,
+        "unit_price": 22,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 28000
+        "total": 22400
       }
     ],
     "unit_selling_price_x1": 9,
@@ -1224,10 +1224,10 @@
       {
         "name": "Frasco de gelatina de fresa",
         "quantity": 2,
-        "unit_price": 774,
-        "buy_lot": "x1",
+        "unit_price": 680,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1548000
+        "total": 1360000
       }
     ],
     "unit_selling_price_x1": 416,
@@ -1300,26 +1300,26 @@
       {
         "name": "Lúpulo",
         "quantity": 5,
-        "unit_price": 47,
+        "unit_price": 38,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 235000
+        "total": 188000
       },
       {
         "name": "Cenizas eternas",
         "quantity": 1,
-        "unit_price": 180,
+        "unit_price": 144,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 180000
+        "total": 144000
       },
       {
         "name": "Trébol de 5 hojas",
         "quantity": 1,
-        "unit_price": 22,
+        "unit_price": 18,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 22000
+        "total": 17600
       }
     ],
     "unit_selling_price_x1": 158,
@@ -1354,18 +1354,18 @@
       {
         "name": "Cenizas eternas",
         "quantity": 1,
-        "unit_price": 180,
+        "unit_price": 144,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1800
+        "total": 1440
       },
       {
         "name": "Trébol de 5 hojas",
         "quantity": 1,
-        "unit_price": 199,
-        "buy_lot": "x1",
+        "unit_price": 184,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1990
+        "total": 1840
       }
     ],
     "unit_selling_price_x1": 19899,
@@ -1436,26 +1436,26 @@
       {
         "name": "Lúpulo",
         "quantity": 5,
-        "unit_price": 47,
+        "unit_price": 38,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 235000
+        "total": 188000
       },
       {
         "name": "Cereza",
         "quantity": 1,
-        "unit_price": 15,
+        "unit_price": 12,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 15000
+        "total": 12000
       },
       {
         "name": "Trébol de 5 hojas",
         "quantity": 1,
-        "unit_price": 22,
+        "unit_price": 18,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 22000
+        "total": 17600
       }
     ],
     "unit_selling_price_x1": 14,
@@ -1498,10 +1498,10 @@
       {
         "name": "Avena",
         "quantity": 1,
-        "unit_price": 100,
+        "unit_price": 80,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1000
+        "total": 800
       }
     ],
     "unit_selling_price_x1": 18997,
@@ -1527,26 +1527,26 @@
       {
         "name": "Lino",
         "quantity": 5,
-        "unit_price": 33,
+        "unit_price": 26,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 16500
+        "total": 13200
       },
       {
         "name": "Sangre de scorbuto",
         "quantity": 1,
-        "unit_price": 190,
+        "unit_price": 152,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 19000
+        "total": 15200
       },
       {
         "name": "Menta salvaje",
         "quantity": 1,
-        "unit_price": 20,
+        "unit_price": 16,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 2000
+        "total": 1600
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1581,18 +1581,18 @@
       {
         "name": "Sangre de scorbuto",
         "quantity": 1,
-        "unit_price": 200,
+        "unit_price": 160,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2000
+        "total": 1600
       },
       {
         "name": "Menta salvaje",
         "quantity": 1,
-        "unit_price": 25,
+        "unit_price": 20,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 250
+        "total": 200
       }
     ],
     "unit_selling_price_x1": 11500,
@@ -1663,26 +1663,26 @@
       {
         "name": "Lino",
         "quantity": 5,
-        "unit_price": 33,
+        "unit_price": 26,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 165000
+        "total": 132000
       },
       {
         "name": "Especias",
         "quantity": 1,
-        "unit_price": 180,
+        "unit_price": 144,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 180000
+        "total": 144000
       },
       {
         "name": "Menta salvaje",
         "quantity": 1,
-        "unit_price": 20,
+        "unit_price": 16,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 20000
+        "total": 16000
       }
     ],
     "unit_selling_price_x1": 22,
@@ -1725,10 +1725,10 @@
       {
         "name": "Lúpulo",
         "quantity": 1,
-        "unit_price": 80,
+        "unit_price": 64,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 800
+        "total": 640
       }
     ],
     "unit_selling_price_x1": 25999,
@@ -1754,26 +1754,26 @@
       {
         "name": "Centeno",
         "quantity": 6,
-        "unit_price": 69,
+        "unit_price": 55,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 414000
+        "total": 331200
       },
       {
         "name": "Agua potable",
         "quantity": 1,
-        "unit_price": 145,
+        "unit_price": 116,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 145000
+        "total": 116000
       },
       {
         "name": "Orquídea freyesca",
         "quantity": 1,
-        "unit_price": 19,
+        "unit_price": 15,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 19000
+        "total": 15200
       }
     ],
     "unit_selling_price_x1": 290,
@@ -1808,18 +1808,18 @@
       {
         "name": "Agua potable",
         "quantity": 1,
-        "unit_price": 145,
+        "unit_price": 116,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1450
+        "total": 1160
       },
       {
         "name": "Orquídea freyesca",
         "quantity": 1,
-        "unit_price": 120,
+        "unit_price": 96,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1200
+        "total": 960
       }
     ],
     "unit_selling_price_x1": 19983,
@@ -1845,26 +1845,26 @@
       {
         "name": "Arroz",
         "quantity": 6,
-        "unit_price": 25,
+        "unit_price": 20,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 15000
+        "total": 12000
       },
       {
         "name": "Agua potable",
         "quantity": 1,
-        "unit_price": 145,
+        "unit_price": 116,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 14500
+        "total": 11600
       },
       {
         "name": "Orquídea freyesca",
         "quantity": 1,
-        "unit_price": 32,
+        "unit_price": 26,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 3200
+        "total": 2560
       }
     ],
     "unit_selling_price_x1": 301,
@@ -1899,18 +1899,18 @@
       {
         "name": "Agua potable",
         "quantity": 1,
-        "unit_price": 145,
+        "unit_price": 116,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1450
+        "total": 1160
       },
       {
         "name": "Orquídea freyesca",
         "quantity": 1,
-        "unit_price": 120,
+        "unit_price": 96,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1200
+        "total": 960
       }
     ],
     "unit_selling_price_x1": 24980,
@@ -1952,10 +1952,10 @@
       {
         "name": "Lino",
         "quantity": 1,
-        "unit_price": 100,
-        "buy_lot": "x1",
+        "unit_price": 80,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1000
+        "total": 800
       }
     ],
     "unit_selling_price_x1": 19999,
@@ -1981,26 +1981,26 @@
       {
         "name": "Agua potable",
         "quantity": 1,
-        "unit_price": 145,
+        "unit_price": 116,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 145000
+        "total": 116000
       },
       {
         "name": "Centeno",
         "quantity": 5,
-        "unit_price": 69,
+        "unit_price": 55,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 345000
+        "total": 276000
       },
       {
         "name": "Perca",
         "quantity": 1,
-        "unit_price": 59,
+        "unit_price": 47,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 59000
+        "total": 47200
       }
     ],
     "unit_selling_price_x1": 300,
@@ -2027,10 +2027,10 @@
       {
         "name": "Agua potable",
         "quantity": 10,
-        "unit_price": 145,
+        "unit_price": 116,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1450
+        "total": 1160
       },
       {
         "name": "Nuez de kokoko",
@@ -2043,10 +2043,10 @@
       {
         "name": "Centeno",
         "quantity": 20,
-        "unit_price": 129,
+        "unit_price": 103,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2580
+        "total": 2064
       },
       {
         "name": "Bastón de caramelo",
@@ -2080,26 +2080,26 @@
       {
         "name": "Centeno",
         "quantity": 6,
-        "unit_price": 69,
+        "unit_price": 55,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 414000
+        "total": 331200
       },
       {
         "name": "Polvos mágicos",
         "quantity": 1,
-        "unit_price": 90,
-        "buy_lot": "x1",
+        "unit_price": 72,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 90000
+        "total": 72000
       },
       {
         "name": "Orquídea freyesca",
         "quantity": 1,
-        "unit_price": 19,
+        "unit_price": 15,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 19000
+        "total": 15200
       }
     ],
     "unit_selling_price_x1": 23,
@@ -2142,10 +2142,10 @@
       {
         "name": "Lino",
         "quantity": 1,
-        "unit_price": 100,
-        "buy_lot": "x1",
+        "unit_price": 80,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1000
+        "total": 800
       }
     ],
     "unit_selling_price_x1": 75000,
@@ -2171,26 +2171,26 @@
       {
         "name": "Malta",
         "quantity": 6,
-        "unit_price": 30,
+        "unit_price": 24,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 180000
+        "total": 144000
       },
       {
         "name": "Polvo temporal",
         "quantity": 1,
-        "unit_price": 44,
+        "unit_price": 35,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 44000
+        "total": 35200
       },
       {
         "name": "Edelweiss",
         "quantity": 1,
-        "unit_price": 78,
+        "unit_price": 62,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 78000
+        "total": 62400
       }
     ],
     "unit_selling_price_x1": 395,
@@ -2225,18 +2225,18 @@
       {
         "name": "Polvo temporal",
         "quantity": 1,
-        "unit_price": 57,
+        "unit_price": 46,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 570
+        "total": 456
       },
       {
         "name": "Edelweiss",
         "quantity": 1,
-        "unit_price": 99,
+        "unit_price": 79,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 990
+        "total": 792
       }
     ],
     "unit_selling_price_x1": 15500,
@@ -2279,10 +2279,10 @@
       {
         "name": "Centeno",
         "quantity": 1,
-        "unit_price": 129,
+        "unit_price": 103,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1290
+        "total": 1032
       }
     ],
     "unit_selling_price_x1": 58998,
@@ -2308,26 +2308,26 @@
       {
         "name": "Malta",
         "quantity": 6,
-        "unit_price": 30,
+        "unit_price": 24,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 180000
+        "total": 144000
       },
       {
         "name": "Resina",
         "quantity": 1,
-        "unit_price": 199,
+        "unit_price": 159,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 199000
+        "total": 159200
       },
       {
         "name": "Edelweiss",
         "quantity": 1,
-        "unit_price": 78,
+        "unit_price": 62,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 78000
+        "total": 62400
       }
     ],
     "unit_selling_price_x1": 24,
@@ -2399,26 +2399,26 @@
       {
         "name": "Cáñamo",
         "quantity": 6,
-        "unit_price": 67,
+        "unit_price": 54,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 402000
+        "total": 321600
       },
       {
         "name": "Medida de sal",
         "quantity": 1,
-        "unit_price": 15,
+        "unit_price": 12,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 15000
+        "total": 12000
       },
       {
         "name": "Semilla de pandoja",
         "quantity": 1,
-        "unit_price": 48,
+        "unit_price": 38,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 48000
+        "total": 38400
       }
     ],
     "unit_selling_price_x1": 575,
@@ -2453,18 +2453,18 @@
       {
         "name": "Aceite de sésamo",
         "quantity": 1,
-        "unit_price": 1347,
+        "unit_price": 1078,
         "buy_lot": "x10",
         "buy_or_craft": "Craft",
-        "total": 13470
+        "total": 10776
       },
       {
         "name": "Pandapiler",
         "quantity": 1,
-        "unit_price": 1799,
-        "buy_lot": "x1",
+        "unit_price": 1511,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 17990
+        "total": 15112
       },
       {
         "name": "Levadura de panadero",
@@ -2477,18 +2477,18 @@
       {
         "name": "Carne sanguinolenta",
         "quantity": 1,
-        "unit_price": 548,
+        "unit_price": 438,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 5480
+        "total": 4384
       },
       {
         "name": "Edelweiss",
         "quantity": 2,
-        "unit_price": 99,
+        "unit_price": 79,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1980
+        "total": 1584
       },
       {
         "name": "Cáñamo",
@@ -2501,10 +2501,10 @@
       {
         "name": "Patata",
         "quantity": 8,
-        "unit_price": 1388,
+        "unit_price": 1110,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 111040
+        "total": 88832
       }
     ],
     "unit_selling_price_x1": 44900,
@@ -2539,18 +2539,18 @@
       {
         "name": "Medida de sal",
         "quantity": 1,
-        "unit_price": 18,
-        "buy_lot": "x1",
+        "unit_price": 14,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 180
+        "total": 144
       },
       {
         "name": "Semilla de pandoja",
         "quantity": 1,
-        "unit_price": 140,
+        "unit_price": 112,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1400
+        "total": 1120
       }
     ],
     "unit_selling_price_x1": 50000,
@@ -2621,26 +2621,26 @@
       {
         "name": "Dorada exploradora",
         "quantity": 3,
-        "unit_price": 15,
+        "unit_price": 12,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 45000
+        "total": 36000
       },
       {
         "name": "Rape",
         "quantity": 3,
-        "unit_price": 60,
+        "unit_price": 48,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 180000
+        "total": 144000
       },
       {
         "name": "Raya azul",
         "quantity": 3,
-        "unit_price": 11,
+        "unit_price": 9,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 33000
+        "total": 26400
       }
     ],
     "unit_selling_price_x1": 394,
@@ -2667,26 +2667,26 @@
       {
         "name": "Cáñamo",
         "quantity": 6,
-        "unit_price": 67,
+        "unit_price": 54,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 402000
+        "total": 321600
       },
       {
         "name": "Medida de pimienta",
         "quantity": 1,
-        "unit_price": 40,
+        "unit_price": 32,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 40000
+        "total": 32000
       },
       {
         "name": "Semilla de pandoja",
         "quantity": 1,
-        "unit_price": 48,
+        "unit_price": 38,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 48000
+        "total": 38400
       }
     ],
     "unit_selling_price_x1": 88,
@@ -2758,34 +2758,34 @@
       {
         "name": "Cáñamo",
         "quantity": 20,
-        "unit_price": 67,
+        "unit_price": 54,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 134000
+        "total": 107200
       },
       {
         "name": "Polvos mágicos",
         "quantity": 1,
-        "unit_price": 90,
-        "buy_lot": "x1",
+        "unit_price": 72,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 9000
+        "total": 7200
       },
       {
         "name": "Cebolla",
         "quantity": 4,
-        "unit_price": 449,
+        "unit_price": 359,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 179600
+        "total": 143680
       },
       {
         "name": "Cenizas eternas",
         "quantity": 2,
-        "unit_price": 180,
+        "unit_price": 144,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 36000
+        "total": 28800
       }
     ],
     "unit_selling_price_x1": 11999,
@@ -2812,18 +2812,18 @@
       {
         "name": "Harina terrada",
         "quantity": 2,
-        "unit_price": 6280,
+        "unit_price": 5024,
         "buy_lot": "x10",
         "buy_or_craft": "Craft",
-        "total": 125600
+        "total": 100480
       },
       {
         "name": "Agua potable",
         "quantity": 5,
-        "unit_price": 145,
+        "unit_price": 116,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 7250
+        "total": 5800
       },
       {
         "name": "Levadura de panadero",
@@ -2857,26 +2857,26 @@
       {
         "name": "Maíz",
         "quantity": 7,
-        "unit_price": 139,
+        "unit_price": 111,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 973000
+        "total": 778400
       },
       {
         "name": "Limón",
         "quantity": 1,
-        "unit_price": 197,
-        "buy_lot": "x1",
+        "unit_price": 159,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 197000
+        "total": 159200
       },
       {
         "name": "Ginseng",
         "quantity": 2,
-        "unit_price": 50,
+        "unit_price": 40,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 100000
+        "total": 80000
       }
     ],
     "unit_selling_price_x1": 600,
@@ -2911,18 +2911,18 @@
       {
         "name": "Limón",
         "quantity": 1,
-        "unit_price": 197,
-        "buy_lot": "x1",
+        "unit_price": 159,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1970
+        "total": 1592
       },
       {
         "name": "Ginseng",
         "quantity": 2,
-        "unit_price": 255,
+        "unit_price": 204,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 5100
+        "total": 4080
       }
     ],
     "unit_selling_price_x1": 25000,
@@ -2994,26 +2994,26 @@
       {
         "name": "Maíz",
         "quantity": 7,
-        "unit_price": 139,
+        "unit_price": 111,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 973000
+        "total": 778400
       },
       {
         "name": "Hoja de enchalada",
         "quantity": 1,
-        "unit_price": 19,
+        "unit_price": 15,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 19000
+        "total": 15200
       },
       {
         "name": "Ginseng",
         "quantity": 2,
-        "unit_price": 50,
+        "unit_price": 40,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 100000
+        "total": 80000
       }
     ],
     "unit_selling_price_x1": 100,
@@ -3085,26 +3085,26 @@
       {
         "name": "Mijo",
         "quantity": 7,
-        "unit_price": 300,
+        "unit_price": 240,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 2100000
+        "total": 1680000
       },
       {
         "name": "Aceite para freír",
         "quantity": 1,
-        "unit_price": 140,
+        "unit_price": 112,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 140000
+        "total": 112000
       },
       {
         "name": "Belladona",
         "quantity": 2,
-        "unit_price": 189000,
+        "unit_price": 151200,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 378000000
+        "total": 302400000
       }
     ],
     "unit_selling_price_x1": 890,
@@ -3216,18 +3216,18 @@
       {
         "name": "Aceite para freír",
         "quantity": 1,
-        "unit_price": 140,
+        "unit_price": 112,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1400
+        "total": 1120
       },
       {
         "name": "Belladona",
         "quantity": 2,
-        "unit_price": 214689,
-        "buy_lot": "x1",
+        "unit_price": 175984,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 4293780
+        "total": 3519680
       }
     ],
     "unit_selling_price_x1": 79883,
@@ -3269,10 +3269,10 @@
       {
         "name": "Maíz",
         "quantity": 2,
-        "unit_price": 280,
+        "unit_price": 224,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 5600
+        "total": 4480
       }
     ],
     "unit_selling_price_x1": 55000,
@@ -3298,26 +3298,26 @@
       {
         "name": "Mijo",
         "quantity": 7,
-        "unit_price": 300,
+        "unit_price": 240,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 2100000
+        "total": 1680000
       },
       {
         "name": "Cebolla",
         "quantity": 1,
-        "unit_price": 440,
+        "unit_price": 352,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 440000
+        "total": 352000
       },
       {
         "name": "Belladona",
         "quantity": 2,
-        "unit_price": 189000,
+        "unit_price": 151200,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 378000000
+        "total": 302400000
       }
     ],
     "unit_selling_price_x1": 240,
@@ -3359,10 +3359,10 @@
       {
         "name": "Maíz",
         "quantity": 2,
-        "unit_price": 280,
+        "unit_price": 224,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 5600
+        "total": 4480
       }
     ],
     "unit_selling_price_x1": 75000,
@@ -3388,10 +3388,10 @@
       {
         "name": "Frostizz",
         "quantity": 3,
-        "unit_price": 600,
+        "unit_price": 480,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 18000
+        "total": 14400
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3418,26 +3418,26 @@
       {
         "name": "Frostizz",
         "quantity": 1,
-        "unit_price": 278,
+        "unit_price": 222,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 278000
+        "total": 222400
       },
       {
         "name": "Aguas tranquilas",
         "quantity": 1,
-        "unit_price": 98,
+        "unit_price": 78,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 98000
+        "total": 78400
       },
       {
         "name": "Mandrágora",
         "quantity": 2,
-        "unit_price": 118,
+        "unit_price": 94,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 236000
+        "total": 188800
       }
     ],
     "unit_selling_price_x1": 1130,
@@ -3554,26 +3554,26 @@
       {
         "name": "Cristal plegable",
         "quantity": 2,
-        "unit_price": 770,
+        "unit_price": 616,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 154000
+        "total": 123200
       },
       {
         "name": "Polvo temporal",
         "quantity": 2,
-        "unit_price": 44,
+        "unit_price": 35,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 8800
+        "total": 7040
       },
       {
         "name": "Tulipán de papel",
         "quantity": 2,
-        "unit_price": 1298,
+        "unit_price": 1038,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 259600
+        "total": 207680
       }
     ],
     "unit_selling_price_x1": 5000,
@@ -3645,34 +3645,34 @@
       {
         "name": "Cristal plegable",
         "quantity": 5,
-        "unit_price": 770,
+        "unit_price": 616,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 38500
+        "total": 30800
       },
       {
         "name": "Cristal líquido",
         "quantity": 5,
-        "unit_price": 1192,
+        "unit_price": 954,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 59600
+        "total": 47680
       },
       {
         "name": "Tulipán de papel",
         "quantity": 5,
-        "unit_price": 1298,
+        "unit_price": 1038,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 64900
+        "total": 51920
       },
       {
         "name": "Pischis de tinta",
         "quantity": 5,
-        "unit_price": 1883,
-        "buy_lot": "x1",
+        "unit_price": 1598,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 94150
+        "total": 79880
       }
     ],
     "unit_selling_price_x1": 22520,

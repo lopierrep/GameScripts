@@ -476,18 +476,18 @@
       {
         "name": "Pintura negra",
         "quantity": 1,
-        "unit_price": 6972,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6972
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Pintura azul",
         "quantity": 3,
-        "unit_price": 12156,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 36468
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Dofus blanco",
@@ -521,18 +521,18 @@
       {
         "name": "Pintura violeta",
         "quantity": 2,
-        "unit_price": 9940,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 19880
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Pintura amarilla",
         "quantity": 1,
-        "unit_price": 3252,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 3252
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Dofus blanco",
@@ -545,10 +545,10 @@
       {
         "name": "Pintura negra",
         "quantity": 1,
-        "unit_price": 6972,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6972
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -574,18 +574,18 @@
       {
         "name": "Pintura roja",
         "quantity": 1,
-        "unit_price": 5508,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5508
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Pintura amarilla",
         "quantity": 1,
-        "unit_price": 3252,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 3252
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Dofus blanco",
@@ -598,18 +598,18 @@
       {
         "name": "Pintura negra",
         "quantity": 1,
-        "unit_price": 6972,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6972
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Pintura naranja",
         "quantity": 1,
-        "unit_price": 4756,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 4756
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -635,10 +635,10 @@
       {
         "name": "Pintura amarilla",
         "quantity": 3,
-        "unit_price": 3252,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 9756
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Dofus blanco",
@@ -651,10 +651,10 @@
       {
         "name": "Pintura negra",
         "quantity": 1,
-        "unit_price": 6972,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6972
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -680,10 +680,10 @@
       {
         "name": "Pintura verde",
         "quantity": 3,
-        "unit_price": 6220,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 18660
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Dofus blanco",
@@ -696,10 +696,10 @@
       {
         "name": "Pintura negra",
         "quantity": 1,
-        "unit_price": 6972,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6972
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -725,10 +725,10 @@
       {
         "name": "Piedra de granito",
         "quantity": 10,
-        "unit_price": 869,
-        "buy_lot": "x1",
+        "unit_price": 706,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 8690
+        "total": 7056
       },
       {
         "name": "Tabla de aglomerado",
@@ -749,10 +749,10 @@
       {
         "name": "Pócima de agua de hada",
         "quantity": 1,
-        "unit_price": 1885,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 1885
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Carpa de Iem",
@@ -847,10 +847,10 @@
       {
         "name": "Picadillo de bruma",
         "quantity": 1,
-        "unit_price": 2609,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 2609
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -2275,10 +2275,10 @@
       {
         "name": "Esquíritu inferior",
         "quantity": 4,
-        "unit_price": 60,
+        "unit_price": 48,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 240000
+        "total": 192000
       }
     ],
     "unit_selling_price_x1": 137,
@@ -2722,10 +2722,10 @@
       {
         "name": "Madera de bambú",
         "quantity": 20,
-        "unit_price": 170,
+        "unit_price": 136,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 3400
+        "total": 2720
       },
       {
         "name": "Escamas de uróbolo",
@@ -2767,10 +2767,10 @@
       {
         "name": "Madera de bambú",
         "quantity": 20,
-        "unit_price": 170,
+        "unit_price": 136,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 3400
+        "total": 2720
       },
       {
         "name": "Escama de dragoss calizo",
@@ -2852,10 +2852,10 @@
       {
         "name": "Madera de bambú",
         "quantity": 20,
-        "unit_price": 170,
+        "unit_price": 136,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 3400
+        "total": 2720
       }
     ],
     "unit_selling_price_x1": 0,
@@ -2897,10 +2897,10 @@
       {
         "name": "Madera de bambú",
         "quantity": 20,
-        "unit_price": 170,
+        "unit_price": 136,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 3400
+        "total": 2720
       },
       {
         "name": "Pelo de miaumiaumialvaje",
@@ -3861,10 +3861,10 @@
       {
         "name": "Primera parte de la llave del laberinto del Dragocerdo",
         "quantity": 1,
-        "unit_price": 1605,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 1605
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Tridente roto",
@@ -4177,10 +4177,10 @@
       {
         "name": "Pelusa de mamagüina",
         "quantity": 10,
-        "unit_price": 2490,
+        "unit_price": 1992,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 24900
+        "total": 19920
       },
       {
         "name": "Tejido de kaniglú",
@@ -4347,10 +4347,10 @@
       {
         "name": "Pluma de pekegüino",
         "quantity": 10,
-        "unit_price": 47,
-        "buy_lot": "x1",
+        "unit_price": 38,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 470
+        "total": 384
       },
       {
         "name": "Colmillo de jabajocero",
@@ -4472,10 +4472,10 @@
       {
         "name": "Piel de barrigüino",
         "quantity": 10,
-        "unit_price": 73,
+        "unit_price": 58,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 730
+        "total": 584
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4979,10 +4979,10 @@
       {
         "name": "Esquíritu común",
         "quantity": 4,
-        "unit_price": 117,
+        "unit_price": 94,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 468000
+        "total": 374400
       }
     ],
     "unit_selling_price_x1": 281,
@@ -7022,10 +7022,10 @@
       {
         "name": "Raíz de abráknido oscuro",
         "quantity": 10,
-        "unit_price": 344,
-        "buy_lot": "x1",
+        "unit_price": 342,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 3440
+        "total": 3416
       },
       {
         "name": "Raíz de abráknido venerable",
@@ -7694,10 +7694,10 @@
       {
         "name": "Esquíritu superior",
         "quantity": 4,
-        "unit_price": 256,
+        "unit_price": 205,
         "buy_lot": "x100",
         "buy_or_craft": "Buy",
-        "total": 1024000
+        "total": 819200
       }
     ],
     "unit_selling_price_x1": 529,
@@ -9222,34 +9222,34 @@
       {
         "name": "Quisnoa",
         "quantity": 100,
-        "unit_price": 189,
+        "unit_price": 151,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 18900
+        "total": 15120
       },
       {
         "name": "Lapa",
         "quantity": 100,
-        "unit_price": 700,
+        "unit_price": 560,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 70000
+        "total": 56000
       },
       {
         "name": "Sepiolita",
         "quantity": 100,
-        "unit_price": 400,
+        "unit_price": 320,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 40000
+        "total": 32000
       },
       {
         "name": "Madera de acuacia",
         "quantity": 100,
-        "unit_price": 960,
+        "unit_price": 768,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 96000
+        "total": 76800
       }
     ],
     "unit_selling_price_x1": 0,
@@ -9299,10 +9299,10 @@
       {
         "name": "Calzoncillos rojos",
         "quantity": 10,
-        "unit_price": 21745,
-        "buy_lot": "x1",
+        "unit_price": 17600,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 217450
+        "total": 176000
       },
       {
         "name": "Oreja de gosbusteador",
@@ -9421,10 +9421,10 @@
       {
         "name": "Ágata",
         "quantity": 1,
-        "unit_price": 1711,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 1711
+        "unit_price": 7440,
+        "buy_lot": "x10",
+        "buy_or_craft": "Buy",
+        "total": 7440
       },
       {
         "name": "Mandrágora",
@@ -9474,34 +9474,34 @@
       {
         "name": "Mijo",
         "quantity": 10,
-        "unit_price": 500,
+        "unit_price": 400,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 5000
+        "total": 4000
       },
       {
         "name": "Madera de olmo",
         "quantity": 10,
-        "unit_price": 654,
-        "buy_lot": "x1",
+        "unit_price": 541,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 6540
+        "total": 5408
       },
       {
         "name": "Dolomita",
         "quantity": 10,
-        "unit_price": 975,
+        "unit_price": 780,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 9750
+        "total": 7800
       },
       {
         "name": "Tenca",
         "quantity": 10,
-        "unit_price": 180,
+        "unit_price": 144,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1800
+        "total": 1440
       },
       {
         "name": "Carne viciada",
@@ -10090,10 +10090,10 @@
       {
         "name": "Esquíritu majestuoso",
         "quantity": 4,
-        "unit_price": 478,
+        "unit_price": 382,
         "buy_lot": "x1000",
         "buy_or_craft": "Buy",
-        "total": 1912000
+        "total": 1529600
       }
     ],
     "unit_selling_price_x1": 844,

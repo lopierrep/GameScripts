@@ -1114,26 +1114,26 @@
       {
         "name": "Lucio",
         "quantity": 10,
-        "unit_price": 45,
+        "unit_price": 36,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 45000
+        "total": 36000
       },
       {
         "name": "Sardina brillante",
         "quantity": 10,
-        "unit_price": 65,
+        "unit_price": 52,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 65000
+        "total": 52000
       },
       {
         "name": "Kralamar",
         "quantity": 10,
-        "unit_price": 48,
+        "unit_price": 38,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 48000
+        "total": 38400
       }
     ],
     "unit_selling_price_x1": 3296,
@@ -2161,10 +2161,10 @@
       {
         "name": "Palito de cangrejo",
         "quantity": 3,
-        "unit_price": 1300,
-        "buy_lot": "x10",
-        "buy_or_craft": "Craft",
-        "total": 3900
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Limón",
@@ -2230,10 +2230,10 @@
       {
         "name": "Palito de cangrejo",
         "quantity": 3,
-        "unit_price": 1300,
-        "buy_lot": "x10",
-        "buy_or_craft": "Craft",
-        "total": 3900
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Limón",
@@ -2262,10 +2262,10 @@
       {
         "name": "Cereza",
         "quantity": 10,
-        "unit_price": 38,
+        "unit_price": 30,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 380
+        "total": 304
       }
     ],
     "unit_selling_price_x1": 0,
@@ -2307,10 +2307,10 @@
       {
         "name": "Hoja de enchalada",
         "quantity": 10,
-        "unit_price": 79,
+        "unit_price": 63,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 790
+        "total": 632
       }
     ],
     "unit_selling_price_x1": 0,

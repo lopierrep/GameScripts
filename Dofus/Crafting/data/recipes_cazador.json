@@ -8,10 +8,10 @@
       {
         "name": "Carne intangible",
         "quantity": 1,
-        "unit_price": 78,
+        "unit_price": 62,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 78000
+        "total": 62400
       }
     ],
     "unit_selling_price_x1": 0,
@@ -67,10 +67,10 @@
       {
         "name": "Carne picada",
         "quantity": 1,
-        "unit_price": 69,
+        "unit_price": 55,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 69000
+        "total": 55200
       }
     ],
     "unit_selling_price_x1": 0,
@@ -171,18 +171,18 @@
       {
         "name": "Carne adulterada",
         "quantity": 1,
-        "unit_price": 13,
+        "unit_price": 10,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 13000
+        "total": 10400
       },
       {
         "name": "Trigo",
         "quantity": 1,
-        "unit_price": 30,
+        "unit_price": 24,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 30000
+        "total": 24000
       }
     ],
     "unit_selling_price_x1": 0,
@@ -246,66 +246,66 @@
       {
         "name": "Carne tierna",
         "quantity": 2,
-        "unit_price": 9,
+        "unit_price": 7,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 180
+        "total": 144
       },
       {
         "name": "Carne corrompida",
         "quantity": 2,
-        "unit_price": 28,
+        "unit_price": 22,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 560
+        "total": 448
       },
       {
         "name": "Carne rancia",
         "quantity": 2,
-        "unit_price": 44,
+        "unit_price": 35,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 880
+        "total": 704
       },
       {
         "name": "Carne sanguinolenta",
         "quantity": 2,
-        "unit_price": 548,
+        "unit_price": 438,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 10960
+        "total": 8768
       },
       {
         "name": "Carne podrida",
         "quantity": 2,
-        "unit_price": 100,
+        "unit_price": 80,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2000
+        "total": 1600
       },
       {
         "name": "Menta salvaje",
         "quantity": 30,
-        "unit_price": 20,
+        "unit_price": 16,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 6000
+        "total": 4800
       },
       {
         "name": "Especias",
         "quantity": 5,
-        "unit_price": 194,
+        "unit_price": 155,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 9700
+        "total": 7760
       },
       {
         "name": "Cangrejo surimi",
         "quantity": 30,
-        "unit_price": 30,
+        "unit_price": 24,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 9000
+        "total": 7200
       }
     ],
     "unit_selling_price_x1": 0,
@@ -332,26 +332,26 @@
       {
         "name": "Carne industrial",
         "quantity": 1,
-        "unit_price": 45,
+        "unit_price": 36,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 45000
+        "total": 36000
       },
       {
         "name": "Cebada",
         "quantity": 1,
-        "unit_price": 35,
+        "unit_price": 28,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 35000
+        "total": 28000
       },
       {
         "name": "Limón",
         "quantity": 1,
-        "unit_price": 197,
-        "buy_lot": "x1",
+        "unit_price": 159,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 197000
+        "total": 159200
       }
     ],
     "unit_selling_price_x1": 95,
@@ -423,26 +423,26 @@
       {
         "name": "Carne tierna",
         "quantity": 1,
-        "unit_price": 8,
+        "unit_price": 6,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 8000
+        "total": 6400
       },
       {
         "name": "Cebada",
         "quantity": 1,
-        "unit_price": 35,
+        "unit_price": 28,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 35000
+        "total": 28000
       },
       {
         "name": "Hoja de enchalada",
         "quantity": 1,
-        "unit_price": 19,
+        "unit_price": 15,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 19000
+        "total": 15200
       }
     ],
     "unit_selling_price_x1": 0,
@@ -522,10 +522,10 @@
       {
         "name": "Champiñón Luidchi",
         "quantity": 10,
-        "unit_price": 499,
+        "unit_price": 399,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 4990
+        "total": 3992
       },
       {
         "name": "Gelatina de Aciano",
@@ -575,26 +575,26 @@
       {
         "name": "Carne corrompida",
         "quantity": 1,
-        "unit_price": 24,
+        "unit_price": 19,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 24000
+        "total": 19200
       },
       {
         "name": "Avena",
         "quantity": 1,
-        "unit_price": 29,
+        "unit_price": 23,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 29000
+        "total": 23200
       },
       {
         "name": "Aceite para freír",
         "quantity": 1,
-        "unit_price": 140,
+        "unit_price": 112,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 140000
+        "total": 112000
       }
     ],
     "unit_selling_price_x1": 0,
@@ -666,26 +666,26 @@
       {
         "name": "Carne rancia",
         "quantity": 1,
-        "unit_price": 44,
+        "unit_price": 35,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 44000
+        "total": 35200
       },
       {
         "name": "Avena",
         "quantity": 1,
-        "unit_price": 29,
+        "unit_price": 23,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 29000
+        "total": 23200
       },
       {
         "name": "Cebolla",
         "quantity": 1,
-        "unit_price": 440,
+        "unit_price": 352,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 440000
+        "total": 352000
       }
     ],
     "unit_selling_price_x1": 0,
@@ -757,26 +757,26 @@
       {
         "name": "Carne sanguinolenta",
         "quantity": 1,
-        "unit_price": 447,
+        "unit_price": 358,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 447000
+        "total": 357600
       },
       {
         "name": "Lúpulo",
         "quantity": 1,
-        "unit_price": 47,
+        "unit_price": 38,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 47000
+        "total": 37600
       },
       {
         "name": "Grasa gelatinosa",
         "quantity": 1,
-        "unit_price": 79,
+        "unit_price": 63,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 79000
+        "total": 63200
       }
     ],
     "unit_selling_price_x1": 349,
@@ -848,18 +848,18 @@
       {
         "name": "Carne podrida",
         "quantity": 1,
-        "unit_price": 80,
+        "unit_price": 64,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 80000
+        "total": 64000
       },
       {
         "name": "Lúpulo",
         "quantity": 1,
-        "unit_price": 47,
+        "unit_price": 38,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 47000
+        "total": 37600
       },
       {
         "name": "Dosis de zumo sabroso",
@@ -976,26 +976,26 @@
       {
         "name": "Carne exudante",
         "quantity": 1,
-        "unit_price": 42,
+        "unit_price": 34,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 42000
+        "total": 33600
       },
       {
         "name": "Lino",
         "quantity": 1,
-        "unit_price": 33,
+        "unit_price": 26,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 33000
+        "total": 26400
       },
       {
         "name": "Berenjena",
         "quantity": 1,
-        "unit_price": 260,
+        "unit_price": 208,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 260000
+        "total": 208000
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1067,26 +1067,26 @@
       {
         "name": "Carne seca",
         "quantity": 1,
-        "unit_price": 47,
+        "unit_price": 38,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 47000
+        "total": 37600
       },
       {
         "name": "Lino",
         "quantity": 1,
-        "unit_price": 33,
+        "unit_price": 26,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 33000
+        "total": 26400
       },
       {
         "name": "Alubias",
         "quantity": 1,
-        "unit_price": 59,
+        "unit_price": 47,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 59000
+        "total": 47200
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1158,26 +1158,26 @@
       {
         "name": "Carne cruda",
         "quantity": 1,
-        "unit_price": 60,
+        "unit_price": 48,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 60000
+        "total": 48000
       },
       {
         "name": "Centeno",
         "quantity": 1,
-        "unit_price": 69,
+        "unit_price": 55,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 69000
+        "total": 55200
       },
       {
         "name": "Cenizas eternas",
         "quantity": 1,
-        "unit_price": 180,
+        "unit_price": 144,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 180000
+        "total": 144000
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1249,26 +1249,26 @@
       {
         "name": "Arroz",
         "quantity": 1,
-        "unit_price": 25,
+        "unit_price": 20,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 2500
+        "total": 2000
       },
       {
         "name": "Especias",
         "quantity": 1,
-        "unit_price": 180,
+        "unit_price": 144,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 18000
+        "total": 14400
       },
       {
         "name": "Carne cruda",
         "quantity": 1,
-        "unit_price": 60,
+        "unit_price": 48,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 6000
+        "total": 4800
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1295,26 +1295,26 @@
       {
         "name": "Carne marmoleada",
         "quantity": 1,
-        "unit_price": 80,
+        "unit_price": 64,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 80000
+        "total": 64000
       },
       {
         "name": "Centeno",
         "quantity": 1,
-        "unit_price": 69,
+        "unit_price": 55,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 69000
+        "total": 55200
       },
       {
         "name": "Cereza",
         "quantity": 1,
-        "unit_price": 15,
+        "unit_price": 12,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 15000
+        "total": 12000
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1386,26 +1386,26 @@
       {
         "name": "Carne macerada",
         "quantity": 1,
-        "unit_price": 119,
+        "unit_price": 95,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 11900
+        "total": 9520
       },
       {
         "name": "Malta",
         "quantity": 1,
-        "unit_price": 44,
+        "unit_price": 35,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 4400
+        "total": 3520
       },
       {
         "name": "Sangre de scorbuto",
         "quantity": 1,
-        "unit_price": 190,
+        "unit_price": 152,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 19000
+        "total": 15200
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1477,26 +1477,26 @@
       {
         "name": "Carne de animales silvestres",
         "quantity": 1,
-        "unit_price": 170,
+        "unit_price": 136,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 170000
+        "total": 136000
       },
       {
         "name": "Malta",
         "quantity": 1,
-        "unit_price": 30,
+        "unit_price": 24,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 30000
+        "total": 24000
       },
       {
         "name": "Especias",
         "quantity": 1,
-        "unit_price": 180,
+        "unit_price": 144,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 180000
+        "total": 144000
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1584,10 +1584,10 @@
       {
         "name": "Raíz de abráknido",
         "quantity": 10,
-        "unit_price": 499,
-        "buy_lot": "x1",
+        "unit_price": 480,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 4990
+        "total": 4800
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1703,26 +1703,26 @@
       {
         "name": "Carne magra",
         "quantity": 1,
-        "unit_price": 225,
+        "unit_price": 180,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 225000
+        "total": 180000
       },
       {
         "name": "Cáñamo",
         "quantity": 2,
-        "unit_price": 67,
+        "unit_price": 54,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 134000
+        "total": 107200
       },
       {
         "name": "Polvos mágicos",
         "quantity": 1,
-        "unit_price": 90,
-        "buy_lot": "x1",
+        "unit_price": 72,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 90000
+        "total": 72000
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1794,26 +1794,26 @@
       {
         "name": "Carne viciada",
         "quantity": 1,
-        "unit_price": 269,
+        "unit_price": 215,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 269000
+        "total": 215200
       },
       {
         "name": "Maíz",
         "quantity": 2,
-        "unit_price": 139,
+        "unit_price": 111,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 278000
+        "total": 222400
       },
       {
         "name": "Polvo temporal",
         "quantity": 1,
-        "unit_price": 44,
+        "unit_price": 35,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 44000
+        "total": 35200
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1885,58 +1885,58 @@
       {
         "name": "Agua potable",
         "quantity": 1,
-        "unit_price": 145,
+        "unit_price": 116,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1450
+        "total": 1160
       },
       {
         "name": "Medida de pimienta",
         "quantity": 5,
-        "unit_price": 49,
+        "unit_price": 39,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2450
+        "total": 1960
       },
       {
         "name": "Especias",
         "quantity": 5,
-        "unit_price": 194,
+        "unit_price": 155,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 9700
+        "total": 7760
       },
       {
         "name": "Berenjena",
         "quantity": 5,
-        "unit_price": 285,
+        "unit_price": 228,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 14250
+        "total": 11400
       },
       {
         "name": "Mijo",
         "quantity": 7,
-        "unit_price": 429,
-        "buy_lot": "x100",
+        "unit_price": 400,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 30000
+        "total": 28000
       },
       {
         "name": "Carne viciada",
         "quantity": 1,
-        "unit_price": 529,
+        "unit_price": 423,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 5290
+        "total": 4232
       },
       {
         "name": "Cerveza de Amakna",
         "quantity": 1,
-        "unit_price": 1000,
+        "unit_price": 800,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 10000
+        "total": 8000
       }
     ],
     "unit_selling_price_x1": 49990,
@@ -2039,26 +2039,26 @@
       {
         "name": "Carne negra",
         "quantity": 1,
-        "unit_price": 420,
+        "unit_price": 336,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 420000
+        "total": 336000
       },
       {
         "name": "Maíz",
         "quantity": 2,
-        "unit_price": 139,
+        "unit_price": 111,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 278000
+        "total": 222400
       },
       {
         "name": "Resina",
         "quantity": 1,
-        "unit_price": 199,
+        "unit_price": 159,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 199000
+        "total": 159200
       }
     ],
     "unit_selling_price_x1": 0,
@@ -2130,26 +2130,26 @@
       {
         "name": "Carne sabrosa",
         "quantity": 1,
-        "unit_price": 440,
+        "unit_price": 352,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 44000
+        "total": 35200
       },
       {
         "name": "Mijo",
         "quantity": 2,
-        "unit_price": 300,
+        "unit_price": 240,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 60000
+        "total": 48000
       },
       {
         "name": "Aguas tranquilas",
         "quantity": 1,
-        "unit_price": 98,
+        "unit_price": 78,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 9800
+        "total": 7840
       }
     ],
     "unit_selling_price_x1": 0,

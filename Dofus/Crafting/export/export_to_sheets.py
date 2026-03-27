@@ -33,13 +33,9 @@ for _p in (_ROOT, _DOFUS):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-from config.config import (
-    ROOT_DIR,
-    SIZES,
-    _load_omitted_recipes,
-    _load_omitted_categories,
-    net_sell_price,
-)
+from config.config import ROOT_DIR, SIZES
+from utils.loaders import _load_omitted_categories, _load_omitted_recipes
+from utils.market import net_sell_price
 
 
 def _api_call(fn, *args, retries: int = 5, **kwargs):
@@ -170,11 +166,6 @@ def format_ingredients(ingredients: list, price_lookup: dict) -> str:
             parts.append(f"{name} x{qty}")
     return " | ".join(parts)
 
-
-def calc_margin(ganancia: float, costo: float) -> str:
-    if costo and costo > 0:
-        return f"{(ganancia / costo * 100):.1f}%"
-    return "N/A"
 
 
 

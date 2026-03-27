@@ -111,26 +111,26 @@
       {
         "name": "Pluma de kwak de llamas",
         "quantity": 4,
-        "unit_price": 360,
+        "unit_price": 288,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 144000
+        "total": 115200
       },
       {
         "name": "Pico de kwak de llamas",
         "quantity": 1,
-        "unit_price": 98,
+        "unit_price": 78,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 9800
+        "total": 7840
       },
       {
         "name": "Esfera para metarias",
         "quantity": 1,
-        "unit_price": 250,
+        "unit_price": 200,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 25000
+        "total": 20000
       }
     ],
     "unit_selling_price_x1": 4047,
@@ -156,26 +156,26 @@
       {
         "name": "Pluma de kwak de hielo",
         "quantity": 4,
-        "unit_price": 889,
+        "unit_price": 711,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 35560
+        "total": 28448
       },
       {
         "name": "Pico de kwak de hielo",
         "quantity": 1,
-        "unit_price": 198,
+        "unit_price": 158,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1980
+        "total": 1584
       },
       {
         "name": "Esfera para metarias",
         "quantity": 1,
-        "unit_price": 298,
+        "unit_price": 238,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2980
+        "total": 2384
       }
     ],
     "unit_selling_price_x1": 59496,
@@ -246,10 +246,10 @@
       {
         "name": "Esfera para metarias",
         "quantity": 1,
-        "unit_price": 298,
+        "unit_price": 238,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2980
+        "total": 2384
       },
       {
         "name": "Pluma de kwak de viento",
@@ -262,10 +262,10 @@
       {
         "name": "Pico de kwak de viento",
         "quantity": 1,
-        "unit_price": 308,
+        "unit_price": 246,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 3080
+        "total": 2464
       }
     ],
     "unit_selling_price_x1": 18797,
@@ -516,26 +516,26 @@
       {
         "name": "Cáscara de dragohuevo pizarroso",
         "quantity": 4,
-        "unit_price": 1250,
+        "unit_price": 1000,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 500000
+        "total": 400000
       },
       {
         "name": "Huevo de dragohuevo pizarroso",
         "quantity": 1,
-        "unit_price": 650,
+        "unit_price": 520,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 65000
+        "total": 52000
       },
       {
         "name": "Esfera para metarias",
         "quantity": 1,
-        "unit_price": 250,
+        "unit_price": 200,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 25000
+        "total": 20000
       }
     ],
     "unit_selling_price_x1": 0,
@@ -950,10 +950,10 @@
       {
         "name": "Pócima de Ghetto Reid",
         "quantity": 1,
-        "unit_price": 2043,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 2043
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -987,10 +987,10 @@
       {
         "name": "Pócima de Ghetto Reid",
         "quantity": 1,
-        "unit_price": 2043,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 2043
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1024,10 +1024,10 @@
       {
         "name": "Pócima de Ghetto Reid",
         "quantity": 1,
-        "unit_price": 2043,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 2043
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1053,18 +1053,18 @@
       {
         "name": "Piedra macilladera azul impura",
         "quantity": 10,
-        "unit_price": 1279,
-        "buy_lot": "x10",
-        "buy_or_craft": "Craft",
-        "total": 12790
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Agua potable",
         "quantity": 10,
-        "unit_price": 145,
+        "unit_price": 116,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1450
+        "total": 1160
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1090,10 +1090,10 @@
       {
         "name": "Agua potable",
         "quantity": 10,
-        "unit_price": 145,
+        "unit_price": 116,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1450
+        "total": 1160
       },
       {
         "name": "Piedra macilladera amarilla impura",
@@ -1127,18 +1127,18 @@
       {
         "name": "Piedra macilladera verde impura",
         "quantity": 10,
-        "unit_price": 1879,
-        "buy_lot": "x10",
-        "buy_or_craft": "Craft",
-        "total": 18790
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Agua potable",
         "quantity": 10,
-        "unit_price": 145,
+        "unit_price": 116,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1450
+        "total": 1160
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1691,10 +1691,10 @@
       {
         "name": "Hilo de lino",
         "quantity": 1,
-        "unit_price": 100,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 100
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Pelos de minilubo",
@@ -2403,10 +2403,10 @@
       {
         "name": "Pepita",
         "quantity": 10,
-        "unit_price": 995,
-        "buy_lot": "x1",
+        "unit_price": 800,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 9950
+        "total": 8000
       }
     ],
     "unit_selling_price_x1": 0,
@@ -2485,10 +2485,10 @@
       {
         "name": "Silicato",
         "quantity": 40,
-        "unit_price": 185,
-        "buy_lot": "x100",
+        "unit_price": 154,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 7400
+        "total": 6176
       },
       {
         "name": "Estaño",
@@ -2501,18 +2501,18 @@
       {
         "name": "Carbón",
         "quantity": 20,
-        "unit_price": 665,
-        "buy_lot": "x1",
+        "unit_price": 560,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 13300
+        "total": 11200
       },
       {
         "name": "Pepita",
         "quantity": 200,
-        "unit_price": 540,
+        "unit_price": 432,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 108000
+        "total": 86400
       }
     ],
     "unit_selling_price_x1": 0,
@@ -2599,10 +2599,10 @@
       {
         "name": "Semillas de sésamo",
         "quantity": 10,
-        "unit_price": 449,
+        "unit_price": 359,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 4490
+        "total": 3592
       }
     ],
     "unit_selling_price_x1": 0,
@@ -2673,10 +2673,10 @@
       {
         "name": "Arroz",
         "quantity": 20,
-        "unit_price": 82,
+        "unit_price": 66,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1640
+        "total": 1312
       },
       {
         "name": "Semilla de pandoja",
@@ -2697,10 +2697,10 @@
       {
         "name": "Madera de bambú oscuro",
         "quantity": 20,
-        "unit_price": 187,
+        "unit_price": 150,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 3740
+        "total": 2992
       }
     ],
     "unit_selling_price_x1": 0,
@@ -2779,10 +2779,10 @@
       {
         "name": "Chwile",
         "quantity": 10,
-        "unit_price": 2600,
+        "unit_price": 2080,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 26000
+        "total": 20800
       },
       {
         "name": "Arroz",
@@ -2795,10 +2795,10 @@
       {
         "name": "Especias",
         "quantity": 10,
-        "unit_price": 194,
+        "unit_price": 155,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1940
+        "total": 1552
       }
     ],
     "unit_selling_price_x1": 0,
@@ -2824,10 +2824,10 @@
       {
         "name": "Metaria maga azul",
         "quantity": 4,
-        "unit_price": 7956,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 31824
+        "unit_price": 12425,
+        "buy_lot": "x10",
+        "buy_or_craft": "Buy",
+        "total": 49700
       },
       {
         "name": "Metaria maga amarilla",
@@ -2856,10 +2856,10 @@
       {
         "name": "Pepita",
         "quantity": 200,
-        "unit_price": 540,
+        "unit_price": 432,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 108000
+        "total": 86400
       },
       {
         "name": "Runa astral mayor",
@@ -3174,10 +3174,10 @@
       {
         "name": "Pequeña piedra de alma especial",
         "quantity": 1,
-        "unit_price": 5510,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5510
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Llave de la Mazmorra de los Campos",
@@ -3219,10 +3219,10 @@
       {
         "name": "Pequeña piedra de alma especial",
         "quantity": 1,
-        "unit_price": 5510,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5510
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3256,10 +3256,10 @@
       {
         "name": "Pequeña piedra de alma especial",
         "quantity": 1,
-        "unit_price": 5510,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5510
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3293,10 +3293,10 @@
       {
         "name": "Pequeña piedra de alma especial",
         "quantity": 1,
-        "unit_price": 5510,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5510
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3330,10 +3330,10 @@
       {
         "name": "Pequeña piedra de alma especial",
         "quantity": 1,
-        "unit_price": 5510,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5510
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3367,10 +3367,10 @@
       {
         "name": "Pequeña piedra de alma especial",
         "quantity": 1,
-        "unit_price": 5510,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5510
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3404,10 +3404,10 @@
       {
         "name": "Pequeña piedra de alma especial",
         "quantity": 1,
-        "unit_price": 5510,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5510
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3441,10 +3441,10 @@
       {
         "name": "Pequeña piedra de alma especial",
         "quantity": 1,
-        "unit_price": 5510,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5510
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3478,10 +3478,10 @@
       {
         "name": "Pequeña piedra de alma especial",
         "quantity": 1,
-        "unit_price": 5510,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5510
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3515,10 +3515,10 @@
       {
         "name": "Piedra de alma especial mediana",
         "quantity": 1,
-        "unit_price": 5810,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5810
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3552,10 +3552,10 @@
       {
         "name": "Piedra de alma especial mediana",
         "quantity": 1,
-        "unit_price": 5810,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5810
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3589,10 +3589,10 @@
       {
         "name": "Piedra de alma especial mediana",
         "quantity": 1,
-        "unit_price": 5810,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5810
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3618,18 +3618,18 @@
       {
         "name": "Llave del Nido de Kwoknan",
         "quantity": 1,
-        "unit_price": 6779,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6779
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Piedra de alma especial mediana",
         "quantity": 1,
-        "unit_price": 5810,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5810
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3663,10 +3663,10 @@
       {
         "name": "Piedra de alma especial mediana",
         "quantity": 1,
-        "unit_price": 5810,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5810
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3700,10 +3700,10 @@
       {
         "name": "Piedra de alma especial mediana",
         "quantity": 1,
-        "unit_price": 5810,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5810
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3737,10 +3737,10 @@
       {
         "name": "Piedra de alma especial mediana",
         "quantity": 1,
-        "unit_price": 5810,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5810
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3774,10 +3774,10 @@
       {
         "name": "Piedra de alma especial mediana",
         "quantity": 1,
-        "unit_price": 5810,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5810
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3811,10 +3811,10 @@
       {
         "name": "Piedra de alma especial mediana",
         "quantity": 1,
-        "unit_price": 5810,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5810
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3848,10 +3848,10 @@
       {
         "name": "Piedra de alma especial mediana",
         "quantity": 1,
-        "unit_price": 5810,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5810
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3885,10 +3885,10 @@
       {
         "name": "Piedra de alma especial mediana",
         "quantity": 1,
-        "unit_price": 5810,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5810
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3922,10 +3922,10 @@
       {
         "name": "Piedra de alma especial mediana",
         "quantity": 1,
-        "unit_price": 5810,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5810
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3959,10 +3959,10 @@
       {
         "name": "Piedra de alma especial mediana",
         "quantity": 1,
-        "unit_price": 5810,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5810
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3988,18 +3988,18 @@
       {
         "name": "Llave de la Prueba de Dragenerys",
         "quantity": 1,
-        "unit_price": 6286,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6286
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Piedra de alma especial mediana",
         "quantity": 1,
-        "unit_price": 5810,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5810
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4033,10 +4033,10 @@
       {
         "name": "Piedra de alma especial mediana",
         "quantity": 1,
-        "unit_price": 5810,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5810
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4070,10 +4070,10 @@
       {
         "name": "Piedra de alma especial mediana",
         "quantity": 1,
-        "unit_price": 5810,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5810
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4107,10 +4107,10 @@
       {
         "name": "Piedra de alma especial mediana",
         "quantity": 1,
-        "unit_price": 5810,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5810
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4144,10 +4144,10 @@
       {
         "name": "Piedra de alma especial mediana",
         "quantity": 1,
-        "unit_price": 5810,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5810
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4181,10 +4181,10 @@
       {
         "name": "Piedra de alma especial mediana",
         "quantity": 1,
-        "unit_price": 5810,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5810
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4210,18 +4210,18 @@
       {
         "name": "Llave de la Guarida de Lasoberaña",
         "quantity": 1,
-        "unit_price": 3623,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 3623
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Piedra de alma especial mediana",
         "quantity": 1,
-        "unit_price": 5810,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5810
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4255,10 +4255,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4292,10 +4292,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4329,10 +4329,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4366,10 +4366,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4403,10 +4403,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4432,18 +4432,18 @@
       {
         "name": "Llave del Árbol de Moon",
         "quantity": 1,
-        "unit_price": 5874,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5874
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4477,10 +4477,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4514,10 +4514,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4551,10 +4551,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4588,10 +4588,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4625,10 +4625,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4662,10 +4662,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4699,10 +4699,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4736,10 +4736,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4773,10 +4773,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4810,10 +4810,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4847,10 +4847,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4884,10 +4884,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4913,18 +4913,18 @@
       {
         "name": "Llave del Antro de Cocabulia",
         "quantity": 1,
-        "unit_price": 8272,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 8272
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4958,10 +4958,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4995,10 +4995,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5032,10 +5032,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5069,10 +5069,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5106,10 +5106,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5143,10 +5143,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5180,10 +5180,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5217,10 +5217,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5254,10 +5254,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5291,10 +5291,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5328,10 +5328,10 @@
       {
         "name": "Piedra de alma especial grande",
         "quantity": 1,
-        "unit_price": 5050,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 5050
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5365,10 +5365,10 @@
       {
         "name": "Enorme piedra de alma especial",
         "quantity": 1,
-        "unit_price": 6168,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6168
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5394,18 +5394,18 @@
       {
         "name": "Llave del Roca Negra",
         "quantity": 1,
-        "unit_price": 19878,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 19878
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Enorme piedra de alma especial",
         "quantity": 1,
-        "unit_price": 6168,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6168
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5439,10 +5439,10 @@
       {
         "name": "Enorme piedra de alma especial",
         "quantity": 1,
-        "unit_price": 6168,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6168
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5468,18 +5468,18 @@
       {
         "name": "Llave del Túmulo del Largo Sueño",
         "quantity": 1,
-        "unit_price": 21480,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 21480
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Enorme piedra de alma especial",
         "quantity": 1,
-        "unit_price": 6168,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6168
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5513,10 +5513,10 @@
       {
         "name": "Enorme piedra de alma especial",
         "quantity": 1,
-        "unit_price": 6168,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6168
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5550,10 +5550,10 @@
       {
         "name": "Enorme piedra de alma especial",
         "quantity": 1,
-        "unit_price": 6168,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6168
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5587,10 +5587,10 @@
       {
         "name": "Enorme piedra de alma especial",
         "quantity": 1,
-        "unit_price": 6168,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6168
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5624,10 +5624,10 @@
       {
         "name": "Enorme piedra de alma especial",
         "quantity": 1,
-        "unit_price": 6168,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6168
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5661,10 +5661,10 @@
       {
         "name": "Enorme piedra de alma especial",
         "quantity": 1,
-        "unit_price": 6168,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6168
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5698,10 +5698,10 @@
       {
         "name": "Enorme piedra de alma especial",
         "quantity": 1,
-        "unit_price": 6168,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6168
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5735,10 +5735,10 @@
       {
         "name": "Enorme piedra de alma especial",
         "quantity": 1,
-        "unit_price": 6168,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6168
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5772,10 +5772,10 @@
       {
         "name": "Enorme piedra de alma especial",
         "quantity": 1,
-        "unit_price": 6168,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6168
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5801,18 +5801,18 @@
       {
         "name": "Llave de las Tripas de Anelidón",
         "quantity": 1,
-        "unit_price": 655647,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 655647
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Enorme piedra de alma especial",
         "quantity": 1,
-        "unit_price": 6168,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6168
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5838,18 +5838,18 @@
       {
         "name": "Llave de la Casa de los Espíritus",
         "quantity": 1,
-        "unit_price": 662607,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 662607
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Enorme piedra de alma especial",
         "quantity": 1,
-        "unit_price": 6168,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6168
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5883,10 +5883,10 @@
       {
         "name": "Enorme piedra de alma especial",
         "quantity": 1,
-        "unit_price": 6168,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6168
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5920,10 +5920,10 @@
       {
         "name": "Enorme piedra de alma especial",
         "quantity": 1,
-        "unit_price": 6168,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6168
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5949,18 +5949,18 @@
       {
         "name": "Llave del antro del Cil",
         "quantity": 1,
-        "unit_price": 19436,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 19436
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Enorme piedra de alma especial",
         "quantity": 1,
-        "unit_price": 6168,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6168
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5994,10 +5994,10 @@
       {
         "name": "Enorme piedra de alma especial",
         "quantity": 1,
-        "unit_price": 6168,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6168
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6031,10 +6031,10 @@
       {
         "name": "Enorme piedra de alma especial",
         "quantity": 1,
-        "unit_price": 6168,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6168
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6068,10 +6068,10 @@
       {
         "name": "Enorme piedra de alma especial",
         "quantity": 1,
-        "unit_price": 6168,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6168
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6105,10 +6105,10 @@
       {
         "name": "Enorme piedra de alma especial",
         "quantity": 1,
-        "unit_price": 6168,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6168
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6142,10 +6142,10 @@
       {
         "name": "Enorme piedra de alma especial",
         "quantity": 1,
-        "unit_price": 6168,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6168
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6179,10 +6179,10 @@
       {
         "name": "Enorme piedra de alma especial",
         "quantity": 1,
-        "unit_price": 6168,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6168
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6216,10 +6216,10 @@
       {
         "name": "Enorme piedra de alma especial",
         "quantity": 1,
-        "unit_price": 6168,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 6168
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6253,10 +6253,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6290,10 +6290,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6327,10 +6327,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6364,10 +6364,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6401,10 +6401,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6438,10 +6438,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6475,10 +6475,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6512,10 +6512,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6549,10 +6549,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6586,10 +6586,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6623,10 +6623,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6660,10 +6660,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6697,10 +6697,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6734,10 +6734,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6771,10 +6771,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6808,10 +6808,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6845,10 +6845,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6882,10 +6882,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6919,10 +6919,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6956,10 +6956,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6993,10 +6993,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -7030,10 +7030,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -7067,10 +7067,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -7104,10 +7104,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -7141,10 +7141,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -7178,10 +7178,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -7215,10 +7215,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -7252,10 +7252,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -7289,10 +7289,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -7326,10 +7326,10 @@
       {
         "name": "Gigantesca piedra de alma especial",
         "quantity": 1,
-        "unit_price": 7452,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 7452
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -7797,10 +7797,10 @@
       {
         "name": "Medida de sal",
         "quantity": 10,
-        "unit_price": 18,
-        "buy_lot": "x1",
+        "unit_price": 14,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 180
+        "total": 144
       }
     ],
     "unit_selling_price_x1": 0,
@@ -7866,10 +7866,10 @@
       {
         "name": "Especias",
         "quantity": 10,
-        "unit_price": 194,
+        "unit_price": 155,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1940
+        "total": 1552
       }
     ],
     "unit_selling_price_x1": 0,
@@ -7935,10 +7935,10 @@
       {
         "name": "Hoja de enchalada",
         "quantity": 10,
-        "unit_price": 79,
+        "unit_price": 63,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 790
+        "total": 632
       }
     ],
     "unit_selling_price_x1": 0,
@@ -10664,18 +10664,18 @@
       {
         "name": "Aguas tranquilas",
         "quantity": 10,
-        "unit_price": 98,
+        "unit_price": 78,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 980
+        "total": 784
       },
       {
         "name": "Medida de sal",
         "quantity": 10,
-        "unit_price": 18,
-        "buy_lot": "x1",
+        "unit_price": 14,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 180
+        "total": 144
       },
       {
         "name": "Oro",
@@ -13924,10 +13924,10 @@
       {
         "name": "Canino de abuelubo",
         "quantity": 10,
-        "unit_price": 729,
+        "unit_price": 583,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 7290
+        "total": 5832
       },
       {
         "name": "Kuarzo",
@@ -14123,10 +14123,10 @@
       {
         "name": "Pluma de gobvio",
         "quantity": 10,
-        "unit_price": 2093,
-        "buy_lot": "x1",
+        "unit_price": 1680,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 20930
+        "total": 16800
       },
       {
         "name": "Calcetín agujereado de Dramak",
@@ -14139,10 +14139,10 @@
       {
         "name": "Cuerno de berserkofre",
         "quantity": 10,
-        "unit_price": 289,
+        "unit_price": 231,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2890
+        "total": 2312
       }
     ],
     "unit_selling_price_x1": 0,
@@ -14176,10 +14176,10 @@
       {
         "name": "Ala de dragopavo",
         "quantity": 10,
-        "unit_price": 290,
+        "unit_price": 232,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2900
+        "total": 2320
       },
       {
         "name": "Pelo de rata de alcantarilla",
@@ -14253,10 +14253,10 @@
       {
         "name": "Pepita",
         "quantity": 200,
-        "unit_price": 540,
+        "unit_price": 432,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 108000
+        "total": 86400
       },
       {
         "name": "Hoja de Blop Multicolor Real",
@@ -15084,10 +15084,10 @@
       {
         "name": "Piel de mandrina",
         "quantity": 10,
-        "unit_price": 192,
-        "buy_lot": "x1",
+        "unit_price": 157,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1920
+        "total": 1568
       },
       {
         "name": "Coco de tufo de las llanuras",
@@ -15198,18 +15198,18 @@
       {
         "name": "Menta salvaje",
         "quantity": 20,
-        "unit_price": 25,
+        "unit_price": 20,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 500
+        "total": 400
       },
       {
         "name": "Cereza",
         "quantity": 10,
-        "unit_price": 38,
+        "unit_price": 30,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 380
+        "total": 304
       }
     ],
     "unit_selling_price_x1": 0,
@@ -15235,18 +15235,18 @@
       {
         "name": "Artefacto pandawushu de fuego",
         "quantity": 50,
-        "unit_price": 570,
+        "unit_price": 456,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 28500
+        "total": 22800
       },
       {
         "name": "Hoja de katana",
         "quantity": 1,
-        "unit_price": 139170,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 139170
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Empuñadura de katana",
@@ -15280,18 +15280,18 @@
       {
         "name": "Artefacto pandawushu de viento",
         "quantity": 50,
-        "unit_price": 1949,
+        "unit_price": 1559,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 97450
+        "total": 77960
       },
       {
         "name": "Hoja de katana",
         "quantity": 1,
-        "unit_price": 139170,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 139170
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Empuñadura de katana",
@@ -15325,18 +15325,18 @@
       {
         "name": "Artefacto pandawushu de agua",
         "quantity": 50,
-        "unit_price": 1990,
+        "unit_price": 1592,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 99500
+        "total": 79600
       },
       {
         "name": "Hoja de katana",
         "quantity": 1,
-        "unit_price": 139170,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 139170
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Empuñadura de katana",
@@ -15370,18 +15370,18 @@
       {
         "name": "Artefacto pandawushu de roca",
         "quantity": 50,
-        "unit_price": 2170,
+        "unit_price": 1736,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 108500
+        "total": 86800
       },
       {
         "name": "Hoja de katana",
         "quantity": 1,
-        "unit_price": 139170,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 139170
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Empuñadura de katana",
@@ -15415,18 +15415,18 @@
       {
         "name": "Artefacto pandawushu de madera",
         "quantity": 50,
-        "unit_price": 630,
+        "unit_price": 504,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 31500
+        "total": 25200
       },
       {
         "name": "Hoja de katana",
         "quantity": 1,
-        "unit_price": 139170,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 139170
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Empuñadura de katana",
@@ -17906,18 +17906,18 @@
       {
         "name": "Dolomita",
         "quantity": 30,
-        "unit_price": 975,
+        "unit_price": 780,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 29250
+        "total": 23400
       },
       {
         "name": "Artefacto pandawushu",
         "quantity": 10,
-        "unit_price": 6894,
+        "unit_price": 5515,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 68940
+        "total": 55152
       }
     ],
     "unit_selling_price_x1": 0,
@@ -18562,10 +18562,10 @@
       {
         "name": "Pepita",
         "quantity": 200,
-        "unit_price": 540,
+        "unit_price": 432,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 108000
+        "total": 86400
       },
       {
         "name": "Lana de Jalamut Real",
@@ -18623,10 +18623,10 @@
       {
         "name": "Pepita",
         "quantity": 200,
-        "unit_price": 540,
+        "unit_price": 432,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 108000
+        "total": 86400
       },
       {
         "name": "Ladilla de pestruzatón",
@@ -18737,26 +18737,26 @@
       {
         "name": "Puntas de knut",
         "quantity": 1,
-        "unit_price": 32548,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 32548
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Mango de knut",
         "quantity": 1,
-        "unit_price": 49480,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 49480
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Correas de knut",
         "quantity": 1,
-        "unit_price": 53885,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 53885
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -18885,10 +18885,10 @@
       {
         "name": "Pócima de corriente de aire",
         "quantity": 5,
-        "unit_price": 77065,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 385325
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Bacaladilla",
@@ -18909,18 +18909,18 @@
       {
         "name": "Polvos mágicos",
         "quantity": 10,
-        "unit_price": 90,
-        "buy_lot": "x1",
+        "unit_price": 72,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 900
+        "total": 720
       },
       {
         "name": "Polvo temporal",
         "quantity": 10,
-        "unit_price": 57,
+        "unit_price": 46,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 570
+        "total": 456
       },
       {
         "name": "Belladona",
@@ -19413,10 +19413,10 @@
       {
         "name": "Aceite de Kodo",
         "quantity": 3,
-        "unit_price": 4531,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 13593
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Esencia de Torkelonia",
@@ -21888,10 +21888,10 @@
       {
         "name": "Pepita",
         "quantity": 1000,
-        "unit_price": 393,
+        "unit_price": 314,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 393000
+        "total": 314400
       },
       {
         "name": "Turmalina",
@@ -21949,10 +21949,10 @@
       {
         "name": "Pepita",
         "quantity": 1000,
-        "unit_price": 393,
+        "unit_price": 314,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 393000
+        "total": 314400
       },
       {
         "name": "Turmalina",
@@ -22233,10 +22233,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Bota agujereada de megabwork",
@@ -22318,10 +22318,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Zanahowia",
@@ -22403,10 +22403,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Dientes de milubo",
@@ -22488,18 +22488,18 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Piel de minoskito",
         "quantity": 20,
-        "unit_price": 667,
-        "buy_lot": "x1",
+        "unit_price": 536,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 13340
+        "total": 10720
       },
       {
         "name": "Reflejo onírico",
@@ -22573,10 +22573,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Gatrool",
@@ -22658,10 +22658,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Oreja de kanublú",
@@ -22743,10 +22743,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Sangre de jalató",
@@ -22828,10 +22828,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Flor de bloponcio",
@@ -22913,10 +22913,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Garras de kwak",
@@ -22998,10 +22998,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Columna vertebral",
@@ -23083,10 +23083,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Piel de dragohuevo alabastrado",
@@ -23168,10 +23168,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Piedra de crujidor",
@@ -23253,10 +23253,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Brote de abráknido oscuro irascible",
@@ -23338,10 +23338,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Pluma de dodoncella",
@@ -23423,18 +23423,18 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Semillas de sésamo",
         "quantity": 20,
-        "unit_price": 449,
+        "unit_price": 359,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 8980
+        "total": 7184
       },
       {
         "name": "Reflejo onírico",
@@ -23508,10 +23508,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Plumón de pestruzillo",
@@ -23593,10 +23593,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Pata de arakna mayor",
@@ -23678,10 +23678,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Flor de kalipto",
@@ -23763,10 +23763,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Pelos mágicos de tanuki",
@@ -23848,10 +23848,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Pelaje aerodinámico",
@@ -23933,18 +23933,18 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Semilla de scorbuto",
         "quantity": 20,
-        "unit_price": 300,
+        "unit_price": 240,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 6000
+        "total": 4800
       },
       {
         "name": "Reflejo onírico",
@@ -24018,10 +24018,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Pandoja cantora",
@@ -24103,10 +24103,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Nujo muerto",
@@ -24188,18 +24188,18 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Champiñón Luidchi",
         "quantity": 10,
-        "unit_price": 499,
+        "unit_price": 399,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 4990
+        "total": 3992
       },
       {
         "name": "Reflejo onírico",
@@ -24273,18 +24273,18 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Cuerda de sacurador",
         "quantity": 20,
-        "unit_price": 249,
+        "unit_price": 199,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 4980
+        "total": 3984
       },
       {
         "name": "Reflejo onírico",
@@ -24358,10 +24358,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Huevo de tofu",
@@ -24443,10 +24443,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Colmillo de dragohuevo protector",
@@ -24496,10 +24496,10 @@
       {
         "name": "Piel de rojiva",
         "quantity": 10,
-        "unit_price": 390,
+        "unit_price": 312,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 3900
+        "total": 3120
       },
       {
         "name": "Corteza de esquejika",
@@ -24520,10 +24520,10 @@
       {
         "name": "Pepita",
         "quantity": 200,
-        "unit_price": 540,
+        "unit_price": 432,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 108000
+        "total": 86400
       },
       {
         "name": "Colmillo de Perfósil",
@@ -24597,18 +24597,18 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Vísceras de escarahoja",
         "quantity": 10,
-        "unit_price": 198,
+        "unit_price": 158,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1980
+        "total": 1584
       },
       {
         "name": "Reflejo onírico",
@@ -24682,10 +24682,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Pluma de thorondeoro",
@@ -24767,10 +24767,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Ojo de yenaparda",
@@ -24852,10 +24852,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Tallo de bambuto",
@@ -24937,18 +24937,18 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 840,
+        "unit_price": 672,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 84000
+        "total": 67200
       },
       {
         "name": "Pluma de pekegüino",
         "quantity": 20,
-        "unit_price": 47,
-        "buy_lot": "x1",
+        "unit_price": 38,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 940
+        "total": 768
       },
       {
         "name": "Reflejo onírico",
