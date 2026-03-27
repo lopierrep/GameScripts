@@ -4,7 +4,9 @@
       "WebFetch(domain:doflex.fr)",
       "WebFetch(domain:www.dofuspourlesnoobs.com)",
       "WebFetch(domain:www.dofustool.com)",
-      "WebFetch(domain:www.gamosaurus.com)"
+      "WebFetch(domain:www.gamosaurus.com)",
+      "Bash(python3 -c \":*)",
+      "Bash(python -c \":*)"
     ]
   }
 }
