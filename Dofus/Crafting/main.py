@@ -21,6 +21,7 @@ from config.config import C, DATA_DIR, UNKNOWN_KEY, find_recipe_file, _load_omit
 from core.prices import (
     build_item_lookup,
     build_table_rows,
+    compute_and_save_display_data,
     ensure_catalogued,
     get_market_for_category,
     load_all_pack_prices,
@@ -106,7 +107,8 @@ def _finalize_costs(
     recipe_filter=None,   # callable(all_recipes) -> subset | None para todas
 ) -> set:
     """
-    Calcula costos de subrecetas y guarda costos en recipe_file.
+    Calcula costos de subrecetas, guarda costos en recipe_file y
+    pre-calcula los datos de display (profit_x*, display) en el JSON.
     Devuelve el conjunto de ingredientes sin precio.
     """
     if sub_results:
@@ -118,7 +120,17 @@ def _finalize_costs(
         all_recipes = json.load(f)
 
     subset = recipe_filter(all_recipes) if recipe_filter else all_recipes
-    return save_crafting_costs(recipe_file, subset)
+    still_missing = save_crafting_costs(recipe_file, subset)
+
+    # Pre-calcular datos de display con costos ya guardados
+    pack_prices   = load_all_pack_prices()
+    craftable_map = load_all_craftable_recipes()
+    if sub_results:
+        for sub_file in sub_recipe_files(sub_results, recipe_file):
+            compute_and_save_display_data(sub_file, pack_prices, craftable_map)
+    compute_and_save_display_data(recipe_file, pack_prices, craftable_map, recipe_filter)
+
+    return still_missing
 
 
 # ── Orchestration functions ────────────────────────────────────────────────────
@@ -300,7 +312,7 @@ def update_single_recipe(
 
     if not stop_flag[0]:
         print("\nExportando a Google Sheets …")
-        export_profession(profession)
+        export_profession(profession, skip_ingredients=True)
     else:
         print("\n[INFO] Exportación cancelada por detención del usuario.")
 
@@ -507,12 +519,10 @@ class CraftingApp:
         tol = (tolerance if tolerance is not None else self.ui.tolerance()) / 100
 
         raw_market_prices, ing_last_updated = load_raw_market_prices()
-
-        pack_prices   = load_all_pack_prices()
         craftable_map = load_all_craftable_recipes()
 
         rows = build_table_rows(
-            recipes, pack_prices, craftable_map,
+            recipes, craftable_map,
             raw_market_prices, ing_last_updated, tol,
         )
         self.ui.refresh_table(rows)

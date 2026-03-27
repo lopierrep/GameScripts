@@ -7,17 +7,26 @@
     "ingredients": [
       {
         "name": "Gobio",
-        "quantity": 4
+        "quantity": 4,
+        "unit_price": 9,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 36
       }
     ],
     "unit_selling_price_x1": 0,
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 36,
-    "unit_crafting_cost_x10": 16,
-    "unit_crafting_cost_x100": 16,
-    "unit_crafting_cost_x1000": 16
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1830,
@@ -27,7 +36,11 @@
     "ingredients": [
       {
         "name": "Gobio kesta",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -37,7 +50,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1811,
@@ -47,7 +65,11 @@
     "ingredients": [
       {
         "name": "Bamga",
-        "quantity": 2
+        "quantity": 2,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -57,7 +79,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1829,
@@ -67,7 +94,11 @@
     "ingredients": [
       {
         "name": "Bamga horror",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -77,7 +108,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1832,
@@ -87,21 +123,34 @@
     "ingredients": [
       {
         "name": "Trucha",
-        "quantity": 4
+        "quantity": 4,
+        "unit_price": 20,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 80
       },
       {
         "name": "Ortiga",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 100,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 100
       }
     ],
     "unit_selling_price_x1": 0,
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 130,
-    "unit_crafting_cost_x10": 70,
-    "unit_crafting_cost_x100": 70,
-    "unit_crafting_cost_x1000": 74
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1834,
@@ -111,11 +160,19 @@
     "ingredients": [
       {
         "name": "Trucha ancestral",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Ortiga",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 100,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 100
       }
     ],
     "unit_selling_price_x1": 0,
@@ -125,7 +182,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1764,
@@ -135,11 +197,19 @@
     "ingredients": [
       {
         "name": "Cangrejo surimi",
-        "quantity": 4
+        "quantity": 4,
+        "unit_price": 750,
+        "buy_lot": "x100",
+        "buy_or_craft": null,
+        "total": 3000
       },
       {
         "name": "Ortiga",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 100,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 100
       }
     ],
     "unit_selling_price_x1": 0,
@@ -147,9 +217,14 @@
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
     "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 150,
-    "unit_crafting_cost_x100": 150,
-    "unit_crafting_cost_x1000": 150
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1766,
@@ -159,11 +234,19 @@
     "ingredients": [
       {
         "name": "Cangrejo surimi exótico",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Ortiga",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 100,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 100
       }
     ],
     "unit_selling_price_x1": 0,
@@ -173,7 +256,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 29378,
@@ -183,15 +271,27 @@
     "ingredients": [
       {
         "name": "Salvia",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 598,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 598
       },
       {
         "name": "Cangrejo surimi",
-        "quantity": 4
+        "quantity": 4,
+        "unit_price": 750,
+        "buy_lot": "x100",
+        "buy_or_craft": null,
+        "total": 3000
       },
       {
         "name": "Alubias",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 800,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 800
       }
     ],
     "unit_selling_price_x1": 0,
@@ -199,9 +299,14 @@
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
     "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 228,
-    "unit_crafting_cost_x100": 207,
-    "unit_crafting_cost_x1000": 207
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1767,
@@ -211,25 +316,42 @@
     "ingredients": [
       {
         "name": "Pez gatito",
-        "quantity": 5
+        "quantity": 5,
+        "unit_price": 90,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 450
       },
       {
         "name": "Cereza",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 380,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 380
       },
       {
         "name": "Salvia",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 598,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 598
       }
     ],
     "unit_selling_price_x1": 0,
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 463,
-    "unit_crafting_cost_x10": 269,
-    "unit_crafting_cost_x100": 243,
-    "unit_crafting_cost_x1000": 243
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1769,
@@ -239,15 +361,27 @@
     "ingredients": [
       {
         "name": "Pez tigre",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Cereza",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 380,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 380
       },
       {
         "name": "Salvia",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 598,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 598
       }
     ],
     "unit_selling_price_x1": 0,
@@ -257,7 +391,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 32128,
@@ -267,15 +406,27 @@
     "ingredients": [
       {
         "name": "Pez gatito",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 450,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 450
       },
       {
         "name": "Cangrejo surimi",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 3000,
+        "buy_lot": "x100",
+        "buy_or_craft": null,
+        "total": 3000
       },
       {
         "name": "Trébol de 5 hojas",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 199,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 199
       }
     ],
     "unit_selling_price_x1": 0,
@@ -283,9 +434,14 @@
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
     "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 117,
-    "unit_crafting_cost_x100": 92,
-    "unit_crafting_cost_x1000": 92
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 32138,
@@ -295,25 +451,42 @@
     "ingredients": [
       {
         "name": "Trébol de 5 hojas",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 199,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 199
       },
       {
         "name": "Pez gatito",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 450,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 450
       },
       {
         "name": "Trucha",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 20,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 20
       }
     ],
     "unit_selling_price_x1": 0,
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 254,
-    "unit_crafting_cost_x10": 97,
-    "unit_crafting_cost_x100": 72,
-    "unit_crafting_cost_x1000": 73
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1752,
@@ -323,15 +496,27 @@
     "ingredients": [
       {
         "name": "Pescado empanado",
-        "quantity": 5
+        "quantity": 5,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Sangre de scorbuto",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 752,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 752
       },
       {
         "name": "Salvia",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 598,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 598
       }
     ],
     "unit_selling_price_x1": 0,
@@ -341,7 +526,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1756,
@@ -351,15 +541,27 @@
     "ingredients": [
       {
         "name": "Pez iglú",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Sangre de scorbuto",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 752,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 752
       },
       {
         "name": "Salvia",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 598,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 598
       }
     ],
     "unit_selling_price_x1": 0,
@@ -369,7 +571,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1817,
@@ -379,15 +586,27 @@
     "ingredients": [
       {
         "name": "Carpita de las arenas",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Especias",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 1940,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 1940
       },
       {
         "name": "Trébol de 5 hojas",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 199,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 199
       }
     ],
     "unit_selling_price_x1": 0,
@@ -397,7 +616,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1818,
@@ -407,25 +631,42 @@
     "ingredients": [
       {
         "name": "Carpa de Iem",
-        "quantity": 5
+        "quantity": 5,
+        "unit_price": 54,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 270
       },
       {
         "name": "Especias",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 1940,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 1940
       },
       {
         "name": "Trébol de 5 hojas",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 199,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 199
       }
     ],
     "unit_selling_price_x1": 0,
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 528,
-    "unit_crafting_cost_x10": 357,
-    "unit_crafting_cost_x100": 272,
-    "unit_crafting_cost_x1000": 272
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 17850,
@@ -435,31 +676,59 @@
     "ingredients": [
       {
         "name": "Gobio kesta troceado",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Buñuelo de bamga horror",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Trucha ancestral asada",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Palito de cangrejo exótico",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Pez tigre ahumado",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Pescado iglú frito",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Carpita al vapor",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -469,7 +738,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1825,
@@ -479,25 +753,42 @@
     "ingredients": [
       {
         "name": "Sardina brillante",
-        "quantity": 5
+        "quantity": 5,
+        "unit_price": 138,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 690
       },
       {
         "name": "Agua potable",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 1450,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 1450
       },
       {
         "name": "Trébol de 5 hojas",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 199,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 199
       }
     ],
     "unit_selling_price_x1": 0,
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 689,
-    "unit_crafting_cost_x10": 527,
-    "unit_crafting_cost_x100": 492,
-    "unit_crafting_cost_x1000": 572
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1827,
@@ -507,15 +798,27 @@
     "ingredients": [
       {
         "name": "Sardina oscura",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Agua potable",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 1450,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 1450
       },
       {
         "name": "Trébol de 5 hojas",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 199,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 199
       }
     ],
     "unit_selling_price_x1": 0,
@@ -525,7 +828,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1835,
@@ -535,25 +843,42 @@
     "ingredients": [
       {
         "name": "Lucio",
-        "quantity": 5
+        "quantity": 5,
+        "unit_price": 480,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 2400
       },
       {
         "name": "Polvos mágicos",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 90,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 90
       },
       {
         "name": "Menta salvaje",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 249,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 249
       }
     ],
     "unit_selling_price_x1": 0,
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 1315,
-    "unit_crafting_cost_x10": 355,
-    "unit_crafting_cost_x100": 335,
-    "unit_crafting_cost_x1000": 355
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1837,
@@ -563,15 +888,27 @@
     "ingredients": [
       {
         "name": "Lucio Tupe-Halett",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Polvos mágicos",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 90,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 90
       },
       {
         "name": "Menta salvaje",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 249,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 249
       }
     ],
     "unit_selling_price_x1": 0,
@@ -581,7 +918,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 32136,
@@ -591,25 +933,42 @@
     "ingredients": [
       {
         "name": "Orquídea freyesca",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 197,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 197
       },
       {
         "name": "Lucio",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 2400,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 2400
       },
       {
         "name": "Sardina brillante",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 297,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 297
       }
     ],
     "unit_selling_price_x1": 0,
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 429,
-    "unit_crafting_cost_x10": 149,
-    "unit_crafting_cost_x100": 129,
-    "unit_crafting_cost_x1000": 129
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 32139,
@@ -619,25 +978,42 @@
     "ingredients": [
       {
         "name": "Orquídea freyesca",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 197,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 197
       },
       {
         "name": "Lucio",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 2400,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 2400
       },
       {
         "name": "Carpa de Iem",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 270,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 270
       }
     ],
     "unit_selling_price_x1": 0,
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 387,
-    "unit_crafting_cost_x10": 108,
-    "unit_crafting_cost_x100": 78,
-    "unit_crafting_cost_x1000": 78
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1820,
@@ -647,25 +1023,42 @@
     "ingredients": [
       {
         "name": "Kralamar",
-        "quantity": 5
+        "quantity": 5,
+        "unit_price": 49,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 245
       },
       {
         "name": "Polvo temporal",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 99,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 99
       },
       {
         "name": "Menta salvaje",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 249,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 249
       }
     ],
     "unit_selling_price_x1": 0,
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 322,
-    "unit_crafting_cost_x10": 304,
-    "unit_crafting_cost_x100": 304,
-    "unit_crafting_cost_x1000": 304
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1859,
@@ -675,15 +1068,27 @@
     "ingredients": [
       {
         "name": "Kralamar único",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Polvo temporal",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 99,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 99
       },
       {
         "name": "Menta salvaje",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 249,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 249
       }
     ],
     "unit_selling_price_x1": 0,
@@ -693,7 +1098,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 31620,
@@ -703,26 +1113,43 @@
     "ingredients": [
       {
         "name": "Lucio",
-        "quantity": 10
+        "quantity": 10,
+        "unit_price": 45,
+        "buy_lot": "x1000",
+        "buy_or_craft": null,
+        "total": 45000
       },
       {
         "name": "Sardina brillante",
-        "quantity": 10
+        "quantity": 10,
+        "unit_price": 65,
+        "buy_lot": "x1000",
+        "buy_or_craft": null,
+        "total": 65000
       },
       {
         "name": "Kralamar",
-        "quantity": 10
+        "quantity": 10,
+        "unit_price": 48,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 48000
       }
     ],
     "unit_selling_price_x1": 3296,
     "unit_selling_price_x10": 2333,
     "unit_selling_price_x100": 2980,
-    "unit_selling_price_x1000": 2980,
+    "unit_selling_price_x1000": 0,
     "unit_crafting_cost_x1": 3570,
     "unit_crafting_cost_x10": 1650,
     "unit_crafting_cost_x100": 1580,
-    "unit_crafting_cost_x1000": 1580,
-    "selling_last_updated": "2026-03-26T06:22:56.310658+00:00"
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": -555,
+    "profit_x10": 468,
+    "profit_x100": 1140,
+    "profit_x1000": 0,
+    "best_lot": "x100",
+    "selling_last_updated": "2026-03-27T07:23:47.727243+00:00"
   },
   {
     "id": 16475,
@@ -732,25 +1159,42 @@
     "ingredients": [
       {
         "name": "Anguila",
-        "quantity": 6
+        "quantity": 6,
+        "unit_price": 88,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 530
       },
       {
         "name": "Resina",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 449,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 449
       },
       {
         "name": "Orquídea freyesca",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 197,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 197
       }
     ],
     "unit_selling_price_x1": 0,
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 637,
-    "unit_crafting_cost_x10": 339,
-    "unit_crafting_cost_x100": 326,
-    "unit_crafting_cost_x1000": 367
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 16476,
@@ -760,15 +1204,27 @@
     "ingredients": [
       {
         "name": "Anguila sigila",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Resina",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 449,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 449
       },
       {
         "name": "Orquídea freyesca",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 197,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 197
       }
     ],
     "unit_selling_price_x1": 0,
@@ -778,7 +1234,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 26660,
@@ -788,15 +1249,27 @@
     "ingredients": [
       {
         "name": "Tinta de Oktapodas",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Guijarro lunar",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Púa de pulgrosa",
-        "quantity": 2
+        "quantity": 2,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -806,7 +1279,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 26661,
@@ -816,15 +1294,27 @@
     "ingredients": [
       {
         "name": "Tinta de Oktapodas",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Guijarro lunar",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Bigote atesorado",
-        "quantity": 2
+        "quantity": 2,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -834,7 +1324,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 26662,
@@ -844,15 +1339,27 @@
     "ingredients": [
       {
         "name": "Tinta de Oktapodas",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Guijarro lunar",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Mawashi de elsumo",
-        "quantity": 2
+        "quantity": 2,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -862,7 +1369,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 26663,
@@ -872,15 +1384,27 @@
     "ingredients": [
       {
         "name": "Tinta de Oktapodas",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Guijarro lunar",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Píxel de segmántido",
-        "quantity": 2
+        "quantity": 2,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -890,7 +1414,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 31955,
@@ -900,15 +1429,27 @@
     "ingredients": [
       {
         "name": "Guijarro lunar",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Cartílago de cuadrabz",
-        "quantity": 2
+        "quantity": 2,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Tinta de Oktapodas",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -918,7 +1459,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 16477,
@@ -928,25 +1474,42 @@
     "ingredients": [
       {
         "name": "Dorada exploradora",
-        "quantity": 6
+        "quantity": 6,
+        "unit_price": 39,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 234
       },
       {
         "name": "Medida de sal",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 18,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 18
       },
       {
         "name": "Orquídea freyesca",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 197,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 197
       }
     ],
     "unit_selling_price_x1": 0,
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 372,
-    "unit_crafting_cost_x10": 140,
-    "unit_crafting_cost_x100": 124,
-    "unit_crafting_cost_x1000": 124
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 16478,
@@ -956,15 +1519,27 @@
     "ingredients": [
       {
         "name": "Dorada emperadora",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Medida de sal",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 18,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 18
       },
       {
         "name": "Orquídea freyesca",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 197,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 197
       }
     ],
     "unit_selling_price_x1": 0,
@@ -974,7 +1549,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1822,
@@ -984,25 +1564,42 @@
     "ingredients": [
       {
         "name": "Perca",
-        "quantity": 6
+        "quantity": 6,
+        "unit_price": 200,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 1200
       },
       {
         "name": "Medida de pimienta",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 400,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 400
       },
       {
         "name": "Edelweiss",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 990,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 990
       }
     ],
     "unit_selling_price_x1": 0,
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 868,
-    "unit_crafting_cost_x10": 487,
-    "unit_crafting_cost_x100": 472,
-    "unit_crafting_cost_x1000": 472
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1824,
@@ -1012,15 +1609,27 @@
     "ingredients": [
       {
         "name": "Gatito perca",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Medida de pimienta",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 400,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 400
       },
       {
         "name": "Edelweiss",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 990,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 990
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1030,7 +1639,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 13588,
@@ -1040,23 +1654,43 @@
     "ingredients": [
       {
         "name": "Medida de sal",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 18,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 18
       },
       {
         "name": "Dosis de zumo sabroso",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 40,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 40
       },
       {
         "name": "Fresa",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 8,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 8
       },
       {
         "name": "Pischis mágico",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Aceite para freír",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 1400,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 1400
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1066,7 +1700,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 32137,
@@ -1076,25 +1715,42 @@
     "ingredients": [
       {
         "name": "Semilla de pandoja",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 886,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 886
       },
       {
         "name": "Perca",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 298,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 298
       },
       {
         "name": "Dorada exploradora",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 39,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 39
       }
     ],
     "unit_selling_price_x1": 0,
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 299,
-    "unit_crafting_cost_x10": 123,
-    "unit_crafting_cost_x100": 122,
-    "unit_crafting_cost_x1000": 122
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 32140,
@@ -1104,25 +1760,42 @@
     "ingredients": [
       {
         "name": "Semilla de pandoja",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 886,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 886
       },
       {
         "name": "Perca",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 298,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 298
       },
       {
         "name": "Anguila",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 530,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 530
       }
     ],
     "unit_selling_price_x1": 0,
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 313,
-    "unit_crafting_cost_x10": 126,
-    "unit_crafting_cost_x100": 125,
-    "unit_crafting_cost_x1000": 125
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1815,
@@ -1132,25 +1805,42 @@
     "ingredients": [
       {
         "name": "Raya azul",
-        "quantity": 6
+        "quantity": 6,
+        "unit_price": 39,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 234
       },
       {
         "name": "Limón",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 197,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 197
       },
       {
         "name": "Edelweiss",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 990,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 990
       }
     ],
     "unit_selling_price_x1": 0,
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 530,
-    "unit_crafting_cost_x10": 341,
-    "unit_crafting_cost_x100": 343,
-    "unit_crafting_cost_x1000": 395
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1831,
@@ -1160,15 +1850,27 @@
     "ingredients": [
       {
         "name": "Raya de Farle",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Limón",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 197,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 197
       },
       {
         "name": "Edelweiss",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 990,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 990
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1178,7 +1880,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 17851,
@@ -1188,31 +1895,59 @@
     "ingredients": [
       {
         "name": "Sardina oscura estofada",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Lucio Tupe-Halett relleno",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Kralamar único a la brasa",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Anguila sigila asada",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Dorada emperadora al horno",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Perca gatito saltarina",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Aleta de raya de Farle",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1222,7 +1957,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 16479,
@@ -1232,25 +1972,42 @@
     "ingredients": [
       {
         "name": "Rape",
-        "quantity": 6
+        "quantity": 6,
+        "unit_price": 167,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 1000
       },
       {
         "name": "Hoja de enchalada",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 99,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 99
       },
       {
         "name": "Semilla de pandoja",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 886,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 886
       }
     ],
     "unit_selling_price_x1": 0,
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 819,
-    "unit_crafting_cost_x10": 427,
-    "unit_crafting_cost_x100": 427,
-    "unit_crafting_cost_x1000": 427
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 16480,
@@ -1260,15 +2017,27 @@
     "ingredients": [
       {
         "name": "Gazrape",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Hoja de enchalada",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 99,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 99
       },
       {
         "name": "Semilla de pandoja",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 886,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 886
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1278,7 +2047,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1838,
@@ -1288,25 +2062,42 @@
     "ingredients": [
       {
         "name": "Tiburón martillhoz",
-        "quantity": 6
+        "quantity": 6,
+        "unit_price": 407,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 2440
       },
       {
         "name": "Aceite para freír",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 1400,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 1400
       },
       {
         "name": "Semilla de pandoja",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 886,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 886
       }
     ],
     "unit_selling_price_x1": 0,
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 1744,
-    "unit_crafting_cost_x10": 548,
-    "unit_crafting_cost_x100": 548,
-    "unit_crafting_cost_x1000": 683
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1840,
@@ -1316,15 +2107,27 @@
     "ingredients": [
       {
         "name": "Tiburón mercado libre",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Aceite para freír",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 1400,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 1400
       },
       {
         "name": "Semilla de pandoja",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 886,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 886
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1334,7 +2137,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 9969,
@@ -1344,27 +2152,51 @@
     "ingredients": [
       {
         "name": "Tiburón martillhoz",
-        "quantity": 12
+        "quantity": 12,
+        "unit_price": 407,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 4880
       },
       {
         "name": "Palito de cangrejo",
-        "quantity": 3
+        "quantity": 3,
+        "unit_price": 1300,
+        "buy_lot": "x10",
+        "buy_or_craft": "Craft",
+        "total": 3900
       },
       {
         "name": "Limón",
-        "quantity": 2
+        "quantity": 2,
+        "unit_price": 197,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 394
       },
       {
         "name": "Hoja de enchalada",
-        "quantity": 4
+        "quantity": 4,
+        "unit_price": 99,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 396
       },
       {
         "name": "Blopicero envenenado",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 17998,
+        "buy_lot": "x1",
+        "buy_or_craft": "Buy",
+        "total": 17998
       },
       {
         "name": "Aceite de fantimonel",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1374,7 +2206,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 10083,
@@ -1384,27 +2221,51 @@
     "ingredients": [
       {
         "name": "Tiburón martillhoz",
-        "quantity": 12
+        "quantity": 12,
+        "unit_price": 407,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 4880
       },
       {
         "name": "Palito de cangrejo",
-        "quantity": 3
+        "quantity": 3,
+        "unit_price": 1300,
+        "buy_lot": "x10",
+        "buy_or_craft": "Craft",
+        "total": 3900
       },
       {
         "name": "Limón",
-        "quantity": 2
+        "quantity": 2,
+        "unit_price": 197,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 394
       },
       {
         "name": "Hoja de enchalada",
-        "quantity": 4
+        "quantity": 4,
+        "unit_price": 99,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 396
       },
       {
         "name": "Aceite de fantimonel",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Cereza",
-        "quantity": 10
+        "quantity": 10,
+        "unit_price": 38,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 380
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1414,7 +2275,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 9980,
@@ -1424,15 +2290,27 @@
     "ingredients": [
       {
         "name": "Buñuelo de bamga",
-        "quantity": 10
+        "quantity": 10,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Limón",
-        "quantity": 5
+        "quantity": 5,
+        "unit_price": 197,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 985
       },
       {
         "name": "Hoja de enchalada",
-        "quantity": 10
+        "quantity": 10,
+        "unit_price": 79,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 790
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1442,7 +2320,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1809,
@@ -1452,25 +2335,42 @@
     "ingredients": [
       {
         "name": "Lubina Mericana",
-        "quantity": 7
+        "quantity": 7,
+        "unit_price": 111,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 780
       },
       {
         "name": "Cebolla",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 14900,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 14900
       },
       {
         "name": "Ginseng",
-        "quantity": 2
+        "quantity": 2,
+        "unit_price": 910,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 1820
       }
     ],
     "unit_selling_price_x1": 0,
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 2546,
-    "unit_crafting_cost_x10": 1085,
-    "unit_crafting_cost_x100": 1058,
-    "unit_crafting_cost_x1000": 1058
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 1828,
@@ -1480,15 +2380,27 @@
     "ingredients": [
       {
         "name": "Lubina Fónica",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Cebolla",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 14900,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 14900
       },
       {
         "name": "Ginseng",
-        "quantity": 2
+        "quantity": 2,
+        "unit_price": 910,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 1820
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1498,7 +2410,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 16481,
@@ -1508,25 +2425,42 @@
     "ingredients": [
       {
         "name": "Bacaladilla",
-        "quantity": 7
+        "quantity": 7,
+        "unit_price": 193,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 1350
       },
       {
         "name": "Grasa gelatinosa",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 698,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 698
       },
       {
         "name": "Ginseng",
-        "quantity": 2
+        "quantity": 2,
+        "unit_price": 910,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 1820
       }
     ],
     "unit_selling_price_x1": 0,
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 1545,
-    "unit_crafting_cost_x10": 1100,
-    "unit_crafting_cost_x100": 1082,
-    "unit_crafting_cost_x1000": 1082
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 16482,
@@ -1536,15 +2470,27 @@
     "ingredients": [
       {
         "name": "Bacaladilla apetitosa",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Grasa gelatinosa",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 698,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 698
       },
       {
         "name": "Ginseng",
-        "quantity": 2
+        "quantity": 2,
+        "unit_price": 910,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 1820
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1554,7 +2500,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 10285,
@@ -1564,23 +2515,43 @@
     "ingredients": [
       {
         "name": "Lucio",
-        "quantity": 5
+        "quantity": 5,
+        "unit_price": 480,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 2400
       },
       {
         "name": "Tenca",
-        "quantity": 7
+        "quantity": 7,
+        "unit_price": 257,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 1800
       },
       {
         "name": "Baba de seta peleona",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 395,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 395
       },
       {
         "name": "Carne viciada",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 5290,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 5290
       },
       {
         "name": "Vísceras de tanuki",
-        "quantity": 2
+        "quantity": 2,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1590,7 +2561,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 16483,
@@ -1600,25 +2576,42 @@
     "ingredients": [
       {
         "name": "Tenca",
-        "quantity": 7
+        "quantity": 7,
+        "unit_price": 257,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 1800
       },
       {
         "name": "Dosis de zumo sabroso",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 40,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 40
       },
       {
         "name": "Belladona",
-        "quantity": 2
+        "quantity": 2,
+        "unit_price": 214689,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 429378
       }
     ],
     "unit_selling_price_x1": 0,
     "unit_selling_price_x10": 0,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 430678,
-    "unit_crafting_cost_x10": 379090,
-    "unit_crafting_cost_x100": 379136,
-    "unit_crafting_cost_x1000": 379136
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 16484,
@@ -1628,15 +2621,27 @@
     "ingredients": [
       {
         "name": "Tenca cuidado",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Dosis de zumo sabroso",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 40,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 40
       },
       {
         "name": "Belladona",
-        "quantity": 2
+        "quantity": 2,
+        "unit_price": 214689,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 429378
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1646,7 +2651,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 16485,
@@ -1656,15 +2666,27 @@
     "ingredients": [
       {
         "name": "Pez espada",
-        "quantity": 7
+        "quantity": 7,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Berenjena",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 2850,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 2850
       },
       {
         "name": "Belladona",
-        "quantity": 2
+        "quantity": 2,
+        "unit_price": 214689,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 429378
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1674,7 +2696,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 16486,
@@ -1684,15 +2711,27 @@
     "ingredients": [
       {
         "name": "Pez espadón quijote",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Berenjena",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 2850,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 2850
       },
       {
         "name": "Belladona",
-        "quantity": 2
+        "quantity": 2,
+        "unit_price": 214689,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 429378
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1702,7 +2741,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 11510,
@@ -1712,15 +2756,27 @@
     "ingredients": [
       {
         "name": "Inverluza",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Mandrágora",
-        "quantity": 2
+        "quantity": 2,
+        "unit_price": 1449,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 2898
       },
       {
         "name": "Aguas tranquilas",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 980,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 980
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1730,7 +2786,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 11511,
@@ -1740,15 +2801,27 @@
     "ingredients": [
       {
         "name": "Inverluza glacial",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Mandrágora",
-        "quantity": 2
+        "quantity": 2,
+        "unit_price": 1449,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 2898
       },
       {
         "name": "Aguas tranquilas",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 980,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 980
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1758,7 +2831,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 13276,
@@ -1768,15 +2846,27 @@
     "ingredients": [
       {
         "name": "Inverluza glacial",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Mandrágora",
-        "quantity": 3
+        "quantity": 3,
+        "unit_price": 1449,
+        "buy_lot": "x1",
+        "buy_or_craft": null,
+        "total": 4347
       },
       {
         "name": "Aguas tranquilas",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": 980,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 980
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1786,7 +2876,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 17852,
@@ -1796,31 +2891,59 @@
     "ingredients": [
       {
         "name": "Tenca cuidado guisada",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Lubina fónica asada",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Aleta de tiburón mercado libre",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Enchalada de gazrape",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Ragú de inverluza glacial",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Pez espadón quijote salteado",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Estofado de bacaladilla apetitosa",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1830,7 +2953,12 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   },
   {
     "id": 17853,
@@ -1840,15 +2968,27 @@
     "ingredients": [
       {
         "name": "Jugo de pescado abominable",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Jugo de pescado asfixiante",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Jugo de pescado pestilente",
-        "quantity": 1
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1858,6 +2998,11 @@
     "unit_crafting_cost_x1": 0,
     "unit_crafting_cost_x10": 0,
     "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0
+    "unit_crafting_cost_x1000": 0,
+    "profit_x1": 0,
+    "profit_x10": 0,
+    "profit_x100": 0,
+    "profit_x1000": 0,
+    "best_lot": ""
   }
 ]

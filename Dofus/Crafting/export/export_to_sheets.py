@@ -60,6 +60,7 @@ def _api_call(fn, *args, retries: int = 5, **kwargs):
 
 RECIPES_DIR      = os.path.join(ROOT_DIR, "data")
 CREDENTIALS_FILE = os.path.join(ROOT_DIR, "export", "credentials.json")
+_ING_CACHE_FILE  = os.path.join(ROOT_DIR, "export", ".ing_cache.json")
 
 # ID del spreadsheet (parte de la URL: /spreadsheets/d/<SPREADSHEET_ID>/edit)
 SPREADSHEET_ID  = "1S7B58S_tkt4kx4vopK9fVzP9rMbWybUC3xrWUrqBuT8"
@@ -176,12 +177,6 @@ def calc_margin(ganancia: float, costo: float) -> str:
     return "N/A"
 
 
-def best_buy_lot(recipe: dict) -> tuple[str, int]:
-    """Lote que minimiza el costo de fabricación por unidad (menor no-cero)."""
-    options = [(s, recipe.get(f"unit_crafting_cost_{s}", 0)) for s in SIZES]
-    valid = [(s, v) for s, v in options if v > 0]
-    return min(valid, key=lambda x: x[1]) if valid else ("x1", 0)
-
 
 def best_sell_lot(recipe: dict) -> tuple[str, int]:
     """Lote que maximiza el precio de venta por unidad (mayor no-cero)."""
@@ -269,6 +264,40 @@ def load_recipes_by_profession() -> dict[str, list[dict]]:
         result[profession] = rows
 
     return result
+
+
+# ── Caché local de la hoja de ingredientes ────────────────────────────────────
+
+def _save_ing_cache(ing_sheet_id: int, recipe_row_map: dict, filter_view_map: dict):
+    """Guarda el estado de la hoja de ingredientes en un archivo de caché local."""
+    data = {
+        "ing_sheet_id": ing_sheet_id,
+        "recipe_row_map":  {f"{k[0]}||{k[1]}": list(v)  for k, v in recipe_row_map.items()},
+        "filter_view_map": {f"{k[0]}||{k[1]}": v         for k, v in filter_view_map.items()},
+    }
+    with open(_ING_CACHE_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False)
+
+
+def _load_ing_cache() -> tuple[int | None, dict | None, dict | None]:
+    """Carga el caché de la hoja de ingredientes. Devuelve (None, None, None) si no existe."""
+    if not os.path.exists(_ING_CACHE_FILE):
+        return None, None, None
+    try:
+        with open(_ING_CACHE_FILE, encoding="utf-8") as f:
+            data = json.load(f)
+        ing_sheet_id = data["ing_sheet_id"]
+        recipe_row_map = {
+            tuple(k.split("||", 1)): tuple(v)
+            for k, v in data["recipe_row_map"].items()
+        }
+        filter_view_map = {
+            tuple(k.split("||", 1)): v
+            for k, v in data["filter_view_map"].items()
+        }
+        return ing_sheet_id, recipe_row_map, filter_view_map
+    except Exception:
+        return None, None, None
 
 
 # ── Google Sheets ─────────────────────────────────────────────────────────────
@@ -479,6 +508,7 @@ def write_ingredients_sheet(
 
     print(f"  {INGREDIENTS_SHEET_NAME:<20} {n_data} filas, {len(filter_view_map)} filter views")
 
+    _save_ing_cache(sheet_id, recipe_row_map, filter_view_map)
     return sheet_id, recipe_row_map, filter_view_map
 
 
@@ -761,8 +791,14 @@ def _validate_config() -> bool:
     return True
 
 
-def export_profession(profession: str):
-    """Exporta una única profesión a su hoja en Google Sheets."""
+def export_profession(profession: str, skip_ingredients: bool = False):
+    """
+    Exporta una única profesión a su hoja en Google Sheets.
+
+    skip_ingredients=True omite la reconstrucción de la hoja de ingredientes
+    y reutiliza el caché local. Úsalo cuando solo cambia una receta para
+    acelerar la exportación.
+    """
     if not _validate_config():
         return
 
@@ -778,8 +814,18 @@ def export_profession(profession: str):
 
     print("Conectando a Google Sheets …")
     spreadsheet = _connect()
-    print("Escribiendo hoja de ingredientes …")
-    ing_sheet_id, recipe_row_map, filter_view_map = write_ingredients_sheet(spreadsheet, data)
+
+    if skip_ingredients:
+        ing_sheet_id, recipe_row_map, filter_view_map = _load_ing_cache()
+        if ing_sheet_id is None:
+            print("Sin caché — escribiendo hoja de ingredientes …")
+            ing_sheet_id, recipe_row_map, filter_view_map = write_ingredients_sheet(spreadsheet, data)
+        else:
+            print("Usando caché de hoja de ingredientes (omitiendo reconstrucción) …")
+    else:
+        print("Escribiendo hoja de ingredientes …")
+        ing_sheet_id, recipe_row_map, filter_view_map = write_ingredients_sheet(spreadsheet, data)
+
     rows = data[norm]
     ws = get_or_create_worksheet(spreadsheet, norm)
     write_profession_sheet(ws, rows, profession=norm,

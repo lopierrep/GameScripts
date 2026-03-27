@@ -168,12 +168,22 @@ def save_selling_price(recipe_file: str, name: str, prices: dict):
 
     u1, u10, u100, u1000 = _sanitize_unit_prices([u1, u10, u100, u1000])
 
+    _MAX = 1_500_000
+    # Mayor al limite establecido: precio de venta, costo de crafteo y profit se ignoran para ese lote
+    exceeded = set()
+    if u1    * 1    > _MAX: u1    = 0; exceeded.add("x1")
+    if u10   * 10   > _MAX: u10   = 0; exceeded.add("x10")
+    if u100  * 100  > _MAX: u100  = 0; exceeded.add("x100")
+    if u1000 * 1000 > _MAX: u1000 = 0; exceeded.add("x1000")
+
     for recipe in data:
         if recipe.get("result") == name:
             recipe["unit_selling_price_x1"]    = u1
             recipe["unit_selling_price_x10"]   = u10
             recipe["unit_selling_price_x100"]  = u100
             recipe["unit_selling_price_x1000"] = u1000
+            for size in exceeded:
+                recipe[f"unit_crafting_cost_{size}"] = 0
             recipe.pop("selling_last_updated", None)
 
     with open(recipe_file, "w", encoding="utf-8") as f:
