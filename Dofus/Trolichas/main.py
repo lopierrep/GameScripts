@@ -18,38 +18,42 @@ from ui import LarvaRaceApp
 
 def main():
     root = tk.Tk()
-    running = False
+    stop_event = threading.Event()
+    race_thread = None
 
     def on_start():
-        nonlocal running
+        nonlocal race_thread
         calibration = load_calibration(CALIBRATION_FILE)
         if calibration is None:
             messagebox.showerror("Error", "No hay calibración. Por favor calibra primero.")
             return
 
-        running = True
+        stop_event.clear()
         app.set_race_count(0)
         app.set_running(True)
 
         keyboard.add_hotkey("s", on_finish)
-        threading.Thread(
+        race_thread = threading.Thread(
             target=run_race_loop,
-            args=(calibration, lambda: running, app.set_status, app.set_race_count),
+            args=(calibration, lambda: not stop_event.is_set(), app.set_status, app.set_race_count),
             daemon=True
-        ).start()
+        )
+        race_thread.start()
         root.after(100, _poll_stopped)
 
     def on_finish():
-        nonlocal running
-        running = False
+        stop_event.set()
         app.set_status("Deteniendo...")
-        keyboard.remove_hotkey("s")
+        try:
+            keyboard.remove_hotkey("s")
+        except KeyError:
+            pass
 
     def on_calibrate():
         CalibrationWindow(root, CALIBRATION_POINTS, CALIBRATION_FILE)
 
     def _poll_stopped():
-        if running:
+        if race_thread is not None and race_thread.is_alive():
             root.after(200, _poll_stopped)
         else:
             app.set_running(False)

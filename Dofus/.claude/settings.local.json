@@ -6,7 +6,8 @@
       "WebFetch(domain:www.dofustool.com)",
       "WebFetch(domain:www.gamosaurus.com)",
       "Bash(python3 -c \":*)",
-      "Bash(python -c \":*)"
+      "Bash(python -c \":*)",
+      "Bash(python -:*)"
     ]
   }
 }

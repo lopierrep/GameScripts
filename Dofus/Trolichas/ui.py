@@ -55,6 +55,9 @@ class LarvaRaceApp:
         self.root.after(0, lambda: self.race_var.set(f"Carreras: {count}"))
 
     def set_running(self, running: bool):
+        self.root.after(0, lambda: self._apply_running(running))
+
+    def _apply_running(self, running: bool):
         if running:
             self.start_btn.config(state=tk.DISABLED)
             self.finish_btn.config(state=tk.NORMAL)

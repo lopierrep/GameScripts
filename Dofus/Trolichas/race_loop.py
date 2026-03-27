@@ -24,42 +24,47 @@ def run_race_loop(calibration, is_running, on_status, on_race_count):
         if not is_running():
             break
 
+        try:
+            # 1. Click NPC
+            npc = calibration["NPCLocation"]
+            tx = npc[0] + random.uniform(-2.5, 2.5)
+            ty = npc[1] + random.uniform(-2.5, 2.5)
+            on_status("Moviendo al NPC...")
+            smooth_move(tx, ty, step_delay=random.uniform(0.001, 0.003))
+            pyautogui.click()
+            time.sleep(random.uniform(0.5, 1))
+            if not is_running():
+                break
+
+            # 2. Click race option (weighted)
+            option_key = random.choices(
+                ["OptionLocation1", "OptionLocation2", "OptionLocation3", "OptionLocation4"],
+                weights=[5, 5, 5, 85]
+            )[0]
+            opt = calibration[option_key]
+            tx = opt[0] + random.uniform(-5, 5)
+            ty = opt[1] + random.uniform(-2.5, 2.5)
+            on_status("Seleccionando opción...")
+            smooth_move(tx, ty, step_delay=random.uniform(0.001, 0.003))
+            pyautogui.click()
+            time.sleep(random.uniform(2, 3))
+            if not is_running():
+                break
+
+            # 3. Click start race
+            btn = calibration["StartButtonLocation"]
+            tx = btn[0] + random.uniform(-15, 15)
+            ty = btn[1] + random.uniform(-15, 15)
+            on_status("Iniciando carrera...")
+            smooth_move(tx, ty, step_delay=random.uniform(0.001, 0.003))
+            pyautogui.click()
+
+        except KeyError as e:
+            on_status(f"Error: falta clave de calibración {e}")
+            break
+
         race_count += 1
         on_race_count(race_count)
-
-        # 1. Click NPC
-        npc = calibration["NPCLocation"]
-        tx = npc[0] + random.uniform(-2.5, 2.5)
-        ty = npc[1] + random.uniform(-2.5, 2.5)
-        on_status("Moviendo al NPC...")
-        smooth_move(tx, ty, step_delay=random.uniform(0.000001, 0.000003))
-        pyautogui.click()
-        time.sleep(random.uniform(0.5, 1))
-        if not is_running():
-            break
-
-        # 2. Click race option (weighted)
-        option_key = random.choices(
-            ["OptionLocation1", "OptionLocation2", "OptionLocation3", "OptionLocation4"],
-            weights=[5, 5, 5, 85]
-        )[0]
-        opt = calibration[option_key]
-        tx = opt[0] + random.uniform(-5, 5)
-        ty = opt[1] + random.uniform(-2.5, 2.5)
-        on_status("Seleccionando opción...")
-        smooth_move(tx, ty, step_delay=random.uniform(0.000001, 0.000003))
-        pyautogui.click()
-        time.sleep(random.uniform(2, 3))
-        if not is_running():
-            break
-
-        # 3. Click start race
-        btn = calibration["StartButtonLocation"]
-        tx = btn[0] + random.uniform(-15, 15)
-        ty = btn[1] + random.uniform(-15, 15)
-        on_status("Iniciando carrera...")
-        smooth_move(tx, ty, step_delay=random.uniform(0.000001, 0.000003))
-        pyautogui.click()
 
         # 4. Wait race duration
         race_dur = random.uniform(32, 35)
