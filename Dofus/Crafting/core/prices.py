@@ -51,13 +51,13 @@ def load_markets() -> dict[str, dict]:
     return markets
 
 
-def build_item_lookup(markets: dict) -> dict[str, str]:
-    """Devuelve {item_name: market_name} para todos los items en materials_prices.json."""
+def build_item_lookup(markets: dict) -> dict[str, tuple[str, str]]:
+    """Devuelve {item_name: (market_name, category_name)} para todos los items en materials_prices.json."""
     lookup = {}
     for market_name, market in markets.items():
-        for category in market["data"].values():
+        for category_name, category in market["data"].items():
             for name in category:
-                lookup[name] = market_name
+                lookup[name] = (market_name, category_name)
     return lookup
 
 
@@ -85,17 +85,18 @@ def find_item_in_markets(name: str, markets: dict) -> bool:
 # ── Caché de frescura ─────────────────────────────────────────────────────────
 
 def _ingredient_is_fresh(name: str, markets: dict, item_lookup: dict) -> bool:
-    market_name = item_lookup.get(name)
-    if not market_name:
+    lookup_val = item_lookup.get(name)
+    if not lookup_val:
         return False
-    for category in markets[market_name]["data"].values():
-        if name in category:
-            ts = category[name].get("last_updated")
-            if not ts:
-                return False
-            age = (datetime.now(timezone.utc) - datetime.fromisoformat(ts)).total_seconds()
-            return age < CACHE_SECONDS
-    return False
+    market_name, category_name = lookup_val
+    category = markets[market_name]["data"].get(category_name, {})
+    if name not in category:
+        return False
+    ts = category[name].get("last_updated")
+    if not ts:
+        return False
+    age = (datetime.now(timezone.utc) - datetime.fromisoformat(ts)).total_seconds()
+    return age < CACHE_SECONDS
 
 
 # ── API dofusdb ────────────────────────────────────────────────────────────────
@@ -121,24 +122,26 @@ def fetch_category(item_name: str) -> str:
 # ── Guardado de precios de ingredientes ───────────────────────────────────────
 
 def save_ingredient_price(name: str, prices: dict, markets: dict, item_lookup: dict):
-    market_name = item_lookup.get(name)
-    if not market_name:
+    lookup_val = item_lookup.get(name)
+    if not lookup_val:
         return
-    market = markets[market_name]
-    for category in market["data"].values():
-        if name in category:
-            p1    = _parse_price(prices, "1")
-            p10   = round(_parse_price(prices, "10")   / 10)   if _parse_price(prices, "10")   > 0 else 0
-            p100  = round(_parse_price(prices, "100")  / 100)  if _parse_price(prices, "100")  > 0 else 0
-            p1000 = round(_parse_price(prices, "1000") / 1000) if _parse_price(prices, "1000") > 0 else 0
-            entry = category[name]
-            entry["x1"]    = p1
-            entry["x10"]   = p10
-            entry["x100"]  = p100
-            entry["x1000"] = p1000
-            if any(v > 0 for v in (p1, p10, p100, p1000)):
-                entry["last_updated"] = _now_iso()
-            break
+    market_name, category_name = lookup_val
+    category = markets[market_name]["data"].get(category_name, {})
+    if name in category:
+        p1      = _parse_price(prices, "1")
+        raw10   = _parse_price(prices, "10")
+        raw100  = _parse_price(prices, "100")
+        raw1000 = _parse_price(prices, "1000")
+        p10   = round(raw10   / 10)   if raw10   > 0 else 0
+        p100  = round(raw100  / 100)  if raw100  > 0 else 0
+        p1000 = round(raw1000 / 1000) if raw1000 > 0 else 0
+        entry = category[name]
+        entry["x1"]    = p1
+        entry["x10"]   = p10
+        entry["x100"]  = p100
+        entry["x1000"] = p1000
+        if any(v > 0 for v in (p1, p10, p100, p1000)):
+            entry["last_updated"] = _now_iso()
     save_markets(markets)
     p = prices
     print(f"[OK] x1={p.get('unit_price_x1','N/A')}  x10={p.get('unit_price_x10','N/A')}  x100={p.get('unit_price_x100','N/A')}  x1000={p.get('unit_price_x1000','N/A')}")
@@ -167,7 +170,7 @@ def ensure_catalogued(names: set[str], markets: dict, item_lookup: dict, craftab
         market["data"].setdefault(category, {})
         if name not in market["data"][category]:
             market["data"][category][name] = {"x1": 0, "x10": 0, "x100": 0, "x1000": 0}
-            item_lookup[name] = market_name
+            item_lookup[name] = (market_name, category)
         save_markets(markets)
         print(f"  + {name} → {category} [{market_name}]")
         time.sleep(0.15)
@@ -460,15 +463,11 @@ def compute_and_save_display_data(
     with open(recipe_file, encoding="utf-8") as f:
         all_recipes = json.load(f)
 
-    if recipes_filter:
-        subset_results = {r["result"] for r in recipes_filter(all_recipes)}
-    else:
-        subset_results = None
+    target_set = {r["result"] for r in recipes_filter(all_recipes)} if recipes_filter else None
 
     for recipe in all_recipes:
-        if subset_results and recipe.get("result") not in subset_results:
-            continue
-        _enrich_recipe(recipe, pack_prices, craftable_map)
+        if target_set is None or recipe.get("result") in target_set:
+            _enrich_recipe(recipe, pack_prices, craftable_map)
 
     with open(recipe_file, "w", encoding="utf-8") as f:
         json.dump(all_recipes, f, ensure_ascii=False, indent=2)

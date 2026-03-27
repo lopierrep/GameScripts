@@ -12,40 +12,35 @@ from config.config import (
     _parse_price,
 )
 from utils.loaders import _load_omitted_categories, _load_omitted_recipes, find_recipe_file, get_recipe_files
-from utils.market import _now_iso, filter_lot_prices
+from utils.market import _is_selling_fresh, _now_iso, filter_lot_prices
 from shared.market.search_item_prices import search_item, read_prices
 from datetime import datetime, timezone
 
 
 # ── Carga de recetas ──────────────────────────────────────────────────────────
 
-def load_all_craftable_recipes() -> dict[str, dict]:
-    """Devuelve {result_name: recipe_dict} para todas las recetas de todas las profesiones."""
-    craftable = {}
+def _read_all_recipes() -> list[tuple[dict, str]]:
+    """Lee todos los archivos de recetas y devuelve [(recipe_dict, file_path)]."""
+    result = []
     for path in get_recipe_files():
         with open(path, encoding="utf-8") as f:
             for r in json.load(f):
-                craftable[r["result"]] = r
-    return craftable
+                result.append((r, path))
+    return result
+
+
+def load_all_craftable_recipes() -> dict[str, dict]:
+    """Devuelve {result_name: recipe_dict} para todas las recetas de todas las profesiones."""
+    return {r["result"]: r for r, _ in _read_all_recipes()}
 
 
 def all_recipe_results() -> set[str]:
-    results = set()
-    for path in get_recipe_files():
-        with open(path, encoding="utf-8") as f:
-            for r in json.load(f):
-                results.add(r["result"])
-    return results
+    return {r["result"] for r, _ in _read_all_recipes()}
 
 
 def build_result_file_map() -> dict[str, str]:
     """Devuelve {result_name: recipe_file_path} para todas las recetas."""
-    result_map = {}
-    for path in get_recipe_files():
-        with open(path, encoding="utf-8") as f:
-            for r in json.load(f):
-                result_map[r["result"]] = path
-    return result_map
+    return {r["result"]: path for r, path in _read_all_recipes()}
 
 
 def find_recipe(result_name: str) -> tuple[dict | None, str | None]:
@@ -77,14 +72,6 @@ def sub_recipe_files(sub_results: set[str], main_recipe_file: str) -> list[str]:
 
 
 # ── Expansión de subrecetas ───────────────────────────────────────────────────
-
-def _is_selling_fresh(recipe: dict) -> bool:
-    ts = recipe.get("selling_last_updated")
-    if not ts:
-        return False
-    age = (datetime.now(timezone.utc) - datetime.fromisoformat(ts)).total_seconds()
-    return age < CACHE_SECONDS
-
 
 def expand_sub_ingredients(ingredients: set[str], craftable: dict[str, dict]) -> set[str]:
     """Añade recursivamente los ingredientes de subrecetas que no están actualizadas."""

@@ -8,8 +8,9 @@ import keyboard
 
 from config.config import DELAY_BETWEEN_ITEMS
 from utils.loaders import _load_manual_price_items
+from utils.market import _is_selling_fresh
 from core.prices import _ingredient_is_fresh, save_ingredient_price
-from core.recipes import search_and_save_selling
+from core.recipes import find_recipe as _find_recipe, save_selling_price, search_and_save_selling
 from shared.market.search_item_prices import search_item, read_prices
 from shared.market.scanner import MarketScanner
 
@@ -59,11 +60,9 @@ def ask_manual_selling_prices(name: str) -> dict:
 def search_and_save_ingredient(name: str, markets: dict, item_lookup: dict, stop_flag: list = None) -> dict:
     if _ingredient_is_fresh(name, markets, item_lookup):
         print(f"[SKIP] {name} — actualizado hace menos de 1h")
-        market_name = item_lookup.get(name)
-        for category in markets[market_name]["data"].values():
-            if name in category:
-                pd = category[name]
-                return {**{f"unit_price_x{s}": pd.get(f"x{s}", 0) for s in ("1", "10", "100", "1000")}, "_skipped": True}
+        market_name, category_name = item_lookup[name]
+        pd = markets[market_name]["data"][category_name][name]
+        return {**{f"unit_price_x{s}": pd.get(f"x{s}", 0) for s in ("1", "10", "100", "1000")}, "_skipped": True}
     search_item(name)
     prices = read_prices(name, stop_flag=stop_flag)
     save_ingredient_price(name, prices, markets, item_lookup)
@@ -166,8 +165,6 @@ def search_market_batch(
             print(f"ERROR al guardar — {e}")
             missing_ingredients.append(name)
 
-    from core.recipes import find_recipe as _find_recipe
-    from core.recipes import _is_selling_fresh
     for name in manual_results:
         target_file = (result_file_map or {}).get(name, recipe_file)
         recipe_data, _ = _find_recipe(name)
@@ -182,7 +179,6 @@ def search_market_batch(
         else:
             prices = ask_manual_selling_prices(name)
         try:
-            from core.recipes import save_selling_price
             save_selling_price(target_file, name, prices)
         except Exception as e:
             print(f"ERROR al guardar — {e}")

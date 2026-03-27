@@ -10,21 +10,16 @@ def filter_rows(
     lvl_max: int | None = None,
     name: str | None = None,
 ) -> list:
-    result = rows
-    if name:
-        needle = name.lower()
-        result = [r for r in result if needle in r.get("result", "").lower()]
-    if min_profit is not None:
-        result = [r for r in result if (r.get("profit_total") or 0) >= min_profit]
-    if lvl_min is not None:
-        result = [r for r in result
-                  if str(r.get("level", "0")).isdigit()
-                  and int(r.get("level", 0)) >= lvl_min]
-    if lvl_max is not None:
-        result = [r for r in result
-                  if str(r.get("level", "999")).isdigit()
-                  and int(r.get("level", 999)) <= lvl_max]
-    return result
+    if name is None and min_profit is None and lvl_min is None and lvl_max is None:
+        return rows
+    needle = name.lower() if name else None
+    return [
+        r for r in rows
+        if (needle is None or needle in r.get("result", "").lower())
+        and (min_profit is None or (r.get("profit_total") or 0) >= min_profit)
+        and (lvl_min is None or (str(r.get("level", "0")).isdigit() and int(r.get("level", 0)) >= lvl_min))
+        and (lvl_max is None or (str(r.get("level", "999")).isdigit() and int(r.get("level", 999)) <= lvl_max))
+    ]
 
 
 def profitable_rows(rows: list) -> list:

@@ -4,6 +4,7 @@ Funciones de carga de archivos de configuración y datos del proyecto.
 
 import json
 import os
+from functools import lru_cache
 
 from config.config import (
     DATA_DIR,
@@ -15,6 +16,7 @@ from config.config import (
 )
 
 
+@lru_cache(maxsize=None)
 def _load_omitted_recipes() -> set[str]:
     if not os.path.exists(OMITTED_RECIPES_FILE):
         return set()
@@ -22,6 +24,7 @@ def _load_omitted_recipes() -> set[str]:
         return {line.strip() for line in f if line.strip()}
 
 
+@lru_cache(maxsize=None)
 def _load_omitted_categories() -> set[str]:
     if not os.path.exists(OMITTED_CATEGORIES_FILE):
         return set()
@@ -29,6 +32,7 @@ def _load_omitted_categories() -> set[str]:
         return {line.strip() for line in f if line.strip()}
 
 
+@lru_cache(maxsize=None)
 def _load_manual_price_items() -> set[str]:
     if not os.path.exists(MANUAL_PRICE_FILE):
         return set()

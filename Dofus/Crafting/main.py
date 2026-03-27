@@ -40,7 +40,7 @@ from core.recipes import (
     sub_recipe_files,
 )
 from automation.scanner import search_market_batch
-from export.export_to_sheets import export_profession
+from export.share import export_data, import_data
 import shared.market.search_item_prices as _sip
 from ui.ui import CraftingUI
 
@@ -244,11 +244,6 @@ def update_profession(
     else:
         print("\n[INFO] Todas las recetas tienen precio. missing_recipes.json actualizado.")
 
-    if not stop_flag[0]:
-        print("\nExportando a Google Sheets …")
-        export_profession(profession)
-    else:
-        print("\n[INFO] Exportación cancelada por detención del usuario.")
 
 
 def update_single_recipe(
@@ -311,12 +306,6 @@ def update_single_recipe(
         for name in sorted(still_missing):
             print(f"  - {name}")
 
-    if not stop_flag[0]:
-        print("\nExportando a Google Sheets …")
-        export_profession(profession, skip_ingredients=True)
-    else:
-        print("\n[INFO] Exportación cancelada por detención del usuario.")
-
 
 # ── CraftingApp ────────────────────────────────────────────────────────────────
 
@@ -335,6 +324,7 @@ class CraftingApp:
             "start":     self._start,
             "stop":      self._stop,
             "export":    self._export,
+            "import":    self._import,
             "calibrate": self._calibrate,
         }
 
@@ -381,8 +371,12 @@ class CraftingApp:
         # Desbloquear cualquier prompt activo
         self.root.after(0, self.ui.hide_prompt)
 
-    def _export(self, profession: str):
-        t = threading.Thread(target=self._run_export, args=(profession,), daemon=True)
+    def _export(self):
+        t = threading.Thread(target=self._run_export, daemon=True)
+        t.start()
+
+    def _import(self):
+        t = threading.Thread(target=self._run_import, daemon=True)
         t.start()
 
     def _calibrate(self):
@@ -441,11 +435,24 @@ class CraftingApp:
         finally:
             self.root.after(0, self._on_done)
 
-    def _run_export(self, profession: str):
+    def _run_export(self):
         try:
             self.root.after(0, self.ui.set_status, "Exportando…", C["accent"])
-            export_profession(profession)
-            self.root.after(0, self.ui.log, "[DONE] Exportado a Google Sheets.", "done")
+            export_data()
+        except Exception as e:
+            self.root.after(0, self.ui.log, f"[ERROR] {e}", "error")
+        finally:
+            self.root.after(0, self.ui.set_status, "Listo", C["dim"])
+
+    def _run_import(self):
+        try:
+            self.root.after(0, self.ui.set_status, "Importando…", C["accent"])
+            warnings = import_data()
+            for w in warnings:
+                self.root.after(0, self.ui.log, f"[AVISO] {w}", "warn")
+            profession = self.ui.profession()
+            if profession:
+                self.root.after(0, self._load_table, profession)
         except Exception as e:
             self.root.after(0, self.ui.log, f"[ERROR] {e}", "error")
         finally:

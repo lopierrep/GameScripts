@@ -248,7 +248,8 @@ class CraftingUI:
         self._start_btn.pack(side="left", padx=(0, 4))
         self._stop_btn  = _btn("■ Detener",    C["surface"], C["dim"], self._on_stop, state="disabled")
         self._stop_btn.pack(side="left", padx=(0, 4))
-        _btn("↑ Sheets",   C["surface"], C["accent"], self._on_export).pack(side="left", padx=(0, 4))
+        _btn("↑ Exportar", C["surface"], C["accent"], self._on_export).pack(side="left", padx=(0, 4))
+        _btn("↓ Importar", C["surface"], C["accent"], self._on_import).pack(side="left", padx=(0, 4))
         _btn("⚙ Calibrar", C["surface"], C["dim"],    self._on_calibrate).pack(side="left")
 
     # ── Filter bar ────────────────────────────────────────────────────────────
@@ -491,7 +492,11 @@ class CraftingUI:
 
     def _on_export(self):
         if "export" in self._cbs:
-            self._cbs["export"](self.profession())
+            self._cbs["export"]()
+
+    def _on_import(self):
+        if "import" in self._cbs:
+            self._cbs["import"]()
 
     def _on_calibrate(self):
         if "calibrate" in self._cbs:
