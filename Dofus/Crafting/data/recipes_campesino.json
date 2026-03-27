@@ -27,7 +27,7 @@
     "profit_x100": 359,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "selling_last_updated": "2026-03-27T07:23:45.931522+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.257218+00:00"
   },
   {
     "id": 468,
@@ -38,10 +38,10 @@
       {
         "name": "Trigo",
         "quantity": 4,
-        "unit_price": 24,
+        "unit_price": 30,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 96000
+        "total": 120000
       }
     ],
     "unit_selling_price_x1": 4,
@@ -57,7 +57,7 @@
     "profit_x100": -167,
     "profit_x1000": -167,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:45.931545+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.257241+00:00"
   },
   {
     "id": 2020,
@@ -150,34 +150,34 @@
       {
         "name": "Trigo",
         "quantity": 2,
-        "unit_price": 24,
+        "unit_price": 30,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 48000
+        "total": 60000
       },
       {
         "name": "Agua potable",
         "quantity": 1,
-        "unit_price": 116,
+        "unit_price": 145,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 116000
+        "total": 145000
       },
       {
         "name": "Cuero de jalató negro",
         "quantity": 1,
-        "unit_price": 54,
+        "unit_price": 68,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 54400
+        "total": 68000
       },
       {
         "name": "Lengua de gárgrola",
         "quantity": 1,
-        "unit_price": 266,
+        "unit_price": 333,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 266400
+        "total": 333000
       }
     ],
     "unit_selling_price_x1": 1,
@@ -185,15 +185,15 @@
     "unit_selling_price_x100": 1,
     "unit_selling_price_x1000": 1,
     "unit_crafting_cost_x1": 1944,
-    "unit_crafting_cost_x10": 626,
-    "unit_crafting_cost_x100": 596,
-    "unit_crafting_cost_x1000": 571,
+    "unit_crafting_cost_x10": 661,
+    "unit_crafting_cost_x100": 631,
+    "unit_crafting_cost_x1000": 606,
     "profit_x1": -1994,
-    "profit_x10": -676,
-    "profit_x100": -646,
-    "profit_x1000": -621,
+    "profit_x10": -711,
+    "profit_x100": -681,
+    "profit_x1000": -656,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:45.931574+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.257276+00:00"
   },
   {
     "id": 16520,
@@ -204,10 +204,10 @@
       {
         "name": "Trigo",
         "quantity": 10,
-        "unit_price": 36,
+        "unit_price": 45,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 360
+        "total": 450
       },
       {
         "name": "Polvos mágicos",
@@ -318,10 +318,10 @@
       {
         "name": "Arroz",
         "quantity": 10,
-        "unit_price": 18,
+        "unit_price": 23,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 184000
+        "total": 230000
       }
     ],
     "unit_selling_price_x1": 425,
@@ -337,7 +337,7 @@
     "profit_x100": 114,
     "profit_x1000": 114,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:45.931605+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.257313+00:00"
   },
   {
     "id": 521,
@@ -348,10 +348,10 @@
       {
         "name": "Trigo",
         "quantity": 5,
-        "unit_price": 24,
+        "unit_price": 30,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 120000
+        "total": 150000
       }
     ],
     "unit_selling_price_x1": 3,
@@ -367,7 +367,7 @@
     "profit_x100": -198,
     "profit_x1000": -198,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:45.931616+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.257325+00:00"
   },
   {
     "id": 16927,
@@ -471,7 +471,7 @@
     "profit_x100": 1531,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "selling_last_updated": "2026-03-27T07:23:45.931647+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.257359+00:00"
   },
   {
     "id": 528,
@@ -482,18 +482,18 @@
       {
         "name": "Cebada",
         "quantity": 4,
-        "unit_price": 28,
+        "unit_price": 35,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 11200
+        "total": 14000
       },
       {
         "name": "Ortiga",
         "quantity": 1,
-        "unit_price": 24,
+        "unit_price": 30,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 2400
+        "total": 3000
       }
     ],
     "unit_selling_price_x1": 51,
@@ -509,7 +509,7 @@
     "profit_x100": -167,
     "profit_x1000": -177,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T07:23:45.931662+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.257376+00:00"
   },
   {
     "id": 2034,
@@ -528,10 +528,10 @@
       {
         "name": "Ortiga",
         "quantity": 1,
-        "unit_price": 72,
+        "unit_price": 90,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 720
+        "total": 900
       }
     ],
     "unit_selling_price_x1": 73333,
@@ -618,10 +618,10 @@
       {
         "name": "Cebada",
         "quantity": 1,
-        "unit_price": 28,
+        "unit_price": 35,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 280
+        "total": 350
       }
     ],
     "unit_selling_price_x1": 9686,
@@ -647,18 +647,18 @@
       {
         "name": "Chwile",
         "quantity": 10,
-        "unit_price": 2080,
+        "unit_price": 2600,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 20800
+        "total": 26000
       },
       {
         "name": "Arroz",
         "quantity": 100,
-        "unit_price": 20,
+        "unit_price": 25,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 2000
+        "total": 2500
       },
       {
         "name": "Cerveza Tsingtawo",
@@ -687,10 +687,10 @@
       {
         "name": "Madera de bambú sagrado",
         "quantity": 20,
-        "unit_price": 208,
+        "unit_price": 260,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 4160
+        "total": 5200
       }
     ],
     "unit_selling_price_x1": 0,
@@ -716,18 +716,18 @@
       {
         "name": "Cebada",
         "quantity": 5,
-        "unit_price": 28,
+        "unit_price": 35,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 140000
+        "total": 175000
       },
       {
         "name": "Ortiga",
         "quantity": 1,
-        "unit_price": 24,
+        "unit_price": 30,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 24000
+        "total": 30000
       }
     ],
     "unit_selling_price_x1": 15,
@@ -743,7 +743,7 @@
     "profit_x100": -242,
     "profit_x1000": -242,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:45.931706+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.257430+00:00"
   },
   {
     "id": 2151,
@@ -754,10 +754,10 @@
       {
         "name": "Semilla de scorbuto",
         "quantity": 10,
-        "unit_price": 240,
+        "unit_price": 300,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2400
+        "total": 3000
       },
       {
         "name": "Bol",
@@ -807,50 +807,50 @@
       {
         "name": "Cebada",
         "quantity": 50,
-        "unit_price": 28,
+        "unit_price": 35,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 140000
+        "total": 175000
       },
       {
         "name": "Avena",
         "quantity": 50,
-        "unit_price": 23,
+        "unit_price": 29,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 116000
+        "total": 145000
       },
       {
         "name": "Lúpulo",
         "quantity": 50,
-        "unit_price": 38,
+        "unit_price": 47,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 188000
+        "total": 235000
       },
       {
         "name": "Lino",
         "quantity": 50,
-        "unit_price": 26,
+        "unit_price": 33,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 132000
+        "total": 165000
       },
       {
         "name": "Centeno",
         "quantity": 50,
-        "unit_price": 55,
+        "unit_price": 69,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 276000
+        "total": 345000
       },
       {
         "name": "Polvo temporal",
         "quantity": 5,
-        "unit_price": 35,
+        "unit_price": 44,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 17600
+        "total": 22000
       }
     ],
     "unit_selling_price_x1": 14999,
@@ -866,7 +866,7 @@
     "profit_x100": 3029,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T07:23:45.931736+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.257468+00:00"
   },
   {
     "id": 390,
@@ -877,18 +877,18 @@
       {
         "name": "Castaña de cajú",
         "quantity": 5,
-        "unit_price": 416,
+        "unit_price": 520,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 208000
+        "total": 260000
       },
       {
         "name": "Nuez de pacana",
         "quantity": 5,
-        "unit_price": 38,
+        "unit_price": 48,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 19200
+        "total": 24000
       }
     ],
     "unit_selling_price_x1": 4387,
@@ -896,15 +896,15 @@
     "unit_selling_price_x100": 4990,
     "unit_selling_price_x1000": 0,
     "unit_crafting_cost_x1": 2440,
-    "unit_crafting_cost_x10": 2440,
-    "unit_crafting_cost_x100": 2440,
+    "unit_crafting_cost_x10": 2840,
+    "unit_crafting_cost_x100": 2840,
     "unit_crafting_cost_x1000": 0,
     "profit_x1": 1589,
-    "profit_x10": 1601,
-    "profit_x100": 2150,
+    "profit_x10": 1201,
+    "profit_x100": 1750,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T07:23:45.931751+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.257486+00:00"
   },
   {
     "id": 396,
@@ -915,10 +915,10 @@
       {
         "name": "Vísceras de escarahoja",
         "quantity": 8,
-        "unit_price": 80,
+        "unit_price": 100,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 640000
+        "total": 800000
       }
     ],
     "unit_selling_price_x1": 697,
@@ -934,7 +934,7 @@
     "profit_x100": -139,
     "profit_x1000": -139,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:45.931760+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.257497+00:00"
   },
   {
     "id": 397,
@@ -982,26 +982,26 @@
       {
         "name": "Avena",
         "quantity": 5,
-        "unit_price": 23,
+        "unit_price": 29,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 116000
+        "total": 145000
       },
       {
         "name": "Berenjena",
         "quantity": 1,
-        "unit_price": 208,
+        "unit_price": 260,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 208000
+        "total": 260000
       },
       {
         "name": "Salvia",
         "quantity": 1,
-        "unit_price": 22,
+        "unit_price": 28,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 22400
+        "total": 28000
       }
     ],
     "unit_selling_price_x1": 12,
@@ -1017,7 +1017,7 @@
     "profit_x100": -543,
     "profit_x1000": -473,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:45.931792+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.257578+00:00"
   },
   {
     "id": 2038,
@@ -1028,26 +1028,26 @@
       {
         "name": "Avena aurífera",
         "quantity": 1,
-        "unit_price": 12000,
+        "unit_price": 15000,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 120000
+        "total": 150000
       },
       {
         "name": "Berenjena",
         "quantity": 1,
-        "unit_price": 228,
+        "unit_price": 285,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2280
+        "total": 2850
       },
       {
         "name": "Salvia",
         "quantity": 1,
-        "unit_price": 160,
+        "unit_price": 200,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1600
+        "total": 2000
       }
     ],
     "unit_selling_price_x1": 11995,
@@ -1089,10 +1089,10 @@
       {
         "name": "Cebada",
         "quantity": 1,
-        "unit_price": 28,
+        "unit_price": 35,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 280
+        "total": 350
       }
     ],
     "unit_selling_price_x1": 14999,
@@ -1118,26 +1118,26 @@
       {
         "name": "Avena",
         "quantity": 5,
-        "unit_price": 23,
+        "unit_price": 29,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 116000
+        "total": 145000
       },
       {
         "name": "Alubias",
         "quantity": 1,
-        "unit_price": 47,
+        "unit_price": 59,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 47200
+        "total": 59000
       },
       {
         "name": "Salvia",
         "quantity": 1,
-        "unit_price": 22,
+        "unit_price": 28,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 22400
+        "total": 28000
       }
     ],
     "unit_selling_price_x1": 9,
@@ -1153,7 +1153,7 @@
     "profit_x100": -345,
     "profit_x1000": -274,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:45.931810+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.257613+00:00"
   },
   {
     "id": 995,
@@ -1183,7 +1183,7 @@
     "profit_x100": 1531,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "selling_last_updated": "2026-03-27T07:23:45.931821+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.257626+00:00"
   },
   {
     "id": 993,
@@ -1205,15 +1205,15 @@
     "unit_selling_price_x100": 1250,
     "unit_selling_price_x1000": 1250,
     "unit_crafting_cost_x1": 1334,
-    "unit_crafting_cost_x10": 1334,
+    "unit_crafting_cost_x10": 1358,
     "unit_crafting_cost_x100": 1300,
     "unit_crafting_cost_x1000": 1300,
     "profit_x1": 196,
-    "profit_x10": -223,
+    "profit_x10": -247,
     "profit_x100": -189,
     "profit_x1000": -189,
     "best_lot": "x1",
-    "selling_last_updated": "2026-03-27T07:23:45.931833+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.257638+00:00"
   },
   {
     "id": 994,
@@ -1224,10 +1224,10 @@
       {
         "name": "Frasco de gelatina de fresa",
         "quantity": 2,
-        "unit_price": 680,
-        "buy_lot": "x10",
+        "unit_price": 774,
+        "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 1360000
+        "total": 1548
       }
     ],
     "unit_selling_price_x1": 416,
@@ -1235,15 +1235,15 @@
     "unit_selling_price_x100": 400,
     "unit_selling_price_x1000": 400,
     "unit_crafting_cost_x1": 1548,
-    "unit_crafting_cost_x10": 1548,
-    "unit_crafting_cost_x100": 1548,
-    "unit_crafting_cost_x1000": 1548,
+    "unit_crafting_cost_x10": 1700,
+    "unit_crafting_cost_x100": 1700,
+    "unit_crafting_cost_x1000": 1700,
     "profit_x1": -1212,
-    "profit_x10": -1183,
-    "profit_x100": -1226,
-    "profit_x1000": -1226,
-    "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:45.931842+00:00"
+    "profit_x10": -1335,
+    "profit_x100": -1378,
+    "profit_x1000": -1378,
+    "best_lot": "x1",
+    "selling_last_updated": "2026-03-27T08:19:37.257648+00:00"
   },
   {
     "id": 996,
@@ -1281,15 +1281,15 @@
     "unit_selling_price_x100": 12500,
     "unit_selling_price_x1000": 0,
     "unit_crafting_cost_x1": 7770,
-    "unit_crafting_cost_x10": 7518,
+    "unit_crafting_cost_x10": 7582,
     "unit_crafting_cost_x100": 7486,
     "unit_crafting_cost_x1000": 0,
     "profit_x1": 7057,
-    "profit_x10": 5917,
+    "profit_x10": 5853,
     "profit_x100": 4089,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "selling_last_updated": "2026-03-27T07:23:45.931860+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.257671+00:00"
   },
   {
     "id": 2024,
@@ -1300,26 +1300,26 @@
       {
         "name": "Lúpulo",
         "quantity": 5,
-        "unit_price": 38,
+        "unit_price": 47,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 188000
+        "total": 235000
       },
       {
         "name": "Cenizas eternas",
         "quantity": 1,
-        "unit_price": 144,
+        "unit_price": 180,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 144000
+        "total": 180000
       },
       {
         "name": "Trébol de 5 hojas",
         "quantity": 1,
-        "unit_price": 18,
+        "unit_price": 22,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 17600
+        "total": 22000
       }
     ],
     "unit_selling_price_x1": 158,
@@ -1327,15 +1327,15 @@
     "unit_selling_price_x100": 164,
     "unit_selling_price_x1000": 150,
     "unit_crafting_cost_x1": 2499,
-    "unit_crafting_cost_x10": 779,
+    "unit_crafting_cost_x10": 810,
     "unit_crafting_cost_x100": 457,
     "unit_crafting_cost_x1000": 437,
     "profit_x1": -2405,
-    "profit_x10": -683,
+    "profit_x10": -714,
     "profit_x100": -357,
     "profit_x1000": -349,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:45.931878+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.257694+00:00"
   },
   {
     "id": 2025,
@@ -1354,18 +1354,18 @@
       {
         "name": "Cenizas eternas",
         "quantity": 1,
-        "unit_price": 144,
+        "unit_price": 180,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1440
+        "total": 1800
       },
       {
         "name": "Trébol de 5 hojas",
         "quantity": 1,
-        "unit_price": 184,
+        "unit_price": 230,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1840
+        "total": 2300
       }
     ],
     "unit_selling_price_x1": 19899,
@@ -1436,26 +1436,26 @@
       {
         "name": "Lúpulo",
         "quantity": 5,
-        "unit_price": 38,
+        "unit_price": 47,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 188000
+        "total": 235000
       },
       {
         "name": "Cereza",
         "quantity": 1,
-        "unit_price": 12,
+        "unit_price": 15,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 12000
+        "total": 15000
       },
       {
         "name": "Trébol de 5 hojas",
         "quantity": 1,
-        "unit_price": 18,
+        "unit_price": 22,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 17600
+        "total": 22000
       }
     ],
     "unit_selling_price_x1": 14,
@@ -1463,15 +1463,15 @@
     "unit_selling_price_x100": 12,
     "unit_selling_price_x1000": 16,
     "unit_crafting_cost_x1": 1079,
-    "unit_crafting_cost_x10": 637,
+    "unit_crafting_cost_x10": 668,
     "unit_crafting_cost_x100": 293,
     "unit_crafting_cost_x1000": 272,
     "profit_x1": -1117,
-    "profit_x10": -676,
+    "profit_x10": -707,
     "profit_x100": -333,
     "profit_x1000": -308,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:45.931895+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.257716+00:00"
   },
   {
     "id": 16931,
@@ -1498,10 +1498,10 @@
       {
         "name": "Avena",
         "quantity": 1,
-        "unit_price": 80,
+        "unit_price": 100,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 800
+        "total": 1000
       }
     ],
     "unit_selling_price_x1": 18997,
@@ -1527,26 +1527,26 @@
       {
         "name": "Lino",
         "quantity": 5,
-        "unit_price": 26,
+        "unit_price": 33,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 13200
+        "total": 16500
       },
       {
         "name": "Sangre de scorbuto",
         "quantity": 1,
-        "unit_price": 152,
+        "unit_price": 190,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 15200
+        "total": 19000
       },
       {
         "name": "Menta salvaje",
         "quantity": 1,
-        "unit_price": 16,
+        "unit_price": 20,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 1600
+        "total": 2000
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1562,7 +1562,7 @@
     "profit_x100": -195,
     "profit_x1000": -212,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T07:23:45.931913+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.257737+00:00"
   },
   {
     "id": 2028,
@@ -1581,18 +1581,18 @@
       {
         "name": "Sangre de scorbuto",
         "quantity": 1,
-        "unit_price": 160,
+        "unit_price": 200,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1600
+        "total": 2000
       },
       {
         "name": "Menta salvaje",
         "quantity": 1,
-        "unit_price": 20,
+        "unit_price": 25,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 200
+        "total": 250
       }
     ],
     "unit_selling_price_x1": 11500,
@@ -1663,26 +1663,26 @@
       {
         "name": "Lino",
         "quantity": 5,
-        "unit_price": 26,
+        "unit_price": 33,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 132000
+        "total": 165000
       },
       {
         "name": "Especias",
         "quantity": 1,
-        "unit_price": 144,
+        "unit_price": 180,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 144000
+        "total": 180000
       },
       {
         "name": "Menta salvaje",
         "quantity": 1,
-        "unit_price": 16,
+        "unit_price": 20,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 16000
+        "total": 20000
       }
     ],
     "unit_selling_price_x1": 22,
@@ -1698,7 +1698,7 @@
     "profit_x100": -393,
     "profit_x1000": -396,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:45.931929+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.257758+00:00"
   },
   {
     "id": 16933,
@@ -1725,10 +1725,10 @@
       {
         "name": "Lúpulo",
         "quantity": 1,
-        "unit_price": 64,
+        "unit_price": 80,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 640
+        "total": 800
       }
     ],
     "unit_selling_price_x1": 25999,
@@ -1754,26 +1754,26 @@
       {
         "name": "Centeno",
         "quantity": 6,
-        "unit_price": 55,
+        "unit_price": 69,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 331200
+        "total": 414000
       },
       {
         "name": "Agua potable",
         "quantity": 1,
-        "unit_price": 116,
+        "unit_price": 145,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 116000
+        "total": 145000
       },
       {
         "name": "Orquídea freyesca",
         "quantity": 1,
-        "unit_price": 15,
+        "unit_price": 19,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 15200
+        "total": 19000
       }
     ],
     "unit_selling_price_x1": 290,
@@ -1781,15 +1781,15 @@
     "unit_selling_price_x100": 340,
     "unit_selling_price_x1000": 315,
     "unit_crafting_cost_x1": 2937,
-    "unit_crafting_cost_x10": 955,
+    "unit_crafting_cost_x10": 1039,
     "unit_crafting_cost_x100": 591,
     "unit_crafting_cost_x1000": 578,
     "profit_x1": -2718,
-    "profit_x10": -738,
+    "profit_x10": -822,
     "profit_x100": -326,
     "profit_x1000": -336,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:45.931947+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.257781+00:00"
   },
   {
     "id": 2031,
@@ -1808,18 +1808,18 @@
       {
         "name": "Agua potable",
         "quantity": 1,
-        "unit_price": 116,
+        "unit_price": 145,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1160
+        "total": 1450
       },
       {
         "name": "Orquídea freyesca",
         "quantity": 1,
-        "unit_price": 96,
+        "unit_price": 120,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 960
+        "total": 1200
       }
     ],
     "unit_selling_price_x1": 19983,
@@ -1845,26 +1845,26 @@
       {
         "name": "Arroz",
         "quantity": 6,
-        "unit_price": 20,
+        "unit_price": 25,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 12000
+        "total": 15000
       },
       {
         "name": "Agua potable",
         "quantity": 1,
-        "unit_price": 116,
+        "unit_price": 145,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 11600
+        "total": 14500
       },
       {
         "name": "Orquídea freyesca",
         "quantity": 1,
-        "unit_price": 26,
+        "unit_price": 32,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 2560
+        "total": 3200
       }
     ],
     "unit_selling_price_x1": 301,
@@ -1880,7 +1880,7 @@
     "profit_x100": -5,
     "profit_x1000": -35,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T07:23:45.931964+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.257801+00:00"
   },
   {
     "id": 16434,
@@ -1899,18 +1899,18 @@
       {
         "name": "Agua potable",
         "quantity": 1,
-        "unit_price": 116,
+        "unit_price": 145,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1160
+        "total": 1450
       },
       {
         "name": "Orquídea freyesca",
         "quantity": 1,
-        "unit_price": 96,
+        "unit_price": 120,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 960
+        "total": 1200
       }
     ],
     "unit_selling_price_x1": 24980,
@@ -1952,10 +1952,10 @@
       {
         "name": "Lino",
         "quantity": 1,
-        "unit_price": 80,
+        "unit_price": 100,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 800
+        "total": 1000
       }
     ],
     "unit_selling_price_x1": 19999,
@@ -1981,26 +1981,26 @@
       {
         "name": "Agua potable",
         "quantity": 1,
-        "unit_price": 116,
+        "unit_price": 145,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 116000
+        "total": 145000
       },
       {
         "name": "Centeno",
         "quantity": 5,
-        "unit_price": 55,
+        "unit_price": 69,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 276000
+        "total": 345000
       },
       {
         "name": "Perca",
         "quantity": 1,
-        "unit_price": 47,
+        "unit_price": 59,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 47200
+        "total": 59000
       }
     ],
     "unit_selling_price_x1": 300,
@@ -2016,7 +2016,7 @@
     "profit_x100": -321,
     "profit_x1000": -320,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:45.931981+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.257823+00:00"
   },
   {
     "id": 22383,
@@ -2027,10 +2027,10 @@
       {
         "name": "Agua potable",
         "quantity": 10,
-        "unit_price": 116,
+        "unit_price": 145,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1160
+        "total": 1450
       },
       {
         "name": "Nuez de kokoko",
@@ -2043,10 +2043,10 @@
       {
         "name": "Centeno",
         "quantity": 20,
-        "unit_price": 103,
+        "unit_price": 129,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2064
+        "total": 2580
       },
       {
         "name": "Bastón de caramelo",
@@ -2080,26 +2080,26 @@
       {
         "name": "Centeno",
         "quantity": 6,
-        "unit_price": 55,
+        "unit_price": 69,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 331200
+        "total": 414000
       },
       {
         "name": "Polvos mágicos",
         "quantity": 1,
-        "unit_price": 72,
+        "unit_price": 90,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 72000
+        "total": 90000
       },
       {
         "name": "Orquídea freyesca",
         "quantity": 1,
-        "unit_price": 15,
+        "unit_price": 19,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 15200
+        "total": 19000
       }
     ],
     "unit_selling_price_x1": 23,
@@ -2107,15 +2107,15 @@
     "unit_selling_price_x100": 26,
     "unit_selling_price_x1000": 25,
     "unit_crafting_cost_x1": 1577,
-    "unit_crafting_cost_x10": 900,
+    "unit_crafting_cost_x10": 984,
     "unit_crafting_cost_x100": 536,
     "unit_crafting_cost_x1000": 523,
     "profit_x1": -1607,
-    "profit_x10": -926,
+    "profit_x10": -1010,
     "profit_x100": -563,
     "profit_x1000": -551,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:45.932017+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.257917+00:00"
   },
   {
     "id": 16935,
@@ -2142,10 +2142,10 @@
       {
         "name": "Lino",
         "quantity": 1,
-        "unit_price": 80,
+        "unit_price": 100,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 800
+        "total": 1000
       }
     ],
     "unit_selling_price_x1": 75000,
@@ -2171,26 +2171,26 @@
       {
         "name": "Malta",
         "quantity": 6,
-        "unit_price": 24,
+        "unit_price": 30,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 144000
+        "total": 180000
       },
       {
         "name": "Polvo temporal",
         "quantity": 1,
-        "unit_price": 35,
+        "unit_price": 44,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 35200
+        "total": 44000
       },
       {
         "name": "Edelweiss",
         "quantity": 1,
-        "unit_price": 62,
+        "unit_price": 78,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 62400
+        "total": 78000
       }
     ],
     "unit_selling_price_x1": 395,
@@ -2206,7 +2206,7 @@
     "profit_x100": -20,
     "profit_x1000": 65,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:45.932035+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.257989+00:00"
   },
   {
     "id": 16435,
@@ -2225,18 +2225,18 @@
       {
         "name": "Polvo temporal",
         "quantity": 1,
-        "unit_price": 46,
+        "unit_price": 57,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 456
+        "total": 570
       },
       {
         "name": "Edelweiss",
         "quantity": 1,
-        "unit_price": 79,
+        "unit_price": 99,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 792
+        "total": 990
       }
     ],
     "unit_selling_price_x1": 15500,
@@ -2252,7 +2252,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "selling_last_updated": "2026-03-27T07:23:45.932050+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.258009+00:00"
   },
   {
     "id": 16936,
@@ -2279,10 +2279,10 @@
       {
         "name": "Centeno",
         "quantity": 1,
-        "unit_price": 103,
+        "unit_price": 129,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1032
+        "total": 1290
       }
     ],
     "unit_selling_price_x1": 58998,
@@ -2308,26 +2308,26 @@
       {
         "name": "Malta",
         "quantity": 6,
-        "unit_price": 24,
+        "unit_price": 30,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 144000
+        "total": 180000
       },
       {
         "name": "Resina",
         "quantity": 1,
-        "unit_price": 159,
+        "unit_price": 199,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 159200
+        "total": 199000
       },
       {
         "name": "Edelweiss",
         "quantity": 1,
-        "unit_price": 62,
+        "unit_price": 78,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 62400
+        "total": 78000
       }
     ],
     "unit_selling_price_x1": 24,
@@ -2343,7 +2343,7 @@
     "profit_x100": -565,
     "profit_x1000": -477,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:45.932067+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.258032+00:00"
   },
   {
     "id": 16937,
@@ -2399,26 +2399,26 @@
       {
         "name": "Cáñamo",
         "quantity": 6,
-        "unit_price": 54,
+        "unit_price": 67,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 321600
+        "total": 402000
       },
       {
         "name": "Medida de sal",
         "quantity": 1,
-        "unit_price": 12,
+        "unit_price": 15,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 12000
+        "total": 15000
       },
       {
         "name": "Semilla de pandoja",
         "quantity": 1,
-        "unit_price": 38,
+        "unit_price": 48,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 38400
+        "total": 48000
       }
     ],
     "unit_selling_price_x1": 575,
@@ -2434,7 +2434,7 @@
     "profit_x100": -101,
     "profit_x1000": -98,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:45.932085+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.258055+00:00"
   },
   {
     "id": 10079,
@@ -2453,18 +2453,18 @@
       {
         "name": "Aceite de sésamo",
         "quantity": 1,
-        "unit_price": 1078,
+        "unit_price": 1347,
         "buy_lot": "x10",
         "buy_or_craft": "Craft",
-        "total": 10776
+        "total": 13470
       },
       {
         "name": "Pandapiler",
         "quantity": 1,
-        "unit_price": 1511,
+        "unit_price": 1889,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 15112
+        "total": 18890
       },
       {
         "name": "Levadura de panadero",
@@ -2477,18 +2477,18 @@
       {
         "name": "Carne sanguinolenta",
         "quantity": 1,
-        "unit_price": 438,
+        "unit_price": 548,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 4384
+        "total": 5480
       },
       {
         "name": "Edelweiss",
         "quantity": 2,
-        "unit_price": 79,
+        "unit_price": 99,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1584
+        "total": 1980
       },
       {
         "name": "Cáñamo",
@@ -2501,26 +2501,26 @@
       {
         "name": "Patata",
         "quantity": 8,
-        "unit_price": 1110,
+        "unit_price": 1388,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 88832
+        "total": 111040
       }
     ],
     "unit_selling_price_x1": 44900,
     "unit_selling_price_x10": 44900,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 28965,
-    "unit_crafting_cost_x10": 16855,
+    "unit_crafting_cost_x1": 28998,
+    "unit_crafting_cost_x10": 16945,
     "unit_crafting_cost_x100": 0,
     "unit_crafting_cost_x1000": 0,
-    "profit_x1": 12742,
-    "profit_x10": 24852,
+    "profit_x1": 12709,
+    "profit_x10": 24762,
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "selling_last_updated": "2026-03-27T07:23:45.932123+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.258104+00:00"
   },
   {
     "id": 16436,
@@ -2539,18 +2539,18 @@
       {
         "name": "Medida de sal",
         "quantity": 1,
-        "unit_price": 14,
+        "unit_price": 18,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 144
+        "total": 180
       },
       {
         "name": "Semilla de pandoja",
         "quantity": 1,
-        "unit_price": 112,
+        "unit_price": 140,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1120
+        "total": 1400
       }
     ],
     "unit_selling_price_x1": 50000,
@@ -2621,26 +2621,26 @@
       {
         "name": "Dorada exploradora",
         "quantity": 3,
-        "unit_price": 12,
+        "unit_price": 15,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 36000
+        "total": 45000
       },
       {
         "name": "Rape",
         "quantity": 3,
-        "unit_price": 48,
+        "unit_price": 60,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 144000
+        "total": 180000
       },
       {
         "name": "Raya azul",
         "quantity": 3,
-        "unit_price": 9,
+        "unit_price": 11,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 26400
+        "total": 33000
       }
     ],
     "unit_selling_price_x1": 394,
@@ -2656,7 +2656,7 @@
     "profit_x100": 44,
     "profit_x1000": 44,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:45.932143+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.258127+00:00"
   },
   {
     "id": 527,
@@ -2667,26 +2667,26 @@
       {
         "name": "Cáñamo",
         "quantity": 6,
-        "unit_price": 54,
+        "unit_price": 67,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 321600
+        "total": 402000
       },
       {
         "name": "Medida de pimienta",
         "quantity": 1,
-        "unit_price": 32,
+        "unit_price": 40,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 32000
+        "total": 40000
       },
       {
         "name": "Semilla de pandoja",
         "quantity": 1,
-        "unit_price": 38,
+        "unit_price": 48,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 38400
+        "total": 48000
       }
     ],
     "unit_selling_price_x1": 88,
@@ -2702,7 +2702,7 @@
     "profit_x100": -477,
     "profit_x1000": -468,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:45.932161+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.258148+00:00"
   },
   {
     "id": 16939,
@@ -2758,34 +2758,34 @@
       {
         "name": "Cáñamo",
         "quantity": 20,
-        "unit_price": 54,
+        "unit_price": 67,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 107200
+        "total": 134000
       },
       {
         "name": "Polvos mágicos",
         "quantity": 1,
-        "unit_price": 72,
+        "unit_price": 90,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 7200
+        "total": 9000
       },
       {
         "name": "Cebolla",
         "quantity": 4,
-        "unit_price": 359,
+        "unit_price": 449,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 143680
+        "total": 179600
       },
       {
         "name": "Cenizas eternas",
         "quantity": 2,
-        "unit_price": 144,
+        "unit_price": 180,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 28800
+        "total": 36000
       }
     ],
     "unit_selling_price_x1": 11999,
@@ -2801,7 +2801,7 @@
     "profit_x100": 5571,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T07:23:45.932181+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.258174+00:00"
   },
   {
     "id": 9983,
@@ -2812,18 +2812,18 @@
       {
         "name": "Harina terrada",
         "quantity": 2,
-        "unit_price": 5024,
+        "unit_price": 6280,
         "buy_lot": "x10",
         "buy_or_craft": "Craft",
-        "total": 100480
+        "total": 125600
       },
       {
         "name": "Agua potable",
         "quantity": 5,
-        "unit_price": 116,
+        "unit_price": 145,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 5800
+        "total": 7250
       },
       {
         "name": "Levadura de panadero",
@@ -2857,26 +2857,26 @@
       {
         "name": "Maíz",
         "quantity": 7,
-        "unit_price": 111,
+        "unit_price": 139,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 778400
+        "total": 973000
       },
       {
         "name": "Limón",
         "quantity": 1,
-        "unit_price": 159,
+        "unit_price": 199,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 159200
+        "total": 199000
       },
       {
         "name": "Ginseng",
         "quantity": 2,
-        "unit_price": 40,
+        "unit_price": 50,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 80000
+        "total": 100000
       }
     ],
     "unit_selling_price_x1": 600,
@@ -2884,15 +2884,15 @@
     "unit_selling_price_x100": 785,
     "unit_selling_price_x1000": 749,
     "unit_crafting_cost_x1": 4789,
-    "unit_crafting_cost_x10": 2097,
-    "unit_crafting_cost_x100": 1288,
-    "unit_crafting_cost_x1000": 1270,
+    "unit_crafting_cost_x10": 2099,
+    "unit_crafting_cost_x100": 1290,
+    "unit_crafting_cost_x1000": 1272,
     "profit_x1": -4281,
-    "profit_x10": -1415,
-    "profit_x100": -609,
-    "profit_x1000": -625,
+    "profit_x10": -1417,
+    "profit_x100": -611,
+    "profit_x1000": -627,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:45.932199+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.258195+00:00"
   },
   {
     "id": 16438,
@@ -2911,18 +2911,18 @@
       {
         "name": "Limón",
         "quantity": 1,
-        "unit_price": 159,
+        "unit_price": 199,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1592
+        "total": 1990
       },
       {
         "name": "Ginseng",
         "quantity": 2,
-        "unit_price": 204,
+        "unit_price": 255,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 4080
+        "total": 5100
       }
     ],
     "unit_selling_price_x1": 25000,
@@ -2930,15 +2930,15 @@
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
     "unit_crafting_cost_x1": 46006,
-    "unit_crafting_cost_x10": 44696,
+    "unit_crafting_cost_x10": 44698,
     "unit_crafting_cost_x100": 0,
     "unit_crafting_cost_x1000": 0,
     "profit_x1": -22806,
-    "profit_x10": -21496,
+    "profit_x10": -21498,
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "selling_last_updated": "2026-03-27T07:23:45.932215+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.258214+00:00"
   },
   {
     "id": 16940,
@@ -2994,26 +2994,26 @@
       {
         "name": "Maíz",
         "quantity": 7,
-        "unit_price": 111,
+        "unit_price": 139,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 778400
+        "total": 973000
       },
       {
         "name": "Hoja de enchalada",
         "quantity": 1,
-        "unit_price": 15,
+        "unit_price": 19,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 15200
+        "total": 19000
       },
       {
         "name": "Ginseng",
         "quantity": 2,
-        "unit_price": 40,
+        "unit_price": 50,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 80000
+        "total": 100000
       }
     ],
     "unit_selling_price_x1": 100,
@@ -3029,7 +3029,7 @@
     "profit_x100": -1067,
     "profit_x1000": -1049,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:45.932233+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.258234+00:00"
   },
   {
     "id": 16941,
@@ -3085,26 +3085,26 @@
       {
         "name": "Mijo",
         "quantity": 7,
-        "unit_price": 240,
+        "unit_price": 300,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 1680000
+        "total": 2100000
       },
       {
         "name": "Aceite para freír",
         "quantity": 1,
-        "unit_price": 112,
+        "unit_price": 140,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 112000
+        "total": 140000
       },
       {
         "name": "Belladona",
         "quantity": 2,
-        "unit_price": 151200,
+        "unit_price": 189000,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 302400000
+        "total": 378000000
       }
     ],
     "unit_selling_price_x1": 890,
@@ -3112,15 +3112,15 @@
     "unit_selling_price_x100": 890,
     "unit_selling_price_x1000": 935,
     "unit_crafting_cost_x1": 435778,
-    "unit_crafting_cost_x10": 432518,
+    "unit_crafting_cost_x10": 443600,
     "unit_crafting_cost_x100": 380240,
     "unit_crafting_cost_x1000": 380240,
     "profit_x1": -435001,
-    "profit_x10": -431731,
+    "profit_x10": -442813,
     "profit_x100": -379463,
     "profit_x1000": -379422,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:45.932250+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.258255+00:00"
   },
   {
     "id": 9571,
@@ -3216,18 +3216,18 @@
       {
         "name": "Aceite para freír",
         "quantity": 1,
-        "unit_price": 112,
+        "unit_price": 140,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1120
+        "total": 1400
       },
       {
         "name": "Belladona",
         "quantity": 2,
-        "unit_price": 175984,
+        "unit_price": 219980,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 3519680
+        "total": 4399600
       }
     ],
     "unit_selling_price_x1": 79883,
@@ -3269,10 +3269,10 @@
       {
         "name": "Maíz",
         "quantity": 2,
-        "unit_price": 224,
+        "unit_price": 280,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 4480
+        "total": 5600
       }
     ],
     "unit_selling_price_x1": 55000,
@@ -3298,26 +3298,26 @@
       {
         "name": "Mijo",
         "quantity": 7,
-        "unit_price": 240,
+        "unit_price": 300,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 1680000
+        "total": 2100000
       },
       {
         "name": "Cebolla",
         "quantity": 1,
-        "unit_price": 352,
+        "unit_price": 440,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 352000
+        "total": 440000
       },
       {
         "name": "Belladona",
         "quantity": 2,
-        "unit_price": 151200,
+        "unit_price": 189000,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 302400000
+        "total": 378000000
       }
     ],
     "unit_selling_price_x1": 240,
@@ -3359,10 +3359,10 @@
       {
         "name": "Maíz",
         "quantity": 2,
-        "unit_price": 224,
+        "unit_price": 280,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 4480
+        "total": 5600
       }
     ],
     "unit_selling_price_x1": 75000,
@@ -3388,10 +3388,10 @@
       {
         "name": "Frostizz",
         "quantity": 3,
-        "unit_price": 480,
+        "unit_price": 600,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 14400
+        "total": 18000
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3407,7 +3407,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "selling_last_updated": "2026-03-27T07:23:45.932261+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.258349+00:00"
   },
   {
     "id": 11503,
@@ -3418,26 +3418,26 @@
       {
         "name": "Frostizz",
         "quantity": 1,
-        "unit_price": 222,
+        "unit_price": 278,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 222400
+        "total": 278000
       },
       {
         "name": "Aguas tranquilas",
         "quantity": 1,
-        "unit_price": 78,
+        "unit_price": 98,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 78400
+        "total": 98000
       },
       {
         "name": "Mandrágora",
         "quantity": 2,
-        "unit_price": 94,
+        "unit_price": 118,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 188800
+        "total": 236000
       }
     ],
     "unit_selling_price_x1": 1130,
@@ -3453,7 +3453,7 @@
     "profit_x100": 336,
     "profit_x1000": 388,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:45.932280+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.258376+00:00"
   },
   {
     "id": 11504,
@@ -3554,26 +3554,26 @@
       {
         "name": "Cristal plegable",
         "quantity": 2,
-        "unit_price": 616,
+        "unit_price": 770,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 123200
+        "total": 154000
       },
       {
         "name": "Polvo temporal",
         "quantity": 2,
-        "unit_price": 35,
+        "unit_price": 44,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 7040
+        "total": 8800
       },
       {
         "name": "Tulipán de papel",
         "quantity": 2,
-        "unit_price": 1038,
+        "unit_price": 1298,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 207680
+        "total": 259600
       }
     ],
     "unit_selling_price_x1": 5000,
@@ -3589,7 +3589,7 @@
     "profit_x100": 376,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T07:23:45.932298+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.258400+00:00"
   },
   {
     "id": 24001,
@@ -3645,34 +3645,34 @@
       {
         "name": "Cristal plegable",
         "quantity": 5,
-        "unit_price": 616,
+        "unit_price": 770,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 30800
+        "total": 38500
       },
       {
         "name": "Cristal líquido",
         "quantity": 5,
-        "unit_price": 954,
+        "unit_price": 1192,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 47680
+        "total": 59600
       },
       {
         "name": "Tulipán de papel",
         "quantity": 5,
-        "unit_price": 1038,
+        "unit_price": 1298,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 51920
+        "total": 64900
       },
       {
         "name": "Pischis de tinta",
         "quantity": 5,
-        "unit_price": 1598,
+        "unit_price": 1997,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 79880
+        "total": 99850
       }
     ],
     "unit_selling_price_x1": 22520,
@@ -3680,14 +3680,14 @@
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
     "unit_crafting_cost_x1": 37350,
-    "unit_crafting_cost_x10": 25715,
+    "unit_crafting_cost_x10": 26285,
     "unit_crafting_cost_x100": 0,
     "unit_crafting_cost_x1000": 0,
     "profit_x1": -16457,
-    "profit_x10": -4822,
+    "profit_x10": -5392,
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "selling_last_updated": "2026-03-27T07:23:45.932338+00:00"
+    "selling_last_updated": "2026-03-27T08:19:37.258448+00:00"
   }
 ]

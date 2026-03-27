@@ -9,5 +9,6 @@ C = {
     "text":    "#cdd6f4",
     "dim":     "#6c7086",
     "orange":  "#fab387",
+    "mauve":   "#cba6f7",
     "today":   "#2d3250",
 }

@@ -725,10 +725,10 @@
       {
         "name": "Piedra de granito",
         "quantity": 10,
-        "unit_price": 706,
+        "unit_price": 882,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 7056
+        "total": 8820
       },
       {
         "name": "Tabla de aglomerado",
@@ -2275,10 +2275,10 @@
       {
         "name": "Esquíritu inferior",
         "quantity": 4,
-        "unit_price": 48,
+        "unit_price": 60,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 192000
+        "total": 240000
       }
     ],
     "unit_selling_price_x1": 137,
@@ -2294,7 +2294,7 @@
     "profit_x100": -180,
     "profit_x1000": -179,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:47.455269+00:00"
+    "selling_last_updated": "2026-03-27T08:19:38.691528+00:00"
   },
   {
     "id": 9248,
@@ -2722,10 +2722,10 @@
       {
         "name": "Madera de bambú",
         "quantity": 20,
-        "unit_price": 136,
+        "unit_price": 170,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2720
+        "total": 3400
       },
       {
         "name": "Escamas de uróbolo",
@@ -2767,10 +2767,10 @@
       {
         "name": "Madera de bambú",
         "quantity": 20,
-        "unit_price": 136,
+        "unit_price": 170,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2720
+        "total": 3400
       },
       {
         "name": "Escama de dragoss calizo",
@@ -2852,10 +2852,10 @@
       {
         "name": "Madera de bambú",
         "quantity": 20,
-        "unit_price": 136,
+        "unit_price": 170,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2720
+        "total": 3400
       }
     ],
     "unit_selling_price_x1": 0,
@@ -2897,10 +2897,10 @@
       {
         "name": "Madera de bambú",
         "quantity": 20,
-        "unit_price": 136,
+        "unit_price": 170,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2720
+        "total": 3400
       },
       {
         "name": "Pelo de miaumiaumialvaje",
@@ -4177,10 +4177,10 @@
       {
         "name": "Pelusa de mamagüina",
         "quantity": 10,
-        "unit_price": 1992,
+        "unit_price": 2490,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 19920
+        "total": 24900
       },
       {
         "name": "Tejido de kaniglú",
@@ -4347,10 +4347,10 @@
       {
         "name": "Pluma de pekegüino",
         "quantity": 10,
-        "unit_price": 38,
+        "unit_price": 48,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 384
+        "total": 480
       },
       {
         "name": "Colmillo de jabajocero",
@@ -4472,10 +4472,10 @@
       {
         "name": "Piel de barrigüino",
         "quantity": 10,
-        "unit_price": 58,
+        "unit_price": 73,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 584
+        "total": 730
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4979,10 +4979,10 @@
       {
         "name": "Esquíritu común",
         "quantity": 4,
-        "unit_price": 94,
+        "unit_price": 117,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 374400
+        "total": 468000
       }
     ],
     "unit_selling_price_x1": 281,
@@ -4998,7 +4998,7 @@
     "profit_x100": -283,
     "profit_x1000": -279,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:47.457003+00:00"
+    "selling_last_updated": "2026-03-27T08:19:38.693774+00:00"
   },
   {
     "id": 7926,
@@ -7022,10 +7022,10 @@
       {
         "name": "Raíz de abráknido oscuro",
         "quantity": 10,
-        "unit_price": 342,
+        "unit_price": 427,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 3416
+        "total": 4270
       },
       {
         "name": "Raíz de abráknido venerable",
@@ -7694,10 +7694,10 @@
       {
         "name": "Esquíritu superior",
         "quantity": 4,
-        "unit_price": 205,
+        "unit_price": 256,
         "buy_lot": "x100",
         "buy_or_craft": "Buy",
-        "total": 819200
+        "total": 1024000
       }
     ],
     "unit_selling_price_x1": 529,
@@ -7713,7 +7713,7 @@
     "profit_x100": -619,
     "profit_x1000": -631,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:47.458857+00:00"
+    "selling_last_updated": "2026-03-27T08:19:38.695352+00:00"
   },
   {
     "id": 8307,
@@ -9222,34 +9222,34 @@
       {
         "name": "Quisnoa",
         "quantity": 100,
-        "unit_price": 151,
+        "unit_price": 189,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 15120
+        "total": 18900
       },
       {
         "name": "Lapa",
         "quantity": 100,
-        "unit_price": 560,
+        "unit_price": 700,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 56000
+        "total": 70000
       },
       {
         "name": "Sepiolita",
         "quantity": 100,
-        "unit_price": 320,
+        "unit_price": 400,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 32000
+        "total": 40000
       },
       {
         "name": "Madera de acuacia",
         "quantity": 100,
-        "unit_price": 768,
+        "unit_price": 960,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 76800
+        "total": 96000
       }
     ],
     "unit_selling_price_x1": 0,
@@ -9299,10 +9299,10 @@
       {
         "name": "Calzoncillos rojos",
         "quantity": 10,
-        "unit_price": 17600,
+        "unit_price": 22000,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 176000
+        "total": 220000
       },
       {
         "name": "Oreja de gosbusteador",
@@ -9474,34 +9474,34 @@
       {
         "name": "Mijo",
         "quantity": 10,
-        "unit_price": 400,
+        "unit_price": 500,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 4000
+        "total": 5000
       },
       {
         "name": "Madera de olmo",
         "quantity": 10,
-        "unit_price": 541,
+        "unit_price": 676,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 5408
+        "total": 6760
       },
       {
         "name": "Dolomita",
         "quantity": 10,
-        "unit_price": 780,
+        "unit_price": 975,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 7800
+        "total": 9750
       },
       {
         "name": "Tenca",
         "quantity": 10,
-        "unit_price": 144,
+        "unit_price": 180,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1440
+        "total": 1800
       },
       {
         "name": "Carne viciada",
@@ -10090,10 +10090,10 @@
       {
         "name": "Esquíritu majestuoso",
         "quantity": 4,
-        "unit_price": 382,
+        "unit_price": 478,
         "buy_lot": "x1000",
         "buy_or_craft": "Buy",
-        "total": 1529600
+        "total": 1912000
       }
     ],
     "unit_selling_price_x1": 844,
@@ -10109,7 +10109,7 @@
     "profit_x100": -1227,
     "profit_x1000": -1175,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T07:23:47.459714+00:00"
+    "selling_last_updated": "2026-03-27T08:19:38.696566+00:00"
   },
   {
     "id": 14043,

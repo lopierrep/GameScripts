@@ -111,26 +111,26 @@
       {
         "name": "Pluma de kwak de llamas",
         "quantity": 4,
-        "unit_price": 288,
+        "unit_price": 360,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 115200
+        "total": 144000
       },
       {
         "name": "Pico de kwak de llamas",
         "quantity": 1,
-        "unit_price": 78,
+        "unit_price": 98,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 7840
+        "total": 9800
       },
       {
         "name": "Esfera para metarias",
         "quantity": 1,
-        "unit_price": 200,
+        "unit_price": 250,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 20000
+        "total": 25000
       }
     ],
     "unit_selling_price_x1": 4047,
@@ -156,26 +156,26 @@
       {
         "name": "Pluma de kwak de hielo",
         "quantity": 4,
-        "unit_price": 711,
+        "unit_price": 889,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 28448
+        "total": 35560
       },
       {
         "name": "Pico de kwak de hielo",
         "quantity": 1,
-        "unit_price": 158,
+        "unit_price": 198,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1584
+        "total": 1980
       },
       {
         "name": "Esfera para metarias",
         "quantity": 1,
-        "unit_price": 238,
+        "unit_price": 298,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2384
+        "total": 2980
       }
     ],
     "unit_selling_price_x1": 59496,
@@ -246,10 +246,10 @@
       {
         "name": "Esfera para metarias",
         "quantity": 1,
-        "unit_price": 238,
+        "unit_price": 298,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2384
+        "total": 2980
       },
       {
         "name": "Pluma de kwak de viento",
@@ -262,10 +262,10 @@
       {
         "name": "Pico de kwak de viento",
         "quantity": 1,
-        "unit_price": 246,
+        "unit_price": 308,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2464
+        "total": 3080
       }
     ],
     "unit_selling_price_x1": 18797,
@@ -516,26 +516,26 @@
       {
         "name": "Cáscara de dragohuevo pizarroso",
         "quantity": 4,
-        "unit_price": 1000,
+        "unit_price": 1250,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 400000
+        "total": 500000
       },
       {
         "name": "Huevo de dragohuevo pizarroso",
         "quantity": 1,
-        "unit_price": 520,
+        "unit_price": 650,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 52000
+        "total": 65000
       },
       {
         "name": "Esfera para metarias",
         "quantity": 1,
-        "unit_price": 200,
+        "unit_price": 250,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 20000
+        "total": 25000
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1061,10 +1061,10 @@
       {
         "name": "Agua potable",
         "quantity": 10,
-        "unit_price": 116,
+        "unit_price": 145,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1160
+        "total": 1450
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1090,10 +1090,10 @@
       {
         "name": "Agua potable",
         "quantity": 10,
-        "unit_price": 116,
+        "unit_price": 145,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1160
+        "total": 1450
       },
       {
         "name": "Piedra macilladera amarilla impura",
@@ -1135,10 +1135,10 @@
       {
         "name": "Agua potable",
         "quantity": 10,
-        "unit_price": 116,
+        "unit_price": 145,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1160
+        "total": 1450
       }
     ],
     "unit_selling_price_x1": 0,
@@ -2403,10 +2403,10 @@
       {
         "name": "Pepita",
         "quantity": 10,
-        "unit_price": 800,
+        "unit_price": 1000,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 8000
+        "total": 10000
       }
     ],
     "unit_selling_price_x1": 0,
@@ -2485,10 +2485,10 @@
       {
         "name": "Silicato",
         "quantity": 40,
-        "unit_price": 154,
+        "unit_price": 193,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 6176
+        "total": 7720
       },
       {
         "name": "Estaño",
@@ -2501,18 +2501,18 @@
       {
         "name": "Carbón",
         "quantity": 20,
-        "unit_price": 560,
+        "unit_price": 700,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 11200
+        "total": 14000
       },
       {
         "name": "Pepita",
         "quantity": 200,
-        "unit_price": 432,
+        "unit_price": 540,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 86400
+        "total": 108000
       }
     ],
     "unit_selling_price_x1": 0,
@@ -2599,10 +2599,10 @@
       {
         "name": "Semillas de sésamo",
         "quantity": 10,
-        "unit_price": 359,
+        "unit_price": 449,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 3592
+        "total": 4490
       }
     ],
     "unit_selling_price_x1": 0,
@@ -2673,10 +2673,10 @@
       {
         "name": "Arroz",
         "quantity": 20,
-        "unit_price": 66,
+        "unit_price": 82,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1312
+        "total": 1640
       },
       {
         "name": "Semilla de pandoja",
@@ -2697,10 +2697,10 @@
       {
         "name": "Madera de bambú oscuro",
         "quantity": 20,
-        "unit_price": 150,
+        "unit_price": 187,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2992
+        "total": 3740
       }
     ],
     "unit_selling_price_x1": 0,
@@ -2779,10 +2779,10 @@
       {
         "name": "Chwile",
         "quantity": 10,
-        "unit_price": 2080,
+        "unit_price": 2600,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 20800
+        "total": 26000
       },
       {
         "name": "Arroz",
@@ -2795,10 +2795,10 @@
       {
         "name": "Especias",
         "quantity": 10,
-        "unit_price": 155,
+        "unit_price": 194,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1552
+        "total": 1940
       }
     ],
     "unit_selling_price_x1": 0,
@@ -2856,10 +2856,10 @@
       {
         "name": "Pepita",
         "quantity": 200,
-        "unit_price": 432,
+        "unit_price": 540,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 86400
+        "total": 108000
       },
       {
         "name": "Runa astral mayor",
@@ -7797,10 +7797,10 @@
       {
         "name": "Medida de sal",
         "quantity": 10,
-        "unit_price": 14,
+        "unit_price": 18,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 144
+        "total": 180
       }
     ],
     "unit_selling_price_x1": 0,
@@ -7866,10 +7866,10 @@
       {
         "name": "Especias",
         "quantity": 10,
-        "unit_price": 155,
+        "unit_price": 194,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1552
+        "total": 1940
       }
     ],
     "unit_selling_price_x1": 0,
@@ -7935,10 +7935,10 @@
       {
         "name": "Hoja de enchalada",
         "quantity": 10,
-        "unit_price": 63,
+        "unit_price": 79,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 632
+        "total": 790
       }
     ],
     "unit_selling_price_x1": 0,
@@ -10664,18 +10664,18 @@
       {
         "name": "Aguas tranquilas",
         "quantity": 10,
-        "unit_price": 78,
+        "unit_price": 98,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 784
+        "total": 980
       },
       {
         "name": "Medida de sal",
         "quantity": 10,
-        "unit_price": 14,
+        "unit_price": 18,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 144
+        "total": 180
       },
       {
         "name": "Oro",
@@ -13924,10 +13924,10 @@
       {
         "name": "Canino de abuelubo",
         "quantity": 10,
-        "unit_price": 583,
+        "unit_price": 729,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 5832
+        "total": 7290
       },
       {
         "name": "Kuarzo",
@@ -14123,10 +14123,10 @@
       {
         "name": "Pluma de gobvio",
         "quantity": 10,
-        "unit_price": 1680,
+        "unit_price": 2100,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 16800
+        "total": 21000
       },
       {
         "name": "Calcetín agujereado de Dramak",
@@ -14139,10 +14139,10 @@
       {
         "name": "Cuerno de berserkofre",
         "quantity": 10,
-        "unit_price": 231,
+        "unit_price": 289,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2312
+        "total": 2890
       }
     ],
     "unit_selling_price_x1": 0,
@@ -14176,10 +14176,10 @@
       {
         "name": "Ala de dragopavo",
         "quantity": 10,
-        "unit_price": 232,
+        "unit_price": 290,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2320
+        "total": 2900
       },
       {
         "name": "Pelo de rata de alcantarilla",
@@ -14253,10 +14253,10 @@
       {
         "name": "Pepita",
         "quantity": 200,
-        "unit_price": 432,
+        "unit_price": 540,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 86400
+        "total": 108000
       },
       {
         "name": "Hoja de Blop Multicolor Real",
@@ -15084,10 +15084,10 @@
       {
         "name": "Piel de mandrina",
         "quantity": 10,
-        "unit_price": 157,
+        "unit_price": 196,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1568
+        "total": 1960
       },
       {
         "name": "Coco de tufo de las llanuras",
@@ -15198,18 +15198,18 @@
       {
         "name": "Menta salvaje",
         "quantity": 20,
-        "unit_price": 20,
+        "unit_price": 25,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 400
+        "total": 500
       },
       {
         "name": "Cereza",
         "quantity": 10,
-        "unit_price": 30,
+        "unit_price": 38,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 304
+        "total": 380
       }
     ],
     "unit_selling_price_x1": 0,
@@ -15235,10 +15235,10 @@
       {
         "name": "Artefacto pandawushu de fuego",
         "quantity": 50,
-        "unit_price": 456,
+        "unit_price": 570,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 22800
+        "total": 28500
       },
       {
         "name": "Hoja de katana",
@@ -15280,10 +15280,10 @@
       {
         "name": "Artefacto pandawushu de viento",
         "quantity": 50,
-        "unit_price": 1559,
+        "unit_price": 1949,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 77960
+        "total": 97450
       },
       {
         "name": "Hoja de katana",
@@ -15325,10 +15325,10 @@
       {
         "name": "Artefacto pandawushu de agua",
         "quantity": 50,
-        "unit_price": 1592,
+        "unit_price": 1990,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 79600
+        "total": 99500
       },
       {
         "name": "Hoja de katana",
@@ -15370,10 +15370,10 @@
       {
         "name": "Artefacto pandawushu de roca",
         "quantity": 50,
-        "unit_price": 1736,
+        "unit_price": 2170,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 86800
+        "total": 108500
       },
       {
         "name": "Hoja de katana",
@@ -15415,10 +15415,10 @@
       {
         "name": "Artefacto pandawushu de madera",
         "quantity": 50,
-        "unit_price": 504,
+        "unit_price": 630,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 25200
+        "total": 31500
       },
       {
         "name": "Hoja de katana",
@@ -17906,18 +17906,18 @@
       {
         "name": "Dolomita",
         "quantity": 30,
-        "unit_price": 780,
+        "unit_price": 975,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 23400
+        "total": 29250
       },
       {
         "name": "Artefacto pandawushu",
         "quantity": 10,
-        "unit_price": 5515,
+        "unit_price": 6894,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 55152
+        "total": 68940
       }
     ],
     "unit_selling_price_x1": 0,
@@ -18562,10 +18562,10 @@
       {
         "name": "Pepita",
         "quantity": 200,
-        "unit_price": 432,
+        "unit_price": 540,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 86400
+        "total": 108000
       },
       {
         "name": "Lana de Jalamut Real",
@@ -18623,10 +18623,10 @@
       {
         "name": "Pepita",
         "quantity": 200,
-        "unit_price": 432,
+        "unit_price": 540,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 86400
+        "total": 108000
       },
       {
         "name": "Ladilla de pestruzatón",
@@ -18909,18 +18909,18 @@
       {
         "name": "Polvos mágicos",
         "quantity": 10,
-        "unit_price": 72,
+        "unit_price": 90,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 720
+        "total": 900
       },
       {
         "name": "Polvo temporal",
         "quantity": 10,
-        "unit_price": 46,
+        "unit_price": 57,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 456
+        "total": 570
       },
       {
         "name": "Belladona",
@@ -21888,10 +21888,10 @@
       {
         "name": "Pepita",
         "quantity": 1000,
-        "unit_price": 314,
+        "unit_price": 393,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 314400
+        "total": 393000
       },
       {
         "name": "Turmalina",
@@ -21949,10 +21949,10 @@
       {
         "name": "Pepita",
         "quantity": 1000,
-        "unit_price": 314,
+        "unit_price": 393,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 314400
+        "total": 393000
       },
       {
         "name": "Turmalina",
@@ -22233,10 +22233,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Bota agujereada de megabwork",
@@ -22318,10 +22318,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Zanahowia",
@@ -22403,10 +22403,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Dientes de milubo",
@@ -22488,18 +22488,18 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Piel de minoskito",
         "quantity": 20,
-        "unit_price": 536,
+        "unit_price": 670,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 10720
+        "total": 13400
       },
       {
         "name": "Reflejo onírico",
@@ -22573,10 +22573,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Gatrool",
@@ -22658,10 +22658,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Oreja de kanublú",
@@ -22743,10 +22743,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Sangre de jalató",
@@ -22828,10 +22828,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Flor de bloponcio",
@@ -22913,10 +22913,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Garras de kwak",
@@ -22998,10 +22998,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Columna vertebral",
@@ -23083,10 +23083,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Piel de dragohuevo alabastrado",
@@ -23168,10 +23168,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Piedra de crujidor",
@@ -23253,10 +23253,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Brote de abráknido oscuro irascible",
@@ -23338,10 +23338,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Pluma de dodoncella",
@@ -23423,18 +23423,18 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Semillas de sésamo",
         "quantity": 20,
-        "unit_price": 359,
+        "unit_price": 449,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 7184
+        "total": 8980
       },
       {
         "name": "Reflejo onírico",
@@ -23508,10 +23508,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Plumón de pestruzillo",
@@ -23593,10 +23593,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Pata de arakna mayor",
@@ -23678,10 +23678,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Flor de kalipto",
@@ -23763,10 +23763,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Pelos mágicos de tanuki",
@@ -23848,10 +23848,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Pelaje aerodinámico",
@@ -23933,18 +23933,18 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Semilla de scorbuto",
         "quantity": 20,
-        "unit_price": 240,
+        "unit_price": 300,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 4800
+        "total": 6000
       },
       {
         "name": "Reflejo onírico",
@@ -24018,10 +24018,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Pandoja cantora",
@@ -24103,10 +24103,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Nujo muerto",
@@ -24188,18 +24188,18 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Champiñón Luidchi",
         "quantity": 10,
-        "unit_price": 399,
+        "unit_price": 499,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 3992
+        "total": 4990
       },
       {
         "name": "Reflejo onírico",
@@ -24273,18 +24273,18 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Cuerda de sacurador",
         "quantity": 20,
-        "unit_price": 199,
+        "unit_price": 249,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 3984
+        "total": 4980
       },
       {
         "name": "Reflejo onírico",
@@ -24358,10 +24358,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Huevo de tofu",
@@ -24443,10 +24443,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Colmillo de dragohuevo protector",
@@ -24496,10 +24496,10 @@
       {
         "name": "Piel de rojiva",
         "quantity": 10,
-        "unit_price": 312,
+        "unit_price": 390,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 3120
+        "total": 3900
       },
       {
         "name": "Corteza de esquejika",
@@ -24520,10 +24520,10 @@
       {
         "name": "Pepita",
         "quantity": 200,
-        "unit_price": 432,
+        "unit_price": 540,
         "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 86400
+        "total": 108000
       },
       {
         "name": "Colmillo de Perfósil",
@@ -24597,18 +24597,18 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Vísceras de escarahoja",
         "quantity": 10,
-        "unit_price": 158,
+        "unit_price": 198,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1584
+        "total": 1980
       },
       {
         "name": "Reflejo onírico",
@@ -24682,10 +24682,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Pluma de thorondeoro",
@@ -24767,10 +24767,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Ojo de yenaparda",
@@ -24852,10 +24852,10 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Tallo de bambuto",
@@ -24937,18 +24937,18 @@
       {
         "name": "Esquíritu supremo",
         "quantity": 100,
-        "unit_price": 672,
+        "unit_price": 840,
         "buy_lot": "x10",
         "buy_or_craft": "Buy",
-        "total": 67200
+        "total": 84000
       },
       {
         "name": "Pluma de pekegüino",
         "quantity": 20,
-        "unit_price": 38,
+        "unit_price": 48,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 768
+        "total": 960
       },
       {
         "name": "Reflejo onírico",

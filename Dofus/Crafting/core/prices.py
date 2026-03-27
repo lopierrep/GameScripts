@@ -285,30 +285,20 @@ def cheapest_lot(prices: dict, qty: int) -> str | None:
 
 def cheapest_unit_price(prices: dict, qty: int) -> float:
     """
-    Precio unitario efectivo más barato para adquirir `qty` unidades.
+    Precio unitario efectivo real del lote óptimo para adquirir `qty` unidades.
 
-    Considera todos los tamaños de lote disponibles y elige el que minimiza
-    el costo total real (incluyendo unidades sobrantes del último pack).
-    Por ejemplo: necesitar 200u con x100 a 45u → compras 2 packs = 9000u → 45u/u.
-                 necesitar 150u con x100 a 45u → compras 2 packs = 9000u → 60u/u efectivo.
-
-    Aplica LOT_STABILITY_MARGIN igual que cheapest_lot para consistencia.
+    Delega la selección del lote a cheapest_lot (que aplica LOT_STABILITY_MARGIN
+    para comparar), pero devuelve el costo real sin el margen de estabilidad.
     """
-    if qty <= 0:
+    best_size = cheapest_lot(prices, qty)
+    if best_size is None:
         return 0.0
-    best_eff = 0.0
-    for size, lot_num in _LOT_NUMS.items():
-        p = prices.get(size, 0)
-        if not p or p <= 0:
-            continue
-        packs      = math.ceil(qty / lot_num)
-        total_cost = packs * lot_num * p
-        eff_unit   = total_cost / qty
-        if lot_num > 1 and qty >= lot_num and (qty % lot_num == 0):
-            eff_unit /= (1 + LOT_STABILITY_MARGIN)
-        if best_eff == 0.0 or eff_unit < best_eff:
-            best_eff = eff_unit
-    return best_eff
+    lot_num = _LOT_NUMS[best_size]
+    p = prices.get(best_size, 0)
+    if not p:
+        return 0.0
+    packs = math.ceil(qty / lot_num)
+    return packs * lot_num * p / qty
 
 
 def calculate_crafting_costs(recipes: list, pack_prices: dict) -> tuple[list, set]:

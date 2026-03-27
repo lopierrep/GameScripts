@@ -257,6 +257,14 @@ class CraftingUI:
         ff = tk.Frame(self.root, bg=C["bg"])
         ff.pack(fill="x", padx=12, pady=(0, 6))
 
+        tk.Label(ff, text="Buscar:", bg=C["bg"], fg=C["dim"],
+                 font=("Segoe UI", 8)).pack(side="left")
+        self._filter_name = tk.StringVar()
+        self._filter_name.trace_add("write", lambda *_: self._apply_filter())
+        tk.Entry(ff, textvariable=self._filter_name, width=20,
+                 bg=C["surface"], fg=C["text"], insertbackground=C["text"],
+                 relief="flat", font=("Segoe UI", 9)).pack(side="left", padx=(4, 14))
+
         tk.Label(ff, text="Ganancia mín:", bg=C["bg"], fg=C["dim"],
                  font=("Segoe UI", 8)).pack(side="left")
         self._filter_profit = tk.StringVar()
@@ -317,11 +325,11 @@ class CraftingUI:
         vsb.pack(side="right", fill="y")
         self._tree.pack(side="left", fill="both", expand=True)
 
-        self._tree.tag_configure("top",       foreground=C["orange"])
+        self._tree.tag_configure("top",       foreground=C["mauve"])
         self._tree.tag_configure("profit",    foreground=C["green"])
         self._tree.tag_configure("loss",      foreground=C["red"])
         self._tree.tag_configure("neutral",   foreground=C["dim"])
-        self._tree.tag_configure("missing",   foreground=C["yellow"])
+        self._tree.tag_configure("missing",   foreground=C["dim"])
         self._tree.tag_configure("ing",             foreground=C["dim"])
         self._tree.tag_configure("ing_buy",         foreground=C["dim"])
         self._tree.tag_configure("ing_craft",       foreground=C["accent"])
@@ -365,7 +373,7 @@ class CraftingUI:
         self._sum_avg        = tk.Label(self._summary_bar, text="", bg=C["surface"],
                                          fg=C["dim"],    font=("Segoe UI", 8), padx=10)
         self._sum_top        = tk.Label(self._summary_bar, text="", bg=C["surface"],
-                                         fg=C["orange"], font=("Segoe UI", 8))
+                                         fg=C["mauve"], font=("Segoe UI", 8))
 
         for w in (self._sum_total, self._sum_profitable, self._sum_avg, self._sum_top):
             w.pack(side="left")
@@ -549,12 +557,14 @@ class CraftingUI:
     # ── Filters ───────────────────────────────────────────────────────────────
 
     def _apply_filter(self, profitable: list = None):
+        name = self._filter_name.get().strip()
         pv   = self._filter_profit.get().strip().replace(".", "").replace(",", "")
         lmin = self._filter_lvl_min.get().strip()
         lmax = self._filter_lvl_max.get().strip()
 
         rows = filter_rows(
             self._all_rows,
+            name       = name or None,
             min_profit = int(pv)   if pv.lstrip("-").isdigit() else None,
             lvl_min    = int(lmin) if lmin.isdigit()           else None,
             lvl_max    = int(lmax) if lmax.isdigit()           else None,
@@ -562,6 +572,7 @@ class CraftingUI:
         self._populate_tree(rows, profitable=profitable)
 
     def _clear_filter(self):
+        self._filter_name.set("")
         self._filter_profit.set("")
         self._filter_lvl_min.set("")
         self._filter_lvl_max.set("")
@@ -626,7 +637,7 @@ class CraftingUI:
         sell_size    = ing.get("sell_size")
         buy_lot      = ing.get("buy_lot") or "—"
         price        = ing.get("unit_price")
-        total        = ing.get("total")
+        total_lote   = ing.get("total")
         ing_updated  = ing.get("last_updated", "")
         buy_or_craft = ing.get("buy_or_craft")
 
@@ -638,12 +649,7 @@ class CraftingUI:
         else:
             ing_tag = "ing_buy"
 
-        if price and total is not None:
-            total_lote = total
-        elif price:
-            total_lote = price * qty
-        else:
-            total_lote = None
+        total_lote = ing.get("total")
 
         if buy_or_craft == "Craft":
             if price:
@@ -754,7 +760,7 @@ class CraftingUI:
             text=f"  Media: +{_fmt(summary['avg_profit'])}" if summary["avg_profit"] else "  Media: —"
         )
         self._sum_top.config(
-            text=f"  ★ {top['result']}  (+{_fmt(top['profit'])})" if top else ""
+            text=f"  ★ {top['result']}  (+{_fmt(top['profit_total'])})" if top else ""
         )
 
     def show_confirm(self, text: str, on_confirm):
