@@ -14,10 +14,13 @@ pyautogui.FAILSAFE = True
 
 
 
-def run_race_loop(calibration, is_running, on_status, on_race_count):
+def run_race_loop(calibration, is_running, on_status, on_race_count, on_consume_ticket=None):
     race_count = 0
 
     while is_running():
+        if on_consume_ticket and not on_consume_ticket():
+            on_status("Sin tickets.")
+            break
         delay = random.uniform(0.5, 1)
         on_status(f"Iniciando en {delay:.1f}s...")
         time.sleep(delay)
