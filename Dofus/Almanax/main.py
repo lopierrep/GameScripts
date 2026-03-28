@@ -21,6 +21,7 @@ sys.path.insert(0, str(ROOT_DIR.parent))
 from config.config import C, LOTS, SETTINGS_FILE, CATEGORIES_FILE, MISSING_FILE
 from core.prices import load_prices, save_prices, optimal_cost, get_lot_plan, best_guijarro, find_item_prices, add_item_prices, remove_item_prices
 from core.api    import fetch_almanax, parse_entry, save_almanax, load_almanax, resolve_subtype
+from core.table  import today_fr
 from shared.market.common import fetch_category, get_market_for_category, load_categories
 from calibration.calibration_config import load_calibration as _load_almanax_cal
 from ui.ui import AlmanaxUI
@@ -105,7 +106,7 @@ class AlmanaxApp:
         root.protocol("WM_DELETE_WINDOW", self._on_close)
 
         cached  = load_almanax()
-        today   = date.today()
+        today   = today_fr()
         year_end = date(today.year, 12, 31)
         if cached and date.fromisoformat(cached[0]["date"]).year == today.year:
             self.data = cached
@@ -135,7 +136,7 @@ class AlmanaxApp:
 
     def _fetch_thread(self):
         try:
-            today      = date.today()
+            today      = today_fr()
             year_end   = date(today.year, 12, 31)
             if self.data:
                 from datetime import timedelta
@@ -255,7 +256,7 @@ class AlmanaxApp:
     def _refresh_table(self):
         self._recompute()
         rows      = self._filtered_rows()
-        today_str = date.today().isoformat()
+        today_str = today_fr().isoformat()
         pjs       = self.ui.pjs()
         self.ui.refresh_table(rows, today_str, pjs)
         self._update_totals(rows)

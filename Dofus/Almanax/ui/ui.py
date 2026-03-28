@@ -10,7 +10,7 @@ from tkinter import ttk
 from datetime import date, timedelta
 
 from config.config import C, LOTS
-from core.table import day_label, profit_tag
+from core.table import day_label, profit_tag, today_fr
 
 
 class AlmanaxUI:
@@ -73,7 +73,7 @@ class AlmanaxUI:
         self.status_lbl.pack(side="left", padx=8)
 
     def _build_date_range(self, bar: tk.Frame):
-        today = date.today()
+        today = today_fr()
         for label, attr, default in [
             ("  Desde:", "from_var", today.isoformat()),
             ("  Hasta:", "to_var",   (today + timedelta(days=29)).isoformat()),
