@@ -10,6 +10,7 @@ from tkinter import ttk
 from datetime import datetime, timezone, timedelta
 
 from core.table_filter import compute_summary, filter_rows, profitable_rows
+from shared.toast import show_copy_toast
 
 _BOGOTA = timezone(timedelta(hours=-5))
 
@@ -578,14 +579,7 @@ class CraftingUI:
     # ── Row selection ────────────────────────────────────────────────────────
 
     def _show_copy_toast(self, name: str):
-        C = self.C
-        toast = tk.Label(
-            self.root, text=f"Copiado: {name}",
-            bg=C["accent"], fg=C["bg"],
-            font=(self.F, self.FS, "bold"), padx=12, pady=6, relief="flat",
-        )
-        toast.place(relx=1.0, rely=1.0, anchor="se", x=-16, y=-16)
-        self.root.after(1800, toast.destroy)
+        show_copy_toast(self.root, name, bg=self.C["accent"], fg=self.C["bg"])
 
     def _on_tree_press(self, event):
         iid = self._tree.identify_row(event.y)

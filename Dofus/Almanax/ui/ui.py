@@ -11,6 +11,7 @@ from datetime import date, timedelta
 
 from config.config import C, LOTS
 from core.table import day_label, profit_tag, today_fr
+from shared.toast import show_copy_toast
 
 
 class AlmanaxUI:
@@ -294,14 +295,7 @@ class AlmanaxUI:
         self._cb["select"](item_name)
 
     def _show_copy_toast(self, name: str):
-        toast = tk.Label(
-            self.root, text=f"✓ Copiado: {name}",
-            bg=C["accent"], fg=C["bg"],
-            font=("Segoe UI", 9, "bold"), padx=12, pady=6,
-            relief="flat",
-        )
-        toast.place(relx=1.0, rely=1.0, anchor="se", x=-16, y=-16)
-        self.root.after(1800, toast.destroy)
+        show_copy_toast(self.root, name, bg=C["accent"], fg=C["bg"])
 
     def _on_row_click(self, _event):
         """Copia el nombre del ítem al portapapeles y muestra notificación."""

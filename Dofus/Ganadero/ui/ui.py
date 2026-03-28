@@ -9,6 +9,7 @@ import tkinter as tk
 from tkinter import ttk
 
 from shared.colors import C
+from shared.toast import show_copy_toast
 
 TOPES = [40000, 70000, 90000, 100000]
 INDICADORES = ["aporreadora", "acariciador", "dragonalgas", "fulminadora", "abrevadero", "pesebre"]
@@ -54,6 +55,7 @@ class GanaderoUI:
         self.root = root
         self._cb = callbacks
         self.umbral_var = tk.IntVar(value=settings.get("umbral", 10000))
+        self.horas_juego_var = tk.IntVar(value=settings.get("horas_juego", 16))
         self._trees: dict[str, ttk.Treeview] = {}
         self._monturas = settings.get("monturas", 10)
 
@@ -114,6 +116,16 @@ class GanaderoUI:
         tk.Label(bar, text="k (costo total)", bg=C["bg"], fg=C["dim"],
                  font=("Consolas", 10)).pack(side="left", padx=(4, 0))
 
+        tk.Label(bar, text="   Horas de juego:", bg=C["bg"], fg=C["dim"],
+                 font=("Consolas", 10)).pack(side="left", padx=(20, 4))
+        e2 = tk.Entry(bar, textvariable=self.horas_juego_var, width=3,
+                      bg=C["surface"], fg=C["text"], font=("Consolas", 12),
+                      insertbackground=C["text"], relief="flat")
+        e2.pack(side="left")
+        e2.bind("<Return>", lambda _: self._cb["refresh"]())
+        tk.Label(bar, text="h/dia", bg=C["bg"], fg=C["dim"],
+                 font=("Consolas", 10)).pack(side="left", padx=(4, 0))
+
         tk.Button(bar, text="Recalcular", bg=C["orange"], fg=C["bg"],
                   font=("Consolas", 11, "bold"), relief="flat", padx=10, pady=3,
                   cursor="hand2", command=self._cb["refresh"]).pack(side="left", padx=(12, 0))
@@ -170,7 +182,26 @@ class GanaderoUI:
         tree.tag_configure("caro",  foreground=C["red"])
         tree.tag_configure("alt",   background="#252535")
 
+        tree.bind("<ButtonRelease-1>", self._on_row_click)
+
         return tree
+
+    # ── Copiar al portapapeles ───────────────────────────────────────────────
+
+    def _on_row_click(self, event):
+        tree = event.widget
+        sel = tree.selection()
+        if not sel:
+            return
+        nombre = tree.set(sel[0], "nombre")
+        if not nombre:
+            return
+        self.root.clipboard_clear()
+        self.root.clipboard_append(nombre)
+        self._show_copy_toast(nombre)
+
+    def _show_copy_toast(self, name: str):
+        show_copy_toast(self.root, name, bg=C["accent"], fg=C["bg"])
 
     @staticmethod
     def _fmt_tiempo(segundos: float) -> str:
@@ -192,9 +223,10 @@ class GanaderoUI:
                  bg=C["bg"], fg=C["accent"], font=("Consolas", 11, "bold"),
                  anchor="w").pack(fill="x", padx=20, pady=(10, 4))
 
-        cols_t = [("stat", "Estadistica", 130)]
-        for r in RANGOS_CONSUMO:
-            cols_t.append((r["label"], f'{r["label"]} ({r["rate"]}/s)', 110))
+        cols_t = [("tramo", "Tramo", 120)]
+        for nombre, _ in STATS_TIEMPO:
+            col_id = nombre.lower().replace(" ", "_").replace("(", "").replace(")", "")
+            cols_t.append((col_id, nombre, 110))
 
         frame = tk.Frame(parent, bg=C["bg"])
         frame.pack(fill="x", padx=20, pady=(0, 8))
@@ -203,12 +235,13 @@ class GanaderoUI:
                             show="headings", selectmode="browse", height=4)
         for col_id, col_text, col_w in cols_t:
             tree.heading(col_id, text=col_text)
-            tree.column(col_id, width=col_w, minwidth=60,
-                        anchor="w" if col_id == "stat" else "center")
+            tree.column(col_id, width=col_w, minwidth=60, anchor="center")
         tree.tag_configure("alt", background="#252535")
 
-        for i, (nombre, total) in enumerate(STATS_TIEMPO):
-            vals = [nombre] + [self._fmt_tiempo(total / r["rate"]) for r in RANGOS_CONSUMO]
+        for i, r in enumerate(RANGOS_CONSUMO):
+            vals = [f'{r["label"]} ({r["rate"]}/s)']
+            for _, total in STATS_TIEMPO:
+                vals.append(self._fmt_tiempo(total / r["rate"]))
             tree.insert("", "end", values=vals, tags=(("alt",) if i % 2 == 1 else ()))
         tree.pack(fill="x")
 
@@ -246,23 +279,64 @@ class GanaderoUI:
                  bg=C["bg"], fg=C["accent"], font=("Consolas", 11, "bold"),
                  anchor="w").pack(fill="x", padx=20, pady=(10, 4))
 
-        cols_c = [("stat", "Estadistica", 110)]
-        for t in TOPES:
-            cols_c.append((f"t{t}", f"Tope {t:,}", 110))
+        cols_c = [("tope", "Tope", 80),
+                  ("resist", "Resistencia", 90), ("madur", "Madurez", 90),
+                  ("amor", "Amor", 90), ("sub", "Subtotal stats", 100),
+                  ("xp", "XP (nv 200)", 90), ("total", "TOTAL", 100)]
 
         frame2 = tk.Frame(parent, bg=C["bg"])
         frame2.pack(fill="x", padx=20)
 
         self._tree_costos = ttk.Treeview(frame2, columns=[c[0] for c in cols_c],
-                                          show="headings", selectmode="browse", height=7)
+                                          show="headings", selectmode="browse", height=4)
         for col_id, col_text, col_w in cols_c:
             self._tree_costos.heading(col_id, text=col_text)
-            self._tree_costos.column(col_id, width=col_w, minwidth=70,
-                                      anchor="w" if col_id == "stat" else "center")
-        self._tree_costos.tag_configure("alt",      background="#252535")
-        self._tree_costos.tag_configure("subtotal", foreground=C["yellow"], font=("Consolas", 11, "bold"))
-        self._tree_costos.tag_configure("total",    foreground=C["accent"], font=("Consolas", 11, "bold"))
+            self._tree_costos.column(col_id, width=col_w, minwidth=60, anchor="center")
+        self._tree_costos.tag_configure("alt", background="#252535")
         self._tree_costos.pack(fill="x")
+
+        # ── Produccion diaria por tope ───────────────────────────────────
+        tk.Label(parent, text="Produccion diaria por tope",
+                 bg=C["bg"], fg=C["accent"], font=("Consolas", 11, "bold"),
+                 anchor="w").pack(fill="x", padx=20, pady=(10, 4))
+
+        cols_cd = [("tope", "Tope", 70), ("tasa", "Consumo/s", 80),
+                   ("activo", "Activo", 80), ("offline", "Offline", 80),
+                   ("total", "Total/dia", 85),
+                   ("xp", "Dias XP", 65), ("amor", "Horas Amor", 80),
+                   ("resist", "Horas Resist.", 85), ("madur", "Horas Madur.", 85),
+                   ("costo_xp", "Costo total XP", 100)]
+        frame_cd = tk.Frame(parent, bg=C["bg"])
+        frame_cd.pack(fill="x", padx=20, pady=(0, 8))
+
+        self._tree_ciclo = ttk.Treeview(frame_cd, columns=[c[0] for c in cols_cd],
+                                         show="headings", selectmode="browse", height=4)
+        for col_id, col_text, col_w in cols_cd:
+            self._tree_ciclo.heading(col_id, text=col_text)
+            self._tree_ciclo.column(col_id, width=col_w, minwidth=50, anchor="center")
+        self._tree_ciclo.tag_configure("alt",    background="#252535")
+        self._tree_ciclo.tag_configure("optimo", foreground=C["green"])
+        self._tree_ciclo.pack(fill="x")
+
+        # ── Estrategia nocturna optima ───────────────────────────────────
+        tk.Label(parent, text="Estrategia nocturna optima",
+                 bg=C["bg"], fg=C["accent"], font=("Consolas", 11, "bold"),
+                 anchor="w").pack(fill="x", padx=20, pady=(10, 4))
+
+        cols_en = [("tope", "Tope", 80), ("pts", "Pts generados", 110),
+                   ("autonomia", "Autonomia", 100),
+                   ("costo", "Costo llenar", 100), ("efic", "Eficiencia", 90)]
+        frame_en = tk.Frame(parent, bg=C["bg"])
+        frame_en.pack(fill="x", padx=20, pady=(0, 8))
+
+        self._tree_nocturna = ttk.Treeview(frame_en, columns=[c[0] for c in cols_en],
+                                            show="headings", selectmode="browse", height=4)
+        for col_id, col_text, col_w in cols_en:
+            self._tree_nocturna.heading(col_id, text=col_text)
+            self._tree_nocturna.column(col_id, width=col_w, minwidth=50, anchor="center")
+        self._tree_nocturna.tag_configure("alt",    background="#252535")
+        self._tree_nocturna.tag_configure("optimo", foreground=C["green"])
+        self._tree_nocturna.pack(fill="x")
 
     def _build_statusbar(self):
         self.status_lbl = tk.Label(self.root, text="", bg=C["bg"], fg=C["dim"],
@@ -293,41 +367,73 @@ class GanaderoUI:
                     f"{m['precio_unitario']:,}", m["uds"], f"{costo_total:,}",
                 ))
 
-    def update_costos(self, datos: dict, monturas: int):
+    def update_costos(self, datos_ciclo: dict):
         tree = self._tree_costos
         tree.delete(*tree.get_children())
 
-        labels = {
-            "fulminadora": "Resistencia",
-            "abrevadero":  "Madurez",
-            "dragonalgas": "Amor",
-            "pesebre":     "XP (nv 200)",
-        }
-        stats_keys = ["fulminadora", "abrevadero", "dragonalgas"]
-
-        for i, key in enumerate(stats_keys):
+        for i, tope in enumerate(TOPES):
+            d = datos_ciclo[str(tope)]
+            c = d["costos"]
             tag = ("alt",) if i % 2 == 1 else ()
-            vals = [labels[key]]
-            for tope in TOPES:
-                m = datos[str(tope)]["detalle"].get(key)
-                vals.append(f"{m['costo_total'] // monturas:,}" if m else "N/A")
-            tree.insert("", "end", tags=tag, values=vals)
 
-        vals_sub = ["Subtotal stats"]
-        for tope in TOPES:
-            vals_sub.append(f"{datos[str(tope)]['costo_stats']:,}")
-        tree.insert("", "end", tags=("subtotal",), values=vals_sub)
+            tree.insert("", "end", tags=tag, values=(
+                f"{tope:,}",
+                f"{c['fulminadora']['costo_total']:,}",
+                f"{c['abrevadero']['costo_total']:,}",
+                f"{c['dragonalgas']['costo_total']:,}",
+                f"{d['costo_stats']:,}",
+                f"{c['pesebre']['costo_total']:,}",
+                f"{d['costo_total']:,}",
+            ))
 
-        vals_xp = [labels["pesebre"]]
-        for tope in TOPES:
-            m = datos[str(tope)]["detalle"].get("pesebre")
-            vals_xp.append(f"{m['costo_total'] // monturas:,}" if m else "N/A")
-        tree.insert("", "end", values=vals_xp)
+    def update_ciclo_diario(self, datos: dict):
+        tree = self._tree_ciclo
+        tree.delete(*tree.get_children())
 
-        vals_tot = ["TOTAL"]
-        for tope in TOPES:
-            vals_tot.append(f"{datos[str(tope)]['costo_total']:,}")
-        tree.insert("", "end", tags=("total",), values=vals_tot)
+        # Encontrar tope con menor costo total para maxear XP
+        mejor_tope = min(TOPES, key=lambda t: datos[str(t)]["costo_xp"])
+
+        for i, tope in enumerate(TOPES):
+            d = datos[str(tope)]
+            s = d["stats"]
+            tags = []
+            if tope == mejor_tope:
+                tags.append("optimo")
+            if i % 2 == 1:
+                tags.append("alt")
+
+            tree.insert("", "end", tags=tuple(tags), values=(
+                f"{tope:,}",
+                f"{d['tasa_activa']}/s",
+                f"{d['consumo_activo']:,}",
+                f"{d['consumo_offline']:,}",
+                f"{d['consumo_diario']:,}",
+                f"{s['XP (nivel 200)']['dias']}d",
+                self._fmt_tiempo(s["Amor"]["segundos"]),
+                self._fmt_tiempo(s["Resistencia"]["segundos"]),
+                self._fmt_tiempo(s["Madurez"]["segundos"]),
+                f"{d['costo_xp']:,}",
+            ))
+
+    def update_nocturna(self, datos: dict):
+        tree = self._tree_nocturna
+        tree.delete(*tree.get_children())
+
+        for i, tope in enumerate(TOPES):
+            n = datos[str(tope)]
+            tags = []
+            if n["optimo"]:
+                tags.append("optimo")
+            if i % 2 == 1:
+                tags.append("alt")
+
+            tree.insert("", "end", tags=tuple(tags), values=(
+                f"{tope:,}",
+                f"{n['puntos_noche']:,}",
+                self._fmt_tiempo(n["autonomia_s"]),
+                f"{n['costo_llenar']:,}",
+                f"{n['eficiencia']} pts/k",
+            ))
 
     def update_status(self, text: str):
         self.status_lbl.config(text=text)

@@ -14,7 +14,8 @@ ROOT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT_DIR))
 sys.path.insert(0, str(ROOT_DIR.parent))
 
-from core.carburante_efficiency import analizar, calcular_costo_dragopavo, MONTURAS_POR_CERCADO
+from core.carburante_efficiency import analizar
+from core.ciclo_diario import calcular_ciclo_diario, calcular_estrategia_nocturna
 from ui.ui import GanaderoUI
 
 # ── Settings ──────────────────────────────────────────────────────────────────
@@ -48,20 +49,25 @@ class GanaderoApp:
 
     def _refresh(self):
         umbral = self._ui.umbral_var.get()
+        horas_juego = max(1, min(23, self._ui.horas_juego_var.get()))
 
         # Guardar settings
         self._settings["umbral"] = umbral
+        self._settings["horas_juego"] = horas_juego
         _save_settings(self._settings)
 
         # Calcular
         resultado = analizar()
-        costos = calcular_costo_dragopavo()
+        ciclo = calcular_ciclo_diario(horas_juego)
+        nocturna = calcular_estrategia_nocturna(24 - horas_juego)
 
         # Actualizar UI
         self._ui.update_topes(resultado, umbral)
-        self._ui.update_costos(costos, MONTURAS_POR_CERCADO)
+        self._ui.update_costos(ciclo)
+        self._ui.update_ciclo_diario(ciclo)
+        self._ui.update_nocturna(nocturna)
         self._ui.update_status(
-            f"Umbral: {umbral:,} k (costo total)  |  "
+            f"Umbral: {umbral:,} k  |  Juego: {horas_juego}h/dia  |  "
             f"Verde = bajo umbral   Rojo = sobre umbral"
         )
 
