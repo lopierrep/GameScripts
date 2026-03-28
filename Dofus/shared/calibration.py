@@ -28,6 +28,7 @@ class CalibrationWindow:
         self.region_tl = None
 
         self.win = tk.Toplevel(parent)
+        self.win.withdraw()
         self.win.title("Calibración")
         self.win.attributes("-topmost", True)
         self.win.resizable(False, False)
@@ -47,6 +48,14 @@ class CalibrationWindow:
 
         keyboard.add_hotkey("c", self.capture)
         self.update_label()
+
+        self.win.update_idletasks()
+        w = self.win.winfo_reqwidth()
+        h = self.win.winfo_reqheight()
+        x = self.win.winfo_screenwidth() * 3 // 4 - w // 2
+        y = (self.win.winfo_screenheight() - h) // 2
+        self.win.geometry(f"+{x}+{y}")
+        self.win.deiconify()
 
     def _current_type(self):
         entry = self.points[self.current_index]
