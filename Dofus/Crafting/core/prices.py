@@ -9,8 +9,6 @@ import os
 import time
 from datetime import datetime, timezone
 
-import requests
-
 from config.config import (
     CACHE_SECONDS,
     CATEGORIES_FILE,
@@ -103,6 +101,7 @@ def _ingredient_is_fresh(name: str, markets: dict, item_lookup: dict) -> bool:
 
 def fetch_category(item_name: str) -> str:
     try:
+        import requests
         resp = requests.get(
             f"{DOFUSDB_URL}/items",
             params={"name.es": item_name, "$limit": 1},

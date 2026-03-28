@@ -14,7 +14,6 @@ from config.config import (
 )
 from utils.loaders import _load_omitted_categories, _load_omitted_recipes, find_recipe_file, get_recipe_files
 from utils.market import _is_selling_fresh, _now_iso, filter_lot_prices
-from shared.market.search_item_prices import search_item, read_prices
 from datetime import datetime, timezone
 
 
@@ -184,6 +183,7 @@ def search_and_save_selling(recipe_file: str, name: str, stop_flag: list = None)
             "unit_price_x1000": recipe.get("unit_selling_price_x1000", 0),
             "_skipped":         True,
         }
+    from shared.market.search_item_prices import search_item, read_prices
     search_item(name)
     prices = read_prices(name, stop_flag=stop_flag)
     save_selling_price(recipe_file, name, prices)

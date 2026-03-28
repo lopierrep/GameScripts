@@ -38,9 +38,6 @@ from core.recipes import (
     profession_from_file,
     sub_recipe_files,
 )
-from automation.scanner import search_market_batch
-from export.sheets import sync_data
-import shared.market.search_item_prices as _sip
 from ui.ui import CraftingUI
 
 
@@ -178,6 +175,7 @@ def update_profession(
     craftable       = load_all_craftable_recipes()
     all_ingredients = expand_sub_ingredients(all_ingredients, craftable)
 
+    import shared.market.search_item_prices as _sip
     _sip.load_calibration()
 
     markets     = load_markets()
@@ -193,6 +191,8 @@ def update_profession(
 
     result_file_map   = build_result_file_map()
     all_missing_results: list = []
+
+    from automation.scanner import search_market_batch
 
     if not market_groups:
         print("[INFO] No hay items para consultar en ningún mercadillo.")
@@ -354,6 +354,7 @@ class CraftingApp:
     def _run_sync(self):
         try:
             self.root.after(0, self.ui.set_status, "Sincronizando…", C["accent"])
+            from export.sheets import sync_data
             warnings = sync_data()
             for w in warnings:
                 self.root.after(0, self.ui.log, f"[AVISO] {w}", "warn")
