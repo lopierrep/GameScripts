@@ -27,7 +27,7 @@
     "profit_x100": 359,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "selling_last_updated": "2026-03-27T08:19:37.257218+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.281644+00:00"
   },
   {
     "id": 468,
@@ -57,7 +57,7 @@
     "profit_x100": -167,
     "profit_x1000": -167,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:37.257241+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.281672+00:00"
   },
   {
     "id": 2020,
@@ -193,7 +193,7 @@
     "profit_x100": -681,
     "profit_x1000": -656,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:37.257276+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.281707+00:00"
   },
   {
     "id": 16520,
@@ -337,7 +337,7 @@
     "profit_x100": 114,
     "profit_x1000": 114,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:37.257313+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.281744+00:00"
   },
   {
     "id": 521,
@@ -367,7 +367,7 @@
     "profit_x100": -198,
     "profit_x1000": -198,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:37.257325+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.281755+00:00"
   },
   {
     "id": 16927,
@@ -471,7 +471,7 @@
     "profit_x100": 1531,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "selling_last_updated": "2026-03-27T08:19:37.257359+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.281791+00:00"
   },
   {
     "id": 528,
@@ -509,7 +509,7 @@
     "profit_x100": -167,
     "profit_x1000": -177,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:37.257376+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.281809+00:00"
   },
   {
     "id": 2034,
@@ -743,7 +743,7 @@
     "profit_x100": -242,
     "profit_x1000": -242,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:37.257430+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.281865+00:00"
   },
   {
     "id": 2151,
@@ -839,10 +839,10 @@
       {
         "name": "Centeno",
         "quantity": 50,
-        "unit_price": 69,
-        "buy_lot": "x100",
+        "unit_price": 59,
+        "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 345000
+        "total": 295000
       },
       {
         "name": "Polvo temporal",
@@ -859,14 +859,14 @@
     "unit_selling_price_x1000": 0,
     "unit_crafting_cost_x1": 19895,
     "unit_crafting_cost_x10": 11435,
-    "unit_crafting_cost_x100": 10870,
+    "unit_crafting_cost_x100": 10370,
     "unit_crafting_cost_x1000": 0,
     "profit_x1": -5996,
     "profit_x10": 2464,
-    "profit_x100": 3029,
+    "profit_x100": 3529,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:37.257468+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.281904+00:00"
   },
   {
     "id": 390,
@@ -904,7 +904,7 @@
     "profit_x100": 1750,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:37.257486+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.281922+00:00"
   },
   {
     "id": 396,
@@ -934,7 +934,7 @@
     "profit_x100": -139,
     "profit_x1000": -139,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:37.257497+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.281932+00:00"
   },
   {
     "id": 397,
@@ -1017,7 +1017,7 @@
     "profit_x100": -543,
     "profit_x1000": -473,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:37.257578+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.281972+00:00"
   },
   {
     "id": 2038,
@@ -1153,7 +1153,7 @@
     "profit_x100": -345,
     "profit_x1000": -274,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:37.257613+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.281994+00:00"
   },
   {
     "id": 995,
@@ -1183,7 +1183,7 @@
     "profit_x100": 1531,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "selling_last_updated": "2026-03-27T08:19:37.257626+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282005+00:00"
   },
   {
     "id": 993,
@@ -1213,7 +1213,7 @@
     "profit_x100": -189,
     "profit_x1000": -189,
     "best_lot": "x1",
-    "selling_last_updated": "2026-03-27T08:19:37.257638+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282016+00:00"
   },
   {
     "id": 994,
@@ -1243,7 +1243,7 @@
     "profit_x100": -1378,
     "profit_x1000": -1378,
     "best_lot": "x1",
-    "selling_last_updated": "2026-03-27T08:19:37.257648+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282026+00:00"
   },
   {
     "id": 996,
@@ -1289,7 +1289,7 @@
     "profit_x100": 4089,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "selling_last_updated": "2026-03-27T08:19:37.257671+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282048+00:00"
   },
   {
     "id": 2024,
@@ -1335,7 +1335,7 @@
     "profit_x100": -357,
     "profit_x1000": -349,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:37.257694+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282069+00:00"
   },
   {
     "id": 2025,
@@ -1471,7 +1471,7 @@
     "profit_x100": -333,
     "profit_x1000": -308,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:37.257716+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282090+00:00"
   },
   {
     "id": 16931,
@@ -1562,7 +1562,7 @@
     "profit_x100": -195,
     "profit_x1000": -212,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:37.257737+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282111+00:00"
   },
   {
     "id": 2028,
@@ -1698,7 +1698,7 @@
     "profit_x100": -393,
     "profit_x1000": -396,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:37.257758+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282132+00:00"
   },
   {
     "id": 16933,
@@ -1754,10 +1754,10 @@
       {
         "name": "Centeno",
         "quantity": 6,
-        "unit_price": 69,
-        "buy_lot": "x100",
+        "unit_price": 59,
+        "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 414000
+        "total": 354000
       },
       {
         "name": "Agua potable",
@@ -1783,13 +1783,13 @@
     "unit_crafting_cost_x1": 2937,
     "unit_crafting_cost_x10": 1039,
     "unit_crafting_cost_x100": 591,
-    "unit_crafting_cost_x1000": 578,
+    "unit_crafting_cost_x1000": 518,
     "profit_x1": -2718,
     "profit_x10": -822,
     "profit_x100": -326,
-    "profit_x1000": -336,
+    "profit_x1000": -276,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:37.257781+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282153+00:00"
   },
   {
     "id": 2031,
@@ -1880,7 +1880,7 @@
     "profit_x100": -5,
     "profit_x1000": -35,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:37.257801+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282174+00:00"
   },
   {
     "id": 16434,
@@ -1989,10 +1989,10 @@
       {
         "name": "Centeno",
         "quantity": 5,
-        "unit_price": 69,
-        "buy_lot": "x100",
+        "unit_price": 59,
+        "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 345000
+        "total": 295000
       },
       {
         "name": "Perca",
@@ -2010,13 +2010,13 @@
     "unit_crafting_cost_x1": 3038,
     "unit_crafting_cost_x10": 910,
     "unit_crafting_cost_x100": 550,
-    "unit_crafting_cost_x1000": 549,
+    "unit_crafting_cost_x1000": 499,
     "profit_x1": -2809,
     "profit_x10": -681,
     "profit_x100": -321,
-    "profit_x1000": -320,
+    "profit_x1000": -270,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:37.257823+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282196+00:00"
   },
   {
     "id": 22383,
@@ -2080,10 +2080,10 @@
       {
         "name": "Centeno",
         "quantity": 6,
-        "unit_price": 69,
-        "buy_lot": "x100",
+        "unit_price": 59,
+        "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 414000
+        "total": 354000
       },
       {
         "name": "Polvos mágicos",
@@ -2109,13 +2109,13 @@
     "unit_crafting_cost_x1": 1577,
     "unit_crafting_cost_x10": 984,
     "unit_crafting_cost_x100": 536,
-    "unit_crafting_cost_x1000": 523,
+    "unit_crafting_cost_x1000": 463,
     "profit_x1": -1607,
     "profit_x10": -1010,
     "profit_x100": -563,
-    "profit_x1000": -551,
+    "profit_x1000": -491,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:37.257917+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282243+00:00"
   },
   {
     "id": 16935,
@@ -2171,10 +2171,10 @@
       {
         "name": "Malta",
         "quantity": 6,
-        "unit_price": 30,
+        "unit_price": 26,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 180000
+        "total": 156000
       },
       {
         "name": "Polvo temporal",
@@ -2197,16 +2197,16 @@
     "unit_selling_price_x10": 448,
     "unit_selling_price_x100": 449,
     "unit_selling_price_x1000": 450,
-    "unit_crafting_cost_x1": 3079,
+    "unit_crafting_cost_x1": 1683,
     "unit_crafting_cost_x10": 596,
     "unit_crafting_cost_x100": 386,
-    "unit_crafting_cost_x1000": 302,
-    "profit_x1": -2762,
+    "unit_crafting_cost_x1000": 278,
+    "profit_x1": -1366,
     "profit_x10": -231,
     "profit_x100": -20,
-    "profit_x1000": 65,
+    "profit_x1000": 89,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:37.257989+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282264+00:00"
   },
   {
     "id": 16435,
@@ -2252,7 +2252,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "selling_last_updated": "2026-03-27T08:19:37.258009+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282282+00:00"
   },
   {
     "id": 16936,
@@ -2308,10 +2308,10 @@
       {
         "name": "Malta",
         "quantity": 6,
-        "unit_price": 30,
+        "unit_price": 26,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 180000
+        "total": 156000
       },
       {
         "name": "Resina",
@@ -2334,16 +2334,16 @@
     "unit_selling_price_x10": 28,
     "unit_selling_price_x100": 29,
     "unit_selling_price_x1000": 34,
-    "unit_crafting_cost_x1": 3429,
+    "unit_crafting_cost_x1": 2033,
     "unit_crafting_cost_x10": 738,
     "unit_crafting_cost_x100": 541,
-    "unit_crafting_cost_x1000": 457,
-    "profit_x1": -3458,
+    "unit_crafting_cost_x1000": 433,
+    "profit_x1": -2062,
     "profit_x10": -763,
     "profit_x100": -565,
-    "profit_x1000": -477,
+    "profit_x1000": -453,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:37.258032+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282303+00:00"
   },
   {
     "id": 16937,
@@ -2370,10 +2370,10 @@
       {
         "name": "Centeno",
         "quantity": 1,
-        "unit_price": 398,
-        "buy_lot": "x1",
+        "unit_price": 1290,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 398
+        "total": 1290
       }
     ],
     "unit_selling_price_x1": 0,
@@ -2434,7 +2434,7 @@
     "profit_x100": -101,
     "profit_x1000": -98,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:37.258055+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282325+00:00"
   },
   {
     "id": 10079,
@@ -2511,16 +2511,16 @@
     "unit_selling_price_x10": 44900,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 28998,
+    "unit_crafting_cost_x1": 27602,
     "unit_crafting_cost_x10": 16945,
     "unit_crafting_cost_x100": 0,
     "unit_crafting_cost_x1000": 0,
-    "profit_x1": 12709,
+    "profit_x1": 14105,
     "profit_x10": 24762,
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "selling_last_updated": "2026-03-27T08:19:37.258104+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282373+00:00"
   },
   {
     "id": 16436,
@@ -2592,10 +2592,10 @@
       {
         "name": "Malta",
         "quantity": 1,
-        "unit_price": 1990,
-        "buy_lot": "x10",
+        "unit_price": 99,
+        "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 1990
+        "total": 99
       }
     ],
     "unit_selling_price_x1": 0,
@@ -2656,7 +2656,7 @@
     "profit_x100": 44,
     "profit_x1000": 44,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:37.258127+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282396+00:00"
   },
   {
     "id": 527,
@@ -2702,7 +2702,7 @@
     "profit_x100": -477,
     "profit_x1000": -468,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:37.258148+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282417+00:00"
   },
   {
     "id": 16939,
@@ -2729,10 +2729,10 @@
       {
         "name": "Malta",
         "quantity": 1,
-        "unit_price": 1990,
-        "buy_lot": "x10",
+        "unit_price": 99,
+        "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 1990
+        "total": 99
       }
     ],
     "unit_selling_price_x1": 0,
@@ -2801,7 +2801,7 @@
     "profit_x100": 5571,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:37.258174+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282443+00:00"
   },
   {
     "id": 9983,
@@ -2892,7 +2892,7 @@
     "profit_x100": -611,
     "profit_x1000": -627,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:37.258195+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282465+00:00"
   },
   {
     "id": 16438,
@@ -2938,7 +2938,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "selling_last_updated": "2026-03-27T08:19:37.258214+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282484+00:00"
   },
   {
     "id": 16940,
@@ -3029,7 +3029,7 @@
     "profit_x100": -1067,
     "profit_x1000": -1049,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:37.258234+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282505+00:00"
   },
   {
     "id": 16941,
@@ -3120,7 +3120,7 @@
     "profit_x100": -379463,
     "profit_x1000": -379422,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:37.258255+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282526+00:00"
   },
   {
     "id": 9571,
@@ -3407,7 +3407,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "selling_last_updated": "2026-03-27T08:19:37.258349+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282537+00:00"
   },
   {
     "id": 11503,
@@ -3453,7 +3453,7 @@
     "profit_x100": 336,
     "profit_x1000": 388,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:37.258376+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282559+00:00"
   },
   {
     "id": 11504,
@@ -3589,7 +3589,7 @@
     "profit_x100": 376,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:37.258400+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282582+00:00"
   },
   {
     "id": 24001,
@@ -3688,6 +3688,6 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "selling_last_updated": "2026-03-27T08:19:37.258448+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.282632+00:00"
   }
 ]

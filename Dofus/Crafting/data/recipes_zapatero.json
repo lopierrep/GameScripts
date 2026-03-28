@@ -7597,42 +7597,66 @@
     "best_lot": ""
   },
   {
-    "id": 9927,
+    "id": 13263,
     "result": "Robotas",
     "category": "Bota",
-    "level": 42,
+    "level": 100,
     "ingredients": [
       {
-        "name": "Alas de escarahoja azul",
-        "quantity": 7,
+        "name": "Cabellera de milubonoke",
+        "quantity": 10,
         "unit_price": null,
         "buy_lot": "—",
         "buy_or_craft": null,
         "total": null
       },
       {
-        "name": "Vísceras de escarahoja",
-        "quantity": 3,
-        "unit_price": 222,
-        "buy_lot": "x1",
-        "buy_or_craft": null,
-        "total": 666
-      },
-      {
-        "name": "Ebonita",
+        "name": "Crines floridas",
         "quantity": 2,
-        "unit_price": 1470,
-        "buy_lot": "x1",
-        "buy_or_craft": "Buy",
-        "total": 2940
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
-        "name": "Pata de Blatarata",
-        "quantity": 4,
-        "unit_price": 2900,
-        "buy_lot": "x1",
+        "name": "Pelusilla de kilibris",
+        "quantity": 20,
+        "unit_price": null,
+        "buy_lot": "—",
         "buy_or_craft": null,
-        "total": 11600
+        "total": null
+      },
+      {
+        "name": "Bigote de mufafah",
+        "quantity": 20,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
+      },
+      {
+        "name": "Pluma de trasero de kido",
+        "quantity": 10,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
+      },
+      {
+        "name": "Ala de tufo de las llanuras",
+        "quantity": 10,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
+      },
+      {
+        "name": "Cola emplumada de Rasgabola Mayor",
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,

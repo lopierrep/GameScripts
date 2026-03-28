@@ -28781,7 +28781,7 @@
     "best_lot": ""
   },
   {
-    "id": 28135,
+    "id": 28157,
     "result": "Puñales Cri Daemp",
     "category": "Puñales de recaudador",
     "level": 200,
@@ -28796,7 +28796,15 @@
       },
       {
         "name": "Runa Cri",
-        "quantity": 41,
+        "quantity": 21,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
+      },
+      {
+        "name": "Runa Bu Da Cri",
+        "quantity": 14,
         "unit_price": null,
         "buy_lot": "—",
         "buy_or_craft": null,
@@ -28804,7 +28812,7 @@
       },
       {
         "name": "Runa Bu Da Emp",
-        "quantity": 26,
+        "quantity": 14,
         "unit_price": null,
         "buy_lot": "—",
         "buy_or_craft": null,

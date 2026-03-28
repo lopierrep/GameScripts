@@ -855,18 +855,18 @@
     "best_lot": ""
   },
   {
-    "id": 12625,
+    "id": 16185,
     "result": "Desertor menor",
     "category": "Trofeo",
     "level": 50,
     "ingredients": [
       {
-        "name": "Concentrado de oquedal",
+        "name": "Bakelitita",
         "quantity": 1,
-        "unit_price": 1740,
+        "unit_price": 2639,
         "buy_lot": "x1",
         "buy_or_craft": "Buy",
-        "total": 1740
+        "total": 2639
       },
       {
         "name": "Guijarro carmesí",
@@ -877,15 +877,23 @@
         "total": null
       },
       {
-        "name": "Magnesita",
+        "name": "Concentrado de fajina",
         "quantity": 1,
-        "unit_price": 2500,
+        "unit_price": 2930,
         "buy_lot": "x1",
         "buy_or_craft": "Craft",
-        "total": 2500
+        "total": 2930
       },
       {
-        "name": "Rodaja de nozdekoko",
+        "name": "Pepita",
+        "quantity": 10,
+        "unit_price": 1000,
+        "buy_lot": "x10",
+        "buy_or_craft": null,
+        "total": 10000
+      },
+      {
+        "name": "Calzoncillos de bwork arquero",
         "quantity": 10,
         "unit_price": null,
         "buy_lot": "—",
@@ -893,15 +901,7 @@
         "total": null
       },
       {
-        "name": "Coral passaoh",
-        "quantity": 10,
-        "unit_price": 738,
-        "buy_lot": "x10",
-        "buy_or_craft": null,
-        "total": 7380
-      },
-      {
-        "name": "Oso despedazado",
+        "name": "Ojo de abrakno",
         "quantity": 5,
         "unit_price": null,
         "buy_lot": "—",
@@ -2235,18 +2235,18 @@
     "best_lot": ""
   },
   {
-    "id": 12712,
+    "id": 16243,
     "result": "Acróbata menor",
     "category": "Trofeo",
     "level": 50,
     "ingredients": [
       {
-        "name": "Concentrado de oquedal",
+        "name": "Bakelitita",
         "quantity": 1,
-        "unit_price": 1740,
+        "unit_price": 2639,
         "buy_lot": "x1",
         "buy_or_craft": "Buy",
-        "total": 1740
+        "total": 2639
       },
       {
         "name": "Guijarro carmesí",
@@ -2257,31 +2257,31 @@
         "total": null
       },
       {
-        "name": "Magnesita",
+        "name": "Concentrado de fajina",
         "quantity": 1,
-        "unit_price": 2500,
+        "unit_price": 2930,
         "buy_lot": "x1",
         "buy_or_craft": "Craft",
-        "total": 2500
+        "total": 2930
       },
       {
-        "name": "Sudor frío de fantasma",
+        "name": "Pepita",
         "quantity": 10,
-        "unit_price": null,
-        "buy_lot": "—",
+        "unit_price": 1000,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": null
+        "total": 10000
       },
       {
-        "name": "Diente de wabbit",
-        "quantity": 10,
-        "unit_price": null,
-        "buy_lot": "—",
+        "name": "Flor de blopiseta",
+        "quantity": 5,
+        "unit_price": 120,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": null
+        "total": 600
       },
       {
-        "name": "Cola de jabalí de las llanuras",
+        "name": "Huevo podrido",
         "quantity": 5,
         "unit_price": null,
         "buy_lot": "—",
@@ -3063,18 +3063,18 @@
     "best_lot": ""
   },
   {
-    "id": 13766,
+    "id": 16246,
     "result": "Suertudo menor",
     "category": "Trofeo",
     "level": 50,
     "ingredients": [
       {
-        "name": "Concentrado de oquedal",
+        "name": "Bakelitita",
         "quantity": 1,
-        "unit_price": 1740,
+        "unit_price": 2639,
         "buy_lot": "x1",
         "buy_or_craft": "Buy",
-        "total": 1740
+        "total": 2639
       },
       {
         "name": "Guijarro carmesí",
@@ -3085,23 +3085,23 @@
         "total": null
       },
       {
-        "name": "Magnesita",
+        "name": "Concentrado de fajina",
         "quantity": 1,
-        "unit_price": 2500,
+        "unit_price": 2930,
         "buy_lot": "x1",
         "buy_or_craft": "Craft",
-        "total": 2500
+        "total": 2930
       },
       {
-        "name": "Guijarro de temporada",
-        "quantity": 2,
-        "unit_price": null,
-        "buy_lot": "—",
+        "name": "Pepita",
+        "quantity": 10,
+        "unit_price": 1000,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": null
+        "total": 10000
       },
       {
-        "name": "Piel de larva zafiro",
+        "name": "Cejas de tronkónido",
         "quantity": 5,
         "unit_price": null,
         "buy_lot": "—",
@@ -3109,12 +3109,12 @@
         "total": null
       },
       {
-        "name": "Gusano de agua",
+        "name": "Piedra de Cristalobola",
         "quantity": 5,
-        "unit_price": null,
-        "buy_lot": "—",
+        "unit_price": 391,
+        "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": null
+        "total": 1955
       }
     ],
     "unit_selling_price_x1": 0,
@@ -15893,18 +15893,50 @@
     "best_lot": ""
   },
   {
-    "id": 12627,
+    "id": 16187,
     "result": "Desertor mayor",
     "category": "Trofeo",
     "level": 150,
     "ingredients": [
       {
-        "name": "Ojo de rama invocadora",
+        "name": "Rutilo",
+        "quantity": 1,
+        "unit_price": 6190,
+        "buy_lot": "x1",
+        "buy_or_craft": "Buy",
+        "total": 6190
+      },
+      {
+        "name": "Concentrado de bosque primario",
+        "quantity": 1,
+        "unit_price": 13289,
+        "buy_lot": "x1",
+        "buy_or_craft": "Buy",
+        "total": 13289
+      },
+      {
+        "name": "Guijarro reluciente",
         "quantity": 2,
         "unit_price": null,
         "buy_lot": "—",
         "buy_or_craft": null,
         "total": null
+      },
+      {
+        "name": "Desertor",
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
+      },
+      {
+        "name": "Pepita",
+        "quantity": 500,
+        "unit_price": 540,
+        "buy_lot": "x100",
+        "buy_or_craft": null,
+        "total": 270000
       },
       {
         "name": "Alita de grullestruz",
@@ -15915,7 +15947,7 @@
         "total": null
       },
       {
-        "name": "Pelos de funámbola",
+        "name": "Maza de mamanuki",
         "quantity": 10,
         "unit_price": null,
         "buy_lot": "—",
@@ -15923,40 +15955,8 @@
         "total": null
       },
       {
-        "name": "Ojo de majaro",
-        "quantity": 10,
-        "unit_price": 649,
-        "buy_lot": "x10",
-        "buy_or_craft": null,
-        "total": 6490
-      },
-      {
-        "name": "Desertor mediano",
-        "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
-      },
-      {
-        "name": "Kobalita",
-        "quantity": 1,
-        "unit_price": 8800,
-        "buy_lot": "x1",
-        "buy_or_craft": "Buy",
-        "total": 8800
-      },
-      {
-        "name": "Concentrado de bosque",
-        "quantity": 1,
-        "unit_price": 8990,
-        "buy_lot": "x1",
-        "buy_or_craft": "Buy",
-        "total": 8990
-      },
-      {
-        "name": "Guijarro reluciente",
-        "quantity": 2,
+        "name": "Fragmento de anomalía",
+        "quantity": 5,
         "unit_price": null,
         "buy_lot": "—",
         "buy_or_craft": null,
@@ -17593,13 +17593,29 @@
     "best_lot": ""
   },
   {
-    "id": 12714,
+    "id": 16245,
     "result": "Acróbata mayor",
     "category": "Trofeo",
     "level": 150,
     "ingredients": [
       {
-        "name": "Ojo de rama curadora",
+        "name": "Rutilo",
+        "quantity": 1,
+        "unit_price": 6190,
+        "buy_lot": "x1",
+        "buy_or_craft": "Buy",
+        "total": 6190
+      },
+      {
+        "name": "Concentrado de bosque primario",
+        "quantity": 1,
+        "unit_price": 13289,
+        "buy_lot": "x1",
+        "buy_or_craft": "Buy",
+        "total": 13289
+      },
+      {
+        "name": "Guijarro reluciente",
         "quantity": 2,
         "unit_price": null,
         "buy_lot": "—",
@@ -17607,7 +17623,15 @@
         "total": null
       },
       {
-        "name": "Mawashi de elsumo",
+        "name": "Pepita",
+        "quantity": 500,
+        "unit_price": 540,
+        "buy_lot": "x100",
+        "buy_or_craft": null,
+        "total": 270000
+      },
+      {
+        "name": "Fragmento de anomalía",
         "quantity": 5,
         "unit_price": null,
         "buy_lot": "—",
@@ -17615,48 +17639,24 @@
         "total": null
       },
       {
-        "name": "Pinza de fanclasma",
+        "name": "Acróbata",
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
+      },
+      {
+        "name": "Mono kuapa",
         "quantity": 10,
-        "unit_price": 660,
-        "buy_lot": "x10",
-        "buy_or_craft": null,
-        "total": 6600
-      },
-      {
-        "name": "Tejido de mopet",
-        "quantity": 2,
         "unit_price": null,
         "buy_lot": "—",
         "buy_or_craft": null,
         "total": null
       },
       {
-        "name": "Acróbata mediano",
-        "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
-      },
-      {
-        "name": "Kobalita",
-        "quantity": 1,
-        "unit_price": 8800,
-        "buy_lot": "x1",
-        "buy_or_craft": "Buy",
-        "total": 8800
-      },
-      {
-        "name": "Concentrado de bosque",
-        "quantity": 1,
-        "unit_price": 8990,
-        "buy_lot": "x1",
-        "buy_or_craft": "Buy",
-        "total": 8990
-      },
-      {
-        "name": "Guijarro reluciente",
-        "quantity": 2,
+        "name": "Tejido de kaniglú",
+        "quantity": 5,
         "unit_price": null,
         "buy_lot": "—",
         "buy_or_craft": null,
@@ -18613,42 +18613,26 @@
     "best_lot": ""
   },
   {
-    "id": 13768,
+    "id": 16248,
     "result": "Suertudo mayor",
     "category": "Trofeo",
     "level": 150,
     "ingredients": [
       {
-        "name": "Pelos de petafux",
-        "quantity": 10,
-        "unit_price": 199,
-        "buy_lot": "x10",
-        "buy_or_craft": null,
-        "total": 1990
-      },
-      {
-        "name": "Piel de rojiva",
-        "quantity": 10,
-        "unit_price": 390,
-        "buy_lot": "x10",
-        "buy_or_craft": null,
-        "total": 3900
-      },
-      {
-        "name": "Pipa de la paz zoth",
-        "quantity": 10,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
-      },
-      {
-        "name": "Suertudo",
+        "name": "Rutilo",
         "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 6190,
+        "buy_lot": "x1",
+        "buy_or_craft": "Buy",
+        "total": 6190
+      },
+      {
+        "name": "Concentrado de bosque primario",
+        "quantity": 1,
+        "unit_price": 13289,
+        "buy_lot": "x1",
+        "buy_or_craft": "Buy",
+        "total": 13289
       },
       {
         "name": "Guijarro reluciente",
@@ -18659,28 +18643,44 @@
         "total": null
       },
       {
-        "name": "Concentrado de bosque",
-        "quantity": 1,
-        "unit_price": 8990,
-        "buy_lot": "x1",
-        "buy_or_craft": "Buy",
-        "total": 8990
+        "name": "Pepita",
+        "quantity": 500,
+        "unit_price": 540,
+        "buy_lot": "x100",
+        "buy_or_craft": null,
+        "total": 270000
       },
       {
-        "name": "Guijarro solar",
+        "name": "Fragmento de anomalía",
+        "quantity": 5,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
+      },
+      {
+        "name": "Afortunado",
+        "quantity": 1,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
+      },
+      {
+        "name": "Piel de kanikilador",
         "quantity": 2,
-        "unit_price": 63300,
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
+      },
+      {
+        "name": "Tejido de piratalaya",
+        "quantity": 10,
+        "unit_price": 1098,
         "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 126600
-      },
-      {
-        "name": "Kobalita",
-        "quantity": 1,
-        "unit_price": 8800,
-        "buy_lot": "x1",
-        "buy_or_craft": "Buy",
-        "total": 8800
+        "total": 10980
       }
     ],
     "unit_selling_price_x1": 0,

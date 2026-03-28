@@ -2,6 +2,16 @@
 Lógica de filtrado y resumen de filas de la tabla de crafting.
 """
 
+import unicodedata
+
+
+def _norm(s: str) -> str:
+    """Minúsculas y sin tildes para comparación flexible."""
+    return "".join(
+        c for c in unicodedata.normalize("NFD", s.lower())
+        if unicodedata.category(c) != "Mn"
+    )
+
 
 def filter_rows(
     rows: list,
@@ -12,10 +22,10 @@ def filter_rows(
 ) -> list:
     if name is None and min_profit is None and lvl_min is None and lvl_max is None:
         return rows
-    needle = name.lower() if name else None
+    needle = _norm(name) if name else None
     return [
         r for r in rows
-        if (needle is None or needle in r.get("result", "").lower())
+        if (needle is None or needle in _norm(r.get("result", "")))
         and (min_profit is None or (r.get("profit_total") or 0) >= min_profit)
         and (lvl_min is None or (str(r.get("level", "0")).isdigit() and int(r.get("level", 0)) >= lvl_min))
         and (lvl_max is None or (str(r.get("level", "999")).isdigit() and int(r.get("level", 999)) <= lvl_max))

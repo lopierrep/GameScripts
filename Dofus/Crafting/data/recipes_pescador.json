@@ -1149,7 +1149,7 @@
     "profit_x100": 1140,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:38.957274+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.480869+00:00"
   },
   {
     "id": 16475,
@@ -2161,10 +2161,10 @@
       {
         "name": "Palito de cangrejo",
         "quantity": 3,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 1300,
+        "buy_lot": "x10",
+        "buy_or_craft": "Craft",
+        "total": 3900
       },
       {
         "name": "Limón",
@@ -2230,10 +2230,10 @@
       {
         "name": "Palito de cangrejo",
         "quantity": 3,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 1300,
+        "buy_lot": "x10",
+        "buy_or_craft": "Craft",
+        "total": 3900
       },
       {
         "name": "Limón",

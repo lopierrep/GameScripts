@@ -34,13 +34,12 @@ from core.recipes import (
     all_recipe_results,
     build_result_file_map,
     expand_sub_ingredients,
-    find_recipe,
     load_all_craftable_recipes,
     profession_from_file,
     sub_recipe_files,
 )
 from automation.scanner import search_market_batch
-from export.share import export_data, import_data
+from export.sheets import sync_data
 import shared.market.search_item_prices as _sip
 from ui.ui import CraftingUI
 
@@ -138,11 +137,11 @@ def _finalize_costs(
 
 def update_profession(
     profession: str,
-    limit: int = None,
     stop_flag: list = None,
     on_confirm=None,
     manual_price_fn=None,
     on_item_done=None,
+    filtered: set = None,
 ):
     if stop_flag is None:
         stop_flag = [False]
@@ -160,9 +159,6 @@ def update_profession(
 
     with open(recipe_file, encoding="utf-8") as f:
         recipes = json.load(f)
-    if limit is not None:
-        recipes = recipes[:limit]
-        print(f"[INFO] Limitado a las primeras {limit} recetas.\n")
 
     omitted_recipes    = _load_omitted_recipes()
     omitted_categories = _load_omitted_categories()
@@ -171,6 +167,10 @@ def update_profession(
         if r.get("result") not in omitted_recipes
         and r.get("category", "") not in omitted_categories
     ]
+
+    if filtered:
+        recipes = [r for r in recipes if r.get("result") in filtered]
+        print(f"[INFO] Filtrado: {len(recipes)} recetas seleccionadas.\n")
 
     all_results     = {r["result"] for r in recipes}
     all_ingredients = {ing["name"] for r in recipes for ing in r.get("ingredients", [])}
@@ -217,10 +217,11 @@ def update_profession(
             if stop_flag[0]:
                 break
 
-    still_missing = _finalize_costs(
-        sub_results, recipe_file,
-        recipe_filter=lambda rs: rs[:limit] if limit is not None else rs,
-    )
+    if stop_flag[0]:
+        print("\n[INFO] Detenido por el usuario. No se guardaron cambios.")
+        return
+
+    still_missing = _finalize_costs(sub_results, recipe_file)
 
     print(f"\n[DONE] {os.path.basename(recipe_file)}: {len(recipes)} recetas actualizadas.")
     if still_missing:
@@ -246,66 +247,6 @@ def update_profession(
 
 
 
-def update_single_recipe(
-    result_name: str,
-    stop_flag: list = None,
-    on_confirm=None,
-    manual_price_fn=None,
-):
-    if stop_flag is None:
-        stop_flag = [False]
-
-    recipe, recipe_file = find_recipe(result_name)
-    if not recipe:
-        print(f"[ERROR] No se encontró ninguna receta con resultado '{result_name}'.")
-        return
-
-    profession = profession_from_file(recipe_file)
-    print(f"[INFO] Receta encontrada en: {os.path.basename(recipe_file)}\n")
-
-    ingredients = {ing["name"] for ing in recipe.get("ingredients", [])}
-    craftable   = load_all_craftable_recipes()
-    all_ingredients = expand_sub_ingredients(ingredients, craftable)
-
-    _sip.load_calibration()
-
-    markets     = load_markets()
-    item_lookup = build_item_lookup(markets)
-
-    craftable_results = all_recipe_results()
-    ensure_catalogued(all_ingredients, markets, item_lookup, craftable_results)
-
-    result_items = [(result_name, recipe.get("category", UNKNOWN_KEY))]
-    market_groups, sub_results = _build_market_groups(
-        result_items, all_ingredients, craftable, markets, item_lookup
-    )
-
-    result_file_map = build_result_file_map()
-
-    for market_name, group in market_groups.items():
-        if stop_flag[0]:
-            break
-        search_market_batch(
-            market_name,
-            sorted(group["results"]),
-            sorted(group["ingredients"]),
-            recipe_file, markets, item_lookup,
-            result_file_map, stop_flag,
-            on_confirm=on_confirm,
-            manual_price_fn=manual_price_fn,
-        )
-
-    still_missing = _finalize_costs(
-        sub_results, recipe_file,
-        recipe_filter=lambda rs: [r for r in rs if r.get("result") == result_name],
-    )
-
-    print(f"\n[DONE] '{result_name}' actualizado.")
-    if still_missing:
-        print(f"[AVISO] {len(still_missing)} ingredientes sin precio:")
-        for name in sorted(still_missing):
-            print(f"  - {name}")
-
 
 # ── CraftingApp ────────────────────────────────────────────────────────────────
 
@@ -323,12 +264,12 @@ class CraftingApp:
         callbacks = {
             "start":     self._start,
             "stop":      self._stop,
-            "export":    self._export,
-            "import":    self._import,
+            "sync":      self._sync,
             "calibrate": self._calibrate,
         }
 
-        self.ui = CraftingUI(root, callbacks, professions, load_user_settings, save_user_settings)
+        UIClass = CraftingUI
+        self.ui = UIClass(root, callbacks, professions, load_user_settings, save_user_settings)
 
         sys.stdout = _StdoutRedirect(self._on_log)
         sys.stderr = _StdoutRedirect(self._on_log)
@@ -338,7 +279,7 @@ class CraftingApp:
             self.root.after(100, self._load_table, professions[0])
 
         # Recargar tabla al cambiar de profesión
-        self.ui._prof_cb.bind("<<ComboboxSelected>>", self._on_profession_changed)
+        self.ui._prof_cb.bind("<<ComboboxSelected>>", self._on_profession_changed, add="+")
 
     def _on_log(self, text: str):
         self.root.after(0, self.ui.log, text)
@@ -350,19 +291,14 @@ class CraftingApp:
 
     # ── Callbacks de UI ───────────────────────────────────────────────────────
 
-    def _start(self, target: str, limit, mode: str):
+    def _start(self, target: str, filtered: set = None):
         self._stop_flag[0] = False
         self.root.after(0, self.ui.set_busy, True)
         self.root.after(0, self.ui.clear_log)
 
-        if mode == "profesion":
-            t = threading.Thread(
-                target=self._run_profession, args=(target, limit), daemon=True
-            )
-        else:
-            t = threading.Thread(
-                target=self._run_single, args=(target,), daemon=True
-            )
+        t = threading.Thread(
+            target=self._run_profession, args=(target, filtered), daemon=True
+        )
         t.start()
 
     def _stop(self):
@@ -371,12 +307,8 @@ class CraftingApp:
         # Desbloquear cualquier prompt activo
         self.root.after(0, self.ui.hide_prompt)
 
-    def _export(self):
-        t = threading.Thread(target=self._run_export, daemon=True)
-        t.start()
-
-    def _import(self):
-        t = threading.Thread(target=self._run_import, daemon=True)
+    def _sync(self):
+        t = threading.Thread(target=self._run_sync, daemon=True)
         t.start()
 
     def _calibrate(self):
@@ -395,7 +327,7 @@ class CraftingApp:
 
     # ── Workers ───────────────────────────────────────────────────────────────
 
-    def _run_profession(self, profession: str, limit):
+    def _run_profession(self, profession: str, filtered: set = None):
         import time as _time
 
         def _on_item_done():
@@ -407,7 +339,7 @@ class CraftingApp:
         try:
             self.root.after(0, self.ui.set_status, f"Actualizando {profession}…", C["accent"])
             update_profession(
-                profession, limit, self._stop_flag,
+                profession, self._stop_flag, filtered=filtered,
                 on_confirm=self._ask_confirm,
                 manual_price_fn=self._ask_manual_price,
                 on_item_done=_on_item_done,
@@ -418,36 +350,11 @@ class CraftingApp:
         finally:
             self.root.after(0, self._on_done)
 
-    def _run_single(self, recipe_name: str):
-        try:
-            self.root.after(0, self.ui.set_status, f"Actualizando '{recipe_name}'…", C["accent"])
-            _, rf = find_recipe(recipe_name)
-            profession = profession_from_file(rf) if rf else ""
-            update_single_recipe(
-                recipe_name, self._stop_flag,
-                on_confirm=self._ask_confirm,
-                manual_price_fn=self._ask_manual_price,
-            )
-            if profession:
-                self.root.after(0, self._load_table, profession)
-        except Exception as e:
-            self.root.after(0, self.ui.log, f"[ERROR] {e}", "error")
-        finally:
-            self.root.after(0, self._on_done)
 
-    def _run_export(self):
+    def _run_sync(self):
         try:
-            self.root.after(0, self.ui.set_status, "Exportando…", C["accent"])
-            export_data()
-        except Exception as e:
-            self.root.after(0, self.ui.log, f"[ERROR] {e}", "error")
-        finally:
-            self.root.after(0, self.ui.set_status, "Listo", C["dim"])
-
-    def _run_import(self):
-        try:
-            self.root.after(0, self.ui.set_status, "Importando…", C["accent"])
-            warnings = import_data()
+            self.root.after(0, self.ui.set_status, "Sincronizando…", C["accent"])
+            warnings = sync_data()
             for w in warnings:
                 self.root.after(0, self.ui.log, f"[AVISO] {w}", "warn")
             profession = self.ui.profession()
@@ -481,7 +388,10 @@ class CraftingApp:
             ev.set()
 
         self.root.after(0, show_fn, *args, on_confirm)
-        ev.wait()
+        while not ev.wait(timeout=0.2):
+            if self._stop_flag[0]:
+                self.root.after(0, self.ui.hide_prompt)
+                return None
         return result[0]
 
     def _ask_confirm(self, market_name: str):
@@ -515,10 +425,10 @@ class CraftingApp:
             and r.get("category", "") not in omitted_categories
         ]
 
-        raw_market_prices, ing_last_updated = load_raw_market_prices()
+        raw_market_prices, ing_updated_at = load_raw_market_prices()
         craftable_map = load_all_craftable_recipes()
 
-        rows = build_table_rows(recipes, craftable_map, raw_market_prices, ing_last_updated)
+        rows = build_table_rows(recipes, craftable_map, raw_market_prices, ing_updated_at)
         self.ui.refresh_table(rows)
 
     def restore_io(self):

@@ -42,7 +42,7 @@ def _now_iso() -> str:
 
 def _is_selling_fresh(recipe: dict) -> bool:
     """Verifica si el precio de venta de una receta fue actualizado en el último CACHE_SECONDS."""
-    ts = recipe.get("selling_last_updated")
+    ts = recipe.get("prices_updated_at")
     if not ts:
         return False
     age = (datetime.now(timezone.utc) - datetime.fromisoformat(ts)).total_seconds()

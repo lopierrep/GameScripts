@@ -80,7 +80,7 @@
     "profit_x100": 42,
     "profit_x1000": 42,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:38.575341+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.575341+00:00"
   },
   {
     "id": 2539,
@@ -118,7 +118,7 @@
     "profit_x100": 283,
     "profit_x1000": 283,
     "best_lot": "x10",
-    "selling_last_updated": "2026-03-27T08:19:38.575387+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.575387+00:00"
   },
   {
     "id": 16490,
@@ -156,7 +156,7 @@
     "profit_x100": -247,
     "profit_x1000": -206,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:38.575416+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.575416+00:00"
   },
   {
     "id": 26353,
@@ -202,7 +202,7 @@
     "profit_x100": -42012,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:38.575455+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.575455+00:00"
   },
   {
     "id": 26354,
@@ -248,7 +248,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "selling_last_updated": "2026-03-27T08:19:38.575493+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.575493+00:00"
   },
   {
     "id": 26355,
@@ -294,7 +294,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "selling_last_updated": "2026-03-27T08:19:38.575524+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.575524+00:00"
   },
   {
     "id": 26358,
@@ -340,7 +340,7 @@
     "profit_x100": -33509,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:38.575556+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.575556+00:00"
   },
   {
     "id": 12745,
@@ -378,7 +378,7 @@
     "profit_x100": 689,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:38.575584+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.575584+00:00"
   },
   {
     "id": 16491,
@@ -424,7 +424,7 @@
     "profit_x100": 312,
     "profit_x1000": 312,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:38.575621+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.575621+00:00"
   },
   {
     "id": 2540,
@@ -462,7 +462,7 @@
     "profit_x100": -193,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:38.575647+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.575647+00:00"
   },
   {
     "id": 16492,
@@ -516,7 +516,7 @@
     "profit_x100": 1198,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:38.575694+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.575694+00:00"
   },
   {
     "id": 2543,
@@ -554,7 +554,7 @@
     "profit_x100": 1536,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:38.575719+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.575719+00:00"
   },
   {
     "id": 16493,
@@ -608,7 +608,7 @@
     "profit_x100": 229,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:38.575764+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.575764+00:00"
   },
   {
     "id": 26345,
@@ -654,7 +654,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "selling_last_updated": "2026-03-27T08:19:38.575799+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.575799+00:00"
   },
   {
     "id": 26347,
@@ -700,7 +700,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "selling_last_updated": "2026-03-27T08:19:38.575836+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.575836+00:00"
   },
   {
     "id": 26348,
@@ -746,7 +746,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "selling_last_updated": "2026-03-27T08:19:38.575868+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.575868+00:00"
   },
   {
     "id": 26349,
@@ -792,7 +792,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "selling_last_updated": "2026-03-27T08:19:38.575901+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.575901+00:00"
   },
   {
     "id": 12744,
@@ -838,7 +838,7 @@
     "profit_x100": 2577,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:38.575935+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.575935+00:00"
   },
   {
     "id": 16494,
@@ -908,7 +908,7 @@
     "profit_x100": 931,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:38.575993+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.575993+00:00"
   },
   {
     "id": 22105,
@@ -1007,7 +1007,7 @@
     "profit_x100": 3599,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:38.576022+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.576022+00:00"
   },
   {
     "id": 16495,
@@ -1085,7 +1085,7 @@
     "profit_x100": 5085,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:38.576093+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.576093+00:00"
   },
   {
     "id": 12733,
@@ -1131,7 +1131,7 @@
     "profit_x100": -626,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:38.576124+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.576124+00:00"
   },
   {
     "id": 16496,
@@ -1209,7 +1209,7 @@
     "profit_x100": 1945,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:38.576190+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.576190+00:00"
   },
   {
     "id": 16458,
@@ -1255,7 +1255,7 @@
     "profit_x100": 1990,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:38.576223+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.576223+00:00"
   },
   {
     "id": 16497,
@@ -1333,7 +1333,7 @@
     "profit_x100": 790,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:38.576288+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.576288+00:00"
   },
   {
     "id": 16459,
@@ -1379,7 +1379,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "selling_last_updated": "2026-03-27T08:19:38.576316+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.576316+00:00"
   },
   {
     "id": 16498,
@@ -1465,7 +1465,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "selling_last_updated": "2026-03-27T08:19:38.576391+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.576391+00:00"
   },
   {
     "id": 16460,
@@ -1511,7 +1511,7 @@
     "profit_x100": -17501,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:38.576420+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.576420+00:00"
   },
   {
     "id": 16499,
@@ -1597,7 +1597,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "selling_last_updated": "2026-03-27T08:19:38.576500+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.576500+00:00"
   },
   {
     "id": 24144,
@@ -1651,6 +1651,6 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "selling_last_updated": "2026-03-27T08:19:38.576546+00:00"
+    "prices_updated_at": "2026-03-27T08:19:38.576546+00:00"
   }
 ]

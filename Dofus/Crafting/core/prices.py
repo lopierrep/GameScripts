@@ -92,7 +92,7 @@ def _ingredient_is_fresh(name: str, markets: dict, item_lookup: dict) -> bool:
     category = markets[market_name]["data"].get(category_name, {})
     if name not in category:
         return False
-    ts = category[name].get("last_updated")
+    ts = category[name].get("prices_updated_at")
     if not ts:
         return False
     age = (datetime.now(timezone.utc) - datetime.fromisoformat(ts)).total_seconds()
@@ -141,7 +141,7 @@ def save_ingredient_price(name: str, prices: dict, markets: dict, item_lookup: d
         entry["x100"]  = p100
         entry["x1000"] = p1000
         if any(v > 0 for v in (p1, p10, p100, p1000)):
-            entry["last_updated"] = _now_iso()
+            entry["prices_updated_at"] = _now_iso()
     save_markets(markets)
     p = prices
     print(f"[OK] x1={p.get('unit_price_x1','N/A')}  x10={p.get('unit_price_x10','N/A')}  x100={p.get('unit_price_x100','N/A')}  x1000={p.get('unit_price_x1000','N/A')}")
@@ -220,12 +220,12 @@ def load_all_pack_prices() -> dict[str, dict]:
 
 def load_raw_market_prices() -> tuple[dict, dict]:
     """
-    Lee PRICES_FILE y devuelve (raw_market_prices, ing_last_updated).
+    Lee PRICES_FILE y devuelve (raw_market_prices, ing_updated_at).
     raw_market_prices : {name: {"1": price, ...}} — solo precios > 0
-    ing_last_updated  : {name: iso_str}
+    ing_updated_at  : {name: iso_str}
     """
     raw_market_prices: dict = {}
-    ing_last_updated: dict  = {}
+    ing_updated_at: dict  = {}
     try:
         if os.path.exists(PRICES_FILE):
             with open(PRICES_FILE, encoding="utf-8") as f:
@@ -242,11 +242,11 @@ def load_raw_market_prices() -> tuple[dict, dict]:
                         }
                         if lot_prices:
                             raw_market_prices[name] = lot_prices
-                        if pd.get("last_updated"):
-                            ing_last_updated[name] = pd["last_updated"]
+                        if pd.get("prices_updated_at"):
+                            ing_updated_at[name] = pd["prices_updated_at"]
     except Exception:
         pass
-    return raw_market_prices, ing_last_updated
+    return raw_market_prices, ing_updated_at
 
 
 def best_unit_price(prices: dict, pack_size: str) -> float:
@@ -349,11 +349,7 @@ def calculate_crafting_costs(recipes: list, pack_prices: dict) -> tuple[list, se
 
         crafted_costs[recipe["result"]] = {size: recipe.get(f"unit_crafting_cost_{size}", 0) for size in SIZES}
 
-        # Timestamp solo cuando hay precio de venta Y costo de crafteo
-        has_sell  = any(recipe.get(f"unit_selling_price_{s}", 0) > 0 for s in SIZES)
-        has_craft = any(recipe.get(f"unit_crafting_cost_{s}", 0) > 0 for s in SIZES)
-        if has_sell and has_craft:
-            recipe["selling_last_updated"] = datetime.now(timezone.utc).isoformat()
+        recipe["prices_updated_at"] = datetime.now(timezone.utc).isoformat()
 
     return recipes, still_missing
 
@@ -444,10 +440,10 @@ def _enrich_recipe(recipe: dict, pack_prices: dict, craftable_map: dict):
         ing["buy_lot"]      = buy_lot or "—"
         ing["buy_or_craft"] = buy_or_craft
         ing["total"]        = round(unit_price * ing_qty * lot_num) if unit_price else None
-    # Mover selling_last_updated al final del dict
-    ts = recipe.pop("selling_last_updated", None)
+    # Mover prices_updated_at al final del dict
+    ts = recipe.pop("prices_updated_at", None)
     if ts is not None:
-        recipe["selling_last_updated"] = ts
+        recipe["prices_updated_at"] = ts
 
 
 def compute_and_save_display_data(
@@ -479,7 +475,7 @@ def build_table_rows(
     recipes: list,
     craftable_map: dict,
     raw_market_prices: dict,
-    ing_last_updated: dict,
+    ing_updated_at: dict,
 ) -> list:
     """
     Construye las filas de la tabla UI leyendo datos pre-calculados del JSON.
@@ -519,7 +515,7 @@ def build_table_rows(
                         "buy_or_craft":    sub_ing.get("buy_or_craft"),
                         "total":           sub_ing.get("total"),
                         "lot_prices":      raw_market_prices.get(sub_name, {}),
-                        "last_updated":    ing_last_updated.get(sub_name, ""),
+                        "prices_updated_at":    ing_updated_at.get(sub_name, ""),
                         "sub_ingredients": [],
                     })
 
@@ -532,7 +528,7 @@ def build_table_rows(
                 "buy_or_craft":    buy_or_craft,
                 "total":           ing.get("total"),
                 "lot_prices":      raw_market_prices.get(ing_name, {}),
-                "last_updated":    ing_last_updated.get(ing_name, ""),
+                "prices_updated_at":    ing_updated_at.get(ing_name, ""),
                 "sub_ingredients": sub_ingredients,
             })
 
@@ -544,7 +540,7 @@ def build_table_rows(
             "sell_price":   sell_total,
             "profit":       best_profit,
             "profit_total": best_profit_total,
-            "updated":      r.get("selling_last_updated", ""),
+            "updated":      r.get("prices_updated_at", ""),
             "ingredients":  ingredients,
         })
 

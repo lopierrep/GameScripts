@@ -476,18 +476,18 @@
       {
         "name": "Pintura negra",
         "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 6972,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 6972
       },
       {
         "name": "Pintura azul",
         "quantity": 3,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 12156,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 36468
       },
       {
         "name": "Dofus blanco",
@@ -521,18 +521,18 @@
       {
         "name": "Pintura violeta",
         "quantity": 2,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 9940,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 19880
       },
       {
         "name": "Pintura amarilla",
         "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 3252,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 3252
       },
       {
         "name": "Dofus blanco",
@@ -545,10 +545,10 @@
       {
         "name": "Pintura negra",
         "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 6972,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 6972
       }
     ],
     "unit_selling_price_x1": 0,
@@ -574,18 +574,18 @@
       {
         "name": "Pintura roja",
         "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 5508,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 5508
       },
       {
         "name": "Pintura amarilla",
         "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 3252,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 3252
       },
       {
         "name": "Dofus blanco",
@@ -598,18 +598,18 @@
       {
         "name": "Pintura negra",
         "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 6972,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 6972
       },
       {
         "name": "Pintura naranja",
         "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 4756,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 4756
       }
     ],
     "unit_selling_price_x1": 0,
@@ -635,10 +635,10 @@
       {
         "name": "Pintura amarilla",
         "quantity": 3,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 3252,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 9756
       },
       {
         "name": "Dofus blanco",
@@ -651,10 +651,10 @@
       {
         "name": "Pintura negra",
         "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 6972,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 6972
       }
     ],
     "unit_selling_price_x1": 0,
@@ -680,10 +680,10 @@
       {
         "name": "Pintura verde",
         "quantity": 3,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 6220,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 18660
       },
       {
         "name": "Dofus blanco",
@@ -696,10 +696,10 @@
       {
         "name": "Pintura negra",
         "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 6972,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 6972
       }
     ],
     "unit_selling_price_x1": 0,
@@ -749,10 +749,10 @@
       {
         "name": "Pócima de agua de hada",
         "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 1885,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 1885
       },
       {
         "name": "Carpa de Iem",
@@ -847,10 +847,10 @@
       {
         "name": "Picadillo de bruma",
         "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 2609,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 2609
       }
     ],
     "unit_selling_price_x1": 0,
@@ -2294,7 +2294,7 @@
     "profit_x100": -180,
     "profit_x1000": -179,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:38.691528+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.373892+00:00"
   },
   {
     "id": 9248,
@@ -2653,10 +2653,10 @@
       {
         "name": "Magnesita",
         "quantity": 1,
-        "unit_price": 2500,
+        "unit_price": 2600,
         "buy_lot": "x1",
         "buy_or_craft": "Craft",
-        "total": 2500
+        "total": 2600
       },
       {
         "name": "Leche de cochinillo",
@@ -3962,10 +3962,10 @@
       {
         "name": "Centeno",
         "quantity": 2,
-        "unit_price": 398,
-        "buy_lot": "x1",
+        "unit_price": 645,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 796
+        "total": 1290
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4047,10 +4047,10 @@
       {
         "name": "Centeno",
         "quantity": 2,
-        "unit_price": 398,
-        "buy_lot": "x1",
+        "unit_price": 645,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 796
+        "total": 1290
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4132,10 +4132,10 @@
       {
         "name": "Centeno",
         "quantity": 2,
-        "unit_price": 398,
-        "buy_lot": "x1",
+        "unit_price": 645,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 796
+        "total": 1290
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4533,10 +4533,10 @@
       {
         "name": "Centeno",
         "quantity": 2,
-        "unit_price": 398,
-        "buy_lot": "x1",
+        "unit_price": 645,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 796
+        "total": 1290
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4618,10 +4618,10 @@
       {
         "name": "Centeno",
         "quantity": 2,
-        "unit_price": 398,
-        "buy_lot": "x1",
+        "unit_price": 645,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 796
+        "total": 1290
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4703,10 +4703,10 @@
       {
         "name": "Centeno",
         "quantity": 2,
-        "unit_price": 398,
-        "buy_lot": "x1",
+        "unit_price": 645,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 796
+        "total": 1290
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4788,10 +4788,10 @@
       {
         "name": "Centeno",
         "quantity": 2,
-        "unit_price": 398,
-        "buy_lot": "x1",
+        "unit_price": 645,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 796
+        "total": 1290
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4873,10 +4873,10 @@
       {
         "name": "Centeno",
         "quantity": 2,
-        "unit_price": 398,
-        "buy_lot": "x1",
+        "unit_price": 645,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 796
+        "total": 1290
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4998,7 +4998,7 @@
     "profit_x100": -283,
     "profit_x1000": -279,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:38.693774+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.375374+00:00"
   },
   {
     "id": 7926,
@@ -5065,10 +5065,10 @@
       {
         "name": "Centeno",
         "quantity": 3,
-        "unit_price": 398,
-        "buy_lot": "x1",
+        "unit_price": 430,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1194
+        "total": 1290
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5150,10 +5150,10 @@
       {
         "name": "Centeno",
         "quantity": 3,
-        "unit_price": 398,
-        "buy_lot": "x1",
+        "unit_price": 430,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1194
+        "total": 1290
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5235,10 +5235,10 @@
       {
         "name": "Centeno",
         "quantity": 3,
-        "unit_price": 398,
-        "buy_lot": "x1",
+        "unit_price": 430,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1194
+        "total": 1290
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5288,10 +5288,10 @@
       {
         "name": "Fragmento de cerebro pulío",
         "quantity": 2,
-        "unit_price": 2394,
+        "unit_price": 2848,
         "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 4788
+        "total": 5696
       },
       {
         "name": "Carne seca",
@@ -5312,10 +5312,10 @@
       {
         "name": "Centeno",
         "quantity": 3,
-        "unit_price": 398,
-        "buy_lot": "x1",
+        "unit_price": 430,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1194
+        "total": 1290
       },
       {
         "name": "Edelweiss",
@@ -5482,10 +5482,10 @@
       {
         "name": "Centeno",
         "quantity": 3,
-        "unit_price": 398,
-        "buy_lot": "x1",
+        "unit_price": 430,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1194
+        "total": 1290
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5567,10 +5567,10 @@
       {
         "name": "Centeno",
         "quantity": 3,
-        "unit_price": 398,
-        "buy_lot": "x1",
+        "unit_price": 430,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 1194
+        "total": 1290
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5652,10 +5652,10 @@
       {
         "name": "Malta",
         "quantity": 2,
-        "unit_price": 995,
-        "buy_lot": "x10",
+        "unit_price": 99,
+        "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 1990
+        "total": 198
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5737,10 +5737,10 @@
       {
         "name": "Malta",
         "quantity": 2,
-        "unit_price": 995,
-        "buy_lot": "x10",
+        "unit_price": 99,
+        "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 1990
+        "total": 198
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5822,10 +5822,10 @@
       {
         "name": "Malta",
         "quantity": 2,
-        "unit_price": 995,
-        "buy_lot": "x10",
+        "unit_price": 99,
+        "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 1990
+        "total": 198
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5907,10 +5907,10 @@
       {
         "name": "Malta",
         "quantity": 2,
-        "unit_price": 995,
-        "buy_lot": "x10",
+        "unit_price": 99,
+        "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 1990
+        "total": 198
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6045,10 +6045,10 @@
       {
         "name": "Malta",
         "quantity": 2,
-        "unit_price": 995,
-        "buy_lot": "x10",
+        "unit_price": 99,
+        "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 1990
+        "total": 198
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6130,10 +6130,10 @@
       {
         "name": "Malta",
         "quantity": 2,
-        "unit_price": 995,
-        "buy_lot": "x10",
+        "unit_price": 99,
+        "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 1990
+        "total": 198
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6292,10 +6292,10 @@
       {
         "name": "Malta",
         "quantity": 3,
-        "unit_price": 663,
-        "buy_lot": "x10",
+        "unit_price": 99,
+        "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 1990
+        "total": 297
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6377,10 +6377,10 @@
       {
         "name": "Malta",
         "quantity": 3,
-        "unit_price": 663,
-        "buy_lot": "x10",
+        "unit_price": 99,
+        "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 1990
+        "total": 297
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6462,10 +6462,10 @@
       {
         "name": "Malta",
         "quantity": 3,
-        "unit_price": 663,
-        "buy_lot": "x10",
+        "unit_price": 99,
+        "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 1990
+        "total": 297
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6693,10 +6693,10 @@
       {
         "name": "Malta",
         "quantity": 3,
-        "unit_price": 663,
-        "buy_lot": "x10",
+        "unit_price": 99,
+        "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 1990
+        "total": 297
       }
     ],
     "unit_selling_price_x1": 0,
@@ -6778,10 +6778,10 @@
       {
         "name": "Malta",
         "quantity": 3,
-        "unit_price": 663,
-        "buy_lot": "x10",
+        "unit_price": 99,
+        "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 1990
+        "total": 297
       }
     ],
     "unit_selling_price_x1": 0,
@@ -7713,7 +7713,7 @@
     "profit_x100": -619,
     "profit_x1000": -631,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:38.695352+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.376872+00:00"
   },
   {
     "id": 8307,
@@ -10109,7 +10109,7 @@
     "profit_x100": -1227,
     "profit_x1000": -1175,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:38.696566+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.377957+00:00"
   },
   {
     "id": 14043,

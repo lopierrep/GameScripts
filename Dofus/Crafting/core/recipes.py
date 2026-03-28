@@ -4,6 +4,7 @@ Gestión de recetas: carga, precios de venta y expansión de subrecetas.
 
 import json
 import os
+import unicodedata
 
 from config.config import (
     CACHE_SECONDS,
@@ -43,12 +44,22 @@ def build_result_file_map() -> dict[str, str]:
     return {r["result"]: path for r, path in _read_all_recipes()}
 
 
+def _normalize_name(name: str) -> str:
+    """Quita tildes y pasa a minúsculas para comparación flexible."""
+    return "".join(
+        c for c in unicodedata.normalize("NFD", name.lower())
+        if unicodedata.category(c) != "Mn"
+    )
+
+
 def find_recipe(result_name: str) -> tuple[dict | None, str | None]:
-    """Devuelve (recipe_dict, recipe_file_path) para el resultado dado."""
+    """Devuelve (recipe_dict, recipe_file_path) para el resultado dado.
+    Ignora tildes, mayúsculas y minúsculas."""
+    needle = _normalize_name(result_name)
     for path in get_recipe_files():
         with open(path, encoding="utf-8") as f:
             for r in json.load(f):
-                if r.get("result") == result_name:
+                if _normalize_name(r.get("result", "")) == needle:
                     return r, path
     return None, None
 
@@ -140,13 +151,14 @@ def save_selling_price(recipe_file: str, name: str, prices: dict):
 
     for recipe in data:
         if recipe.get("result") == name:
-            recipe["unit_selling_price_x1"]    = filtered["x1"]
-            recipe["unit_selling_price_x10"]   = filtered["x10"]
-            recipe["unit_selling_price_x100"]  = filtered["x100"]
-            recipe["unit_selling_price_x1000"] = filtered["x1000"]
+            for size in SIZES:
+                new_val = filtered[size]
+                if new_val > 0:
+                    recipe[f"unit_selling_price_{size}"] = new_val
+                # Si el nuevo es 0, conservar el viejo
             for size in exceeded:
                 recipe[f"unit_crafting_cost_{size}"] = 0
-            recipe.pop("selling_last_updated", None)
+            recipe.pop("prices_updated_at", None)
 
     with open(recipe_file, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)

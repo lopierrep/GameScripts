@@ -35,7 +35,7 @@
     "profit_x100": -222,
     "profit_x1000": -224,
     "best_lot": "x10",
-    "selling_last_updated": "2026-03-27T08:19:36.901904+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.592628+00:00"
   },
   {
     "id": 1182,
@@ -851,10 +851,10 @@
       {
         "name": "Aceite de Kodo",
         "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 4531,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 4531
       }
     ],
     "unit_selling_price_x1": 0,
@@ -2417,10 +2417,10 @@
       {
         "name": "Frasco para elementos",
         "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 3380,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 3380
       },
       {
         "name": "Pepita",
@@ -2462,10 +2462,10 @@
       {
         "name": "Frasco para elementos",
         "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 3380,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 3380
       },
       {
         "name": "Pepita",
@@ -2507,10 +2507,10 @@
       {
         "name": "Frasco para elementos",
         "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 3380,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 3380
       },
       {
         "name": "Pepita",
@@ -2552,10 +2552,10 @@
       {
         "name": "Frasco para elementos",
         "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 3380,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 3380
       },
       {
         "name": "Pepita",
@@ -2933,10 +2933,10 @@
       {
         "name": "Aceite de Kodo",
         "quantity": 2,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 4531,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 9062
       },
       {
         "name": "Carbón",
@@ -3315,7 +3315,7 @@
     "profit_x100": 249,
     "profit_x1000": 186,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:36.903490+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.594212+00:00"
   },
   {
     "id": 9887,
@@ -3437,10 +3437,10 @@
       {
         "name": "Pócima de hogar",
         "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 3720,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 3720
       },
       {
         "name": "Cacho de blop guinda",
@@ -3818,10 +3818,10 @@
       {
         "name": "Pócima de hogar",
         "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 3720,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 3720
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4721,7 +4721,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "selling_last_updated": "2026-03-27T15:51:58.023142+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.594833+00:00"
   },
   {
     "id": 282,
@@ -5137,10 +5137,10 @@
       {
         "name": "Piedra de dopeul",
         "quantity": 3,
-        "unit_price": 4799,
+        "unit_price": 4860,
         "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 14397
+        "total": 14580
       },
       {
         "name": "Esquíritu común",
@@ -5441,10 +5441,10 @@
       {
         "name": "Frasco para elementos",
         "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 3380,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 3380
       },
       {
         "name": "Pepita",
@@ -5486,10 +5486,10 @@
       {
         "name": "Frasco para elementos",
         "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 3380,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 3380
       },
       {
         "name": "Pepita",
@@ -5531,10 +5531,10 @@
       {
         "name": "Frasco para elementos",
         "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 3380,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 3380
       },
       {
         "name": "Pepita",
@@ -5576,10 +5576,10 @@
       {
         "name": "Frasco para elementos",
         "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 3380,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 3380
       },
       {
         "name": "Pepita",
@@ -6071,7 +6071,7 @@
     "profit_x100": -21,
     "profit_x1000": -21,
     "best_lot": "x1000",
-    "selling_last_updated": "2026-03-27T08:19:36.904816+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.595413+00:00"
   },
   {
     "id": 1406,
@@ -6513,10 +6513,10 @@
       {
         "name": "Sangre de urikornio",
         "quantity": 4,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 1470,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 5880
       },
       {
         "name": "Pelos de Kerubim",
@@ -7078,10 +7078,10 @@
       {
         "name": "Centeno",
         "quantity": 1,
-        "unit_price": 398,
-        "buy_lot": "x1",
+        "unit_price": 1290,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 398
+        "total": 1290
       }
     ],
     "unit_selling_price_x1": 0,
@@ -7123,10 +7123,10 @@
       {
         "name": "Centeno",
         "quantity": 1,
-        "unit_price": 398,
-        "buy_lot": "x1",
+        "unit_price": 1290,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 398
+        "total": 1290
       }
     ],
     "unit_selling_price_x1": 0,
@@ -7306,10 +7306,10 @@
       {
         "name": "Fragmento de cerebro pulío",
         "quantity": 3,
-        "unit_price": 2394,
+        "unit_price": 2848,
         "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 7182
+        "total": 8544
       },
       {
         "name": "Esquíritu superior",
@@ -7446,10 +7446,10 @@
       {
         "name": "Centeno",
         "quantity": 1,
-        "unit_price": 398,
-        "buy_lot": "x1",
+        "unit_price": 1290,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 398
+        "total": 1290
       }
     ],
     "unit_selling_price_x1": 0,
@@ -7531,7 +7531,7 @@
     "profit_x100": 1438,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T16:01:55.489835+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.595987+00:00"
   },
   {
     "id": 8913,
@@ -7558,10 +7558,10 @@
       {
         "name": "Malta",
         "quantity": 1,
-        "unit_price": 1990,
-        "buy_lot": "x10",
+        "unit_price": 99,
+        "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 1990
+        "total": 99
       }
     ],
     "unit_selling_price_x1": 0,
@@ -7756,10 +7756,10 @@
       {
         "name": "Malta",
         "quantity": 1,
-        "unit_price": 1990,
-        "buy_lot": "x10",
+        "unit_price": 99,
+        "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 1990
+        "total": 99
       }
     ],
     "unit_selling_price_x1": 0,
@@ -7817,10 +7817,10 @@
       {
         "name": "Malta",
         "quantity": 2,
-        "unit_price": 995,
-        "buy_lot": "x10",
+        "unit_price": 99,
+        "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 1990
+        "total": 198
       },
       {
         "name": "Tejido de samurái fantasma",
@@ -8014,7 +8014,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "selling_last_updated": "2026-03-27T08:19:36.905701+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.596210+00:00"
   },
   {
     "id": 14687,
@@ -8128,10 +8128,10 @@
       {
         "name": "Malta",
         "quantity": 1,
-        "unit_price": 1990,
-        "buy_lot": "x10",
+        "unit_price": 99,
+        "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 1990
+        "total": 99
       }
     ],
     "unit_selling_price_x1": 0,
@@ -8231,10 +8231,10 @@
       {
         "name": "Tinte mágico rojizo",
         "quantity": 1,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 864,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 864
       },
       {
         "name": "Tinte mágico naranja",
@@ -8284,10 +8284,10 @@
       {
         "name": "Sangre de urikornio",
         "quantity": 2,
-        "unit_price": null,
-        "buy_lot": "—",
-        "buy_or_craft": null,
-        "total": null
+        "unit_price": 1470,
+        "buy_lot": "x1",
+        "buy_or_craft": "Craft",
+        "total": 2940
       },
       {
         "name": "Pócima de envejecimiento",
@@ -8308,10 +8308,10 @@
       {
         "name": "Pócima de los ancestros",
         "quantity": 2,
-        "unit_price": 3160,
+        "unit_price": 3159,
         "buy_lot": "x1",
         "buy_or_craft": "Buy",
-        "total": 6320
+        "total": 6318
       }
     ],
     "unit_selling_price_x1": 0,
@@ -9020,7 +9020,7 @@
     "profit_x100": -2922,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "selling_last_updated": "2026-03-27T08:19:36.906248+00:00"
+    "prices_updated_at": "2026-03-28T18:24:03.596639+00:00"
   },
   {
     "id": 10204,
