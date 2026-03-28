@@ -1,0 +1,17 @@
+{
+  "descripcion": "Carburantes de Cercado — recetas de la profesion Ganadero para recargar los indicadores",
+  "tamanios": [
+    { "nombre": "Minusculo",         "cantidad": 1000 },
+    { "nombre": "Pequeño",           "cantidad": 2000 },
+    { "nombre": "Normal",            "cantidad": 3000 },
+    { "nombre": "Grande",            "cantidad": 4000 },
+    { "nombre": "Gigantesco",        "cantidad": 5000 }
+  ],
+  "topes_por_nivel": [
+    { "nivel_min":   5, "nivel_max":  45, "tope_indicador":  40000 },
+    { "nivel_min":  55, "nivel_max":  95, "tope_indicador":  70000 },
+    { "nivel_min": 105, "nivel_max": 145, "tope_indicador":  90000 },
+    { "nivel_min": 155, "nivel_max": 195, "tope_indicador": 100000 }
+  ],
+  "nota": "Solo se puede recargar hasta el tope correspondiente al nivel del carburante usado"
+}

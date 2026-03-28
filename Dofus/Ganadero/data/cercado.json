@@ -1,0 +1,37 @@
+{
+  "capacidad_monturas": 10,
+  "indicadores": [
+    {
+      "nombre": "Acariciador",
+      "efecto": "Sube la Serenidad"
+    },
+    {
+      "nombre": "Aporreadora",
+      "efecto": "Baja la Serenidad"
+    },
+    {
+      "nombre": "Pesebre",
+      "efecto": "Sube la XP"
+    },
+    {
+      "nombre": "Fulminadora",
+      "efecto": "Sube la estadistica Resistencia"
+    },
+    {
+      "nombre": "Abrevadero",
+      "efecto": "Sube la estadistica Madurez"
+    },
+    {
+      "nombre": "Dragonalgas",
+      "efecto": "Sube la estadistica Amor"
+    }
+  ],
+  "rango_indicadores": { "min": 0, "max": 100000 },
+  "consumo_cada_10_segundos": [
+    { "rango_min":     0, "rango_max":  40000, "consumo": 10 },
+    { "rango_min": 40000, "rango_max":  70000, "consumo": 20 },
+    { "rango_min": 70000, "rango_max":  90000, "consumo": 30 },
+    { "rango_min": 90000, "rango_max": 100000, "consumo": 40 }
+  ],
+  "nota": "A mayor nivel del indicador, se consume mas rapido (cada 10 segundos) pero beneficia a todas las monturas del cercado"
+}
