@@ -67,10 +67,10 @@ class GanaderoUI:
 
     def _setup_window(self):
         self.root.title("Ganadero - Eficiencia de Carburantes")
-        self.root.geometry("1500x700+40+40")
+        self.root.geometry("1600x700+40+40")
         self.root.configure(bg=C["bg"])
         self.root.resizable(True, True)
-        self.root.minsize(1200, 500)
+        self.root.minsize(1560, 500)
 
     def _apply_styles(self):
         style = ttk.Style()
@@ -130,27 +130,70 @@ class GanaderoUI:
                   font=("Consolas", 11, "bold"), relief="flat", padx=10, pady=3,
                   cursor="hand2", command=self._cb["refresh"]).pack(side="left", padx=(12, 0))
 
+    def _make_scrollable(self, parent):
+        """Envuelve un frame en un canvas scrollable y devuelve el frame interior."""
+        parent.grid_rowconfigure(0, weight=1)
+        parent.grid_columnconfigure(0, weight=1)
+
+        canvas = tk.Canvas(parent, bg=C["bg"], highlightthickness=0, bd=0)
+        scrollbar = ttk.Scrollbar(parent, orient="vertical", command=canvas.yview)
+        inner = tk.Frame(canvas, bg=C["bg"], bd=0, highlightthickness=0)
+
+        def _update_scroll(event=None):
+            canvas.configure(scrollregion=canvas.bbox("all"))
+            # Ocultar scrollbar si el contenido cabe
+            if inner.winfo_reqheight() <= canvas.winfo_height():
+                scrollbar.grid_remove()
+                canvas.yview_moveto(0)
+            else:
+                scrollbar.grid()
+
+        inner.bind("<Configure>", _update_scroll)
+        canvas_win = canvas.create_window((0, 0), window=inner, anchor="nw")
+        canvas.configure(yscrollcommand=scrollbar.set)
+
+        def _on_canvas_resize(event):
+            canvas.itemconfig(canvas_win, width=event.width)
+            _update_scroll()
+        canvas.bind("<Configure>", _on_canvas_resize)
+
+        def _on_mousewheel(event):
+            if inner.winfo_reqheight() > canvas.winfo_height():
+                canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
+        def _on_enter(event):
+            canvas.bind_all("<MouseWheel>", _on_mousewheel)
+        def _on_leave(event):
+            canvas.unbind_all("<MouseWheel>")
+        canvas.bind("<Enter>", _on_enter)
+        canvas.bind("<Leave>", _on_leave)
+
+        canvas.grid(row=0, column=0, sticky="nsew")
+        scrollbar.grid(row=0, column=1, sticky="ns")
+        return inner
+
     def _build_main_area(self):
         main = tk.PanedWindow(self.root, orient="horizontal", bg=C["dim"],
-                              sashwidth=4, sashrelief="flat")
+                              sashwidth=4, sashrelief="flat", bd=0)
         main.pack(fill="both", expand=True, padx=12, pady=(0, 4))
 
-        # ── Panel izquierdo: carburantes ──────────────────────────────────
-        left = tk.Frame(main, bg=C["bg"])
+        # ── Panel izquierdo: carburantes (scrollable) ─────────────────────
+        left = tk.Frame(main, bg=C["bg"], bd=0, highlightthickness=0)
+        left_inner = self._make_scrollable(left)
 
-        for tope in TOPES:
-            tk.Label(left, text=f"Tope {tope:,}", bg=C["bg"],
+        for i, tope in enumerate(TOPES):
+            tk.Label(left_inner, text=f"Tope {tope:,}", bg=C["bg"],
                      fg=C["accent"], font=("Consolas", 11, "bold"),
-                     anchor="w").pack(fill="x", padx=20, pady=(10, 2))
-            self._trees[str(tope)] = self._build_tree(left)
+                     anchor="w").pack(fill="x", padx=20, pady=(0 if i == 0 else 10, 2))
+            self._trees[str(tope)] = self._build_tree(left_inner)
 
-        # ── Panel derecho: tiempos y costos ───────────────────────────────
-        right = tk.Frame(main, bg=C["bg"])
+        # ── Panel derecho: tiempos y costos (scrollable) ──────────────────
+        right = tk.Frame(main, bg=C["bg"], bd=0, highlightthickness=0)
+        right_inner = self._make_scrollable(right)
 
-        self._build_tiempos(right)
+        self._build_tiempos(right_inner)
 
-        main.add(left, minsize=830)
-        main.add(right)
+        main.add(left, minsize=830, pady=0, padx=0)
+        main.add(right, pady=0, padx=0)
 
         # Dividir 50/50 tras renderizar y al redimensionar
         self._paned = main
@@ -221,7 +264,7 @@ class GanaderoUI:
         # ── Tiempo por stat ──────────────────────────────────────────────
         tk.Label(parent, text="Tiempo para llenar cada stat",
                  bg=C["bg"], fg=C["accent"], font=("Consolas", 11, "bold"),
-                 anchor="w").pack(fill="x", padx=20, pady=(10, 4))
+                 anchor="w").pack(fill="x", padx=20, pady=(0, 4))
 
         cols_t = [("tramo", "Tramo", 120)]
         for nombre, _ in STATS_TIEMPO:
@@ -280,9 +323,9 @@ class GanaderoUI:
                  anchor="w").pack(fill="x", padx=20, pady=(10, 4))
 
         cols_c = [("tope", "Tope", 80),
+                  ("total", "TOTAL", 100), ("xp", "XP (nv 200)", 90),
                   ("resist", "Resistencia", 90), ("madur", "Madurez", 90),
-                  ("amor", "Amor", 90), ("sub", "Subtotal stats", 100),
-                  ("xp", "XP (nv 200)", 90), ("total", "TOTAL", 100)]
+                  ("amor", "Amor", 90), ("sub", "Subtotal stats", 100)]
 
         frame2 = tk.Frame(parent, bg=C["bg"])
         frame2.pack(fill="x", padx=20)
@@ -303,9 +346,7 @@ class GanaderoUI:
         cols_cd = [("tope", "Tope", 70), ("tasa", "Consumo/s", 80),
                    ("activo", "Activo", 80), ("offline", "Offline", 80),
                    ("total", "Total/dia", 85),
-                   ("xp", "Dias XP", 65), ("amor", "Horas Amor", 80),
-                   ("resist", "Horas Resist.", 85), ("madur", "Horas Madur.", 85),
-                   ("costo_xp", "Costo total XP", 100)]
+                   ("xp", "Dias XP", 65)]
         frame_cd = tk.Frame(parent, bg=C["bg"])
         frame_cd.pack(fill="x", padx=20, pady=(0, 8))
 
@@ -378,12 +419,12 @@ class GanaderoUI:
 
             tree.insert("", "end", tags=tag, values=(
                 f"{tope:,}",
+                f"{d['costo_total']:,}",
+                f"{c['pesebre']['costo_total']:,}",
                 f"{c['fulminadora']['costo_total']:,}",
                 f"{c['abrevadero']['costo_total']:,}",
                 f"{c['dragonalgas']['costo_total']:,}",
                 f"{d['costo_stats']:,}",
-                f"{c['pesebre']['costo_total']:,}",
-                f"{d['costo_total']:,}",
             ))
 
     def update_ciclo_diario(self, datos: dict):
@@ -409,10 +450,6 @@ class GanaderoUI:
                 f"{d['consumo_offline']:,}",
                 f"{d['consumo_diario']:,}",
                 f"{s['XP (nivel 200)']['dias']}d",
-                self._fmt_tiempo(s["Amor"]["segundos"]),
-                self._fmt_tiempo(s["Resistencia"]["segundos"]),
-                self._fmt_tiempo(s["Madurez"]["segundos"]),
-                f"{d['costo_xp']:,}",
             ))
 
     def update_nocturna(self, datos: dict):
