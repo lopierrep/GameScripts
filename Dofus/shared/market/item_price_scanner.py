@@ -4,6 +4,7 @@ Gestiona: agrupación por mercadillo, frescura, items ignorados,
 items manuales, missing file, persistencia batch y mensajes de progreso.
 """
 import json
+import os
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable
@@ -23,6 +24,29 @@ from shared.market.search_item_prices import read_prices, search_item
 _SHARED      = Path(__file__).resolve().parent.parent   # shared/
 MISSING_FILE = _SHARED / "data" / "missing_scan.json"
 _PRICES_FILE = str(_SHARED / "data" / "materials_prices.json")
+_FILTERS_FILE = str(_SHARED / "config" / "scan_filters.json")
+
+
+# ── Filtros compartidos ──────────────────────────────────────────────────────
+
+def _load_filters() -> dict:
+    """Carga scan_filters.json desde shared/config/."""
+    if not os.path.exists(_FILTERS_FILE):
+        return {}
+    with open(_FILTERS_FILE, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def load_omitted_items() -> set[str]:
+    return set(_load_filters().get("omitted_items", []))
+
+
+def load_omitted_categories() -> set[str]:
+    return set(_load_filters().get("omitted_categories", []))
+
+
+def load_manual_items() -> set[str]:
+    return set(_load_filters().get("manual_items", []))
 
 
 @dataclass
@@ -111,9 +135,6 @@ def scan_prices(
     delay:               float = 0.3,
     countdown:           int   = 3,
     fresh_seconds:       int   = 7200,
-    ignored_items:       set | None = None,
-    ignored_categories:  set | None = None,
-    manual_items:        set | None = None,
     on_manual_item:      Callable | None = None,
     on_item_done:        Callable | None = None,
     filter_selling:      Callable | None = None,
@@ -122,7 +143,8 @@ def scan_prices(
     Escanea precios de una lista de ScanItem en el mercadillo.
 
     El scanner gestiona todo el ciclo: búsqueda OCR, parseo, acumulación
-    en memoria y guardado batch al final.
+    en memoria y guardado batch al final. Carga filtros (omitted, manual)
+    desde shared/config/ automáticamente.
 
     filter_selling: fn(unit_prices) -> (filtered, exceeded_sizes) opcional.
                     Crafting pasa filter_lot_prices para filtrar lotes caros.
@@ -130,11 +152,15 @@ def scan_prices(
     Returns:
         {item_name: parsed_prices_dict}
     """
-    # 1. Filtrar ignorados
+    # 1. Filtrar ignorados (carga desde shared/config/)
+    ignored_items      = load_omitted_items()
+    ignored_categories = load_omitted_categories()
+    manual_set         = load_manual_items()
+
     active = [
         item for item in items
-        if (ignored_items is None or item.name not in ignored_items)
-        and (ignored_categories is None or item.category not in ignored_categories)
+        if item.name not in ignored_items
+        and item.category not in ignored_categories
     ]
 
     # 2. Filtrar frescos: solo saltarse si tiene precio Y el timestamp es reciente
@@ -144,7 +170,6 @@ def scan_prices(
     ]
 
     # 3. Separar auto/manual
-    manual_set  = set(manual_items or [])
     auto_list   = [item for item in to_scan if item.name not in manual_set]
     manual_list = [item for item in to_scan if item.name in manual_set]
 

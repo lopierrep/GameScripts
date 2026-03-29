@@ -110,48 +110,6 @@ def build_item_lookup(materials: dict) -> dict[str, tuple[str, str]]:
     return lookup
 
 
-# ── Guardado de precios ──────────────────────────────────────────────────────
-
-def save_ingredient_price(
-    name: str, ocr_prices: dict, materials: dict, lookup: dict, prices_file,
-):
-    """Parsea precios OCR de ingredientes y guarda en materials_prices.json."""
-    val = lookup.get(name)
-    if not val:
-        return
-    market_name, category_name = val
-    entry = materials.get(market_name, {}).get(category_name, {}).get(name)
-    if entry is None:
-        return
-
-    unit_prices = parse_ingredient_prices(ocr_prices)
-    for size in SIZES:
-        entry[size] = unit_prices[size]
-    if any(v > 0 for v in unit_prices.values()):
-        entry["prices_updated_at"] = now_iso()
-    save_materials(materials, prices_file)
-
-
-def save_selling_price(recipe_file, name: str, ocr_prices: dict):
-    """Parsea precios OCR de venta y guarda en archivo de recetas.
-    Solo actualiza valores no-cero (preserva precios existentes si OCR falla)."""
-    unit_prices = parse_selling_prices(ocr_prices)
-
-    with open(recipe_file, encoding="utf-8") as f:
-        recipes = json.load(f)
-
-    for recipe in recipes:
-        if recipe.get("result") == name:
-            for size in SIZES:
-                if unit_prices[size] > 0:
-                    recipe[f"unit_selling_price_{size}"] = unit_prices[size]
-            recipe.pop("prices_updated_at", None)
-            recipe["prices_updated_at"] = now_iso()
-            break
-
-    with open(recipe_file, "w", encoding="utf-8") as f:
-        json.dump(recipes, f, ensure_ascii=False, indent=2)
-
 
 # ── Precio óptimo ─────────────────────────────────────────────────────────────
 

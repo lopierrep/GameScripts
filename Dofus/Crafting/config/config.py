@@ -25,11 +25,6 @@ CATEGORIES_FILE  = os.path.join(ROOT_DIR, "..", "shared", "market", "categories_
 PRICES_FILE      = os.path.join(DATA_DIR, "materials_prices.json")
 SETTINGS_FILE    = os.path.join(ROOT_DIR, "config", "user_settings.json")
 
-# ── Filtros de usuario ─────────────────────────────────────────────────
-OMITTED_RECIPES_FILE    = os.path.join(ROOT_DIR, "config", "omitted_recipes.txt")
-OMITTED_CATEGORIES_FILE = os.path.join(ROOT_DIR, "config", "omitted_categories.txt")
-MANUAL_PRICE_FILE       = os.path.join(ROOT_DIR, "config", "manual_price_items.txt")
-
 # ── Exportación (Google Sheets) ────────────────────────────────────────
 CREDENTIALS_FILE = os.path.join(ROOT_DIR, "..", "shared", "sync", "credentials.json")
 SPREADSHEET_ID   = "1S7B58S_tkt4kx4vopK9fVzP9rMbWybUC3xrWUrqBuT8"

@@ -27,6 +27,15 @@ CALIBRATION_FILE = _DOFUS / "Crafting" / "calibration" / "calibration_data.json"
 
 DELAY_BETWEEN_ITEMS = 0.3
 
+MARKET_NAMES = {
+    "Creatures":   "Criaturas",
+    "Resources":   "Recursos",
+    "Consumables": "Consumibles",
+    "Equipment":   "Equipamiento",
+    "Runes":       "Runas",
+    "Souls":       "Almas",
+}
+
 
 # ── I/O recetas ────────────────────────────────────────────────────────────────
 

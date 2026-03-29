@@ -31,11 +31,9 @@ try:
     import shared.market.search_item_prices as _sip
     from shared.market.search_item_prices import (
         search_item       as _search_item,
-        read_prices       as _read_prices,
         find_exact_result as _find_exact_result,
         click_at          as _click_at,
     )
-    from shared.market.common import _parse_price
     MARKET_AVAILABLE = True
 except Exception:
     MARKET_AVAILABLE = False

@@ -6,10 +6,8 @@ import json
 import os
 import unicodedata
 
-from config.config import SIZES
-from shared.market.prices import parse_selling_prices
 from utils.loaders import get_recipe_files
-from utils.market import _is_selling_fresh, filter_lot_prices
+from utils.market import _is_selling_fresh
 
 
 # ── Carga de recetas ──────────────────────────────────────────────────────────
@@ -100,30 +98,7 @@ def expand_sub_ingredients(ingredients: set[str], craftable: dict[str, dict]) ->
     return expanded
 
 
-# ── Precios de venta ──────────────────────────────────────────────────────────
 
-def save_selling_price(recipe_file: str, name: str, prices: dict):
-    """Guarda los precios de venta de un resultado de receta en su archivo JSON."""
-    unit_prices = parse_selling_prices(prices)
-    filtered, exceeded = filter_lot_prices(unit_prices)
 
-    with open(recipe_file, encoding="utf-8") as f:
-        data = json.load(f)
-
-    for recipe in data:
-        if recipe.get("result") == name:
-            for size in SIZES:
-                new_val = filtered[size]
-                if new_val > 0:
-                    recipe[f"unit_selling_price_{size}"] = new_val
-                # Si el nuevo es 0, conservar el viejo
-            for size in exceeded:
-                recipe[f"unit_crafting_cost_{size}"] = 0
-            recipe.pop("prices_updated_at", None)
-
-    with open(recipe_file, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-    p = unit_prices
-    print(f"[OK] {name} → x1={p['x1']}  x10={p['x10']}  x100={p['x100']}  x1000={p['x1000']}")
 
 

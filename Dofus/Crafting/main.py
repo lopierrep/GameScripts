@@ -18,7 +18,7 @@ for _p in (_ROOT, _DOFUS):
         sys.path.insert(0, _p)
 
 from config.config import C, DATA_DIR, UNKNOWN_KEY
-from utils.loaders import _load_manual_price_items, _load_omitted_categories, _load_omitted_recipes, find_recipe_file, list_professions, load_user_settings, save_user_settings
+from utils.loaders import _load_omitted_categories, _load_omitted_recipes, find_recipe_file, list_professions, load_user_settings, save_user_settings
 from core.prices import (
     build_item_lookup,
     build_table_rows,
@@ -229,9 +229,6 @@ def update_profession(
             on_market_switch   = _on_market_switch,
             delay              = DELAY_BETWEEN_ITEMS,
             fresh_seconds      = CACHE_SECONDS,
-            manual_items       = _load_manual_price_items(),
-            ignored_items      = _load_omitted_recipes(),
-            ignored_categories = _load_omitted_categories(),
             on_manual_item     = _on_manual_item,
             on_item_done       = on_item_done,
             filter_selling     = filter_lot_prices,

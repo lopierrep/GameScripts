@@ -8,39 +8,14 @@ from functools import lru_cache
 
 from config.config import (
     DATA_DIR,
-    MANUAL_PRICE_FILE,
-    OMITTED_CATEGORIES_FILE,
-    OMITTED_RECIPES_FILE,
     SETTINGS_FILE,
     _normalize,
 )
-
-
-@lru_cache(maxsize=None)
-def _load_omitted_recipes() -> set[str]:
-    if not os.path.exists(OMITTED_RECIPES_FILE):
-        return set()
-    with open(OMITTED_RECIPES_FILE, encoding="utf-8") as f:
-        return {line.strip() for line in f if line.strip()}
-
-
-@lru_cache(maxsize=None)
-def _load_omitted_categories() -> set[str]:
-    if not os.path.exists(OMITTED_CATEGORIES_FILE):
-        return set()
-    with open(OMITTED_CATEGORIES_FILE, encoding="utf-8") as f:
-        return {line.strip() for line in f if line.strip()}
-
-
-@lru_cache(maxsize=None)
-def _load_manual_price_items() -> set[str]:
-    if not os.path.exists(MANUAL_PRICE_FILE):
-        return set()
-    with open(MANUAL_PRICE_FILE, encoding="utf-8") as f:
-        return {line.strip() for line in f if line.strip()}
-
-
 from shared.market.crafting_costs import get_recipe_files  # noqa: F401
+from shared.market.item_price_scanner import (
+    load_omitted_items   as _load_omitted_recipes,     # noqa: F401
+    load_omitted_categories as _load_omitted_categories, # noqa: F401
+)
 
 
 def list_professions() -> list[str]:
