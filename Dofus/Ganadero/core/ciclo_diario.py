@@ -19,17 +19,17 @@ RANGOS_CONSUMO = [{"min": r["min"], "max": r["max"],
                    "rate": r["consumo_por_tick"] // _tick_s}
                   for r in _GD["cercado"]["rangos_consumo"]]
 
-COSTOS_DRAGOPAVO = {}
+COSTOS_MONTURA = {}
 for _ind in _GD["cercado"]["indicadores"]:
     if "estadistica" in _ind:
-        COSTOS_DRAGOPAVO[_ind["nombre"]] = (
-            _GD["dragopavo"]["estadisticas"][_ind["estadistica"]]["max"])
+        COSTOS_MONTURA[_ind["nombre"]] = (
+            _GD["montura"]["estadisticas"][_ind["estadistica"]]["max"])
     elif _ind.get("efecto") == "xp":
-        COSTOS_DRAGOPAVO[_ind["nombre"]] = _GD["dragopavo"]["xp_para_nivel_maximo"]
+        COSTOS_MONTURA[_ind["nombre"]] = _GD["montura"]["xp_para_nivel_maximo"]
 
-_xp = _GD["dragopavo"]["xp_para_nivel_maximo"]
+_xp = _GD["montura"]["xp_para_nivel_maximo"]
 STATS_TIEMPO = [("XP (nivel 200)", _xp)]
-for _stat, _val in _GD["dragopavo"]["estadisticas"].items():
+for _stat, _val in _GD["montura"]["estadisticas"].items():
     STATS_TIEMPO.append((_stat.capitalize(), _val["max"]))
 
 
@@ -93,9 +93,9 @@ def calcular_ciclo_diario(horas_juego: int) -> dict:
             segundos = total / consumo_diario * 86400 if consumo_diario > 0 else float("inf")
             stats[nombre] = {"total": total, "dias": round(dias, 1), "segundos": segundos}
 
-        # Costo por dragopavo para cada indicador de stats
+        # Costo por montura para cada indicador de stats
         costos = {}
-        for indicador, total_stat in COSTOS_DRAGOPAVO.items():
+        for indicador, total_stat in COSTOS_MONTURA.items():
             m = mejor_carburante_para(indicador, round(consumo_diario), tope)
             costo_diario = (m["costo_total"] if m else 0) // MONTURAS_POR_CERCADO
             dias = total_stat / consumo_diario if consumo_diario > 0 else float("inf")

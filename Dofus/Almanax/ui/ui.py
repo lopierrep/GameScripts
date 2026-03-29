@@ -17,6 +17,7 @@ from core.table import day_label, profit_tag, today_fr
 from shared.colors import style_scrollbar
 from shared.font  import FONT as F, TITLE, HEADER, BASE, SMALL, XS
 from shared.prompt_bar import PromptBar
+from shared.status_bar import StatusBar
 from shared.toast import show_copy_toast
 
 
@@ -60,6 +61,7 @@ class AlmanaxUI:
     # ── Construcción de widgets ───────────────────────────────────────────────
 
     def _build_ui(self):
+        self._status_bar = StatusBar(self.root)
         self._build_topbar()
         self._build_table()
         self._build_totalsbar()
@@ -307,7 +309,7 @@ class AlmanaxUI:
     # ── Setters / actualizaciones de UI ──────────────────────────────────────
 
     def set_status(self, text: str, fg: str = C["dim"]):
-        pass
+        self._status_bar.set(text, fg)
 
     def show_confirm(self, text: str, on_confirm):
         self._prompt_bar.show_confirm(text, on_confirm, fill="x", padx=12)

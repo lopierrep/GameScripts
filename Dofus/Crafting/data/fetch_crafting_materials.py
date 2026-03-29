@@ -31,8 +31,8 @@ if _DOFUS_DIR not in sys.path:
 
 RECIPES_DIR       = os.path.join(BASE_DIR, "..", "Recipes")
 MARKETS_DIR       = BASE_DIR
-DATA_DIR          = os.path.join(BASE_DIR, "..", "data")
-FALLBACK_FILE     = os.path.join(DATA_DIR, "uncategorized_materials.json")
+DATA_DIR          = os.path.join(BASE_DIR, "..", "..", "shared", "data")
+FALLBACK_FILE     = os.path.join(BASE_DIR, "..", "data", "uncategorized_materials.json")
 CATEGORIES_FILE   = os.path.join(BASE_DIR, "..", "..", "shared", "market", "categories_by_market.json")
 PRICES_FILE       = os.path.join(DATA_DIR, "materials_prices.json")
 BASE_URL      = "https://api.dofusdb.fr"

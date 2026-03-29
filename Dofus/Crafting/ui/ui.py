@@ -12,8 +12,8 @@ from datetime import datetime, timezone, timedelta
 from core.table_filter import compute_summary, filter_rows, profitable_rows
 from shared.colors import C, style_scrollbar
 from shared.font  import FONT as F, TITLE, HEADER, BASE, SMALL
-from shared.log_panel import LogPanel
 from shared.prompt_bar import PromptBar
+from shared.status_bar import StatusBar
 from shared.toast import show_copy_toast
 
 _BOGOTA = timezone(timedelta(hours=-5))
@@ -95,6 +95,7 @@ class CraftingUI:
         self._setup_window()
         self._apply_styles()
 
+        self._status_bar = StatusBar(self.root)
         self._outer = tk.Frame(self.root, bg=self.C["bg"])
         self._outer.pack(fill="both", expand=True)
         self._sidebar = tk.Frame(self._outer, bg=self.C["bg2"],
@@ -108,7 +109,6 @@ class CraftingUI:
         self._build_filterbar()
         self._build_table()
         self._build_prompt()
-        self._build_log()
 
         self.root.update_idletasks()
         self.root.deiconify()
@@ -424,11 +424,6 @@ class CraftingUI:
     def _build_prompt(self):
         self._prompt_bar = PromptBar(self._main_area)
 
-    # ── Log ──────────────────────────────────────────────────────────────────
-
-    def _build_log(self):
-        self._log_panel = LogPanel(self._main_area, self.root, font_family=self.M)
-
     # ── Button handlers ──────────────────────────────────────────────────────
 
     def _on_toggle(self):
@@ -618,28 +613,21 @@ class CraftingUI:
                 for iid in iids if iid in self._row_data}
 
     def set_status(self, text: str, color: str = None):
-        pass
+        self._status_bar.set(text, color or C["dim"])
 
     def set_busy(self, busy: bool):
         C = self.C
         self._busy = busy
         if busy:
             self._toggle_btn.config(text="■ Detener", bg=C["red"], fg=C["bg"])
-            self.show_log()
         else:
             self._toggle_btn.config(text="▶ Actualizar Precios", bg=C["green"], fg=C["bg"])
 
     def log(self, text: str, tag: str = None):
-        self._log_panel.log(text, tag)
+        pass
 
     def clear_log(self):
-        self._log_panel.clear()
-
-    def show_log(self):
-        self._log_panel.show(fill="x", padx=10, pady=(0, 8))
-
-    def hide_log(self):
-        self._log_panel.hide()
+        pass
 
     def refresh_table(self, rows: list):
         self._all_rows = rows
@@ -658,11 +646,11 @@ class CraftingUI:
 
     def show_confirm(self, text: str, on_confirm):
         self._prompt_bar.show_confirm(
-            text, on_confirm, fill="x", padx=10, pady=(0, 4), before=self._log_panel)
+            text, on_confirm, fill="x", padx=10, pady=(0, 4))
 
     def show_price_prompt(self, name: str, is_selling: bool, on_confirm):
         self._prompt_bar.show_price_prompt(
-            name, is_selling, on_confirm, fill="x", padx=10, pady=(0, 4), before=self._log_panel)
+            name, is_selling, on_confirm, fill="x", padx=10, pady=(0, 4))
 
     def hide_prompt(self):
         self._prompt_bar.hide()

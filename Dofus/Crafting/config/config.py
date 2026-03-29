@@ -20,7 +20,7 @@ if getattr(sys, "frozen", False):
 else:
     ROOT_DIR = str(Path(__file__).resolve().parent.parent)
 
-DATA_DIR         = os.path.join(ROOT_DIR, "data")
+DATA_DIR         = os.path.join(ROOT_DIR, "..", "shared", "data")
 CATEGORIES_FILE  = os.path.join(ROOT_DIR, "..", "shared", "market", "categories_by_market.json")
 PRICES_FILE      = os.path.join(DATA_DIR, "materials_prices.json")
 SETTINGS_FILE    = os.path.join(ROOT_DIR, "config", "user_settings.json")

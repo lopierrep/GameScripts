@@ -134,7 +134,7 @@ class AlmanaxApp:
     def _run_sync(self):
         try:
             self.root.after(0, self.ui.set_status, "Sincronizando…", C["accent"])
-            from sync import sync_data
+            from shared.sync.sheets import sync_data
             warnings = sync_data()
             for w in warnings:
                 print(f"[AVISO] {w}")
@@ -249,7 +249,8 @@ class AlmanaxApp:
             pd        = find_item_prices(self.prices, r["item"])
             qty_total = r["qty"] * pjs
 
-            if pd:
+            has_price = pd and any(pd.get(f"x{s}", 0) > 0 for s in LOTS)
+            if has_price:
                 cost       = optimal_cost(qty_total, pd)
                 unit_price = round(min(
                     pd[f"x{s}"] / s for s in LOTS if pd.get(f"x{s}", 0) > 0
@@ -262,7 +263,7 @@ class AlmanaxApp:
             r["price"]      = unit_price
             r["cost"]       = cost
             r["guijarros"]  = guij_k
-            r["profit"]     = (r["kamas"] * pjs + r["guijarros"] - cost) if pd else None
+            r["profit"]     = (r["kamas"] * pjs + r["guijarros"] - cost) if has_price else None
 
     # ── Tabla ─────────────────────────────────────────────────────────────────
 

@@ -280,8 +280,8 @@ class CraftingApp:
         self.ui = UIClass(root, callbacks, professions, load_user_settings, save_user_settings,
                           prof_counts=prof_counts)
 
-        sys.stdout = _StdoutRedirect(self._on_log)
-        sys.stderr = _StdoutRedirect(self._on_log)
+        sys.stdout = _StdoutRedirect(lambda _: None)
+        sys.stderr = _StdoutRedirect(lambda _: None)
 
         # Cargar datos existentes al arrancar
         if professions:
@@ -290,8 +290,6 @@ class CraftingApp:
         # Recargar tabla al cambiar de profesión
         self.ui._prof_cb.bind("<<ComboboxSelected>>", self._on_profession_changed, add="+")
 
-    def _on_log(self, text: str):
-        self.root.after(0, self.ui.log, text)
 
     def _on_profession_changed(self, _event=None):
         profession = self.ui.profession()
@@ -303,7 +301,6 @@ class CraftingApp:
     def _start(self, target: str, filtered: set = None):
         self._stop_flag[0] = False
         self.root.after(0, self.ui.set_busy, True)
-        self.root.after(0, self.ui.clear_log)
 
         t = threading.Thread(
             target=self._run_profession, args=(target, filtered), daemon=True
@@ -332,7 +329,7 @@ class CraftingApp:
         )
 
     def _on_calibration_done(self):
-        self.ui.log("[OK] Calibración guardada.", "ok")
+        self.ui.set_status("✓ Calibración guardada", C["green"])
 
     # ── Workers ───────────────────────────────────────────────────────────────
 
@@ -355,7 +352,7 @@ class CraftingApp:
             )
             self.root.after(0, self._load_table, profession)
         except Exception as e:
-            self.root.after(0, self.ui.log, f"[ERROR] {e}", "error")
+            self.root.after(0, self.ui.set_status, f"Error: {e}", C["red"])
         finally:
             self.root.after(0, self._on_done)
 
@@ -363,17 +360,14 @@ class CraftingApp:
     def _run_sync(self):
         try:
             self.root.after(0, self.ui.set_status, "Sincronizando…", C["accent"])
-            from export.sheets import sync_data
+            from shared.sync.sheets import sync_data
             warnings = sync_data()
-            for w in warnings:
-                self.root.after(0, self.ui.log, f"[AVISO] {w}", "warn")
             profession = self.ui.profession()
             if profession:
                 self.root.after(0, self._load_table, profession)
+            self.root.after(0, self.ui.set_status, "✓ Sincronizado", C["green"])
         except Exception as e:
-            self.root.after(0, self.ui.log, f"[ERROR] {e}", "error")
-        finally:
-            self.root.after(0, self.ui.set_status, "Listo", C["dim"])
+            self.root.after(0, self.ui.set_status, f"Error: {e}", C["red"])
 
     def _on_done(self):
         self.ui.set_busy(False)

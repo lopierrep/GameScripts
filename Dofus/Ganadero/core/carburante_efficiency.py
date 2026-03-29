@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT_DIR = Path(__file__).resolve().parent.parent          # Ganadero/
 DATA_DIR = ROOT_DIR / "data"
-RECIPES_FILE = ROOT_DIR.parent / "Crafting" / "data" / "recipes_ganadero.json"
+RECIPES_FILE = ROOT_DIR.parent / "shared" / "data" / "recipes_ganadero.json"
 
 with open(DATA_DIR / "game_data.json", encoding="utf-8") as _f:
     _GD = json.load(_f)
@@ -22,13 +22,13 @@ TAMANIO_MAP = {t["nivel_resto"]: (t["nombre"], t["recarga"])
 
 _TOPES_POR_NIVEL = _GD["carburantes"]["topes_por_nivel"]
 
-COSTOS_DRAGOPAVO = {}
+COSTOS_MONTURA = {}
 for _ind in _GD["cercado"]["indicadores"]:
     if "estadistica" in _ind:
-        COSTOS_DRAGOPAVO[_ind["nombre"]] = (
-            _GD["dragopavo"]["estadisticas"][_ind["estadistica"]]["max"])
+        COSTOS_MONTURA[_ind["nombre"]] = (
+            _GD["montura"]["estadisticas"][_ind["estadistica"]]["max"])
     elif _ind.get("efecto") == "xp":
-        COSTOS_DRAGOPAVO[_ind["nombre"]] = _GD["dragopavo"]["xp_para_nivel_maximo"]
+        COSTOS_MONTURA[_ind["nombre"]] = _GD["montura"]["xp_para_nivel_maximo"]
 
 LOTES = ["x10", "x100"]
 

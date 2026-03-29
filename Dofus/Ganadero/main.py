@@ -17,6 +17,7 @@ sys.path.insert(0, str(ROOT_DIR.parent))
 
 from core.carburante_efficiency import analizar
 from core.ciclo_diario import calcular_ciclo_diario, calcular_estrategia_nocturna
+from shared.colors import C
 from ui.ui import GanaderoUI
 
 # ── Settings ──────────────────────────────────────────────────────────────────
@@ -102,7 +103,7 @@ class GanaderoApp:
             self._root,
             CALIBRATION_POINTS,
             CALIBRATION_FILE,
-            on_done=lambda: self._ui.update_status("Calibración guardada."),
+            on_done=lambda: self._ui.update_status("✓ Calibración guardada", C["green"]),
             transform=transform,
         )
 
@@ -113,38 +114,31 @@ class GanaderoApp:
 
     def _run_sync(self):
         try:
-            self._root.after(0, self._ui.update_status, "Sincronizando…")
-            from Crafting.export.sheets import sync_data
+            self._root.after(0, self._ui.update_status, "Sincronizando…", C["accent"])
+            from shared.sync.sheets import sync_data
             sync_data()
             self._root.after(0, self._refresh)
-            self._root.after(0, self._ui.update_status, "✓ Sincronizado")
+            self._root.after(0, self._ui.update_status, "✓ Sincronizado", C["green"])
         except Exception as e:
-            self._root.after(0, self._ui.update_status, f"Error sync: {e}")
+            self._root.after(0, self._ui.update_status, f"Error: {e}", C["red"])
 
     # ── Actualización de precios ─────────────────────────────────────────────
 
     def _start_update(self):
         self._stop_flag[0] = False
-        self._ui.clear_log()
         self._ui.set_scanning(True)
-        self._ui.log("Iniciando actualización de precios…", "info")
-        self._ui.update_status("Iniciando actualización de precios…")
-        sys.stdout = _StdoutRedirect(self._on_log)
-        sys.stderr = _StdoutRedirect(self._on_log)
+        self._ui.update_status("Iniciando actualización de precios…", C["accent"])
+        sys.stdout = _StdoutRedirect(lambda _: None)
+        sys.stderr = _StdoutRedirect(lambda _: None)
         threading.Thread(target=self._run_update, daemon=True).start()
 
     def _stop_update(self):
         self._stop_flag[0] = True
         self._root.after(0, self._ui.hide_prompt)
-        self._ui.update_status("Deteniendo…")
-        self._ui.log("Deteniendo…", "warn")
-
-    def _on_log(self, text: str):
-        self._root.after(0, self._ui.log, text)
+        self._ui.update_status("Deteniendo…", C["yellow"])
 
     def _on_progress(self, msg: str):
-        self._ui.update_status(msg)
-        self._ui.log(msg)
+        self._ui.update_status(msg, C["yellow"])
 
     def _restore_io(self):
         sys.stdout = self._orig_stdout
@@ -162,8 +156,7 @@ class GanaderoApp:
             )
             self._root.after(0, self._on_update_done, summary)
         except Exception as e:
-            self._root.after(0, self._ui.log, f"[ERROR] {e}", "error")
-            self._root.after(0, self._ui.update_status, f"Error: {e}")
+            self._root.after(0, self._ui.update_status, f"Error: {e}", C["red"])
             self._root.after(0, self._ui.set_scanning, False)
             self._root.after(0, self._restore_io)
 
@@ -195,9 +188,8 @@ class GanaderoApp:
         self._refresh()
         s = summary.get("scanned", 0)
         sk = summary.get("skipped", 0)
-        msg = f"Actualización completa — {s} escaneados, {sk} omitidos (frescos)"
-        self._ui.update_status(msg)
-        self._ui.log(f"[DONE] {msg}", "done")
+        msg = f"✓ {s} escaneados, {sk} omitidos (frescos)"
+        self._ui.update_status(msg, C["green"])
 
     def run(self):
         self._root.mainloop()

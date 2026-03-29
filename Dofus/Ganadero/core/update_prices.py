@@ -30,8 +30,8 @@ from shared.market.search_item_prices import (
 # ── Rutas ────────────────────��────────────────────────────────���───────────────
 _ROOT = Path(__file__).resolve().parent.parent           # Ganadero/
 _DOFUS = _ROOT.parent                                    # Dofus/
-RECIPES_FILE     = _DOFUS / "Crafting" / "data" / "recipes_ganadero.json"
-PRICES_FILE      = _DOFUS / "Crafting" / "data" / "materials_prices.json"
+RECIPES_FILE     = _DOFUS / "shared" / "data" / "recipes_ganadero.json"
+PRICES_FILE      = _DOFUS / "shared" / "data" / "materials_prices.json"
 CALIBRATION_FILE = _DOFUS / "Crafting" / "calibration" / "calibration_data.json"
 
 DELAY_BETWEEN_ITEMS = 0.3

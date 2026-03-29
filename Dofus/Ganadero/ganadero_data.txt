@@ -2,9 +2,9 @@
 
 Dependiendo de la Serenidad, se puede subir la Resistencia(de -5000 a -1), la Madurez(-2000 a 2000) o el Amor(0 a 5000)
 La resistencia, a Madurez y el Amor van de 0 a 20000
-El nivel maximo de un dragopavo es 200, la xp necesaria para llegar a ese nviel es 867582
+El nivel maximo de una montura es 200, la xp necesaria para llegar a ese nviel es 867582
 
-Los dragopavos se crian en cercados, cada cercado puede tener un total de 10 monturas. Los cercados tienen tienen 5 barritas indicadores: 
+Las monturas se crian en cercados, cada cercado puede tener un total de 10 monturas. Los cercados tienen tienen 5 barritas indicadores: 
 Aporreadora
 Acariciador
 Resistencia
@@ -19,7 +19,7 @@ El Madurez con el indicador de Madurez
 El Amor con el indicador de Amor
 
 Los indicadores van de 0 a 10000 y se pueden recargar con las recetas de ganaderos.
-Dependiendo de que tan alto este el indicador, va bajando ese indicador mas rapido, pero le da esa misma cantidad a todos los dragopavos que tenga.
+Dependiendo de que tan alto este el indicador, va bajando ese indicador mas rapido, pero le da esa misma cantidad a todas las monturas que tenga.
 De 0 a 40000 = pierde 10 por segundo
 De 40000 a 70000 = 20 por segundo
 De 70000 a 90000 = 30 por segundo

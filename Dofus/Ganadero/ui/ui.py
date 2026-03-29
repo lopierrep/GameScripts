@@ -13,8 +13,8 @@ from pathlib import Path
 
 from shared.colors import C, style_scrollbar
 from shared.font  import FONT as F, TITLE, HEADER, BASE
-from shared.log_panel import LogPanel
 from shared.prompt_bar import PromptBar
+from shared.status_bar import StatusBar
 from shared.toast import show_copy_toast
 
 _GD_FILE = Path(__file__).resolve().parent.parent / "data" / "game_data.json"
@@ -33,9 +33,9 @@ for _r in _GD["cercado"]["rangos_consumo"]:
         "label": f"0-{_hi // 1000}k" if _lo == 0 else f"{_lo // 1000}k-{_hi // 1000}k",
     })
 
-_xp = _GD["dragopavo"]["xp_para_nivel_maximo"]
+_xp = _GD["montura"]["xp_para_nivel_maximo"]
 STATS_TIEMPO = [("XP (nivel 200)", _xp)]
-for _stat, _val in _GD["dragopavo"]["estadisticas"].items():
+for _stat, _val in _GD["montura"]["estadisticas"].items():
     STATS_TIEMPO.append((_stat.capitalize(), _val["max"]))
 
 COLUMNS = [
@@ -116,7 +116,6 @@ class GanaderoUI:
     def _build_ui(self):
         self._build_topbar()
         self._build_main_area()
-        self._build_log()
         self._build_prompt()
         self._build_statusbar()
 
@@ -358,8 +357,8 @@ class GanaderoUI:
             tope_ant = t
         tree_d.pack(fill="x")
 
-        # ── Costo por dragopavo ──────────────────────────────────────────
-        tk.Label(parent, text=f"Costo por dragopavo ({self._monturas} monturas/cercado)",
+        # ── Costo por montura ────────────────────────────────────────────
+        tk.Label(parent, text=f"Costo por montura ({self._monturas} monturas/cercado)",
                  bg=C["bg"], fg=C["accent"], font=(F, HEADER, "bold"),
                  anchor="w").pack(fill="x", padx=20, pady=(10, 4))
 
@@ -421,16 +420,11 @@ class GanaderoUI:
         self._tree_nocturna.tag_configure("optimo", foreground=C["green"])
         self._tree_nocturna.pack(fill="x")
 
-    def _build_log(self):
-        self._log_panel = LogPanel(self.root, self.root)
-
     def _build_prompt(self):
         self._prompt_bar = PromptBar(self.root)
 
     def _build_statusbar(self):
-        self.status_lbl = tk.Label(self.root, text="", bg=C["bg"], fg=C["dim"],
-                                   font=(F, HEADER), anchor="w")
-        self.status_lbl.pack(fill="x", padx=14, pady=(0, 6))
+        self._status_bar = StatusBar(self.root)
 
     # ── Métodos públicos para actualizar desde el orquestador ─────────────────
 
@@ -526,22 +520,14 @@ class GanaderoUI:
                 f"{n['eficiencia']} pts/k",
             ))
 
-    def update_status(self, text: str):
-        self.status_lbl.config(text=text)
-
-    # ── Log panel ────────────────────────────────────────────────────────────
+    def update_status(self, text: str, color: str = C["dim"]):
+        self._status_bar.set(text, color)
 
     def log(self, text: str, tag: str = None):
-        self._log_panel.log(text, tag)
+        pass
 
     def clear_log(self):
-        self._log_panel.clear()
-
-    def show_log(self):
-        self._log_panel.show(fill="x", padx=12, pady=(0, 4), before=self.status_lbl)
-
-    def hide_log(self):
-        self._log_panel.hide()
+        pass
 
     # ── Control de escaneo ───────────────────────────────────────────────────
 
@@ -550,14 +536,13 @@ class GanaderoUI:
         if active:
             self._btn_update.pack_forget()
             self._btn_stop.pack(side="left", padx=(8, 0), before=self._btn_sync)
-            self.show_log()
         else:
             self._btn_stop.pack_forget()
             self._btn_update.pack(side="left", padx=(8, 0), before=self._btn_sync)
             self.hide_prompt()
 
     def show_confirm(self, text: str, on_confirm):
-        self._prompt_bar.show_confirm(text, on_confirm, fill="x", before=self.status_lbl)
+        self._prompt_bar.show_confirm(text, on_confirm, fill="x", before=self._status_bar)
 
     def hide_prompt(self):
         self._prompt_bar.hide()

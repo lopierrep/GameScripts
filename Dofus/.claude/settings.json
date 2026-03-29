@@ -27,7 +27,26 @@
       "Bash(git -C \"e:/2_Games/Scripts\" status -- Dofus/shared/colors.py Dofus/Ganadero/ui/ui.py Dofus/Crafting/ui/ui.py Dofus/Almanax/ui/ui.py)",
       "Bash(git -C \"e:/2_Games/Scripts\" status)",
       "Bash(git -C \"e:/2_Games/Scripts\" log --oneline -1 -- Dofus/shared/colors.py Dofus/Ganadero/ui/ui.py Dofus/Crafting/ui/ui.py Dofus/Almanax/ui/ui.py)",
-      "Bash(git -C \"e:/2_Games/Scripts\" show 18f0047 -- Dofus/Ganadero/ui/ui.py)"
+      "Bash(git -C \"e:/2_Games/Scripts\" show 18f0047 -- Dofus/Ganadero/ui/ui.py)",
+      "Bash(ls -lh /e/2_Games/Scripts/Dofus/*/data/*.json)",
+      "Bash(python3 -c \"import json; f=open\\(''/e/2_Games/Scripts/Dofus/Crafting/data/materials_prices.json''\\); d=json.load\\(f\\); import random; mkt=list\\(d.keys\\(\\)\\)[0]; cat=list\\(d[mkt].keys\\(\\)\\)[0]; item=list\\(d[mkt][cat].keys\\(\\)\\)[0]; print\\(f''Market: {mkt}\\\\nCategory: {cat}\\\\nItem: {item}\\\\nData:''\\); print\\(json.dumps\\(d[mkt][cat][item], indent=2\\)\\)\")",
+      "Bash(python3 -c \"import json; f=open\\(''e:/2_Games/Scripts/Dofus/Crafting/data/materials_prices.json'', encoding=''utf-8''\\); d=json.load\\(f\\); mkt=list\\(d.keys\\(\\)\\)[0]; cat=list\\(d[mkt].keys\\(\\)\\)[0]; item=list\\(d[mkt][cat].keys\\(\\)\\)[0]; print\\(f''Market: {mkt}\\\\nCategory: {cat}\\\\nItem: {item}\\\\nData:''\\); print\\(json.dumps\\(d[mkt][cat][item], indent=2\\)\\)\")",
+      "Bash(python -m py_compile shared/log_panel.py)",
+      "Bash(python3:*)",
+      "Bash(python -m py_compile Ganadero/ui/ui.py)",
+      "Bash(python -m py_compile shared/prompt_bar.py)",
+      "Bash(python -m py_compile Almanax/main.py)",
+      "Bash(python -m py_compile Almanax/ui/ui.py)",
+      "Bash(git -C \"e:/2_Games/Scripts\" diff Dofus/Almanax/ui/ui.py)",
+      "Bash(git -C \"e:/2_Games/Scripts\" add Dofus/Almanax/ui/ui.py)",
+      "Bash(git -C:*)",
+      "Bash(xargs ls:*)",
+      "Bash(grep -rn shared/data /e/2_Games/Scripts/Dofus --include=*.py)",
+      "Bash(python -m py_compile shared/sync/sheets.py)",
+      "Bash(python -m py_compile Crafting/config/config.py)",
+      "Bash(python -m py_compile Almanax/config/config.py)",
+      "Bash(python -m py_compile Ganadero/core/update_prices.py)",
+      "Bash(python -m py_compile Ganadero/core/carburante_efficiency.py)"
     ]
   }
 }
