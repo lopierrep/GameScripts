@@ -477,40 +477,60 @@ def build_table_rows(
         lot_num     = _LOT_NUMS.get(best_size, 1)
         craft_total = best_craft * lot_num if best_craft else None
         sell_total  = best_sell  * lot_num if best_sell  else None
+        def _display_price_total(name, buy_lot, buy_or_craft, qty, lot_num_recipe):
+            """Precio de mercado real y total exacto del lote para ingredientes comprados."""
+            if buy_or_craft != "Craft" and buy_lot and buy_lot != "—":
+                lot_key  = buy_lot[1:]  # "x100" → "100"
+                market_p = raw_market_prices.get(name, {}).get(lot_key)
+                if market_p:
+                    lot_num_ing = _LOT_NUMS.get(buy_lot, 1)
+                    total_qty   = qty * lot_num_recipe
+                    packs       = math.ceil(total_qty / lot_num_ing) if total_qty > 0 else 1
+                    return market_p, packs * lot_num_ing * market_p
+            return None, None
+
         ingredients = []
         for ing in r.get("ingredients", []):
             ing_name     = ing["name"]
             buy_or_craft = ing.get("buy_or_craft")
+            buy_lot      = ing.get("buy_lot", "—")
+
+            dp, dt = _display_price_total(ing_name, buy_lot, buy_or_craft, ing["quantity"], lot_num)
+            unit_price_disp = dp if dp is not None else ing.get("unit_price")
+            total_disp      = dt if dt is not None else ing.get("total")
 
             # Sub-ingredientes desde el craftable_map (datos ya enriquecidos)
             sub_ingredients = []
             if buy_or_craft == "Craft":
                 for sub_ing in craftable_map.get(ing_name, {}).get("ingredients", []):
-                    sub_name = sub_ing["name"]
+                    sub_name     = sub_ing["name"]
+                    sub_buy_lot  = sub_ing.get("buy_lot", "—")
+                    sub_boc      = sub_ing.get("buy_or_craft")
+                    sdp, sdt = _display_price_total(sub_name, sub_buy_lot, sub_boc, sub_ing["quantity"], lot_num)
                     sub_ingredients.append({
-                        "name":            sub_name,
-                        "quantity":        sub_ing["quantity"],
-                        "sell_size":       lot_num,
-                        "unit_price":      sub_ing.get("unit_price"),
-                        "buy_lot":         sub_ing.get("buy_lot", "—"),
-                        "buy_or_craft":    sub_ing.get("buy_or_craft"),
-                        "total":           sub_ing.get("total"),
-                        "lot_prices":      raw_market_prices.get(sub_name, {}),
-                        "prices_updated_at":    ing_updated_at.get(sub_name, ""),
-                        "sub_ingredients": [],
+                        "name":              sub_name,
+                        "quantity":          sub_ing["quantity"],
+                        "sell_size":         lot_num,
+                        "unit_price":        sdp if sdp is not None else sub_ing.get("unit_price"),
+                        "buy_lot":           sub_buy_lot,
+                        "buy_or_craft":      sub_boc,
+                        "total":             sdt if sdt is not None else sub_ing.get("total"),
+                        "lot_prices":        raw_market_prices.get(sub_name, {}),
+                        "prices_updated_at": ing_updated_at.get(sub_name, ""),
+                        "sub_ingredients":   [],
                     })
 
             ingredients.append({
-                "name":            ing_name,
-                "quantity":        ing["quantity"],
-                "sell_size":       lot_num,
-                "unit_price":      ing.get("unit_price"),
-                "buy_lot":         ing.get("buy_lot", "—"),
-                "buy_or_craft":    buy_or_craft,
-                "total":           ing.get("total"),
-                "lot_prices":      raw_market_prices.get(ing_name, {}),
-                "prices_updated_at":    ing_updated_at.get(ing_name, ""),
-                "sub_ingredients": sub_ingredients,
+                "name":              ing_name,
+                "quantity":          ing["quantity"],
+                "sell_size":         lot_num,
+                "unit_price":        unit_price_disp,
+                "buy_lot":           buy_lot,
+                "buy_or_craft":      buy_or_craft,
+                "total":             total_disp,
+                "lot_prices":        raw_market_prices.get(ing_name, {}),
+                "prices_updated_at": ing_updated_at.get(ing_name, ""),
+                "sub_ingredients":   sub_ingredients,
             })
 
         rows.append({
