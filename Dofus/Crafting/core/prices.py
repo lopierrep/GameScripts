@@ -405,14 +405,11 @@ def _enrich_recipe(recipe: dict, pack_prices: dict, craftable_map: dict):
                 buy_or_craft = "Craft"
 
         # Precio de display: para ingredientes comprados se muestra el precio de mercado
-        # real en el lote recomendado (no el precio efectivo que reparte el lote entre
-        # las unidades usadas). El total refleja el costo exacto del lote a comprar.
+        # real en el lote recomendado. El total es cantidad_receta × precio_unitario.
         if buy_or_craft != "Craft" and buy_lot:
             market_price  = pack_prices.get(ing_name, {}).get(buy_lot) or None
-            lot_num_ing   = _LOT_NUMS[buy_lot]
-            packs_ing     = math.ceil(total_qty / lot_num_ing) if total_qty > 0 else 1
             display_price = market_price
-            display_total = round(packs_ing * lot_num_ing * market_price) if market_price else None
+            display_total = round(ing_qty * lot_num * market_price) if market_price else None
         else:
             display_price = round(unit_price) if unit_price else None
             display_total = round(unit_price * ing_qty * lot_num) if unit_price else None
@@ -483,10 +480,7 @@ def build_table_rows(
                 lot_key  = buy_lot[1:]  # "x100" → "100"
                 market_p = raw_market_prices.get(name, {}).get(lot_key)
                 if market_p:
-                    lot_num_ing = _LOT_NUMS.get(buy_lot, 1)
-                    total_qty   = qty * lot_num_recipe
-                    packs       = math.ceil(total_qty / lot_num_ing) if total_qty > 0 else 1
-                    return market_p, packs * lot_num_ing * market_p
+                    return market_p, qty * lot_num_recipe * market_p
             return None, None
 
         ingredients = []
