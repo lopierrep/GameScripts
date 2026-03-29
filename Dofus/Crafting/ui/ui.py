@@ -525,7 +525,6 @@ class CraftingUI:
 
         for row in rows:
             profit_total = row.get("profit_total")
-            craft_unit = row.get("craft_unit")
             craft   = row.get("craft_cost")
             sell    = row.get("sell_price")
             level   = row.get("level", "")
@@ -533,7 +532,7 @@ class CraftingUI:
             updated = row.get("updated", "")
             name    = row.get("result", "")
 
-            craft_str  = f"{_fmt(craft_unit)} · {_fmt(craft)}" if craft_unit else _fmt(craft)
+            craft_str  = _fmt(craft)
             sell_str   = _fmt(sell)
             if profit_total is None:
                 profit_str = "—"

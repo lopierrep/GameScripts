@@ -73,7 +73,7 @@
     "profit_x100": -1089,
     "profit_x1000": -1088,
     "best_lot": "x1000",
-    "prices_updated_at": "2026-03-29T06:18:45.043811+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.477914+00:00"
   },
   {
     "id": 33310,
@@ -102,16 +102,16 @@
     "unit_selling_price_x10": 190,
     "unit_selling_price_x100": 190,
     "unit_selling_price_x1000": 190,
-    "unit_crafting_cost_x1": 1519,
-    "unit_crafting_cost_x10": 1515,
-    "unit_crafting_cost_x100": 1500,
-    "unit_crafting_cost_x1000": 1500,
+    "unit_crafting_cost_x1": 1529,
+    "unit_crafting_cost_x10": 1480,
+    "unit_crafting_cost_x100": 1480,
+    "unit_crafting_cost_x1000": 1480,
     "profit_x1": -1393,
     "profit_x10": -1389,
     "profit_x100": -1374,
     "profit_x1000": -1374,
     "best_lot": "x1000",
-    "prices_updated_at": "2026-03-29T06:18:45.043831+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.477937+00:00"
   },
   {
     "id": 33311,
@@ -149,7 +149,7 @@
     "profit_x100": 3559,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.043845+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.477947+00:00"
   },
   {
     "id": 33312,
@@ -187,7 +187,7 @@
     "profit_x100": -599,
     "profit_x1000": -682,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.043857+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.477958+00:00"
   },
   {
     "id": 33313,
@@ -216,16 +216,16 @@
     "unit_selling_price_x10": 2500,
     "unit_selling_price_x100": 2049,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 1490,
-    "unit_crafting_cost_x10": 1480,
-    "unit_crafting_cost_x100": 1420,
-    "unit_crafting_cost_x1000": 1420,
+    "unit_crafting_cost_x1": 1440,
+    "unit_crafting_cost_x10": 1440,
+    "unit_crafting_cost_x100": 1440,
+    "unit_crafting_cost_x1000": 1418,
     "profit_x1": 320,
     "profit_x10": 605,
     "profit_x100": 244,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.043870+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.477967+00:00"
   },
   {
     "id": 33314,
@@ -263,7 +263,7 @@
     "profit_x100": -360,
     "profit_x1000": -360,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.043880+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.477977+00:00"
   },
   {
     "id": 33315,
@@ -301,7 +301,7 @@
     "profit_x100": -638,
     "profit_x1000": -637,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.043890+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.477987+00:00"
   },
   {
     "id": 33316,
@@ -330,16 +330,16 @@
     "unit_selling_price_x10": 1000,
     "unit_selling_price_x100": 1000,
     "unit_selling_price_x1000": 1000,
-    "unit_crafting_cost_x1": 3841,
-    "unit_crafting_cost_x10": 3837,
-    "unit_crafting_cost_x100": 3820,
-    "unit_crafting_cost_x1000": 3820,
+    "unit_crafting_cost_x1": 3851,
+    "unit_crafting_cost_x10": 3802,
+    "unit_crafting_cost_x100": 3800,
+    "unit_crafting_cost_x1000": 3800,
     "profit_x1": -2961,
     "profit_x10": -3165,
     "profit_x100": -2940,
     "profit_x1000": -2940,
     "best_lot": "x1000",
-    "prices_updated_at": "2026-03-29T06:18:45.043898+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.477997+00:00"
   },
   {
     "id": 33317,
@@ -377,7 +377,7 @@
     "profit_x100": 443,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.043907+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478005+00:00"
   },
   {
     "id": 33318,
@@ -415,7 +415,7 @@
     "profit_x100": 440,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.043916+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478015+00:00"
   },
   {
     "id": 33319,
@@ -444,16 +444,16 @@
     "unit_selling_price_x10": 2300,
     "unit_selling_price_x100": 3300,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 1789,
-    "unit_crafting_cost_x10": 1779,
-    "unit_crafting_cost_x100": 1530,
-    "unit_crafting_cost_x1000": 1530,
+    "unit_crafting_cost_x1": 1739,
+    "unit_crafting_cost_x10": 1739,
+    "unit_crafting_cost_x100": 1550,
+    "unit_crafting_cost_x1000": 1528,
     "profit_x1": 918,
     "profit_x10": 299,
     "profit_x100": 1489,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.043925+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478024+00:00"
   },
   {
     "id": 33320,
@@ -491,7 +491,7 @@
     "profit_x100": -26,
     "profit_x1000": -26,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.043933+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478033+00:00"
   },
   {
     "id": 33321,
@@ -781,7 +781,7 @@
     "profit_x100": 628,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.043943+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478042+00:00"
   },
   {
     "id": 33327,
@@ -819,7 +819,7 @@
     "profit_x100": 2048,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.043955+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478051+00:00"
   },
   {
     "id": 33328,
@@ -857,7 +857,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "",
-    "prices_updated_at": "2026-03-29T06:18:45.043962+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478056+00:00"
   },
   {
     "id": 33329,
@@ -895,7 +895,7 @@
     "profit_x100": 1686,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.043975+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478066+00:00"
   },
   {
     "id": 33330,
@@ -924,16 +924,16 @@
     "unit_selling_price_x10": 4550,
     "unit_selling_price_x100": 4990,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 3468,
-    "unit_crafting_cost_x10": 2700,
-    "unit_crafting_cost_x100": 2528,
-    "unit_crafting_cost_x1000": 2528,
+    "unit_crafting_cost_x1": 2929,
+    "unit_crafting_cost_x10": 2510,
+    "unit_crafting_cost_x100": 2510,
+    "unit_crafting_cost_x1000": 2510,
     "profit_x1": 2526,
     "profit_x10": 1480,
     "profit_x100": 2062,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.043985+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478075+00:00"
   },
   {
     "id": 33331,
@@ -971,7 +971,7 @@
     "profit_x100": 216,
     "profit_x1000": 213,
     "best_lot": "x1000",
-    "prices_updated_at": "2026-03-29T06:18:45.043994+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478085+00:00"
   },
   {
     "id": 33332,
@@ -1215,7 +1215,7 @@
     "profit_x100": -222,
     "profit_x1000": -221,
     "best_lot": "x1000",
-    "prices_updated_at": "2026-03-29T06:18:45.044011+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478094+00:00"
   },
   {
     "id": 33337,
@@ -1253,7 +1253,7 @@
     "profit_x100": 532,
     "profit_x1000": 439,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.044021+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478103+00:00"
   },
   {
     "id": 33338,
@@ -1291,7 +1291,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "",
-    "prices_updated_at": "2026-03-29T06:18:45.044026+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478107+00:00"
   },
   {
     "id": 33339,
@@ -1329,7 +1329,7 @@
     "profit_x100": 1092,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044035+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478117+00:00"
   },
   {
     "id": 33340,
@@ -1358,16 +1358,16 @@
     "unit_selling_price_x10": 6990,
     "unit_selling_price_x100": 7000,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 4182,
-    "unit_crafting_cost_x10": 3784,
-    "unit_crafting_cost_x100": 3612,
-    "unit_crafting_cost_x1000": 3612,
+    "unit_crafting_cost_x1": 3643,
+    "unit_crafting_cost_x10": 3594,
+    "unit_crafting_cost_x100": 3594,
+    "unit_crafting_cost_x1000": 3594,
     "profit_x1": 2274,
     "profit_x10": 2394,
     "profit_x100": 2576,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.044044+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478125+00:00"
   },
   {
     "id": 33341,
@@ -1405,7 +1405,7 @@
     "profit_x100": 1690,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.044053+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478134+00:00"
   },
   {
     "id": 33342,
@@ -1695,7 +1695,7 @@
     "profit_x100": 172,
     "profit_x1000": 176,
     "best_lot": "x1000",
-    "prices_updated_at": "2026-03-29T06:18:45.044063+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478143+00:00"
   },
   {
     "id": 33348,
@@ -1724,16 +1724,16 @@
     "unit_selling_price_x10": 750,
     "unit_selling_price_x100": 750,
     "unit_selling_price_x1000": 750,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0,
+    "unit_crafting_cost_x1": 432,
+    "unit_crafting_cost_x10": 432,
+    "unit_crafting_cost_x100": 432,
+    "unit_crafting_cost_x1000": 429,
     "profit_x1": -780,
     "profit_x10": 96,
     "profit_x100": 157,
     "profit_x1000": 167,
     "best_lot": "x1000",
-    "prices_updated_at": "2026-03-29T06:18:45.044066+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478154+00:00"
   },
   {
     "id": 33349,
@@ -1771,7 +1771,7 @@
     "profit_x100": 708,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044075+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478164+00:00"
   },
   {
     "id": 33350,
@@ -1809,7 +1809,7 @@
     "profit_x100": 709,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044084+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478173+00:00"
   },
   {
     "id": 33351,
@@ -1847,7 +1847,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "",
-    "prices_updated_at": "2026-03-29T06:18:45.044093+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478182+00:00"
   },
   {
     "id": 33352,
@@ -1885,7 +1885,7 @@
     "profit_x100": 404,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044102+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478192+00:00"
   },
   {
     "id": 33353,
@@ -2138,7 +2138,7 @@
     "profit_x100": 6168,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.044115+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478205+00:00"
   },
   {
     "id": 33358,
@@ -2175,16 +2175,16 @@
     "unit_selling_price_x10": 1500,
     "unit_selling_price_x100": 1970,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 0,
-    "unit_crafting_cost_x10": 0,
-    "unit_crafting_cost_x100": 0,
-    "unit_crafting_cost_x1000": 0,
+    "unit_crafting_cost_x1": 1364,
+    "unit_crafting_cost_x10": 1288,
+    "unit_crafting_cost_x100": 1288,
+    "unit_crafting_cost_x1000": 1285,
     "profit_x1": -723,
     "profit_x10": -95,
     "profit_x100": 401,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.044119+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478218+00:00"
   },
   {
     "id": 33359,
@@ -2230,7 +2230,7 @@
     "profit_x100": 4747,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.044131+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478230+00:00"
   },
   {
     "id": 33360,
@@ -2276,7 +2276,7 @@
     "profit_x100": 4547,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.044144+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478244+00:00"
   },
   {
     "id": 33361,
@@ -2322,7 +2322,7 @@
     "profit_x100": 617,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.044157+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478256+00:00"
   },
   {
     "id": 33362,
@@ -2368,7 +2368,7 @@
     "profit_x100": 3426,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.044168+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478267+00:00"
   },
   {
     "id": 33363,
@@ -2666,7 +2666,7 @@
     "profit_x100": 1007,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.044181+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478280+00:00"
   },
   {
     "id": 33369,
@@ -2712,7 +2712,7 @@
     "profit_x100": 1130,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.044193+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478293+00:00"
   },
   {
     "id": 33370,
@@ -2758,7 +2758,7 @@
     "profit_x100": 6466,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.044205+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478307+00:00"
   },
   {
     "id": 33371,
@@ -2804,7 +2804,7 @@
     "profit_x100": 3307,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.044218+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478328+00:00"
   },
   {
     "id": 33372,
@@ -2850,7 +2850,7 @@
     "profit_x100": 3725,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.044229+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478340+00:00"
   },
   {
     "id": 33373,
@@ -2896,7 +2896,7 @@
     "profit_x100": 3156,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.044242+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478354+00:00"
   },
   {
     "id": 33374,
@@ -3149,7 +3149,7 @@
     "profit_x100": 60,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.044254+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478367+00:00"
   },
   {
     "id": 33379,
@@ -3195,7 +3195,7 @@
     "profit_x100": -1103,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044266+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478380+00:00"
   },
   {
     "id": 33380,
@@ -3241,7 +3241,7 @@
     "profit_x100": 883,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044278+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478392+00:00"
   },
   {
     "id": 33381,
@@ -3287,7 +3287,7 @@
     "profit_x100": -519,
     "profit_x1000": 235,
     "best_lot": "x1000",
-    "prices_updated_at": "2026-03-29T06:18:45.044291+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478406+00:00"
   },
   {
     "id": 33382,
@@ -3333,7 +3333,7 @@
     "profit_x100": 5443,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.044302+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478418+00:00"
   },
   {
     "id": 33383,
@@ -3379,7 +3379,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "",
-    "prices_updated_at": "2026-03-29T06:18:45.044312+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478430+00:00"
   },
   {
     "id": 33384,
@@ -3677,7 +3677,7 @@
     "profit_x100": 1426,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.044325+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478444+00:00"
   },
   {
     "id": 33390,
@@ -3723,7 +3723,7 @@
     "profit_x100": 1159,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.044338+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478457+00:00"
   },
   {
     "id": 33391,
@@ -3769,7 +3769,7 @@
     "profit_x100": 5190,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044350+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478470+00:00"
   },
   {
     "id": 33392,
@@ -3815,7 +3815,7 @@
     "profit_x100": 3254,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044362+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478483+00:00"
   },
   {
     "id": 33393,
@@ -3861,7 +3861,7 @@
     "profit_x100": 749,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.044375+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478496+00:00"
   },
   {
     "id": 33394,
@@ -3907,7 +3907,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044387+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478509+00:00"
   },
   {
     "id": 33395,
@@ -4160,7 +4160,7 @@
     "profit_x100": 2075,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044399+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478521+00:00"
   },
   {
     "id": 33400,
@@ -4206,7 +4206,7 @@
     "profit_x100": 7839,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.044411+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478532+00:00"
   },
   {
     "id": 33401,
@@ -4252,7 +4252,7 @@
     "profit_x100": 1065,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.044424+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478545+00:00"
   },
   {
     "id": 33402,
@@ -4298,7 +4298,7 @@
     "profit_x100": -600,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044435+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478557+00:00"
   },
   {
     "id": 33403,
@@ -4344,7 +4344,7 @@
     "profit_x100": 3104,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044447+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478569+00:00"
   },
   {
     "id": 33404,
@@ -4390,7 +4390,7 @@
     "profit_x100": 2509,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044459+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478582+00:00"
   },
   {
     "id": 33405,
@@ -4928,7 +4928,7 @@
     "profit_x100": -878,
     "profit_x1000": -878,
     "best_lot": "x1000",
-    "prices_updated_at": "2026-03-29T06:18:45.044475+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478599+00:00"
   },
   {
     "id": 33411,
@@ -4973,16 +4973,16 @@
     "unit_selling_price_x10": 4300,
     "unit_selling_price_x100": 4499,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 4362,
-    "unit_crafting_cost_x10": 3136,
-    "unit_crafting_cost_x100": 3067,
-    "unit_crafting_cost_x1000": 3057,
+    "unit_crafting_cost_x1": 841,
+    "unit_crafting_cost_x10": 498,
+    "unit_crafting_cost_x100": 420,
+    "unit_crafting_cost_x1000": 375,
     "profit_x1": 1108,
     "profit_x10": 801,
     "profit_x100": 1055,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.044491+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478617+00:00"
   },
   {
     "id": 33412,
@@ -5036,7 +5036,7 @@
     "profit_x100": 10360,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.044507+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478633+00:00"
   },
   {
     "id": 33413,
@@ -5090,7 +5090,7 @@
     "profit_x100": -165,
     "profit_x1000": -121,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044522+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478649+00:00"
   },
   {
     "id": 33414,
@@ -5144,7 +5144,7 @@
     "profit_x100": 5819,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.044537+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478663+00:00"
   },
   {
     "id": 33415,
@@ -5189,16 +5189,16 @@
     "unit_selling_price_x10": 18999,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 10415,
-    "unit_crafting_cost_x10": 10235,
-    "unit_crafting_cost_x100": 10217,
-    "unit_crafting_cost_x1000": 10217,
+    "unit_crafting_cost_x1": 9556,
+    "unit_crafting_cost_x10": 9376,
+    "unit_crafting_cost_x100": 9328,
+    "unit_crafting_cost_x1000": 9328,
     "profit_x1": 6874,
     "profit_x10": 6867,
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044551+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478679+00:00"
   },
   {
     "id": 33416,
@@ -5458,7 +5458,7 @@
     "profit_x100": -1193,
     "profit_x1000": -1193,
     "best_lot": "x1000",
-    "prices_updated_at": "2026-03-29T06:18:45.044568+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478697+00:00"
   },
   {
     "id": 33421,
@@ -5503,16 +5503,16 @@
     "unit_selling_price_x10": 19000,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 12746,
-    "unit_crafting_cost_x10": 8507,
-    "unit_crafting_cost_x100": 8442,
-    "unit_crafting_cost_x1000": 8432,
+    "unit_crafting_cost_x1": 11853,
+    "unit_crafting_cost_x10": 8497,
+    "unit_crafting_cost_x100": 8423,
+    "unit_crafting_cost_x1000": 8378,
     "profit_x1": 9405,
     "profit_x10": 9025,
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044583+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478713+00:00"
   },
   {
     "id": 33422,
@@ -5566,7 +5566,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "",
-    "prices_updated_at": "2026-03-29T06:18:45.044599+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478728+00:00"
   },
   {
     "id": 33423,
@@ -5620,7 +5620,7 @@
     "profit_x100": 1466,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.044616+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478744+00:00"
   },
   {
     "id": 33424,
@@ -5674,7 +5674,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044630+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478759+00:00"
   },
   {
     "id": 33425,
@@ -5728,7 +5728,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044645+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478774+00:00"
   },
   {
     "id": 33426,
@@ -6034,7 +6034,7 @@
     "profit_x100": 5113,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044662+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478793+00:00"
   },
   {
     "id": 33432,
@@ -6079,16 +6079,16 @@
     "unit_selling_price_x10": 17999,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 4058,
-    "unit_crafting_cost_x10": 1655,
-    "unit_crafting_cost_x100": 1600,
-    "unit_crafting_cost_x1000": 1582,
+    "unit_crafting_cost_x1": 3976,
+    "unit_crafting_cost_x10": 1573,
+    "unit_crafting_cost_x100": 1573,
+    "unit_crafting_cost_x1000": 1573,
     "profit_x1": 15159,
     "profit_x10": 10373,
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.044677+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478815+00:00"
   },
   {
     "id": 33433,
@@ -6142,7 +6142,7 @@
     "profit_x100": 7370,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044693+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478839+00:00"
   },
   {
     "id": 33434,
@@ -6196,7 +6196,7 @@
     "profit_x100": 4743,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.044709+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478863+00:00"
   },
   {
     "id": 33435,
@@ -6250,7 +6250,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044724+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478882+00:00"
   },
   {
     "id": 33436,
@@ -6304,7 +6304,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044739+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478898+00:00"
   },
   {
     "id": 33437,
@@ -6565,7 +6565,7 @@
     "profit_x100": 5496,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.044755+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478915+00:00"
   },
   {
     "id": 33442,
@@ -6610,16 +6610,16 @@
     "unit_selling_price_x10": 14400,
     "unit_selling_price_x100": 14400,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 8120,
-    "unit_crafting_cost_x10": 8052,
-    "unit_crafting_cost_x100": 7997,
-    "unit_crafting_cost_x1000": 7979,
+    "unit_crafting_cost_x1": 8038,
+    "unit_crafting_cost_x10": 7970,
+    "unit_crafting_cost_x100": 7970,
+    "unit_crafting_cost_x1000": 7970,
     "profit_x1": 8539,
     "profit_x10": 4465,
     "profit_x100": 4620,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.044770+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478930+00:00"
   },
   {
     "id": 33443,
@@ -6673,7 +6673,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044785+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478944+00:00"
   },
   {
     "id": 33444,
@@ -6727,7 +6727,7 @@
     "profit_x100": 6793,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.044800+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478960+00:00"
   },
   {
     "id": 33445,
@@ -6781,7 +6781,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.044815+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478976+00:00"
   },
   {
     "id": 33446,
@@ -6835,7 +6835,7 @@
     "profit_x100": 5864,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044831+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.478991+00:00"
   },
   {
     "id": 33447,
@@ -7141,7 +7141,7 @@
     "profit_x100": 7605,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044847+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479008+00:00"
   },
   {
     "id": 33453,
@@ -7195,7 +7195,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044862+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479025+00:00"
   },
   {
     "id": 33454,
@@ -7249,7 +7249,7 @@
     "profit_x100": 6239,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.044877+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479040+00:00"
   },
   {
     "id": 33455,
@@ -7294,16 +7294,16 @@
     "unit_selling_price_x10": 6900,
     "unit_selling_price_x100": 7800,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 2486,
-    "unit_crafting_cost_x10": 2423,
-    "unit_crafting_cost_x100": 2423,
-    "unit_crafting_cost_x1000": 2423,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
     "profit_x1": 3881,
     "profit_x10": 3888,
     "profit_x100": 4725,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.044892+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479044+00:00"
   },
   {
     "id": 33456,
@@ -7357,7 +7357,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044908+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479061+00:00"
   },
   {
     "id": 33457,
@@ -7411,7 +7411,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044923+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479076+00:00"
   },
   {
     "id": 33458,
@@ -7913,7 +7913,7 @@
     "profit_x100": 9924,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.044944+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479097+00:00"
   },
   {
     "id": 33463,
@@ -7975,7 +7975,7 @@
     "profit_x100": 7503,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.044962+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479116+00:00"
   },
   {
     "id": 33464,
@@ -8037,7 +8037,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.044981+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479135+00:00"
   },
   {
     "id": 33465,
@@ -8090,16 +8090,16 @@
     "unit_selling_price_x10": 40000,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 9379,
-    "unit_crafting_cost_x10": 9203,
-    "unit_crafting_cost_x100": 9203,
-    "unit_crafting_cost_x1000": 9173,
+    "unit_crafting_cost_x1": 0,
+    "unit_crafting_cost_x10": 0,
+    "unit_crafting_cost_x100": 0,
+    "unit_crafting_cost_x1000": 0,
     "profit_x1": 23120,
     "profit_x10": 27731,
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.045000+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479138+00:00"
   },
   {
     "id": 33466,
@@ -8161,7 +8161,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.045019+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479166+00:00"
   },
   {
     "id": 33467,
@@ -8214,16 +8214,16 @@
     "unit_selling_price_x10": 38700,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 10324,
-    "unit_crafting_cost_x10": 9816,
-    "unit_crafting_cost_x100": 9576,
-    "unit_crafting_cost_x1000": 9576,
+    "unit_crafting_cost_x1": 10419,
+    "unit_crafting_cost_x10": 9911,
+    "unit_crafting_cost_x100": 9076,
+    "unit_crafting_cost_x1000": 9059,
     "profit_x1": 25617,
     "profit_x10": 26006,
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.045038+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479185+00:00"
   },
   {
     "id": 33468,
@@ -8536,7 +8536,7 @@
     "profit_x100": 1333,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.045058+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479214+00:00"
   },
   {
     "id": 33472,
@@ -8598,7 +8598,7 @@
     "profit_x100": 2373,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.045076+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479237+00:00"
   },
   {
     "id": 33473,
@@ -8660,7 +8660,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "",
-    "prices_updated_at": "2026-03-29T06:18:45.045080+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479243+00:00"
   },
   {
     "id": 33474,
@@ -8722,7 +8722,7 @@
     "profit_x100": 2240,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-29T06:18:45.045100+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479268+00:00"
   },
   {
     "id": 33475,
@@ -8784,7 +8784,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.045119+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479289+00:00"
   },
   {
     "id": 33476,
@@ -8837,16 +8837,16 @@
     "unit_selling_price_x10": 25000,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 16405,
-    "unit_crafting_cost_x10": 13476,
-    "unit_crafting_cost_x100": 12522,
-    "unit_crafting_cost_x1000": 12522,
+    "unit_crafting_cost_x1": 15388,
+    "unit_crafting_cost_x10": 12526,
+    "unit_crafting_cost_x100": 10407,
+    "unit_crafting_cost_x1000": 10407,
     "profit_x1": 6702,
     "profit_x10": 9181,
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.045137+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479316+00:00"
   },
   {
     "id": 33537,
@@ -9157,7 +9157,7 @@
     "profit_x100": 5012,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.045156+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479338+00:00"
   },
   {
     "id": 33481,
@@ -9219,7 +9219,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.045173+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479365+00:00"
   },
   {
     "id": 33482,
@@ -9281,7 +9281,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "",
-    "prices_updated_at": "2026-03-29T06:18:45.045177+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479370+00:00"
   },
   {
     "id": 33483,
@@ -9334,16 +9334,16 @@
     "unit_selling_price_x10": 50000,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 9494,
-    "unit_crafting_cost_x10": 8973,
-    "unit_crafting_cost_x100": 8924,
-    "unit_crafting_cost_x1000": 8924,
+    "unit_crafting_cost_x1": 9485,
+    "unit_crafting_cost_x10": 8622,
+    "unit_crafting_cost_x100": 8578,
+    "unit_crafting_cost_x1000": 8578,
     "profit_x1": 41610,
     "profit_x10": 35739,
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.045197+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479389+00:00"
   },
   {
     "id": 33484,
@@ -9405,7 +9405,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.045214+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479407+00:00"
   },
   {
     "id": 33485,
@@ -9467,7 +9467,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.045233+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479426+00:00"
   },
   {
     "id": 33487,
@@ -9780,7 +9780,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.045251+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479445+00:00"
   },
   {
     "id": 33490,
@@ -9842,7 +9842,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.045270+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479464+00:00"
   },
   {
     "id": 33491,
@@ -9904,7 +9904,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.045288+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479481+00:00"
   },
   {
     "id": 33492,
@@ -9966,7 +9966,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.045306+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479500+00:00"
   },
   {
     "id": 33493,
@@ -10028,7 +10028,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.045324+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479518+00:00"
   },
   {
     "id": 33494,
@@ -10090,7 +10090,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "",
-    "prices_updated_at": "2026-03-29T06:18:45.045341+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479536+00:00"
   },
   {
     "id": 33496,
@@ -10313,7 +10313,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.045359+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479555+00:00"
   },
   {
     "id": 33499,
@@ -10375,7 +10375,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.045377+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479572+00:00"
   },
   {
     "id": 33500,
@@ -10437,7 +10437,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.045394+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479590+00:00"
   },
   {
     "id": 33501,
@@ -10499,7 +10499,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-29T06:18:45.045411+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479607+00:00"
   },
   {
     "id": 33502,
@@ -10561,7 +10561,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.045428+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479625+00:00"
   },
   {
     "id": 33503,
@@ -10623,7 +10623,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x1",
-    "prices_updated_at": "2026-03-29T06:18:45.045446+00:00"
+    "prices_updated_at": "2026-03-29T06:49:40.479643+00:00"
   },
   {
     "id": 32528,

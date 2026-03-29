@@ -34,8 +34,7 @@
     "profit_x10": -192,
     "profit_x100": -222,
     "profit_x1000": -224,
-    "best_lot": "x10",
-    "prices_updated_at": "2026-03-28T18:24:03.592628+00:00"
+    "best_lot": "x10"
   },
   {
     "id": 1182,
@@ -46,10 +45,10 @@
       {
         "name": "Ortiga",
         "quantity": 4,
-        "unit_price": 100,
+        "unit_price": 50,
         "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 400
+        "total": 200
       }
     ],
     "unit_selling_price_x1": 0,
@@ -64,7 +63,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718067+00:00"
   },
   {
     "id": 10827,
@@ -101,7 +101,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718091+00:00"
   },
   {
     "id": 14508,
@@ -154,7 +155,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718126+00:00"
   },
   {
     "id": 14573,
@@ -191,7 +193,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718145+00:00"
   },
   {
     "id": 16401,
@@ -220,7 +223,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718156+00:00"
   },
   {
     "id": 18836,
@@ -265,7 +269,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718182+00:00"
   },
   {
     "id": 19160,
@@ -318,7 +323,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718215+00:00"
   },
   {
     "id": 19654,
@@ -379,7 +385,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718249+00:00"
   },
   {
     "id": 20680,
@@ -440,7 +447,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718283+00:00"
   },
   {
     "id": 21673,
@@ -477,7 +485,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718298+00:00"
   },
   {
     "id": 21674,
@@ -514,7 +523,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718313+00:00"
   },
   {
     "id": 21675,
@@ -583,7 +593,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718350+00:00"
   },
   {
     "id": 21676,
@@ -652,7 +663,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718384+00:00"
   },
   {
     "id": 21677,
@@ -689,7 +701,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718399+00:00"
   },
   {
     "id": 21678,
@@ -726,7 +739,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718458+00:00"
   },
   {
     "id": 23039,
@@ -737,10 +751,10 @@
       {
         "name": "Ortiga",
         "quantity": 50,
-        "unit_price": 60,
-        "buy_lot": "x100",
+        "unit_price": 50,
+        "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 3000
+        "total": 2500
       },
       {
         "name": "Lana de jalatín negro",
@@ -771,7 +785,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718494+00:00"
   },
   {
     "id": 23098,
@@ -824,7 +839,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718525+00:00"
   },
   {
     "id": 23346,
@@ -851,10 +867,10 @@
       {
         "name": "Aceite de Kodo",
         "quantity": 1,
-        "unit_price": 4531,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 4531
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -869,7 +885,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718549+00:00"
   },
   {
     "id": 548,
@@ -880,10 +897,10 @@
       {
         "name": "Ortiga",
         "quantity": 5,
-        "unit_price": 100,
+        "unit_price": 50,
         "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 500
+        "total": 250
       },
       {
         "name": "Agua potable",
@@ -914,7 +931,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718574+00:00"
   },
   {
     "id": 1463,
@@ -951,7 +969,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718592+00:00"
   },
   {
     "id": 1692,
@@ -988,7 +1007,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718608+00:00"
   },
   {
     "id": 14646,
@@ -1017,7 +1037,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718618+00:00"
   },
   {
     "id": 16402,
@@ -1028,10 +1049,10 @@
       {
         "name": "Ortiga",
         "quantity": 5,
-        "unit_price": 100,
+        "unit_price": 50,
         "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 500
+        "total": 250
       }
     ],
     "unit_selling_price_x1": 0,
@@ -1046,7 +1067,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718629+00:00"
   },
   {
     "id": 17037,
@@ -1075,7 +1097,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718640+00:00"
   },
   {
     "id": 19953,
@@ -1120,7 +1143,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718662+00:00"
   },
   {
     "id": 1687,
@@ -1157,7 +1181,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718680+00:00"
   },
   {
     "id": 10208,
@@ -1218,7 +1243,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718717+00:00"
   },
   {
     "id": 10209,
@@ -1279,7 +1305,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718750+00:00"
   },
   {
     "id": 10210,
@@ -1340,7 +1367,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.718876+00:00"
   },
   {
     "id": 10211,
@@ -1401,7 +1429,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719040+00:00"
   },
   {
     "id": 10212,
@@ -1462,7 +1491,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719150+00:00"
   },
   {
     "id": 10213,
@@ -1523,7 +1553,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719193+00:00"
   },
   {
     "id": 10214,
@@ -1584,7 +1615,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719226+00:00"
   },
   {
     "id": 10215,
@@ -1645,7 +1677,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719258+00:00"
   },
   {
     "id": 10216,
@@ -1706,7 +1739,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719290+00:00"
   },
   {
     "id": 10217,
@@ -1767,7 +1801,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719325+00:00"
   },
   {
     "id": 10218,
@@ -1828,7 +1863,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719356+00:00"
   },
   {
     "id": 10219,
@@ -1889,7 +1925,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719387+00:00"
   },
   {
     "id": 10973,
@@ -1934,7 +1971,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719410+00:00"
   },
   {
     "id": 12156,
@@ -1995,7 +2033,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719442+00:00"
   },
   {
     "id": 12228,
@@ -2056,7 +2095,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719473+00:00"
   },
   {
     "id": 13278,
@@ -2117,7 +2157,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719504+00:00"
   },
   {
     "id": 16135,
@@ -2178,7 +2219,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719535+00:00"
   },
   {
     "id": 17529,
@@ -2239,7 +2281,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719685+00:00"
   },
   {
     "id": 18620,
@@ -2300,7 +2343,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719720+00:00"
   },
   {
     "id": 27704,
@@ -2361,7 +2405,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719751+00:00"
   },
   {
     "id": 1183,
@@ -2372,18 +2417,18 @@
       {
         "name": "Salvia",
         "quantity": 4,
-        "unit_price": 500,
+        "unit_price": 25,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2000
+        "total": 100
       },
       {
         "name": "Trigo",
         "quantity": 1,
-        "unit_price": 49,
+        "unit_price": 59,
         "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 49
+        "total": 59
       }
     ],
     "unit_selling_price_x1": 0,
@@ -2398,7 +2443,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719769+00:00"
   },
   {
     "id": 1333,
@@ -2443,7 +2489,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719798+00:00"
   },
   {
     "id": 1335,
@@ -2488,7 +2535,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719821+00:00"
   },
   {
     "id": 1337,
@@ -2533,7 +2581,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719844+00:00"
   },
   {
     "id": 1338,
@@ -2578,7 +2627,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719867+00:00"
   },
   {
     "id": 1689,
@@ -2615,7 +2665,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719884+00:00"
   },
   {
     "id": 2542,
@@ -2626,10 +2677,10 @@
       {
         "name": "Salvia",
         "quantity": 10,
-        "unit_price": 200,
+        "unit_price": 10,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2000
+        "total": 100
       },
       {
         "name": "Cobre",
@@ -2660,7 +2711,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719906+00:00"
   },
   {
     "id": 6964,
@@ -2671,10 +2723,10 @@
       {
         "name": "Salvia",
         "quantity": 10,
-        "unit_price": 200,
+        "unit_price": 10,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2000
+        "total": 100
       },
       {
         "name": "Trucha",
@@ -2713,7 +2765,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719934+00:00"
   },
   {
     "id": 6965,
@@ -2724,10 +2777,10 @@
       {
         "name": "Salvia",
         "quantity": 10,
-        "unit_price": 200,
+        "unit_price": 10,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2000
+        "total": 100
       },
       {
         "name": "Cebada",
@@ -2766,7 +2819,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719960+00:00"
   },
   {
     "id": 13442,
@@ -2777,10 +2831,10 @@
       {
         "name": "Salvia",
         "quantity": 10,
-        "unit_price": 200,
+        "unit_price": 10,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2000
+        "total": 100
       },
       {
         "name": "Carne manida",
@@ -2840,7 +2894,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719972+00:00"
   },
   {
     "id": 15236,
@@ -2885,7 +2940,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.719995+00:00"
   },
   {
     "id": 16403,
@@ -2904,10 +2960,10 @@
       {
         "name": "Trigo",
         "quantity": 1,
-        "unit_price": 49,
+        "unit_price": 59,
         "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 49
+        "total": 59
       }
     ],
     "unit_selling_price_x1": 0,
@@ -2922,7 +2978,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720010+00:00"
   },
   {
     "id": 22132,
@@ -2933,10 +2990,10 @@
       {
         "name": "Aceite de Kodo",
         "quantity": 2,
-        "unit_price": 4531,
-        "buy_lot": "x1",
-        "buy_or_craft": "Craft",
-        "total": 9062
+        "unit_price": null,
+        "buy_lot": "—",
+        "buy_or_craft": null,
+        "total": null
       },
       {
         "name": "Carbón",
@@ -2965,10 +3022,10 @@
       {
         "name": "Salvia",
         "quantity": 10,
-        "unit_price": 200,
+        "unit_price": 10,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2000
+        "total": 100
       }
     ],
     "unit_selling_price_x1": 0,
@@ -2983,7 +3040,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720045+00:00"
   },
   {
     "id": 27635,
@@ -3036,7 +3094,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720074+00:00"
   },
   {
     "id": 29464,
@@ -3047,10 +3106,10 @@
       {
         "name": "Salvia",
         "quantity": 10,
-        "unit_price": 200,
+        "unit_price": 10,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2000
+        "total": 100
       },
       {
         "name": "Madera de castaño",
@@ -3081,7 +3140,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720096+00:00"
   },
   {
     "id": 30096,
@@ -3116,10 +3176,10 @@
       {
         "name": "Salvia",
         "quantity": 4,
-        "unit_price": 500,
+        "unit_price": 25,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2000
+        "total": 100
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3134,7 +3194,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720123+00:00"
   },
   {
     "id": 32093,
@@ -3179,7 +3240,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720233+00:00"
   },
   {
     "id": 15163,
@@ -3224,7 +3286,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720258+00:00"
   },
   {
     "id": 1462,
@@ -3277,7 +3340,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720286+00:00"
   },
   {
     "id": 7652,
@@ -3288,34 +3352,34 @@
       {
         "name": "Salvia",
         "quantity": 10,
-        "unit_price": 28,
-        "buy_lot": "x100",
+        "unit_price": 10,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 28000
+        "total": 10000
       },
       {
         "name": "Ortiga",
         "quantity": 20,
-        "unit_price": 30,
-        "buy_lot": "x100",
+        "unit_price": 28,
+        "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 60000
+        "total": 56000
       }
     ],
     "unit_selling_price_x1": 1080,
     "unit_selling_price_x10": 1098,
     "unit_selling_price_x100": 1270,
     "unit_selling_price_x1000": 1200,
-    "unit_crafting_cost_x1": 3800,
-    "unit_crafting_cost_x10": 880,
-    "unit_crafting_cost_x100": 880,
-    "unit_crafting_cost_x1000": 880,
-    "profit_x1": -2847,
-    "profit_x10": 91,
-    "profit_x100": 249,
-    "profit_x1000": 186,
+    "unit_crafting_cost_x1": 1100,
+    "unit_crafting_cost_x10": 1160,
+    "unit_crafting_cost_x100": 660,
+    "unit_crafting_cost_x1000": 660,
+    "profit_x1": -147,
+    "profit_x10": -189,
+    "profit_x100": 469,
+    "profit_x1000": 406,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-28T18:24:03.594212+00:00"
+    "prices_updated_at": "2026-03-29T06:46:48.720305+00:00"
   },
   {
     "id": 9887,
@@ -3334,10 +3398,10 @@
       {
         "name": "Salvia",
         "quantity": 1,
-        "unit_price": 598,
+        "unit_price": 59,
         "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 598
+        "total": 59
       },
       {
         "name": "Lengua de espanterrador",
@@ -3360,7 +3424,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720330+00:00"
   },
   {
     "id": 14647,
@@ -3389,7 +3454,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720342+00:00"
   },
   {
     "id": 16404,
@@ -3400,18 +3466,18 @@
       {
         "name": "Salvia",
         "quantity": 5,
-        "unit_price": 400,
+        "unit_price": 20,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2000
+        "total": 100
       },
       {
         "name": "Trigo",
         "quantity": 1,
-        "unit_price": 49,
+        "unit_price": 59,
         "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 49
+        "total": 59
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3426,7 +3492,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720358+00:00"
   },
   {
     "id": 8883,
@@ -3437,10 +3504,10 @@
       {
         "name": "Pócima de hogar",
         "quantity": 1,
-        "unit_price": 3720,
+        "unit_price": 1820,
         "buy_lot": "x1",
         "buy_or_craft": "Craft",
-        "total": 3720
+        "total": 1820
       },
       {
         "name": "Cacho de blop guinda",
@@ -3487,7 +3554,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720397+00:00"
   },
   {
     "id": 283,
@@ -3532,7 +3600,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720420+00:00"
   },
   {
     "id": 14648,
@@ -3561,7 +3630,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720430+00:00"
   },
   {
     "id": 14649,
@@ -3590,7 +3660,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720441+00:00"
   },
   {
     "id": 14650,
@@ -3619,7 +3690,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720450+00:00"
   },
   {
     "id": 14651,
@@ -3648,7 +3720,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720461+00:00"
   },
   {
     "id": 16285,
@@ -3677,7 +3750,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720472+00:00"
   },
   {
     "id": 16405,
@@ -3722,7 +3796,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720500+00:00"
   },
   {
     "id": 20221,
@@ -3783,7 +3858,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720536+00:00"
   },
   {
     "id": 21909,
@@ -3818,10 +3894,10 @@
       {
         "name": "Pócima de hogar",
         "quantity": 1,
-        "unit_price": 3720,
+        "unit_price": 1820,
         "buy_lot": "x1",
         "buy_or_craft": "Craft",
-        "total": 3720
+        "total": 1820
       }
     ],
     "unit_selling_price_x1": 0,
@@ -3836,7 +3912,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720638+00:00"
   },
   {
     "id": 26362,
@@ -3897,7 +3974,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720686+00:00"
   },
   {
     "id": 26804,
@@ -3926,7 +4004,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720701+00:00"
   },
   {
     "id": 27905,
@@ -3987,7 +4066,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720742+00:00"
   },
   {
     "id": 14488,
@@ -4032,7 +4112,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720765+00:00"
   },
   {
     "id": 580,
@@ -4077,7 +4158,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720788+00:00"
   },
   {
     "id": 10969,
@@ -4122,7 +4204,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720809+00:00"
   },
   {
     "id": 14426,
@@ -4183,7 +4266,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720842+00:00"
   },
   {
     "id": 14442,
@@ -4244,7 +4328,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720873+00:00"
   },
   {
     "id": 14443,
@@ -4305,7 +4390,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720907+00:00"
   },
   {
     "id": 14447,
@@ -4350,7 +4436,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720929+00:00"
   },
   {
     "id": 14652,
@@ -4379,7 +4466,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720940+00:00"
   },
   {
     "id": 14653,
@@ -4408,7 +4496,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720951+00:00"
   },
   {
     "id": 14654,
@@ -4437,7 +4526,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720961+00:00"
   },
   {
     "id": 14655,
@@ -4466,7 +4556,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720972+00:00"
   },
   {
     "id": 14720,
@@ -4495,7 +4586,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720983+00:00"
   },
   {
     "id": 27372,
@@ -4524,7 +4616,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.720994+00:00"
   },
   {
     "id": 28214,
@@ -4585,7 +4678,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721027+00:00"
   },
   {
     "id": 1686,
@@ -4622,7 +4716,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721097+00:00"
   },
   {
     "id": 1688,
@@ -4659,7 +4754,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721185+00:00"
   },
   {
     "id": 12743,
@@ -4670,58 +4766,58 @@
       {
         "name": "Piedra de dopeul",
         "quantity": 1,
-        "unit_price": 4999,
+        "unit_price": 4899,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 49990
+        "total": 48990
       },
       {
         "name": "Piedra preciosa zoth",
         "quantity": 4,
-        "unit_price": 2839,
+        "unit_price": 2000,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 113560
+        "total": 80000
       },
       {
         "name": "Sílex",
         "quantity": 3,
-        "unit_price": 1300,
-        "buy_lot": "x10",
+        "unit_price": 383,
+        "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 39000
+        "total": 11500
       },
       {
         "name": "Fragmento de cerebro pulío",
         "quantity": 4,
-        "unit_price": 2860,
+        "unit_price": 221,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 114400
+        "total": 8840
       },
       {
         "name": "Fragmento de piedra afilada",
         "quantity": 3,
-        "unit_price": 990,
+        "unit_price": 80,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 29700
+        "total": 2400
       }
     ],
     "unit_selling_price_x1": 44000,
     "unit_selling_price_x10": 44499,
     "unit_selling_price_x100": 0,
     "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 34106,
-    "unit_crafting_cost_x10": 34665,
+    "unit_crafting_cost_x1": 72611,
+    "unit_crafting_cost_x10": 15173,
     "unit_crafting_cost_x100": 0,
     "unit_crafting_cost_x1000": 0,
-    "profit_x1": 6764,
-    "profit_x10": 6669,
+    "profit_x1": -31741,
+    "profit_x10": 26161,
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-28T18:24:03.594833+00:00"
+    "prices_updated_at": "2026-03-29T06:46:48.721237+00:00"
   },
   {
     "id": 282,
@@ -4748,10 +4844,10 @@
       {
         "name": "Avena",
         "quantity": 1,
-        "unit_price": 1000,
-        "buy_lot": "x10",
+        "unit_price": null,
+        "buy_lot": "—",
         "buy_or_craft": null,
-        "total": 1000
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -4766,7 +4862,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721264+00:00"
   },
   {
     "id": 9035,
@@ -4785,10 +4882,10 @@
       {
         "name": "Avena",
         "quantity": 2,
-        "unit_price": 500,
-        "buy_lot": "x10",
+        "unit_price": null,
+        "buy_lot": "—",
         "buy_or_craft": null,
-        "total": 1000
+        "total": null
       },
       {
         "name": "Pez gatito",
@@ -4811,7 +4908,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721288+00:00"
   },
   {
     "id": 11701,
@@ -4872,7 +4970,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721323+00:00"
   },
   {
     "id": 14657,
@@ -4901,7 +5000,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721336+00:00"
   },
   {
     "id": 14658,
@@ -4930,7 +5030,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721348+00:00"
   },
   {
     "id": 14659,
@@ -4983,7 +5084,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721373+00:00"
   },
   {
     "id": 14774,
@@ -5012,7 +5114,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721384+00:00"
   },
   {
     "id": 16406,
@@ -5039,10 +5142,10 @@
       {
         "name": "Avena",
         "quantity": 1,
-        "unit_price": 1000,
-        "buy_lot": "x10",
+        "unit_price": null,
+        "buy_lot": "—",
         "buy_or_craft": null,
-        "total": 1000
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5057,7 +5160,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721407+00:00"
   },
   {
     "id": 20962,
@@ -5094,7 +5198,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721426+00:00"
   },
   {
     "id": 27906,
@@ -5137,10 +5242,10 @@
       {
         "name": "Piedra de dopeul",
         "quantity": 3,
-        "unit_price": 4860,
-        "buy_lot": "x1",
+        "unit_price": 16000,
+        "buy_lot": "x100",
         "buy_or_craft": null,
-        "total": 14580
+        "total": 48000
       },
       {
         "name": "Esquíritu común",
@@ -5163,7 +5268,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721468+00:00"
   },
   {
     "id": 10669,
@@ -5208,7 +5314,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721490+00:00"
   },
   {
     "id": 1712,
@@ -5235,10 +5342,10 @@
       {
         "name": "Avena",
         "quantity": 1,
-        "unit_price": 1000,
-        "buy_lot": "x10",
+        "unit_price": null,
+        "buy_lot": "—",
         "buy_or_craft": null,
-        "total": 1000
+        "total": null
       }
     ],
     "unit_selling_price_x1": 0,
@@ -5253,7 +5360,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721511+00:00"
   },
   {
     "id": 14660,
@@ -5282,7 +5390,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721522+00:00"
   },
   {
     "id": 14661,
@@ -5311,7 +5420,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721533+00:00"
   },
   {
     "id": 14662,
@@ -5340,7 +5450,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721543+00:00"
   },
   {
     "id": 21513,
@@ -5369,7 +5480,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721555+00:00"
   },
   {
     "id": 10673,
@@ -5422,7 +5534,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721582+00:00"
   },
   {
     "id": 1345,
@@ -5467,7 +5580,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721610+00:00"
   },
   {
     "id": 1346,
@@ -5512,7 +5626,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721635+00:00"
   },
   {
     "id": 1347,
@@ -5557,7 +5672,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721660+00:00"
   },
   {
     "id": 1348,
@@ -5602,7 +5718,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721686+00:00"
   },
   {
     "id": 1405,
@@ -5647,7 +5764,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721710+00:00"
   },
   {
     "id": 14553,
@@ -5724,7 +5842,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721761+00:00"
   },
   {
     "id": 14664,
@@ -5753,7 +5872,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721772+00:00"
   },
   {
     "id": 15237,
@@ -5798,7 +5918,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721795+00:00"
   },
   {
     "id": 16407,
@@ -5843,7 +5964,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721817+00:00"
   },
   {
     "id": 19905,
@@ -5872,7 +5994,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721828+00:00"
   },
   {
     "id": 1713,
@@ -5917,7 +6040,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721850+00:00"
   },
   {
     "id": 14665,
@@ -5946,7 +6070,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721861+00:00"
   },
   {
     "id": 16286,
@@ -5975,7 +6100,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721871+00:00"
   },
   {
     "id": 17414,
@@ -6004,7 +6130,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721881+00:00"
   },
   {
     "id": 19921,
@@ -6033,7 +6160,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721891+00:00"
   },
   {
     "id": 17060,
@@ -6071,7 +6199,7 @@
     "profit_x100": -21,
     "profit_x1000": -21,
     "best_lot": "x1000",
-    "prices_updated_at": "2026-03-28T18:24:03.595413+00:00"
+    "prices_updated_at": "2026-03-29T06:46:48.721909+00:00"
   },
   {
     "id": 1406,
@@ -6116,7 +6244,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721930+00:00"
   },
   {
     "id": 1461,
@@ -6161,7 +6290,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721953+00:00"
   },
   {
     "id": 14666,
@@ -6190,7 +6320,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721964+00:00"
   },
   {
     "id": 14667,
@@ -6219,7 +6350,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721974+00:00"
   },
   {
     "id": 14668,
@@ -6248,7 +6380,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721984+00:00"
   },
   {
     "id": 14669,
@@ -6277,7 +6410,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.721995+00:00"
   },
   {
     "id": 14670,
@@ -6306,7 +6440,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722005+00:00"
   },
   {
     "id": 15273,
@@ -6335,7 +6470,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722016+00:00"
   },
   {
     "id": 16408,
@@ -6380,7 +6516,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722040+00:00"
   },
   {
     "id": 21514,
@@ -6409,7 +6546,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722050+00:00"
   },
   {
     "id": 27907,
@@ -6494,7 +6632,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722106+00:00"
   },
   {
     "id": 13577,
@@ -6539,7 +6678,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722133+00:00"
   },
   {
     "id": 14656,
@@ -6568,7 +6708,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722143+00:00"
   },
   {
     "id": 14671,
@@ -6597,7 +6738,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722152+00:00"
   },
   {
     "id": 14672,
@@ -6626,7 +6768,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722164+00:00"
   },
   {
     "id": 14673,
@@ -6655,7 +6798,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722174+00:00"
   },
   {
     "id": 14674,
@@ -6684,7 +6828,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722185+00:00"
   },
   {
     "id": 15702,
@@ -6713,7 +6858,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722196+00:00"
   },
   {
     "id": 16409,
@@ -6758,7 +6904,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722218+00:00"
   },
   {
     "id": 17737,
@@ -6787,7 +6934,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722229+00:00"
   },
   {
     "id": 15413,
@@ -6848,7 +6996,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722263+00:00"
   },
   {
     "id": 14675,
@@ -6877,7 +7026,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722275+00:00"
   },
   {
     "id": 14676,
@@ -6906,7 +7056,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722285+00:00"
   },
   {
     "id": 14677,
@@ -6935,7 +7086,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722294+00:00"
   },
   {
     "id": 14679,
@@ -6964,7 +7116,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722306+00:00"
   },
   {
     "id": 14680,
@@ -6993,7 +7146,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722317+00:00"
   },
   {
     "id": 14681,
@@ -7022,7 +7176,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722328+00:00"
   },
   {
     "id": 15736,
@@ -7051,7 +7206,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722339+00:00"
   },
   {
     "id": 16410,
@@ -7078,10 +7234,10 @@
       {
         "name": "Centeno",
         "quantity": 1,
-        "unit_price": 1290,
-        "buy_lot": "x10",
+        "unit_price": 397,
+        "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 1290
+        "total": 397
       }
     ],
     "unit_selling_price_x1": 0,
@@ -7096,7 +7252,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722364+00:00"
   },
   {
     "id": 16411,
@@ -7123,10 +7280,10 @@
       {
         "name": "Centeno",
         "quantity": 1,
-        "unit_price": 1290,
-        "buy_lot": "x10",
+        "unit_price": 397,
+        "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 1290
+        "total": 397
       }
     ],
     "unit_selling_price_x1": 0,
@@ -7141,7 +7298,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722389+00:00"
   },
   {
     "id": 16948,
@@ -7210,7 +7368,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722433+00:00"
   },
   {
     "id": 26871,
@@ -7247,7 +7406,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722454+00:00"
   },
   {
     "id": 27908,
@@ -7306,10 +7466,10 @@
       {
         "name": "Fragmento de cerebro pulío",
         "quantity": 3,
-        "unit_price": 2848,
+        "unit_price": 220,
         "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 8544
+        "total": 660
       },
       {
         "name": "Esquíritu superior",
@@ -7332,7 +7492,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722511+00:00"
   },
   {
     "id": 14663,
@@ -7361,7 +7522,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722523+00:00"
   },
   {
     "id": 14682,
@@ -7390,7 +7552,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722560+00:00"
   },
   {
     "id": 15362,
@@ -7419,7 +7582,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722574+00:00"
   },
   {
     "id": 16412,
@@ -7446,10 +7610,10 @@
       {
         "name": "Centeno",
         "quantity": 1,
-        "unit_price": 1290,
-        "buy_lot": "x10",
+        "unit_price": 397,
+        "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 1290
+        "total": 397
       }
     ],
     "unit_selling_price_x1": 0,
@@ -7464,7 +7628,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722596+00:00"
   },
   {
     "id": 19915,
@@ -7493,7 +7658,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722607+00:00"
   },
   {
     "id": 16419,
@@ -7504,34 +7670,34 @@
       {
         "name": "Malta",
         "quantity": 10,
-        "unit_price": 26,
-        "buy_lot": "x1000",
+        "unit_price": 17,
+        "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 26000
+        "total": 170000
       },
       {
         "name": "Centeno",
         "quantity": 20,
-        "unit_price": 59,
+        "unit_price": 5,
         "buy_lot": "x1000",
         "buy_or_craft": null,
-        "total": 118000
+        "total": 100000
       }
     ],
-    "unit_selling_price_x1": 3159,
-    "unit_selling_price_x10": 3098,
-    "unit_selling_price_x100": 3150,
-    "unit_selling_price_x1000": 0,
-    "unit_crafting_cost_x1": 3580,
-    "unit_crafting_cost_x10": 1820,
-    "unit_crafting_cost_x100": 1440,
-    "unit_crafting_cost_x1000": 0,
-    "profit_x1": -695,
-    "profit_x10": 1011,
-    "profit_x100": 1438,
-    "profit_x1000": 0,
-    "best_lot": "x100",
-    "prices_updated_at": "2026-03-28T18:24:03.595987+00:00"
+    "unit_selling_price_x1": 315,
+    "unit_selling_price_x10": 315,
+    "unit_selling_price_x100": 315,
+    "unit_selling_price_x1000": 315,
+    "unit_crafting_cost_x1": 2550,
+    "unit_crafting_cost_x10": 670,
+    "unit_crafting_cost_x100": 270,
+    "unit_crafting_cost_x1000": 270,
+    "profit_x1": -2308,
+    "profit_x10": -428,
+    "profit_x100": -28,
+    "profit_x1000": -28,
+    "best_lot": "x1000",
+    "prices_updated_at": "2026-03-29T06:46:48.722626+00:00"
   },
   {
     "id": 8913,
@@ -7558,10 +7724,10 @@
       {
         "name": "Malta",
         "quantity": 1,
-        "unit_price": 99,
+        "unit_price": 17,
         "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 99
+        "total": 17
       }
     ],
     "unit_selling_price_x1": 0,
@@ -7576,7 +7742,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722650+00:00"
   },
   {
     "id": 14678,
@@ -7613,7 +7780,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722670+00:00"
   },
   {
     "id": 14683,
@@ -7642,7 +7810,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722681+00:00"
   },
   {
     "id": 14684,
@@ -7671,7 +7840,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722693+00:00"
   },
   {
     "id": 14685,
@@ -7700,7 +7870,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722703+00:00"
   },
   {
     "id": 14686,
@@ -7729,7 +7900,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722715+00:00"
   },
   {
     "id": 16413,
@@ -7756,10 +7928,10 @@
       {
         "name": "Malta",
         "quantity": 1,
-        "unit_price": 99,
+        "unit_price": 17,
         "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 99
+        "total": 17
       }
     ],
     "unit_selling_price_x1": 0,
@@ -7774,7 +7946,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722737+00:00"
   },
   {
     "id": 23598,
@@ -7817,10 +7990,10 @@
       {
         "name": "Malta",
         "quantity": 2,
-        "unit_price": 99,
+        "unit_price": 17,
         "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 198
+        "total": 34
       },
       {
         "name": "Tejido de samurái fantasma",
@@ -7843,7 +8016,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722779+00:00"
   },
   {
     "id": 27909,
@@ -7928,7 +8102,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.722836+00:00"
   },
   {
     "id": 12734,
@@ -8014,7 +8189,7 @@
     "profit_x100": 0,
     "profit_x1000": 0,
     "best_lot": "x10",
-    "prices_updated_at": "2026-03-28T18:24:03.596210+00:00"
+    "prices_updated_at": "2026-03-29T06:46:48.722990+00:00"
   },
   {
     "id": 14687,
@@ -8043,7 +8218,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723016+00:00"
   },
   {
     "id": 14688,
@@ -8072,7 +8248,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723027+00:00"
   },
   {
     "id": 15274,
@@ -8101,7 +8278,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723038+00:00"
   },
   {
     "id": 16414,
@@ -8128,10 +8306,10 @@
       {
         "name": "Malta",
         "quantity": 1,
-        "unit_price": 99,
+        "unit_price": 17,
         "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 99
+        "total": 17
       }
     ],
     "unit_selling_price_x1": 0,
@@ -8146,7 +8324,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723063+00:00"
   },
   {
     "id": 26803,
@@ -8175,7 +8354,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723078+00:00"
   },
   {
     "id": 9968,
@@ -8220,7 +8400,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723101+00:00"
   },
   {
     "id": 10031,
@@ -8273,7 +8454,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723138+00:00"
   },
   {
     "id": 9979,
@@ -8308,10 +8490,10 @@
       {
         "name": "Pócima de los ancestros",
         "quantity": 2,
-        "unit_price": 3159,
+        "unit_price": 315,
         "buy_lot": "x1",
         "buy_or_craft": "Buy",
-        "total": 6318
+        "total": 630
       }
     ],
     "unit_selling_price_x1": 0,
@@ -8326,7 +8508,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723172+00:00"
   },
   {
     "id": 14689,
@@ -8355,7 +8538,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723183+00:00"
   },
   {
     "id": 14690,
@@ -8384,7 +8568,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723194+00:00"
   },
   {
     "id": 14691,
@@ -8413,7 +8598,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723203+00:00"
   },
   {
     "id": 15095,
@@ -8442,7 +8628,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723213+00:00"
   },
   {
     "id": 16415,
@@ -8487,7 +8674,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723235+00:00"
   },
   {
     "id": 16416,
@@ -8532,7 +8720,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723257+00:00"
   },
   {
     "id": 17736,
@@ -8561,7 +8750,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723268+00:00"
   },
   {
     "id": 24133,
@@ -8590,7 +8780,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723279+00:00"
   },
   {
     "id": 27910,
@@ -8675,7 +8866,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723333+00:00"
   },
   {
     "id": 14275,
@@ -8710,18 +8902,18 @@
       {
         "name": "Ortiga",
         "quantity": 8,
-        "unit_price": 100,
+        "unit_price": 50,
         "buy_lot": "x1",
         "buy_or_craft": null,
-        "total": 800
+        "total": 400
       },
       {
         "name": "Salvia",
         "quantity": 8,
-        "unit_price": 250,
+        "unit_price": 12,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2000
+        "total": 100
       },
       {
         "name": "Orquídea freyesca",
@@ -8760,7 +8952,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723388+00:00"
   },
   {
     "id": 14692,
@@ -8789,7 +8982,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723398+00:00"
   },
   {
     "id": 15735,
@@ -8818,7 +9012,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723408+00:00"
   },
   {
     "id": 16722,
@@ -8863,7 +9058,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723430+00:00"
   },
   {
     "id": 19938,
@@ -8892,7 +9088,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723440+00:00"
   },
   {
     "id": 24134,
@@ -8921,7 +9118,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723449+00:00"
   },
   {
     "id": 10064,
@@ -8982,7 +9180,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723541+00:00"
   },
   {
     "id": 16420,
@@ -9020,7 +9219,7 @@
     "profit_x100": -2922,
     "profit_x1000": 0,
     "best_lot": "x100",
-    "prices_updated_at": "2026-03-28T18:24:03.596639+00:00"
+    "prices_updated_at": "2026-03-29T06:46:48.723564+00:00"
   },
   {
     "id": 10204,
@@ -9071,10 +9270,10 @@
       {
         "name": "Ala de pulgondo",
         "quantity": 1,
-        "unit_price": 2997,
-        "buy_lot": "x1",
+        "unit_price": 3200,
+        "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2997
+        "total": 3200
       },
       {
         "name": "Agua potable",
@@ -9097,7 +9296,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723660+00:00"
   },
   {
     "id": 14693,
@@ -9126,7 +9326,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723680+00:00"
   },
   {
     "id": 14694,
@@ -9155,7 +9356,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723692+00:00"
   },
   {
     "id": 14695,
@@ -9184,7 +9386,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723703+00:00"
   },
   {
     "id": 14696,
@@ -9213,7 +9416,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723713+00:00"
   },
   {
     "id": 15703,
@@ -9242,7 +9446,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723723+00:00"
   },
   {
     "id": 16417,
@@ -9287,7 +9492,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723748+00:00"
   },
   {
     "id": 16418,
@@ -9332,7 +9538,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723771+00:00"
   },
   {
     "id": 26872,
@@ -9369,7 +9576,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723791+00:00"
   },
   {
     "id": 27911,
@@ -9454,7 +9662,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723845+00:00"
   },
   {
     "id": 28488,
@@ -9523,7 +9732,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723884+00:00"
   },
   {
     "id": 17774,
@@ -9576,7 +9786,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723911+00:00"
   },
   {
     "id": 13479,
@@ -9603,10 +9814,10 @@
       {
         "name": "Salvia",
         "quantity": 4,
-        "unit_price": 500,
+        "unit_price": 25,
         "buy_lot": "x10",
         "buy_or_craft": null,
-        "total": 2000
+        "total": 100
       },
       {
         "name": "Edelweiss",
@@ -9661,7 +9872,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.723962+00:00"
   },
   {
     "id": 17781,
@@ -9738,7 +9950,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724009+00:00"
   },
   {
     "id": 11506,
@@ -9783,7 +9996,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724031+00:00"
   },
   {
     "id": 14697,
@@ -9812,7 +10026,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724042+00:00"
   },
   {
     "id": 14698,
@@ -9841,7 +10056,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724052+00:00"
   },
   {
     "id": 14699,
@@ -9870,7 +10086,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724061+00:00"
   },
   {
     "id": 14700,
@@ -9899,7 +10116,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724071+00:00"
   },
   {
     "id": 14701,
@@ -9928,7 +10146,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724080+00:00"
   },
   {
     "id": 14702,
@@ -9957,7 +10176,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724089+00:00"
   },
   {
     "id": 14703,
@@ -9986,7 +10206,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724099+00:00"
   },
   {
     "id": 14704,
@@ -10015,7 +10236,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724108+00:00"
   },
   {
     "id": 14706,
@@ -10044,7 +10266,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724117+00:00"
   },
   {
     "id": 14975,
@@ -10073,7 +10296,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724128+00:00"
   },
   {
     "id": 18742,
@@ -10126,7 +10350,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724158+00:00"
   },
   {
     "id": 19913,
@@ -10155,7 +10380,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724168+00:00"
   },
   {
     "id": 27451,
@@ -10184,7 +10410,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724178+00:00"
   },
   {
     "id": 11505,
@@ -10229,7 +10456,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724198+00:00"
   },
   {
     "id": 11507,
@@ -10274,7 +10502,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724218+00:00"
   },
   {
     "id": 14705,
@@ -10303,7 +10532,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724228+00:00"
   },
   {
     "id": 15272,
@@ -10332,7 +10562,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724237+00:00"
   },
   {
     "id": 15704,
@@ -10361,7 +10592,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724246+00:00"
   },
   {
     "id": 15705,
@@ -10390,7 +10622,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724256+00:00"
   },
   {
     "id": 15734,
@@ -10419,7 +10652,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724265+00:00"
   },
   {
     "id": 17735,
@@ -10448,7 +10682,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724274+00:00"
   },
   {
     "id": 19906,
@@ -10477,7 +10712,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724283+00:00"
   },
   {
     "id": 19907,
@@ -10506,7 +10742,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724292+00:00"
   },
   {
     "id": 19908,
@@ -10535,7 +10772,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724301+00:00"
   },
   {
     "id": 19909,
@@ -10564,7 +10802,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724310+00:00"
   },
   {
     "id": 19910,
@@ -10593,7 +10832,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724320+00:00"
   },
   {
     "id": 19911,
@@ -10622,7 +10862,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724330+00:00"
   },
   {
     "id": 19912,
@@ -10651,7 +10892,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724339+00:00"
   },
   {
     "id": 19914,
@@ -10680,7 +10922,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724348+00:00"
   },
   {
     "id": 19916,
@@ -10709,7 +10952,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724358+00:00"
   },
   {
     "id": 21217,
@@ -10738,7 +10982,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724366+00:00"
   },
   {
     "id": 21515,
@@ -10767,7 +11012,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724376+00:00"
   },
   {
     "id": 22128,
@@ -10796,7 +11042,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724385+00:00"
   },
   {
     "id": 22129,
@@ -10825,7 +11072,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724394+00:00"
   },
   {
     "id": 22130,
@@ -10854,7 +11102,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724403+00:00"
   },
   {
     "id": 24135,
@@ -10883,7 +11132,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724413+00:00"
   },
   {
     "id": 24136,
@@ -10912,7 +11162,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724422+00:00"
   },
   {
     "id": 25318,
@@ -10941,7 +11192,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724432+00:00"
   },
   {
     "id": 26041,
@@ -10970,7 +11222,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724441+00:00"
   },
   {
     "id": 27405,
@@ -10999,7 +11252,8 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724451+00:00"
   },
   {
     "id": 27912,
@@ -11084,6 +11338,7 @@
     "profit_x10": 0,
     "profit_x100": 0,
     "profit_x1000": 0,
-    "best_lot": ""
+    "best_lot": "",
+    "prices_updated_at": "2026-03-29T06:46:48.724504+00:00"
   }
 ]
