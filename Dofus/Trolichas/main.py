@@ -108,8 +108,8 @@ def _save_tickets(count: int):
         json.dump({"tickets": count}, f)
 
 
-def main():
-    root = tk.Tk()
+def build_trolichas_app(root):
+    """Inicializa la app de Trolichas en el root/frame dado. Retorna el widget app."""
     stop_event = threading.Event()
     alert_event = threading.Event()
     race_thread = None
@@ -217,6 +217,12 @@ def main():
     app = LarvaRaceApp(root, on_start=on_start, on_finish=on_finish, on_calibrate=on_calibrate)
     app.ticket_label.bind("<Button-1>", lambda e: _on_edit_tickets())
     app.set_tickets(tickets)
+    return app
+
+
+def main():
+    root = tk.Tk()
+    build_trolichas_app(root)
     root.mainloop()
 
 

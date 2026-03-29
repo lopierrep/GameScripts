@@ -51,10 +51,13 @@ class _StdoutRedirect:
 # ── App ───────────────────────────────────────────────────────────────────────
 
 class GanaderoApp:
-    def __init__(self):
+    def __init__(self, root=None):
         self._settings = _load_settings()
-        self._root = tk.Tk()
-        self._root.withdraw()
+        if root is None:
+            self._root = tk.Tk()
+            self._root.withdraw()
+        else:
+            self._root = root  # FrameHost cuando está embebido en el hub
         self._stop_flag = [False]
         self._orig_stdout = sys.stdout
         self._orig_stderr = sys.stderr
@@ -70,7 +73,8 @@ class GanaderoApp:
         self._refresh()
         self._ui.update_status("Listo", C["dim"])
         self._root.update_idletasks()
-        self._root.deiconify()
+        if root is None:
+            self._root.deiconify()
 
     def _refresh(self):
         try:
