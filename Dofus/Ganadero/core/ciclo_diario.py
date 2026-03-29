@@ -3,30 +3,34 @@ Calcula la produccion diaria de stats y la estrategia nocturna optima
 segun las horas de juego del jugador.
 """
 
-from core.carburante_efficiency import (
-    TOPES, mejor_carburante_para, COSTOS_DRAGOPAVO, MONTURAS_POR_CERCADO,
-)
+import json
+from pathlib import Path
 
-RANGOS_CONSUMO = [
-    {"min": 0,     "max": 40_000,  "rate": 1},
-    {"min": 40_000, "max": 70_000,  "rate": 2},
-    {"min": 70_000, "max": 90_000,  "rate": 3},
-    {"min": 90_000, "max": 100_000, "rate": 4},
-]
+from core.carburante_efficiency import mejor_carburante_para
 
-STATS_DIAS = [
-    ("XP (nivel 200)", 867_582),
-    ("Amor",           20_000),
-    ("Resistencia",    20_000),
-    ("Madurez",        20_000),
-]
+_GD_FILE = Path(__file__).resolve().parent.parent / "data" / "game_data.json"
+with open(_GD_FILE, encoding="utf-8") as _f:
+    _GD = json.load(_f)
 
-INDICADORES_STATS = {
-    "pesebre":     867_582,
-    "dragonalgas": 20_000,
-    "fulminadora": 20_000,
-    "abrevadero":  20_000,
-}
+_tick_s = _GD["cercado"]["tick_segundos"]
+TOPES = [r["max"] for r in _GD["cercado"]["rangos_consumo"]]
+MONTURAS_POR_CERCADO = _GD["cercado"]["capacidad_monturas"]
+RANGOS_CONSUMO = [{"min": r["min"], "max": r["max"],
+                   "rate": r["consumo_por_tick"] // _tick_s}
+                  for r in _GD["cercado"]["rangos_consumo"]]
+
+COSTOS_DRAGOPAVO = {}
+for _ind in _GD["cercado"]["indicadores"]:
+    if "estadistica" in _ind:
+        COSTOS_DRAGOPAVO[_ind["nombre"]] = (
+            _GD["dragopavo"]["estadisticas"][_ind["estadistica"]]["max"])
+    elif _ind.get("efecto") == "xp":
+        COSTOS_DRAGOPAVO[_ind["nombre"]] = _GD["dragopavo"]["xp_para_nivel_maximo"]
+
+_xp = _GD["dragopavo"]["xp_para_nivel_maximo"]
+STATS_TIEMPO = [("XP (nivel 200)", _xp)]
+for _stat, _val in _GD["dragopavo"]["estadisticas"].items():
+    STATS_TIEMPO.append((_stat.capitalize(), _val["max"]))
 
 
 def calcular_drenaje(tope: int, segundos: float) -> float:
@@ -84,14 +88,14 @@ def calcular_ciclo_diario(horas_juego: int) -> dict:
         consumo_diario = consumo_activo + consumo_offline
 
         stats = {}
-        for nombre, total in STATS_DIAS:
+        for nombre, total in STATS_TIEMPO:
             dias = total / consumo_diario if consumo_diario > 0 else float("inf")
             segundos = total / consumo_diario * 86400 if consumo_diario > 0 else float("inf")
             stats[nombre] = {"total": total, "dias": round(dias, 1), "segundos": segundos}
 
         # Costo por dragopavo para cada indicador de stats
         costos = {}
-        for indicador, total_stat in INDICADORES_STATS.items():
+        for indicador, total_stat in COSTOS_DRAGOPAVO.items():
             m = mejor_carburante_para(indicador, round(consumo_diario), tope)
             costo_diario = (m["costo_total"] if m else 0) // MONTURAS_POR_CERCADO
             dias = total_stat / consumo_diario if consumo_diario > 0 else float("inf")
@@ -150,21 +154,3 @@ def calcular_estrategia_nocturna(horas_offline: float) -> dict:
     return resultado
 
 
-if __name__ == "__main__":
-    print("=== Ciclo diario (16h juego / 8h offline) ===\n")
-    ciclo = calcular_ciclo_diario(16)
-    for tope in TOPES:
-        d = ciclo[str(tope)]
-        print(f"Tope {tope:>7,}: avg {d['tasa_avg']}/s | "
-              f"activo {d['consumo_activo']:,} | offline {d['consumo_offline']:,} | "
-              f"total {d['consumo_diario']:,}/dia | "
-              f"XP {d['stats']['XP (nivel 200)']['dias']}d | "
-              f"stat {d['stats']['Amor']['dias']}d")
-
-    print("\n=== Estrategia nocturna (8h offline) ===\n")
-    noche = calcular_estrategia_nocturna(8)
-    for tope in TOPES:
-        n = noche[str(tope)]
-        opt = " *OPTIMO*" if n["optimo"] else ""
-        print(f"Tope {tope:>7,}: {n['puntos_noche']:,} pts | "
-              f"costo {n['costo_llenar']:,} | efic {n['eficiencia']} pts/k{opt}")

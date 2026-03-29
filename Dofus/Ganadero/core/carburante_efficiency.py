@@ -11,28 +11,40 @@ ROOT_DIR = Path(__file__).resolve().parent.parent          # Ganadero/
 DATA_DIR = ROOT_DIR / "data"
 RECIPES_FILE = ROOT_DIR.parent / "Crafting" / "data" / "recipes_ganadero.json"
 
-TOPES = [40000, 70000, 90000, 100000]
-INDICADORES = ["aporreadora", "acariciador", "dragonalgas", "fulminadora", "abrevadero", "pesebre"]
+with open(DATA_DIR / "game_data.json", encoding="utf-8") as _f:
+    _GD = json.load(_f)
+
+INDICADORES = [i["nombre"] for i in _GD["cercado"]["indicadores"]]
+TOPES = [r["max"] for r in _GD["cercado"]["rangos_consumo"]]
+MONTURAS_POR_CERCADO = _GD["cercado"]["capacidad_monturas"]
+TAMANIO_MAP = {t["nivel_resto"]: (t["nombre"], t["recarga"])
+               for t in _GD["carburantes"]["tamanios"]}
+
+_TOPES_POR_NIVEL = _GD["carburantes"]["topes_por_nivel"]
+
+COSTOS_DRAGOPAVO = {}
+for _ind in _GD["cercado"]["indicadores"]:
+    if "estadistica" in _ind:
+        COSTOS_DRAGOPAVO[_ind["nombre"]] = (
+            _GD["dragopavo"]["estadisticas"][_ind["estadistica"]]["max"])
+    elif _ind.get("efecto") == "xp":
+        COSTOS_DRAGOPAVO[_ind["nombre"]] = _GD["dragopavo"]["xp_para_nivel_maximo"]
+
 LOTES = ["x10", "x100"]
 
 # Umbral: si el costo total supera este valor, se marca como caro
 UMBRAL_COSTO_TOTAL = 10000
 
-TAMANIO_MAP = {5: ("minusculo", 1000), 15: ("pequeno", 2000), 25: ("normal", 3000),
-               35: ("grande", 4000), 45: ("gigantesco", 5000)}
-
-_INDICADORES_KEYS = ["aporreadora", "acariciador", "dragonalgas", "fulminadora", "abrevadero", "pesebre"]
-
 
 def _tope_de_nivel(level):
-    if 5 <= level <= 45:    return 40000
-    if 55 <= level <= 95:   return 70000
-    if 105 <= level <= 145: return 90000
-    if 155 <= level <= 195: return 100000
+    for t in _TOPES_POR_NIVEL:
+        if t["nivel_min"] <= level <= t["nivel_max"]:
+            return t["tope_indicador"]
+    return None
 
 
 def _get_indicador(nombre):
-    for ind in _INDICADORES_KEYS:
+    for ind in INDICADORES:
         if ind in nombre.lower():
             return ind
     return None
@@ -140,18 +152,6 @@ def analizar():
     return resultado
 
 
-XP_NIVEL_200 = 867582
-STAT_MAX = 20000
-MONTURAS_POR_CERCADO = 10
-
-COSTOS_DRAGOPAVO = {
-    "fulminadora": STAT_MAX,   # resistencia
-    "abrevadero":  STAT_MAX,   # madurez
-    "dragonalgas": STAT_MAX,   # amor
-    "pesebre":     XP_NIVEL_200,
-}
-
-
 def mejor_carburante_para(indicador, cantidad_total, tope_min=0):
     """Encuentra el carburante más barato para cubrir cantidad_total de un indicador."""
     carburantes = cargar_carburantes()
@@ -183,59 +183,3 @@ def mejor_carburante_para(indicador, cantidad_total, tope_min=0):
     return mejor
 
 
-def calcular_costo_dragopavo():
-    """Calcula el costo total para llenar stats y subir a nivel 200, por cada tope."""
-    stats_keys = ["fulminadora", "abrevadero", "dragonalgas"]
-    resultado = {}
-
-    for tope in TOPES:
-        detalle = {}
-        for indicador, cantidad in COSTOS_DRAGOPAVO.items():
-            detalle[indicador] = mejor_carburante_para(indicador, cantidad, tope)
-
-        costo_stats = sum(
-            detalle[i]["costo_total"] for i in stats_keys if detalle.get(i)
-        ) // MONTURAS_POR_CERCADO
-        costo_xp = (detalle["pesebre"]["costo_total"] if detalle.get("pesebre") else 0) // MONTURAS_POR_CERCADO
-
-        resultado[str(tope)] = {
-            "detalle": detalle,
-            "costo_stats": costo_stats,
-            "costo_xp": costo_xp,
-            "costo_total": costo_stats + costo_xp,
-        }
-
-    return resultado
-
-
-def imprimir_resumen(resultado):
-    print("=" * 85)
-    print("MEJOR CARBURANTE POR TOPE E INDICADOR  (ordenado por costo total para llenar el tope)")
-    print(f"Umbral de rentabilidad: {UMBRAL_K_POR_1000REC} k/1000rec  [!] = supera el umbral")
-    print("=" * 85)
-
-    for tope, indicadores in resultado.items():
-        print(f"\n-- Tope {int(tope):,} --")
-        for indicador, ranking in indicadores.items():
-            if not ranking:
-                continue
-            m = ranking[0]
-            alerta = " [!]" if m["caro"] else "    "
-            print(
-                f"  {indicador:<14} -> {m['nombre']:<42} "
-                f"[{m['mejor_modo']:<7} {m['mejor_lote']}] "
-                f"{m['uds']:>3} uds x {m['precio_unitario']:>6} = {m['costo_total']:>10,} total{alerta}"
-            )
-
-
-def guardar_resultado(resultado):
-    out_path = DATA_DIR / "analisis_eficiencia.json"
-    with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(resultado, f, ensure_ascii=False, indent=2)
-    print(f"\nResultado completo guardado en: {out_path}")
-
-
-if __name__ == "__main__":
-    resultado = analizar()
-    imprimir_resumen(resultado)
-    guardar_resultado(resultado)

@@ -5,11 +5,9 @@ https://api.dofusdu.de/dofus3/v1/es/almanax
 import json
 import urllib.request
 import urllib.error
-from collections.abc import Callable
 from datetime import date
 
 from config.config import API_BASE, ALMANAX_FILE, ITEMS_API_BASE, USER_AGENT, API_TIMEOUT, API_TIMEOUT_RESOLVE
-from shared.market.common import fetch_category, get_market_for_category, load_categories
 
 
 def fetch_almanax(start: date, end: date) -> list[dict]:
@@ -35,44 +33,6 @@ def resolve_subtype(ankama_id: int) -> str:
         except Exception:
             continue
     return "resources"
-
-
-def resolve_all_subtypes(
-    raw: list[dict],
-    on_progress: Callable[[str], None] | None = None,
-) -> dict[int, str]:
-    """Resuelve el subtype correcto para cada ankama_id único del conjunto raw."""
-    unique_ids = list(dict.fromkeys(
-        e["tribute"]["item"]["ankama_id"] for e in raw
-    ))
-    result = {}
-    total = len(unique_ids)
-    for i, aid in enumerate(unique_ids, 1):
-        if on_progress:
-            on_progress(f"Resolviendo tipos… {i}/{total}")
-        result[aid] = resolve_subtype(aid)
-    return result
-
-
-def resolve_all_categories(
-    raw: list[dict],
-    categories_file: str,
-    on_progress: Callable[[str], None] | None = None,
-) -> dict[str, dict]:
-    """Para cada item único en raw, obtiene su categoría de dofusdb.fr y mapea al mercadillo."""
-    categories = load_categories(categories_file)
-    unique_names = list(dict.fromkeys(
-        e["tribute"]["item"]["name"] for e in raw
-    ))
-    result = {}
-    total = len(unique_names)
-    for i, name in enumerate(unique_names, 1):
-        if on_progress:
-            on_progress(f"Categorizando items… {i}/{total}")
-        category = fetch_category(name)
-        market   = get_market_for_category(category, categories) or "Unknown"
-        result[name] = {"market": market, "category": category}
-    return result
 
 
 def save_almanax(entries: list[dict]):
