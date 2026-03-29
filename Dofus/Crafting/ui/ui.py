@@ -12,6 +12,8 @@ from datetime import datetime, timezone, timedelta
 from core.table_filter import compute_summary, filter_rows, profitable_rows
 from shared.colors import C, style_scrollbar
 from shared.font  import FONT as F, TITLE, HEADER, BASE, SMALL
+from shared.log_panel import LogPanel
+from shared.prompt_bar import PromptBar
 from shared.toast import show_copy_toast
 
 _BOGOTA = timezone(timedelta(hours=-5))
@@ -60,16 +62,6 @@ def _to_bogota(utc_str: str) -> str:
     except ValueError:
         return utc_str[:16]
 
-
-def _auto_tag(text: str) -> str:
-    u = text.upper()
-    if "[OK]"     in u: return "ok"
-    if "[SKIP]"   in u: return "skip"
-    if "[ERROR]"  in u or "ERROR —" in u: return "error"
-    if "[DONE]"   in u: return "done"
-    if "[AVISO]"  in u: return "warn"
-    if "[MANUAL]" in u: return "manual"
-    return "info"
 
 
 def _fmt(n) -> str:
@@ -451,95 +443,12 @@ class CraftingUI:
     # ── Prompt ───────────────────────────────────────────────────────────────
 
     def _build_prompt(self):
-        C = self.C
-        self._prompt_frame = tk.Frame(self._main_area, bg=C["surface"])
-
-        self._prompt_lbl = tk.Label(
-            self._prompt_frame, text="", bg=C["surface"],
-            fg=C["yellow"], font=(F, HEADER, "bold"),
-            wraplength=700, justify="left",
-        )
-        self._prompt_lbl.pack(padx=12, pady=(8, 4), anchor="w")
-
-        self._price_fields_frame = tk.Frame(self._prompt_frame, bg=C["surface"])
-        self._price_entries: dict = {}
-        for label, key in (("x1", "unit_price_x1"), ("x10", "unit_price_x10"),
-                            ("x100", "unit_price_x100"), ("x1000", "unit_price_x1000")):
-            col = tk.Frame(self._price_fields_frame, bg=C["surface"])
-            col.pack(side="left", padx=10)
-            tk.Label(col, text=label, bg=C["surface"], fg=C["dim"],
-                     font=(F, BASE)).pack()
-            e = tk.Entry(col, width=12, bg=C["bg"], fg=C["text"],
-                         insertbackground=C["text"], relief="flat",
-                         font=(F, BASE))
-            e.pack()
-            self._price_entries[key] = e
-
-        btn_row = tk.Frame(self._prompt_frame, bg=C["surface"])
-        btn_row.pack(fill="x", padx=12, pady=(4, 8))
-        self._prompt_confirm_btn = tk.Button(
-            btn_row, text="CONTINUAR ->",
-            bg=C["accent"], fg=C["bg"],
-            font=(F, HEADER, "bold"), relief="flat", bd=0,
-            padx=16, pady=6, command=self._on_prompt_confirm,
-        )
-        self._prompt_confirm_btn.pack(side="left")
-
-        self._prompt_confirm_cb = None
-        self._prompt_mode = "confirm"
-
-    def _on_prompt_confirm(self):
-        cb = self._prompt_confirm_cb
-        if self._prompt_mode == "price":
-            prices = {}
-            for key, entry in self._price_entries.items():
-                val = entry.get().strip()
-                prices[key] = int(val) if val.isdigit() else 0
-            self.hide_prompt()
-            if cb:
-                cb(prices)
-        else:
-            self.hide_prompt()
-            if cb:
-                cb()
+        self._prompt_bar = PromptBar(self._main_area)
 
     # ── Log ──────────────────────────────────────────────────────────────────
 
     def _build_log(self):
-        C = self.C
-        self._log_outer = tk.Frame(self._main_area, bg=C["surface"])
-        # No se hace pack; se muestra/oculta con show_log()/hide_log()
-
-        btn_close = tk.Button(
-            self._log_outer, text="x", bg=C["red"], fg=C["bg"],
-            font=(self.M, SMALL, "bold"), relief="flat", bd=0, padx=6, pady=1,
-            cursor="hand2", command=self.hide_log)
-        btn_close.pack(side="top", anchor="ne", padx=4, pady=(4, 0))
-
-        self._log = tk.Text(
-            self._log_outer, bg=C["surface"], fg=C["text"],
-            font=(self.M, SMALL), relief="flat",
-            state="disabled", wrap="word", height=6,
-            selectbackground=C["accent"],
-        )
-        sb = tk.Scrollbar(self._log_outer, orient="vertical", command=self._log.yview,
-                          bg=C["surface"], troughcolor=C["bg"],
-                          activebackground=C["dim"], highlightthickness=0,
-                          borderwidth=0, width=12)
-        self._log.configure(yscrollcommand=sb.set)
-        sb.pack(side="right", fill="y")
-        self._log.pack(side="left", fill="both", expand=True, padx=2, pady=2)
-
-        for tag, color in (
-            ("ok",     C["green"]),
-            ("skip",   C["dim"]),
-            ("error",  C["red"]),
-            ("info",   C["accent"]),
-            ("warn",   C["yellow"]),
-            ("manual", C["yellow"]),
-            ("done",   C["green"]),
-        ):
-            self._log.tag_config(tag, foreground=color)
+        self._log_panel = LogPanel(self._main_area, self.root, font_family=self.M)
 
     # ── Button handlers ──────────────────────────────────────────────────────
 
@@ -744,42 +653,16 @@ class CraftingUI:
             self._toggle_btn.config(text="▶ Actualizar Precios", bg=C["green"], fg=C["bg"])
 
     def log(self, text: str, tag: str = None):
-        self.root.after(0, self._append_log, text, tag)
-
-    def _write_log(self, text: str, tag: str):
-        self._log.configure(state="normal")
-        self._log.insert("end", text + "\n", tag)
-        self._log.see("end")
-        self._log.configure(state="disabled")
-
-    def _append_log(self, raw: str, tag: str = None):
-        if "\r" in raw and not raw.startswith("\n"):
-            parts = raw.split("\r")
-            text = parts[-1].strip()
-            if not text:
-                return
-            self._log.configure(state="normal")
-            idx = self._log.index("end-2l linestart")
-            self._log.delete(idx, "end-1c")
-            self._log.configure(state="disabled")
-            self._write_log(text, tag or _auto_tag(text))
-            return
-        text = raw.strip()
-        if not text:
-            return
-        self._write_log(text, tag or _auto_tag(text))
+        self._log_panel.log(text, tag)
 
     def clear_log(self):
-        self._log.configure(state="normal")
-        self._log.delete("1.0", "end")
-        self._log.configure(state="disabled")
+        self._log_panel.clear()
 
     def show_log(self):
-        if not self._log_outer.winfo_manager():
-            self._log_outer.pack(fill="x", padx=10, pady=(0, 8))
+        self._log_panel.show(fill="x", padx=10, pady=(0, 8))
 
     def hide_log(self):
-        self._log_outer.pack_forget()
+        self._log_panel.hide()
 
     def refresh_table(self, rows: list):
         self._all_rows = rows
@@ -799,26 +682,12 @@ class CraftingUI:
         )
 
     def show_confirm(self, text: str, on_confirm):
-        self._prompt_mode = "confirm"
-        self._prompt_confirm_cb = on_confirm
-        self._prompt_lbl.config(text=text)
-        self._price_fields_frame.pack_forget()
-        self._prompt_confirm_btn.config(text="CONTINUAR ->")
-        self._prompt_frame.pack(fill="x", padx=10, pady=(0, 4),
-                                before=self._log_outer)
+        self._prompt_bar.show_confirm(
+            text, on_confirm, fill="x", padx=10, pady=(0, 4), before=self._log_panel)
 
     def show_price_prompt(self, name: str, is_selling: bool, on_confirm):
-        kind = "venta" if is_selling else "ingrediente"
-        self._prompt_mode = "price"
-        self._prompt_confirm_cb = on_confirm
-        self._prompt_lbl.config(text=f"Precios manuales de '{name}' ({kind}):")
-        for e in self._price_entries.values():
-            e.delete(0, "end")
-        self._price_fields_frame.pack(padx=12, pady=(0, 4))
-        self._prompt_confirm_btn.config(text="CONFIRMAR")
-        list(self._price_entries.values())[0].focus()
-        self._prompt_frame.pack(fill="x", padx=10, pady=(0, 4),
-                                before=self._log_outer)
+        self._prompt_bar.show_price_prompt(
+            name, is_selling, on_confirm, fill="x", padx=10, pady=(0, 4), before=self._log_panel)
 
     def hide_prompt(self):
-        self._prompt_frame.pack_forget()
+        self._prompt_bar.hide()

@@ -101,6 +101,7 @@ class AlmanaxApp:
             "delete_price": self._delete_price,
             "refresh":      self._refresh_table,
             "toggle_sort":  self._toggle_sort,
+            "sync":         self._sync,
         }, market_available=MARKET_AVAILABLE, settings=settings)
 
         root.protocol("WM_DELETE_WINDOW", self._on_close)
@@ -125,6 +126,25 @@ class AlmanaxApp:
     def _on_close(self):
         _save_settings(self.ui.get_settings())
         self.root.destroy()
+
+    # ── Sync ──────────────────────────────────────────────────────────────────
+
+    def _sync(self):
+        t = threading.Thread(target=self._run_sync, daemon=True)
+        t.start()
+
+    def _run_sync(self):
+        try:
+            self.root.after(0, self.ui.set_status, "Sincronizando…", C["accent"])
+            from sync import sync_data
+            warnings = sync_data()
+            for w in warnings:
+                print(f"[AVISO] {w}")
+            self.prices = load_prices()
+            self.root.after(0, self._refresh_table)
+            self.root.after(0, self.ui.set_status, "✓ Sincronizado", C["green"])
+        except Exception as e:
+            self.root.after(0, self.ui.set_status, f"Error sync: {e}", C["red"])
 
     # ── Fetch ─────────────────────────────────────────────────────────────────
 
@@ -545,19 +565,20 @@ class AlmanaxApp:
         self._market_event.clear()
         self._market_ok = False
         self.root.after(0, self._show_market_dialog, market_name, count)
-        self._market_event.wait()
+        while not self._market_event.wait(timeout=0.2):
+            if self._scan_stop.is_set() or self._buy_stop.is_set():
+                self.root.after(0, self.ui.hide_prompt)
+                return False
         return self._market_ok
 
     def _show_market_dialog(self, market_name: str, count: int):
-        result = messagebox.askokcancel(
-            "Cambiar mercadillo",
-            f"A continuación se buscarán {count} ítems en el mercadillo de:\n\n"
-            f"  ➜  {market_name}\n\n"
-            f"Abre ese mercadillo en Dofus y pulsa OK.\n"
-            f"Tendrás 3-5 segundos para poner el juego en primer plano.",
-            icon="question",
+        self.ui.show_confirm(
+            f"Abre el mercadillo de {market_name} ({count} items) y pulsa CONTINUAR",
+            self._on_market_confirm,
         )
-        self._market_ok = result
+
+    def _on_market_confirm(self):
+        self._market_ok = True
         self._market_event.set()
 
 

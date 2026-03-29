@@ -63,6 +63,7 @@ class GanaderoApp:
             "update_prices": self._start_update,
             "stop_update": self._stop_update,
             "calibrate": self._calibrate,
+            "sync": self._sync,
         }, settings=self._settings)
 
         self._refresh()
@@ -108,6 +109,21 @@ class GanaderoApp:
             on_done=lambda: self._ui.update_status("Calibración guardada."),
             transform=transform,
         )
+
+    # ── Sync ───────────────────────────────────────────────────────────────────
+
+    def _sync(self):
+        threading.Thread(target=self._run_sync, daemon=True).start()
+
+    def _run_sync(self):
+        try:
+            self._root.after(0, self._ui.update_status, "Sincronizando…")
+            from Crafting.export.sheets import sync_data
+            sync_data()
+            self._root.after(0, self._refresh)
+            self._root.after(0, self._ui.update_status, "✓ Sincronizado")
+        except Exception as e:
+            self._root.after(0, self._ui.update_status, f"Error sync: {e}")
 
     # ── Actualización de precios ─────────────────────────────────────────────
 

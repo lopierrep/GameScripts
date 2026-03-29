@@ -31,7 +31,7 @@ OMITTED_CATEGORIES_FILE = os.path.join(ROOT_DIR, "config", "omitted_categories.t
 MANUAL_PRICE_FILE       = os.path.join(ROOT_DIR, "config", "manual_price_items.txt")
 
 # ── Exportación (Google Sheets) ────────────────────────────────────────
-CREDENTIALS_FILE = os.path.join(ROOT_DIR, "export", "credentials.json")
+CREDENTIALS_FILE = os.path.join(ROOT_DIR, "..", "shared", "sync", "credentials.json")
 SPREADSHEET_ID   = "1S7B58S_tkt4kx4vopK9fVzP9rMbWybUC3xrWUrqBuT8"
 
 # ── API / Scraping ─────────────────────────────────────────────────────

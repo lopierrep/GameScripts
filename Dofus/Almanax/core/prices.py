@@ -11,6 +11,7 @@ Los valores son el precio TOTAL del lote:
 import json
 import math
 from dataclasses import dataclass
+from datetime import datetime, timezone
 
 from config.config import PRICES_FILE, LOTS, GUIJ_COST
 
@@ -56,6 +57,7 @@ def find_item_prices(prices: dict, item_name: str) -> dict | None:
 
 def add_item_prices(prices: dict, market: str, category: str, item: str, entry: dict):
     """Inserta o actualiza los precios de un item en la estructura anidada."""
+    entry["prices_updated_at"] = datetime.now(timezone.utc).isoformat()
     prices.setdefault(market, {}).setdefault(category, {})[item] = entry
 
 

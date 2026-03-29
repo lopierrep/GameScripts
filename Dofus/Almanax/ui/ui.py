@@ -16,6 +16,7 @@ from config.config import (
 from core.table import day_label, profit_tag, today_fr
 from shared.colors import style_scrollbar
 from shared.font  import FONT as F, TITLE, HEADER, BASE, SMALL, XS
+from shared.prompt_bar import PromptBar
 from shared.toast import show_copy_toast
 
 
@@ -64,6 +65,7 @@ class AlmanaxUI:
         self._build_topbar()
         self._build_table()
         self._build_totalsbar()
+        self._build_prompt()
         self._build_bottombar()
         self._apply_styles()
 
@@ -157,6 +159,12 @@ class AlmanaxUI:
             cursor="hand2", state=mk, command=self._cb["buy_all"])
         self.buy_all_btn.pack(side="left", padx=(4, 0))
 
+        self.sync_btn = tk.Button(
+            bar, text="↻ Sincronizar", bg=C["surface"], fg=C["accent"],
+            font=(F, HEADER, "bold"), relief="flat", padx=10, pady=4,
+            cursor="hand2", command=self._cb["sync"])
+        self.sync_btn.pack(side="left", padx=(4, 0))
+
     def _build_table(self):
         frame = tk.Frame(self.root, bg=C["bg"])
         frame.pack(fill="both", expand=True, padx=12)
@@ -214,13 +222,16 @@ class AlmanaxUI:
             setattr(self, attr, lbl)
 
 
-    def _build_bottombar(self):
-        bar = tk.Frame(self.root, bg=C["surface"], pady=7)
-        bar.pack(fill="x", padx=12, pady=(4, 8))
+    def _build_prompt(self):
+        self._prompt_bar = PromptBar(self.root)
 
-        tk.Label(bar, text="Seleccionado:", bg=C["surface"], fg=C["dim"],
+    def _build_bottombar(self):
+        self._bottom_bar = tk.Frame(self.root, bg=C["surface"], pady=7)
+        self._bottom_bar.pack(fill="x", padx=12, pady=(4, 8))
+
+        tk.Label(self._bottom_bar, text="Seleccionado:", bg=C["surface"], fg=C["dim"],
                  font=(F, SMALL)).pack(side="left", padx=8)
-        self.sel_lbl = tk.Label(bar, text="—", bg=C["surface"],
+        self.sel_lbl = tk.Label(self._bottom_bar, text="—", bg=C["surface"],
                                 fg=C["text"], font=(F, BASE, "bold"),
                                 width=28, anchor="w")
         self.sel_lbl.pack(side="left")
@@ -228,10 +239,10 @@ class AlmanaxUI:
         self.lot_vars:    dict[int, tk.StringVar] = {}
         self.lot_entries: dict[int, tk.Entry]     = {}
         for size in LOTS:
-            tk.Label(bar, text=f"x{size}:", bg=C["surface"], fg=C["dim"],
+            tk.Label(self._bottom_bar, text=f"x{size}:", bg=C["surface"], fg=C["dim"],
                      font=(F, SMALL)).pack(side="left", padx=(10, 2))
             var = tk.StringVar()
-            entry = tk.Entry(bar, textvariable=var, width=9,
+            entry = tk.Entry(self._bottom_bar, textvariable=var, width=9,
                              bg=C["bg"], fg=C["text"], font=(F, SMALL),
                              insertbackground=C["text"], relief="flat")
             entry.pack(side="left")
@@ -239,17 +250,17 @@ class AlmanaxUI:
             self.lot_vars[size]    = var
             self.lot_entries[size] = entry
 
-        tk.Button(bar, text="Guardar  [↵]", bg=C["green"], fg=C["bg"],
+        tk.Button(self._bottom_bar, text="Guardar  [↵]", bg=C["green"], fg=C["bg"],
                   font=(F, SMALL, "bold"), relief="flat", padx=8, pady=2,
                   cursor="hand2", command=self._cb["save_price"]
                   ).pack(side="left", padx=(10, 4))
 
-        tk.Button(bar, text="Borrar", bg=C["surface"], fg=C["red"],
+        tk.Button(self._bottom_bar, text="Borrar", bg=C["surface"], fg=C["red"],
                   font=(F, SMALL), relief="flat", padx=6, pady=2,
                   cursor="hand2", command=self._cb["delete_price"]
                   ).pack(side="left")
 
-        legend = tk.Frame(bar, bg=C["surface"])
+        legend = tk.Frame(self._bottom_bar, bg=C["surface"])
         legend.pack(side="right", padx=12)
         for color, label in [
             (C["green"],  "Rentable"),
@@ -359,6 +370,13 @@ class AlmanaxUI:
 
     def set_status(self, text: str, fg: str = C["dim"]):
         self.status_lbl.config(text=text, fg=fg)
+
+    def show_confirm(self, text: str, on_confirm):
+        self._prompt_bar.show_confirm(
+            text, on_confirm, fill="x", padx=12, before=self._bottom_bar)
+
+    def hide_prompt(self):
+        self._prompt_bar.hide()
 
     def set_scan_busy(self, busy: bool):
         if busy:

@@ -12,7 +12,9 @@ import json
 from pathlib import Path
 
 from shared.colors import C, style_scrollbar
-from shared.font  import FONT as F, TITLE, HEADER, BASE, SMALL
+from shared.font  import FONT as F, TITLE, HEADER, BASE
+from shared.log_panel import LogPanel
+from shared.prompt_bar import PromptBar
 from shared.toast import show_copy_toast
 
 _GD_FILE = Path(__file__).resolve().parent.parent / "data" / "game_data.json"
@@ -47,16 +49,6 @@ COLUMNS = [
     ("cantidad",    "Uds.",             45),
     ("costo_total", "Costo total",     100),
 ]
-
-
-def _auto_tag(text: str) -> str:
-    u = text.upper()
-    if "[OK]"    in u: return "ok"
-    if "[SKIP]"  in u: return "skip"
-    if "[ERROR]" in u or "ERROR —" in u: return "error"
-    if "[DONE]"  in u: return "done"
-    if "[AVISO]" in u: return "warn"
-    return "info"
 
 
 class GanaderoUI:
@@ -166,6 +158,12 @@ class GanaderoUI:
             font=(F, HEADER, "bold"), relief="flat", padx=10, pady=3,
             cursor="hand2", command=self._cb["stop_update"])
         # Oculto por defecto; se muestra durante el escaneo
+
+        self._btn_sync = tk.Button(
+            bar, text="↻ Sincronizar", bg=C["surface"], fg=C["accent"],
+            font=(F, HEADER, "bold"), relief="flat", padx=10, pady=3,
+            cursor="hand2", command=self._cb["sync"])
+        self._btn_sync.pack(side="left", padx=(8, 0))
 
         self._btn_calibrar = tk.Button(
             bar, text="⚙ Calibrar", bg=C["surface"], fg=C["dim"],
@@ -424,55 +422,10 @@ class GanaderoUI:
         self._tree_nocturna.pack(fill="x")
 
     def _build_log(self):
-        """Panel de log para progreso de escaneo (oculto por defecto)."""
-        self._log_frame = tk.Frame(self.root, bg=C["surface"])
-        # No se hace pack; se muestra/oculta con show_log()/hide_log()
-
-        btn_close = tk.Button(
-            self._log_frame, text="x", bg=C["red"], fg=C["bg"],
-            font=(F, SMALL, "bold"), relief="flat", bd=0, padx=6, pady=1,
-            cursor="hand2", command=self.hide_log)
-        btn_close.pack(side="top", anchor="ne", padx=4, pady=(4, 0))
-
-        self._log = tk.Text(
-            self._log_frame, bg=C["surface"], fg=C["text"],
-            font=(F, SMALL), relief="flat",
-            state="disabled", wrap="word", height=6,
-            selectbackground=C["accent"],
-        )
-        sb = tk.Scrollbar(self._log_frame, orient="vertical", command=self._log.yview,
-                          bg=C["surface"], troughcolor=C["bg"],
-                          activebackground=C["dim"], highlightthickness=0,
-                          borderwidth=0, width=12)
-        self._log.configure(yscrollcommand=sb.set)
-        sb.pack(side="right", fill="y")
-        self._log.pack(side="left", fill="both", expand=True, padx=2, pady=2)
-
-        for tag, color in (
-            ("ok",    C["green"]),
-            ("skip",  C["dim"]),
-            ("error", C["red"]),
-            ("info",  C["accent"]),
-            ("warn",  C["yellow"]),
-            ("done",  C["green"]),
-        ):
-            self._log.tag_config(tag, foreground=color)
+        self._log_panel = LogPanel(self.root, self.root)
 
     def _build_prompt(self):
-        """Frame colapsable para pedir al usuario que navegue al mercado."""
-        self._prompt_frame = tk.Frame(self.root, bg=C["yellow"], pady=6)
-        # No lo añadimos con pack; se muestra/oculta dinámicamente.
-
-        self._prompt_lbl = tk.Label(
-            self._prompt_frame, text="", bg=C["yellow"], fg=C["bg"],
-            font=(F, HEADER, "bold"), anchor="w")
-        self._prompt_lbl.pack(side="left", padx=14)
-
-        self._prompt_btn = tk.Button(
-            self._prompt_frame, text="CONTINUAR", bg=C["bg"], fg=C["yellow"],
-            font=(F, HEADER, "bold"), relief="flat", padx=12, pady=2,
-            cursor="hand2")
-        self._prompt_btn.pack(side="right", padx=14)
+        self._prompt_bar = PromptBar(self.root)
 
     def _build_statusbar(self):
         self.status_lbl = tk.Label(self.root, text="", bg=C["bg"], fg=C["dim"],
@@ -579,44 +532,16 @@ class GanaderoUI:
     # ── Log panel ────────────────────────────────────────────────────────────
 
     def log(self, text: str, tag: str = None):
-        """Thread-safe: programa append en el hilo principal."""
-        self.root.after(0, self._append_log, text, tag)
-
-    def _write_log(self, text: str, tag: str):
-        self._log.configure(state="normal")
-        self._log.insert("end", text + "\n", tag)
-        self._log.see("end")
-        self._log.configure(state="disabled")
-
-    def _append_log(self, raw: str, tag: str = None):
-        if "\r" in raw and not raw.startswith("\n"):
-            parts = raw.split("\r")
-            text = parts[-1].strip()
-            if not text:
-                return
-            self._log.configure(state="normal")
-            idx = self._log.index("end-2l linestart")
-            self._log.delete(idx, "end-1c")
-            self._log.configure(state="disabled")
-            self._write_log(text, tag or _auto_tag(text))
-            return
-        text = raw.strip()
-        if not text:
-            return
-        self._write_log(text, tag or _auto_tag(text))
+        self._log_panel.log(text, tag)
 
     def clear_log(self):
-        self._log.configure(state="normal")
-        self._log.delete("1.0", "end")
-        self._log.configure(state="disabled")
+        self._log_panel.clear()
 
     def show_log(self):
-        if not self._log_frame.winfo_manager():
-            self._log_frame.pack(fill="x", padx=12, pady=(0, 4),
-                                 before=self.status_lbl)
+        self._log_panel.show(fill="x", padx=12, pady=(0, 4), before=self.status_lbl)
 
     def hide_log(self):
-        self._log_frame.pack_forget()
+        self._log_panel.hide()
 
     # ── Control de escaneo ───────────────────────────────────────────────────
 
@@ -624,19 +549,15 @@ class GanaderoUI:
         """Alterna estado de UI entre escaneo activo e inactivo."""
         if active:
             self._btn_update.pack_forget()
-            self._btn_stop.pack(side="left", padx=(8, 0))
+            self._btn_stop.pack(side="left", padx=(8, 0), before=self._btn_sync)
             self.show_log()
         else:
             self._btn_stop.pack_forget()
-            self._btn_update.pack(side="left", padx=(8, 0))
+            self._btn_update.pack(side="left", padx=(8, 0), before=self._btn_sync)
             self.hide_prompt()
 
     def show_confirm(self, text: str, on_confirm):
-        """Muestra prompt pidiendo al usuario que navegue al mercado."""
-        self._prompt_lbl.config(text=text)
-        self._prompt_btn.config(command=lambda: (self.hide_prompt(), on_confirm()))
-        self._prompt_frame.pack(fill="x", before=self.status_lbl)
+        self._prompt_bar.show_confirm(text, on_confirm, fill="x", before=self.status_lbl)
 
     def hide_prompt(self):
-        """Oculta el prompt de confirmación."""
-        self._prompt_frame.pack_forget()
+        self._prompt_bar.hide()
