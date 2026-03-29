@@ -504,6 +504,7 @@ def build_table_rows(
             "result":       r.get("result", ""),
             "level":        r.get("level", ""),
             "best_lot":     best_lot or "—",
+            "craft_unit":   best_craft,
             "craft_cost":   craft_total,
             "sell_price":   sell_total,
             "profit":       best_profit,
