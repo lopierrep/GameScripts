@@ -133,13 +133,13 @@ class AlmanaxUI:
         mk = "normal" if self._market_available else "disabled"
 
         self.scan_btn = tk.Button(
-            bar, text="⟳  Actualizar", bg=C["orange"], fg=C["bg"],
+            bar, text="▶ Escanear", bg=C["orange"], fg=C["bg"],
             font=("Consolas", 10, "bold"), relief="flat", padx=12, pady=4,
             cursor="hand2", state=mk, command=self._cb["scan"])
         self.scan_btn.pack(side="left", padx=(4, 0))
 
         self.buy_all_btn = tk.Button(
-            bar, text="🛒✓ Rentables", bg=C["green"], fg=C["bg"],
+            bar, text="🛒 Comprar", bg=C["green"], fg=C["bg"],
             font=("Consolas", 10, "bold"), relief="flat", padx=12, pady=4,
             cursor="hand2", state=mk, command=self._cb["buy_all"])
         self.buy_all_btn.pack(side="left", padx=(4, 0))
@@ -362,13 +362,13 @@ class AlmanaxUI:
         if busy:
             self.scan_btn.config(text="■  Detener", bg=C["red"], command=self._cb["stop_scan"])
         else:
-            self.scan_btn.config(text="⟳  Actualizar", bg=C["orange"], command=self._cb["scan"])
+            self.scan_btn.config(text="▶ Escanear", bg=C["orange"], command=self._cb["scan"])
 
     def set_buy_busy(self, busy: bool):
         if busy:
             self.buy_all_btn.config(text="■  Detener", bg=C["red"], command=self._cb["stop_buy"])
         else:
-            self.buy_all_btn.config(text="🛒✓ Rentables", bg=C["green"], command=self._cb["buy_all"])
+            self.buy_all_btn.config(text="🛒 Comprar", bg=C["green"], command=self._cb["buy_all"])
 
     def set_date_range(self, from_str: str, to_str: str):
         self.from_var.set(from_str)
