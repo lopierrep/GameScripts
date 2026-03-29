@@ -92,10 +92,6 @@ class GanaderoApp:
         self._ui.update_costos(ciclo)
         self._ui.update_ciclo_diario(ciclo)
         self._ui.update_nocturna(nocturna)
-        self._ui.update_status(
-            f"Umbral: {umbral:,} k  |  Juego: {horas_juego}h/dia  |  "
-            f"Verde = bajo umbral   Rojo = sobre umbral"
-        )
 
     # ── Calibración ─────────────────────────────────────────────────────────
 

@@ -97,8 +97,6 @@ class AlmanaxApp:
             "buy_all":      self._buy_all_profitable,
             "stop_buy":     self._stop_buy,
             "select":       self._on_item_selected,
-            "save_price":   self._save_price,
-            "delete_price": self._delete_price,
             "refresh":      self._refresh_table,
             "toggle_sort":  self._toggle_sort,
             "sync":         self._sync,
@@ -327,54 +325,7 @@ class AlmanaxApp:
     # ── Precios ───────────────────────────────────────────────────────────────
 
     def _on_item_selected(self, item_name: str):
-        label = item_name[:35] + ("…" if len(item_name) > 35 else "")
-        self.ui.set_selected_label(label)
-        pd = self.prices.get(item_name, {})
-        self.ui.set_lot_values(pd)
-        self.ui.focus_lot_entry()
-
-    def _save_price(self):
-        display = self.ui.selected_item_label()
-        if display in ("—", ""):
-            return
-        full_name = self._full_item_name(display)
-        raw_vals  = self.ui.lot_values()
-
-        entry = {}
-        for size in LOTS:
-            v = raw_vals[size]
-            if v is None:
-                messagebox.showerror("Error", f"Precio x{size}: introduce solo números.")
-                return
-            entry[f"x{size}"] = v
-
-        if not any(entry.values()):
-            messagebox.showwarning("Sin precios", "Introduce al menos un precio.")
-            return
-
-        item_info = next((r for r in self.data if r["item"] == full_name), {})
-        add_item_prices(
-            self.prices,
-            item_info.get("market",   "Unknown"),
-            item_info.get("category", "Sin categoría"),
-            full_name,
-            entry,
-        )
-        save_prices(self.prices)
-        filled = ", ".join(f"x{s}={entry[f'x{s}']:,}" for s in LOTS if entry[f"x{s}"])
-        self.ui.set_status(f"✓ {full_name[:25]}: {filled}", C["green"])
-        self._refresh_table()
-
-    def _delete_price(self):
-        display = self.ui.selected_item_label()
-        if display in ("—", ""):
-            return
-        full_name = self._full_item_name(display)
-        if remove_item_prices(self.prices, full_name):
-            save_prices(self.prices)
-            self.ui.clear_lot_values()
-            self.ui.set_status(f"Precio borrado: {full_name[:30]}", C["yellow"])
-            self._refresh_table()
+        pass
 
     def _full_item_name(self, display: str) -> str:
         clean = display.rstrip("…")
@@ -387,11 +338,12 @@ class AlmanaxApp:
 
     def _start_scan(self):
         if not self.data:
-            messagebox.showwarning("Sin datos", "Primero carga los días del Almanax.")
+            self.ui.set_status("Primero carga los días del Almanax.", C["yellow"])
             return
         if self._scan_worker and self._scan_worker.is_alive():
             return
         self._scan_stop.clear()
+        self._buy_stop.clear()
         self.ui.set_scan_busy(True)
         self._scan_worker = threading.Thread(target=self._scan_thread, daemon=True)
         self._scan_worker.start()
@@ -510,22 +462,14 @@ class AlmanaxApp:
                 groups.setdefault(r["subtype"], []).append((r["item"], plan))
 
         if not groups:
-            messagebox.showinfo("Sin rentables", "No hay ítems rentables con precio guardado.")
+            self.ui.set_status("No hay ítems rentables con precio guardado.", C["yellow"])
             return
 
         all_items = [(n, p) for lst in groups.values() for n, p in lst]
-        resumen   = "\n".join(
-            f"• {n}  ({'+'.join(f'{c}×x{s}' for s, c in p)})"
-            for n, p in all_items)
-        if not messagebox.askokcancel(
-            "Comprar todos los rentables",
-            f"{len(all_items)} ítems rentables:\n\n{resumen}\n\n"
-            "El script comprará automáticamente. ¡Tendrás 5 segundos para cambiar al juego!",
-        ):
-            return
 
         self.ui.set_buy_busy(True)
         self._buy_stop.clear()
+        self._scan_stop.clear()
         threading.Thread(target=self._buy_all_thread, args=(groups,), daemon=True).start()
 
     def _buy_all_thread(self, groups: dict):
@@ -550,11 +494,6 @@ class AlmanaxApp:
     def _buy_all_done(self, failed: list[str]):
         self.ui.set_buy_busy(False)
         if failed:
-            lista = "\n".join(f"• {n}" for n in failed)
-            messagebox.showwarning(
-                "Ítems no comprados",
-                f"Los siguientes ítems no se pudieron comprar:\n\n{lista}",
-            )
             self.ui.set_status(f"✓ Compra completada — {len(failed)} fallidos", C["yellow"])
         else:
             self.ui.set_status("✓ Todos los rentables comprados", C["green"])

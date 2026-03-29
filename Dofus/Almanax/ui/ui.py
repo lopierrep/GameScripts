@@ -10,7 +10,7 @@ from tkinter import ttk
 from datetime import date, timedelta
 
 from config.config import (
-    C, LOTS, WINDOW_SIZE, WINDOW_MINSIZE, DEFAULT_DAYS,
+    C, WINDOW_SIZE, WINDOW_MINSIZE, DEFAULT_DAYS,
     DEFAULT_PJS, DEFAULT_ALM, DEFAULT_GUIJ_PRICES,
 )
 from core.table import day_label, profit_tag, today_fr
@@ -31,8 +31,6 @@ class AlmanaxUI:
         calibrate    ()             → calibrar posiciones de compra
         buy_all      ()             → comprar todos los rentables
         select       (item_name)    → fila seleccionada en la tabla
-        save_price   ()             → guardar precio del ítem seleccionado
-        delete_price ()             → borrar precio del ítem seleccionado
         refresh      ()             → recalcular y repintar la tabla
         toggle_sort  (col)          → cambiar columna/dirección de ordenación
     """
@@ -66,7 +64,6 @@ class AlmanaxUI:
         self._build_table()
         self._build_totalsbar()
         self._build_prompt()
-        self._build_bottombar()
         self._apply_styles()
 
     def _build_topbar(self):
@@ -87,9 +84,6 @@ class AlmanaxUI:
                                  command=self._cb["calibrate"])
         self.cal_btn.pack(side="right", padx=(0, 8))
 
-        self.status_lbl = tk.Label(bar, text="", bg=C["bg"], fg=C["dim"],
-                                   font=(F, SMALL))
-        self.status_lbl.pack(side="left", padx=8)
 
     def _build_date_range(self, bar: tk.Frame):
         today = today_fr()
@@ -225,53 +219,6 @@ class AlmanaxUI:
     def _build_prompt(self):
         self._prompt_bar = PromptBar(self.root)
 
-    def _build_bottombar(self):
-        self._bottom_bar = tk.Frame(self.root, bg=C["surface"], pady=7)
-        self._bottom_bar.pack(fill="x", padx=12, pady=(4, 8))
-
-        tk.Label(self._bottom_bar, text="Seleccionado:", bg=C["surface"], fg=C["dim"],
-                 font=(F, SMALL)).pack(side="left", padx=8)
-        self.sel_lbl = tk.Label(self._bottom_bar, text="—", bg=C["surface"],
-                                fg=C["text"], font=(F, BASE, "bold"),
-                                width=28, anchor="w")
-        self.sel_lbl.pack(side="left")
-
-        self.lot_vars:    dict[int, tk.StringVar] = {}
-        self.lot_entries: dict[int, tk.Entry]     = {}
-        for size in LOTS:
-            tk.Label(self._bottom_bar, text=f"x{size}:", bg=C["surface"], fg=C["dim"],
-                     font=(F, SMALL)).pack(side="left", padx=(10, 2))
-            var = tk.StringVar()
-            entry = tk.Entry(self._bottom_bar, textvariable=var, width=9,
-                             bg=C["bg"], fg=C["text"], font=(F, SMALL),
-                             insertbackground=C["text"], relief="flat")
-            entry.pack(side="left")
-            entry.bind("<Return>", lambda _: self._cb["save_price"]())
-            self.lot_vars[size]    = var
-            self.lot_entries[size] = entry
-
-        tk.Button(self._bottom_bar, text="Guardar  [↵]", bg=C["green"], fg=C["bg"],
-                  font=(F, SMALL, "bold"), relief="flat", padx=8, pady=2,
-                  cursor="hand2", command=self._cb["save_price"]
-                  ).pack(side="left", padx=(10, 4))
-
-        tk.Button(self._bottom_bar, text="Borrar", bg=C["surface"], fg=C["red"],
-                  font=(F, SMALL), relief="flat", padx=6, pady=2,
-                  cursor="hand2", command=self._cb["delete_price"]
-                  ).pack(side="left")
-
-        legend = tk.Frame(self._bottom_bar, bg=C["surface"])
-        legend.pack(side="right", padx=12)
-        for color, label in [
-            (C["green"],  "Rentable"),
-            (C["yellow"], "Bajo margen"),
-            (C["red"],    "Pérdida"),
-            (C["dim"],    "Sin precio"),
-        ]:
-            tk.Label(legend, text="■ ", bg=C["surface"], fg=color,
-                     font=(F, HEADER)).pack(side="left")
-            tk.Label(legend, text=label + "   ", bg=C["surface"], fg=C["dim"],
-                     font=(F, XS)).pack(side="left")
 
     def set_calibrated(self, calibrated: bool):
         """Actualiza el aspecto del botón según si hay datos de calibración."""
@@ -295,7 +242,7 @@ class AlmanaxUI:
                   foreground=[("selected", C["bg"])])
         style_scrollbar(style)
         self.tree.tag_configure("alta",       foreground=C["green"])
-        self.tree.tag_configure("media",      foreground=C["yellow"])
+        self.tree.tag_configure("media",      foreground=C["green"])
         self.tree.tag_configure("perdida",    foreground=C["red"])
         self.tree.tag_configure("sin_precio", foreground=C["dim"])
         self.tree.tag_configure("hoy",        background=C["today"])
@@ -356,24 +303,14 @@ class AlmanaxUI:
                 result[code] = 0
         return result
 
-    def selected_item_label(self) -> str:
-        return self.sel_lbl.cget("text")
-
-    def lot_values(self) -> dict[int, int]:
-        result = {}
-        for size in LOTS:
-            raw = self.lot_vars[size].get().replace(",", "").replace(".", "").strip()
-            result[size] = int(raw) if raw.isdigit() else None
-        return result
 
     # ── Setters / actualizaciones de UI ──────────────────────────────────────
 
     def set_status(self, text: str, fg: str = C["dim"]):
-        self.status_lbl.config(text=text, fg=fg)
+        pass
 
     def show_confirm(self, text: str, on_confirm):
-        self._prompt_bar.show_confirm(
-            text, on_confirm, fill="x", padx=12, before=self._bottom_bar)
+        self._prompt_bar.show_confirm(text, on_confirm, fill="x", padx=12)
 
     def hide_prompt(self):
         self._prompt_bar.hide()
@@ -394,21 +331,6 @@ class AlmanaxUI:
         self.from_var.set(from_str)
         self.to_var.set(to_str)
 
-    def set_selected_label(self, text: str):
-        self.sel_lbl.config(text=text)
-
-    def set_lot_values(self, pd: dict):
-        for size in LOTS:
-            v = pd.get(f"x{size}", 0)
-            self.lot_vars[size].set(str(v) if v else "")
-
-    def clear_lot_values(self):
-        for size in LOTS:
-            self.lot_vars[size].set("")
-
-    def focus_lot_entry(self):
-        self.lot_entries[1].focus_set()
-        self.lot_entries[1].select_range(0, "end")
 
     def update_best_guijarro(self, text: str):
         self.best_guij_lbl.config(text=text)

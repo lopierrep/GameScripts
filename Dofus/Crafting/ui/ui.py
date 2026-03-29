@@ -48,7 +48,9 @@ def _prof_display(name: str) -> str:
 
 
 def _prof_from_display(display: str) -> str:
-    return display.split("  ", 1)[-1].lower() if "  " in display else display.lower()
+    name = display.split("  ", 1)[-1] if "  " in display else display
+    name = name.split(" (")[0]
+    return name.lower()
 
 
 def _to_bogota(utc_str: str) -> str:
@@ -71,11 +73,12 @@ def _fmt(n) -> str:
 class CraftingUI:
 
     def __init__(self, root: tk.Tk, callbacks: dict, professions: list,
-                 load_settings, save_settings):
+                 load_settings, save_settings, prof_counts: dict = None):
         self.root          = root
         self._cbs          = callbacks
         self._load_settings = load_settings
         self._save_settings = save_settings
+        self._prof_counts  = prof_counts or {}
         self._all_rows: list = []
         self._row_data: dict = {}
         self._selected_recipe_iid: str | None = None
@@ -104,7 +107,6 @@ class CraftingUI:
         self._build_sidebar(professions)
         self._build_filterbar()
         self._build_table()
-        self._build_summary_bar()
         self._build_prompt()
         self._build_log()
 
@@ -233,7 +235,9 @@ class CraftingUI:
                          height=1).pack(fill="x", padx=6, pady=4)
                 continue
             pv = _prof_display(item)
-            b = tk.Label(self._prof_btn_frame, text=pv,
+            count = self._prof_counts.get(item, 0)
+            label = f"{pv} ({count})" if count else pv
+            b = tk.Label(self._prof_btn_frame, text=label,
                          bg=C["bg2"], fg=C["subtext"],
                          font=(F, SMALL), padx=10, pady=5,
                          anchor="w", cursor="hand2")
@@ -241,7 +245,7 @@ class CraftingUI:
             b.bind("<Button-1>", lambda e, v=pv: self._select_profession(v))
             b.bind("<Enter>", lambda e, w=b: w.config(bg=C["surface"]))
             b.bind("<Leave>", lambda e, w=b, v=None: self._restore_prof_btn_bg(w))
-            self._prof_buttons.append((b, pv))
+            self._prof_buttons.append((b, pv, label))
 
         if prof_display_values:
             self._update_prof_btn_highlight(prof_display_values[0])
@@ -294,17 +298,17 @@ class CraftingUI:
 
     def _update_prof_btn_highlight(self, selected_display: str):
         C = self.C
-        for btn, val in self._prof_buttons:
+        for btn, val, label in self._prof_buttons:
             if val == selected_display:
                 btn.config(bg=C["accent_bg"], fg=C["accent"],
                            font=(F, SMALL, "bold"))
             else:
                 btn.config(bg=C["bg2"], fg=C["subtext"],
-                           font=(F, BASE))
+                           font=(F, BASE), text=label)
 
     def _restore_prof_btn_bg(self, widget):
         C = self.C
-        for btn, val in self._prof_buttons:
+        for btn, val, label in self._prof_buttons:
             if btn is widget:
                 if val == self._prof_var.get():
                     widget.config(bg=C["accent_bg"])
@@ -422,23 +426,6 @@ class CraftingUI:
             self._tree.move(iid, "", idx)
 
     # ── Summary bar ──────────────────────────────────────────────────────────
-
-    def _build_summary_bar(self):
-        C = self.C
-        self._summary_bar = tk.Frame(self._main_area, bg=C["surface"])
-        self._summary_bar.pack(fill="x")
-
-        self._sum_total      = tk.Label(self._summary_bar, text="", bg=C["surface"],
-                                        fg=C["dim"],   font=(F, BASE), padx=10, pady=4)
-        self._sum_profitable = tk.Label(self._summary_bar, text="", bg=C["surface"],
-                                        fg=C["green"], font=(F, BASE))
-        self._sum_avg        = tk.Label(self._summary_bar, text="", bg=C["surface"],
-                                        fg=C["dim"],   font=(F, BASE), padx=10)
-        self._sum_top        = tk.Label(self._summary_bar, text="", bg=C["surface"],
-                                        fg=C["mauve"], font=(F, BASE))
-
-        for w in (self._sum_total, self._sum_profitable, self._sum_avg, self._sum_top):
-            w.pack(side="left")
 
     # ── Prompt ───────────────────────────────────────────────────────────────
 
@@ -668,18 +655,16 @@ class CraftingUI:
         self._all_rows = rows
         summary = compute_summary(rows)
         self._apply_filter(profitable=summary["profitable"])
-        self._update_summary(summary)
 
-    def _update_summary(self, summary: dict):
-        top = summary["top"]
-        self._sum_total.config(text=f"Total: {summary['total']}")
-        self._sum_profitable.config(text=f"  Rentables: {summary['n_profitable']}")
-        self._sum_avg.config(
-            text=f"  Media: +{_fmt(summary['avg_profit'])}" if summary["avg_profit"] else "  Media: —"
-        )
-        self._sum_top.config(
-            text=f"  {top['result']}  (+{_fmt(top['profit_total'])})" if top else ""
-        )
+        # Actualizar count en el botón de profesión activo
+        selected = self._prof_var.get()
+        count = summary["total"]
+        for i, (btn, val, _old_label) in enumerate(self._prof_buttons):
+            if val == selected:
+                new_label = f"{val} ({count})"
+                btn.config(text=new_label)
+                self._prof_buttons[i] = (btn, val, new_label)
+                break
 
     def show_confirm(self, text: str, on_confirm):
         self._prompt_bar.show_confirm(

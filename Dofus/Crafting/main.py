@@ -259,6 +259,15 @@ class CraftingApp:
         self._last_refresh = 0.0
 
         professions = list_professions()
+        prof_counts = {}
+        for prof in professions:
+            path = find_recipe_file(prof)
+            if path:
+                try:
+                    with open(path, encoding="utf-8") as f:
+                        prof_counts[prof] = len(json.load(f))
+                except Exception:
+                    prof_counts[prof] = 0
 
         callbacks = {
             "start":     self._start,
@@ -268,7 +277,8 @@ class CraftingApp:
         }
 
         UIClass = CraftingUI
-        self.ui = UIClass(root, callbacks, professions, load_user_settings, save_user_settings)
+        self.ui = UIClass(root, callbacks, professions, load_user_settings, save_user_settings,
+                          prof_counts=prof_counts)
 
         sys.stdout = _StdoutRedirect(self._on_log)
         sys.stderr = _StdoutRedirect(self._on_log)
