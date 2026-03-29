@@ -40,7 +40,7 @@ class AutoBuyer:
         stop_event:       threading.Event,
         on_progress:      Callable[[str], None],
         on_market_switch: Callable[[str, int], bool],
-    ) -> list[str]:
+    ) -> tuple[list[str], list[str]]:
         """
         Compra los ítems automáticamente agrupando por tipo de mercadillo.
 
@@ -52,23 +52,24 @@ class AutoBuyer:
           on_progress       callback(mensaje) para actualizar la UI
           on_market_switch  callback(market_name, n_items) → bool
 
-        Devuelve lista de nombres de ítems que no se pudieron comprar.
+        Devuelve (failed, skipped): items con error e items saltados por detención.
         """
         import keyboard as _kb
 
-        failed: list[str] = []
+        failed:  list[str] = []
+        skipped: list[str] = []
         _kb.add_hotkey(STOP_HOTKEY, stop_event.set)
         self._init_cal()
 
         try:
             for subtype, group in items_by_subtype.items():
                 if stop_event.is_set():
-                    failed.extend(name for name, _ in group)
+                    skipped.extend(name for name, _ in group)
                     continue
 
                 market_name = MARKET_NAMES.get(subtype, subtype.capitalize())
                 if not on_market_switch(market_name, len(group)):
-                    failed.extend(name for name, _ in group)
+                    skipped.extend(name for name, _ in group)
                     continue
 
                 for i in range(BUY_COUNTDOWN, 0, -1):
@@ -79,7 +80,7 @@ class AutoBuyer:
 
                 for name, plan in group:
                     if stop_event.is_set():
-                        failed.append(name)
+                        skipped.append(name)
                         continue
                     try:
                         self._buy_item(name, plan, buy_cal, stop_event, on_progress, market_name)
@@ -90,7 +91,7 @@ class AutoBuyer:
         finally:
             _kb.remove_hotkey(STOP_HOTKEY)
 
-        return failed
+        return failed, skipped
 
     def _buy_item(
         self,

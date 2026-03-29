@@ -451,19 +451,25 @@ class AlmanaxApp:
             init_cal          = _init_calibration,
             press_esc         = _press_esc,
         )
-        failed = buyer.buy(
+        failed, skipped = buyer.buy(
             items_by_subtype = groups,
             buy_cal          = self.buy_cal,
             stop_event       = self._buy_stop,
             on_progress      = self._ui_progress,
             on_market_switch = self._ask_market_switch,
         )
-        self.root.after(0, self._buy_all_done, failed)
+        self.root.after(0, self._buy_all_done, failed, skipped)
 
-    def _buy_all_done(self, failed: list[str]):
+    def _buy_all_done(self, failed: list[str], skipped: list[str]):
         self.ui.set_buy_busy(False)
+        parts = []
         if failed:
-            self.ui.set_status(f"✓ Compra completada — {len(failed)} fallidos", C["yellow"])
+            parts.append(f"{len(failed)} fallidos")
+        if skipped:
+            parts.append(f"{len(skipped)} saltados")
+        if parts:
+            self.ui.set_status(f"Compra detenida — {', '.join(parts)}" if skipped
+                               else f"✓ Compra completada — {', '.join(parts)}", C["yellow"])
         else:
             self.ui.set_status("✓ Todos los rentables comprados", C["green"])
 
