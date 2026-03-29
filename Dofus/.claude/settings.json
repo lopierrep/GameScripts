@@ -23,7 +23,11 @@
       "Bash(timeout 5 python -c \":*)",
       "Bash(pip install:*)",
       "Bash(timeout 3 python -c \":*)",
-      "Bash(python -m py_compile Crafting/ui/ui.py)"
+      "Bash(python -m py_compile Crafting/ui/ui.py)",
+      "Bash(git -C \"e:/2_Games/Scripts\" status -- Dofus/shared/colors.py Dofus/Ganadero/ui/ui.py Dofus/Crafting/ui/ui.py Dofus/Almanax/ui/ui.py)",
+      "Bash(git -C \"e:/2_Games/Scripts\" status)",
+      "Bash(git -C \"e:/2_Games/Scripts\" log --oneline -1 -- Dofus/shared/colors.py Dofus/Ganadero/ui/ui.py Dofus/Crafting/ui/ui.py Dofus/Almanax/ui/ui.py)",
+      "Bash(git -C \"e:/2_Games/Scripts\" show 18f0047 -- Dofus/Ganadero/ui/ui.py)"
     ]
   }
 }
