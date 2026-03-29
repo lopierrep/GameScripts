@@ -164,17 +164,9 @@ class CraftingUI:
         sb = self._sidebar
 
         # Titulo
-        tk.Label(sb, text="Crafting", bg=C["bg2"],
+        tk.Label(sb, text="⚒ Crafting", bg=C["bg2"],
                  fg=C["accent"], font=(F, TITLE, "bold"),
                  pady=14, padx=12).pack(fill="x")
-
-        # Badge de estado
-        self._status_var = tk.StringVar(value="Listo")
-        self._status_lbl = tk.Label(sb, textvariable=self._status_var,
-                                    bg=C["accent_bg"], fg=C["accent"],
-                                    font=(F, SMALL), padx=12, pady=4,
-                                    anchor="w")
-        self._status_lbl.pack(fill="x", padx=8, pady=(0, 8))
 
         self._sep(sb)
 
@@ -626,9 +618,7 @@ class CraftingUI:
                 for iid in iids if iid in self._row_data}
 
     def set_status(self, text: str, color: str = None):
-        self._status_var.set(text)
-        if color:
-            self._status_lbl.config(fg=color)
+        pass
 
     def set_busy(self, busy: bool):
         C = self.C

@@ -70,7 +70,7 @@ class AlmanaxUI:
         bar = tk.Frame(self.root, bg=C["bg"], pady=8)
         bar.pack(fill="x", padx=12)
 
-        tk.Label(bar, text="Almanax", bg=C["bg"], fg=C["accent"],
+        tk.Label(bar, text="📅 Almanax", bg=C["bg"], fg=C["accent"],
                  font=(F, TITLE, "bold")).pack(side="left")
 
         self._build_date_range(bar)

@@ -124,7 +124,7 @@ class GanaderoUI:
         bar = tk.Frame(self.root, bg=C["bg"], pady=8)
         bar.pack(fill="x", padx=12)
 
-        tk.Label(bar, text="Ganadero", bg=C["bg"], fg=C["accent"],
+        tk.Label(bar, text="🐴 Ganadero", bg=C["bg"], fg=C["accent"],
                  font=(F, TITLE, "bold")).pack(side="left")
         tk.Label(bar, text=" - Eficiencia de Carburantes", bg=C["bg"], fg=C["dim"],
                  font=(F, BASE)).pack(side="left")
