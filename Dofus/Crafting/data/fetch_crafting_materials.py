@@ -29,7 +29,7 @@ _DOFUS_DIR        = os.path.normpath(os.path.join(BASE_DIR, "..", ".."))
 if _DOFUS_DIR not in sys.path:
     sys.path.insert(0, _DOFUS_DIR)
 
-RECIPES_DIR       = os.path.join(BASE_DIR, "..", "Recipes")
+RECIPES_DIR       = os.path.join(BASE_DIR, "..", "..", "shared", "data")
 MARKETS_DIR       = BASE_DIR
 DATA_DIR          = os.path.join(BASE_DIR, "..", "..", "shared", "data")
 FALLBACK_FILE     = os.path.join(BASE_DIR, "..", "data", "uncategorized_materials.json")

@@ -2,15 +2,7 @@
 Lógica de filtrado y resumen de filas de la tabla de crafting.
 """
 
-import unicodedata
-
-
-def _norm(s: str) -> str:
-    """Minúsculas y sin tildes para comparación flexible."""
-    return "".join(
-        c for c in unicodedata.normalize("NFD", s.lower())
-        if unicodedata.category(c) != "Mn"
-    )
+from shared.market.common import _normalize as _norm
 
 
 def filter_rows(

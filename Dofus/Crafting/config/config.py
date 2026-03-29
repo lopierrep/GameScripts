@@ -25,13 +25,8 @@ CATEGORIES_FILE  = os.path.join(ROOT_DIR, "..", "shared", "market", "categories_
 PRICES_FILE      = os.path.join(DATA_DIR, "materials_prices.json")
 SETTINGS_FILE    = os.path.join(ROOT_DIR, "config", "user_settings.json")
 
-# ── Exportación (Google Sheets) ────────────────────────────────────────
-CREDENTIALS_FILE = os.path.join(ROOT_DIR, "..", "shared", "sync", "credentials.json")
-SPREADSHEET_ID   = "1S7B58S_tkt4kx4vopK9fVzP9rMbWybUC3xrWUrqBuT8"
-
 # ── API / Scraping ─────────────────────────────────────────────────────
 DELAY_BETWEEN_ITEMS  = 0.3
-DOFUSDB_URL          = "https://api.dofusdb.fr"
 
 # ── Lógica de negocio ─────────────────────────────────────────────────
 UNKNOWN_KEY          = "Sin categoría"

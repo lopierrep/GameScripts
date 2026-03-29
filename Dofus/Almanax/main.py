@@ -19,7 +19,7 @@ sys.path.insert(0, str(ROOT_DIR))
 sys.path.insert(0, str(ROOT_DIR.parent))
 
 from config.config import C, LOTS, SETTINGS_FILE, CATEGORIES_FILE, STOP_HOTKEY
-from core.prices import load_prices, save_prices, optimal_cost, get_lot_plan, best_guijarro, find_item_prices
+from core.prices import load_prices, optimal_cost, get_lot_plan, best_guijarro, find_item_prices
 from core.api    import fetch_almanax, parse_entry, save_almanax, load_almanax, resolve_subtype
 from core.table  import today_fr
 from shared.market.common import fetch_category, get_market_for_category, load_categories
@@ -94,7 +94,7 @@ class AlmanaxApp:
             "calibrate":    self._calibrate_buy_start,
             "buy_all":      self._buy_all_profitable,
             "stop_buy":     self._stop_buy,
-            "select":       self._on_item_selected,
+            "select":       lambda _: None,
             "refresh":      self._refresh_table,
             "toggle_sort":  self._toggle_sort,
             "sync":         self._sync,
@@ -322,16 +322,6 @@ class AlmanaxApp:
 
     # ── Precios ───────────────────────────────────────────────────────────────
 
-    def _on_item_selected(self, item_name: str):
-        pass
-
-    def _full_item_name(self, display: str) -> str:
-        clean = display.rstrip("…")
-        for r in self.data:
-            if r["item"].startswith(clean):
-                return r["item"]
-        return display
-
     # ── Escaneo ───────────────────────────────────────────────────────────────
 
     def _start_scan(self):
@@ -353,7 +343,6 @@ class AlmanaxApp:
         self._buy_stop.set()
 
     def _scan_thread(self):
-        import sys
         import keyboard as _kb
         from automation.scanner import build_scan_items
         from shared.market.item_price_scanner import scan_prices
@@ -433,8 +422,6 @@ class AlmanaxApp:
         if not groups:
             self.ui.set_status("No hay ítems rentables con precio guardado.", C["yellow"])
             return
-
-        all_items = [(n, p) for lst in groups.values() for n, p in lst]
 
         self.ui.set_buy_busy(True)
         self._buy_stop.clear()

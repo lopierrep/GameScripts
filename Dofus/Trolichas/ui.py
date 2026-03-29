@@ -1,7 +1,7 @@
 import tkinter as tk
 
 from shared.colors import C
-from shared.font  import FONT as F, TITLE, HEADER, BASE, SMALL
+from shared.font  import FONT as F, HEADER, BASE, SMALL
 from config import SECONDS_PER_TICKET
 
 

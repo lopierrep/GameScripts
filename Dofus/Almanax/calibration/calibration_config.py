@@ -1,4 +1,5 @@
 from pathlib import Path
+from config.config import LOTS
 from shared.calibration import load_calibration as _load
 
 CALIBRATION_FILE = str(Path(__file__).resolve().parent / "calibration_data.json")
@@ -40,9 +41,6 @@ def transform(data: dict) -> dict:
     data["result_row_height"] = second[1] - first[1]
     data["results_click_x"] = first[0]
     data["lot_buttons"] = {
-        "1":    data.pop("lot_x1"),
-        "10":   data.pop("lot_x10"),
-        "100":  data.pop("lot_x100"),
-        "1000": data.pop("lot_x1000"),
+        str(s): data.pop(f"lot_x{s}") for s in LOTS
     }
     return data

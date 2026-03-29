@@ -183,13 +183,6 @@ def load_raw_market_prices() -> tuple[dict, dict]:
     return raw_market_prices, ing_updated_at
 
 
-def best_unit_price(prices: dict, pack_size: str) -> float:
-    """Precio unitario mínimo entre el lote dado y sus adyacentes."""
-    idx = SIZES.index(pack_size)
-    candidates = SIZES[max(0, idx - 1):idx + 2]
-    values = [prices[s] for s in candidates if prices.get(s, 0) > 0]
-    return min(values) if values else 0
-
 
 
 

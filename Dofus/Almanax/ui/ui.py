@@ -15,7 +15,7 @@ from config.config import (
 )
 from core.table import day_label, profit_tag, today_fr
 from shared.colors import style_scrollbar
-from shared.font  import FONT as F, TITLE, HEADER, BASE, SMALL, XS
+from shared.font  import FONT as F, TITLE, HEADER, BASE, SMALL
 from shared.prompt_bar import PromptBar
 from shared.status_bar import StatusBar
 from shared.toast import show_copy_toast
@@ -328,11 +328,6 @@ class AlmanaxUI:
             self.buy_all_btn.config(text="■  Detener", bg=C["red"], command=self._cb["stop_buy"])
         else:
             self.buy_all_btn.config(text="🛒 Comprar", bg=C["accent"], command=self._cb["buy_all"])
-
-    def set_date_range(self, from_str: str, to_str: str):
-        self.from_var.set(from_str)
-        self.to_var.set(to_str)
-
 
     def update_best_guijarro(self, text: str):
         self.best_guij_lbl.config(text=text)

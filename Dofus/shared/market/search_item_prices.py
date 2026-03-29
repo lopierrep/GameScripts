@@ -32,7 +32,7 @@ pytesseract.pytesseract.tesseract_cmd = (
 )
 
 
-_CATEGORIES_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Resources", "categories.txt")
+_CATEGORIES_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "config", "categories.txt")
 
 def _load_categories() -> set[str]:
     if not os.path.exists(_CATEGORIES_FILE):

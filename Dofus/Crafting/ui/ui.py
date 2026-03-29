@@ -623,12 +623,6 @@ class CraftingUI:
         else:
             self._toggle_btn.config(text="▶ Actualizar Precios", bg=C["green"], fg=C["bg"])
 
-    def log(self, text: str, tag: str = None):
-        pass
-
-    def clear_log(self):
-        pass
-
     def refresh_table(self, rows: list):
         self._all_rows = rows
         summary = compute_summary(rows)

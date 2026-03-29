@@ -523,12 +523,6 @@ class GanaderoUI:
     def update_status(self, text: str, color: str = C["dim"]):
         self._status_bar.set(text, color)
 
-    def log(self, text: str, tag: str = None):
-        pass
-
-    def clear_log(self):
-        pass
-
     # ── Control de escaneo ───────────────────────────────────────────────────
 
     def set_scanning(self, active: bool):

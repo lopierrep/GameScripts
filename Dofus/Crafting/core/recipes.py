@@ -4,8 +4,8 @@ Gestión de recetas: carga, precios de venta y expansión de subrecetas.
 
 import json
 import os
-import unicodedata
 
+from shared.market.common import _normalize as _normalize_name
 from utils.loaders import get_recipe_files
 from utils.market import _is_selling_fresh
 
@@ -36,14 +36,6 @@ def build_result_file_map() -> dict[str, str]:
     return {r["result"]: path for r, path in _read_all_recipes()}
 
 
-def _normalize_name(name: str) -> str:
-    """Quita tildes y pasa a minúsculas para comparación flexible."""
-    return "".join(
-        c for c in unicodedata.normalize("NFD", name.lower())
-        if unicodedata.category(c) != "Mn"
-    )
-
-
 def find_recipe(result_name: str) -> tuple[dict | None, str | None]:
     """Devuelve (recipe_dict, recipe_file_path) para el resultado dado.
     Ignora tildes, mayúsculas y minúsculas."""
@@ -54,11 +46,6 @@ def find_recipe(result_name: str) -> tuple[dict | None, str | None]:
                 if _normalize_name(r.get("result", "")) == needle:
                     return r, path
     return None, None
-
-
-def profession_from_file(path: str) -> str:
-    fname = os.path.basename(path)
-    return fname[len("recipes_"):-len(".json")]
 
 
 def sub_recipe_files(sub_results: set[str], main_recipe_file: str) -> list[str]:
