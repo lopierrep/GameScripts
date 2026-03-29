@@ -14,6 +14,7 @@ from config.config import (
     DEFAULT_PJS, DEFAULT_ALM, DEFAULT_GUIJ_PRICES,
 )
 from core.table import day_label, profit_tag, today_fr
+from shared.colors import style_scrollbar
 from shared.font  import FONT as F, TITLE, HEADER, BASE, SMALL, XS
 from shared.toast import show_copy_toast
 
@@ -281,9 +282,7 @@ class AlmanaxUI:
         style.map("Treeview",
                   background=[("selected", C["accent"])],
                   foreground=[("selected", C["bg"])])
-        style.configure("TScrollbar", background=C["surface"],
-                        troughcolor=C["bg"], bordercolor=C["bg"],
-                        arrowcolor=C["dim"])
+        style_scrollbar(style)
         self.tree.tag_configure("alta",       foreground=C["green"])
         self.tree.tag_configure("media",      foreground=C["yellow"])
         self.tree.tag_configure("perdida",    foreground=C["red"])

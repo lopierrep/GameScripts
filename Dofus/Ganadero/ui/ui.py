@@ -11,7 +11,7 @@ from tkinter import ttk
 import json
 from pathlib import Path
 
-from shared.colors import C
+from shared.colors import C, style_scrollbar
 from shared.font  import FONT as F, TITLE, HEADER, BASE, SMALL
 from shared.toast import show_copy_toast
 
@@ -117,8 +117,7 @@ class GanaderoUI:
                   background=[("selected", C["accent"])],
                   foreground=[("selected", C["bg"])])
 
-        style.configure("TScrollbar", background=C["surface"], troughcolor=C["bg"],
-                        borderwidth=0, arrowsize=12)
+        style_scrollbar(style)
 
     # ── Construcción ──────────────────────────────────────────────────────────
 
@@ -441,7 +440,10 @@ class GanaderoUI:
             state="disabled", wrap="word", height=6,
             selectbackground=C["accent"],
         )
-        sb = ttk.Scrollbar(self._log_frame, orient="vertical", command=self._log.yview)
+        sb = tk.Scrollbar(self._log_frame, orient="vertical", command=self._log.yview,
+                          bg=C["surface"], troughcolor=C["bg"],
+                          activebackground=C["dim"], highlightthickness=0,
+                          borderwidth=0, width=12)
         self._log.configure(yscrollcommand=sb.set)
         sb.pack(side="right", fill="y")
         self._log.pack(side="left", fill="both", expand=True, padx=2, pady=2)

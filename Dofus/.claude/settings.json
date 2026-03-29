@@ -21,7 +21,9 @@
       "Bash(python data/migrate_prices.py)",
       "Bash(grep -rn \"Ojo de kanugro\" recipes_*.json)",
       "Bash(timeout 5 python -c \":*)",
-      "Bash(pip install:*)"
+      "Bash(pip install:*)",
+      "Bash(timeout 3 python -c \":*)",
+      "Bash(python -m py_compile Crafting/ui/ui.py)"
     ]
   }
 }

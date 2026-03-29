@@ -10,7 +10,7 @@ from tkinter import ttk
 from datetime import datetime, timezone, timedelta
 
 from core.table_filter import compute_summary, filter_rows, profitable_rows
-from shared.colors import C
+from shared.colors import C, style_scrollbar
 from shared.font  import FONT as F, TITLE, HEADER, BASE, SMALL
 from shared.toast import show_copy_toast
 
@@ -161,9 +161,7 @@ class CraftingUI:
         s.map("Craft.Treeview",
               background=[("selected", C["accent"])],
               foreground=[("selected", C["bg"])])
-        s.configure("TScrollbar",
-                    background=C["surface"], troughcolor=C["bg"],
-                    arrowcolor=C["dim"], borderwidth=0, relief="flat")
+        style_scrollbar(s)
 
     # ── Sidebar ──────────────────────────────────────────────────────────────
 
@@ -510,7 +508,13 @@ class CraftingUI:
     def _build_log(self):
         C = self.C
         self._log_outer = tk.Frame(self._main_area, bg=C["surface"])
-        self._log_outer.pack(fill="x", padx=10, pady=(0, 8))
+        # No se hace pack; se muestra/oculta con show_log()/hide_log()
+
+        btn_close = tk.Button(
+            self._log_outer, text="x", bg=C["red"], fg=C["bg"],
+            font=(self.M, SMALL, "bold"), relief="flat", bd=0, padx=6, pady=1,
+            cursor="hand2", command=self.hide_log)
+        btn_close.pack(side="top", anchor="ne", padx=4, pady=(4, 0))
 
         self._log = tk.Text(
             self._log_outer, bg=C["surface"], fg=C["text"],
@@ -518,7 +522,10 @@ class CraftingUI:
             state="disabled", wrap="word", height=6,
             selectbackground=C["accent"],
         )
-        sb = ttk.Scrollbar(self._log_outer, orient="vertical", command=self._log.yview)
+        sb = tk.Scrollbar(self._log_outer, orient="vertical", command=self._log.yview,
+                          bg=C["surface"], troughcolor=C["bg"],
+                          activebackground=C["dim"], highlightthickness=0,
+                          borderwidth=0, width=12)
         self._log.configure(yscrollcommand=sb.set)
         sb.pack(side="right", fill="y")
         self._log.pack(side="left", fill="both", expand=True, padx=2, pady=2)
@@ -732,6 +739,7 @@ class CraftingUI:
         self._busy = busy
         if busy:
             self._toggle_btn.config(text="■ Detener", bg=C["red"], fg=C["bg"])
+            self.show_log()
         else:
             self._toggle_btn.config(text="▶ Actualizar Precios", bg=C["green"], fg=C["bg"])
 
@@ -765,6 +773,13 @@ class CraftingUI:
         self._log.configure(state="normal")
         self._log.delete("1.0", "end")
         self._log.configure(state="disabled")
+
+    def show_log(self):
+        if not self._log_outer.winfo_manager():
+            self._log_outer.pack(fill="x", padx=10, pady=(0, 8))
+
+    def hide_log(self):
+        self._log_outer.pack_forget()
 
     def refresh_table(self, rows: list):
         self._all_rows = rows

@@ -19,3 +19,11 @@ C = {
     "today":      "#2d3250",
     "alt_row":    "#252535",
 }
+
+
+def style_scrollbar(style):
+    """Aplica estilo unificado al TScrollbar."""
+    style.configure("TScrollbar",
+                    background=C["surface"], troughcolor=C["bg"],
+                    bordercolor=C["bg"], arrowcolor=C["dim"],
+                    borderwidth=0, arrowsize=12, relief="flat")
