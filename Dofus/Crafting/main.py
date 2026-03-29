@@ -79,7 +79,7 @@ def _build_market_groups(
 
     for name in all_ingredients:
         if name in item_lookup:
-            m = item_lookup[name]
+            m, _ = item_lookup[name]
             market_groups.setdefault(m, {"results": [], "ingredients": []})
             if name not in market_groups[m]["ingredients"]:
                 market_groups[m]["ingredients"].append(name)
