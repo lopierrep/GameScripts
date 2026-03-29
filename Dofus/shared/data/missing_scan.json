@@ -1,0 +1,46 @@
+{
+  "Resources": {
+    "Recurso variado": [
+      "Tornillo de cybwork",
+      "Cacho de blop coco",
+      "Kamatrix"
+    ],
+    "Cola": [
+      "Cola de fénex"
+    ],
+    "Hueso": [
+      "Diente de larva esmeralda",
+      "Diente de lamprequeña"
+    ],
+    "Líquido": [
+      "Fluido glacial",
+      "Néctar del oriente",
+      "Baba de stropajo"
+    ],
+    "Pescado": [
+      "Bamga"
+    ],
+    "Cuero": [
+      "Cuero de cuerola"
+    ],
+    "Piedra bruta": [
+      "Bola pulida"
+    ],
+    "Oreja": [
+      "Oreja de fuxfaigter"
+    ],
+    "Pluma": [
+      "Pluma de tofu"
+    ]
+  },
+  "Creatures": {
+    "Carburante de cercados": [
+      "Extracto pequeño de abrevadero"
+    ]
+  },
+  "Unknown": {
+    "Isla de Moon": [
+      "Caparazón verde"
+    ]
+  }
+}

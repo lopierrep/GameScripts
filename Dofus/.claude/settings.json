@@ -46,7 +46,20 @@
       "Bash(python -m py_compile Crafting/config/config.py)",
       "Bash(python -m py_compile Almanax/config/config.py)",
       "Bash(python -m py_compile Ganadero/core/update_prices.py)",
-      "Bash(python -m py_compile Ganadero/core/carburante_efficiency.py)"
+      "Bash(python -m py_compile Ganadero/core/carburante_efficiency.py)",
+      "Bash(sed -i 's/6\\\\. Escribir `missing_file` JSON:/6. Escribir `MISSING_FILE` \\(shared\\\\/data\\\\/missing_scan.json\\) JSON:/' \"C:/Users/lopierrep/.claude/plans/ancient-booping-boole.md\")",
+      "Bash(sed -i '/`missing_file` = `Ganadero\\\\/data\\\\/missing_items.json` \\(nuevo archivo\\)/d' \"C:/Users/lopierrep/.claude/plans/ancient-booping-boole.md\")",
+      "Bash(sed -i 's/- `missing_file` = `shared\\\\/data\\\\/missing_recipes.json`//' \"C:/Users/lopierrep/.claude/plans/ancient-booping-boole.md\")",
+      "Bash(xargs grep:*)",
+      "Bash(grep -r \"bought\\\\|purchased\\\\|comprad\" /e/2_Games/Scripts/Dofus/Almanax --include=*.json --include=*.py)",
+      "Bash(grep -E \"\\(config|common\\)\\\\.py$\")",
+      "Bash(mkdir -p \"e:\\\\2_Games\\\\Scripts\\\\Dofus\\\\shared\\\\config\")",
+      "Bash(cp \"e:\\\\2_Games\\\\Scripts\\\\Dofus\\\\Crafting\\\\config\\\\omitted_recipes.txt\" \"e:\\\\2_Games\\\\Scripts\\\\Dofus\\\\Crafting\\\\config\\\\omitted_categories.txt\" \"e:\\\\2_Games\\\\Scripts\\\\Dofus\\\\Crafting\\\\config\\\\manual_price_items.txt\" \"e:\\\\2_Games\\\\Scripts\\\\Dofus\\\\shared\\\\config/\")",
+      "Bash(grep -rn \"save_selling_price\\\\|save_ingredient_price\" e:2_GamesScriptsDofus --include=*.py)",
+      "Bash(grep -rn from.*import.*build_item_lookup e:2_GamesScriptsDofus)",
+      "Bash(find /e/2_Games/Scripts/Dofus/shared -name *.py -type f)",
+      "Bash(grep -n \"log_panel\" \"e:\\\\2_Games\\\\Scripts\\\\Dofus\\\\shared\"*)",
+      "Bash(grep -n \"def better_lot_prices\\\\|def filter_lot_prices\" \"e:\\\\2_Games\\\\Scripts\\\\Dofus\\\\shared\\\\market\"*)"
     ]
   }
 }
