@@ -1,0 +1,44 @@
+{
+  "dragopavo": {
+    "nivel_maximo": 200,
+    "xp_para_nivel_maximo": 867582,
+    "estadisticas": {
+      "amor":        { "max": 20000 },
+      "resistencia": { "max": 20000 },
+      "madurez":     { "max": 20000 }
+    }
+  },
+  "cercado": {
+    "capacidad_monturas": 10,
+    "indicadores": [
+      { "nombre": "aporreadora", "efecto": "baja_serenidad" },
+      { "nombre": "acariciador", "efecto": "sube_serenidad" },
+      { "nombre": "dragonalgas", "estadistica": "amor" },
+      { "nombre": "fulminadora", "estadistica": "resistencia" },
+      { "nombre": "abrevadero",  "estadistica": "madurez" },
+      { "nombre": "pesebre",     "efecto": "xp" }
+    ],
+    "rangos_consumo": [
+      { "min":     0, "max":  40000, "consumo_por_tick": 10 },
+      { "min": 40000, "max":  70000, "consumo_por_tick": 20 },
+      { "min": 70000, "max":  90000, "consumo_por_tick": 30 },
+      { "min": 90000, "max": 100000, "consumo_por_tick": 40 }
+    ],
+    "tick_segundos": 10
+  },
+  "carburantes": {
+    "tamanios": [
+      { "nivel_resto":  5, "nombre": "minusculo",  "recarga": 1000 },
+      { "nivel_resto": 15, "nombre": "pequeno",    "recarga": 2000 },
+      { "nivel_resto": 25, "nombre": "normal",     "recarga": 3000 },
+      { "nivel_resto": 35, "nombre": "grande",     "recarga": 4000 },
+      { "nivel_resto": 45, "nombre": "gigantesco", "recarga": 5000 }
+    ],
+    "topes_por_nivel": [
+      { "nivel_min":   5, "nivel_max":  45, "tope_indicador":  40000 },
+      { "nivel_min":  55, "nivel_max":  95, "tope_indicador":  70000 },
+      { "nivel_min": 105, "nivel_max": 145, "tope_indicador":  90000 },
+      { "nivel_min": 155, "nivel_max": 195, "tope_indicador": 100000 }
+    ]
+  }
+}
