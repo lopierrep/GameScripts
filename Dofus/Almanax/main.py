@@ -18,7 +18,7 @@ ROOT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT_DIR))
 sys.path.insert(0, str(ROOT_DIR.parent))
 
-from config.config import C, LOTS, SETTINGS_FILE, CATEGORIES_FILE, MISSING_FILE
+from config.config import C, LOTS, SETTINGS_FILE, CATEGORIES_FILE, MISSING_FILE, STOP_HOTKEY
 from core.prices import load_prices, save_prices, optimal_cost, get_lot_plan, best_guijarro, find_item_prices, add_item_prices, remove_item_prices
 from core.api    import fetch_almanax, parse_entry, save_almanax, load_almanax, resolve_subtype
 from core.table  import today_fr
@@ -385,7 +385,7 @@ class AlmanaxApp:
         import keyboard as _kb
         from automation.scanner import MarketScanner
 
-        _kb.add_hotkey("s", self._scan_stop.set)
+        _kb.add_hotkey(STOP_HOTKEY, self._scan_stop.set)
         scanner = MarketScanner(
             search_item = _search_item,
             read_prices = _read_prices,
@@ -434,7 +434,7 @@ class AlmanaxApp:
             json.dump(missing, f, ensure_ascii=False, indent=2)
 
         try:
-            _kb.remove_hotkey("s")
+            _kb.remove_hotkey(STOP_HOTKEY)
         except Exception:
             pass
         self.root.after(0, self._scan_done, len(results), total)

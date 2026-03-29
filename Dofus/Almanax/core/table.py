@@ -4,15 +4,14 @@ Lógica de clasificación y etiquetado de filas de la tabla Almanax.
 
 from datetime import date, datetime, timezone, timedelta
 
-# Umbral de ganancia (kamas) que separa "alta rentabilidad" de "bajo margen"
-MIN_HIGH_PROFIT = 500
+from config.config import MIN_HIGH_PROFIT, SERVER_TIMEZONE
 
 
 def today_fr() -> date:
-    """Fecha actual en hora francesa (CET UTC+1 / CEST UTC+2)."""
+    """Fecha actual en hora del servidor."""
     try:
         from zoneinfo import ZoneInfo
-        return datetime.now(ZoneInfo("Europe/Paris")).date()
+        return datetime.now(ZoneInfo(SERVER_TIMEZONE)).date()
     except Exception:
         utc = datetime.now(timezone.utc)
         y   = utc.year

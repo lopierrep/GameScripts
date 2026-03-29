@@ -9,7 +9,10 @@ import tkinter as tk
 from tkinter import ttk
 from datetime import date, timedelta
 
-from config.config import C, LOTS
+from config.config import (
+    C, LOTS, WINDOW_GEOMETRY, WINDOW_MINSIZE, DEFAULT_DAYS,
+    DEFAULT_PJS, DEFAULT_ALM, DEFAULT_GUIJ_PRICES,
+)
 from core.table import day_label, profit_tag, today_fr
 from shared.toast import show_copy_toast
 
@@ -44,10 +47,10 @@ class AlmanaxUI:
 
     def _setup_window(self):
         self.root.title("Almanax")
-        self.root.geometry("1150x720+40+40")
+        self.root.geometry(WINDOW_GEOMETRY)
         self.root.configure(bg=C["bg"])
         self.root.resizable(True, True)
-        self.root.minsize(800, 500)
+        self.root.minsize(*WINDOW_MINSIZE)
 
     # ── Construcción de widgets ───────────────────────────────────────────────
 
@@ -77,7 +80,7 @@ class AlmanaxUI:
         today = today_fr()
         for label, attr, default in [
             ("  Desde:", "from_var", today.isoformat()),
-            ("  Hasta:", "to_var",   (today + timedelta(days=29)).isoformat()),
+            ("  Hasta:", "to_var",   (today + timedelta(days=DEFAULT_DAYS)).isoformat()),
         ]:
             tk.Label(bar, text=label, bg=C["bg"], fg=C["dim"],
                      font=("Consolas", 10)).pack(side="left", padx=(8 if "Desde" in label else 4, 4))
@@ -94,7 +97,7 @@ class AlmanaxUI:
     def _build_char_controls(self, bar: tk.Frame):
         tk.Label(bar, text="  Pjs:", bg=C["bg"], fg=C["dim"],
                  font=("Consolas", 10)).pack(side="left", padx=(8, 4))
-        self.pjs_var = tk.StringVar(value=self._settings.get("pjs", "15"))
+        self.pjs_var = tk.StringVar(value=self._settings.get("pjs", DEFAULT_PJS))
         e = tk.Entry(bar, textvariable=self.pjs_var, width=4,
                      bg=C["surface"], fg=C["text"], font=("Consolas", 10),
                      insertbackground=C["text"], relief="flat")
@@ -103,7 +106,7 @@ class AlmanaxUI:
 
         tk.Label(bar, text="  Alm/pj:", bg=C["bg"], fg=C["dim"],
                  font=("Consolas", 10)).pack(side="left", padx=(8, 4))
-        self.alm_var = tk.StringVar(value=self._settings.get("alm", "4"))
+        self.alm_var = tk.StringVar(value=self._settings.get("alm", DEFAULT_ALM))
         e = tk.Entry(bar, textvariable=self.alm_var, width=4,
                      bg=C["surface"], fg=C["text"], font=("Consolas", 10),
                      insertbackground=C["text"], relief="flat")
@@ -111,8 +114,7 @@ class AlmanaxUI:
         e.bind("<Return>", lambda _: self._cb["refresh"]())
 
         self.guij_vars: dict[str, tk.StringVar] = {}
-        guij_defaults = {"T": "3600", "L": "18000", "S": "90000"}
-        for code, default in guij_defaults.items():
+        for code, default in DEFAULT_GUIJ_PRICES.items():
             tk.Label(bar, text=f"  G{code}:", bg=C["bg"], fg=C["dim"],
                      font=("Consolas", 10)).pack(side="left", padx=(4, 2))
             v = tk.StringVar(value=self._settings.get(f"guij_{code}", default))

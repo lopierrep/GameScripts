@@ -4,7 +4,7 @@ Lógica de escaneo de precios en el mercadillo (sin dependencias de UI).
 import threading
 from typing import Callable
 
-from config.config import LOTS, MARKET_NAMES
+from config.config import LOTS, MARKET_NAMES, SCAN_DELAY, SCAN_COUNTDOWN
 from shared.market.scanner import MarketScanner as _BaseScanner
 
 
@@ -30,8 +30,8 @@ class MarketScanner:
         self._scanner = _BaseScanner(
             press_esc=press_esc,
             init_cal=init_cal,
-            delay=0.3,
-            countdown=3,
+            delay=SCAN_DELAY,
+            countdown=SCAN_COUNTDOWN,
         )
 
     def scan(

@@ -5,7 +5,10 @@ import threading
 import time
 from typing import Callable
 
-from config.config import MARKET_NAMES
+from config.config import (
+    MARKET_NAMES, STOP_HOTKEY, BUY_COUNTDOWN, BUY_DELAY_CONFIRM,
+    BUY_DELAY_LOT, BUY_DELAY_BETWEEN, BUY_DELAY_ESC, BUY_CLICK_RESULT,
+)
 
 
 class AutoBuyer:
@@ -54,7 +57,7 @@ class AutoBuyer:
         import keyboard as _kb
 
         failed: list[str] = []
-        _kb.add_hotkey("s", stop_event.set)
+        _kb.add_hotkey(STOP_HOTKEY, stop_event.set)
         self._init_cal()
 
         try:
@@ -68,7 +71,7 @@ class AutoBuyer:
                     failed.extend(name for name, _ in group)
                     continue
 
-                for i in range(5, 0, -1):
+                for i in range(BUY_COUNTDOWN, 0, -1):
                     if stop_event.is_set():
                         break
                     on_progress(f"[{market_name}] Cambia al juego… {i}s  (S para parar)")
@@ -83,9 +86,9 @@ class AutoBuyer:
                     except Exception:
                         failed.append(name)
                         self._press_esc()
-                        time.sleep(0.3)
+                        time.sleep(BUY_DELAY_ESC)
         finally:
-            _kb.remove_hotkey("s")
+            _kb.remove_hotkey(STOP_HOTKEY)
 
         return failed
 
@@ -103,7 +106,7 @@ class AutoBuyer:
         if pos is None:
             raise RuntimeError(f"Ítem '{name}' no encontrado en resultados")
 
-        self._click_at(pos, delay=0.4)
+        self._click_at(pos, delay=BUY_CLICK_RESULT)
 
         total_ops = sum(n for _, n in plan)
         done = 0
@@ -118,13 +121,13 @@ class AutoBuyer:
             for _ in range(n_lots):
                 if stop_event.is_set():
                     break
-                self._click_at(row_pos, delay=0.25)
+                self._click_at(row_pos, delay=BUY_DELAY_LOT)
                 if first_click:
-                    self._click_at(confirm_pos, delay=0.4)
+                    self._click_at(confirm_pos, delay=BUY_DELAY_CONFIRM)
                     first_click = False
-                time.sleep(1)
+                time.sleep(BUY_DELAY_BETWEEN)
                 done += 1
                 on_progress(f"[{market_name}] {name[:25]}: {done}/{total_ops}…  (S para parar)")
 
         self._press_esc()
-        time.sleep(0.3)
+        time.sleep(BUY_DELAY_ESC)

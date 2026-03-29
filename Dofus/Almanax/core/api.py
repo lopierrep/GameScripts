@@ -8,15 +8,15 @@ import urllib.error
 from collections.abc import Callable
 from datetime import date
 
-from config.config import API_BASE, ALMANAX_FILE, ITEMS_API_BASE
+from config.config import API_BASE, ALMANAX_FILE, ITEMS_API_BASE, USER_AGENT, API_TIMEOUT, API_TIMEOUT_RESOLVE
 from shared.market.common import fetch_category, get_market_for_category, load_categories
 
 
 def fetch_almanax(start: date, end: date) -> list[dict]:
     """Obtiene los días del Almanax entre start y end (inclusive)."""
     url = f"{API_BASE}?range[from]={start.isoformat()}&range[to]={end.isoformat()}"
-    req = urllib.request.Request(url, headers={"User-Agent": "AlmanaxTracker/1.0"})
-    with urllib.request.urlopen(req, timeout=60) as resp:
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    with urllib.request.urlopen(req, timeout=API_TIMEOUT) as resp:
         return json.loads(resp.read().decode("utf-8"))
 
 
@@ -24,9 +24,9 @@ def resolve_subtype(ankama_id: int) -> str:
     """Determina la categoría correcta del item probando los 3 endpoints."""
     for category in ("resources", "consumables", "equipment"):
         url = f"{ITEMS_API_BASE}/{category}/{ankama_id}"
-        req = urllib.request.Request(url, headers={"User-Agent": "AlmanaxTracker/1.0"})
+        req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
         try:
-            urllib.request.urlopen(req, timeout=10)
+            urllib.request.urlopen(req, timeout=API_TIMEOUT_RESOLVE)
             return category
         except urllib.error.HTTPError as e:
             if e.code == 404:
