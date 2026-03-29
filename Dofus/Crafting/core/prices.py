@@ -404,10 +404,23 @@ def _enrich_recipe(recipe: dict, pack_prices: dict, craftable_map: dict):
                 unit_price = craft_cost
                 buy_or_craft = "Craft"
 
-        ing["unit_price"]   = round(unit_price) if unit_price else None
+        # Precio de display: para ingredientes comprados se muestra el precio de mercado
+        # real en el lote recomendado (no el precio efectivo que reparte el lote entre
+        # las unidades usadas). El total refleja el costo exacto del lote a comprar.
+        if buy_or_craft != "Craft" and buy_lot:
+            market_price  = pack_prices.get(ing_name, {}).get(buy_lot) or None
+            lot_num_ing   = _LOT_NUMS[buy_lot]
+            packs_ing     = math.ceil(total_qty / lot_num_ing) if total_qty > 0 else 1
+            display_price = market_price
+            display_total = round(packs_ing * lot_num_ing * market_price) if market_price else None
+        else:
+            display_price = round(unit_price) if unit_price else None
+            display_total = round(unit_price * ing_qty * lot_num) if unit_price else None
+
+        ing["unit_price"]   = display_price
         ing["buy_lot"]      = buy_lot or "—"
         ing["buy_or_craft"] = buy_or_craft
-        ing["total"]        = round(unit_price * ing_qty * lot_num) if unit_price else None
+        ing["total"]        = display_total
     # Mover prices_updated_at al final del dict
     ts = recipe.pop("prices_updated_at", None)
     if ts is not None:
@@ -504,7 +517,6 @@ def build_table_rows(
             "result":       r.get("result", ""),
             "level":        r.get("level", ""),
             "best_lot":     best_lot or "—",
-            "craft_unit":   best_craft,
             "craft_cost":   craft_total,
             "sell_price":   sell_total,
             "profit":       best_profit,
