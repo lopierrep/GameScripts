@@ -40,15 +40,7 @@ def _load_manual_price_items() -> set[str]:
         return {line.strip() for line in f if line.strip()}
 
 
-def get_recipe_files() -> list[str]:
-    """Devuelve las rutas absolutas de todos los archivos recipes_*.json en DATA_DIR."""
-    if not os.path.isdir(DATA_DIR):
-        return []
-    return [
-        os.path.join(DATA_DIR, f)
-        for f in sorted(os.listdir(DATA_DIR))
-        if f.startswith("recipes_") and f.endswith(".json")
-    ]
+from shared.market.crafting_costs import get_recipe_files  # noqa: F401
 
 
 def list_professions() -> list[str]:

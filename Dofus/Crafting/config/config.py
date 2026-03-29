@@ -40,7 +40,6 @@ DOFUSDB_URL          = "https://api.dofusdb.fr"
 
 # ── Lógica de negocio ─────────────────────────────────────────────────
 UNKNOWN_KEY          = "Sin categoría"
-_LOT_NUMS            = {"x1": 1, "x10": 10, "x100": 100, "x1000": 1000}
+from shared.market.prices import LOT_NUMS as _LOT_NUMS  # noqa: F401, compatibilidad interna
 MAX_LOT_PRICE        = 1_500_000  # Precio total máximo por lote de venta
 LOT_PROFIT_MARGIN    = 0.05       # Tolerancia de ganancia para preferir lotes de venta más grandes
-LOT_STABILITY_MARGIN = 0.25       # Tolerancia para preferir lotes de compra mayores por estabilidad de precio

@@ -68,6 +68,7 @@ class GanaderoApp:
         }, settings=self._settings)
 
         self._refresh()
+        self._ui.update_status("Listo", C["dim"])
         self._root.update_idletasks()
         self._root.deiconify()
 
@@ -147,14 +148,14 @@ class GanaderoApp:
     def _run_update(self):
         from core.update_prices import run_update, MARKET_NAMES
         try:
-            summary = run_update(
+            run_update(
                 is_stopped=lambda: self._stop_flag[0],
                 on_progress=lambda msg: self._root.after(
                     0, self._on_progress, msg,
                 ),
                 on_market_switch=self._ask_market_confirm,
             )
-            self._root.after(0, self._on_update_done, summary)
+            self._root.after(0, self._on_update_done)
         except Exception as e:
             self._root.after(0, self._ui.update_status, f"Error: {e}", C["red"])
             self._root.after(0, self._ui.set_scanning, False)
@@ -182,14 +183,10 @@ class GanaderoApp:
                 return False
         return True
 
-    def _on_update_done(self, summary: dict):
+    def _on_update_done(self):
         self._restore_io()
         self._ui.set_scanning(False)
         self._refresh()
-        s = summary.get("scanned", 0)
-        sk = summary.get("skipped", 0)
-        msg = f"✓ {s} escaneados, {sk} omitidos (frescos)"
-        self._ui.update_status(msg, C["green"])
 
     def run(self):
         self._root.mainloop()

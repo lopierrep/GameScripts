@@ -1,77 +1,38 @@
 """
 Lógica de escaneo de precios en el mercadillo (sin dependencias de UI).
 """
-import threading
-from typing import Callable
+from datetime import date as _date
 
-from config.config import LOTS, MARKET_NAMES, SCAN_DELAY, SCAN_COUNTDOWN
-from shared.market.scanner import MarketScanner as _BaseScanner
+from core.prices import find_item_prices
+from shared.market.item_price_scanner import ScanItem
+from shared.market.prices import now_iso
 
 
-class MarketScanner:
+def build_scan_items(data: list, prices: dict, from_date, to_date) -> list:
     """
-    Escanea precios del mercadillo para una lista de ítems agrupados por tipo.
-
-    Recibe las funciones de interacción con el mercadillo como parámetros
-    (inyección de dependencias) para facilitar pruebas y desacoplamiento de la UI.
+    Construye ScanItems a partir del historial de Almanax filtrado por fecha.
+    Deduplica items; los que ya tienen precio se marcan como frescos.
+    Con fresh_seconds=sys.maxsize, los items con precio nunca se re-escanean.
     """
-
-    def __init__(
-        self,
-        search_item:  Callable[[str], None],
-        read_prices:  Callable[[str], dict],
-        parse_price:  Callable[[dict, str], int],
-        init_cal:     Callable[[], None],
-        press_esc:    Callable[[], None],
-    ):
-        self._search_item = search_item
-        self._read_prices = read_prices
-        self._parse_price = parse_price
-        self._scanner = _BaseScanner(
-            press_esc=press_esc,
-            init_cal=init_cal,
-            delay=SCAN_DELAY,
-            countdown=SCAN_COUNTDOWN,
+    seen: set = set()
+    items: list = []
+    for r in data:
+        if not (from_date <= _date.fromisoformat(r["date"]) <= to_date):
+            continue
+        name = r["item"]
+        if name in seen:
+            continue
+        seen.add(name)
+        existing  = find_item_prices(prices, name)
+        has_price = existing is not None and any(
+            existing.get(f"x{s}", 0) > 0 for s in (1, 10, 100, 1000)
         )
-
-    def scan(
-        self,
-        items_by_subtype: dict[str, list[str]],
-        stop_event:       threading.Event,
-        on_progress:      Callable[[str], None],
-        on_market_switch: Callable[[str, int], bool],
-    ) -> dict[str, dict]:
-        """
-        Parámetros:
-          items_by_subtype  dict {subtype: [nombre_item, ...]}
-          stop_event        evento para cancelar el escaneo
-          on_progress       callback(mensaje) para actualizar la UI
-          on_market_switch  callback(market_name, n_items) → bool (True = continuar)
-
-        Devuelve:
-          dict {nombre_item: {"x1": int, "x10": int, "x100": int, "x1000": int}}
-        """
-        items_by_market = {
-            MARKET_NAMES.get(k, k.capitalize()): v
-            for k, v in items_by_subtype.items()
-        }
-
-        search_item = self._search_item
-        read_prices = self._read_prices
-        parse_price = self._parse_price
-
-        def _process(item: str) -> dict:
-            search_item(item)
-            raw   = read_prices(item, stop_flag=stop_event.is_set)
-            entry = {f"x{s}": parse_price(raw, str(s)) for s in LOTS}
-            if not any(v > 0 for v in entry.values()):
-                raise ValueError("sin precios")
-            return entry
-
-        return self._scanner.scan(
-            items_by_market  = items_by_market,
-            is_stopped       = stop_event.is_set,
-            on_progress      = on_progress,
-            on_market_switch = on_market_switch,
-            process_item     = _process,
-        )
+        items.append(ScanItem(
+            name              = name,
+            market            = r.get("market",   "Unknown"),
+            category          = r.get("category", "Sin categoría"),
+            type              = "ingredient",
+            prices_updated_at = now_iso() if has_price else None,
+            has_price         = has_price,
+        ))
+    return items

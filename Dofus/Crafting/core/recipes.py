@@ -8,7 +8,7 @@ import unicodedata
 
 from config.config import SIZES
 from shared.market.prices import parse_selling_prices
-from utils.loaders import _load_omitted_categories, _load_omitted_recipes, get_recipe_files
+from utils.loaders import get_recipe_files
 from utils.market import _is_selling_fresh, filter_lot_prices
 
 
@@ -127,28 +127,3 @@ def save_selling_price(recipe_file: str, name: str, prices: dict):
     print(f"[OK] {name} → x1={p['x1']}  x10={p['x10']}  x100={p['x100']}  x1000={p['x1000']}")
 
 
-def search_and_save_selling(recipe_file: str, name: str, stop_flag: list = None) -> dict:
-    """Busca el precio de venta de un item y lo guarda. Omite si está en exclusiones o es fresco."""
-    if name in _load_omitted_recipes():
-        print(f"[SKIP] {name} — en lista de excepciones")
-        return {"unit_price_x1": 0, "unit_price_x10": 0, "unit_price_x100": 0, "unit_price_x1000": 0, "_skipped": True}
-
-    recipe, _ = find_recipe(name)
-    if recipe and recipe.get("category") in _load_omitted_categories():
-        print(f"[SKIP] {name} — categoría omitida ({recipe.get('category')})")
-        return {"unit_price_x1": 0, "unit_price_x10": 0, "unit_price_x100": 0, "unit_price_x1000": 0, "_skipped": True}
-    has_price = recipe and any(recipe.get(f"unit_selling_price_{s}", 0) for s in ("x1", "x10", "x100", "x1000"))
-    if recipe and has_price and _is_selling_fresh(recipe):
-        print(f"[SKIP] {name} — actualizado hace menos de 1h")
-        return {
-            "unit_price_x1":    recipe.get("unit_selling_price_x1", 0),
-            "unit_price_x10":   recipe.get("unit_selling_price_x10", 0),
-            "unit_price_x100":  recipe.get("unit_selling_price_x100", 0),
-            "unit_price_x1000": recipe.get("unit_selling_price_x1000", 0),
-            "_skipped":         True,
-        }
-    from shared.market.search_item_prices import search_item, read_prices
-    search_item(name)
-    prices = read_prices(name, stop_flag=stop_flag)
-    save_selling_price(recipe_file, name, prices)
-    return prices

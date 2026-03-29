@@ -10,8 +10,9 @@ import urllib.request
 _DOFUSDB_URL = "https://api.dofusdb.fr"
 _UNKNOWN_CAT = "Sin categoría"
 
-SIZES        = ["x1", "x10", "x100", "x1000"]
-CACHE_SECONDS = 7200
+SIZES                = ["x1", "x10", "x100", "x1000"]
+CACHE_SECONDS        = 7200
+LOT_STABILITY_MARGIN = 0.25
 
 
 def _normalize(s: str) -> str:

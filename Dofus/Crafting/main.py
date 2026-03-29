@@ -18,7 +18,7 @@ for _p in (_ROOT, _DOFUS):
         sys.path.insert(0, _p)
 
 from config.config import C, DATA_DIR, UNKNOWN_KEY
-from utils.loaders import _load_omitted_categories, _load_omitted_recipes, find_recipe_file, list_professions, load_user_settings, save_user_settings
+from utils.loaders import _load_manual_price_items, _load_omitted_categories, _load_omitted_recipes, find_recipe_file, list_professions, load_user_settings, save_user_settings
 from core.prices import (
     build_item_lookup,
     build_table_rows,
@@ -138,6 +138,7 @@ def update_profession(
     manual_price_fn=None,
     on_item_done=None,
     filtered: set = None,
+    on_progress=None,
 ):
     if stop_flag is None:
         stop_flag = [False]
@@ -188,33 +189,54 @@ def update_profession(
         result_items, all_ingredients, craftable, markets, item_lookup
     )
 
-    result_file_map   = build_result_file_map()
-    all_missing_results: list = []
+    result_file_map = build_result_file_map()
 
-    from automation.scanner import search_market_batch
+    from automation.scanner import build_scan_items
+    from shared.market.item_price_scanner import scan_prices
+    from shared.market.common import CACHE_SECONDS
+    from config.config import DELAY_BETWEEN_ITEMS
+    from utils.market import filter_lot_prices
+    import keyboard as _keyboard
+    import time as _time
 
-    if not market_groups:
-        print("[INFO] No hay items para consultar en ningún mercadillo.")
-    else:
-        for market_name, group in market_groups.items():
-            results     = sorted(group["results"])
-            ingredients = sorted(group["ingredients"])
-            if not results and not ingredients:
-                continue
-            miss_r, miss_i = search_market_batch(
-                market_name, results, ingredients,
-                recipe_file, markets, item_lookup,
-                result_file_map, stop_flag,
-                on_confirm=on_confirm,
-                manual_price_fn=manual_price_fn,
-                on_item_done=on_item_done,
-            )
-            all_missing_results.extend(r for r in miss_r if r in all_results)
-            if (miss_r or miss_i) and not stop_flag[0]:
-                total = len(miss_r) + len(miss_i)
-                print(f"\n[AVISO] {total} items sin precio en {market_name} (no se reintentará).")
-            if stop_flag[0]:
-                break
+    is_stopped  = lambda: bool(stop_flag[0])
+    scan_items  = build_scan_items(market_groups, item_lookup, markets, craftable, result_file_map)
+
+    def _on_market_switch(market_name, n):
+        print(f"\n── {market_name} ({n} items) ──")
+        if on_confirm:
+            on_confirm(market_name)
+        else:
+            input(f"  Ve al mercadillo de {market_name} y pulsa ENTER para continuar…")
+        print()
+        return not stop_flag[0]
+
+    def _on_manual_item(item, idx, total_manual):
+        if not manual_price_fn:
+            return None
+        return manual_price_fn(item.name, item.type == "result")
+
+    def _press_esc():
+        _keyboard.press_and_release("esc")
+        _time.sleep(0.15)
+
+    if not stop_flag[0]:
+        scan_prices(
+            items              = scan_items,
+            press_esc          = _press_esc,
+            is_stopped         = is_stopped,
+            on_progress        = on_progress or print,
+            on_market_switch   = _on_market_switch,
+            delay              = DELAY_BETWEEN_ITEMS,
+            countdown          = 0,
+            fresh_seconds      = CACHE_SECONDS,
+            manual_items       = _load_manual_price_items(),
+            ignored_items      = _load_omitted_recipes(),
+            ignored_categories = _load_omitted_categories(),
+            on_manual_item     = _on_manual_item,
+            on_item_done       = on_item_done,
+            filter_selling     = filter_lot_prices,
+        )
 
     if stop_flag[0]:
         print("\n[INFO] Detenido por el usuario. No se guardaron cambios.")
@@ -227,22 +249,6 @@ def update_profession(
         print(f"\n[AVISO] {len(still_missing)} ingredientes sin precio:")
         for name in sorted(still_missing):
             print(f"  - {name}")
-
-    missing_file = os.path.join(DATA_DIR, "missing_recipes.json")
-    if os.path.exists(missing_file):
-        with open(missing_file, encoding="utf-8") as f:
-            content = f.read().strip()
-        all_missing = json.loads(content) if content else {}
-    else:
-        all_missing = {}
-    missing_data = sorted(set(all_missing_results) - _load_omitted_recipes())
-    all_missing[profession] = missing_data
-    with open(missing_file, "w", encoding="utf-8") as f:
-        json.dump(all_missing, f, ensure_ascii=False, indent=2)
-    if missing_data:
-        print(f"\n[INFO] {len(missing_data)} recetas sin precio guardadas en missing_recipes.json")
-    else:
-        print("\n[INFO] Todas las recetas tienen precio. missing_recipes.json actualizado.")
 
 
 
@@ -283,6 +289,8 @@ class CraftingApp:
         sys.stdout = _StdoutRedirect(lambda _: None)
         sys.stderr = _StdoutRedirect(lambda _: None)
 
+        self.ui.set_status("Listo", C["dim"])
+
         # Cargar datos existentes al arrancar
         if professions:
             self.root.after(100, self._load_table, professions[0])
@@ -301,6 +309,7 @@ class CraftingApp:
     def _start(self, target: str, filtered: set = None):
         self._stop_flag[0] = False
         self.root.after(0, self.ui.set_busy, True)
+        self.root.after(0, self.ui.set_status, "Iniciando actualización de precios…", C["accent"])
 
         t = threading.Thread(
             target=self._run_profession, args=(target, filtered), daemon=True
@@ -342,6 +351,9 @@ class CraftingApp:
                 self._last_refresh = now
                 self.root.after(0, self._load_table, profession)
 
+        def _on_progress(msg: str):
+            self.root.after(0, self.ui.set_status, msg, C["accent"])
+
         try:
             self.root.after(0, self.ui.set_status, f"Actualizando {profession}…", C["accent"])
             update_profession(
@@ -349,6 +361,7 @@ class CraftingApp:
                 on_confirm=self._ask_confirm,
                 manual_price_fn=self._ask_manual_price,
                 on_item_done=_on_item_done,
+                on_progress=_on_progress,
             )
             self.root.after(0, self._load_table, profession)
         except Exception as e:

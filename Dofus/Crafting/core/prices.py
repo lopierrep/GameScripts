@@ -4,23 +4,27 @@ Carga/guardado de materials_prices.json, caché de frescura y cálculo de costos
 """
 
 import json
-import math
 import os
 import time
-from datetime import datetime, timezone
-
 from config.config import (
     CATEGORIES_FILE,
     LOT_PROFIT_MARGIN,
-    LOT_STABILITY_MARGIN,
     PRICES_FILE,
     SIZES,
 )
 from shared.market.prices import (
+    LOT_NUMS as _LOT_NUMS,
+    cheapest_lot,
+    cheapest_unit_price,
     is_price_fresh,
     parse_ingredient_prices,
 )
-from utils.loaders import _load_omitted_recipes, get_recipe_files
+from shared.market.crafting_costs import (
+    calculate_crafting_costs,
+    get_recipe_files,
+    load_all_pack_prices,
+    save_crafting_costs,
+)
 from utils.market import _now_iso, filter_lot_prices, net_sell_price
 
 
@@ -144,46 +148,8 @@ def ensure_catalogued(names: set[str], markets: dict, item_lookup: dict, craftab
         time.sleep(0.15)
 
 
-# ── Cálculo de costos de crafteo ──────────────────────────────────────────────
-
-def _load_file(path: str):
-    if not os.path.exists(path):
-        return {}
-    with open(path, encoding="utf-8") as f:
-        return json.load(f)
 
 
-def load_all_pack_prices() -> dict[str, dict]:
-    """Devuelve {nombre: {x1, x10, x100, x1000}} con precio UNITARIO por pack."""
-    pack_prices = {}
-
-    # Precios de todos los mercadillos
-    all_markets_data = _load_file(PRICES_FILE) if os.path.exists(PRICES_FILE) else {}
-    for data in all_markets_data.values():
-        for category in data.values():
-            for name, pd in category.items():
-                pack_prices[name] = {size: pd.get(size, 0) for size in SIZES}
-
-    # Craftables usados como ingredientes: min(crafting_cost, selling_price)
-    for path in get_recipe_files():
-        with open(path, encoding="utf-8") as f:
-            for recipe in json.load(f):
-                name = recipe.get("result", "").strip()
-                if not name:
-                    continue
-                costs = {size: recipe.get(f"unit_crafting_cost_{size}", 0) for size in SIZES}
-                sells = {size: recipe.get(f"unit_selling_price_{size}", 0) for size in SIZES}
-                merged = {}
-                for size in SIZES:
-                    c, s = costs.get(size, 0), sells.get(size, 0)
-                    if c > 0 and s > 0:
-                        merged[size] = min(c, s)
-                    else:
-                        merged[size] = c or s
-                if any(v > 0 for v in merged.values()):
-                    pack_prices[name] = merged
-
-    return pack_prices
 
 
 def load_raw_market_prices() -> tuple[dict, dict]:
@@ -225,125 +191,8 @@ def best_unit_price(prices: dict, pack_size: str) -> float:
     return min(values) if values else 0
 
 
-from config.config import _LOT_NUMS
 
 
-def cheapest_lot(prices: dict, qty: int) -> str | None:
-    """Devuelve el tamaño de lote ('x1','x10','x100','x1000') que minimiza el costo total
-    para adquirir `qty` unidades. None si no hay precios disponibles.
-
-    Cuando qty >= lot_num (sin desperdicio), aplica LOT_STABILITY_MARGIN: un lote mayor
-    gana si su precio no supera al lote x1 en más de ese margen, priorizando estabilidad
-    de mercado sobre la diferencia mínima de precio."""
-    if qty <= 0:
-        return None
-    best_lot = None
-    best_eff = 0.0
-    for size, lot_num in _LOT_NUMS.items():
-        p = prices.get(size, 0)
-        if not p or p <= 0:
-            continue
-        packs    = math.ceil(qty / lot_num)
-        eff_unit = packs * lot_num * p / qty
-        # Descuento de estabilidad: solo cuando no hay desperdicio (qty múltiplo del lote)
-        if lot_num > 1 and qty >= lot_num and (qty % lot_num == 0):
-            eff_unit /= (1 + LOT_STABILITY_MARGIN)
-        if best_eff == 0.0 or eff_unit < best_eff:
-            best_eff = eff_unit
-            best_lot = size
-    return best_lot
-
-
-def cheapest_unit_price(prices: dict, qty: int) -> float:
-    """
-    Precio unitario efectivo real del lote óptimo para adquirir `qty` unidades.
-
-    Delega la selección del lote a cheapest_lot (que aplica LOT_STABILITY_MARGIN
-    para comparar), pero devuelve el costo real sin el margen de estabilidad.
-    """
-    best_size = cheapest_lot(prices, qty)
-    if best_size is None:
-        return 0.0
-    lot_num = _LOT_NUMS[best_size]
-    p = prices.get(best_size, 0)
-    if not p:
-        return 0.0
-    packs = math.ceil(qty / lot_num)
-    return packs * lot_num * p / qty
-
-
-def calculate_crafting_costs(recipes: list, pack_prices: dict) -> tuple[list, set]:
-    """
-    Calcula unit_crafting_cost_x* para cada receta.
-    Devuelve (recipes_actualizadas, ingredientes_sin_precio).
-    """
-    crafted_costs: dict[str, dict] = {
-        r["result"]: {size: r.get(f"unit_crafting_cost_{size}", 0) for size in SIZES}
-        for r in recipes
-        if any(r.get(f"unit_crafting_cost_{size}", 0) > 0 for size in SIZES)
-    }
-
-    still_missing: set[str] = set()
-    exceptions = _load_omitted_recipes()
-
-    for recipe in recipes:
-        if recipe.get("result") in exceptions:
-            continue
-
-        def calc_cost(pack_size: str) -> tuple[float, bool]:
-            lot_num = _LOT_NUMS[pack_size]
-            cost = 0.0
-            known = True
-            for ing in recipe.get("ingredients", []):
-                ing_name  = ing["name"]
-                ing_qty   = ing["quantity"]
-                total_qty = ing_qty * lot_num
-                ing_p = cheapest_unit_price(pack_prices.get(ing_name, {}), total_qty)
-                if ing_p == 0:
-                    ing_costs = crafted_costs.get(ing_name)
-                    if ing_costs:
-                        ing_p = cheapest_unit_price(ing_costs, total_qty)
-                if ing_p == 0:
-                    known = False
-                    if not any(pack_prices.get(ing_name, {}).get(s, 0) > 0 for s in SIZES):
-                        still_missing.add(ing_name)
-                    continue
-                cost += ing_p * ing_qty
-            return cost, known
-
-        for size in SIZES:
-            cost, known = calc_cost(size)
-            recipe[f"unit_crafting_cost_{size}"] = round(cost) if known else 0
-
-        crafted_costs[recipe["result"]] = {size: recipe.get(f"unit_crafting_cost_{size}", 0) for size in SIZES}
-
-        recipe["prices_updated_at"] = datetime.now(timezone.utc).isoformat()
-
-    return recipes, still_missing
-
-
-def save_crafting_costs(recipe_file: str, recipes: list | None = None) -> set[str]:
-    """Calcula y guarda los costos de crafteo en recipe_file. Devuelve ingredientes sin precio."""
-    with open(recipe_file, encoding="utf-8") as f:
-        all_recipes = json.load(f)
-
-    subset = recipes if recipes is not None else all_recipes
-
-    pack_prices = load_all_pack_prices()
-    updated_subset, still_missing = calculate_crafting_costs(subset, pack_prices)
-
-    if recipes is not None:
-        updated_by_result = {r["result"]: r for r in updated_subset}
-        for r in all_recipes:
-            if r["result"] in updated_by_result:
-                r.update(updated_by_result[r["result"]])
-    else:
-        all_recipes = updated_subset
-
-    with open(recipe_file, "w", encoding="utf-8") as f:
-        json.dump(all_recipes, f, ensure_ascii=False, indent=2)
-
-    return still_missing
 
 
 # ── Pre-cómputo de datos de display ───────────────────────────────────────────

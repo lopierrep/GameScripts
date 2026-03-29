@@ -18,8 +18,8 @@ ROOT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT_DIR))
 sys.path.insert(0, str(ROOT_DIR.parent))
 
-from config.config import C, LOTS, SETTINGS_FILE, CATEGORIES_FILE, MISSING_FILE, STOP_HOTKEY
-from core.prices import load_prices, save_prices, optimal_cost, get_lot_plan, best_guijarro, find_item_prices, add_item_prices, remove_item_prices
+from config.config import C, LOTS, SETTINGS_FILE, CATEGORIES_FILE, STOP_HOTKEY
+from core.prices import load_prices, save_prices, optimal_cost, get_lot_plan, best_guijarro, find_item_prices
 from core.api    import fetch_almanax, parse_entry, save_almanax, load_almanax, resolve_subtype
 from core.table  import today_fr
 from shared.market.common import fetch_category, get_market_for_category, load_categories
@@ -113,9 +113,8 @@ class AlmanaxApp:
             last_cached = date.fromisoformat(max(e["date"] for e in cached))
             if last_cached < year_end:
                 root.after(200, self._start_fetch)
-                root.after(100, lambda: self.ui.set_status(f"✓ {len(self.data)} días (caché) — completando…", C["yellow"]))
             else:
-                root.after(100, lambda: self.ui.set_status(f"✓ {len(self.data)} días (caché)", C["green"]))
+                root.after(100, lambda: self.ui.set_status("Listo", C["dim"]))
         else:
             root.after(200, self._start_fetch)
         root.after(200, lambda: self.ui.set_calibrated(self.buy_cal is not None))
@@ -356,66 +355,38 @@ class AlmanaxApp:
         self._buy_stop.set()
 
     def _scan_thread(self):
+        import sys
         import keyboard as _kb
-        from automation.scanner import MarketScanner
+        from automation.scanner import build_scan_items
+        from shared.market.item_price_scanner import scan_prices
+        from config.config import SCAN_DELAY, SCAN_COUNTDOWN
 
         _kb.add_hotkey(STOP_HOTKEY, self._scan_stop.set)
-        scanner = MarketScanner(
-            search_item = _search_item,
-            read_prices = _read_prices,
-            parse_price = _parse_price,
-            init_cal    = _init_calibration,
-            press_esc   = _press_esc,
-        )
-
-        from_date, to_date = self.ui.date_range()
-        groups: dict[str, list[str]] = {}
-        seen: set[str] = set()
-        for r in self.data:
-            if not (from_date <= date.fromisoformat(r["date"]) <= to_date):
-                continue
-            if r["item"] not in seen and not find_item_prices(self.prices, r["item"]):
-                seen.add(r["item"])
-                groups.setdefault(r["subtype"], []).append(r["item"])
-        for items in groups.values():
-            items.sort()
-
-        total   = sum(len(v) for v in groups.values())
-        results = scanner.scan(
-            items_by_subtype = groups,
-            stop_event       = self._scan_stop,
-            on_progress      = self._ui_progress,
-            on_market_switch = self._ask_market_switch,
-        )
-
-        item_lookup = {r["item"]: r for r in self.data}
-        for item, entry in results.items():
-            info = item_lookup.get(item, {})
-            add_item_prices(
-                self.prices,
-                info.get("market",   "Unknown"),
-                info.get("category", "Sin categoría"),
-                item,
-                entry,
-            )
-        if results:
-            save_prices(self.prices)
-
-        all_items = {item for items in groups.values() for item in items}
-        missing   = sorted(all_items - set(results.keys()))
-        MISSING_FILE.parent.mkdir(parents=True, exist_ok=True)
-        with open(MISSING_FILE, "w", encoding="utf-8") as f:
-            json.dump(missing, f, ensure_ascii=False, indent=2)
-
         try:
-            _kb.remove_hotkey(STOP_HOTKEY)
-        except Exception:
-            pass
-        self.root.after(0, self._scan_done, len(results), total)
+            from_date, to_date = self.ui.date_range()
+            items = build_scan_items(self.data, self.prices, from_date, to_date)
 
-    def _scan_done(self, updated: int, total: int):
+            scan_prices(
+                items            = items,
+                press_esc        = _press_esc,
+                is_stopped       = self._scan_stop.is_set,
+                on_progress      = self._ui_progress,
+                on_market_switch = self._ask_market_switch,
+                init_cal         = _init_calibration,
+                delay            = SCAN_DELAY,
+                countdown        = SCAN_COUNTDOWN,
+                fresh_seconds    = sys.maxsize,
+            )
+        finally:
+            self.prices = load_prices()
+            try:
+                _kb.remove_hotkey(STOP_HOTKEY)
+            except Exception:
+                pass
+            self.root.after(0, self._scan_done)
+
+    def _scan_done(self):
         self.ui.set_scan_busy(False)
-        self.ui.set_status(f"✓ Precios actualizados: {updated}/{total} items", C["green"])
         self._refresh_table()
 
     # ── Calibración ───────────────────────────────────────────────────────────

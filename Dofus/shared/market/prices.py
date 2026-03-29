@@ -10,7 +10,7 @@ import json
 import math
 from datetime import datetime, timezone
 
-from shared.market.common import _parse_price, CACHE_SECONDS, SIZES
+from shared.market.common import _parse_price, CACHE_SECONDS, LOT_STABILITY_MARGIN, SIZES
 
 LOT_NUMS = {"x1": 1, "x10": 10, "x100": 100, "x1000": 1000}
 
@@ -155,18 +155,42 @@ def save_selling_price(recipe_file, name: str, ocr_prices: dict):
 
 # ── Precio óptimo ─────────────────────────────────────────────────────────────
 
-def cheapest_unit_price(item_prices: dict, qty: int) -> float:
-    """Precio unitario efectivo del lote óptimo para adquirir qty unidades.
-    Versión básica sin margen de estabilidad."""
+def cheapest_lot(prices: dict, qty: int) -> str | None:
+    """Devuelve el tamaño de lote ('x1','x10','x100','x1000') que minimiza el costo total
+    para adquirir `qty` unidades. None si no hay precios disponibles.
+
+    Cuando qty >= lot_num (sin desperdicio), aplica LOT_STABILITY_MARGIN: un lote mayor
+    gana si su precio no supera al lote x1 en más de ese margen, priorizando estabilidad
+    de mercado sobre la diferencia mínima de precio."""
     if qty <= 0:
-        return 0.0
-    best = 0.0
+        return None
+    best_lot = None
+    best_eff = 0.0
     for size, lot_num in LOT_NUMS.items():
-        p = item_prices.get(size, 0)
+        p = prices.get(size, 0)
         if not p or p <= 0:
             continue
-        packs = math.ceil(qty / lot_num)
-        eff = packs * lot_num * p / qty
-        if best == 0.0 or eff < best:
-            best = eff
-    return best
+        packs    = math.ceil(qty / lot_num)
+        eff_unit = packs * lot_num * p / qty
+        if lot_num > 1 and qty >= lot_num and (qty % lot_num == 0):
+            eff_unit /= (1 + LOT_STABILITY_MARGIN)
+        if best_eff == 0.0 or eff_unit < best_eff:
+            best_eff = eff_unit
+            best_lot = size
+    return best_lot
+
+
+def cheapest_unit_price(prices: dict, qty: int) -> float:
+    """Precio unitario efectivo real del lote óptimo para adquirir `qty` unidades.
+
+    Delega la selección del lote a cheapest_lot (que aplica LOT_STABILITY_MARGIN
+    para comparar), pero devuelve el costo real sin el margen de estabilidad."""
+    best_size = cheapest_lot(prices, qty)
+    if best_size is None:
+        return 0.0
+    lot_num = LOT_NUMS[best_size]
+    p = prices.get(best_size, 0)
+    if not p:
+        return 0.0
+    packs = math.ceil(qty / lot_num)
+    return packs * lot_num * p / qty
