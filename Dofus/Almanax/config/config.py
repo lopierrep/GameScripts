@@ -46,7 +46,7 @@ BUY_DELAY_ESC     = 0.3   # delay tras ESC al terminar un ítem
 BUY_CLICK_RESULT  = 0.4   # delay tras click en resultado de búsqueda
 
 # ── UI defaults ───────────────────────────────────────────────────────────────
-WINDOW_GEOMETRY   = "1150x720+40+40"
+WINDOW_SIZE       = (1150, 720)
 WINDOW_MINSIZE    = (800, 500)
 DEFAULT_DAYS      = 29     # rango de días por defecto (desde hoy)
 DEFAULT_PJS       = "15"

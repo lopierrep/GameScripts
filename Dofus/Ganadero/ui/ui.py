@@ -83,7 +83,10 @@ class GanaderoUI:
 
     def _setup_window(self):
         self.root.title("Ganadero - Eficiencia de Carburantes")
-        self.root.geometry("1600x700+40+40")
+        w, h = 1600, 700
+        x = (self.root.winfo_screenwidth() - w) // 2
+        y = (self.root.winfo_screenheight() - h) // 2
+        self.root.geometry(f"{w}x{h}+{x}+{y}")
         self.root.configure(bg=C["bg"])
         self.root.resizable(True, True)
         self.root.minsize(1560, 500)

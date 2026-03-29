@@ -10,7 +10,7 @@ from tkinter import ttk
 from datetime import date, timedelta
 
 from config.config import (
-    C, LOTS, WINDOW_GEOMETRY, WINDOW_MINSIZE, DEFAULT_DAYS,
+    C, LOTS, WINDOW_SIZE, WINDOW_MINSIZE, DEFAULT_DAYS,
     DEFAULT_PJS, DEFAULT_ALM, DEFAULT_GUIJ_PRICES,
 )
 from core.table import day_label, profit_tag, today_fr
@@ -48,7 +48,10 @@ class AlmanaxUI:
 
     def _setup_window(self):
         self.root.title("Almanax")
-        self.root.geometry(WINDOW_GEOMETRY)
+        w, h = WINDOW_SIZE
+        x = (self.root.winfo_screenwidth() - w) // 2
+        y = (self.root.winfo_screenheight() - h) // 2
+        self.root.geometry(f"{w}x{h}+{x}+{y}")
         self.root.configure(bg=C["bg"])
         self.root.resizable(True, True)
         self.root.minsize(*WINDOW_MINSIZE)

@@ -127,7 +127,10 @@ class CraftingUI:
     def _setup_window(self):
         C = self.C
         self.root.title("Crafting")
-        self.root.geometry("1100x720")
+        w, h = 1100, 720
+        x = (self.root.winfo_screenwidth() - w) // 2
+        y = (self.root.winfo_screenheight() - h) // 2
+        self.root.geometry(f"{w}x{h}+{x}+{y}")
         self.root.minsize(800, 540)
         self.root.configure(bg=C["bg"])
 
