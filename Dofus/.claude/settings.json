@@ -19,7 +19,8 @@
       "WebFetch(domain:dofus.fandom.com)",
       "WebFetch(domain:www.ankabot.dev)",
       "Bash(python data/migrate_prices.py)",
-      "Bash(grep -rn \"Ojo de kanugro\" recipes_*.json)"
+      "Bash(grep -rn \"Ojo de kanugro\" recipes_*.json)",
+      "Bash(timeout 5 python -c \":*)"
     ]
   }
 }

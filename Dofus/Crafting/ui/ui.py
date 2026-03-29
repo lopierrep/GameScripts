@@ -270,7 +270,7 @@ class CraftingUI:
                  font=(F, FS, "bold")).pack(anchor="w", pady=(0, 4))
 
         self._busy = False
-        self._toggle_btn = self._sidebar_btn(self._btn_frame, "▶ Actualizar",
+        self._toggle_btn = self._sidebar_btn(self._btn_frame, "▶ Escanear",
                                              C["green"], C["bg"], self._on_toggle)
         self._toggle_btn.pack(fill="x", pady=(0, 2))
         self._sidebar_btn(self._btn_frame, "↻ Sincronizar", C["surface"], C["accent"],
