@@ -1,6 +1,6 @@
 from pathlib import Path
 from config.config import LOTS
-from shared.calibration import load_calibration as _load
+from shared.automation.calibration import load_calibration as _load
 
 CALIBRATION_FILE = str(Path(__file__).resolve().parent / "calibration_data.json")
 

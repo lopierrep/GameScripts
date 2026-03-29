@@ -11,7 +11,7 @@ if _DOFUS_DIR not in sys.path:
     sys.path.insert(0, _DOFUS_DIR)
 
 from shared.market.common import _normalize, _parse_price, SIZES, CACHE_SECONDS  # noqa: F401
-from shared.colors import C  # noqa: F401
+from shared.ui.colors import C  # noqa: F401
 
 # ── Rutas ──────────────────────────────────────────────────────────────
 # ROOT_DIR resuelve correctamente tanto en modo script como .exe (frozen)

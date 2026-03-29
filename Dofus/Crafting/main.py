@@ -323,7 +323,7 @@ class CraftingApp:
         t.start()
 
     def _calibrate(self):
-        from shared.calibration import CalibrationWindow
+        from shared.automation.calibration import CalibrationWindow
         from calibration.calibration_config import CALIBRATION_POINTS, CALIBRATION_FILE, transform
         CalibrationWindow(
             self.root,

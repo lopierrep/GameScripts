@@ -12,8 +12,8 @@ import threading
 import winsound
 import keyboard
 
-from shared.calibration import CalibrationWindow, load_calibration
-from shared.colors import C
+from shared.automation.calibration import CalibrationWindow, load_calibration
+from shared.ui.colors import C
 from calibration.calibration_config import CALIBRATION_POINTS, CALIBRATION_FILE
 from config import ALERT_BEEP_FREQ, ALERT_BEEP_DURATION, ALERT_BEEP_INTERVAL, STOP_HOTKEY
 from race_loop import run_race_loop

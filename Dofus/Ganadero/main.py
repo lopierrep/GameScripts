@@ -17,7 +17,7 @@ sys.path.insert(0, str(ROOT_DIR.parent))
 
 from core.carburante_efficiency import analizar
 from core.ciclo_diario import calcular_ciclo_diario, calcular_estrategia_nocturna
-from shared.colors import C
+from shared.ui.colors import C
 from ui.ui import GanaderoUI
 
 # ── Settings ──────────────────────────────────────────────────────────────────
@@ -98,7 +98,7 @@ class GanaderoApp:
     # ── Calibración ─────────────────────────────────────────────────────────
 
     def _calibrate(self):
-        from shared.calibration import CalibrationWindow
+        from shared.automation.calibration import CalibrationWindow
         from Crafting.calibration.calibration_config import CALIBRATION_POINTS, CALIBRATION_FILE, transform
         CalibrationWindow(
             self._root,

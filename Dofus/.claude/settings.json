@@ -59,7 +59,19 @@
       "Bash(grep -rn from.*import.*build_item_lookup e:2_GamesScriptsDofus)",
       "Bash(find /e/2_Games/Scripts/Dofus/shared -name *.py -type f)",
       "Bash(grep -n \"log_panel\" \"e:\\\\2_Games\\\\Scripts\\\\Dofus\\\\shared\"*)",
-      "Bash(grep -n \"def better_lot_prices\\\\|def filter_lot_prices\" \"e:\\\\2_Games\\\\Scripts\\\\Dofus\\\\shared\\\\market\"*)"
+      "Bash(grep -n \"def better_lot_prices\\\\|def filter_lot_prices\" \"e:\\\\2_Games\\\\Scripts\\\\Dofus\\\\shared\\\\market\"*)",
+      "Bash(wc -l \"e:\\\\2_Games\\\\Scripts\\\\Dofus\\\\Ganadero\\\\data\"*.json)",
+      "Bash(ls -lh \"e:\\\\2_Games\\\\Scripts\\\\Dofus\\\\Ganadero\\\\data\"/*.json)",
+      "Bash(grep -r \"def run_race_loop\\\\|def _alert_loop\\\\|alert_event\" /e/2_Games/Scripts/Dofus --include=*.py)",
+      "Bash(grep -n \"SECONDS_PER_TICKET\\\\|ALERT_BEEP_FREQ\\\\|ALERT_BEEP_DURATION\\\\|ALERT_BEEP_INTERVAL\\\\|STOP_HOTKEY\\\\|OPTION_WEIGHTS\" /e/2_Games/Scripts/Dofus/Trolichas/*.py)",
+      "Bash(grep -n \"def \" /e/2_Games/Scripts/Dofus/Trolichas/*.py)",
+      "Bash(grep -r \"Trolichas\\\\|race_loop\\\\|LarvaRaceApp\" /e/2_Games/Scripts/Dofus --include=*.py)",
+      "Bash(grep -A2 \"except\" /e/2_Games/Scripts/Dofus/Trolichas/*.py)",
+      "Bash(grep -n \"TODO\\\\|FIXME\\\\|DEBUG\\\\|XXX\\\\|HACK\" /e/2_Games/Scripts/Dofus/Trolichas/*.py /e/2_Games/Scripts/Dofus/Trolichas/calibration/*.py)",
+      "Bash(grep -n \"print\\(\" /e/2_Games/Scripts/Dofus/Trolichas/*.py /e/2_Games/Scripts/Dofus/Trolichas/calibration/*.py)",
+      "Bash(grep -n \"keyboard\\\\.\" /e/2_Games/Scripts/Dofus/Trolichas/*.py)",
+      "Bash(ls \"e:/2_Games/Scripts/Dofus/shared/__pycache__/log_panel\"*)",
+      "Bash(ls \"e:/2_Games/Scripts/Dofus/Trolichas/__pycache__/calibration\"*)"
     ]
   }
 }

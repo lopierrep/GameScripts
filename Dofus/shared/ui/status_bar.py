@@ -1,8 +1,8 @@
 """Barra de estado compartida para el borde inferior de las UIs."""
 
 import tkinter as tk
-from shared.colors import C
-from shared.font import FONT as F, SMALL
+from shared.ui.colors import C
+from shared.ui.font import FONT as F, SMALL
 
 
 class StatusBar(tk.Label):

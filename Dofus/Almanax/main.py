@@ -378,7 +378,7 @@ class AlmanaxApp:
     # ── Calibración ───────────────────────────────────────────────────────────
 
     def _calibrate_buy_start(self):
-        from shared.calibration import CalibrationWindow
+        from shared.automation.calibration import CalibrationWindow
         from calibration.calibration_config import CALIBRATION_POINTS, CALIBRATION_FILE, transform
         CalibrationWindow(
             self.root,

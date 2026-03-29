@@ -10,11 +10,11 @@ from tkinter import ttk
 from datetime import datetime, timezone, timedelta
 
 from core.table_filter import compute_summary, filter_rows, profitable_rows
-from shared.colors import C, style_scrollbar
-from shared.font  import FONT as F, TITLE, HEADER, BASE, SMALL
-from shared.prompt_bar import PromptBar
-from shared.status_bar import StatusBar
-from shared.toast import show_copy_toast
+from shared.ui.colors import C, style_scrollbar
+from shared.ui.font  import FONT as F, TITLE, HEADER, BASE, SMALL
+from shared.ui.prompt_bar import PromptBar
+from shared.ui.status_bar import StatusBar
+from shared.ui.toast import show_copy_toast
 
 _BOGOTA = timezone(timedelta(hours=-5))
 

@@ -53,4 +53,4 @@ DEFAULT_ALM       = "4"
 DEFAULT_GUIJ_PRICES = {"T": "3600", "L": "18000", "S": "90000"}
 
 # ── Paleta de colores ─────────────────────────────────────────────────────────
-from shared.colors import C  # noqa: E402
+from shared.ui.colors import C  # noqa: E402

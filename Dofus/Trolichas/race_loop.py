@@ -8,7 +8,7 @@ _DOFUS_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if _DOFUS_DIR not in sys.path:
     sys.path.insert(0, _DOFUS_DIR)
 
-from shared.mouse import smooth_move
+from shared.automation.mouse import smooth_move
 from config import (
     DELAY_BEFORE_CYCLE, DELAY_AFTER_NPC, DELAY_AFTER_OPTION, RACE_DURATION,
     JITTER_NPC, JITTER_OPTION_X, JITTER_OPTION_Y, JITTER_START_BTN,

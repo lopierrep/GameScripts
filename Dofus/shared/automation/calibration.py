@@ -6,7 +6,7 @@ from tkinter import messagebox
 import keyboard
 import pyautogui
 
-from shared.colors import C
+from shared.ui.colors import C
 
 
 def load_calibration(calibration_file: str):

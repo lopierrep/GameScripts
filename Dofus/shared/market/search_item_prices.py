@@ -23,7 +23,7 @@ from difflib import SequenceMatcher
 from PIL import Image, ImageFilter, ImageEnhance
 
 from shared.market.common import _normalize
-from shared.mouse import smooth_move
+from shared.automation.mouse import smooth_move
 
 import shutil as _shutil
 pytesseract.pytesseract.tesseract_cmd = (

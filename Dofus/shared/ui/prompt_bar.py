@@ -6,8 +6,8 @@ Widget tk.Frame con label, botón y campos de precio opcionales.
 
 import tkinter as tk
 
-from shared.colors import C
-from shared.font import FONT, HEADER, BASE
+from shared.ui.colors import C
+from shared.ui.font import FONT, HEADER, BASE
 
 
 class PromptBar(tk.Frame):
