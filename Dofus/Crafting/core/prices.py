@@ -13,7 +13,6 @@ from config.config import (
     CACHE_SECONDS,
     CATEGORIES_FILE,
     DATA_DIR,
-    DOFUSDB_URL,
     LOT_PROFIT_MARGIN,
     LOT_STABILITY_MARGIN,
     MAX_LOT_PRICE,
@@ -22,6 +21,10 @@ from config.config import (
     UNKNOWN_KEY,
     _normalize,
     _parse_price,
+)
+from shared.market.prices import (
+    is_price_fresh,
+    parse_ingredient_prices,
 )
 from utils.loaders import _load_omitted_recipes, get_recipe_files
 from utils.market import _now_iso, filter_lot_prices, net_sell_price
@@ -90,32 +93,12 @@ def _ingredient_is_fresh(name: str, markets: dict, item_lookup: dict) -> bool:
     category = markets[market_name]["data"].get(category_name, {})
     if name not in category:
         return False
-    ts = category[name].get("prices_updated_at")
-    if not ts:
-        return False
-    age = (datetime.now(timezone.utc) - datetime.fromisoformat(ts)).total_seconds()
-    return age < CACHE_SECONDS
+    return is_price_fresh(category[name].get("prices_updated_at"))
 
 
 # ── API dofusdb ────────────────────────────────────────────────────────────────
 
-def fetch_category(item_name: str) -> str:
-    try:
-        import requests
-        resp = requests.get(
-            f"{DOFUSDB_URL}/items",
-            params={"name.es": item_name, "$limit": 1},
-            timeout=10,
-        )
-        resp.raise_for_status()
-        data = resp.json().get("data", [])
-        if not data:
-            return UNKNOWN_KEY
-        type_obj = data[0].get("type", {})
-        name_obj = type_obj.get("name", {})
-        return name_obj.get("es", name_obj.get("en", UNKNOWN_KEY))
-    except Exception:
-        return UNKNOWN_KEY
+from shared.market.common import fetch_category  # noqa: E402
 
 
 # ── Guardado de precios de ingredientes ───────────────────────────────────────
@@ -127,19 +110,11 @@ def save_ingredient_price(name: str, prices: dict, markets: dict, item_lookup: d
     market_name, category_name = lookup_val
     category = markets[market_name]["data"].get(category_name, {})
     if name in category:
-        p1      = _parse_price(prices, "1")
-        raw10   = _parse_price(prices, "10")
-        raw100  = _parse_price(prices, "100")
-        raw1000 = _parse_price(prices, "1000")
-        p10   = round(raw10   / 10)   if raw10   > 0 else 0
-        p100  = round(raw100  / 100)  if raw100  > 0 else 0
-        p1000 = round(raw1000 / 1000) if raw1000 > 0 else 0
+        unit_prices = parse_ingredient_prices(prices)
         entry = category[name]
-        entry["x1"]    = p1
-        entry["x10"]   = p10
-        entry["x100"]  = p100
-        entry["x1000"] = p1000
-        if any(v > 0 for v in (p1, p10, p100, p1000)):
+        for size in SIZES:
+            entry[size] = unit_prices[size]
+        if any(v > 0 for v in unit_prices.values()):
             entry["prices_updated_at"] = _now_iso()
     save_markets(markets)
     p = prices

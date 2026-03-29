@@ -20,11 +20,16 @@ Uso:
 import json
 import os
 import glob
+import sys
 import time
 
 import requests
 
 BASE_DIR          = os.path.dirname(os.path.abspath(__file__))
+_DOFUS_DIR        = os.path.normpath(os.path.join(BASE_DIR, "..", ".."))
+if _DOFUS_DIR not in sys.path:
+    sys.path.insert(0, _DOFUS_DIR)
+
 RECIPES_DIR       = os.path.join(BASE_DIR, "..", "Recipes")
 MARKETS_DIR       = BASE_DIR
 DATA_DIR          = os.path.join(BASE_DIR, "..", "data")
@@ -34,6 +39,8 @@ PRICES_FILE       = os.path.join(DATA_DIR, "materials_prices.json")
 BASE_URL      = "https://api.dofusdb.fr"
 UNKNOWN_KEY   = "Sin categoría"
 DELAY         = 0.15
+
+from shared.market.common import fetch_category  # noqa: E402
 
 
 # ── Carga de archivos ─────────────────────────────────────────────────────────
@@ -134,25 +141,6 @@ def already_catalogued(name: str, markets: dict, fallback: dict) -> bool:
         if any(any(i["name"] == name for i in items) for items in market["data"].values()):
             return True
     return any(any(i["name"] == name for i in items) for items in fallback.values())
-
-
-def fetch_category(item_name: str) -> str:
-    try:
-        resp = requests.get(
-            f"{BASE_URL}/items",
-            params={"name.es": item_name, "$limit": 1},
-            timeout=10,
-        )
-        resp.raise_for_status()
-        data = resp.json().get("data", [])
-        if not data:
-            return UNKNOWN_KEY
-        type_obj = data[0].get("type", {})
-        name_obj = type_obj.get("name", {})
-        return name_obj.get("es", name_obj.get("en", UNKNOWN_KEY))
-    except Exception as e:
-        print(f"    [ERROR] {e}")
-        return UNKNOWN_KEY
 
 
 # ── Guardado ──────────────────────────────────────────────────────────────────

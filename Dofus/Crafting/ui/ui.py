@@ -10,29 +10,10 @@ from tkinter import ttk
 from datetime import datetime, timezone, timedelta
 
 from core.table_filter import compute_summary, filter_rows, profitable_rows
+from shared.colors import C
 from shared.toast import show_copy_toast
 
 _BOGOTA = timezone(timedelta(hours=-5))
-
-_PALETTE = {
-    "bg":         "#191724",
-    "bg2":        "#161520",
-    "surface":    "#1f1d2e",
-    "overlay":    "#26233a",
-    "border":     "#2a283e",
-    "accent":     "#89b4fa",
-    "accent_bg":  "#1c2842",
-    "green":      "#a6e3a1",
-    "green_bg":   "#1c3027",
-    "red":        "#f38ba8",
-    "yellow":     "#f9e2af",
-    "orange":     "#fab387",
-    "mauve":      "#cba6f7",
-    "text":       "#cdd6f4",
-    "subtext":    "#908caa",
-    "dim":        "#6c7086",
-    "today":      "#2d3250",
-}
 
 _RECOLECCION = {"alquimista", "campesino", "cazador", "ganadero", "leñador", "minero", "pescador"}
 
@@ -108,7 +89,7 @@ class CraftingUI:
         self._row_data: dict = {}
         self._selected_recipe_iid: str | None = None
 
-        self.C  = dict(_PALETTE)
+        self.C  = C
         self.F  = _FONT
         self.M  = _MONO
         self.FS = _FONT_SIZE

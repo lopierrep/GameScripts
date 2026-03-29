@@ -25,7 +25,11 @@ from PIL import Image, ImageFilter, ImageEnhance
 from shared.market.common import _normalize
 from shared.mouse import smooth_move
 
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+import shutil as _shutil
+pytesseract.pytesseract.tesseract_cmd = (
+    _shutil.which("tesseract")
+    or r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+)
 
 
 _CATEGORIES_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Resources", "categories.txt")

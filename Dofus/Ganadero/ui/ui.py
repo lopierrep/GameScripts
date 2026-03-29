@@ -8,27 +8,32 @@ No contiene lógica de negocio ni llamadas a módulos de core/.
 import tkinter as tk
 from tkinter import ttk
 
+import json
+from pathlib import Path
+
 from shared.colors import C
 from shared.toast import show_copy_toast
 
-TOPES = [40000, 70000, 90000, 100000]
-INDICADORES = ["aporreadora", "acariciador", "dragonalgas", "fulminadora", "abrevadero", "pesebre"]
+_GD_FILE = Path(__file__).resolve().parent.parent / "data" / "game_data.json"
+with open(_GD_FILE, encoding="utf-8") as _f:
+    _GD = json.load(_f)
 
-RANGOS_CONSUMO = [
-    {"label": "0-40k",   "rate": 1},
-    {"label": "40k-70k", "rate": 2},
-    {"label": "70k-90k", "rate": 3},
-    {"label": "90k-100k","rate": 4},
-]
+_tick_s = _GD["cercado"]["tick_segundos"]
+INDICADORES = [i["nombre"] for i in _GD["cercado"]["indicadores"]]
+TOPES = [r["max"] for r in _GD["cercado"]["rangos_consumo"]]
+RANGOS_CONSUMO = []
+for _r in _GD["cercado"]["rangos_consumo"]:
+    _lo, _hi = _r["min"], _r["max"]
+    RANGOS_CONSUMO.append({
+        "min": _lo, "max": _hi,
+        "rate": _r["consumo_por_tick"] // _tick_s,
+        "label": f"0-{_hi // 1000}k" if _lo == 0 else f"{_lo // 1000}k-{_hi // 1000}k",
+    })
 
-XP_NIVEL_200 = 867582
-STAT_MAX = 20000
-STATS_TIEMPO = [
-    ("XP (nivel 200)", XP_NIVEL_200),
-    ("Amor",           STAT_MAX),
-    ("Resistencia",    STAT_MAX),
-    ("Madurez",        STAT_MAX),
-]
+_xp = _GD["dragopavo"]["xp_para_nivel_maximo"]
+STATS_TIEMPO = [("XP (nivel 200)", _xp)]
+for _stat, _val in _GD["dragopavo"]["estadisticas"].items():
+    STATS_TIEMPO.append((_stat.capitalize(), _val["max"]))
 
 COLUMNS = [
     ("indicador",   "Indicador",       120),
@@ -48,7 +53,9 @@ class GanaderoUI:
     Construye la UI y expone métodos para actualizar las tablas.
 
     Callbacks esperados:
-        refresh  ()  →  recalcular datos y repintar
+        refresh        ()  →  recalcular datos y repintar
+        update_prices  ()  →  escanear precios desde el mercado
+        stop_update    ()  →  detener escaneo en curso
     """
 
     def __init__(self, root: tk.Tk, callbacks: dict, settings: dict):
@@ -59,9 +66,17 @@ class GanaderoUI:
         self._trees: dict[str, ttk.Treeview] = {}
         self._monturas = settings.get("monturas", 10)
 
+        self._debounce_id = None
         self._setup_window()
         self._apply_styles()
         self._build_ui()
+        self.umbral_var.trace_add("write", self._on_field_change)
+        self.horas_juego_var.trace_add("write", self._on_field_change)
+
+    def _on_field_change(self, *_args):
+        if self._debounce_id is not None:
+            self.root.after_cancel(self._debounce_id)
+        self._debounce_id = self.root.after(400, self._cb["refresh"])
 
     # ── Ventana ───────────────────────────────────────────────────────────────
 
@@ -95,6 +110,7 @@ class GanaderoUI:
     def _build_ui(self):
         self._build_topbar()
         self._build_main_area()
+        self._build_prompt()
         self._build_statusbar()
 
     def _build_topbar(self):
@@ -112,7 +128,6 @@ class GanaderoUI:
                      bg=C["surface"], fg=C["text"], font=("Consolas", 12),
                      insertbackground=C["text"], relief="flat")
         e.pack(side="left")
-        e.bind("<Return>", lambda _: self._cb["refresh"]())
         tk.Label(bar, text="k (costo total)", bg=C["bg"], fg=C["dim"],
                  font=("Consolas", 10)).pack(side="left", padx=(4, 0))
 
@@ -122,13 +137,20 @@ class GanaderoUI:
                       bg=C["surface"], fg=C["text"], font=("Consolas", 12),
                       insertbackground=C["text"], relief="flat")
         e2.pack(side="left")
-        e2.bind("<Return>", lambda _: self._cb["refresh"]())
         tk.Label(bar, text="h/dia", bg=C["bg"], fg=C["dim"],
                  font=("Consolas", 10)).pack(side="left", padx=(4, 0))
 
-        tk.Button(bar, text="Recalcular", bg=C["orange"], fg=C["bg"],
-                  font=("Consolas", 11, "bold"), relief="flat", padx=10, pady=3,
-                  cursor="hand2", command=self._cb["refresh"]).pack(side="left", padx=(12, 0))
+        self._btn_update = tk.Button(
+            bar, text="Actualizar precios", bg=C["green"], fg=C["bg"],
+            font=("Consolas", 11, "bold"), relief="flat", padx=10, pady=3,
+            cursor="hand2", command=self._cb["update_prices"])
+        self._btn_update.pack(side="left", padx=(8, 0))
+
+        self._btn_stop = tk.Button(
+            bar, text="Detener", bg=C["red"], fg=C["bg"],
+            font=("Consolas", 11, "bold"), relief="flat", padx=10, pady=3,
+            cursor="hand2", command=self._cb["stop_update"])
+        # Oculto por defecto; se muestra durante el escaneo
 
     def _make_scrollable(self, parent):
         """Envuelve un frame en un canvas scrollable y devuelve el frame interior."""
@@ -223,7 +245,7 @@ class GanaderoUI:
 
         tree.tag_configure("ok",    foreground=C["green"])
         tree.tag_configure("caro",  foreground=C["red"])
-        tree.tag_configure("alt",   background="#252535")
+        tree.tag_configure("alt",   background=C["alt_row"])
 
         tree.bind("<ButtonRelease-1>", self._on_row_click)
 
@@ -279,7 +301,7 @@ class GanaderoUI:
         for col_id, col_text, col_w in cols_t:
             tree.heading(col_id, text=col_text)
             tree.column(col_id, width=col_w, minwidth=60, anchor="center")
-        tree.tag_configure("alt", background="#252535")
+        tree.tag_configure("alt", background=C["alt_row"])
 
         for i, r in enumerate(RANGOS_CONSUMO):
             vals = [f'{r["label"]} ({r["rate"]}/s)']
@@ -303,7 +325,7 @@ class GanaderoUI:
         for col_id, col_text, col_w in cols_d:
             tree_d.heading(col_id, text=col_text)
             tree_d.column(col_id, width=col_w, minwidth=50, anchor="center")
-        tree_d.tag_configure("alt", background="#252535")
+        tree_d.tag_configure("alt", background=C["alt_row"])
 
         tope_ant, acum = 0, 0
         for i, r in enumerate(RANGOS_CONSUMO):
@@ -335,7 +357,7 @@ class GanaderoUI:
         for col_id, col_text, col_w in cols_c:
             self._tree_costos.heading(col_id, text=col_text)
             self._tree_costos.column(col_id, width=col_w, minwidth=60, anchor="center")
-        self._tree_costos.tag_configure("alt", background="#252535")
+        self._tree_costos.tag_configure("alt", background=C["alt_row"])
         self._tree_costos.pack(fill="x")
 
         # ── Produccion diaria por tope ───────────────────────────────────
@@ -355,7 +377,7 @@ class GanaderoUI:
         for col_id, col_text, col_w in cols_cd:
             self._tree_ciclo.heading(col_id, text=col_text)
             self._tree_ciclo.column(col_id, width=col_w, minwidth=50, anchor="center")
-        self._tree_ciclo.tag_configure("alt",    background="#252535")
+        self._tree_ciclo.tag_configure("alt",    background=C["alt_row"])
         self._tree_ciclo.tag_configure("optimo", foreground=C["green"])
         self._tree_ciclo.pack(fill="x")
 
@@ -375,9 +397,25 @@ class GanaderoUI:
         for col_id, col_text, col_w in cols_en:
             self._tree_nocturna.heading(col_id, text=col_text)
             self._tree_nocturna.column(col_id, width=col_w, minwidth=50, anchor="center")
-        self._tree_nocturna.tag_configure("alt",    background="#252535")
+        self._tree_nocturna.tag_configure("alt",    background=C["alt_row"])
         self._tree_nocturna.tag_configure("optimo", foreground=C["green"])
         self._tree_nocturna.pack(fill="x")
+
+    def _build_prompt(self):
+        """Frame colapsable para pedir al usuario que navegue al mercado."""
+        self._prompt_frame = tk.Frame(self.root, bg=C["yellow"], pady=6)
+        # No lo añadimos con pack; se muestra/oculta dinámicamente.
+
+        self._prompt_lbl = tk.Label(
+            self._prompt_frame, text="", bg=C["yellow"], fg=C["bg"],
+            font=("Consolas", 11, "bold"), anchor="w")
+        self._prompt_lbl.pack(side="left", padx=14)
+
+        self._prompt_btn = tk.Button(
+            self._prompt_frame, text="CONTINUAR", bg=C["bg"], fg=C["yellow"],
+            font=("Consolas", 11, "bold"), relief="flat", padx=12, pady=2,
+            cursor="hand2")
+        self._prompt_btn.pack(side="right", padx=14)
 
     def _build_statusbar(self):
         self.status_lbl = tk.Label(self.root, text="", bg=C["bg"], fg=C["dim"],
@@ -474,3 +512,25 @@ class GanaderoUI:
 
     def update_status(self, text: str):
         self.status_lbl.config(text=text)
+
+    # ── Control de escaneo ───────────────────────────────────────────────────
+
+    def set_scanning(self, active: bool):
+        """Alterna estado de UI entre escaneo activo e inactivo."""
+        if active:
+            self._btn_update.pack_forget()
+            self._btn_stop.pack(side="left", padx=(8, 0))
+        else:
+            self._btn_stop.pack_forget()
+            self._btn_update.pack(side="left", padx=(8, 0))
+            self.hide_prompt()
+
+    def show_confirm(self, text: str, on_confirm):
+        """Muestra prompt pidiendo al usuario que navegue al mercado."""
+        self._prompt_lbl.config(text=text)
+        self._prompt_btn.config(command=lambda: (self.hide_prompt(), on_confirm()))
+        self._prompt_frame.pack(fill="x", before=self.status_lbl)
+
+    def hide_prompt(self):
+        """Oculta el prompt de confirmación."""
+        self._prompt_frame.pack_forget()
