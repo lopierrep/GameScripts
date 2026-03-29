@@ -228,7 +228,6 @@ def update_profession(
             on_progress        = on_progress or print,
             on_market_switch   = _on_market_switch,
             delay              = DELAY_BETWEEN_ITEMS,
-            countdown          = 0,
             fresh_seconds      = CACHE_SECONDS,
             manual_items       = _load_manual_price_items(),
             ignored_items      = _load_omitted_recipes(),

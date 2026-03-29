@@ -128,7 +128,7 @@ class GanaderoApp:
     def _start_update(self):
         self._stop_flag[0] = False
         self._ui.set_scanning(True)
-        self._ui.update_status("Iniciando actualización de precios…", C["accent"])
+        self._ui.update_status("Actualizando precios…", C["accent"])
         sys.stdout = _StdoutRedirect(lambda _: None)
         sys.stderr = _StdoutRedirect(lambda _: None)
         threading.Thread(target=self._run_update, daemon=True).start()

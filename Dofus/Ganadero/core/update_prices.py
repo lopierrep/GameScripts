@@ -124,11 +124,9 @@ def run_update(
     Returns:
         {"scanned": int, "skipped": int}
     """
-    on_progress("Cargando calibración…")
     cal = _load_calibration()
     set_calibration(cal)
 
-    on_progress("Cargando datos…")
     recipes   = _load_recipes()
     materials = load_materials(PRICES_FILE)
     lookup    = build_item_lookup(materials)
@@ -146,7 +144,6 @@ def run_update(
         on_progress      = on_progress,
         on_market_switch = on_market_switch,
         delay            = DELAY_BETWEEN_ITEMS,
-        countdown        = 3,
     )
 
     _recalculate_crafting_costs()

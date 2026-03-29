@@ -359,7 +359,7 @@ class AlmanaxApp:
         import keyboard as _kb
         from automation.scanner import build_scan_items
         from shared.market.item_price_scanner import scan_prices
-        from config.config import SCAN_DELAY, SCAN_COUNTDOWN
+        from config.config import SCAN_DELAY
 
         _kb.add_hotkey(STOP_HOTKEY, self._scan_stop.set)
         try:
@@ -374,7 +374,6 @@ class AlmanaxApp:
                 on_market_switch = self._ask_market_switch,
                 init_cal         = _init_calibration,
                 delay            = SCAN_DELAY,
-                countdown        = SCAN_COUNTDOWN,
                 fresh_seconds    = sys.maxsize,
             )
         finally:
