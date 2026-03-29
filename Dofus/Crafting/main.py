@@ -441,6 +441,7 @@ class CraftingApp:
 
 def main():
     root = tk.Tk()
+    root.attributes("-alpha", 0)
     app  = CraftingApp(root)
     try:
         root.mainloop()

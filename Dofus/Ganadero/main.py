@@ -41,6 +41,7 @@ class GanaderoApp:
     def __init__(self):
         self._settings = _load_settings()
         self._root = tk.Tk()
+        self._root.attributes("-alpha", 0)
         self._stop_flag = [False]
 
         self._ui = GanaderoUI(self._root, callbacks={

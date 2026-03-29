@@ -120,6 +120,7 @@ class AlmanaxApp:
         else:
             root.after(200, self._start_fetch)
         root.after(200, lambda: self.ui.set_calibrated(self.buy_cal is not None))
+        root.after(50, lambda: root.attributes("-alpha", 1))
 
     def _on_close(self):
         _save_settings(self.ui.get_settings())
@@ -564,5 +565,6 @@ class AlmanaxApp:
 
 if __name__ == "__main__":
     root = tk.Tk()
+    root.attributes("-alpha", 0)
     AlmanaxApp(root)
     root.mainloop()

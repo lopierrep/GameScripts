@@ -112,16 +112,15 @@ class CraftingUI:
         self._main_area = tk.Frame(self._outer, bg=self.C["bg"])
         self._main_area.pack(side="left", fill="both", expand=True)
 
-        # Mostrar ventana vacía de inmediato, construir widgets después
-        self.root.update_idletasks()
-        self.root.deiconify()
-
         self._build_sidebar(professions)
         self._build_filterbar()
         self._build_table()
         self._build_summary_bar()
         self._build_prompt()
         self._build_log()
+
+        self.root.update_idletasks()
+        self.root.after(50, lambda: self.root.attributes("-alpha", 1))
 
     # ── Window ───────────────────────────────────────────────────────────────
 

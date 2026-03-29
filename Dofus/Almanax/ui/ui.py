@@ -42,6 +42,7 @@ class AlmanaxUI:
 
         self._setup_window()
         self._build_ui()
+        self.root.update_idletasks()
 
     # ── Ventana ───────────────────────────────────────────────────────────────
 
