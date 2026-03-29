@@ -137,7 +137,8 @@ def search_and_save_selling(recipe_file: str, name: str, stop_flag: list = None)
     if recipe and recipe.get("category") in _load_omitted_categories():
         print(f"[SKIP] {name} — categoría omitida ({recipe.get('category')})")
         return {"unit_price_x1": 0, "unit_price_x10": 0, "unit_price_x100": 0, "unit_price_x1000": 0, "_skipped": True}
-    if recipe and _is_selling_fresh(recipe):
+    has_price = recipe and any(recipe.get(f"unit_selling_price_{s}", 0) for s in ("x1", "x10", "x100", "x1000"))
+    if recipe and has_price and _is_selling_fresh(recipe):
         print(f"[SKIP] {name} — actualizado hace menos de 1h")
         return {
             "unit_price_x1":    recipe.get("unit_selling_price_x1", 0),

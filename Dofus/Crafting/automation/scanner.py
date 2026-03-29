@@ -2,6 +2,17 @@
 Búsqueda de precios en el mercadillo, agrupada por tipo.
 """
 
+
+def _fmt_price(val) -> str:
+    """Formatea un precio unitario: '150k', '80', o '—' si ausente."""
+    try:
+        n = int(val)
+    except (TypeError, ValueError):
+        return "—"
+    if n <= 0:
+        return "—"
+    return f"{n // 1000}k" if n >= 1000 else str(n)
+
 import time
 
 import keyboard
@@ -83,6 +94,7 @@ def search_market_batch(
     on_confirm=None,
     manual_price_fn=None,
     on_item_done=None,
+    on_progress=None,
 ) -> tuple[list[str], list[str]]:
     """Busca precios de results e ingredients en el mercadillo indicado.
     stop_flag  : lista de un bool mutable [False] para detención.
@@ -107,6 +119,9 @@ def search_market_batch(
         is_stopped   = lambda: bool(stop_flag and stop_flag[0])
         results_set  = set(auto_results)
 
+        _scanned = [0]
+        _total   = len(auto_items)
+
         def _process(name: str) -> dict:
             if name in results_set:
                 target_file = (result_file_map or {}).get(name, recipe_file)
@@ -115,6 +130,20 @@ def search_market_batch(
                 result = search_and_save_ingredient(name, markets, item_lookup, stop_flag=stop_flag)
             if on_item_done:
                 on_item_done()
+            return result
+
+        def _process_with_progress(name: str) -> dict:
+            result = _process(name)
+            _scanned[0] += 1
+            if on_progress and result and not result.get("_skipped"):
+                x1    = _fmt_price(result.get("unit_price_x1"))
+                x10   = _fmt_price(result.get("unit_price_x10"))
+                x100  = _fmt_price(result.get("unit_price_x100"))
+                x1000 = _fmt_price(result.get("unit_price_x1000"))
+                on_progress(
+                    f"[{market_name}][{_scanned[0]}/{_total}] {name}"
+                    f"  x1={x1}, x10={x10}, x100={x100}, x1000={x1000}"
+                )
             return result
 
         def _press_esc():
@@ -134,9 +163,9 @@ def search_market_batch(
         scan_results = scanner.scan(
             items_by_market  = {market_name: auto_items},
             is_stopped       = is_stopped,
-            on_progress      = print,
+            on_progress      = on_progress or print,
             on_market_switch = _market_switch,
-            process_item     = _process,
+            process_item     = _process_with_progress,
         )
 
         for name in auto_results:
@@ -168,7 +197,8 @@ def search_market_batch(
     for name in manual_results:
         target_file = (result_file_map or {}).get(name, recipe_file)
         recipe_data, _ = _find_recipe(name)
-        if recipe_data and _is_selling_fresh(recipe_data):
+        has_price = recipe_data and any(recipe_data.get(f"unit_selling_price_{s}", 0) for s in ("x1", "x10", "x100", "x1000"))
+        if recipe_data and has_price and _is_selling_fresh(recipe_data):
             print(f"[SKIP] {name} — actualizado hace menos de 1h")
             continue
         if manual_price_fn:
