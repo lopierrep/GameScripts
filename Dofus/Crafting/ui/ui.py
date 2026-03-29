@@ -120,7 +120,7 @@ class CraftingUI:
         self._build_log()
 
         self.root.update_idletasks()
-        self.root.after(50, lambda: self.root.attributes("-alpha", 1))
+        self.root.deiconify()
 
     # ── Window ───────────────────────────────────────────────────────────────
 

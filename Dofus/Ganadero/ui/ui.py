@@ -73,7 +73,6 @@ class GanaderoUI:
         self.umbral_var.trace_add("write", self._on_field_change)
         self.horas_juego_var.trace_add("write", self._on_field_change)
         self.root.update_idletasks()
-        self.root.after(50, lambda: self.root.attributes("-alpha", 1))
 
     def _on_field_change(self, *_args):
         if self._debounce_id is not None:
