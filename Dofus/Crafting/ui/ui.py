@@ -288,13 +288,10 @@ class CraftingUI:
         tk.Label(self._btn_frame, text="Acciones", bg=C["bg2"], fg=C["dim"],
                  font=(F, FS, "bold")).pack(anchor="w", pady=(0, 4))
 
-        self._start_btn = self._sidebar_btn(self._btn_frame, "▶ Actualizar",
-                                            C["green"], C["bg"], self._on_start)
-        self._start_btn.pack(fill="x", pady=(0, 2))
-        self._stop_btn = self._sidebar_btn(self._btn_frame, "■ Detener",
-                                           C["surface"], C["dim"], self._on_stop,
-                                           state="disabled")
-        self._stop_btn.pack(fill="x", pady=(0, 2))
+        self._busy = False
+        self._toggle_btn = self._sidebar_btn(self._btn_frame, "▶ Actualizar",
+                                             C["green"], C["bg"], self._on_toggle)
+        self._toggle_btn.pack(fill="x", pady=(0, 2))
         self._sidebar_btn(self._btn_frame, "↻ Sincronizar", C["surface"], C["accent"],
                           self._on_sync).pack(fill="x")
 
@@ -563,14 +560,13 @@ class CraftingUI:
 
     # ── Button handlers ──────────────────────────────────────────────────────
 
-    def _on_start(self):
-        if "start" not in self._cbs:
-            return
-        self._cbs["start"](self.profession(), self.visible_recipe_names())
-
-    def _on_stop(self):
-        if "stop" in self._cbs:
-            self._cbs["stop"]()
+    def _on_toggle(self):
+        if self._busy:
+            if "stop" in self._cbs:
+                self._cbs["stop"]()
+        else:
+            if "start" in self._cbs:
+                self._cbs["start"](self.profession(), self.visible_recipe_names())
 
     def _on_sync(self):
         if "sync" in self._cbs:
@@ -757,12 +753,11 @@ class CraftingUI:
 
     def set_busy(self, busy: bool):
         C = self.C
+        self._busy = busy
         if busy:
-            self._start_btn.config(state="disabled", bg=C["dim"])
-            self._stop_btn.config(state="normal", bg=C["red"], fg=C["bg"])
+            self._toggle_btn.config(text="■ Detener", bg=C["red"], fg=C["bg"])
         else:
-            self._start_btn.config(state="normal", bg=C["green"])
-            self._stop_btn.config(state="disabled", bg=C["surface"], fg=C["dim"])
+            self._toggle_btn.config(text="▶ Actualizar", bg=C["green"], fg=C["bg"])
 
     def log(self, text: str, tag: str = None):
         self.root.after(0, self._append_log, text, tag)
