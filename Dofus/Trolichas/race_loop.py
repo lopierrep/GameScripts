@@ -9,9 +9,16 @@ if _DOFUS_DIR not in sys.path:
     sys.path.insert(0, _DOFUS_DIR)
 
 from shared.mouse import smooth_move
+from config import (
+    DELAY_BEFORE_CYCLE, DELAY_AFTER_NPC, DELAY_AFTER_OPTION, RACE_DURATION,
+    JITTER_NPC, JITTER_OPTION_X, JITTER_OPTION_Y, JITTER_START_BTN,
+    MOUSE_STEP_DELAY, OPTION_WEIGHTS,
+)
 
 pyautogui.FAILSAFE = True
 
+
+_OPTION_KEYS = ["OptionLocation1", "OptionLocation2", "OptionLocation3", "OptionLocation4"]
 
 
 def run_race_loop(calibration, is_running, on_status, on_race_count, on_consume_ticket=None):
@@ -21,7 +28,7 @@ def run_race_loop(calibration, is_running, on_status, on_race_count, on_consume_
         if on_consume_ticket and not on_consume_ticket():
             on_status("Sin tickets.")
             break
-        delay = random.uniform(0.5, 1)
+        delay = random.uniform(*DELAY_BEFORE_CYCLE)
         on_status(f"Iniciando en {delay:.1f}s...")
         time.sleep(delay)
         if not is_running():
@@ -30,36 +37,33 @@ def run_race_loop(calibration, is_running, on_status, on_race_count, on_consume_
         try:
             # 1. Click NPC
             npc = calibration["NPCLocation"]
-            tx = npc[0] + random.uniform(-2.5, 2.5)
-            ty = npc[1] + random.uniform(-2.5, 2.5)
+            tx = npc[0] + random.uniform(*JITTER_NPC)
+            ty = npc[1] + random.uniform(*JITTER_NPC)
             on_status("Moviendo al NPC...")
-            smooth_move(tx, ty, step_delay=random.uniform(0.001, 0.003))
+            smooth_move(tx, ty, step_delay=random.uniform(*MOUSE_STEP_DELAY))
             pyautogui.click()
-            time.sleep(random.uniform(0.5, 1))
+            time.sleep(random.uniform(*DELAY_AFTER_NPC))
             if not is_running():
                 break
 
             # 2. Click race option (weighted)
-            option_key = random.choices(
-                ["OptionLocation1", "OptionLocation2", "OptionLocation3", "OptionLocation4"],
-                weights=[5, 5, 5, 85]
-            )[0]
+            option_key = random.choices(_OPTION_KEYS, weights=OPTION_WEIGHTS)[0]
             opt = calibration[option_key]
-            tx = opt[0] + random.uniform(-5, 5)
-            ty = opt[1] + random.uniform(-2.5, 2.5)
+            tx = opt[0] + random.uniform(*JITTER_OPTION_X)
+            ty = opt[1] + random.uniform(*JITTER_OPTION_Y)
             on_status("Seleccionando opción...")
-            smooth_move(tx, ty, step_delay=random.uniform(0.001, 0.003))
+            smooth_move(tx, ty, step_delay=random.uniform(*MOUSE_STEP_DELAY))
             pyautogui.click()
-            time.sleep(random.uniform(2, 3))
+            time.sleep(random.uniform(*DELAY_AFTER_OPTION))
             if not is_running():
                 break
 
             # 3. Click start race
             btn = calibration["StartButtonLocation"]
-            tx = btn[0] + random.uniform(-15, 15)
-            ty = btn[1] + random.uniform(-15, 15)
+            tx = btn[0] + random.uniform(*JITTER_START_BTN)
+            ty = btn[1] + random.uniform(*JITTER_START_BTN)
             on_status("Iniciando carrera...")
-            smooth_move(tx, ty, step_delay=random.uniform(0.001, 0.003))
+            smooth_move(tx, ty, step_delay=random.uniform(*MOUSE_STEP_DELAY))
             pyautogui.click()
 
         except KeyError as e:
@@ -70,7 +74,7 @@ def run_race_loop(calibration, is_running, on_status, on_race_count, on_consume_
         on_race_count(race_count)
 
         # 4. Wait race duration
-        race_dur = random.uniform(32, 35)
+        race_dur = random.uniform(*RACE_DURATION)
         end_time = time.time() + race_dur
         while is_running() and time.time() < end_time:
             remaining = end_time - time.time()

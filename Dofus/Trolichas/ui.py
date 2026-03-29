@@ -1,6 +1,7 @@
 import tkinter as tk
 
 from shared.colors import C
+from config import SECONDS_PER_TICKET
 
 
 class LarvaRaceApp:
@@ -81,7 +82,7 @@ class LarvaRaceApp:
         if count <= 0:
             self.eta_var.set("~0m restantes")
             return
-        secs = int(count * 39)
+        secs = int(count * SECONDS_PER_TICKET)
         h, rem = divmod(secs, 3600)
         m = rem // 60
         parts = []

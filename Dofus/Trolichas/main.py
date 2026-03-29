@@ -15,6 +15,7 @@ import keyboard
 from shared.calibration import CalibrationWindow, load_calibration
 from shared.colors import C
 from calibration.calibration_config import CALIBRATION_POINTS, CALIBRATION_FILE
+from config import ALERT_BEEP_FREQ, ALERT_BEEP_DURATION, ALERT_BEEP_INTERVAL, STOP_HOTKEY
 from race_loop import run_race_loop
 from ui import LarvaRaceApp
 
@@ -135,8 +136,8 @@ def main():
 
     def _alert_loop():
         while not alert_event.is_set():
-            winsound.Beep(800, 300)
-            alert_event.wait(3)
+            winsound.Beep(ALERT_BEEP_FREQ, ALERT_BEEP_DURATION)
+            alert_event.wait(ALERT_BEEP_INTERVAL)
 
     def _stop_alert():
         alert_event.set()
@@ -150,7 +151,7 @@ def main():
             app.set_race_count(0)
         app.set_running(True)
 
-        keyboard.add_hotkey("s", on_finish)
+        keyboard.add_hotkey(STOP_HOTKEY, on_finish)
         race_thread = threading.Thread(
             target=run_race_loop,
             args=(calibration, lambda: not stop_event.is_set(), app.set_status, app.set_race_count, _consume_ticket),
@@ -178,7 +179,7 @@ def main():
         _stop_alert()
         app.set_status("Deteniendo...")
         try:
-            keyboard.remove_hotkey("s")
+            keyboard.remove_hotkey(STOP_HOTKEY)
         except KeyError:
             pass
 
@@ -192,7 +193,7 @@ def main():
             calibration = load_calibration(CALIBRATION_FILE)
             stop_event.set()
             try:
-                keyboard.remove_hotkey("s")
+                keyboard.remove_hotkey(STOP_HOTKEY)
             except KeyError:
                 pass
             app.set_running(False)
