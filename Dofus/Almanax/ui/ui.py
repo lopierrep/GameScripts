@@ -14,6 +14,7 @@ from config.config import (
     DEFAULT_PJS, DEFAULT_ALM, DEFAULT_GUIJ_PRICES,
 )
 from core.table import day_label, profit_tag, today_fr
+from shared.font  import FONT as F, TITLE, HEADER, BASE, SMALL, XS
 from shared.toast import show_copy_toast
 
 
@@ -70,14 +71,21 @@ class AlmanaxUI:
         bar.pack(fill="x", padx=12)
 
         tk.Label(bar, text="Almanax", bg=C["bg"], fg=C["accent"],
-                 font=("Consolas", 15, "bold")).pack(side="left")
+                 font=(F, TITLE, "bold")).pack(side="left")
 
         self._build_date_range(bar)
         self._build_char_controls(bar)
         self._build_action_buttons(bar)
 
+        self.cal_btn = tk.Button(bar, text="⚙ Calibrar", bg=C["bg"], fg=C["dim"],
+                                 font=(F, BASE, "bold"), relief="flat", padx=8, pady=2,
+                                 cursor="hand2",
+                                 state="normal" if self._market_available else "disabled",
+                                 command=self._cb["calibrate"])
+        self.cal_btn.pack(side="right", padx=(0, 8))
+
         self.status_lbl = tk.Label(bar, text="", bg=C["bg"], fg=C["dim"],
-                                   font=("Consolas", 9))
+                                   font=(F, SMALL))
         self.status_lbl.pack(side="left", padx=8)
 
     def _build_date_range(self, bar: tk.Frame):
@@ -87,32 +95,32 @@ class AlmanaxUI:
             ("  Hasta:", "to_var",   (today + timedelta(days=DEFAULT_DAYS)).isoformat()),
         ]:
             tk.Label(bar, text=label, bg=C["bg"], fg=C["dim"],
-                     font=("Consolas", 10)).pack(side="left", padx=(8 if "Desde" in label else 4, 4))
+                     font=(F, BASE)).pack(side="left", padx=(8 if "Desde" in label else 4, 4))
             # "Desde" siempre arranca con hoy; "Hasta" se restaura de settings
             initial = today.isoformat() if attr == "from_var" else self._settings.get(attr, default)
             var = tk.StringVar(value=initial)
             setattr(self, attr, var)
             e = tk.Entry(bar, textvariable=var, width=11,
-                         bg=C["surface"], fg=C["text"], font=("Consolas", 10),
+                         bg=C["surface"], fg=C["text"], font=(F, BASE),
                          insertbackground=C["text"], relief="flat")
             e.pack(side="left")
             e.bind("<Return>", lambda _: self._cb["refresh"]())
 
     def _build_char_controls(self, bar: tk.Frame):
         tk.Label(bar, text="  Pjs:", bg=C["bg"], fg=C["dim"],
-                 font=("Consolas", 10)).pack(side="left", padx=(8, 4))
+                 font=(F, BASE)).pack(side="left", padx=(8, 4))
         self.pjs_var = tk.StringVar(value=self._settings.get("pjs", DEFAULT_PJS))
         e = tk.Entry(bar, textvariable=self.pjs_var, width=4,
-                     bg=C["surface"], fg=C["text"], font=("Consolas", 10),
+                     bg=C["surface"], fg=C["text"], font=(F, BASE),
                      insertbackground=C["text"], relief="flat")
         e.pack(side="left")
         e.bind("<Return>", lambda _: self._cb["refresh"]())
 
         tk.Label(bar, text="  Alm/pj:", bg=C["bg"], fg=C["dim"],
-                 font=("Consolas", 10)).pack(side="left", padx=(8, 4))
+                 font=(F, BASE)).pack(side="left", padx=(8, 4))
         self.alm_var = tk.StringVar(value=self._settings.get("alm", DEFAULT_ALM))
         e = tk.Entry(bar, textvariable=self.alm_var, width=4,
-                     bg=C["surface"], fg=C["text"], font=("Consolas", 10),
+                     bg=C["surface"], fg=C["text"], font=(F, BASE),
                      insertbackground=C["text"], relief="flat")
         e.pack(side="left")
         e.bind("<Return>", lambda _: self._cb["refresh"]())
@@ -120,31 +128,31 @@ class AlmanaxUI:
         self.guij_vars: dict[str, tk.StringVar] = {}
         for code, default in DEFAULT_GUIJ_PRICES.items():
             tk.Label(bar, text=f"  G{code}:", bg=C["bg"], fg=C["dim"],
-                     font=("Consolas", 10)).pack(side="left", padx=(4, 2))
+                     font=(F, BASE)).pack(side="left", padx=(4, 2))
             v = tk.StringVar(value=self._settings.get(f"guij_{code}", default))
             self.guij_vars[code] = v
             e = tk.Entry(bar, textvariable=v, width=7,
-                         bg=C["surface"], fg=C["text"], font=("Consolas", 10),
+                         bg=C["surface"], fg=C["text"], font=(F, BASE),
                          insertbackground=C["text"], relief="flat")
             e.pack(side="left")
             e.bind("<Return>", lambda _: self._cb["refresh"]())
 
         self.best_guij_lbl = tk.Label(bar, text="", bg=C["bg"],
-                                      fg=C["green"], font=("Consolas", 9))
+                                      fg=C["green"], font=(F, SMALL))
         self.best_guij_lbl.pack(side="left", padx=(6, 0))
 
     def _build_action_buttons(self, bar: tk.Frame):
         mk = "normal" if self._market_available else "disabled"
 
         self.scan_btn = tk.Button(
-            bar, text="▶ Escanear", bg=C["orange"], fg=C["bg"],
-            font=("Consolas", 10, "bold"), relief="flat", padx=12, pady=4,
+            bar, text="▶ Actualizar Precios", bg=C["green"], fg=C["bg"],
+            font=(F, HEADER, "bold"), relief="flat", padx=12, pady=4,
             cursor="hand2", state=mk, command=self._cb["scan"])
         self.scan_btn.pack(side="left", padx=(4, 0))
 
         self.buy_all_btn = tk.Button(
-            bar, text="🛒 Comprar", bg=C["green"], fg=C["bg"],
-            font=("Consolas", 10, "bold"), relief="flat", padx=12, pady=4,
+            bar, text="🛒 Comprar", bg=C["accent"], fg=C["bg"],
+            font=(F, HEADER, "bold"), relief="flat", padx=12, pady=4,
             cursor="hand2", state=mk, command=self._cb["buy_all"])
         self.buy_all_btn.pack(side="left", padx=(4, 0))
 
@@ -177,11 +185,9 @@ class AlmanaxUI:
             self.tree.column(col, width=w, minwidth=40, anchor=anchor)
 
         vsb = ttk.Scrollbar(frame, orient="vertical",   command=self.tree.yview)
-        hsb = ttk.Scrollbar(frame, orient="horizontal", command=self.tree.xview)
-        self.tree.configure(yscrollcommand=vsb.set, xscrollcommand=hsb.set)
+        self.tree.configure(yscrollcommand=vsb.set)
         self.tree.grid(row=0, column=0, sticky="nsew")
         vsb.grid(row=0, column=1, sticky="ns")
-        hsb.grid(row=1, column=0, sticky="ew")
         frame.rowconfigure(0, weight=1)
         frame.columnconfigure(0, weight=1)
 
@@ -200,9 +206,9 @@ class AlmanaxUI:
             ("Con pérdidas:",   "total_net_all_lbl",   C["accent"]),
         ]:
             tk.Label(bar, text=text, bg=C["bg"], fg=C["dim"],
-                     font=("Consolas", 9)).pack(side="left", padx=(4 if attr == "total_days_lbl" else 0, 2))
+                     font=(F, SMALL)).pack(side="left", padx=(4 if attr == "total_days_lbl" else 0, 2))
             lbl = tk.Label(bar, text="—", bg=C["bg"], fg=fg,
-                           font=("Consolas", 9, "bold"))
+                           font=(F, SMALL, "bold"))
             lbl.pack(side="left", padx=(0, 14 if attr != "total_net_all_lbl" else 0))
             setattr(self, attr, lbl)
 
@@ -212,9 +218,9 @@ class AlmanaxUI:
         bar.pack(fill="x", padx=12, pady=(4, 8))
 
         tk.Label(bar, text="Seleccionado:", bg=C["surface"], fg=C["dim"],
-                 font=("Consolas", 9)).pack(side="left", padx=8)
+                 font=(F, SMALL)).pack(side="left", padx=8)
         self.sel_lbl = tk.Label(bar, text="—", bg=C["surface"],
-                                fg=C["text"], font=("Consolas", 10, "bold"),
+                                fg=C["text"], font=(F, BASE, "bold"),
                                 width=28, anchor="w")
         self.sel_lbl.pack(side="left")
 
@@ -222,10 +228,10 @@ class AlmanaxUI:
         self.lot_entries: dict[int, tk.Entry]     = {}
         for size in LOTS:
             tk.Label(bar, text=f"x{size}:", bg=C["surface"], fg=C["dim"],
-                     font=("Consolas", 9)).pack(side="left", padx=(10, 2))
+                     font=(F, SMALL)).pack(side="left", padx=(10, 2))
             var = tk.StringVar()
             entry = tk.Entry(bar, textvariable=var, width=9,
-                             bg=C["bg"], fg=C["text"], font=("Consolas", 9),
+                             bg=C["bg"], fg=C["text"], font=(F, SMALL),
                              insertbackground=C["text"], relief="flat")
             entry.pack(side="left")
             entry.bind("<Return>", lambda _: self._cb["save_price"]())
@@ -233,21 +239,14 @@ class AlmanaxUI:
             self.lot_entries[size] = entry
 
         tk.Button(bar, text="Guardar  [↵]", bg=C["green"], fg=C["bg"],
-                  font=("Consolas", 9, "bold"), relief="flat", padx=8, pady=2,
+                  font=(F, SMALL, "bold"), relief="flat", padx=8, pady=2,
                   cursor="hand2", command=self._cb["save_price"]
                   ).pack(side="left", padx=(10, 4))
 
         tk.Button(bar, text="Borrar", bg=C["surface"], fg=C["red"],
-                  font=("Consolas", 9), relief="flat", padx=6, pady=2,
+                  font=(F, SMALL), relief="flat", padx=6, pady=2,
                   cursor="hand2", command=self._cb["delete_price"]
                   ).pack(side="left")
-
-        self.cal_btn = tk.Button(bar, text="⚙ Calibrar Clicks", bg=C["bg"], fg=C["dim"],
-                                 font=("Consolas", 9, "bold"), relief="flat", padx=8, pady=2,
-                                 cursor="hand2",
-                                 state="normal" if self._market_available else "disabled",
-                                 command=self._cb["calibrate"])
-        self.cal_btn.pack(side="right", padx=(0, 8))
 
         legend = tk.Frame(bar, bg=C["surface"])
         legend.pack(side="right", padx=12)
@@ -258,9 +257,9 @@ class AlmanaxUI:
             (C["dim"],    "Sin precio"),
         ]:
             tk.Label(legend, text="■ ", bg=C["surface"], fg=color,
-                     font=("Consolas", 11)).pack(side="left")
+                     font=(F, HEADER)).pack(side="left")
             tk.Label(legend, text=label + "   ", bg=C["surface"], fg=C["dim"],
-                     font=("Consolas", 8)).pack(side="left")
+                     font=(F, XS)).pack(side="left")
 
     def set_calibrated(self, calibrated: bool):
         """Actualiza el aspecto del botón según si hay datos de calibración."""
@@ -275,10 +274,10 @@ class AlmanaxUI:
         style.configure("Treeview",
                         background=C["surface"], foreground=C["text"],
                         fieldbackground=C["surface"], rowheight=22,
-                        font=("Consolas", 9))
+                        font=(F, SMALL))
         style.configure("Treeview.Heading",
                         background=C["bg"], foreground=C["accent"],
-                        font=("Consolas", 9, "bold"), relief="flat")
+                        font=(F, SMALL, "bold"), relief="flat")
         style.map("Treeview",
                   background=[("selected", C["accent"])],
                   foreground=[("selected", C["bg"])])
@@ -366,13 +365,13 @@ class AlmanaxUI:
         if busy:
             self.scan_btn.config(text="■  Detener", bg=C["red"], command=self._cb["stop_scan"])
         else:
-            self.scan_btn.config(text="▶ Escanear", bg=C["orange"], command=self._cb["scan"])
+            self.scan_btn.config(text="▶ Actualizar Precios", bg=C["green"], command=self._cb["scan"])
 
     def set_buy_busy(self, busy: bool):
         if busy:
             self.buy_all_btn.config(text="■  Detener", bg=C["red"], command=self._cb["stop_buy"])
         else:
-            self.buy_all_btn.config(text="🛒 Comprar", bg=C["green"], command=self._cb["buy_all"])
+            self.buy_all_btn.config(text="🛒 Comprar", bg=C["accent"], command=self._cb["buy_all"])
 
     def set_date_range(self, from_str: str, to_str: str):
         self.from_var.set(from_str)

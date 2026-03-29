@@ -1,6 +1,7 @@
 import tkinter as tk
 
 from shared.colors import C
+from shared.font  import FONT as F, TITLE, HEADER, BASE, SMALL
 from config import SECONDS_PER_TICKET
 
 
@@ -17,26 +18,26 @@ class LarvaRaceApp:
         self.status_var = tk.StringVar(value="Listo")
         tk.Label(root, textvariable=self.status_var, width=30, wraplength=260,
                  justify=tk.CENTER, bg=C["bg"], fg=C["text"],
-                 font=("Segoe UI", 10)).pack(pady=(16, 8), padx=20)
+                 font=(F, BASE)).pack(pady=(16, 8), padx=20)
 
         # Tickets counter (clickeable)
         self.ticket_var = tk.StringVar(value="Tickets: 0")
         self.ticket_label = tk.Label(root, textvariable=self.ticket_var, width=30,
                  justify=tk.CENTER, bg=C["bg"], fg=C["yellow"],
-                 font=("Segoe UI", 12, "bold"), cursor="hand2")
+                 font=(F, HEADER, "bold"), cursor="hand2")
         self.ticket_label.pack(pady=(0, 0), padx=20)
 
         # Estimated time
         self.eta_var = tk.StringVar(value="")
         tk.Label(root, textvariable=self.eta_var, width=30, justify=tk.CENTER,
                  bg=C["bg"], fg=C["dim"],
-                 font=("Segoe UI", 9)).pack(pady=(0, 4), padx=20)
+                 font=(F, SMALL)).pack(pady=(0, 4), padx=20)
 
         # Race counter
         self.race_var = tk.StringVar(value="Carreras: 0")
         tk.Label(root, textvariable=self.race_var, width=30, justify=tk.CENTER,
                  bg=C["bg"], fg=C["accent"],
-                 font=("Segoe UI", 12, "bold")).pack(pady=(0, 10), padx=20)
+                 font=(F, HEADER, "bold")).pack(pady=(0, 10), padx=20)
 
         # Buttons
         btn_frame = tk.Frame(root, bg=C["bg"])
@@ -47,21 +48,21 @@ class LarvaRaceApp:
 
         self.start_btn = tk.Button(
             top_row, text="Start", width=12,
-            bg=C["green"], fg=C["bg"], font=("Segoe UI", 11, "bold"),
+            bg=C["green"], fg=C["bg"], font=(F, HEADER, "bold"),
             relief="flat", command=on_start
         )
         self.start_btn.pack(side=tk.LEFT, padx=6)
 
         self.finish_btn = tk.Button(
             top_row, text="Finish (S)", width=12,
-            bg=C["red"], fg=C["bg"], font=("Segoe UI", 11, "bold"),
+            bg=C["red"], fg=C["bg"], font=(F, HEADER, "bold"),
             relief="flat", command=on_finish, state=tk.DISABLED
         )
         self.finish_btn.pack(side=tk.LEFT, padx=6)
 
         self.calibrate_btn = tk.Button(
             btn_frame, text="Calibrar puntos",
-            bg=C["surface"], fg=C["dim"], font=("Segoe UI", 10),
+            bg=C["surface"], fg=C["dim"], font=(F, BASE),
             relief="flat", command=on_calibrate
         )
         self.calibrate_btn.pack(fill=tk.X, padx=6, pady=(8, 0))

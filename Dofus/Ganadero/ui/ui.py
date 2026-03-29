@@ -12,6 +12,7 @@ import json
 from pathlib import Path
 
 from shared.colors import C
+from shared.font  import FONT as F, TITLE, HEADER, BASE, SMALL
 from shared.toast import show_copy_toast
 
 _GD_FILE = Path(__file__).resolve().parent.parent / "data" / "game_data.json"
@@ -46,6 +47,16 @@ COLUMNS = [
     ("cantidad",    "Uds.",             45),
     ("costo_total", "Costo total",     100),
 ]
+
+
+def _auto_tag(text: str) -> str:
+    u = text.upper()
+    if "[OK]"    in u: return "ok"
+    if "[SKIP]"  in u: return "skip"
+    if "[ERROR]" in u or "ERROR —" in u: return "error"
+    if "[DONE]"  in u: return "done"
+    if "[AVISO]" in u: return "warn"
+    return "info"
 
 
 class GanaderoUI:
@@ -98,10 +109,10 @@ class GanaderoUI:
         style.configure("Treeview",
                         background=C["surface"], foreground=C["text"],
                         fieldbackground=C["surface"], rowheight=26,
-                        font=("Consolas", 10))
+                        font=(F, BASE))
         style.configure("Treeview.Heading",
                         background=C["bg"], foreground=C["dim"],
-                        font=("Consolas", 11, "bold"), relief="flat")
+                        font=(F, HEADER, "bold"), relief="flat")
         style.map("Treeview",
                   background=[("selected", C["accent"])],
                   foreground=[("selected", C["bg"])])
@@ -114,6 +125,7 @@ class GanaderoUI:
     def _build_ui(self):
         self._build_topbar()
         self._build_main_area()
+        self._build_log()
         self._build_prompt()
         self._build_statusbar()
 
@@ -122,39 +134,45 @@ class GanaderoUI:
         bar.pack(fill="x", padx=12)
 
         tk.Label(bar, text="Ganadero", bg=C["bg"], fg=C["accent"],
-                 font=("Consolas", 16, "bold")).pack(side="left")
+                 font=(F, TITLE, "bold")).pack(side="left")
         tk.Label(bar, text=" - Eficiencia de Carburantes", bg=C["bg"], fg=C["dim"],
-                 font=("Consolas", 10)).pack(side="left")
+                 font=(F, BASE)).pack(side="left")
 
         tk.Label(bar, text="   Umbral:", bg=C["bg"], fg=C["dim"],
-                 font=("Consolas", 10)).pack(side="left", padx=(20, 4))
+                 font=(F, BASE)).pack(side="left", padx=(20, 4))
         e = tk.Entry(bar, textvariable=self.umbral_var, width=6,
-                     bg=C["surface"], fg=C["text"], font=("Consolas", 12),
+                     bg=C["surface"], fg=C["text"], font=(F, BASE),
                      insertbackground=C["text"], relief="flat")
         e.pack(side="left")
         tk.Label(bar, text="k (costo total)", bg=C["bg"], fg=C["dim"],
-                 font=("Consolas", 10)).pack(side="left", padx=(4, 0))
+                 font=(F, BASE)).pack(side="left", padx=(4, 0))
 
         tk.Label(bar, text="   Horas de juego:", bg=C["bg"], fg=C["dim"],
-                 font=("Consolas", 10)).pack(side="left", padx=(20, 4))
+                 font=(F, BASE)).pack(side="left", padx=(20, 4))
         e2 = tk.Entry(bar, textvariable=self.horas_juego_var, width=3,
-                      bg=C["surface"], fg=C["text"], font=("Consolas", 12),
+                      bg=C["surface"], fg=C["text"], font=(F, BASE),
                       insertbackground=C["text"], relief="flat")
         e2.pack(side="left")
         tk.Label(bar, text="h/dia", bg=C["bg"], fg=C["dim"],
-                 font=("Consolas", 10)).pack(side="left", padx=(4, 0))
+                 font=(F, BASE)).pack(side="left", padx=(4, 0))
 
         self._btn_update = tk.Button(
-            bar, text="Actualizar precios", bg=C["green"], fg=C["bg"],
-            font=("Consolas", 11, "bold"), relief="flat", padx=10, pady=3,
+            bar, text="▶ Actualizar", bg=C["green"], fg=C["bg"],
+            font=(F, HEADER, "bold"), relief="flat", padx=10, pady=3,
             cursor="hand2", command=self._cb["update_prices"])
         self._btn_update.pack(side="left", padx=(8, 0))
 
         self._btn_stop = tk.Button(
-            bar, text="Detener", bg=C["red"], fg=C["bg"],
-            font=("Consolas", 11, "bold"), relief="flat", padx=10, pady=3,
+            bar, text="■ Detener", bg=C["red"], fg=C["bg"],
+            font=(F, HEADER, "bold"), relief="flat", padx=10, pady=3,
             cursor="hand2", command=self._cb["stop_update"])
         # Oculto por defecto; se muestra durante el escaneo
+
+        self._btn_calibrar = tk.Button(
+            bar, text="⚙ Calibrar", bg=C["surface"], fg=C["dim"],
+            font=(F, BASE, "bold"), relief="flat", padx=10, pady=3,
+            cursor="hand2", command=self._cb["calibrate"])
+        self._btn_calibrar.pack(side="right", padx=(0, 8))
 
     def _make_scrollable(self, parent):
         """Envuelve un frame en un canvas scrollable y devuelve el frame interior."""
@@ -208,7 +226,7 @@ class GanaderoUI:
 
         for i, tope in enumerate(TOPES):
             tk.Label(left_inner, text=f"Tope {tope:,}", bg=C["bg"],
-                     fg=C["accent"], font=("Consolas", 11, "bold"),
+                     fg=C["accent"], font=(F, HEADER, "bold"),
                      anchor="w").pack(fill="x", padx=20, pady=(0 if i == 0 else 10, 2))
             self._trees[str(tope)] = self._build_tree(left_inner)
 
@@ -289,7 +307,7 @@ class GanaderoUI:
     def _build_tiempos(self, parent: tk.Frame):
         # ── Tiempo por stat ──────────────────────────────────────────────
         tk.Label(parent, text="Tiempo para llenar cada stat",
-                 bg=C["bg"], fg=C["accent"], font=("Consolas", 11, "bold"),
+                 bg=C["bg"], fg=C["accent"], font=(F, HEADER, "bold"),
                  anchor="w").pack(fill="x", padx=20, pady=(0, 4))
 
         cols_t = [("tramo", "Tramo", 120)]
@@ -316,7 +334,7 @@ class GanaderoUI:
 
         # ── Consumo por tope ─────────────────────────────────────────────
         tk.Label(parent, text="Consumo de cada tope",
-                 bg=C["bg"], fg=C["accent"], font=("Consolas", 11, "bold"),
+                 bg=C["bg"], fg=C["accent"], font=(F, HEADER, "bold"),
                  anchor="w").pack(fill="x", padx=20, pady=(10, 4))
 
         cols_d = [("tope","Tope",80),("tramo","Tramo",120),
@@ -345,7 +363,7 @@ class GanaderoUI:
 
         # ── Costo por dragopavo ──────────────────────────────────────────
         tk.Label(parent, text=f"Costo por dragopavo ({self._monturas} monturas/cercado)",
-                 bg=C["bg"], fg=C["accent"], font=("Consolas", 11, "bold"),
+                 bg=C["bg"], fg=C["accent"], font=(F, HEADER, "bold"),
                  anchor="w").pack(fill="x", padx=20, pady=(10, 4))
 
         cols_c = [("tope", "Tope", 80),
@@ -361,12 +379,13 @@ class GanaderoUI:
         for col_id, col_text, col_w in cols_c:
             self._tree_costos.heading(col_id, text=col_text)
             self._tree_costos.column(col_id, width=col_w, minwidth=60, anchor="center")
-        self._tree_costos.tag_configure("alt", background=C["alt_row"])
+        self._tree_costos.tag_configure("alt",    background=C["alt_row"])
+        self._tree_costos.tag_configure("optimo", foreground=C["green"])
         self._tree_costos.pack(fill="x")
 
         # ── Produccion diaria por tope ───────────────────────────────────
         tk.Label(parent, text="Produccion diaria por tope",
-                 bg=C["bg"], fg=C["accent"], font=("Consolas", 11, "bold"),
+                 bg=C["bg"], fg=C["accent"], font=(F, HEADER, "bold"),
                  anchor="w").pack(fill="x", padx=20, pady=(10, 4))
 
         cols_cd = [("tope", "Tope", 70), ("tasa", "Consumo/s", 80),
@@ -387,7 +406,7 @@ class GanaderoUI:
 
         # ── Estrategia nocturna optima ───────────────────────────────────
         tk.Label(parent, text="Estrategia nocturna optima",
-                 bg=C["bg"], fg=C["accent"], font=("Consolas", 11, "bold"),
+                 bg=C["bg"], fg=C["accent"], font=(F, HEADER, "bold"),
                  anchor="w").pack(fill="x", padx=20, pady=(10, 4))
 
         cols_en = [("tope", "Tope", 80), ("pts", "Pts generados", 110),
@@ -405,6 +424,38 @@ class GanaderoUI:
         self._tree_nocturna.tag_configure("optimo", foreground=C["green"])
         self._tree_nocturna.pack(fill="x")
 
+    def _build_log(self):
+        """Panel de log para progreso de escaneo (oculto por defecto)."""
+        self._log_frame = tk.Frame(self.root, bg=C["surface"])
+        # No se hace pack; se muestra/oculta con show_log()/hide_log()
+
+        btn_close = tk.Button(
+            self._log_frame, text="x", bg=C["red"], fg=C["bg"],
+            font=(F, SMALL, "bold"), relief="flat", bd=0, padx=6, pady=1,
+            cursor="hand2", command=self.hide_log)
+        btn_close.pack(side="top", anchor="ne", padx=4, pady=(4, 0))
+
+        self._log = tk.Text(
+            self._log_frame, bg=C["surface"], fg=C["text"],
+            font=(F, SMALL), relief="flat",
+            state="disabled", wrap="word", height=6,
+            selectbackground=C["accent"],
+        )
+        sb = ttk.Scrollbar(self._log_frame, orient="vertical", command=self._log.yview)
+        self._log.configure(yscrollcommand=sb.set)
+        sb.pack(side="right", fill="y")
+        self._log.pack(side="left", fill="both", expand=True, padx=2, pady=2)
+
+        for tag, color in (
+            ("ok",    C["green"]),
+            ("skip",  C["dim"]),
+            ("error", C["red"]),
+            ("info",  C["accent"]),
+            ("warn",  C["yellow"]),
+            ("done",  C["green"]),
+        ):
+            self._log.tag_config(tag, foreground=color)
+
     def _build_prompt(self):
         """Frame colapsable para pedir al usuario que navegue al mercado."""
         self._prompt_frame = tk.Frame(self.root, bg=C["yellow"], pady=6)
@@ -412,18 +463,18 @@ class GanaderoUI:
 
         self._prompt_lbl = tk.Label(
             self._prompt_frame, text="", bg=C["yellow"], fg=C["bg"],
-            font=("Consolas", 11, "bold"), anchor="w")
+            font=(F, HEADER, "bold"), anchor="w")
         self._prompt_lbl.pack(side="left", padx=14)
 
         self._prompt_btn = tk.Button(
             self._prompt_frame, text="CONTINUAR", bg=C["bg"], fg=C["yellow"],
-            font=("Consolas", 11, "bold"), relief="flat", padx=12, pady=2,
+            font=(F, HEADER, "bold"), relief="flat", padx=12, pady=2,
             cursor="hand2")
         self._prompt_btn.pack(side="right", padx=14)
 
     def _build_statusbar(self):
         self.status_lbl = tk.Label(self.root, text="", bg=C["bg"], fg=C["dim"],
-                                   font=("Consolas", 11), anchor="w")
+                                   font=(F, HEADER), anchor="w")
         self.status_lbl.pack(fill="x", padx=14, pady=(0, 6))
 
     # ── Métodos públicos para actualizar desde el orquestador ─────────────────
@@ -454,12 +505,18 @@ class GanaderoUI:
         tree = self._tree_costos
         tree.delete(*tree.get_children())
 
+        mejor_tope = min(TOPES, key=lambda t: datos_ciclo[str(t)]["costo_total"])
+
         for i, tope in enumerate(TOPES):
             d = datos_ciclo[str(tope)]
             c = d["costos"]
-            tag = ("alt",) if i % 2 == 1 else ()
+            tags = []
+            if tope == mejor_tope:
+                tags.append("optimo")
+            if i % 2 == 1:
+                tags.append("alt")
 
-            tree.insert("", "end", tags=tag, values=(
+            tree.insert("", "end", tags=tuple(tags), values=(
                 f"{tope:,}",
                 f"{d['costo_total']:,}",
                 f"{c['pesebre']['costo_total']:,}",
@@ -517,6 +574,48 @@ class GanaderoUI:
     def update_status(self, text: str):
         self.status_lbl.config(text=text)
 
+    # ── Log panel ────────────────────────────────────────────────────────────
+
+    def log(self, text: str, tag: str = None):
+        """Thread-safe: programa append en el hilo principal."""
+        self.root.after(0, self._append_log, text, tag)
+
+    def _write_log(self, text: str, tag: str):
+        self._log.configure(state="normal")
+        self._log.insert("end", text + "\n", tag)
+        self._log.see("end")
+        self._log.configure(state="disabled")
+
+    def _append_log(self, raw: str, tag: str = None):
+        if "\r" in raw and not raw.startswith("\n"):
+            parts = raw.split("\r")
+            text = parts[-1].strip()
+            if not text:
+                return
+            self._log.configure(state="normal")
+            idx = self._log.index("end-2l linestart")
+            self._log.delete(idx, "end-1c")
+            self._log.configure(state="disabled")
+            self._write_log(text, tag or _auto_tag(text))
+            return
+        text = raw.strip()
+        if not text:
+            return
+        self._write_log(text, tag or _auto_tag(text))
+
+    def clear_log(self):
+        self._log.configure(state="normal")
+        self._log.delete("1.0", "end")
+        self._log.configure(state="disabled")
+
+    def show_log(self):
+        if not self._log_frame.winfo_manager():
+            self._log_frame.pack(fill="x", padx=12, pady=(0, 4),
+                                 before=self.status_lbl)
+
+    def hide_log(self):
+        self._log_frame.pack_forget()
+
     # ── Control de escaneo ───────────────────────────────────────────────────
 
     def set_scanning(self, active: bool):
@@ -524,6 +623,7 @@ class GanaderoUI:
         if active:
             self._btn_update.pack_forget()
             self._btn_stop.pack(side="left", padx=(8, 0))
+            self.show_log()
         else:
             self._btn_stop.pack_forget()
             self._btn_update.pack(side="left", padx=(8, 0))

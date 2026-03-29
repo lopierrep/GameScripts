@@ -11,6 +11,7 @@ from datetime import datetime, timezone, timedelta
 
 from core.table_filter import compute_summary, filter_rows, profitable_rows
 from shared.colors import C
+from shared.font  import FONT as F, TITLE, HEADER, BASE, SMALL
 from shared.toast import show_copy_toast
 
 _BOGOTA = timezone(timedelta(hours=-5))
@@ -35,9 +36,7 @@ _PROF_ICONS: dict[str, str] = {
     "zapatero":   "👟",
 }
 
-_FONT      = "Segoe UI"
 _MONO      = "Consolas"
-_FONT_SIZE = 10
 _ROW_HEIGHT = 26
 
 
@@ -90,9 +89,7 @@ class CraftingUI:
         self._selected_recipe_iid: str | None = None
 
         self.C  = C
-        self.F  = _FONT
         self.M  = _MONO
-        self.FS = _FONT_SIZE
         self.RH = _ROW_HEIGHT
 
         self._build_ui(professions)
@@ -138,18 +135,16 @@ class CraftingUI:
 
     def _apply_styles(self):
         C  = self.C
-        F  = self.F
-        FS = self.FS
         RH = self.RH
         s  = ttk.Style()
         s.theme_use("clam")
         s.configure(".", background=C["bg"], foreground=C["text"],
                     fieldbackground=C["surface"], borderwidth=0,
-                    font=(F, FS))
+                    font=(F, BASE))
         s.configure("TCombobox", fieldbackground=C["surface"],
                     foreground=C["text"], background=C["surface"],
                     arrowcolor=C["dim"], selectbackground=C["surface"],
-                    font=(F, FS))
+                    font=(F, BASE))
         s.map("TCombobox",
               fieldbackground=[("readonly", C["surface"])],
               foreground=[("readonly", C["text"])])
@@ -159,10 +154,10 @@ class CraftingUI:
         s.configure("Craft.Treeview",
                     background=C["surface"], foreground=C["text"],
                     fieldbackground=C["surface"], rowheight=RH,
-                    borderwidth=0, indent=14, font=(F, FS))
+                    borderwidth=0, indent=14, font=(F, BASE))
         s.configure("Craft.Treeview.Heading",
                     background=C["bg"], foreground=C["dim"],
-                    borderwidth=0, font=(F, FS, "bold"), relief="flat")
+                    borderwidth=0, font=(F, BASE, "bold"), relief="flat")
         s.map("Craft.Treeview",
               background=[("selected", C["accent"])],
               foreground=[("selected", C["bg"])])
@@ -175,19 +170,17 @@ class CraftingUI:
     def _build_sidebar(self, professions: list):
         C  = self.C
         sb = self._sidebar
-        F  = self.F
-        FS = self.FS
 
         # Titulo
         tk.Label(sb, text="Crafting", bg=C["bg2"],
-                 fg=C["accent"], font=(F, 13, "bold"),
+                 fg=C["accent"], font=(F, TITLE, "bold"),
                  pady=14, padx=12).pack(fill="x")
 
         # Badge de estado
         self._status_var = tk.StringVar(value="Listo")
         self._status_lbl = tk.Label(sb, textvariable=self._status_var,
                                     bg=C["accent_bg"], fg=C["accent"],
-                                    font=(F, FS - 1), padx=12, pady=4,
+                                    font=(F, SMALL), padx=12, pady=4,
                                     anchor="w")
         self._status_lbl.pack(fill="x", padx=8, pady=(0, 8))
 
@@ -200,7 +193,7 @@ class CraftingUI:
 
         self._prof_label = tk.Label(self._prof_section, text="Profesion",
                                     bg=C["bg2"], fg=C["dim"],
-                                    font=(F, FS, "bold"))
+                                    font=(F, BASE, "bold"))
         self._prof_label.pack(anchor="w", pady=(0, 4))
 
         # Ordenar: recolección (alfabético) → separador → oficios (alfabético)
@@ -215,7 +208,7 @@ class CraftingUI:
         self._prof_cb = ttk.Combobox(
             sb, textvariable=self._prof_var,
             values=prof_display_values, state="readonly",
-            font=(F, FS), width=1,
+            font=(F, BASE), width=1,
         )
         if prof_display_values:
             self._prof_var.set(prof_display_values[0])
@@ -252,7 +245,7 @@ class CraftingUI:
             pv = _prof_display(item)
             b = tk.Label(self._prof_btn_frame, text=pv,
                          bg=C["bg2"], fg=C["subtext"],
-                         font=(F, FS - 1), padx=10, pady=5,
+                         font=(F, SMALL), padx=10, pady=5,
                          anchor="w", cursor="hand2")
             b.pack(fill="x")
             b.bind("<Button-1>", lambda e, v=pv: self._select_profession(v))
@@ -269,10 +262,10 @@ class CraftingUI:
         self._btn_frame = tk.Frame(sb, bg=C["bg2"])
         self._btn_frame.pack(fill="x", padx=8, pady=(0, 2))
         tk.Label(self._btn_frame, text="Acciones", bg=C["bg2"], fg=C["dim"],
-                 font=(F, FS, "bold")).pack(anchor="w", pady=(0, 4))
+                 font=(F, BASE, "bold")).pack(anchor="w", pady=(0, 4))
 
         self._busy = False
-        self._toggle_btn = self._sidebar_btn(self._btn_frame, "▶ Escanear",
+        self._toggle_btn = self._sidebar_btn(self._btn_frame, "▶ Actualizar Precios",
                                              C["green"], C["bg"], self._on_toggle)
         self._toggle_btn.pack(fill="x", pady=(0, 2))
         self._sidebar_btn(self._btn_frame, "↻ Sincronizar", C["surface"], C["accent"],
@@ -280,7 +273,7 @@ class CraftingUI:
 
         # ── Calibrar (pegado al borde inferior) ──────────────────────────────
         self._calibrar_btn = self._sidebar_btn(sb, "⚙ Calibrar", C["surface"], C["dim"],
-                                               self._on_calibrate)
+                                               self._on_calibrate, size=BASE)
         self._calibrar_btn.pack(side="bottom", fill="x", padx=8, pady=(0, 8))
         self._calibrar_sep = tk.Frame(sb, bg=C["border"], height=1)
         self._calibrar_sep.pack(side="bottom", fill="x", padx=6, pady=4)
@@ -296,9 +289,9 @@ class CraftingUI:
 
         sb.bind("<Configure>", _resize_prof)
 
-    def _sidebar_btn(self, parent, text, bg, fg, cmd, state="normal"):
+    def _sidebar_btn(self, parent, text, bg, fg, cmd, state="normal", size=HEADER):
         return tk.Button(parent, text=text, bg=bg, fg=fg,
-                         font=(self.F, self.FS, "bold"), relief="flat", bd=0,
+                         font=(F, size, "bold"), relief="flat", bd=0,
                          padx=10, pady=5, command=cmd, state=state)
 
     def _sep(self, parent):
@@ -314,10 +307,10 @@ class CraftingUI:
         for btn, val in self._prof_buttons:
             if val == selected_display:
                 btn.config(bg=C["accent_bg"], fg=C["accent"],
-                           font=(self.F, self.FS - 1, "bold"))
+                           font=(F, SMALL, "bold"))
             else:
                 btn.config(bg=C["bg2"], fg=C["subtext"],
-                           font=(self.F, self.FS))
+                           font=(F, BASE))
 
     def _restore_prof_btn_bg(self, widget):
         C = self.C
@@ -337,38 +330,38 @@ class CraftingUI:
         ff.pack(fill="x", padx=10, pady=(8, 4))
 
         tk.Label(ff, text="Buscar:", bg=C["bg"], fg=C["dim"],
-                 font=(self.F, self.FS)).pack(side="left")
+                 font=(F, BASE)).pack(side="left")
         self._filter_name = tk.StringVar()
         self._filter_name.trace_add("write", lambda *_: self._apply_filter())
         tk.Entry(ff, textvariable=self._filter_name, width=20,
                  bg=C["surface"], fg=C["text"], insertbackground=C["text"],
-                 relief="flat", font=(self.F, self.FS)).pack(side="left", padx=(4, 12))
+                 relief="flat", font=(F, BASE)).pack(side="left", padx=(4, 12))
 
         tk.Label(ff, text="Ganancia min:", bg=C["bg"], fg=C["dim"],
-                 font=(self.F, self.FS)).pack(side="left")
+                 font=(F, BASE)).pack(side="left")
         self._filter_profit = tk.StringVar()
         self._filter_profit.trace_add("write", lambda *_: self._apply_filter())
         tk.Entry(ff, textvariable=self._filter_profit, width=10,
                  bg=C["surface"], fg=C["text"], insertbackground=C["text"],
-                 relief="flat", font=(self.F, self.FS)).pack(side="left", padx=(4, 12))
+                 relief="flat", font=(F, BASE)).pack(side="left", padx=(4, 12))
 
         tk.Label(ff, text="Nivel:", bg=C["bg"], fg=C["dim"],
-                 font=(self.F, self.FS)).pack(side="left")
+                 font=(F, BASE)).pack(side="left")
         self._filter_lvl_min = tk.StringVar()
         self._filter_lvl_min.trace_add("write", lambda *_: self._apply_filter())
         self._filter_lvl_max = tk.StringVar()
         self._filter_lvl_max.trace_add("write", lambda *_: self._apply_filter())
         tk.Entry(ff, textvariable=self._filter_lvl_min, width=5,
                  bg=C["surface"], fg=C["text"], insertbackground=C["text"],
-                 relief="flat", font=(self.F, self.FS)).pack(side="left", padx=(4, 2))
+                 relief="flat", font=(F, BASE)).pack(side="left", padx=(4, 2))
         tk.Label(ff, text="-", bg=C["bg"], fg=C["dim"],
-                 font=(self.F, self.FS)).pack(side="left")
+                 font=(F, BASE)).pack(side="left")
         tk.Entry(ff, textvariable=self._filter_lvl_max, width=5,
                  bg=C["surface"], fg=C["text"], insertbackground=C["text"],
-                 relief="flat", font=(self.F, self.FS)).pack(side="left", padx=(2, 12))
+                 relief="flat", font=(F, BASE)).pack(side="left", padx=(2, 12))
 
         tk.Button(ff, text="Limpiar", bg=C["surface"], fg=C["dim"],
-                  font=(self.F, self.FS), relief="flat", bd=0,
+                  font=(F, BASE), relief="flat", bd=0,
                   padx=8, pady=3, command=self._clear_filter).pack(side="left")
 
     # ── Table ────────────────────────────────────────────────────────────────
@@ -446,13 +439,13 @@ class CraftingUI:
         self._summary_bar.pack(fill="x")
 
         self._sum_total      = tk.Label(self._summary_bar, text="", bg=C["surface"],
-                                        fg=C["dim"],   font=(self.F, self.FS), padx=10, pady=4)
+                                        fg=C["dim"],   font=(F, BASE), padx=10, pady=4)
         self._sum_profitable = tk.Label(self._summary_bar, text="", bg=C["surface"],
-                                        fg=C["green"], font=(self.F, self.FS))
+                                        fg=C["green"], font=(F, BASE))
         self._sum_avg        = tk.Label(self._summary_bar, text="", bg=C["surface"],
-                                        fg=C["dim"],   font=(self.F, self.FS), padx=10)
+                                        fg=C["dim"],   font=(F, BASE), padx=10)
         self._sum_top        = tk.Label(self._summary_bar, text="", bg=C["surface"],
-                                        fg=C["mauve"], font=(self.F, self.FS))
+                                        fg=C["mauve"], font=(F, BASE))
 
         for w in (self._sum_total, self._sum_profitable, self._sum_avg, self._sum_top):
             w.pack(side="left")
@@ -465,7 +458,7 @@ class CraftingUI:
 
         self._prompt_lbl = tk.Label(
             self._prompt_frame, text="", bg=C["surface"],
-            fg=C["yellow"], font=(self.F, self.FS + 1, "bold"),
+            fg=C["yellow"], font=(F, HEADER, "bold"),
             wraplength=700, justify="left",
         )
         self._prompt_lbl.pack(padx=12, pady=(8, 4), anchor="w")
@@ -477,10 +470,10 @@ class CraftingUI:
             col = tk.Frame(self._price_fields_frame, bg=C["surface"])
             col.pack(side="left", padx=10)
             tk.Label(col, text=label, bg=C["surface"], fg=C["dim"],
-                     font=(self.F, self.FS)).pack()
+                     font=(F, BASE)).pack()
             e = tk.Entry(col, width=12, bg=C["bg"], fg=C["text"],
                          insertbackground=C["text"], relief="flat",
-                         font=(self.F, self.FS))
+                         font=(F, BASE))
             e.pack()
             self._price_entries[key] = e
 
@@ -489,7 +482,7 @@ class CraftingUI:
         self._prompt_confirm_btn = tk.Button(
             btn_row, text="CONTINUAR ->",
             bg=C["accent"], fg=C["bg"],
-            font=(self.F, self.FS + 1, "bold"), relief="flat", bd=0,
+            font=(F, HEADER, "bold"), relief="flat", bd=0,
             padx=16, pady=6, command=self._on_prompt_confirm,
         )
         self._prompt_confirm_btn.pack(side="left")
@@ -521,7 +514,7 @@ class CraftingUI:
 
         self._log = tk.Text(
             self._log_outer, bg=C["surface"], fg=C["text"],
-            font=(self.M, self.FS - 1), relief="flat",
+            font=(self.M, SMALL), relief="flat",
             state="disabled", wrap="word", height=6,
             selectbackground=C["accent"],
         )
@@ -740,7 +733,7 @@ class CraftingUI:
         if busy:
             self._toggle_btn.config(text="■ Detener", bg=C["red"], fg=C["bg"])
         else:
-            self._toggle_btn.config(text="▶ Actualizar", bg=C["green"], fg=C["bg"])
+            self._toggle_btn.config(text="▶ Actualizar Precios", bg=C["green"], fg=C["bg"])
 
     def log(self, text: str, tag: str = None):
         self.root.after(0, self._append_log, text, tag)
