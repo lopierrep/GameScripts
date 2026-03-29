@@ -190,7 +190,7 @@ def load_raw_market_prices() -> tuple[dict, dict]:
 
 # ── Pre-cómputo de datos de display ───────────────────────────────────────────
 
-def _enrich_recipe(recipe: dict, pack_prices: dict, craftable_map: dict):
+def _enrich_recipe(recipe: dict, pack_prices: dict, craftable_map: dict, force_x1: bool = False):
     """Calcula y agrega profit_x* y display al dict de receta (in-place)."""
     raw_sells = {size: recipe.get(f"unit_selling_price_{size}", 0) or 0 for size in SIZES}
     filtered_sells, exceeded = filter_lot_prices(raw_sells)
@@ -209,16 +209,20 @@ def _enrich_recipe(recipe: dict, pack_prices: dict, craftable_map: dict):
             c = recipe.get(f"unit_crafting_cost_{size}", 0) or 0
             recipe[f"profit_{size}"] = round(net_sell_price(s) - c) if c > 0 else 0
 
-    # Determinar mejor lote (prefiere lotes más grandes con hasta 5% menos de ganancia)
-    valid_profits = {s: recipe[f"profit_{s}"] for s in SIZES if recipe.get(f"profit_{s}", 0) != 0}
-    best_size = None
-    if valid_profits:
-        max_profit = max(valid_profits.values())
-        threshold  = max_profit - abs(max_profit) * LOT_PROFIT_MARGIN
-        for size in reversed(SIZES):
-            if valid_profits.get(size, float("-inf")) >= threshold:
-                best_size = size
-                break
+    # Determinar mejor lote
+    if force_x1:
+        best_size = "x1" if recipe.get("profit_x1", 0) != 0 else None
+    else:
+        # Prefiere lotes más grandes con hasta 5% menos de ganancia
+        valid_profits = {s: recipe[f"profit_{s}"] for s in SIZES if recipe.get(f"profit_{s}", 0) != 0}
+        best_size = None
+        if valid_profits:
+            max_profit = max(valid_profits.values())
+            threshold  = max_profit - abs(max_profit) * LOT_PROFIT_MARGIN
+            for size in reversed(SIZES):
+                if valid_profits.get(size, float("-inf")) >= threshold:
+                    best_size = size
+                    break
     recipe["best_lot"] = best_size or ""
 
     # Datos de display de ingredientes solo para el mejor lote
@@ -276,6 +280,10 @@ def compute_and_save_display_data(
     Calcula y guarda profit_x* y display para cada receta en recipe_file.
     Debe llamarse DESPUÉS de save_crafting_costs (los costos deben estar guardados).
     """
+    from config.config import EQUIPMENT_PROFESSIONS
+    profession = os.path.basename(recipe_file).replace("recipes_", "").replace(".json", "")
+    force_x1 = profession in EQUIPMENT_PROFESSIONS
+
     with open(recipe_file, encoding="utf-8") as f:
         all_recipes = json.load(f)
 
@@ -283,7 +291,7 @@ def compute_and_save_display_data(
 
     for recipe in all_recipes:
         if target_set is None or recipe.get("result") in target_set:
-            _enrich_recipe(recipe, pack_prices, craftable_map)
+            _enrich_recipe(recipe, pack_prices, craftable_map, force_x1=force_x1)
 
     with open(recipe_file, "w", encoding="utf-8") as f:
         json.dump(all_recipes, f, ensure_ascii=False, indent=2)
