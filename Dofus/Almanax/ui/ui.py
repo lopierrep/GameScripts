@@ -285,11 +285,11 @@ class AlmanaxUI:
         style.theme_use("clam")
         style.configure("Treeview",
                         background=C["surface"], foreground=C["text"],
-                        fieldbackground=C["surface"], rowheight=22,
-                        font=(F, SMALL))
+                        fieldbackground=C["surface"], rowheight=26,
+                        font=(F, BASE))
         style.configure("Treeview.Heading",
                         background=C["bg"], foreground=C["accent"],
-                        font=(F, SMALL, "bold"), relief="flat")
+                        font=(F, BASE, "bold"), relief="flat")
         style.map("Treeview",
                   background=[("selected", C["accent"])],
                   foreground=[("selected", C["bg"])])
