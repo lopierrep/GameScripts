@@ -3,9 +3,12 @@ Utilidades de cálculo de mercado: impuestos, filtros de lote y timestamps.
 """
 
 import math
-from datetime import datetime, timezone
 
-from config.config import CACHE_SECONDS, MAX_LOT_PRICE, _LOT_NUMS
+from config.config import MAX_LOT_PRICE, _LOT_NUMS
+from shared.market.prices import is_price_fresh, now_iso
+
+# Re-exportar para compatibilidad con importadores existentes
+_now_iso = now_iso
 
 
 def net_sell_price(price: int) -> int:
@@ -36,14 +39,6 @@ def filter_lot_prices(unit_prices: dict[str, int]) -> tuple[dict[str, int], set[
     return filtered, exceeded
 
 
-def _now_iso() -> str:
-    return datetime.now(timezone.utc).isoformat()
-
-
 def _is_selling_fresh(recipe: dict) -> bool:
     """Verifica si el precio de venta de una receta fue actualizado en el último CACHE_SECONDS."""
-    ts = recipe.get("prices_updated_at")
-    if not ts:
-        return False
-    age = (datetime.now(timezone.utc) - datetime.fromisoformat(ts)).total_seconds()
-    return age < CACHE_SECONDS
+    return is_price_fresh(recipe.get("prices_updated_at"))

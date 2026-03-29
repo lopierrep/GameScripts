@@ -12,6 +12,7 @@ from config.config import (
     SIZES,
     _parse_price,
 )
+from shared.market.prices import parse_selling_prices, sanitize_unit_prices
 from utils.loaders import _load_omitted_categories, _load_omitted_recipes, find_recipe_file, get_recipe_files
 from utils.market import _is_selling_fresh, _now_iso, filter_lot_prices
 from datetime import datetime, timezone
@@ -107,46 +108,13 @@ def expand_sub_ingredients(ingredients: set[str], craftable: dict[str, dict]) ->
 
 # ── Precios de venta ──────────────────────────────────────────────────────────
 
-def _sanitize_unit_prices(prices: list[int]) -> list[int]:
-    """Si hay 3+ precios no-cero y alguno supera 1.5x el mínimo, reemplaza outliers por el promedio."""
-    non_zero = [(i, p) for i, p in enumerate(prices) if p > 0]
-    if len(non_zero) < 3:
-        return prices
-
-    min_price = min(p for _, p in non_zero)
-    threshold = 1.5 * min_price
-
-    normal   = [(i, p) for i, p in non_zero if p <= threshold]
-    outliers = [(i, p) for i, p in non_zero if p > threshold]
-
-    if not outliers or not normal:
-        return prices
-
-    avg_normal = round(sum(p for _, p in normal) / len(normal))
-    result = prices[:]
-    for i, _ in outliers:
-        result[i] = avg_normal
-    return result
-
-
 def save_selling_price(recipe_file: str, name: str, prices: dict):
     """Guarda los precios de venta de un resultado de receta en su archivo JSON."""
-    x1    = _parse_price(prices, "1")
-    x10   = _parse_price(prices, "10")
-    x100  = _parse_price(prices, "100")
-    x1000 = _parse_price(prices, "1000")
+    unit_prices = parse_selling_prices(prices)
+    filtered, exceeded = filter_lot_prices(unit_prices)
 
     with open(recipe_file, encoding="utf-8") as f:
         data = json.load(f)
-
-    u1    = x1
-    u10   = round(x10   / 10)   if x10   > 0 else u1
-    u100  = round(x100  / 100)  if x100  > 0 else u10
-    u1000 = round(x1000 / 1000) if x1000 > 0 else u100
-
-    u1, u10, u100, u1000 = _sanitize_unit_prices([u1, u10, u100, u1000])
-
-    filtered, exceeded = filter_lot_prices({"x1": u1, "x10": u10, "x100": u100, "x1000": u1000})
 
     for recipe in data:
         if recipe.get("result") == name:
@@ -161,7 +129,8 @@ def save_selling_price(recipe_file: str, name: str, prices: dict):
 
     with open(recipe_file, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
-    print(f"[OK] {name} → x1={x1}  x10={x10}  x100={x100}  x1000={x1000}")
+    p = unit_prices
+    print(f"[OK] {name} → x1={p['x1']}  x10={p['x10']}  x100={p['x100']}  x1000={p['x1000']}")
 
 
 def search_and_save_selling(recipe_file: str, name: str, stop_flag: list = None) -> dict:
