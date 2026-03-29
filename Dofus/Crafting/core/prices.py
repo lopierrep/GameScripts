@@ -10,17 +10,11 @@ import time
 from datetime import datetime, timezone
 
 from config.config import (
-    CACHE_SECONDS,
     CATEGORIES_FILE,
-    DATA_DIR,
     LOT_PROFIT_MARGIN,
     LOT_STABILITY_MARGIN,
-    MAX_LOT_PRICE,
     PRICES_FILE,
     SIZES,
-    UNKNOWN_KEY,
-    _normalize,
-    _parse_price,
 )
 from shared.market.prices import (
     is_price_fresh,

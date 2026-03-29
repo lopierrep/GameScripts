@@ -23,7 +23,6 @@ import glob
 import sys
 import time
 
-import requests
 
 BASE_DIR          = os.path.dirname(os.path.abspath(__file__))
 _DOFUS_DIR        = os.path.normpath(os.path.join(BASE_DIR, "..", ".."))

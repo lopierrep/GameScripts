@@ -35,7 +35,6 @@ from core.recipes import (
     build_result_file_map,
     expand_sub_ingredients,
     load_all_craftable_recipes,
-    profession_from_file,
     sub_recipe_files,
 )
 from ui.ui import CraftingUI
