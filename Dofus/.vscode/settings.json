@@ -1,4 +1,5 @@
 {
+    "python.analysis.extraPaths": ["."],
     "chat.tools.terminal.autoApprove": {
         "/^cd \"e:\\\\2_Games\\\\Scripts\\\\Dofus\\\\Crafting\" ; python -m py_compile ui\\\\ui\\.py$/": {
             "approve": true,
