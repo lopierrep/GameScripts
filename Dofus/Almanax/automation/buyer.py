@@ -76,7 +76,8 @@ class AutoBuyer:
                     if stop_event.is_set():
                         break
                     on_progress(f"[{market_name}] Cambia al juego… {i}s  (S para parar)")
-                    time.sleep(1)
+                    if self._interruptible_sleep(1, stop_event):
+                        break
 
                 for name, plan in group:
                     if stop_event.is_set():
@@ -87,11 +88,23 @@ class AutoBuyer:
                     except Exception:
                         failed.append(name)
                         self._press_esc()
-                        time.sleep(BUY_DELAY_ESC)
+                        self._interruptible_sleep(BUY_DELAY_ESC, stop_event)
         finally:
             _kb.remove_hotkey(STOP_HOTKEY)
 
         return failed, skipped
+
+    @staticmethod
+    def _interruptible_sleep(seconds: float, stop_event: threading.Event, step: float = 0.05) -> bool:
+        """Duerme `seconds` segundos comprobando `stop_event` cada `step` s.
+        Devuelve True si se interrumpió, False si completó."""
+        elapsed = 0.0
+        while elapsed < seconds:
+            if stop_event.is_set():
+                return True
+            time.sleep(min(step, seconds - elapsed))
+            elapsed += step
+        return False
 
     def _buy_item(
         self,
@@ -126,9 +139,10 @@ class AutoBuyer:
                 if first_click:
                     self._click_at(confirm_pos, delay=BUY_DELAY_CONFIRM)
                     first_click = False
-                time.sleep(BUY_DELAY_BETWEEN)
+                if self._interruptible_sleep(BUY_DELAY_BETWEEN, stop_event):
+                    break
                 done += 1
                 on_progress(f"[{market_name}] {name[:25]}: {done}/{total_ops}…  (S para parar)")
 
         self._press_esc()
-        time.sleep(BUY_DELAY_ESC)
+        self._interruptible_sleep(BUY_DELAY_ESC, stop_event)
