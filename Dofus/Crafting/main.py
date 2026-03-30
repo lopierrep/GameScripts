@@ -178,6 +178,10 @@ def update_profession(
 
     import shared.market.search_item_prices as _sip
     _sip.load_calibration()
+    if _sip.CAL is None:
+        if on_progress:
+            on_progress("⚠ Sin calibración — usa ⚙ Calibrar antes de escanear precios.")
+        return
 
     markets     = load_markets()
     item_lookup = build_item_lookup(markets)
@@ -305,6 +309,17 @@ class CraftingApp:
     # ── Callbacks de UI ───────────────────────────────────────────────────────
 
     def _start(self, target: str, filtered: set = None):
+        import os
+        from shared.calibration.calibration_config import CALIBRATION_FILE, CALIBRATION_POINTS, transform
+        if not os.path.exists(CALIBRATION_FILE):
+            from shared.automation.calibration import CalibrationWindow
+            CalibrationWindow(
+                self.root, CALIBRATION_POINTS, CALIBRATION_FILE,
+                on_done=lambda: self._start(target, filtered),
+                transform=transform,
+            )
+            return
+
         self._float.show(on_stop=self._stop)
         self._stop_flag[0] = False
         self.root.after(0, self.ui.set_busy, True)

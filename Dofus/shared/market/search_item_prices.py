@@ -57,22 +57,10 @@ def set_calibration(cal: dict):
 
 
 def load_calibration():
-    """Carga calibración desde el módulo de calibración del proyecto activo.
-    Intenta primero calibration.calibration_config (nuevo estilo Crafting/Almanax),
-    luego el path legado Helpers.Calibration.calibration."""
+    """Carga la calibración compartida del escáner."""
     global CAL
-    try:
-        from calibration.calibration_config import load_calibration as _lc
-        CAL = _lc()
-    except ImportError:
-        try:
-            from Helpers.Calibration.calibration import load_calibration as _lc
-            CAL = _lc()
-        except ImportError:
-            raise ImportError(
-                "No se encontró módulo de calibración. "
-                "Llama a set_calibration(cal) antes de usar search_item_prices."
-            )
+    from shared.calibration.calibration_config import load_calibration as _lc
+    CAL = _lc()
 
 
 # ── Mouse ──────────────────────────────────────────────────────────────────────

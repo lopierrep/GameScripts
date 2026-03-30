@@ -78,8 +78,10 @@ def remove_item_prices(prices: dict, item_name: str) -> bool:
 # ── Cálculo de coste óptimo ───────────────────────────────────────────────────
 
 def _available(price_dict: dict) -> dict:
-    """Filtra los tamaños de lote con precio > 0."""
-    return {s: p for s in LOTS if (p := price_dict.get(f"x{s}", 0)) > 0}
+    """Filtra los tamaños de lote con precio > 0.
+    materials_prices.json almacena precios UNITARIOS; aquí los convertimos
+    a precio TOTAL del lote (unit_price × lot_size) para la estrategia greedy."""
+    return {s: p * s for s in LOTS if (p := price_dict.get(f"x{s}", 0)) > 0}
 
 
 def _lot_strategy(qty_needed: int, available: dict) -> tuple[float, list[tuple[int, int]]]:

@@ -40,8 +40,8 @@ def main():
     root.geometry(f"{w}x{h}+{x}+{y}")
     root.configure(bg=C["bg"])
     root.minsize(900, 560)
-    root.attributes("-topmost", True)
-    root._topmost = True
+    root.attributes("-topmost", False)
+    root._topmost = False
 
     # Layout: tabs arriba + contenido abajo
     outer = tk.Frame(root, bg=C["bg"])

@@ -252,17 +252,22 @@ class AlmanaxApp:
 
             has_price = pd and any(pd.get(f"x{s}", 0) > 0 for s in LOTS)
             if has_price:
-                cost       = optimal_cost(qty_total, pd)
-                unit_price = round(min(
-                    pd[f"x{s}"] / s for s in LOTS if pd.get(f"x{s}", 0) > 0
-                ))
+                cost = optimal_cost(qty_total, pd)
+                plan = get_lot_plan(qty_total, pd)
+                qty_bought = sum(size * n for size, n in plan)
+                unit_price = round(cost / qty_bought) if qty_bought > 0 else 0
+                lots_str   = ", ".join(
+                    f"{n}x{s}" if n > 1 else f"x{s}" for s, n in plan
+                )
             else:
                 cost       = 0
                 unit_price = 0
+                lots_str   = ""
 
             r["price_dict"] = pd or {}
             r["price"]      = unit_price
             r["cost"]       = cost
+            r["lots"]       = lots_str
             r["guijarros"]  = guij_k
             r["profit"]     = (r["kamas"] * pjs + r["guijarros"] - cost) if has_price else None
 
@@ -334,6 +339,16 @@ class AlmanaxApp:
             return
         if self._scan_worker and self._scan_worker.is_alive():
             return
+        import os
+        from shared.calibration.calibration_config import CALIBRATION_FILE, CALIBRATION_POINTS, transform as transform_scanner
+        if not os.path.exists(CALIBRATION_FILE):
+            from shared.automation.calibration import CalibrationWindow
+            CalibrationWindow(
+                self.root, CALIBRATION_POINTS, CALIBRATION_FILE,
+                on_done=self._start_scan,
+                transform=transform_scanner,
+            )
+            return
         self._float.show(on_stop=self._stop_scan)
         self._scan_stop.clear()
         self._buy_stop.clear()
@@ -384,15 +399,30 @@ class AlmanaxApp:
     # ── Calibración ───────────────────────────────────────────────────────────
 
     def _calibrate_buy_start(self):
+        import os
         from shared.automation.calibration import CalibrationWindow
-        from Almanax.calibration.calibration_config import CALIBRATION_POINTS, CALIBRATION_FILE, transform
-        CalibrationWindow(
-            self.root,
-            CALIBRATION_POINTS,
-            CALIBRATION_FILE,
-            on_done=self._on_calibration_done,
-            transform=transform,
+        from shared.calibration.calibration_config import (
+            CALIBRATION_FILE as SCANNER_CAL_FILE,
+            CALIBRATION_POINTS as SCANNER_POINTS,
+            transform as transform_scanner,
         )
+        from Almanax.calibration.calibration_config import (
+            BUY_CALIBRATION_FILE, BUY_CALIBRATION_POINTS, transform_buy,
+        )
+
+        def _open_buy_cal():
+            CalibrationWindow(
+                self.root, BUY_CALIBRATION_POINTS, BUY_CALIBRATION_FILE,
+                on_done=self._on_calibration_done, transform=transform_buy,
+            )
+
+        if os.path.exists(SCANNER_CAL_FILE):
+            _open_buy_cal()
+        else:
+            CalibrationWindow(
+                self.root, SCANNER_POINTS, SCANNER_CAL_FILE,
+                on_done=_open_buy_cal, transform=transform_scanner,
+            )
 
     def _on_calibration_done(self):
         self.buy_cal = _init_calibration()

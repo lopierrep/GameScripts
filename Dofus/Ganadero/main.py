@@ -132,6 +132,17 @@ class GanaderoApp:
     # ── Actualización de precios ─────────────────────────────────────────────
 
     def _start_update(self):
+        import os
+        from shared.calibration.calibration_config import CALIBRATION_FILE, CALIBRATION_POINTS, transform
+        if not os.path.exists(CALIBRATION_FILE):
+            from shared.automation.calibration import CalibrationWindow
+            CalibrationWindow(
+                self._root, CALIBRATION_POINTS, CALIBRATION_FILE,
+                on_done=self._start_update,
+                transform=transform,
+            )
+            return
+
         self._float.show(on_stop=self._stop_update)
         self._stop_flag[0] = False
         self._ui.set_scanning(True)

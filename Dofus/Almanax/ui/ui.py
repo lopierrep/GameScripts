@@ -174,7 +174,7 @@ class AlmanaxUI:
         frame.pack(fill="both", expand=True, padx=12)
 
         cols = ("dia", "fecha", "item", "ganancia", "cant", "por_cuenta", "comprar",
-                "precio_unit", "coste", "kamas", "kamas_total", "guijarros")
+                "precio_unit", "coste", "lotes", "kamas", "kamas_total", "guijarros")
         self.tree = ttk.Treeview(frame, columns=cols,
                                   show="headings", selectmode="browse")
 
@@ -188,6 +188,7 @@ class AlmanaxUI:
             ("comprar",     "Comprar",         72,  "center"),
             ("precio_unit", "Precio unit.",   105,  "center"),
             ("coste",       "Coste total",     95,  "center"),
+            ("lotes",       "Lotes",           95,  "center"),
             ("kamas",       "Kamas/pj",        85,  "center"),
             ("kamas_total", "Kamas totales",   95,  "center"),
             ("guijarros",   "Guijarros",       85,  "center"),
@@ -236,7 +237,7 @@ class AlmanaxUI:
         if calibrated:
             self.cal_btn.config(bg=C["bg"], fg=C["dim"])
         else:
-            self.cal_btn.config(bg=C["orange"], fg=C["bg"])
+            self.cal_btn.config(bg=C["red"], fg=C["bg"])
 
     def _apply_styles(self):
         style = ttk.Style()
@@ -368,6 +369,7 @@ class AlmanaxUI:
                 f"{r['qty'] * pjs:,}",
                 f"{r['price']:,}" if r["price"] else "—",
                 f"{r['cost']:,}"  if r["cost"]  else "—",
+                r.get("lots", ""),
                 f"{r['kamas']:,}",
                 f"{r['kamas'] * pjs:,}",
                 f"{r['guijarros']:,}",

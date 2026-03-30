@@ -21,9 +21,8 @@ from shared.market.search_item_prices import set_calibration
 # ── Rutas ──────────────────────────────────────────────────────────────────────
 _ROOT = Path(__file__).resolve().parent.parent           # Ganadero/
 _DOFUS = _ROOT.parent                                    # Dofus/
-RECIPES_FILE     = _DOFUS / "shared" / "data" / "recipes_ganadero.json"
-PRICES_FILE      = _DOFUS / "shared" / "data" / "materials_prices.json"
-CALIBRATION_FILE = _DOFUS / "Crafting" / "calibration" / "calibration_data.json"
+RECIPES_FILE = _DOFUS / "shared" / "data" / "recipes_ganadero.json"
+PRICES_FILE  = _DOFUS / "shared" / "data" / "materials_prices.json"
 
 DELAY_BETWEEN_ITEMS = 0.3
 
@@ -50,14 +49,14 @@ def _save_recipes(recipes: list):
 
 
 def _load_calibration() -> dict:
-    if not CALIBRATION_FILE.exists():
+    from shared.calibration.calibration_config import load_calibration as _lc
+    cal = _lc()
+    if cal is None:
         raise FileNotFoundError(
-            f"No se encontró calibración en {CALIBRATION_FILE}.\n"
-            "Calibra el mercadillo desde Crafting primero."
+            "No se encontró calibración del escáner.\n"
+            "Calibra el mercadillo desde Crafting o Ganadero primero."
         )
-    with open(CALIBRATION_FILE, encoding="utf-8") as f:
-        raw = json.load(f)
-    return {k: (tuple(v) if isinstance(v, list) else v) for k, v in raw.items()}
+    return cal
 
 
 # ── Construcción de ScanItems ──────────────────────────────────────────────────
