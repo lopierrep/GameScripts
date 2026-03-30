@@ -64,27 +64,34 @@ class AlmanaxUI:
         self._status_bar = StatusBar(self.root)
         self._build_topbar()
         self._build_table()
-        self._build_totalsbar()
         self._build_prompt()
         self._apply_styles()
 
     def _build_topbar(self):
-        bar = tk.Frame(self.root, bg=C["bg"], pady=8)
-        bar.pack(fill="x", padx=12)
+        # ── Fila 1: título + guijarros + botones de acción + calibrar ───
+        row1 = tk.Frame(self.root, bg=C["bg"], pady=4)
+        row1.pack(fill="x", padx=12)
 
-        tk.Label(bar, text="📅 Almanax", bg=C["bg"], fg=C["accent"],
+        tk.Label(row1, text="📅 Almanax", bg=C["bg"], fg=C["accent"],
                  font=(F, TITLE, "bold")).pack(side="left")
 
-        self._build_date_range(bar)
-        self._build_char_controls(bar)
-        self._build_action_buttons(bar)
+        self._build_guijarro_controls(row1)
+        self._build_action_buttons(row1)
 
-        self.cal_btn = tk.Button(bar, text="⚙ Calibrar", bg=C["bg"], fg=C["dim"],
+        self.cal_btn = tk.Button(row1, text="⚙ Calibrar", bg=C["bg"], fg=C["dim"],
                                  font=(F, BASE, "bold"), relief="flat", padx=8, pady=2,
                                  cursor="hand2",
                                  state="normal" if self._market_available else "disabled",
                                  command=self._cb["calibrate"])
         self.cal_btn.pack(side="right", padx=(0, 8))
+
+        # ── Fila 2: fechas + Pjs / Alm + totales ───────────────────────
+        row2 = tk.Frame(self.root, bg=C["bg"], pady=4)
+        row2.pack(fill="x", padx=12)
+
+        self._build_date_range(row2)
+        self._build_char_controls(row2)
+        self._build_totals(row2)
 
 
     def _build_date_range(self, bar: tk.Frame):
@@ -124,9 +131,10 @@ class AlmanaxUI:
         e.pack(side="left")
         e.bind("<Return>", lambda _: self._cb["refresh"]())
 
+    def _build_guijarro_controls(self, bar: tk.Frame):
         self.guij_vars: dict[str, tk.StringVar] = {}
         for code, default in DEFAULT_GUIJ_PRICES.items():
-            tk.Label(bar, text=f"  G{code}:", bg=C["bg"], fg=C["dim"],
+            tk.Label(bar, text=f"G{code}:", bg=C["bg"], fg=C["dim"],
                      font=(F, BASE)).pack(side="left", padx=(4, 2))
             v = tk.StringVar(value=self._settings.get(f"guij_{code}", default))
             self.guij_vars[code] = v
@@ -199,22 +207,23 @@ class AlmanaxUI:
         self.tree.bind("<<TreeviewSelect>>", self._on_select)
         self.tree.bind("<ButtonRelease-1>",  self._on_row_click)
 
-    def _build_totalsbar(self):
-        bar = tk.Frame(self.root, bg=C["bg"], pady=4)
-        bar.pack(fill="x", padx=12)
+    def _build_totals(self, bar: tk.Frame):
+        # Contenedor alineado a la derecha dentro de la fila 2
+        totals = tk.Frame(bar, bg=C["bg"])
+        totals.pack(side="right")
 
         for text, attr, fg in [
             ("Días rentables:", "total_days_lbl",      C["green"]),
             ("Invertido:",      "total_cost_lbl",      C["red"]),
             ("Ganado:",         "total_profit_lbl",    C["green"]),
-            ("Beneficio neto:", "total_net_lbl",       C["accent"]),
+            ("Neto:",           "total_net_lbl",       C["accent"]),
             ("Con pérdidas:",   "total_net_all_lbl",   C["accent"]),
         ]:
-            tk.Label(bar, text=text, bg=C["bg"], fg=C["dim"],
+            tk.Label(totals, text=text, bg=C["bg"], fg=C["dim"],
                      font=(F, SMALL)).pack(side="left", padx=(4 if attr == "total_days_lbl" else 0, 2))
-            lbl = tk.Label(bar, text="—", bg=C["bg"], fg=fg,
+            lbl = tk.Label(totals, text="—", bg=C["bg"], fg=fg,
                            font=(F, SMALL, "bold"))
-            lbl.pack(side="left", padx=(0, 14 if attr != "total_net_all_lbl" else 0))
+            lbl.pack(side="left", padx=(0, 10 if attr != "total_net_all_lbl" else 0))
             setattr(self, attr, lbl)
 
 
