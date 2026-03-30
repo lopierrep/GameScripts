@@ -18,6 +18,7 @@ sys.path.insert(0, str(ROOT_DIR.parent))
 from Ganadero.core.carburante_efficiency import analizar
 from Ganadero.core.ciclo_diario import calcular_ciclo_diario, calcular_estrategia_nocturna
 from shared.ui.colors import C
+from shared.ui.floating_progress import FloatingProgress
 from Ganadero.ui.ui import GanaderoUI
 
 # ── Settings ──────────────────────────────────────────────────────────────────
@@ -61,6 +62,7 @@ class GanaderoApp:
         self._stop_flag = [False]
         self._orig_stdout = sys.stdout
         self._orig_stderr = sys.stderr
+        self._float = FloatingProgress(self._root)
 
         self._ui = GanaderoUI(self._root, callbacks={
             "refresh": self._refresh,
@@ -130,6 +132,7 @@ class GanaderoApp:
     # ── Actualización de precios ─────────────────────────────────────────────
 
     def _start_update(self):
+        self._float.show(on_stop=self._stop_update)
         self._stop_flag[0] = False
         self._ui.set_scanning(True)
         self._ui.update_status("Actualizando precios…", C["accent"])
@@ -144,6 +147,7 @@ class GanaderoApp:
 
     def _on_progress(self, msg: str):
         self._ui.update_status(msg, C["yellow"])
+        self._float.update(msg)
 
     def _restore_io(self):
         sys.stdout = self._orig_stdout
@@ -188,6 +192,7 @@ class GanaderoApp:
         return True
 
     def _on_update_done(self):
+        self._float.hide()
         self._restore_io()
         self._ui.set_scanning(False)
         self._refresh()

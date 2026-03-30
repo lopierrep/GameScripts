@@ -41,12 +41,14 @@ def main():
     root.configure(bg=C["bg"])
     root.minsize(900, 560)
     root.attributes("-topmost", True)
+    root._topmost = True
 
     # Layout: tabs arriba + contenido abajo
     outer = tk.Frame(root, bg=C["bg"])
     outer.pack(fill="both", expand=True)
 
     tabbar = Sidebar(outer, lambda key: on_select(key))
+    tabbar.set_root(root)
     tabbar.pack(side="top", fill="x")
 
     tk.Frame(outer, bg=C["border"], height=1).pack(side="top", fill="x")

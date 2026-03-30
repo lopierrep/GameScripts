@@ -25,6 +25,7 @@ from Almanax.core.table  import today_fr
 from shared.market.common import fetch_category, get_market_for_category, load_categories
 from Almanax.calibration.calibration_config import load_calibration as _load_almanax_cal
 from Almanax.ui.ui import AlmanaxUI
+from shared.ui.floating_progress import FloatingProgress
 
 # ── Módulo de mercadillo (opcional) ───────────────────────────────────────────
 try:
@@ -99,6 +100,8 @@ class AlmanaxApp:
             "toggle_sort":  self._toggle_sort,
             "sync":         self._sync,
         }, market_available=MARKET_AVAILABLE, settings=settings)
+
+        self._float = FloatingProgress(self.root)
 
         root.protocol("WM_DELETE_WINDOW", self._on_close)
 
@@ -222,6 +225,7 @@ class AlmanaxApp:
 
     def _ui_progress(self, msg: str):
         self.root.after(0, self.ui.set_status, msg, C["yellow"])
+        self.root.after(0, self._float.update, msg)
 
     # ── Cálculo ───────────────────────────────────────────────────────────────
 
@@ -330,6 +334,7 @@ class AlmanaxApp:
             return
         if self._scan_worker and self._scan_worker.is_alive():
             return
+        self._float.show(on_stop=self._stop_scan)
         self._scan_stop.clear()
         self._buy_stop.clear()
         self.ui.set_scan_busy(True)
@@ -372,6 +377,7 @@ class AlmanaxApp:
             self.root.after(0, self._scan_done)
 
     def _scan_done(self):
+        self._float.hide()
         self.ui.set_scan_busy(False)
         self._refresh_table()
 
@@ -423,6 +429,7 @@ class AlmanaxApp:
             self.ui.set_status("No hay ítems rentables con precio guardado.", C["yellow"])
             return
 
+        self._float.show(on_stop=self._stop_buy)
         self.ui.set_buy_busy(True)
         self._buy_stop.clear()
         self._scan_stop.clear()
@@ -448,6 +455,7 @@ class AlmanaxApp:
         self.root.after(0, self._buy_all_done, failed, skipped)
 
     def _buy_all_done(self, failed: list[str], skipped: list[str]):
+        self._float.hide()
         self.ui.set_buy_busy(False)
         parts = []
         if failed:

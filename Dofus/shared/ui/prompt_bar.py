@@ -98,13 +98,17 @@ class PromptBar:
             command=self._on_click,
         ).pack()
 
-        # Centrar sobre la ventana principal
+        # Centrar sobre la ventana principal (o en pantalla si está minimizada)
         popup.update_idletasks()
         pw = popup.winfo_width()
         ph = popup.winfo_height()
         root = self._parent.winfo_toplevel()
-        rx = root.winfo_x() + (root.winfo_width() - pw) // 2
-        ry = root.winfo_y() + (root.winfo_height() - ph) // 2
+        if root.state() == "iconic":
+            rx = (popup.winfo_screenwidth() - pw) // 2
+            ry = (popup.winfo_screenheight() - ph) // 2
+        else:
+            rx = root.winfo_x() + (root.winfo_width() - pw) // 2
+            ry = root.winfo_y() + (root.winfo_height() - ph) // 2
         popup.geometry(f"+{rx}+{ry}")
 
         # Sonido de alerta

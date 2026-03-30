@@ -38,6 +38,7 @@ from Crafting.core.recipes import (
     sub_recipe_files,
 )
 from Crafting.ui.ui import CraftingUI
+from shared.ui.floating_progress import FloatingProgress
 
 
 # ── stdout redirect ────────────────────────────────────────────────────────────
@@ -256,6 +257,7 @@ class CraftingApp:
     def __init__(self, root: tk.Tk):
         self.root = root
         self._stop_flag  = [False]
+        self._float      = FloatingProgress(self.root)
         self._orig_stdout = sys.stdout
         self._orig_stderr = sys.stderr
         self._last_refresh = 0.0
@@ -303,6 +305,7 @@ class CraftingApp:
     # ── Callbacks de UI ───────────────────────────────────────────────────────
 
     def _start(self, target: str, filtered: set = None):
+        self._float.show(on_stop=self._stop)
         self._stop_flag[0] = False
         self.root.after(0, self.ui.set_busy, True)
         self.root.after(0, self.ui.set_status, "Iniciando actualización de precios…", C["accent"])
@@ -349,6 +352,7 @@ class CraftingApp:
 
         def _on_progress(msg: str):
             self.root.after(0, self.ui.set_status, msg, C["accent"])
+            self.root.after(0, self._float.update, msg)
 
         try:
             self.root.after(0, self.ui.set_status, f"Actualizando {profession}…", C["accent"])
@@ -379,6 +383,7 @@ class CraftingApp:
             self.root.after(0, self.ui.set_status, f"Error: {e}", C["red"])
 
     def _on_done(self):
+        self._float.hide()
         self.ui.set_busy(False)
         self.ui.set_status("Listo", C["dim"])
         self.ui.hide_prompt()
