@@ -324,7 +324,7 @@ class CraftingApp:
 
     def _calibrate(self):
         from shared.automation.calibration import CalibrationWindow
-        from calibration.calibration_config import CALIBRATION_POINTS, CALIBRATION_FILE, transform
+        from Crafting.calibration.calibration_config import CALIBRATION_POINTS, CALIBRATION_FILE, transform
         CalibrationWindow(
             self.root,
             CALIBRATION_POINTS,
