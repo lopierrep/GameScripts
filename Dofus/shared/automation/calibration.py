@@ -1,7 +1,7 @@
 import json
 import os
 import tkinter as tk
-from tkinter import messagebox
+from shared.ui import messagebox
 
 import keyboard
 import pyautogui
