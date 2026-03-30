@@ -79,7 +79,23 @@
       "Bash(grep -l \"Pócima mineral\" e:/2_Games/Scripts/Dofus/shared/data/recipes_*.json)",
       "Bash(python -m PyInstaller DofusHub.spec --clean -y)",
       "Bash(Start-Process \"e:/2_Games/Scripts/Dofus/dist/DofusHub/DofusHub.exe\")",
-      "Bash(cmd.exe /c start \"\" \"e:\\\\2_Games\\\\Scripts\\\\Dofus\\\\dist\\\\DofusHub\\\\DofusHub.exe\")"
+      "Bash(cmd.exe /c start \"\" \"e:\\\\2_Games\\\\Scripts\\\\Dofus\\\\dist\\\\DofusHub\\\\DofusHub.exe\")",
+      "Bash(grep -r \"ImportError\\\\|ModuleNotFoundError\" /e/2_Games/Scripts/Dofus/ --include=*.py)",
+      "Bash(grep -h \"^from\\\\|^import\" e:/2_Games/Scripts/Dofus/hub/*.py e:/2_Games/Scripts/Dofus/shared/**/*.py)",
+      "Bash(find e:/2_Games/Scripts/Dofus/build -type f -name *.spec -o -name *.exe -o -name *.txt -o -name *.cfg)",
+      "Bash(grep -r \"^import\\\\|^from\" /e/2_Games/Scripts/Dofus/ --include=*.py)",
+      "Bash(sed 's/^ *//')",
+      "Bash(sed 's/import.*//')",
+      "Bash(sed 's/from //')",
+      "Bash(sed 's/ .*//')",
+      "Bash(find /e/2_Games/Scripts/Dofus/ -not -path */.* -not -path */__pycache__* -not -path */build/* -type d)",
+      "Bash(cat:*)",
+      "Bash(grep -l \"from PIL\\\\|import PIL\" \"e:/2_Games/Scripts/Dofus\"/**/*.py)",
+      "Bash(grep -l \"import gspread\\\\|from gspread\" \"e:/2_Games/Scripts/Dofus\"/**/*.py)",
+      "Bash(grep -l \"from google.oauth2\\\\|import google\" \"e:/2_Games/Scripts/Dofus\"/**/*.py)",
+      "Bash(find \"e:/2_Games/Scripts/Dofus\" -name \"*.py\" -type f -exec grep -l \"gspread\\\\|google.oauth2\\\\|requests\\\\|keyboard\\\\|pyautogui\\\\|pytesseract\" {})",
+      "Read(//e/2_Games/Scripts/**)",
+      "Bash(grep -r \"from tkinter.ttk import\\\\|from tkinter import.*Dialog\\\\|class.*Dialog\\\\|class.*Window\\\\|class.*Popup\" /e/2_Games/Scripts/Dofus --include=*.py)"
     ]
   }
 }
