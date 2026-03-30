@@ -301,66 +301,10 @@ class GanaderoUI:
         return f"{m}m {s:02d}s"
 
     def _build_tiempos(self, parent: tk.Frame):
-        # ── Tiempo por stat ──────────────────────────────────────────────
-        tk.Label(parent, text="Tiempo para llenar cada stat",
-                 bg=C["bg"], fg=C["accent"], font=(F, HEADER, "bold"),
-                 anchor="w").pack(fill="x", padx=20, pady=(0, 4))
-
-        cols_t = [("tramo", "Tramo", 120)]
-        for nombre, _ in STATS_TIEMPO:
-            col_id = nombre.lower().replace(" ", "_").replace("(", "").replace(")", "")
-            cols_t.append((col_id, nombre, 110))
-
-        frame = tk.Frame(parent, bg=C["bg"])
-        frame.pack(fill="x", padx=20, pady=(0, 8))
-
-        tree = ttk.Treeview(frame, columns=[c[0] for c in cols_t],
-                            show="headings", selectmode="browse", height=4)
-        for col_id, col_text, col_w in cols_t:
-            tree.heading(col_id, text=col_text)
-            tree.column(col_id, width=col_w, minwidth=60, anchor="center")
-        tree.tag_configure("alt", background=C["alt_row"])
-
-        for i, r in enumerate(RANGOS_CONSUMO):
-            vals = [f'{r["label"]} ({r["rate"]}/s)']
-            for _, total in STATS_TIEMPO:
-                vals.append(self._fmt_tiempo(total / r["rate"]))
-            tree.insert("", "end", values=vals, tags=(("alt",) if i % 2 == 1 else ()))
-        tree.pack(fill="x")
-
-        # ── Consumo por tope ─────────────────────────────────────────────
-        tk.Label(parent, text="Consumo de cada tope",
-                 bg=C["bg"], fg=C["accent"], font=(F, HEADER, "bold"),
-                 anchor="w").pack(fill="x", padx=20, pady=(10, 4))
-
-        cols_d = [("tope","Tope",80),("tramo","Tramo",120),
-                  ("rate","Consumo",80),("tiempo","Tramo",100),("acum","Total",100)]
-        frame_d = tk.Frame(parent, bg=C["bg"])
-        frame_d.pack(fill="x", padx=20, pady=(0, 8))
-
-        tree_d = ttk.Treeview(frame_d, columns=[c[0] for c in cols_d],
-                               show="headings", selectmode="browse", height=4)
-        for col_id, col_text, col_w in cols_d:
-            tree_d.heading(col_id, text=col_text)
-            tree_d.column(col_id, width=col_w, minwidth=50, anchor="center")
-        tree_d.tag_configure("alt", background=C["alt_row"])
-
-        tope_ant, acum = 0, 0
-        for i, r in enumerate(RANGOS_CONSUMO):
-            t = TOPES[i]
-            tramo = t - tope_ant
-            seg = tramo / r["rate"]
-            acum += seg
-            tree_d.insert("", "end", tags=(("alt",) if i % 2 == 1 else ()), values=(
-                f"{t:,}", f"{tope_ant:,} - {t:,}", f'{r["rate"]}/s',
-                self._fmt_tiempo(seg), self._fmt_tiempo(acum)))
-            tope_ant = t
-        tree_d.pack(fill="x")
-
         # ── Costo por montura ────────────────────────────────────────────
         tk.Label(parent, text=f"Costo por montura ({self._monturas} monturas/cercado)",
                  bg=C["bg"], fg=C["accent"], font=(F, HEADER, "bold"),
-                 anchor="w").pack(fill="x", padx=20, pady=(10, 4))
+                 anchor="w").pack(fill="x", padx=20, pady=(0, 4))
 
         cols_c = [("tope", "Tope", 80),
                   ("total", "TOTAL", 100), ("xp", "XP (nv 200)", 90),
@@ -419,6 +363,62 @@ class GanaderoUI:
         self._tree_nocturna.tag_configure("alt",    background=C["alt_row"])
         self._tree_nocturna.tag_configure("optimo", foreground=C["green"])
         self._tree_nocturna.pack(fill="x")
+
+        # ── Tiempo por stat ──────────────────────────────────────────────
+        tk.Label(parent, text="Tiempo para llenar cada stat",
+                 bg=C["bg"], fg=C["accent"], font=(F, HEADER, "bold"),
+                 anchor="w").pack(fill="x", padx=20, pady=(10, 4))
+
+        cols_t = [("tramo", "Tramo", 120)]
+        for nombre, _ in STATS_TIEMPO:
+            col_id = nombre.lower().replace(" ", "_").replace("(", "").replace(")", "")
+            cols_t.append((col_id, nombre, 110))
+
+        frame = tk.Frame(parent, bg=C["bg"])
+        frame.pack(fill="x", padx=20, pady=(0, 8))
+
+        tree = ttk.Treeview(frame, columns=[c[0] for c in cols_t],
+                            show="headings", selectmode="browse", height=4)
+        for col_id, col_text, col_w in cols_t:
+            tree.heading(col_id, text=col_text)
+            tree.column(col_id, width=col_w, minwidth=60, anchor="center")
+        tree.tag_configure("alt", background=C["alt_row"])
+
+        for i, r in enumerate(RANGOS_CONSUMO):
+            vals = [f'{r["label"]} ({r["rate"]}/s)']
+            for _, total in STATS_TIEMPO:
+                vals.append(self._fmt_tiempo(total / r["rate"]))
+            tree.insert("", "end", values=vals, tags=(("alt",) if i % 2 == 1 else ()))
+        tree.pack(fill="x")
+
+        # ── Consumo por tope ─────────────────────────────────────────────
+        tk.Label(parent, text="Consumo de cada tope",
+                 bg=C["bg"], fg=C["accent"], font=(F, HEADER, "bold"),
+                 anchor="w").pack(fill="x", padx=20, pady=(10, 4))
+
+        cols_d = [("tope","Tope",80),("tramo","Tramo",120),
+                  ("rate","Consumo",80),("tiempo","Tramo",100),("acum","Total",100)]
+        frame_d = tk.Frame(parent, bg=C["bg"])
+        frame_d.pack(fill="x", padx=20, pady=(0, 8))
+
+        tree_d = ttk.Treeview(frame_d, columns=[c[0] for c in cols_d],
+                               show="headings", selectmode="browse", height=4)
+        for col_id, col_text, col_w in cols_d:
+            tree_d.heading(col_id, text=col_text)
+            tree_d.column(col_id, width=col_w, minwidth=50, anchor="center")
+        tree_d.tag_configure("alt", background=C["alt_row"])
+
+        tope_ant, acum = 0, 0
+        for i, r in enumerate(RANGOS_CONSUMO):
+            t = TOPES[i]
+            tramo = t - tope_ant
+            seg = tramo / r["rate"]
+            acum += seg
+            tree_d.insert("", "end", tags=(("alt",) if i % 2 == 1 else ()), values=(
+                f"{t:,}", f"{tope_ant:,} - {t:,}", f'{r["rate"]}/s',
+                self._fmt_tiempo(seg), self._fmt_tiempo(acum)))
+            tope_ant = t
+        tree_d.pack(fill="x")
 
     def _build_prompt(self):
         self._prompt_bar = PromptBar(self.root)
