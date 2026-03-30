@@ -214,15 +214,24 @@ def build_trolichas_app(root):
             _save_tickets(tickets)
             app.set_tickets(tickets)
 
-    app = LarvaRaceApp(root, on_start=on_start, on_finish=on_finish, on_calibrate=on_calibrate)
-    app.ticket_label.bind("<Button-1>", lambda e: _on_edit_tickets())
+    app = LarvaRaceApp(root, on_start=on_start, on_finish=on_finish,
+                       on_calibrate=on_calibrate, on_edit_tickets=_on_edit_tickets)
     app.set_tickets(tickets)
     return app
 
 
 def main():
     root = tk.Tk()
+    root.title("Trolichas")
+    root.configure(bg="#191724")
+    root.resizable(False, False)
     build_trolichas_app(root)
+    root.update_idletasks()
+    w = root.winfo_reqwidth()
+    h = root.winfo_reqheight()
+    x = root.winfo_screenwidth() * 3 // 4 - w // 2
+    y = (root.winfo_screenheight() - h) // 2
+    root.geometry(f"+{x}+{y}")
     root.mainloop()
 
 

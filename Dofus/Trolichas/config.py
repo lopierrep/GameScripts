@@ -16,7 +16,7 @@ DELAY_AFTER_NPC = (0.5, 1.0)
 # Rango de espera tras seleccionar opción
 DELAY_AFTER_OPTION = (2, 3)
 # Rango de duración estimada de la carrera
-RACE_DURATION = (32, 35)
+RACE_DURATION = (20, 25)
 # Segundos estimados por ticket (para cálculo de ETA)
 SECONDS_PER_TICKET = 39
 

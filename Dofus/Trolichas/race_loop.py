@@ -1,14 +1,23 @@
 import sys
 import os
 import pyautogui
+import pytesseract
+import shutil as _shutil
+pytesseract.pytesseract.tesseract_cmd = (
+    _shutil.which("tesseract")
+    or r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+)
+import keyboard
 import time
 import random
+from pathlib import Path
 
 _DOFUS_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if _DOFUS_DIR not in sys.path:
     sys.path.insert(0, _DOFUS_DIR)
 
 from shared.automation.mouse import smooth_move
+from shared.automation.ocr import preprocess_for_ocr
 from Trolichas.config import (
     DELAY_BEFORE_CYCLE, DELAY_AFTER_NPC, DELAY_AFTER_OPTION, RACE_DURATION,
     JITTER_NPC, JITTER_OPTION_X, JITTER_OPTION_Y, JITTER_START_BTN,
@@ -80,5 +89,29 @@ def run_race_loop(calibration, is_running, on_status, on_race_count, on_consume_
             remaining = end_time - time.time()
             on_status(f"Carrera en curso... {remaining:.0f}s")
             time.sleep(0.5)
+
+        # 5. Verificar fin de carrera via OCR
+        sw, sh = pyautogui.size()
+        region = (sw // 2 - 100, sh // 2 - 200, 200, 300)
+        debug_dir = Path(__file__).resolve().parent / "debug_ocr"
+        debug_dir.mkdir(exist_ok=True)
+        ocr_attempt = 0
+        while is_running():
+            keyboard.press("w")
+            time.sleep(0.3)
+            img = pyautogui.screenshot(region=region)
+            keyboard.release("w")
+            processed = preprocess_for_ocr(img)
+            ocr_attempt += 1
+            img.save(debug_dir / f"raw_{race_count}_{ocr_attempt}.png")
+            processed.save(debug_dir / f"ocr_{race_count}_{ocr_attempt}.png")
+            texto = pytesseract.image_to_string(
+                processed, config="--psm 6 --oem 1 -l spa")
+            ocr_clean = " ".join(texto.split())
+            if "flojencio" in texto.lower():
+                on_status(f"OCR: {ocr_clean} ✓")
+                break
+            on_status(f"OCR: {ocr_clean or '(vacío)'}")
+            time.sleep(1)
 
     on_status("Proceso terminado.")
