@@ -71,7 +71,9 @@
       "Bash(grep -n \"print\\(\" /e/2_Games/Scripts/Dofus/Trolichas/*.py /e/2_Games/Scripts/Dofus/Trolichas/calibration/*.py)",
       "Bash(grep -n \"keyboard\\\\.\" /e/2_Games/Scripts/Dofus/Trolichas/*.py)",
       "Bash(ls \"e:/2_Games/Scripts/Dofus/shared/__pycache__/log_panel\"*)",
-      "Bash(ls \"e:/2_Games/Scripts/Dofus/Trolichas/__pycache__/calibration\"*)"
+      "Bash(ls \"e:/2_Games/Scripts/Dofus/Trolichas/__pycache__/calibration\"*)",
+      "Bash(grep -E \"^/e/2_Games/Scripts/Dofus/[^/]+\\\\.\\(py|sh|bat\\)$\")",
+      "Bash(cat /e/2_Games/Scripts/Dofus/.vscode/*)"
     ]
   }
 }
