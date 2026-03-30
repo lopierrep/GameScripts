@@ -113,13 +113,20 @@ def build_item_lookup(materials: dict) -> dict[str, tuple[str, str]]:
 
 # ── Precio óptimo ─────────────────────────────────────────────────────────────
 
+_LOT_ORDER = ["x1", "x10", "x100", "x1000"]
+_MAX_TRANSACTIONS = 10
+
+
 def cheapest_lot(prices: dict, qty: int) -> str | None:
     """Devuelve el tamaño de lote ('x1','x10','x100','x1000') que minimiza el costo total
     para adquirir `qty` unidades. None si no hay precios disponibles.
 
     Cuando qty >= lot_num (sin desperdicio), aplica LOT_STABILITY_MARGIN: un lote mayor
     gana si su precio no supera al lote x1 en más de ese margen, priorizando estabilidad
-    de mercado sobre la diferencia mínima de precio."""
+    de mercado sobre la diferencia mínima de precio.
+
+    Si el lote elegido requiere más de _MAX_TRANSACTIONS compras, sube al siguiente
+    lote disponible (aunque sea más caro por unidad), hasta que no haya lote mayor."""
     if qty <= 0:
         return None
     best_lot = None
@@ -135,6 +142,18 @@ def cheapest_lot(prices: dict, qty: int) -> str | None:
         if best_eff == 0.0 or eff_unit < best_eff:
             best_eff = eff_unit
             best_lot = size
+
+    if best_lot is None:
+        return None
+
+    # Si el lote elegido requiere demasiadas transacciones, subir al siguiente disponible
+    idx = _LOT_ORDER.index(best_lot)
+    while math.ceil(qty / LOT_NUMS[best_lot]) > _MAX_TRANSACTIONS and idx < len(_LOT_ORDER) - 1:
+        next_size = _LOT_ORDER[idx + 1]
+        if prices.get(next_size, 0) > 0:
+            best_lot = next_size
+        idx += 1
+
     return best_lot
 
 
