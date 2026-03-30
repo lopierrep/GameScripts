@@ -95,7 +95,8 @@
       "Bash(grep -l \"from google.oauth2\\\\|import google\" \"e:/2_Games/Scripts/Dofus\"/**/*.py)",
       "Bash(find \"e:/2_Games/Scripts/Dofus\" -name \"*.py\" -type f -exec grep -l \"gspread\\\\|google.oauth2\\\\|requests\\\\|keyboard\\\\|pyautogui\\\\|pytesseract\" {})",
       "Read(//e/2_Games/Scripts/**)",
-      "Bash(grep -r \"from tkinter.ttk import\\\\|from tkinter import.*Dialog\\\\|class.*Dialog\\\\|class.*Window\\\\|class.*Popup\" /e/2_Games/Scripts/Dofus --include=*.py)"
+      "Bash(grep -r \"from tkinter.ttk import\\\\|from tkinter import.*Dialog\\\\|class.*Dialog\\\\|class.*Window\\\\|class.*Popup\" /e/2_Games/Scripts/Dofus --include=*.py)",
+      "Bash(python -c \"import json; data = json.load\\(open\\(''e:/2_Games/Scripts/Dofus/shared/data/recipes_alquimista.json'', encoding=''utf-8''\\)\\); r = data[0]; print\\(json.dumps\\({k:v for k,v in r.items\\(\\) if k != ''ingredients''}, indent=2\\)\\); print\\(''Ingredientes:'', [i.get\\(''name''\\) for i in r.get\\(''ingredients'', []\\)]\\)\")"
     ]
   }
 }

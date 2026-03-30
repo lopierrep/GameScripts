@@ -315,16 +315,29 @@ def build_table_rows(
     rows = []
 
     for r in recipes:
+        # Lote óptimo (supera ROI mínimo)
         best_size = r.get("best_lot") or None
-        best_lot = best_craft = best_sell = best_profit = best_profit_total = None
-        if best_size:
-            best_lot          = best_size
-            best_craft        = r.get(f"unit_crafting_cost_{best_size}")
-            best_sell         = r.get(f"unit_selling_price_{best_size}")
-            best_profit       = r.get(f"profit_{best_size}")
-            best_profit_total = round(best_profit * _LOT_NUMS[best_size]) if best_profit else None
 
-        lot_num     = _LOT_NUMS.get(best_size, 1)
+        # Lote de display: si ninguno es rentable, usar el de menor pérdida con costo > 0
+        display_size = best_size
+        if not display_size:
+            candidates = {
+                size: r.get(f"profit_{size}", 0) or 0
+                for size in _LOT_NUMS
+                if (r.get(f"unit_crafting_cost_{size}", 0) or 0) > 0
+            }
+            if candidates:
+                display_size = max(candidates, key=candidates.get)
+
+        best_lot = best_craft = best_sell = best_profit = best_profit_total = None
+        if display_size:
+            best_lot          = display_size
+            best_craft        = r.get(f"unit_crafting_cost_{display_size}")
+            best_sell         = r.get(f"unit_selling_price_{display_size}")
+            best_profit       = r.get(f"profit_{display_size}")
+            best_profit_total = round(best_profit * _LOT_NUMS[display_size]) if best_profit is not None else None
+
+        lot_num     = _LOT_NUMS.get(display_size, 1)
         craft_total = best_craft * lot_num if best_craft else None
         sell_total  = best_sell  * lot_num if best_sell  else None
         def _display_price_total(name, buy_lot, buy_or_craft, qty, lot_num_recipe):
