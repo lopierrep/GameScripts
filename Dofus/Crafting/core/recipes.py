@@ -6,8 +6,8 @@ import json
 import os
 
 from shared.market.common import _normalize as _normalize_name
-from utils.loaders import get_recipe_files
-from utils.market import _is_selling_fresh
+from Crafting.utils.loaders import get_recipe_files
+from Crafting.utils.market import _is_selling_fresh
 
 
 # ── Carga de recetas ──────────────────────────────────────────────────────────

@@ -13,7 +13,7 @@ import math
 from dataclasses import dataclass
 from datetime import datetime, timezone
 
-from config.config import PRICES_FILE, LOTS, GUIJ_COST
+from Almanax.config.config import PRICES_FILE, LOTS, GUIJ_COST
 
 
 # ── Persistencia ──────────────────────────────────────────────────────────────

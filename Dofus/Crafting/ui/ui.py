@@ -9,7 +9,7 @@ import tkinter as tk
 from tkinter import ttk
 from datetime import datetime, timezone, timedelta
 
-from core.table_filter import compute_summary, filter_rows, profitable_rows
+from Crafting.core.table_filter import compute_summary, filter_rows, profitable_rows
 from shared.ui.colors import C, style_scrollbar
 from shared.ui.font  import FONT as F, TITLE, HEADER, BASE, SMALL
 from shared.ui.prompt_bar import PromptBar

@@ -6,7 +6,7 @@ import json
 import os
 from functools import lru_cache
 
-from config.config import (
+from Crafting.config.config import (
     DATA_DIR,
     SETTINGS_FILE,
     _normalize,

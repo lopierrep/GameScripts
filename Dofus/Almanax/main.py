@@ -8,7 +8,7 @@ import sys
 import json
 import threading
 import tkinter as tk
-from tkinter import messagebox
+from shared.ui import messagebox
 from datetime import date
 from pathlib import Path
 import urllib.error
@@ -18,13 +18,13 @@ ROOT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT_DIR))
 sys.path.insert(0, str(ROOT_DIR.parent))
 
-from config.config import C, LOTS, SETTINGS_FILE, CATEGORIES_FILE, STOP_HOTKEY
-from core.prices import load_prices, optimal_cost, get_lot_plan, best_guijarro, find_item_prices
-from core.api    import fetch_almanax, parse_entry, save_almanax, load_almanax, resolve_subtype
-from core.table  import today_fr
+from Almanax.config.config import C, LOTS, SETTINGS_FILE, CATEGORIES_FILE, STOP_HOTKEY
+from Almanax.core.prices import load_prices, optimal_cost, get_lot_plan, best_guijarro, find_item_prices
+from Almanax.core.api    import fetch_almanax, parse_entry, save_almanax, load_almanax, resolve_subtype
+from Almanax.core.table  import today_fr
 from shared.market.common import fetch_category, get_market_for_category, load_categories
-from calibration.calibration_config import load_calibration as _load_almanax_cal
-from ui.ui import AlmanaxUI
+from Almanax.calibration.calibration_config import load_calibration as _load_almanax_cal
+from Almanax.ui.ui import AlmanaxUI
 
 # ── Módulo de mercadillo (opcional) ───────────────────────────────────────────
 try:
@@ -344,9 +344,9 @@ class AlmanaxApp:
 
     def _scan_thread(self):
         import keyboard as _kb
-        from automation.scanner import build_scan_items
+        from Almanax.automation.scanner import build_scan_items
         from shared.market.item_price_scanner import scan_prices
-        from config.config import SCAN_DELAY
+        from Almanax.config.config import SCAN_DELAY
 
         _kb.add_hotkey(STOP_HOTKEY, self._scan_stop.set)
         try:
@@ -379,7 +379,7 @@ class AlmanaxApp:
 
     def _calibrate_buy_start(self):
         from shared.automation.calibration import CalibrationWindow
-        from calibration.calibration_config import CALIBRATION_POINTS, CALIBRATION_FILE, transform
+        from Almanax.calibration.calibration_config import CALIBRATION_POINTS, CALIBRATION_FILE, transform
         CalibrationWindow(
             self.root,
             CALIBRATION_POINTS,
@@ -399,7 +399,7 @@ class AlmanaxApp:
         if not MARKET_AVAILABLE:
             return
         if not self.buy_cal:
-            messagebox.showwarning("Calibración", "Primero calibra la compra (⚙ Cal.compra).")
+            messagebox.showwarning("Calibración", "Primero calibra la compra (⚙ Cal.compra).", parent=self.root)
             return
 
         pjs               = self.ui.pjs()
@@ -429,7 +429,7 @@ class AlmanaxApp:
         threading.Thread(target=self._buy_all_thread, args=(groups,), daemon=True).start()
 
     def _buy_all_thread(self, groups: dict):
-        from automation.buyer import AutoBuyer
+        from Almanax.automation.buyer import AutoBuyer
 
         buyer = AutoBuyer(
             search_item       = _search_item,

@@ -5,7 +5,7 @@ import threading
 import time
 from typing import Callable
 
-from config.config import (
+from Almanax.config.config import (
     MARKET_NAMES, STOP_HOTKEY, BUY_COUNTDOWN, BUY_DELAY_CONFIRM,
     BUY_DELAY_LOT, BUY_DELAY_BETWEEN, BUY_DELAY_ESC, BUY_CLICK_RESULT,
 )

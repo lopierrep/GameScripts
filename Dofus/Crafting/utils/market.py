@@ -4,7 +4,7 @@ Utilidades de cálculo de mercado: impuestos, filtros de lote y timestamps.
 
 import math
 
-from config.config import MAX_LOT_PRICE, _LOT_NUMS
+from Crafting.config.config import MAX_LOT_PRICE, _LOT_NUMS
 from shared.market.prices import is_price_fresh, now_iso
 
 # Re-exportar para compatibilidad con importadores existentes

@@ -9,11 +9,11 @@ import tkinter as tk
 from tkinter import ttk
 from datetime import date, timedelta
 
-from config.config import (
+from Almanax.config.config import (
     C, WINDOW_SIZE, WINDOW_MINSIZE, DEFAULT_DAYS,
     DEFAULT_PJS, DEFAULT_ALM, DEFAULT_GUIJ_PRICES,
 )
-from core.table import day_label, profit_tag, today_fr
+from Almanax.core.table import day_label, profit_tag, today_fr
 from shared.ui.colors import style_scrollbar
 from shared.ui.font  import FONT as F, TITLE, HEADER, BASE, SMALL
 from shared.ui.prompt_bar import PromptBar

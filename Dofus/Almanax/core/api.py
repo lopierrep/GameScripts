@@ -7,7 +7,7 @@ import urllib.request
 import urllib.error
 from datetime import date
 
-from config.config import API_BASE, ALMANAX_FILE, ITEMS_API_BASE, USER_AGENT, API_TIMEOUT, API_TIMEOUT_RESOLVE
+from Almanax.config.config import API_BASE, ALMANAX_FILE, ITEMS_API_BASE, USER_AGENT, API_TIMEOUT, API_TIMEOUT_RESOLVE
 
 
 def fetch_almanax(start: date, end: date) -> list[dict]:

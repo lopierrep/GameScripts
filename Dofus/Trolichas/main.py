@@ -7,17 +7,17 @@ if _DOFUS_DIR not in sys.path:
     sys.path.insert(0, _DOFUS_DIR)
 
 import tkinter as tk
-from tkinter import messagebox
+from shared.ui import messagebox
 import threading
 import winsound
 import keyboard
 
 from shared.automation.calibration import CalibrationWindow, load_calibration
 from shared.ui.colors import C
-from calibration.calibration_config import CALIBRATION_POINTS, CALIBRATION_FILE
-from config import ALERT_BEEP_FREQ, ALERT_BEEP_DURATION, ALERT_BEEP_INTERVAL, STOP_HOTKEY
-from race_loop import run_race_loop
-from ui import LarvaRaceApp
+from Trolichas.calibration.calibration_config import CALIBRATION_POINTS, CALIBRATION_FILE
+from Trolichas.config import ALERT_BEEP_FREQ, ALERT_BEEP_DURATION, ALERT_BEEP_INTERVAL, STOP_HOTKEY
+from Trolichas.race_loop import run_race_loop
+from Trolichas.ui import LarvaRaceApp
 
 
 class TicketDialog(tk.Toplevel):
@@ -167,7 +167,7 @@ def build_trolichas_app(root):
 
         calibration = load_calibration(CALIBRATION_FILE)
         if calibration is None:
-            messagebox.showerror("Error", "No hay calibración. Por favor calibra primero.")
+            messagebox.showerror("Error", "No hay calibración. Por favor calibra primero.", parent=root)
             return
 
         _start_loop(calibration)

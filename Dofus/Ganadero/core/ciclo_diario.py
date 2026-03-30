@@ -6,7 +6,7 @@ segun las horas de juego del jugador.
 import json
 from pathlib import Path
 
-from core.carburante_efficiency import mejor_carburante_para
+from Ganadero.core.carburante_efficiency import mejor_carburante_para
 
 _GD_FILE = Path(__file__).resolve().parent.parent / "data" / "game_data.json"
 with open(_GD_FILE, encoding="utf-8") as _f:

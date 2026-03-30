@@ -3,8 +3,8 @@ Lógica de escaneo de precios en el mercadillo (sin dependencias de UI).
 """
 from datetime import date as _date
 
-from config.config import LOTS
-from core.prices import find_item_prices
+from Almanax.config.config import LOTS
+from Almanax.core.prices import find_item_prices
 from shared.market.item_price_scanner import ScanItem
 from shared.market.prices import now_iso
 

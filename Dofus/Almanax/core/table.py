@@ -4,7 +4,7 @@ Lógica de clasificación y etiquetado de filas de la tabla Almanax.
 
 from datetime import date, datetime, timezone, timedelta
 
-from config.config import MIN_HIGH_PROFIT, SERVER_TIMEZONE
+from Almanax.config.config import MIN_HIGH_PROFIT, SERVER_TIMEZONE
 
 
 def today_fr() -> date:

@@ -1,7 +1,7 @@
 """
 Construcción de ScanItems para el scanner unificado.
 """
-from config.config import SIZES
+from Crafting.config.config import SIZES
 from shared.market.item_price_scanner import ScanItem
 
 

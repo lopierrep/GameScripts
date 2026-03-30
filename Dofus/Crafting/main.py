@@ -17,9 +17,9 @@ for _p in (_ROOT, _DOFUS):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-from config.config import C, DATA_DIR, UNKNOWN_KEY
-from utils.loaders import _load_omitted_categories, _load_omitted_recipes, find_recipe_file, list_professions, load_user_settings, save_user_settings
-from core.prices import (
+from Crafting.config.config import C, DATA_DIR, UNKNOWN_KEY
+from Crafting.utils.loaders import _load_omitted_categories, _load_omitted_recipes, find_recipe_file, list_professions, load_user_settings, save_user_settings
+from Crafting.core.prices import (
     build_item_lookup,
     build_table_rows,
     compute_and_save_display_data,
@@ -30,14 +30,14 @@ from core.prices import (
     load_raw_market_prices,
     save_crafting_costs,
 )
-from core.recipes import (
+from Crafting.core.recipes import (
     all_recipe_results,
     build_result_file_map,
     expand_sub_ingredients,
     load_all_craftable_recipes,
     sub_recipe_files,
 )
-from ui.ui import CraftingUI
+from Crafting.ui.ui import CraftingUI
 
 
 # ── stdout redirect ────────────────────────────────────────────────────────────
@@ -191,11 +191,11 @@ def update_profession(
 
     result_file_map = build_result_file_map()
 
-    from automation.scanner import build_scan_items
+    from Crafting.automation.scanner import build_scan_items
     from shared.market.item_price_scanner import scan_prices
     from shared.market.common import CACHE_SECONDS
-    from config.config import DELAY_BETWEEN_ITEMS
-    from utils.market import filter_lot_prices
+    from Crafting.config.config import DELAY_BETWEEN_ITEMS
+    from Crafting.utils.market import filter_lot_prices
     import keyboard as _keyboard
     import time as _time
 

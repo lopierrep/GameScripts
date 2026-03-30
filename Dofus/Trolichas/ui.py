@@ -2,7 +2,7 @@ import tkinter as tk
 
 from shared.ui.colors import C
 from shared.ui.font  import FONT as F, HEADER, BASE, SMALL
-from config import SECONDS_PER_TICKET
+from Trolichas.config import SECONDS_PER_TICKET
 
 
 class LarvaRaceApp:

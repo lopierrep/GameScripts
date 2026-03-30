@@ -15,10 +15,10 @@ ROOT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT_DIR))
 sys.path.insert(0, str(ROOT_DIR.parent))
 
-from core.carburante_efficiency import analizar
-from core.ciclo_diario import calcular_ciclo_diario, calcular_estrategia_nocturna
+from Ganadero.core.carburante_efficiency import analizar
+from Ganadero.core.ciclo_diario import calcular_ciclo_diario, calcular_estrategia_nocturna
 from shared.ui.colors import C
-from ui.ui import GanaderoUI
+from Ganadero.ui.ui import GanaderoUI
 
 # ── Settings ──────────────────────────────────────────────────────────────────
 SETTINGS_FILE = ROOT_DIR / "data" / "settings.json"
@@ -150,7 +150,7 @@ class GanaderoApp:
         sys.stderr = self._orig_stderr
 
     def _run_update(self):
-        from core.update_prices import run_update, MARKET_NAMES
+        from Ganadero.core.update_prices import run_update, MARKET_NAMES
         try:
             run_update(
                 is_stopped=lambda: self._stop_flag[0],
@@ -169,7 +169,7 @@ class GanaderoApp:
         """Bloquea el hilo worker hasta que el usuario confirme estar en el mercado."""
         if self._stop_flag[0]:
             return False
-        from core.update_prices import MARKET_NAMES
+        from Ganadero.core.update_prices import MARKET_NAMES
         display = MARKET_NAMES.get(market_name, market_name)
         ev = threading.Event()
 

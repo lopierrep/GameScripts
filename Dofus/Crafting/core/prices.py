@@ -6,7 +6,7 @@ Carga/guardado de materials_prices.json, caché de frescura y cálculo de costos
 import json
 import os
 import time
-from config.config import (
+from Crafting.config.config import (
     CATEGORIES_FILE,
     MIN_LOT_ROI,
     PRICES_FILE,
@@ -25,7 +25,7 @@ from shared.market.crafting_costs import (
     load_all_pack_prices,
     save_crafting_costs,
 )
-from utils.market import _now_iso, filter_lot_prices, net_sell_price
+from Crafting.utils.market import _now_iso, filter_lot_prices, net_sell_price
 
 
 
@@ -283,7 +283,7 @@ def compute_and_save_display_data(
     Calcula y guarda profit_x* y display para cada receta en recipe_file.
     Debe llamarse DESPUÉS de save_crafting_costs (los costos deben estar guardados).
     """
-    from config.config import EQUIPMENT_PROFESSIONS
+    from Crafting.config.config import EQUIPMENT_PROFESSIONS
     profession = os.path.basename(recipe_file).replace("recipes_", "").replace(".json", "")
     force_x1 = profession in EQUIPMENT_PROFESSIONS
 
