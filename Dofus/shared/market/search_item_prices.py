@@ -113,7 +113,9 @@ def preprocess_for_ocr(image: Image.Image) -> Image.Image:
     image = image.resize((w2 * 4, h2 * 4), Image.LANCZOS)
     image = ImageEnhance.Contrast(image).enhance(3.0)
     image = image.filter(ImageFilter.SHARPEN)
-    image = image.point(lambda p: 255 if p < 128 else 0)
+    image = image.filter(ImageFilter.SHARPEN)
+    threshold = _otsu_threshold(image)
+    image = image.point(lambda p: 255 if p < threshold else 0)
     return image
 
 
