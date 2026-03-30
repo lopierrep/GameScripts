@@ -8,7 +8,7 @@ import os
 import time
 from config.config import (
     CATEGORIES_FILE,
-    LOT_PROFIT_MARGIN,
+    MIN_LOT_ROI,
     PRICES_FILE,
     SIZES,
 )
@@ -218,16 +218,14 @@ def _enrich_recipe(recipe: dict, pack_prices: dict, craftable_map: dict, force_x
     if force_x1:
         best_size = "x1" if recipe.get("profit_x1", 0) != 0 else None
     else:
-        # Prefiere lotes más grandes con hasta 5% menos de ganancia
-        valid_profits = {s: recipe[f"profit_{s}"] for s in SIZES if recipe.get(f"profit_{s}", 0) != 0}
+        # Prefiere el lote más grande cuyo ROI (profit/crafting_cost) supere MIN_LOT_ROI
         best_size = None
-        if valid_profits:
-            max_profit = max(valid_profits.values())
-            threshold  = max_profit - abs(max_profit) * LOT_PROFIT_MARGIN
-            for size in reversed(SIZES):
-                if valid_profits.get(size, float("-inf")) >= threshold:
-                    best_size = size
-                    break
+        for size in reversed(SIZES):
+            profit = recipe.get(f"profit_{size}", 0) or 0
+            cost   = recipe.get(f"unit_crafting_cost_{size}", 0) or 0
+            if cost > 0 and profit / cost >= MIN_LOT_ROI:
+                best_size = size
+                break
     recipe["best_lot"] = best_size or ""
 
     # Datos de display de ingredientes solo para el mejor lote
