@@ -17,6 +17,7 @@ import sys
 import os
 import importlib.util
 import tkinter as tk
+from shared.ui.colors import C
 
 # Prefijos de módulo genéricos que las apps usan localmente
 _GENERIC_PREFIXES = ("config", "ui", "core", "calibration", "automation", "utils", "race_loop")
@@ -97,14 +98,27 @@ class AppContainer:
         if key not in self._frames:
             from hub.frame_host import FrameHost
             import traceback
-            host = FrameHost(self._parent, self._real_root)
-            host.pack(fill="both", expand=True)
-            self._frames[key] = host
+
+            if key == "trolichas":
+                # Trolichas es una UI compacta: centrarla dentro de un outer frame
+                outer = tk.Frame(self._parent, bg=C["bg"])
+                outer.pack(fill="both", expand=True)
+                host = FrameHost(outer, self._real_root)
+                self._frames[key] = outer
+            else:
+                host = FrameHost(self._parent, self._real_root)
+                host.pack(fill="both", expand=True)
+                self._frames[key] = host
+
             try:
                 self._apps[key] = _init_app(key, host)
+                if key == "trolichas":
+                    host.update_idletasks()
+                    host.place(relx=0.5, rely=0.5, anchor="center")
             except Exception:
                 traceback.print_exc()
-                self._show_error(host, traceback.format_exc())
+                err_frame = self._frames[key] if key != "trolichas" else host
+                self._show_error(err_frame, traceback.format_exc())
                 self._active = key
                 return
         else:
