@@ -1,7 +1,8 @@
 """
-PromptBar – Barra de confirmación/precio reutilizable para cualquier UI.
+PromptBar – Popup de confirmación/precio reutilizable para cualquier UI.
 ========================================================================
-Widget tk.Frame con label, botón y campos de precio opcionales.
+Widget Toplevel modal con label, botón y campos de precio opcionales.
+Reproduce un sonido del sistema al aparecer para alertar al usuario.
 """
 
 import tkinter as tk
@@ -10,83 +11,104 @@ from shared.ui.colors import C
 from shared.ui.font import FONT, HEADER, BASE
 
 
-class PromptBar(tk.Frame):
+class PromptBar:
     """
-    Barra colapsable para pedir confirmación o precios manuales.
+    Popup modal para pedir confirmación o precios manuales.
 
     Uso:
         self.prompt = PromptBar(parent)
-        self.prompt.show_confirm("Ve al mercadillo X", callback, fill="x")
-        self.prompt.show_price_prompt("Item", False, callback, fill="x")
+        self.prompt.show_confirm("Ve al mercadillo X", callback)
+        self.prompt.show_price_prompt("Item", False, callback)
         self.prompt.hide()
     """
 
     def __init__(self, parent, *, font_family: str = None):
-        super().__init__(parent, bg=C["yellow"], pady=6)
-        _font = font_family or FONT
+        self._parent = parent
+        self._font = font_family or FONT
+        self._popup: tk.Toplevel | None = None
         self._callback = None
         self._mode = "confirm"
-
-        # Button (izquierda)
-        self._button = tk.Button(
-            self, text="CONTINUAR", bg=C["bg"], fg=C["yellow"],
-            font=(_font, HEADER, "bold"), relief="flat",
-            padx=12, pady=2, cursor="hand2",
-            command=self._on_click,
-        )
-        self._button.pack(side="left", padx=14)
-
-        # Label
-        self._label = tk.Label(
-            self, text="", bg=C["yellow"], fg=C["bg"],
-            font=(_font, HEADER, "bold"), anchor="w",
-            wraplength=700, justify="left",
-        )
-        self._label.pack(side="left", padx=14, fill="x", expand=True)
-
-        # Price fields (ocultos por defecto)
-        self._price_frame = tk.Frame(self, bg=C["yellow"])
         self._price_entries: dict[str, tk.Entry] = {}
-        for label, key in (("x1", "unit_price_x1"), ("x10", "unit_price_x10"),
-                           ("x100", "unit_price_x100"), ("x1000", "unit_price_x1000")):
-            col = tk.Frame(self._price_frame, bg=C["yellow"])
-            col.pack(side="left", padx=6)
-            tk.Label(col, text=label, bg=C["yellow"], fg=C["bg"],
-                     font=(_font, BASE)).pack()
-            e = tk.Entry(col, width=10, bg=C["bg"], fg=C["text"],
-                         insertbackground=C["text"], relief="flat",
-                         font=(_font, BASE))
-            e.pack()
-            self._price_entries[key] = e
 
     # ── API pública ──────────────────────────────────────────────────────
 
-    def show_confirm(self, text: str, on_confirm, **pack_kwargs):
+    def show_confirm(self, text: str, on_confirm, **_pack_kwargs):
         self._mode = "confirm"
         self._callback = on_confirm
-        self._label.config(text=text)
-        self._price_frame.pack_forget()
-        self._button.config(text="CONTINUAR")
-        if not self.winfo_manager():
-            self.pack(**pack_kwargs)
+        self._build_popup(text, button_text="CONTINUAR")
 
-    def show_price_prompt(self, name: str, is_selling: bool, on_confirm, **pack_kwargs):
+    def show_price_prompt(self, name: str, is_selling: bool, on_confirm, **_pack_kwargs):
         kind = "venta" if is_selling else "ingrediente"
         self._mode = "price"
         self._callback = on_confirm
-        self._label.config(text=f"Precios manuales de '{name}' ({kind}):")
-        for e in self._price_entries.values():
-            e.delete(0, "end")
-        self._price_frame.pack(side="left", padx=(0, 10))
-        self._button.config(text="CONFIRMAR")
-        list(self._price_entries.values())[0].focus()
-        if not self.winfo_manager():
-            self.pack(**pack_kwargs)
+        self._build_popup(
+            f"Precios manuales de '{name}' ({kind}):",
+            button_text="CONFIRMAR",
+            show_prices=True,
+        )
 
     def hide(self):
-        self.pack_forget()
+        if self._popup and self._popup.winfo_exists():
+            self._popup.destroy()
+        self._popup = None
 
     # ── Interno ──────────────────────────────────────────────────────────
+
+    def _build_popup(self, text: str, *, button_text: str, show_prices: bool = False):
+        self.hide()
+
+        popup = tk.Toplevel(self._parent)
+        popup.title("Dofus Hub")
+        popup.configure(bg=C["surface"], padx=24, pady=18)
+        popup.resizable(False, False)
+        popup.attributes("-topmost", True)
+        popup.protocol("WM_DELETE_WINDOW", lambda: None)  # no cerrar con X
+        self._popup = popup
+
+        # Label
+        tk.Label(
+            popup, text=text, bg=C["surface"], fg=C["text"],
+            font=(self._font, HEADER, "bold"), anchor="w",
+            wraplength=500, justify="left",
+        ).pack(pady=(0, 14))
+
+        # Price fields
+        if show_prices:
+            price_frame = tk.Frame(popup, bg=C["surface"])
+            price_frame.pack(pady=(0, 14))
+            self._price_entries = {}
+            for label, key in (("x1", "unit_price_x1"), ("x10", "unit_price_x10"),
+                               ("x100", "unit_price_x100"), ("x1000", "unit_price_x1000")):
+                col = tk.Frame(price_frame, bg=C["surface"])
+                col.pack(side="left", padx=8)
+                tk.Label(col, text=label, bg=C["surface"], fg=C["subtext"],
+                         font=(self._font, BASE)).pack()
+                e = tk.Entry(col, width=10, bg=C["bg"], fg=C["text"],
+                             insertbackground=C["text"], relief="flat",
+                             font=(self._font, BASE))
+                e.pack()
+                self._price_entries[key] = e
+            list(self._price_entries.values())[0].focus()
+
+        # Button
+        tk.Button(
+            popup, text=button_text, bg=C["accent"], fg=C["bg"],
+            font=(self._font, HEADER, "bold"), relief="flat",
+            padx=20, pady=6, cursor="hand2",
+            command=self._on_click,
+        ).pack()
+
+        # Centrar sobre la ventana principal
+        popup.update_idletasks()
+        pw = popup.winfo_width()
+        ph = popup.winfo_height()
+        root = self._parent.winfo_toplevel()
+        rx = root.winfo_x() + (root.winfo_width() - pw) // 2
+        ry = root.winfo_y() + (root.winfo_height() - ph) // 2
+        popup.geometry(f"+{rx}+{ry}")
+
+        # Sonido de alerta
+        popup.bell()
 
     def _on_click(self):
         cb = self._callback
