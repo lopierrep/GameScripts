@@ -21,7 +21,7 @@ def net_sell_price(price: int) -> int:
     """
     listing_tax = math.ceil(price * 0.02)
     mod_fees    = sum(math.ceil((price - 10 * i) * 0.01) for i in range(1, 6))
-    return (price - 50) - listing_tax - mod_fees
+    return price - listing_tax - mod_fees
 
 
 def filter_lot_prices(unit_prices: dict[str, int]) -> tuple[dict[str, int], set[str]]:

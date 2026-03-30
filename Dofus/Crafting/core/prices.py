@@ -207,7 +207,12 @@ def _enrich_recipe(recipe: dict, pack_prices: dict, craftable_map: dict, force_x
             recipe[f"profit_{size}"] = 0
         else:
             c = recipe.get(f"unit_crafting_cost_{size}", 0) or 0
-            recipe[f"profit_{size}"] = round(net_sell_price(s) - c) if c > 0 else 0
+            if c > 0:
+                lot_num    = _LOT_NUMS[size]
+                net_total  = net_sell_price(s * lot_num)
+                recipe[f"profit_{size}"] = round(net_total / lot_num - c)
+            else:
+                recipe[f"profit_{size}"] = 0
 
     # Determinar mejor lote
     if force_x1:
