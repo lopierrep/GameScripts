@@ -16,12 +16,14 @@ from shared.ui.colors import C  # noqa: F401
 # ── Rutas ──────────────────────────────────────────────────────────────
 # ROOT_DIR resuelve correctamente tanto en modo script como .exe (frozen)
 if getattr(sys, "frozen", False):
-    ROOT_DIR = str(Path(sys.executable).parent)
+    _DOFUS_DIR  = Path(sys._MEIPASS)           # _internal/
+    ROOT_DIR    = str(_DOFUS_DIR / "Crafting")
 else:
-    ROOT_DIR = str(Path(__file__).resolve().parent.parent)
+    ROOT_DIR    = str(Path(__file__).resolve().parent.parent)
+    _DOFUS_DIR  = Path(ROOT_DIR).parent
 
-DATA_DIR         = os.path.join(ROOT_DIR, "..", "shared", "data")
-CATEGORIES_FILE  = os.path.join(ROOT_DIR, "..", "shared", "market", "categories_by_market.json")
+DATA_DIR         = str(_DOFUS_DIR / "shared" / "data")
+CATEGORIES_FILE  = str(_DOFUS_DIR / "shared" / "market" / "categories_by_market.json")
 PRICES_FILE      = os.path.join(DATA_DIR, "materials_prices.json")
 SETTINGS_FILE    = os.path.join(ROOT_DIR, "config", "user_settings.json")
 

@@ -73,7 +73,13 @@
       "Bash(ls \"e:/2_Games/Scripts/Dofus/shared/__pycache__/log_panel\"*)",
       "Bash(ls \"e:/2_Games/Scripts/Dofus/Trolichas/__pycache__/calibration\"*)",
       "Bash(grep -E \"^/e/2_Games/Scripts/Dofus/[^/]+\\\\.\\(py|sh|bat\\)$\")",
-      "Bash(cat /e/2_Games/Scripts/Dofus/.vscode/*)"
+      "Bash(cat /e/2_Games/Scripts/Dofus/.vscode/*)",
+      "Bash(pyinstaller DofusHub.spec --clean)",
+      "Bash(python -m PyInstaller DofusHub.spec --clean)",
+      "Bash(grep -l \"Pócima mineral\" e:/2_Games/Scripts/Dofus/shared/data/recipes_*.json)",
+      "Bash(python -m PyInstaller DofusHub.spec --clean -y)",
+      "Bash(Start-Process \"e:/2_Games/Scripts/Dofus/dist/DofusHub/DofusHub.exe\")",
+      "Bash(cmd.exe /c start \"\" \"e:\\\\2_Games\\\\Scripts\\\\Dofus\\\\dist\\\\DofusHub\\\\DofusHub.exe\")"
     ]
   }
 }
