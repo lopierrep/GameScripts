@@ -27,6 +27,15 @@ class PromptBar(tk.Frame):
         self._callback = None
         self._mode = "confirm"
 
+        # Button (izquierda)
+        self._button = tk.Button(
+            self, text="CONTINUAR", bg=C["bg"], fg=C["yellow"],
+            font=(_font, HEADER, "bold"), relief="flat",
+            padx=12, pady=2, cursor="hand2",
+            command=self._on_click,
+        )
+        self._button.pack(side="left", padx=14)
+
         # Label
         self._label = tk.Label(
             self, text="", bg=C["yellow"], fg=C["bg"],
@@ -49,15 +58,6 @@ class PromptBar(tk.Frame):
                          font=(_font, BASE))
             e.pack()
             self._price_entries[key] = e
-
-        # Button
-        self._button = tk.Button(
-            self, text="CONTINUAR", bg=C["bg"], fg=C["yellow"],
-            font=(_font, HEADER, "bold"), relief="flat",
-            padx=12, pady=2, cursor="hand2",
-            command=self._on_click,
-        )
-        self._button.pack(side="right", padx=14)
 
     # ── API pública ──────────────────────────────────────────────────────
 
