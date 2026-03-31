@@ -29,6 +29,8 @@ from Crafting.core.prices import (
     load_markets,
     load_raw_market_prices,
     save_crafting_costs,
+    save_ingredient_price,
+    save_recipe_selling_prices,
 )
 from Crafting.core.recipes import (
     all_recipe_results,
@@ -278,10 +280,11 @@ class CraftingApp:
                     prof_counts[prof] = 0
 
         callbacks = {
-            "start":     self._start,
-            "stop":      self._stop,
-            "sync":      self._sync,
-            "calibrate": self._calibrate,
+            "start":      self._start,
+            "stop":       self._stop,
+            "sync":       self._sync,
+            "calibrate":  self._calibrate,
+            "price_edit": self._on_price_edit,
         }
 
         UIClass = CraftingUI
@@ -437,6 +440,40 @@ class CraftingApp:
     def _ask_manual_price(self, name: str, is_selling: bool):
         """Bloquea el hilo worker hasta que el usuario introduzca precios manuales."""
         return self._ask_blocking(self.ui.show_price_prompt, name, is_selling)
+
+    # ── Edición manual de precios (clic derecho) ──────────────────────────────
+
+    def _on_price_edit(self, recipe_name: str, prices_by_name: dict):
+        """Guarda precios editados manualmente y recalcula solo esa receta."""
+        markets     = load_markets()
+        item_lookup = build_item_lookup(markets)
+
+        profession  = self.ui.profession()
+        recipe_file = find_recipe_file(profession)
+        if not recipe_file:
+            return
+
+        for name, prices in prices_by_name.items():
+            kind = prices.pop("_kind", "ingredient")
+            if kind == "selling":
+                save_recipe_selling_prices(recipe_file, recipe_name, prices)
+            else:
+                save_ingredient_price(name, prices, markets, item_lookup)
+
+        # Recalcular solo la receta editada
+        with open(recipe_file, encoding="utf-8") as f:
+            all_recipes = json.load(f)
+        target = [r for r in all_recipes if r.get("result") == recipe_name]
+        if target:
+            save_crafting_costs(recipe_file, target)
+            pack_prices   = load_all_pack_prices()
+            craftable_map = load_all_craftable_recipes()
+            compute_and_save_display_data(
+                recipe_file, pack_prices, craftable_map,
+                recipes_filter=lambda rs, _n=recipe_name: [r for r in rs if r.get("result") == _n],
+            )
+
+        self._load_table(profession)
 
     # ── Tabla ─────────────────────────────────────────────────────────────────
 

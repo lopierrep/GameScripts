@@ -18,6 +18,7 @@ from shared.market.prices import (
     cheapest_unit_price,
     is_price_fresh,
     parse_ingredient_prices,
+    parse_selling_prices,
 )
 from shared.market.crafting_costs import (
     calculate_crafting_costs,
@@ -117,6 +118,22 @@ def save_ingredient_price(name: str, prices: dict, markets: dict, item_lookup: d
     save_markets(markets)
     p = prices
     print(f"[OK] x1={p.get('unit_price_x1','N/A')}  x10={p.get('unit_price_x10','N/A')}  x100={p.get('unit_price_x100','N/A')}  x1000={p.get('unit_price_x1000','N/A')}")
+
+
+def save_recipe_selling_prices(recipe_file: str, recipe_name: str, prices: dict):
+    """Guarda unit_selling_price_x* en el JSON de recetas a partir de precios de lote.
+    prices: {"unit_price_x1": lot_price, "unit_price_x10": lot_price, ...}"""
+    unit_prices = parse_selling_prices(prices)
+    with open(recipe_file, encoding="utf-8") as f:
+        all_recipes = json.load(f)
+    for r in all_recipes:
+        if r.get("result") == recipe_name:
+            for size in SIZES:
+                r[f"unit_selling_price_{size}"] = unit_prices[size]
+            r["prices_updated_at"] = _now_iso()
+            break
+    with open(recipe_file, "w", encoding="utf-8") as f:
+        json.dump(all_recipes, f, ensure_ascii=False, indent=2)
 
 
 # ── Catalogación de items nuevos ───────────────────────────────────────────────
@@ -394,15 +411,21 @@ def build_table_rows(
             })
 
         rows.append({
-            "result":       r.get("result", ""),
-            "level":        r.get("level", ""),
-            "best_lot":     best_lot or "—",
-            "craft_cost":   craft_total,
-            "sell_price":   sell_total,
-            "profit":       best_profit,
-            "profit_total": best_profit_total,
-            "updated":      r.get("prices_updated_at", ""),
-            "ingredients":  ingredients,
+            "result":         r.get("result", ""),
+            "level":          r.get("level", ""),
+            "best_lot":       best_lot or "—",
+            "craft_cost":     craft_total,
+            "sell_price":     sell_total,
+            "profit":         best_profit,
+            "profit_total":   best_profit_total,
+            "updated":        r.get("prices_updated_at", ""),
+            "ingredients":    ingredients,
+            "selling_prices": {
+                "x1":   r.get("unit_selling_price_x1",   0) or 0,
+                "x10":  r.get("unit_selling_price_x10",  0) or 0,
+                "x100": r.get("unit_selling_price_x100", 0) or 0,
+                "x1000":r.get("unit_selling_price_x1000",0) or 0,
+            },
         })
 
     return rows

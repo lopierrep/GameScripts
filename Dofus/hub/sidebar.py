@@ -59,7 +59,7 @@ class Sidebar(tk.Frame):
         self._pin_btn = tk.Button(
             self,
             text="📌",
-            bg=C["bg2"], fg=C["accent"],
+            bg=C["bg2"], fg=C["dim"],
             font=(FONT, BASE),
             relief="flat", bd=0,
             padx=12, pady=0,
@@ -74,7 +74,7 @@ class Sidebar(tk.Frame):
         self._pin_btn.bind("<Leave>", self._hide_tooltip)
 
     def _show_tooltip(self, event):
-        topmost = getattr(self, '_root', None) and getattr(self._root, '_topmost', True)
+        topmost = getattr(self, '_root', None) and getattr(self._root, '_topmost', False)
         text = "Siempre visible (activado)" if topmost else "Siempre visible (desactivado)"
         self._tooltip = tw = tk.Toplevel(self)
         tw.wm_overrideredirect(True)
@@ -100,7 +100,7 @@ class Sidebar(tk.Frame):
     def _toggle_topmost(self):
         if not hasattr(self, '_root'):
             return
-        current = getattr(self._root, '_topmost', True)
+        current = getattr(self._root, '_topmost', False)
         new_val = not current
         self._root._topmost = new_val
         self._root.attributes("-topmost", new_val)

@@ -13,6 +13,7 @@ from Crafting.core.table_filter import compute_summary, filter_rows, profitable_
 from shared.ui.colors import C, style_scrollbar
 from shared.ui.font  import FONT as F, TITLE, HEADER, BASE, SMALL
 from shared.ui.prompt_bar import PromptBar
+from shared.ui.price_edit_dialog import PriceEditDialog
 from shared.ui.status_bar import StatusBar
 from shared.ui.toast import show_copy_toast
 
@@ -397,9 +398,11 @@ class CraftingUI:
         self._tree.bind("<<TreeviewSelect>>", self._on_row_select)
         self._tree.bind("<Button-1>",         self._on_tree_press)
         self._tree.bind("<ButtonRelease-1>",  self._on_tree_release)
+        self._tree.bind("<Button-3>",         self._on_right_click)
         self._sort_state: dict = {}
         self._pre_click_iid  = None
         self._pre_click_open = None
+        self._ing_data: dict = {}
 
     def _sort_col(self, col: str):
         asc = not self._sort_state.get(col, True)
@@ -487,6 +490,57 @@ class CraftingUI:
             self.root.clipboard_append(name)
             self._show_copy_toast(name)
 
+    def _on_right_click(self, event):
+        iid = self._tree.identify_row(event.y)
+        if not iid:
+            return
+
+        # Subir hasta la receta raíz
+        recipe_iid = iid
+        while self._tree.parent(recipe_iid):
+            recipe_iid = self._tree.parent(recipe_iid)
+        recipe_row = self._row_data.get(recipe_iid)
+        if not recipe_row:
+            return
+
+        is_recipe = not self._tree.parent(iid)
+
+        if is_recipe:
+            selling = recipe_row.get("selling_prices", {})
+            items = [{
+                "label":  f"Venta: {recipe_row['result']}",
+                "name":   recipe_row["result"],
+                "kind":   "selling",
+                "prices": selling,
+            }]
+            for ing in recipe_row.get("ingredients", []):
+                items.append({
+                    "label":  ing["name"],
+                    "name":   ing["name"],
+                    "kind":   "ingredient",
+                    "prices": ing.get("lot_prices", {}),
+                })
+            title = f"Precios: {recipe_row['result']}"
+        else:
+            ing = self._ing_data.get(iid)
+            if not ing:
+                return
+            items = [{
+                "label":  ing["name"],
+                "name":   ing["name"],
+                "kind":   "ingredient",
+                "prices": ing.get("lot_prices", {}),
+            }]
+            title = f"Precio: {ing['name']}"
+
+        recipe_name = recipe_row["result"]
+
+        def on_confirm(prices_by_name):
+            if "price_edit" in self._cbs:
+                self._cbs["price_edit"](recipe_name, prices_by_name)
+
+        PriceEditDialog(self.root, title=title, items=items, on_confirm=on_confirm)
+
     # ── Filters ──────────────────────────────────────────────────────────────
 
     def _apply_filter(self, profitable: list = None):
@@ -520,6 +574,7 @@ class CraftingUI:
 
         self._tree.delete(*self._tree.get_children())
         self._row_data = {}
+        self._ing_data = {}
         self._selected_recipe_iid = None
         self._row_tags: dict = {}
 
@@ -590,6 +645,7 @@ class CraftingUI:
         child_iid = self._tree.insert(parent_iid, "end", values=(
             ing_name, "", buy_lot, qty_display, price_str, "", "", _to_bogota(ing_updated),
         ), tags=(ing_tag,))
+        self._ing_data[child_iid] = ing
 
         for sub in ing.get("sub_ingredients", []):
             self._insert_ing(child_iid, sub, depth + 1)
