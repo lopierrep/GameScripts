@@ -117,7 +117,8 @@ def build_trolichas_app(root):
     tickets = _load_tickets()
 
     def _ask_buy_tickets(message="No tienes tickets.\n¿Cuántos tickets compraste?"):
-        dlg = TicketDialog(root, message)
+        parent = app._toplevel if app._detached else root
+        dlg = TicketDialog(parent, message)
         nonlocal tickets
         if dlg.result:
             tickets += dlg.result
@@ -208,7 +209,8 @@ def build_trolichas_app(root):
 
     def _on_edit_tickets():
         nonlocal tickets
-        dlg = TicketDialog(root, "¿Cuántos tickets tienes?")
+        parent = app._toplevel if app._detached else root
+        dlg = TicketDialog(parent, "¿Cuántos tickets tienes?")
         if dlg.result is not None:
             tickets = dlg.result
             _save_tickets(tickets)
