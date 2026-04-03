@@ -52,7 +52,7 @@ class _StdoutRedirect:
 # ── App ───────────────────────────────────────────────────────────────────────
 
 class GanaderoApp:
-    def __init__(self, root=None):
+    def __init__(self, root=None, on_sync_done=None):
         self._settings = _load_settings()
         if root is None:
             self._root = tk.Tk()
@@ -63,6 +63,7 @@ class GanaderoApp:
         self._orig_stdout = sys.stdout
         self._orig_stderr = sys.stderr
         self._float = FloatingProgress(self._root)
+        self._on_sync_done = on_sync_done
 
         self._ui = GanaderoUI(self._root, callbacks={
             "refresh": self._refresh,
@@ -126,8 +127,14 @@ class GanaderoApp:
             sync_data()
             self._root.after(0, self._refresh)
             self._root.after(0, self._ui.update_status, "✓ Sincronizado", C["green"])
+            if self._on_sync_done:
+                self._on_sync_done()
         except Exception as e:
             self._root.after(0, self._ui.update_status, f"Error: {e}", C["red"])
+
+    def refresh_from_sync(self):
+        """Llamado por otras apps tras un sync exitoso."""
+        self._root.after(0, self._refresh)
 
     # ── Actualización de precios ─────────────────────────────────────────────
 

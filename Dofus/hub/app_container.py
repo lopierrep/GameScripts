@@ -9,17 +9,17 @@ import tkinter as tk
 from shared.ui.colors import C
 
 
-def _init_app(app_key: str, host):
+def _init_app(app_key: str, host, on_sync_done=None):
     """Instancia la app dentro del FrameHost dado."""
     if app_key == "crafting":
         from Crafting.main import CraftingApp
-        return CraftingApp(host)
+        return CraftingApp(host, on_sync_done=on_sync_done)
     elif app_key == "almanax":
         from Almanax.main import AlmanaxApp
-        return AlmanaxApp(host)
+        return AlmanaxApp(host, on_sync_done=on_sync_done)
     elif app_key == "ganadero":
         from Ganadero.main import GanaderoApp
-        return GanaderoApp(host)
+        return GanaderoApp(host, on_sync_done=on_sync_done)
     elif app_key == "trolichas":
         from Trolichas.main import build_trolichas_app
         return build_trolichas_app(host)
@@ -56,7 +56,7 @@ class AppContainer:
                 self._frames[key] = host
 
             try:
-                self._apps[key] = _init_app(key, host)
+                self._apps[key] = _init_app(key, host, on_sync_done=lambda k=key: self._notify_sync_done(k))
                 if key == "trolichas":
                     host.update_idletasks()
                     host.place(relx=0.5, rely=0.5, anchor="center")
@@ -70,6 +70,12 @@ class AppContainer:
             self._frames[key].pack(fill="both", expand=True)
 
         self._active = key
+
+    def _notify_sync_done(self, source_key: str):
+        """Refresca todas las apps cargadas excepto la que hizo el sync."""
+        for key, app in self._apps.items():
+            if key != source_key and hasattr(app, "refresh_from_sync"):
+                app.refresh_from_sync()
 
     def _show_error(self, parent: tk.Frame, msg: str):
         from shared.ui.colors import C
