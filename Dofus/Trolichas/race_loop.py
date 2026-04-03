@@ -10,7 +10,6 @@ pytesseract.pytesseract.tesseract_cmd = (
 import keyboard
 import time
 import random
-from pathlib import Path
 
 _DOFUS_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if _DOFUS_DIR not in sys.path:
@@ -93,18 +92,12 @@ def run_race_loop(calibration, is_running, on_status, on_race_count, on_consume_
         # 5. Verificar fin de carrera via OCR
         sw, sh = pyautogui.size()
         region = (sw // 2 - 100, sh // 2 - 200, 200, 300)
-        debug_dir = Path(__file__).resolve().parent / "debug_ocr"
-        debug_dir.mkdir(exist_ok=True)
-        ocr_attempt = 0
         while is_running():
             keyboard.press("w")
             time.sleep(0.3)
             img = pyautogui.screenshot(region=region)
             keyboard.release("w")
             processed = preprocess_for_ocr(img)
-            ocr_attempt += 1
-            img.save(debug_dir / f"raw_{race_count}_{ocr_attempt}.png")
-            processed.save(debug_dir / f"ocr_{race_count}_{ocr_attempt}.png")
             texto = pytesseract.image_to_string(
                 processed, config="--psm 6 --oem 1 -l spa")
             ocr_clean = " ".join(texto.split())
