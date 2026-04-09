@@ -1,1 +1,59 @@
-{}
+{
+  "Creatures": {
+    "Mákina": [
+      "Optimákina Dragopavo de generación 2",
+      "Optimákina Dragopavo de generación 3",
+      "Optimákina Dragopavo de generación 4",
+      "Optimákina Dragopavo de generación 5",
+      "Animákina Mulagua de generación 6",
+      "Optimákina Dragopavo de generación 6",
+      "Optimákina Dragopavo de generación 7",
+      "Animákina Mulagua de generación 8",
+      "Optimákina Dragopavo de generación 8",
+      "Kromákina Mulagua de generación 9",
+      "Animákina Mulagua de generación 9",
+      "Optimákina Dragopavo de generación 9",
+      "Optimákina Mulagua de generación 9",
+      "Kromákina Dragopavo de generación 10",
+      "Kromákina Mulagua de generación 10",
+      "Animákina Dragopavo de generación 10",
+      "Animákina Mulagua de generación 10",
+      "Optimákina Dragopavo de generación 10",
+      "Optimákina Mulagua de generación 10"
+    ],
+    "Carburante de cercados": [
+      "Filtro de pesebre",
+      "Pócima pequeña de dragonalgas",
+      "Elixir de aporreadora",
+      "Elixir de acariciador",
+      "Elixir de fulminadora",
+      "Elixir de abrevadero",
+      "Elixir de pesebre",
+      "Elixir grande de aporreadora",
+      "Elixir grande de acariciador",
+      "Elixir grande de dragonalgas",
+      "Elixir grande de fulminadora",
+      "Elixir grande de abrevadero",
+      "Elixir grande de pesebre",
+      "Elixir gigantesco de aporreadora",
+      "Elixir gigantesco de acariciador",
+      "Elixir gigantesco de dragonalgas",
+      "Elixir gigantesco de fulminadora",
+      "Elixir gigantesco de abrevadero",
+      "Elixir gigantesco de pesebre"
+    ],
+    "Red de captura": [
+      "Red multiplicadora de dragopavo reforzada",
+      "Red multiplicadora de vueloceronte reforzada",
+      "Red multiplicadora de mulagua reforzada"
+    ]
+  },
+  "Resources": {
+    "Oreja": [
+      "Oreja de gosbusteador"
+    ],
+    "Madera": [
+      "Madera de roble"
+    ]
+  }
+}
