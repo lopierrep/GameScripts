@@ -73,12 +73,13 @@ def _press_esc():
 
 class AlmanaxApp:
 
-    def __init__(self, root: tk.Tk):
+    def __init__(self, root: tk.Tk, on_sync_done=None):
         self.root    = root
         self.prices  = load_prices()
         self.data:   list[dict] = []
         self.buy_cal = _init_calibration()
 
+        self._on_sync_done = on_sync_done
         self._worker       = None
         self._scan_worker  = None
         self._scan_stop    = threading.Event()
@@ -141,8 +142,15 @@ class AlmanaxApp:
             self.prices = load_prices()
             self.root.after(0, self._refresh_table)
             self.root.after(0, self.ui.set_status, "✓ Sincronizado", C["green"])
+            if self._on_sync_done:
+                self._on_sync_done()
         except Exception as e:
             self.root.after(0, self.ui.set_status, f"Error sync: {e}", C["red"])
+
+    def refresh_from_sync(self):
+        """Llamado por otras apps tras un sync exitoso."""
+        self.prices = load_prices()
+        self.root.after(0, self._refresh_table)
 
     # ── Fetch ─────────────────────────────────────────────────────────────────
 

@@ -260,13 +260,14 @@ def update_profession(
 
 class CraftingApp:
 
-    def __init__(self, root: tk.Tk):
+    def __init__(self, root: tk.Tk, on_sync_done=None):
         self.root = root
         self._stop_flag  = [False]
         self._float      = FloatingProgress(self.root)
         self._orig_stdout = sys.stdout
         self._orig_stderr = sys.stderr
         self._last_refresh = 0.0
+        self._on_sync_done = on_sync_done
 
         professions = list_professions()
         prof_counts = {}
@@ -397,8 +398,16 @@ class CraftingApp:
             if profession:
                 self.root.after(0, self._load_table, profession)
             self.root.after(0, self.ui.set_status, "✓ Sincronizado", C["green"])
+            if self._on_sync_done:
+                self._on_sync_done()
         except Exception as e:
             self.root.after(0, self.ui.set_status, f"Error: {e}", C["red"])
+
+    def refresh_from_sync(self):
+        """Llamado por otras apps tras un sync exitoso."""
+        profession = self.ui.profession()
+        if profession:
+            self.root.after(0, self._load_table, profession)
 
     def _on_done(self):
         self._float.hide()
