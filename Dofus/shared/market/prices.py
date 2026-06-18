@@ -110,6 +110,45 @@ def build_item_lookup(materials: dict) -> dict[str, tuple[str, str]]:
     return lookup
 
 
+def get_ingredient_lot_prices(materials: dict, name: str) -> dict[str, int] | None:
+    """Devuelve {"1": unit, "10": unit, "100": unit, "1000": unit} para un item
+    en materials_prices.json. None si el item no existe."""
+    for market_data in materials.values():
+        for cat_data in market_data.values():
+            entry = cat_data.get(name)
+            if isinstance(entry, dict):
+                return {
+                    str(s): int(entry.get(f"x{s}", 0) or 0)
+                    for s in (1, 10, 100, 1000)
+                }
+    return None
+
+
+def save_ingredient_lot_prices(name: str, lot_payload: dict, prices_file) -> bool:
+    """Actualiza precios unitarios de un ingrediente en materials_prices.json.
+
+    lot_payload: payload de PriceEditDialog
+        {"unit_price_x1": lot_total, "unit_price_x10": lot_total, ...}
+    Devuelve True si encontró el item y guardó."""
+    materials = load_materials(prices_file)
+    for market_data in materials.values():
+        for cat_data in market_data.values():
+            entry = cat_data.get(name)
+            if not isinstance(entry, dict):
+                continue
+            unit_prices = {}
+            for size in (1, 10, 100, 1000):
+                lot = lot_payload.get(f"unit_price_x{size}", 0) or 0
+                unit_prices[f"x{size}"] = round(lot / size) if lot > 0 else 0
+            for size_key, val in unit_prices.items():
+                entry[size_key] = val
+            if any(v > 0 for v in unit_prices.values()):
+                entry["prices_updated_at"] = now_iso()
+            save_materials(materials, prices_file)
+            return True
+    return False
+
+
 
 # ── Precio óptimo ─────────────────────────────────────────────────────────────
 

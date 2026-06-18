@@ -16,6 +16,7 @@ from Almanax.config.config import (
 from Almanax.core.table import day_label, profit_tag, today_fr
 from shared.ui.colors import style_scrollbar
 from shared.ui.font  import FONT as F, TITLE, HEADER, BASE, SMALL
+from shared.ui.ingredient_price_edit import attach_ingredient_price_edit
 from shared.ui.prompt_bar import PromptBar
 from shared.ui.status_bar import StatusBar
 from shared.ui.toast import show_copy_toast
@@ -27,13 +28,15 @@ class AlmanaxUI:
     Recibe un dict de callbacks que el orquestador (main.py) implementa.
 
     Callbacks esperados:
-        scan         ()             → escanear precios en el mercadillo
-        stop_scan    ()             → detener escaneo
-        calibrate    ()             → calibrar posiciones de compra
-        buy_all      ()             → comprar todos los rentables
-        select       (item_name)    → fila seleccionada en la tabla
-        refresh      ()             → recalcular y repintar la tabla
-        toggle_sort  (col)          → cambiar columna/dirección de ordenación
+        scan              ()             → escanear precios en el mercadillo
+        stop_scan         ()             → detener escaneo
+        calibrate         ()             → calibrar posiciones de compra
+        buy_all           ()             → comprar todos los rentables
+        select            (item_name)    → fila seleccionada en la tabla
+        refresh           ()             → recalcular y repintar la tabla
+        toggle_sort       (col)          → cambiar columna/dirección de ordenación
+        price_edit_lookup (iid) → dict   → datos del item para el dialog (opcional)
+        price_edit_saved  (name)         → callback tras guardar (opcional)
     """
 
     def __init__(self, root: tk.Tk, callbacks: dict, market_available: bool, settings: dict = None):
@@ -207,6 +210,15 @@ class AlmanaxUI:
 
         self.tree.bind("<<TreeviewSelect>>", self._on_select)
         self.tree.bind("<ButtonRelease-1>",  self._on_row_click)
+
+        if "price_edit_lookup" in self._cb:
+            from Almanax.config.config import PRICES_FILE
+            attach_ingredient_price_edit(
+                self.tree, self.root,
+                prices_file      = PRICES_FILE,
+                get_item_for_row = self._cb["price_edit_lookup"],
+                on_saved         = self._cb.get("price_edit_saved"),
+            )
 
     def _build_totals(self, bar: tk.Frame):
         # Contenedor alineado a la derecha dentro de la fila 2

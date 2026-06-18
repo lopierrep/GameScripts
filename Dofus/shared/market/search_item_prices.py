@@ -82,6 +82,7 @@ def ocr_all_prices() -> dict:
     prices = {"unit_price_x1": "N/A", "unit_price_x10": "N/A", "unit_price_x100": "N/A", "unit_price_x1000": "N/A"}
     qty_key = {"1": "unit_price_x1", "10": "unit_price_x10", "100": "unit_price_x100", "1000": "unit_price_x1000"}
 
+    rows: list[tuple[str, str]] = []
     for line in raw.splitlines():
         tokens = re.findall(r"\d+(?:[.,]\d+)*", line)
         if len(tokens) < 2:
@@ -90,6 +91,15 @@ def ocr_all_prices() -> dict:
         if qty not in qty_key:
             continue
         price = re.sub(r"[.,]", "", tokens[1])
+        rows.append((qty, price))
+
+    # Mercadillo de equipamientos: aparecen múltiples lotes x1 (uno por equipamiento)
+    # ordenados de más barato a más caro. Tomamos solo el primer x1 e ignoramos lo demás.
+    if sum(1 for q, _ in rows if q == "1") > 1:
+        prices["unit_price_x1"] = next(p for q, p in rows if q == "1")
+        return prices
+
+    for qty, price in rows:
         prices[qty_key[qty]] = price
 
     return prices

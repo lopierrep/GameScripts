@@ -99,7 +99,9 @@
       "Bash(python -c \"import json; data = json.load\\(open\\(''e:/2_Games/Scripts/Dofus/shared/data/recipes_alquimista.json'', encoding=''utf-8''\\)\\); r = data[0]; print\\(json.dumps\\({k:v for k,v in r.items\\(\\) if k != ''ingredients''}, indent=2\\)\\); print\\(''Ingredientes:'', [i.get\\(''name''\\) for i in r.get\\(''ingredients'', []\\)]\\)\")",
       "Bash(find /e/2_Games/Scripts/Dofus -type f -name *.py)",
       "Bash(find /e/2_Games/Scripts/Dofus -name recipes_*.json)",
-      "Bash(find /e/2_Games/Scripts/Dofus -type f \\\\\\(-name *.json -o -name *.db \\\\\\))"
+      "Bash(find /e/2_Games/Scripts/Dofus -type f \\\\\\(-name *.json -o -name *.db \\\\\\))",
+      "Bash(python -c \"import ast; [ast.parse\\(open\\(f, encoding='utf-8'\\).read\\(\\), f\\) for f in ['shared/market/prices.py', 'shared/ui/ingredient_price_edit.py', 'Almanax/main.py', 'Almanax/ui/ui.py', 'Almanax/automation/scanner.py']]; print\\('OK'\\)\")",
+      "Bash(python -c ' *)"
     ]
   }
 }

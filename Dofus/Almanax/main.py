@@ -91,15 +91,17 @@ class AlmanaxApp:
 
         settings = _load_settings()
         self.ui = AlmanaxUI(root, callbacks={
-            "scan":         self._start_scan,
-            "stop_scan":    self._stop_scan,
-            "calibrate":    self._calibrate_buy_start,
-            "buy_all":      self._buy_all_profitable,
-            "stop_buy":     self._stop_buy,
-            "select":       lambda _: None,
-            "refresh":      self._refresh_table,
-            "toggle_sort":  self._toggle_sort,
-            "sync":         self._sync,
+            "scan":               self._start_scan,
+            "stop_scan":          self._stop_scan,
+            "calibrate":          self._calibrate_buy_start,
+            "buy_all":            self._buy_all_profitable,
+            "stop_buy":           self._stop_buy,
+            "select":             lambda _: None,
+            "refresh":            self._refresh_table,
+            "toggle_sort":        self._toggle_sort,
+            "sync":               self._sync,
+            "price_edit_lookup":  self._price_edit_lookup,
+            "price_edit_saved":   self._on_price_edited,
         }, market_available=MARKET_AVAILABLE, settings=settings)
 
         self._float = FloatingProgress(self.root)
@@ -374,6 +376,7 @@ class AlmanaxApp:
         import keyboard as _kb
         from Almanax.automation.scanner import build_scan_items
         from shared.market.item_price_scanner import scan_prices
+        from shared.market.common import CACHE_SECONDS
         from Almanax.config.config import SCAN_DELAY
 
         _kb.add_hotkey(STOP_HOTKEY, self._scan_stop.set)
@@ -389,7 +392,7 @@ class AlmanaxApp:
                 on_market_switch = self._ask_market_switch,
                 init_cal         = _init_calibration,
                 delay            = SCAN_DELAY,
-                fresh_seconds    = sys.maxsize,
+                fresh_seconds    = CACHE_SECONDS,
             )
         finally:
             self.prices = load_prices()
@@ -407,7 +410,6 @@ class AlmanaxApp:
     # ── Calibración ───────────────────────────────────────────────────────────
 
     def _calibrate_buy_start(self):
-        import os
         from shared.automation.calibration import CalibrationWindow
         from shared.calibration.calibration_config import (
             CALIBRATION_FILE as SCANNER_CAL_FILE,
@@ -424,18 +426,37 @@ class AlmanaxApp:
                 on_done=self._on_calibration_done, transform=transform_buy,
             )
 
-        if os.path.exists(SCANNER_CAL_FILE):
-            _open_buy_cal()
-        else:
-            CalibrationWindow(
-                self.root, SCANNER_POINTS, SCANNER_CAL_FILE,
-                on_done=_open_buy_cal, transform=transform_scanner,
-            )
+        CalibrationWindow(
+            self.root, SCANNER_POINTS, SCANNER_CAL_FILE,
+            on_done=_open_buy_cal, transform=transform_scanner,
+        )
 
     def _on_calibration_done(self):
         self.buy_cal = _init_calibration()
         self.ui.set_calibrated(self.buy_cal is not None)
         self.ui.set_status("✓ Calibración guardada", C["green"])
+
+    # ── Edición manual de precios (clic derecho) ──────────────────────────────
+
+    def _price_edit_lookup(self, iid: str) -> dict | None:
+        """Resuelve el item de la fila y sus precios actuales para el dialog."""
+        try:
+            item_name = self.ui.tree.set(iid, "item")
+        except Exception:
+            return None
+        if not item_name:
+            return None
+        from shared.market.prices import get_ingredient_lot_prices
+        return {
+            "name":       item_name,
+            "label":      item_name,
+            "lot_prices": get_ingredient_lot_prices(self.prices, item_name) or {},
+        }
+
+    def _on_price_edited(self, name: str):
+        self.prices = load_prices()
+        self._refresh_table()
+        self.ui.set_status(f"✓ Precio actualizado: {name}", C["green"])
 
     # ── Compra automática ─────────────────────────────────────────────────────
 

@@ -6,14 +6,13 @@ from datetime import date as _date
 from Almanax.config.config import LOTS
 from Almanax.core.prices import find_item_prices
 from shared.market.item_price_scanner import ScanItem
-from shared.market.prices import now_iso
 
 
 def build_scan_items(data: list, prices: dict, from_date, to_date) -> list:
     """
     Construye ScanItems a partir del historial de Almanax filtrado por fecha.
-    Deduplica items; los que ya tienen precio se marcan como frescos.
-    Con fresh_seconds=sys.maxsize, los items con precio nunca se re-escanean.
+    Deduplica items y propaga el `prices_updated_at` real del entry, para que
+    el scanner aplique freshness (CACHE_SECONDS) sobre datos verdaderos.
     """
     seen: set = set()
     items: list = []
@@ -24,16 +23,14 @@ def build_scan_items(data: list, prices: dict, from_date, to_date) -> list:
         if name in seen:
             continue
         seen.add(name)
-        existing  = find_item_prices(prices, name)
-        has_price = existing is not None and any(
-            existing.get(f"x{s}", 0) > 0 for s in LOTS
-        )
+        existing  = find_item_prices(prices, name) or {}
+        has_price = any(existing.get(f"x{s}", 0) > 0 for s in LOTS)
         items.append(ScanItem(
             name              = name,
             market            = r.get("market",   "Unknown"),
             category          = r.get("category", "Sin categoría"),
             type              = "ingredient",
-            prices_updated_at = now_iso() if has_price else None,
+            prices_updated_at = existing.get("prices_updated_at"),
             has_price         = has_price,
         ))
     return items

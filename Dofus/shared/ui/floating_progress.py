@@ -27,8 +27,10 @@ class FloatingProgress:
         if self._popup:
             return
 
-        if self._is_hub:
+        self._was_iconified = False
+        if self._is_hub and not getattr(self._hub_root, '_topmost', False):
             self._hub_root.iconify()
+            self._was_iconified = True
 
         popup = tk.Toplevel()
         popup.title("Dofus")
@@ -73,7 +75,8 @@ class FloatingProgress:
         self._popup = None
         self._status_var = None
 
-        if self._is_hub:
+        if self._is_hub and getattr(self, '_was_iconified', False):
             self._hub_root.deiconify()
-            topmost = getattr(self._hub_root, '_topmost', True)
+            topmost = getattr(self._hub_root, '_topmost', False)
             self._hub_root.attributes("-topmost", topmost)
+        self._was_iconified = False
